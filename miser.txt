@@ -1,0 +1,74 @@
+miser.txt 0.0.0                    UTF-8                          dh:2017-07-26
+
+                           The Miser Project Code
+                           ======================
+                            
+                      <https://github.com/orcmid/miser>
+
+           SOFTWARE AND TESTS FOR DEVELOPMENT OF MISER IMPLEMENTATIONS
+
+                     SOURCE CODE VERSION CONTROL REPOSITORY
+                     --------------------------------------
+
+         
+MANIFEST
+
+    miser.txt 
+        this manifest and job-jar file
+                      
+    LICENSE.txt
+         The open-source software license that applies to the entire 
+         nfoTools collection except where stated otherwise.
+         
+    NOTICE.txt
+         Notice that applies with respect to particular components of
+         Miser Project software.
+         
+    .gitattributes
+         A declaration of file attributes for use in Git repositories of
+         the miser source code.
+         
+    .gitignore
+         A declaration of artifacts to be ignored and excluded from Git
+         repositories, applying to working files that are not part of the
+         managed archive materials
+         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+
+  * Add GitHub Readme.md when ready.
+  
+  * Provide a little bit more information about what this is and where to
+    find more about it.
+    
+  * Introduce oMiser substructure.  oFrugal comes later.
+  
+  * Under oMiser find a place for an sml/ directory holding the SML/NJ
+    demonstration.
+    
+  * Ensure a hierarchical organization that fits the nfoTools construction
+    sets pattern.
+    
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2017-07-26-13:31 Create placeholder and initial job jar for the
+       Miser Project code.
+
+                         ***** end of miser.txt *****

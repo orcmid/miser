@@ -1,0 +1,29 @@
+# .gitattributes 0.0.2                UTF-8                         2017-07-26
+#
+#                GIT ATTRIBUTES FOR THE MISER GIT REPOSITORY
+
+# Set the default behavior in case people don't have core.autocrlf set.
+# This will automatically convert between line-ending style of the client
+# and whatever line-ending style that is found in the repository.  (On the
+# client, always use a Git package that is compiled for the native OS.)
+
+* text=auto
+# This declares files to be text by default and to be line-ending alterable.
+# Be careful.  See the group below.
+
+# Denote all files that are truly binary and must not be scanned for line-end.
+# Some of these might also be .gitignored.  Better safe than sorry.
+
+*.bmp binary
+*.jpg binary
+*.png binary
+*.suo binary
+*.zip binary
+
+# 0.0.2 2017-07-26-13:38 Transpose those for orcmid/miser use on GitHub
+# 0.0.1 2016-10-04-11:23 Create Minimal .gitattributes
+#       The 2015-01-07 version from ShowDefs is captured just to have one
+#       in place.
+#                          *** end of .gitattributes ***
+
+
