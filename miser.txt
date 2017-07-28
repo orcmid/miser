@@ -1,4 +1,4 @@
-miser.txt 0.0.0                    UTF-8                          dh:2017-07-26
+miser.txt 0.0.1                    UTF-8                          dh:2017-07-27
 
                            The Miser Project Code
                            ======================
@@ -15,6 +15,10 @@ MANIFEST
 
     miser.txt 
         this manifest and job-jar file
+        
+    oMiser/
+        subtree for the development of oMiser code
+        
                       
     LICENSE.txt
          The open-source software license that applies to the entire 
@@ -58,7 +62,9 @@ TODO
   * Provide a little bit more information about what this is and where to
     find more about it.
     
-  * Introduce oMiser substructure.  oFrugal comes later.
+  * Add links to other locations of materials and discussions.
+    
+  * Introduce oFrugal later when there enough oMiser to talk about.
   
   * Under oMiser find a place for an sml/ directory holding the SML/NJ
     demonstration.
@@ -68,6 +74,8 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for 
+       experiments and conceptual demonstrations such as in SML/.
  0.0.0 2017-07-26-13:31 Create placeholder and initial job jar for the
        Miser Project code.
 
