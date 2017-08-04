@@ -1,0 +1,63 @@
+mockups.txt 0.0.0                    UTF-8                        dh:2017-08-04
+
+                           The Miser Project Code
+                           ======================
+                            
+              <https://github.com/orcmid/miser/oMiser/mockups>
+
+                OMISER MOCKUP EXPERIMENTAL DEMONSTRATIONS
+                -----------------------------------------
+              
+    Operating oMiser obs as an abstract data type along with a universal 
+    computational function on pairs of abstract data is demonstrated using
+    existing programming systems that have more-or-less direct means for
+    representing new types and functions over those types.  
+      
+    Efficiency concerns notwithstanding, these mockups provide rapid
+    experimentation and demonstration of essential characteristics of
+    oMiser implementations.      
+         
+MANIFEST
+
+    mockups.txt 
+        this manifest and job-jar file
+        
+    SML/
+        subtree for mockup effort employing Standard ML of New Jersey
+        for rapid prototyping, testing, and demonstration.
+        
+         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+
+  * Encapsulate the datatype and primitive-function definitions in an
+    SML library.
+    
+  * Demonstrate the difference between the formal definition of Obs and
+    the chosen universal function and the implementation and testing of
+    implementations.
+     
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2017-08-04-12:18 Create placeholder and initial job jar for
+       oMiser mockup development.
+
+                        *** end of mockups.txt ***
+                         

@@ -1,0 +1,67 @@
+SML.txt 0.0.0                        UTF-8                        dh:2017-08-04
+
+                           The Miser Project Code
+                           ======================
+                            
+            <https://github.com/orcmid/miser/oMiser/mockups/SML>
+
+                 SML MOCKUP EXPERIMENTAL DEMONSTRATIONS
+                 --------------------------------------
+              
+    Standard SML of New Jersey (SML/NJ) is used for demonstration
+    of the essential characteristics of Miser obs and the universal
+    computational function on obs.
+    
+    This demonstration is expedient in several respects.  The
+    SML/NJ datatype implementation assures certain correctness
+    requirements for obs.  And the SML/NJ REPL (Read-Evaluate-
+    Print Loop) is automatically available for use as a test
+    harness and front end.
+         
+MANIFEST
+
+     SML.txt 
+         this manifest and job-jar file
+        
+      ob.sml
+         Definitions of the datatype and functions that manifest
+         the structure <ob>.
+        
+  obtest.sml 
+         Test script that connects the abstract data type's
+         mathematical characterization and manifestation via
+         the SML/NJ representation.
+         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+
+  * Move screen captures and some other texts into a tutorial subfolder
+    that narrates matters that we want to illustrate.
+    
+  * Use obtest to contrast confirmation by computation and the abstract
+    mathematical conditions that must not be contradicted.
+     
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2017-08-04-12:38 Create placeholder and initial job jar for
+       oMiser mockup development.
+
+                         *** end of SML.txt ***
+                         

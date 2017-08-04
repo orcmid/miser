@@ -1,0 +1,97 @@
+oMiser.txt 0.0.0                    UTF-8                         dh:2017-08-04
+
+                           The Miser Project Code
+                           ======================
+                            
+                    <https://github.com/orcmid/miser/oMiser>
+
+              OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
+              -------------------------------------------------
+              
+    oMiser is the foundation software of The Miser Project.
+    oMiser is the fundamental part of a software pair.
+    
+     - oMiser implements the representation and use of the 
+       abstract structure, <ob> as an encapsulated data-structure
+       and universal machine implementation as a program library.
+        
+     - oFrugal is a front-end processor that offers an interface for
+       external exercise of oMiser functions in a more-practical
+       form for personal exploration and use of oMiser.  
+       
+    It is useful to view oMiser as a machine having obs as the form
+    of its data and its programs.  The obs used as programs or
+    scripts are at the machine-language level.
+    
+    oFrugal implementations provide input-output and other functions
+    that oMiser itself lacks completely.  This is essentially a kind
+    of assembler of oMiser obs and a means to exercise programs
+    written as obs that compute other obs from given ones.
+    
+    There is spiral development, working through many iterations
+    of implementation until stable operation and portability of
+    oMiser and oFrugal are achieved.  Interoperation via recording
+    of oMiser dumps, oFrugal scripts, and distributed connections
+    are developed and extended over time.
+       
+    Stages beyond oMiser are envisioned.  In those cases, oMiser
+    remains as a subordinate form that is relied upon when that
+    is the most required for successful, efficient operation.      
+         
+MANIFEST
+
+    oMiser.txt 
+        this manifest and job-jar file
+        
+    mockups/
+        subtree for experimental mock-ups for demonstration
+        of oMiser representation
+        
+         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+
+  * Complete narration of the mockups folder.
+  
+  * Work up a COM-based interface protected implementation and see whether
+    reference-counting is a workable avoidance of garbage collection by
+    other means.
+    
+  * Check out Henry Baker's approach to using stack drag as a way to have
+    rapid pair construction with only longer-lived material swept to the
+    heap.
+    
+  * Deal with experimental speed-up devices, including tail recursion,
+    to determine whether they are effective storage-reduction measures.
+    
+  * Consider a lab structure alongside the main dev and source-code
+    structures.
+    
+  * Address platform variety (e.g., C/C++ versus .NET, Java, etc.) and
+    also using oMiser at a binary level beneath systems such as Python.
+  
+
+    
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2017-08-04-12:05 Create placeholder and initial job jar for the
+       oMiser code development.
+
+                         *** end of oMiser.txt ***
