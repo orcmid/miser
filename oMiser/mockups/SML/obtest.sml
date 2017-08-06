@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.3                   UTF-8                      dh:2017-08-06
+(* obtest.sml 0.0.4                   UTF-8                      dh:2017-08-06
 
                          OMISER <ob> CONFIRMATION IN SML
                          ===============================
@@ -39,9 +39,11 @@ use "ob.sml";
    It is a consequence that each ob is exactly one of pair, 
    enclosure, and individual and there are no others.  What we 
    don't have is a structural distinction amone individuals.
+   *)
         
         
-(* 0.0.3 2017-08-06-08:10 Clean up statement about distinguishing
+(* 0.0.4 2017-08-06-08:14 Repair erroneous nesting of comments.
+   0.0.3 2017-08-06-08:10 Clean up statement about distinguishing
          individuals.
    0.0.2 2017-08-05-12:10 Touch up the axioms treatment.
    0.0.1 2017-08-04-16:24 Add the definitional axioms.
