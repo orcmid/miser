@@ -1,4 +1,4 @@
-SML.txt 0.0.1                        UTF-8                        dh:2017-08-05
+SML.txt 0.0.2                        UTF-8                        dh:2017-08-06
 
                            The Miser Project Code
                            ======================
@@ -23,8 +23,9 @@ MANIFEST
        SML.txt 
            this manifest and job-jar file
          
- tutorials/  subfolder of tutorial materials supporting the SML
-             mockups
+ tutorials/  
+          subfolder of tutorial materials supporting the SML
+          mockups
         
         ob.sml
            Definitions of the datatype and functions that manifest
@@ -54,14 +55,48 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
 TODO
-
-  * Add tutorials\tutorials.txt for the tutorials folder.
-    
+   
   * Use obtest to contrast confirmation by computation and the abstract
     mathematical conditions that must not be contradicted.
+    
+  * Introduce the constructivity constraints that prevent loops.  This
+    will raise some interesting problems when obs can be named and
+    how foreward reference is disallowed.  This, along with integrity
+    of identification, will be a challenge in the preservation of
+    quasi-Platonism under decentralized, distributed operation.  (Is
+    this a form of referential integrity?)
+    
+  * Introduce the initial conversation on identity around individuals,
+    including their being well-defined and immutable.
+    
+  * Introduce literals so that it is possible to see what we are doing
+    and also demonstrate some things about representation in the absence
+    of valuable types (such as strings), even though we will not get
+    any farther until types can work, perhaps beyond the oMiser level.
+    
+  * Address the run-time exception problem, especially as it will hit us
+    with respect to strong typing.
+    
+  * Look at the non-irreversible architectual change consideration here
+    around typing and also the distribution mechanism.
+    
+  * Account for oMiser as a performance case within a broader set or
+    hierarchy of richer (not just sugar) arrangements in which the
+    oMiser level is distinguished.  (So there are higher-level forms
+    of apply and eval above and beyond ob.ap and ob.ev.)
+    
+  * Raise the fact that, with oMiser, so long as well-definedness is
+    maintained, the application of an individual can involve what would
+    be side-effects except they are never revealed.  This includes
+    caching of things, too.
+    
+  * The oFrugal arrangement is about hosting.  Hold onto that notion.
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2017-08-06-08:55 Add more work items on goals for what the 
+       SML mockup and the mathematical connections are intended to
+       demonstrate.
  0.0.1 2017-08-05-19:54 Move tutorial-intended screen captures to a
        tutorials subfolder
  0.0.0 2017-08-04-12:38 Create placeholder and initial job jar for
