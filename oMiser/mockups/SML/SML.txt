@@ -1,4 +1,4 @@
-SML.txt 0.0.0                        UTF-8                        dh:2017-08-04
+SML.txt 0.0.1                        UTF-8                        dh:2017-08-05
 
                            The Miser Project Code
                            ======================
@@ -20,17 +20,20 @@ SML.txt 0.0.0                        UTF-8                        dh:2017-08-04
          
 MANIFEST
 
-     SML.txt 
-         this manifest and job-jar file
+       SML.txt 
+           this manifest and job-jar file
+         
+ tutorials/  subfolder of tutorial materials supporting the SML
+             mockups
         
-      ob.sml
-         Definitions of the datatype and functions that manifest
-         the structure <ob>.
+        ob.sml
+           Definitions of the datatype and functions that manifest
+           the structure <ob>.
         
-  obtest.sml 
-         Test script that connects the abstract data type's
-         mathematical characterization and manifestation via
-         the SML/NJ representation.
+    obtest.sml 
+           Test script that connects the abstract data type's
+           mathematical characterization and manifestation via
+           the SML/NJ representation.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -52,14 +55,15 @@ MANIFEST
  
 TODO
 
-  * Move screen captures and some other texts into a tutorial subfolder
-    that narrates matters that we want to illustrate.
+  * Add tutorials\tutorials.txt for the tutorials folder.
     
   * Use obtest to contrast confirmation by computation and the abstract
     mathematical conditions that must not be contradicted.
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2017-08-05-19:54 Move tutorial-intended screen captures to a
+       tutorials subfolder
  0.0.0 2017-08-04-12:38 Create placeholder and initial job jar for
        oMiser mockup development.
 
