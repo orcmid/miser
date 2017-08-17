@@ -1,4 +1,4 @@
-tutorials.txt 0.0.1                  UTF-8                        dh:2017-08-12
+tutorials.txt 0.0.2                  UTF-8                        dh:2017-08-17
 
                              The Miser Project Code
                              ======================
@@ -41,7 +41,9 @@ MANIFEST
          <ob> as Abstract Data Type, Part 5
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1942904502590790/>
          
-         
+    ob-2017-08-17-0958-NoExhaustiveTesting.png
+         <ob> As Abstract Data Type, Part 6
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1947722532108987/>
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -68,6 +70,7 @@ TODO
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2017-08-17-10:54 Add capture for <ob> as Abstract Datatype, Part 6
  0.0.1 2017-08-12-19:02 Catalog the tutorial material so far, with the
        identification of where they have been used.
  0.0.0 2017-08-06-08:21 Create placeholder and initial job jar for
