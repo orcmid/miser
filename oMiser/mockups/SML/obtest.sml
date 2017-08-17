@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.4                   UTF-8                      dh:2017-08-06
+(* obtest.sml 0.0.5                   UTF-8                      dh:2017-08-16
 
                          OMISER <ob> CONFIRMATION IN SML
                          ===============================
@@ -38,11 +38,34 @@ use "ob.sml";
         
    It is a consequence that each ob is exactly one of pair, 
    enclosure, and individual and there are no others.  What we 
-   don't have is a structural distinction amone individuals.
-   *)
+   don't have is a structural distinction among individuals.
+   
+   Notation:
+       ⇔ read if-and-only-if which is true only if both are true or
+          both are false, a kind of logical equality relation
+        ∨ is logical or, true when the operands are not both false
+        ∧ is logical and, true when the operands are both true
+        ¬  is logical not, true when the operand is false, false
+              when the operand is true
+                
+   One difference between the mathematical conditions on structure <ob>
+   and a computational realization is in terms of generality.  The
+   mathematical conditions are about any and all obs, simply stated in
+   compact notation.  Computationally, there is no dealing with manifestations 
+   of obs as a totality.  There's an inexhaustive supply, mathematically, and
+   there is no prospect of exhaustive testing of a proper computational
+   manifestation (disregarding that the computational is subject to resource
+   exhaustion and computer failure).
+     
+   Absent proof of successful representation by testing, we require other
+   means to have empirical confidence in the fidelity of a computational
+   manifestation of any abstract mathematical structure such as <ob>.   
+   *) 
         
-        
-(* 0.0.4 2017-08-06-08:14 Repair erroneous nesting of comments.
+(* 0.0.5 2017-08-17-09:55 Add notes about the difference between mathematical
+         generality and the limitation of tested computational manifestations
+         to specificity.
+   0.0.4 2017-08-06-08:14 Repair erroneous nesting of comments.
    0.0.3 2017-08-06-08:10 Clean up statement about distinguishing
          individuals.
    0.0.2 2017-08-05-12:10 Touch up the axioms treatment.
