@@ -1,4 +1,4 @@
-SML.txt 0.0.2                        UTF-8                        dh:2017-08-06
+SML.txt 0.0.3                        UTF-8                        dh:2017-08-19
 
                            The Miser Project Code
                            ======================
@@ -55,6 +55,27 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
 TODO
+
+  * Introduce how the mathematical entities are identified with interpretations
+    in the ob.sml definitions.
+
+  * Defer this part until after the business of identification between 
+    the mathematical theory and the SML interpretation in ob.sml.
+    
+    val oMiser_symbol = ob_c(ob_NIL, ob_e(ob_NIL))
+                        (* pattern of the oMiser logo diagram at
+                           http://miser-theory.info *)
+    fun is_ob_good(z)
+        =        (z = ob_c(ob_a(z), ob_b(z)) andalso is_ob_pair(z))
+          orelse (z = ob_e(ob_a(z)) andalso is_ob_enclosure(z))
+          orelse (ob_a(z) = z andalso ob_b(z) = z andalso is_ob_individual(z))
+      
+    val symbol_ok = is_ob_good(oMiser_symbol) 
+                    andalso is_ob_good(ob_a oMiser_symbol)
+                    andalso is_ob_good(ob_b oMiser_symbol) 
+                    andalso is_ob_good(ob_a (ob_b oMiser_symbol))
+                
+    (* Here, we claim the datatype and related definitions ... *)
    
   * Use obtest to contrast confirmation by computation and the abstract
     mathematical conditions that must not be contradicted.
@@ -91,9 +112,13 @@ TODO
     caching of things, too.
     
   * The oFrugal arrangement is about hosting.  Hold onto that notion.
+  
+  * Add licenses to ob.sml and obtest.sml.  
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2017-08-19-12:11 Add TODOs and advancing treatment of the
+       SML/NJ manifestation as a model of the theoretical <ob> structure.
  0.0.2 2017-08-06-08:55 Add more work items on goals for what the 
        SML mockup and the mathematical connections are intended to
        demonstrate.

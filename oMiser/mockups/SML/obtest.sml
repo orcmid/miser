@@ -60,9 +60,35 @@ use "ob.sml";
    Absent proof of successful representation by testing, we require other
    means to have empirical confidence in the fidelity of a computational
    manifestation of any abstract mathematical structure such as <ob>.   
-   *) 
+   
+   Consider that the ob.sml definitions constitute a valid representa- 
+   tion by identifying and inspecting the intended correspondence.  Here,
+   
+        miser-theory <ob>           ob.sml interpretation
+        -----------------           ---------------------
+        ob.a function               ob_a: ob -> ob
+        ob.b function               ob_b: ob -> ob
+        ob.c function               ob_c: ob * ob -> ob (a constructor)
+        ob.e function               ob_e: ob -> ob (a constructor)
+        ob.is-individual predicate  is_ob_individual: ob -> bool
+        ob.is-singleton predicate   is_ob_singleton: ob -> bool
+        ob.is-pair predicate        is_ob_pair: ob -> bool
+        ob.is-enclosure predicate   is_ob_enclosure: ob -> bool
         
-(* 0.0.5 2017-08-17-09:55 Add notes about the difference between mathematical
+        for obs x,y, whether x = y  (op =), *provisionally*
+        
+   With the choice of names, the correspondence may seem obvious.  However
+   helpful the namings, we must not be misled by them.  The intended
+   interpretations must be explicit and verified, not inferred.  
+   
+   Statement of the theory is incomplete with respect to = and ≠.  It
+   is intended that identity be fully determined and that SML (op =)
+   be sufficient.  
+   *)   
+                    
+(* 0.0.6 2017-08-19-12:07 Identify the miser-theory <ob> with the ob.sml
+         representation, absent the handling of = in the theory.
+   0.0.5 2017-08-17-09:55 Add notes about the difference between mathematical
          generality and the limitation of tested computational manifestations
          to specificity.
    0.0.4 2017-08-06-08:14 Repair erroneous nesting of comments.
