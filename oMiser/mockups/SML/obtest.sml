@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.5                   UTF-8                      dh:2017-08-16
+(* obtest.sml 0.0.7                   UTF-8                      dh:2017-08-21
 
                          OMISER <ob> CONFIRMATION IN SML
                          ===============================
@@ -82,11 +82,37 @@ use "ob.sml";
    interpretations must be explicit and verified, not inferred.  
    
    Statement of the theory is incomplete with respect to = and ≠.  It
-   is intended that identity be fully determined and that SML (op =)
-   be sufficient.  
+   is intended that identity be fully determined.
+   
+   Ob6. Structural Identity
+        u = ob.c(v,w) ∧ z = ob.c(x,y) 
+                   ⇒ (u = z ⇔ v = x ∧ w = y)                  (a)
+        u = ob.e(v) ∧ z = ob.e(x) 
+                   ⇒ (u = z ⇔ v = x)                           (b)
+        ob.is-pair(u) ^ ob.is-singleton(z)
+                   ⇒ u ≠ z                                     (c)
+        ob.is-individual(u) ^ ob.a(z) ≠ z
+                   ⇒ u ≠ z                                     (d)
+                   
+        with ⇒ signifying implication: logical if-then
+                   
+   Ob7. Individual Identity: Named Fixed Individuals
+        Individuals identified by upper-case namings, such as ob.NIL,
+        are distinct if and only if their names differ.  This meta-
+        formalism avoids tedious enumeration of cases.
+        
+   With representation of named fixed individuals (such as ob.NIL) by
+   similarly-spelled SML ob datatype unitary constructors (such as ob_NIL),
+   the SML (op =) and (op <>)  are claimed as interpretations of the miser-
+   theory = and ≠ relations. 
+   
+   For the claim to be valid, there is a discrepancy to resolve in the
+   mathematical characterization of abstract obs.
    *)   
                     
-(* 0.0.6 2017-08-19-12:07 Identify the miser-theory <ob> with the ob.sml
+(* 0.0.7 2017-08-21-08:39 Tighten identity among miser-theory obs and 
+         correspondence of SML (op =) and (op <>) operations.
+   0.0.6 2017-08-19-12:07 Identify the miser-theory <ob> with the ob.sml
          representation, absent the handling of = in the theory.
    0.0.5 2017-08-17-09:55 Add notes about the difference between mathematical
          generality and the limitation of tested computational manifestations
