@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.7                   UTF-8                      dh:2017-08-21
+(* obtest.sml 0.0.8                   UTF-8                      dh:2017-08-21
 
                          OMISER <ob> CONFIRMATION IN SML
                          ===============================
@@ -96,12 +96,16 @@ use "ob.sml";
                    
         with ⇒ signifying implication: logical if-then
                    
-   Ob7. Individual Identity: Named Fixed Individuals
+   Ob7. Identity Among Primitive Individuals
         Individuals identified by upper-case namings, such as ob.NIL,
-        are distinct if and only if their names differ.  This meta-
-        formalism avoids tedious enumeration of cases.
+        are distinct if and only if their names differ.  Those 
+        individuals are also distinct from individuals of any other
+        kind that may arise. 
         
-   With representation of named fixed individuals (such as ob.NIL) by
+   There are a limited number of fixed-name primitive individuals.  They
+   can be taken as given.  They are not definable in terms of others.
+      
+   With representation of primitive individuals (such as ob.NIL) by
    similarly-spelled SML ob datatype unitary constructors (such as ob_NIL),
    the SML (op =) and (op <>)  are claimed as interpretations of the miser-
    theory = and ≠ relations. 
@@ -110,7 +114,8 @@ use "ob.sml";
    mathematical characterization of abstract obs.
    *)   
                     
-(* 0.0.7 2017-08-21-08:39 Tighten identity among miser-theory obs and 
+(* 0.0.8 2017-08-21-11:29 Adjust Ob7 to Named Primitive Individuals
+   0.0.7 2017-08-21-08:39 Tighten identity among miser-theory obs and 
          correspondence of SML (op =) and (op <>) operations.
    0.0.6 2017-08-19-12:07 Identify the miser-theory <ob> with the ob.sml
          representation, absent the handling of = in the theory.
