@@ -1,4 +1,4 @@
-tutorials.txt 0.0.3                  UTF-8                        dh:2017-08-19
+tutorials.txt 0.0.4                  UTF-8                        dh:2017-08-21
 
                              The Miser Project Code
                              ======================
@@ -48,6 +48,10 @@ MANIFEST
     ob-2017-08-19-1213-InterpretingObInSML.png
          <ob> as Abstract Data Type, Part 7
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1948522398695667/>
+      
+    ob-2017-08-21-0839-Theory2ob.sml-Identity.png
+         <ob> as Abstract Data Type, part 8
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1949233065291267/>
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -74,7 +78,9 @@ TODO
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.3 2017-08-19-12:37 Add capture for <ob> as Anbstrat Datatype, Part 7
+ 0.0.4 2017-08-21-10:38 Use more-consistent "Abstract Data Type" usage. Add
+       capture for <ob> as Abstract Datatype, Part 8
+ 0.0.3 2017-08-19-12:37 Add capture for <ob> as Abstract Datatype, Part 7
  0.0.2 2017-08-17-10:54 Add capture for <ob> as Abstract Datatype, Part 6
  0.0.1 2017-08-12-19:02 Catalog the tutorial material so far, with the
        identification of where they have been used.
