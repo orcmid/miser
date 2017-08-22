@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.8                   UTF-8                      dh:2017-08-21
+(* obtest.sml 0.0.9                   UTF-8                      dh:2017-08-22
 
                          OMISER <ob> CONFIRMATION IN SML
                          ===============================
@@ -20,9 +20,11 @@ use "ob.sml";
    similarity is coincidental, although perhaps similarly-motivated.
    
    Ob1. Pairs.
+        z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
         z = ob.c(ob.a(z),ob.b(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) ≠ z
        
    Ob2. Enclosures.
+        z = ob.e(x) ⇒ ob.a(z) = x ∧ ob.b(z) = z
         z = ob.e(ob.a(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) = z
        
    Ob3. Individuals.
@@ -37,12 +39,13 @@ use "ob.sml";
         ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z)
         
    It is a consequence that each ob is exactly one of pair, 
-   enclosure, and individual and there are no others.  What we 
-   don't have is a structural distinction among individuals.
+   enclosure, and individual and there are no others.  Further
+   distinctions are introduced at Ob6-Ob9, below.
    
    Notation:
        ⇔ read if-and-only-if which is true only if both are true or
           both are false, a kind of logical equality relation
+       ⇒ signifies implication: logical if-then
         ∨ is logical or, true when the operands are not both false
         ∧ is logical and, true when the operands are both true
         ¬  is logical not, true when the operand is false, false
@@ -87,14 +90,14 @@ use "ob.sml";
    Ob6. Structural Identity
         u = ob.c(v,w) ∧ z = ob.c(x,y) 
                    ⇒ (u = z ⇔ v = x ∧ w = y)                  (a)
+        
         u = ob.e(v) ∧ z = ob.e(x) 
                    ⇒ (u = z ⇔ v = x)                           (b)
+        
         ob.is-pair(u) ^ ob.is-singleton(z)
                    ⇒ u ≠ z                                     (c)
         ob.is-individual(u) ^ ob.a(z) ≠ z
                    ⇒ u ≠ z                                     (d)
-                   
-        with ⇒ signifying implication: logical if-then
                    
    Ob7. Identity Among Primitive Individuals
         Individuals identified by upper-case namings, such as ob.NIL,
@@ -110,11 +113,48 @@ use "ob.sml";
    the SML (op =) and (op <>)  are claimed as interpretations of the miser-
    theory = and ≠ relations. 
    
-   For the claim to be valid, there is a discrepancy to resolve in the
-   mathematical characterization of abstract obs.
+   There is a discrepancy between the mathematical formulation so far and the
+   way SML handles structural identity.  Consider these propositions:
+   
+               w = ob.c(u,v)
+               v = ob.e(w)
+               
+   This prospect conflicts with the desire that no ob formally depend on 
+   anything that depends on it.  Such cases are excluded by imposing a partial
+   ordering on obs.
+   
+   Ob8. The ¶ Precedes Relation
+   
+        ¬ (x ¶ x)                                (a), irreflexive
+        (x ¶ y) ⇒ ¬ (y ¶ x)                      (b), non-commutative
+        (x ¶ y) ∧ (y ¶ z) ⇒ (x ¶ z)             (c), transitive
+        
+        x = y ⇔ ¬ (x ¶ y) ∧ ¬ (y ¶ x)           (d), ordering
+        
+        z = ob.e(y) ⇔ (y ¶ z)                    (e), construction
+        z = ob.c(x,y) ⇔ (x ¶ z) ∧ (y ¶ z)
+        
+        ob.is-individual(x) ⇒ x ¶ ob.e(x)         (f), floating     
+        ob.is-individual(x) ⇒ x ¶ ob.c(x,y)      
+        ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
+   
+   There is no requirement to explicate relation ¶ in an interpretation.
+   It is sufficient to assure that an interpretation cannot manifest an
+   ob that depends on anything that depends on it.  
+   
+   Ob9. Denumerability.
+        The set Ob consists of all distinct, finitely-expressible obs 
+        satisfying conditions Ob1-Ob8 and having no occurrences of ob.a 
+        and ob.b in their formulation.  The individuals are denumerable.
+        
+   Ob is unbounded and denumerable provided that the individuals be 
+   denumerable.
    *)   
                     
-(* 0.0.8 2017-08-21-11:29 Adjust Ob7 to Named Primitive Individuals
+(* 0.0.9 2017-08-22-09:53 Demonstrate the case to be eliminated and employ
+         the ¶ relationship to impose partial ordering over finite obs.
+         Expand Ob1-Ob2 so that ob.a and ob.b are determined explicitly.
+   0.0.8 2017-08-21-11:29 Adjust Ob7 to Named Primitive Individuals
    0.0.7 2017-08-21-08:39 Tighten identity among miser-theory obs and 
          correspondence of SML (op =) and (op <>) operations.
    0.0.6 2017-08-19-12:07 Identify the miser-theory <ob> with the ob.sml
