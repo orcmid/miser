@@ -1,4 +1,4 @@
-SML.txt 0.0.3                        UTF-8                        dh:2017-08-19
+SML.txt 0.0.4                        UTF-8                        dh:2017-08-23
 
                            The Miser Project Code
                            ======================
@@ -56,9 +56,6 @@ MANIFEST
  
 TODO
 
-  * Introduce how the mathematical entities are identified with interpretations
-    in the ob.sml definitions.
-
   * Defer this part until after the business of identification between 
     the mathematical theory and the SML interpretation in ob.sml.
     
@@ -76,15 +73,10 @@ TODO
                     andalso is_ob_good(ob_a (ob_b oMiser_symbol))
                 
     (* Here, we claim the datatype and related definitions ... *)
-   
-  * Use obtest to contrast confirmation by computation and the abstract
-    mathematical conditions that must not be contradicted.
-    
-  * Introduce the constructivity constraints that prevent loops.  This
-    will raise some interesting problems when obs can be named and
-    how foreward reference is disallowed.  This, along with integrity
-    of identification, will be a challenge in the preservation of
-    quasi-Platonism under decentralized, distributed operation.  (Is
+      
+  * Account for the challenge of avoiding forward references and preservation
+    of identity conditions for preservation of quasi-Platonism under
+    decentralized, distributed operation.  (Is
     this a form of referential integrity?)
     
   * Introduce the initial conversation on identity around individuals,
@@ -114,9 +106,16 @@ TODO
   * The oFrugal arrangement is about hosting.  Hold onto that notion.
   
   * Add licenses to ob.sml and obtest.sml.  
+  
+  * Extract the theoretical stuff from the obtest.sml and have it as
+    obtheory.txt at the oMiser level where characterization of <ob> belongs.
+    
+  * Adjust obtest.sml and ob.sml to point to the obtheory.txt definition.
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-08-23-10:08 Remove accomplished TODOs, add need to extract and
+       elevate the <ob> miser-theory for the Ob set.
  0.0.3 2017-08-19-12:11 Add TODOs and advancing treatment of the
        SML/NJ manifestation as a model of the theoretical <ob> structure.
  0.0.2 2017-08-06-08:55 Add more work items on goals for what the 
