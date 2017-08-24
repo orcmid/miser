@@ -1,0 +1,152 @@
+obtheory.txt 0.0.10                  UTF-8                      dh:2017-08-24
+
+                          oMISER THEORETICAL CONCEPTION
+                          =============================
+                            
+            <https://github.com/orcmid/miser/oMiser/obtheory.txt>
+
+                           ‹ob› MATHEMATICAL STRUCTURE
+                           ---------------------------
+                        
+   The mathematical structure, ‹ob› = 〈Ob,Of,Ot〉consists of
+   
+           Ob, all of the obs
+           Of, all functions on obs
+           Ot, the applied logic in which the structure is 
+               characterized
+
+LOGICAL NOTATION
+               
+   For Ot, standard first-order logic with equality is employed.  An 
+   equational format is used with variables understood to be universally
+   quantified over the domain of discourse, Ob.  Set theory is not
+   employed.
+   
+   Specific predicates and functions are introduced by presentation of
+   their characteristics in axioms that distinguish them.
+
+       ⇔ read if-and-only-if which is true only if both are true or
+          both are false, a kind of logical equality relation
+          
+       ⇒ signifies implication: logical if-then
+       
+       ∨ is logical or, true when the operands are not both false
+       
+       ∧ is logical and, true when the operands are both true
+       
+       ¬  is logical not, true when the operand is false, false
+          when the operand is true
+          
+       =  is the identity relationship, with ≠ its negation
+       
+       ¶  is an ordering relationship that applies over Ob
+
+
+PRIMITIVE NOTIONS
+
+   Functions ob.a, ob.b, ob.c, ob.e and allied relations are taken
+   as given.
+   
+   Ob1. Pairs
+        z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
+        z = ob.c(ob.a(z),ob.b(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) ≠ z
+       
+   Ob2. Enclosures
+        z = ob.e(x) ⇒ ob.a(z) = x ∧ ob.b(z) = z
+        z = ob.e(ob.a(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) = z
+       
+   Ob3. Individuals
+        ob.is-individual(z) ⇔ ob.a(z) = z ∧ ob.b(z) = z
+       
+   Ob4. Structural Discrimination Predicates
+        ob.is-singleton(z) ⇔ ob.b(z) = z.
+        ob.is-pair(z) ⇔ ¬ ob.is-singleton(z)
+        ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
+        
+   Ob5. Totality
+        ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z)
+        
+        It is a consequence that each ob is exactly one of pair, 
+        enclosure, and individual and there are no others. 
+      
+   Ob6. Structural Identity
+        u = ob.c(v,w) ∧ z = ob.c(x,y) 
+                   ⇒ (u = z ⇔ v = x ∧ w = y)                  (a)
+        
+        u = ob.e(v) ∧ z = ob.e(x) 
+                   ⇒ (u = z ⇔ v = x)                           (b)
+        
+        ob.is-pair(u) ^ ob.is-singleton(z)
+                   ⇒ u ≠ z                                     (c)
+                   
+        ob.is-individual(u) ^ ob.a(z) ≠ z
+                   ⇒ u ≠ z                                     (d)
+                   
+   Ob7. Identity Among Primitive Individuals
+        Individuals identified by upper-case namings, such as ob.NIL,
+        are distinct if and only if their names differ.  Those 
+        individuals are also distinct from individuals of any other
+        kind that may arise. 
+        
+        There are a limited number of fixed-name primitive individuals.  
+        They can be taken as given.  They are not definable in terms of 
+        others.
+         
+   Ob8. The ¶ Precedence Condition
+   
+        ¬ (x ¶ x)                                (a), irreflexive
+        (x ¶ y) ⇒ ¬ (y ¶ x)                      (b), non-commutative
+        (x ¶ y) ∧ (y ¶ z) ⇒ (x ¶ z)             (c), transitive
+        
+        x = y ⇔ ¬ (x ¶ y) ∧ ¬ (y ¶ x)           (d), ordering
+        
+        z = ob.e(y) ⇔ (y ¶ z)                    (e), construction
+        z = ob.c(x,y) ⇔ (x ¶ z) ∧ (y ¶ z)
+        
+        ob.is-individual(x) ⇒ x ¶ ob.e(x)         (f), floating     
+        ob.is-individual(x) ⇒ x ¶ ob.c(x,y)      
+        ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
+     
+   Ob9. Denumerability
+        Ob consists of all distinct, finitely-expressible obs satisfying
+        conditions Ob1-Ob8 and having no occurrences of ob.a and ob.b
+        in their formulation.  The individuals are denumerable.
+        
+        Ob is unbounded and denumerable provided that the individuals be 
+        denumerable.
+
+   
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+
+ * Provide a stable location for obtheory version progressions on 
+   <http://miser-theory.info>.
+   
+ * Confirm that the notation characters are preserved/presented on the
+   different storage media.
+   
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.10 2017-08-24-10:17 Adapted from the SML mockup obtest.sml 0.0.9 for
+        reference in all mockups and the expanded development for oMiser.
+
+
+                          *** end of obtheory.txt ***                               
+   

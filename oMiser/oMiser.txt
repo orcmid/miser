@@ -1,4 +1,4 @@
-oMiser.txt 0.0.0                    UTF-8                         dh:2017-08-04
+oMiser.txt 0.0.1                    UTF-8                         dh:2017-08-24
 
                            The Miser Project Code
                            ======================
@@ -12,7 +12,7 @@ oMiser.txt 0.0.0                    UTF-8                         dh:2017-08-04
     oMiser is the fundamental part of a software pair.
     
      - oMiser implements the representation and use of the 
-       abstract structure, <ob> as an encapsulated data-structure
+       abstract structure, ‹ob› as an encapsulated data-structure
        and universal machine implementation as a program library.
         
      - oFrugal is a front-end processor that offers an interface for
@@ -21,7 +21,8 @@ oMiser.txt 0.0.0                    UTF-8                         dh:2017-08-04
        
     It is useful to view oMiser as a machine having obs as the form
     of its data and its programs.  The obs used as programs or
-    scripts are at the machine-language level.
+    scripts are akin to the machine-/assembly-language of conventional
+    digital computers.
     
     oFrugal implementations provide input-output and other functions
     that oMiser itself lacks completely.  This is essentially a kind
@@ -43,9 +44,13 @@ MANIFEST
     oMiser.txt 
         this manifest and job-jar file
         
+    obtheory.txt
+        specification of the <ob> abstract mathematical structure
+        any computationally-implemented manifestation must satisfy.
+        
     mockups/
-        subtree for experimental mock-ups for demonstration
-        of oMiser representation
+        subtree for experimental mock-ups that demonstrate oMiser
+        features
         
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -67,8 +72,6 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
 TODO
-
-  * Complete narration of the mockups folder.
   
   * Work up a COM-based interface protected implementation and see whether
     reference-counting is a workable avoidance of garbage collection by
@@ -86,11 +89,15 @@ TODO
     
   * Address platform variety (e.g., C/C++ versus .NET, Java, etc.) and
     also using oMiser at a binary level beneath systems such as Python.
-  
-
+    
+  * Capture the procedure by which an implementation is verified to
+    be a valid interpretation of obtheory and the other mathematically-
+    characterized functions that are introduced. 
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,
+       ‹ob›, that all oMiser implementations must manifest correctly.
  0.0.0 2017-08-04-12:05 Create placeholder and initial job jar for the
        oMiser code development.
 
