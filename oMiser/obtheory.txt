@@ -1,6 +1,6 @@
-obtheory.txt 0.0.10                  UTF-8                      dh:2017-08-24
+obtheory.txt 0.0.11                  UTF-8                       dh:2017-08-26
 
-                          oMISER THEORETICAL CONCEPTION
+                          MISER THEORETICAL CONCEPTION
                           =============================
                             
             <https://github.com/orcmid/miser/oMiser/obtheory.txt>
@@ -23,29 +23,35 @@ LOGICAL NOTATION
    employed.
    
    Specific predicates and functions are introduced by presentation of
-   their characteristics in axioms that distinguish them.
+   their characteristics in mathematical axioms that distinguish them.  The
+   logical theory is expressed using the following notation.
 
-       ⇔ read if-and-only-if which is true only if both are true or
-          both are false, a kind of logical equality relation
+      p ⇔ q read p if-and-only-if q, true when true both are true or
+             both are false, a kind of logical equality relation
           
-       ⇒ signifies implication: logical if-then
+      p ⇒ q read if p then q: when p is true, the truth of q is
+             deducible from the truth of p ⇒ q
        
-       ∨ is logical or, true when the operands are not both false
+      p ∨ q is logical or, true when p and q are not both false
        
-       ∧ is logical and, true when the operands are both true
+      p ∧ q is logical and, true when p and q are both true
        
-       ¬  is logical not, true when the operand is false, false
-          when the operand is true
+        ¬ p is logical not, true when p is false, false when q is true
           
-       =  is the identity relationship, with ≠ its negation
+      x = y is the identity relationship, with ≠ its negation
        
-       ¶  is an ordering relationship that applies over Ob
+      x ¶ y is an ordering relationship that applies over Ob
+            read as x precedes y
 
+   Although these can be seen as rules for computation, Ot is a deductive
+   theory.  E.g., if it is asserted that p ⇔ q and also ¬ p, deduction
+   that ¬ q is true is the logical inference; if it is asserted that p ⇒ q
+   and also p, deduction that q is true is the logical inference.   
 
 PRIMITIVE NOTIONS
 
    Functions ob.a, ob.b, ob.c, ob.e and allied relations are taken
-   as given.
+   as given and complete.
    
    Ob1. Pairs
         z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
@@ -144,6 +150,8 @@ TODO
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2017-08-26-09:56 Smooth the description of the logical notation and
+        distinguish it from similar-appearing computational operations
  0.0.10 2017-08-24-10:17 Adapted from the SML mockup obtest.sml 0.0.9 for
         reference in all mockups and the expanded development for oMiser.
 
