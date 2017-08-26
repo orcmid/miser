@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.9                   UTF-8                      dh:2017-08-22
+(* obtest.sml 0.0.10                   UTF-8                      dh:2017-08-**
 
                          OMISER <ob> CONFIRMATION IN SML
                          ===============================
@@ -12,45 +12,7 @@
    
 use "ob.sml";
 
-(* SOME <ob> AXIOMS.  
-   Here conventional mathematical equations are used as essential
-   axioms and useful helpers.  These features must apply for any
-   manifestation via computer representation. NOTE: The use of "." 
-   here is independent of the same use in SML/NJ notation.  The 
-   similarity is coincidental, although perhaps similarly-motivated.
-   
-   Ob1. Pairs.
-        z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
-        z = ob.c(ob.a(z),ob.b(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) ≠ z
-       
-   Ob2. Enclosures.
-        z = ob.e(x) ⇒ ob.a(z) = x ∧ ob.b(z) = z
-        z = ob.e(ob.a(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) = z
-       
-   Ob3. Individuals.
-        ob.is-individual(z) ⇔ ob.a(z) = z ∧ ob.b(z) = z
-       
-   Ob4. Structural Discrimination Predicates
-        ob.is-singleton(z) ⇔ ob.b(z) = z.
-        ob.is-pair(z) ⇔ ¬ ob.is-singleton(z)
-        ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
-        
-   Ob5. Totality
-        ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z)
-        
-   It is a consequence that each ob is exactly one of pair, 
-   enclosure, and individual and there are no others.  Further
-   distinctions are introduced at Ob6-Ob9, below.
-   
-   Notation:
-       ⇔ read if-and-only-if which is true only if both are true or
-          both are false, a kind of logical equality relation
-       ⇒ signifies implication: logical if-then
-        ∨ is logical or, true when the operands are not both false
-        ∧ is logical and, true when the operands are both true
-        ¬  is logical not, true when the operand is false, false
-              when the operand is true
-                
+(*             
    One difference between the mathematical conditions on structure <ob>
    and a computational realization is in terms of generality.  The
    mathematical conditions are about any and all obs, simply stated in
@@ -151,7 +113,9 @@ use "ob.sml";
    denumerable.
    *)   
                     
-(* 0.0.9 2017-08-22-09:53 Demonstrate the case to be eliminated and employ
+(* 0.0.10 2017-08-**-**:** Factor out obtheory.txt and add correspondence
+          of interpretation to ob.sml.  
+   0.0.9 2017-08-22-09:53 Demonstrate the case to be eliminated and employ
          the ¶ relationship to impose partial ordering over finite obs.
          Expand Ob1-Ob2 so that ob.a and ob.b are determined explicitly.
    0.0.8 2017-08-21-11:29 Adjust Ob7 to Named Primitive Individuals
