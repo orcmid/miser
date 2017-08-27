@@ -1,13 +1,18 @@
-(* ob.sml 0.0.6                       UTF-8                      dh:2017-08-26
+(* ob.sml 0.0.7                       UTF-8                      dh:2017-08-27
 
-                       OMISER <ob> INTERPRETATION IN SML
-                       =================================
+                       OMISER ‹ob› INTERPRETATION IN SML
+                       ================================
                        
            <https://github.com/orcmid/miser/oMiser/mockups/SML/ob.sml>
+           
+                      DEFINITION OF THE SML ob DATATYPE
+                      ---------------------------------
                          
    A computational manifestation of the mathematical structure, ‹ob›, in
    Standard ML of New Jersey (SML/NJ).  For the mathematical formulation,
-   see <https://github.com/orcmid/miser/oMiser/obtheory.txt>.
+   see <https://github.com/orcmid/miser/oMiser/obtheory.txt>.  See
+   <https://github.com/orcmid/miser/oMiser/mockups/SML/obtest.sml>
+   for consideration of the soundness of the interpretation. 
    *)
    
 datatype ob = ob_c of ob * ob  
@@ -48,7 +53,7 @@ fun is_ob_enclosure x
         for obs x,y, whether x = y  (op =)
         for obs x,y, whether x ¶ y  implicit in SML constructions
       
-   The definitions of fun ob_a and fun ob_b are invariate.  Consequently,
+   The definitions of fun ob_a and fun ob_b are invariant.  Consequently,
    any extensions of the ob datatype have interpretation as individuals.  
    
    With the choice of names, the correspondence may seem obvious.  However
@@ -83,6 +88,8 @@ TODO
    namespace.
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   0.0.7 2017-08-27-11:57 Switch to ‹ob› and tie the three files together.
+         Perform some wordsmithing, including specialized notion of soundness.
    0.0.6 2017-08-26-11:37 Recast as an interpretation of obtheory in
          in SML/NJ.  Add license and GitHub location information.
    0.0.5 2017-07-28-11:22 Complete the quartet of structural predicates.
