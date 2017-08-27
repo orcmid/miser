@@ -1,4 +1,4 @@
-SML.txt 0.0.4                        UTF-8                        dh:2017-08-23
+SML.txt 0.0.5                        UTF-8                        dh:2017-08-27
 
                            The Miser Project Code
                            ======================
@@ -105,15 +105,13 @@ TODO
     
   * The oFrugal arrangement is about hosting.  Hold onto that notion.
   
-  * Add licenses to ob.sml and obtest.sml.  
-  
-  * Extract the theoretical stuff from the obtest.sml and have it as
-    obtheory.txt at the oMiser level where characterization of <ob> belongs.
-    
-  * Adjust obtest.sml and ob.sml to point to the obtheory.txt definition.
+  * Add license to obtest.sml when the narration is completed.  
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.5 2017-08-27-15:48 Make ob.sml an interpretation of obtheory and have
+       that be explicit in the ob.sml file now.  Refactor so that obtest
+       is now just for informally-argued confirmation of the interpretation.
  0.0.4 2017-08-23-10:08 Remove accomplished TODOs, add need to extract and
        elevate the <ob> miser-theory for the Ob set.
  0.0.3 2017-08-19-12:11 Add TODOs and advancing treatment of the
