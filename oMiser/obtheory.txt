@@ -1,4 +1,4 @@
-obtheory.txt 0.0.11                  UTF-8                       dh:2017-08-26
+obtheory.txt 0.0.12                  UTF-8                       dh:2017-08-27
 
                           MISER THEORETICAL CONCEPTION
                           =============================
@@ -29,8 +29,8 @@ LOGICAL NOTATION
       p ⇔ q read p if-and-only-if q, true when true both are true or
              both are false, a kind of logical equality relation
           
-      p ⇒ q read if p then q: when p is true, the truth of q is
-             deducible from the truth of p ⇒ q
+      p ⇒ q read if p then q and when true, the truth of q is
+             deducible from the truth of p
        
       p ∨ q is logical or, true when p and q are not both false
        
@@ -40,13 +40,15 @@ LOGICAL NOTATION
           
       x = y is the identity relationship, with ≠ its negation
        
-      x ¶ y is an ordering relationship that applies over Ob
-            read as x precedes y
+      x ¶ y read as x precedes y, an ordering relationship that applies 
+            over Ob
 
    Although these can be seen as rules for computation, Ot is a deductive
    theory.  E.g., if it is asserted that p ⇔ q and also ¬ p, deduction
-   that ¬ q is true is the logical inference; if it is asserted that p ⇒ q
-   and also p, deduction that q is true is the logical inference.   
+   that ¬ q is true is a logical inference; if it is asserted that p ⇒ q
+   and also p, deduction that q is true is a logical inference.  The law
+   of excluded middle holds.  It is the case that ¬(p ∧ ¬p) and also
+    ¬(¬p) ⇔ p and (p ⇒ q) ⇔ (¬p ∨ q).
 
 PRIMITIVE NOTIONS
 
@@ -150,6 +152,7 @@ TODO
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2017-08-27-11:43 Wordsmithing and assertion of classical conditions.
  0.0.11 2017-08-26-09:56 Smooth the description of the logical notation and
         distinguish it from similar-appearing computational operations
  0.0.10 2017-08-24-10:17 Adapted from the SML mockup obtest.sml 0.0.9 for
