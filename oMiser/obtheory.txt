@@ -1,4 +1,4 @@
-obtheory.txt 0.0.12                  UTF-8                       dh:2017-08-27
+obtheory.txt 0.0.13                  UTF-8                       dh:2017-08-28
 
                           MISER THEORETICAL CONCEPTION
                           =============================
@@ -6,7 +6,7 @@ obtheory.txt 0.0.12                  UTF-8                       dh:2017-08-27
             <https://github.com/orcmid/miser/oMiser/obtheory.txt>
 
                            ‹ob› MATHEMATICAL STRUCTURE
-                           ---------------------------
+                           --------------------------
                         
    The mathematical structure, ‹ob› = 〈Ob,Of,Ot〉consists of
    
@@ -150,8 +150,11 @@ TODO
  * Confirm that the notation characters are preserved/presented on the
    different storage media.
    
+ * Figure out what to do about well-definedness.  Is this an Ob10 condition?
+   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.13 2017-08-28-08:56 Touch-up and add TODO about well-definedness
  0.0.12 2017-08-27-11:43 Wordsmithing and assertion of classical conditions.
  0.0.11 2017-08-26-09:56 Smooth the description of the logical notation and
         distinguish it from similar-appearing computational operations
