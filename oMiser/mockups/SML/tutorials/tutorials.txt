@@ -1,4 +1,4 @@
-tutorials.txt 0.0.7                  UTF-8                        dh:2017-08-29
+tutorials.txt 0.0.8                  UTF-8                        dh:2017-08-29
 
                              The Miser Project Code
                              ======================
@@ -78,7 +78,10 @@ MANIFEST
              Refactored
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1952187788329128/>
          
-    
+    ob-2017-08-29-1321-obtest-Soundness.png
+         ‹ob› as Abstract Data Type, Part 14 - Verifying the SML Interpretation
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1952234034991170/>
+         
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -107,6 +110,8 @@ TODO
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2017-08-29-13:50 Add the capture used in ‹ob› as Abstract Data Type, 
+       Part 14
  0.0.7 2017-08-29-10:55 Add the captures used for ‹ob› as Abstract Data Type, 
        Parts 11-13
  0.0.6 2017-08-23-09:59 Bring current with the Part 5 correction and the
