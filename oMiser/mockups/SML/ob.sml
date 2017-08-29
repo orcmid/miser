@@ -1,4 +1,4 @@
-(* ob.sml 0.0.7                       UTF-8                      dh:2017-08-27
+(* ob.sml 0.0.8                       UTF-8                      dh:2017-08-29
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -19,15 +19,15 @@ datatype ob = ob_c of ob * ob
             | ob_e of ob       
             | ob_NIL          
                 
-fun ob_a(x) = case x of
-              ob_c(a, _) => a
-            | ob_e(a) => a
-            | _ => x
+fun ob_a(x) = case x 
+                of ob_c(a, _) => a
+                 | ob_e(a) => a
+                 | _ => x
             
-fun ob_b(x) = case x of  
-              ob_c(_, b) => b  
-            | _ => x          
-      
+fun ob_b(x) = case x 
+                of ob_c(_, b) => b  
+                 | _ => x          
+        
 fun is_ob_singleton x = ob_b(x) = x
 
 fun is_ob_individual x = ob_a(x) = x
@@ -88,6 +88,8 @@ TODO
    namespace.
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   0.0.8 2017-08-29-13:04 Touch up layout to reflect my preferred style of
+         indentation.
    0.0.7 2017-08-27-11:57 Switch to ‹ob› and tie the three files together.
          Perform some wordsmithing, including specialized notion of soundness.
    0.0.6 2017-08-26-11:37 Recast as an interpretation of obtheory in
