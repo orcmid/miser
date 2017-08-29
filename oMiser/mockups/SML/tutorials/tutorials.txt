@@ -1,4 +1,4 @@
-tutorials.txt 0.0.6                  UTF-8                        dh:2017-08-23
+tutorials.txt 0.0.7                  UTF-8                        dh:2017-08-29
 
                              The Miser Project Code
                              ======================
@@ -64,6 +64,19 @@ MANIFEST
     ob-2017-08-22-0953-DenumerableOrdering.png
          <ob> as Abstract Data Type, Part 10
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1949639558583951/>
+     
+    ob-2017-08-28-0910-obtheory-Notation.png
+         ‹ob› as Abstract Data Type, Part 11 - Logical Notation Refactored
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1951794215035152/>
+         
+    ob-2017-08-28-09-35-obtheory-PrimitiveNotions.png
+         ‹ob› as Abstract Data Type, Part 12 - Primitive Notions Refactored
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1951801151701125/>
+         
+    ob-2017-08-29-1026-ob-SML-datatype.png
+         ‹ob› as Abstract Data Type, Part 13 - SML Datatype Representation -
+             Refactored
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1952187788329128/>
          
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -88,9 +101,14 @@ TODO
 
  * Have non-GitHub preservation, ideally on static web pages under the
    Miser Project at http://miser-theory.info
+   
+ * Put some of these on Flickr also, now that I have stabilized some of these
+   well enough for now.
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.7 2017-08-29-10:55 Add the captures used for ‹ob› as Abstract Data Type, 
+       Parts 11-13
  0.0.6 2017-08-23-09:59 Bring current with the Part 5 correction and the
        <ob> as Abstract Data Type, part 10.  Expand consistent naming.
  0.0.5 2017-08-21-11:54 Add <ob> as Abstract Data Type, Part 9 capture
