@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.10                   UTF-8                      dh:2017-08-27
+(* obtest.sml 0.0.11                   UTF-8                      dh:2017-08-29
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -30,21 +30,22 @@
    sound: informal argument and formal proof.
    
     1. Informal Argument.
-       We appeal to the predictable behavior of SML/NJ implementations to claim
-       that the interpretation satisfies the conditions of the ‹ob› theory.  Test
-       cases are provided to demonstrate that no obvious aberration has been
-       introduced.  Rely on the dependability of systematic SML/NJ behavior.
+       Appeal to predictable behavior of SML/NJ implementations.  Claim that
+       the interpretation satisfies all conditions of ‹ob› theory.  Provide
+       test that demonstrate no obvious aberration is present.  Rely on the 
+       dependability of systematic SML/NJ behavior.
        
     2. Formal (mechanical) Proof.
-       Given representation of SML/NJ semantics in a mathematical formalism,
-       one might apply proof techniques to establish that the ‹ob› structure
-       conditions are satisfied by the interpretation.  That is a worthwhile
-       topic, with its own difficulties, to be taken up later.
+       Given presentation of SML/NJ semantics in a mathematical formalism,
+       apply proof techniques to establish that the ‹ob› structure conditions
+       are satisfied by the interpretation.  That is a worthwhile approach,
+       with its own difficulties, to be taken up later.
    *)
    
 use "ob.sml";
                   
-(* 0.0.10 2017-08-27-15:42 Factor the mathematical treatment into obtheory.txt.
+(* 0.0.11 2017-08-29-13:19 Improve some wordings
+   0.0.10 2017-08-27-15:42 Factor the mathematical treatment into obtheory.txt.
           Assert the interpretation correspondence in ob.sml.  Setup the 
           confirmation of interpretation soundness by informal argument and
           straightforward demonstrations.  
