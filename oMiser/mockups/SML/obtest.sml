@@ -1,4 +1,4 @@
-(* obtest.sml 0.0.11                   UTF-8                      dh:2017-08-29
+(* obtest.sml 0.0.12                   UTF-8                      dh:2017-08-30
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -43,8 +43,116 @@
    *)
    
 use "ob.sml";
+
+(* DEMONSTRATE PRIMITIVES 
+   These are simple confirming demonstrations.  They are not proofs. 
+   They check simple cases just to ensure that nothing blatant has gone
+   amiss.  These results are predictable from the declarations in 
+   ob.sml.  Note: None of these appeal directly to the SML datatype and
+   especially patterns based on the SML ob datatype.
+   *)
+
+val ob_logo = ob_c(ob_NIL, ob_e(ob_NIL))
+              (* pattern of the oMiser logo diagram at 
+                 <http://miser-theory.info> *)
+val nob_logo = ob_e(ob_logo)
+                 
+(* Ob1. Pairs
+        z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
+        z = ob.c(ob.a(z),ob.b(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) ≠ z
+        *)                 
+                 
+val ckOb1a = let val z = ob_c(ob_e(ob_logo),ob_NIL)
+              in ob_a(z) = ob_e(ob_logo) andalso ob_b(z) = ob_NIL
+             end
+           
+val ckOb1b = let val z = ob_c(ob_a(ob_logo),ob_b(ob_logo))
+              in z = ob_logo andalso ob_a(z) <> z andalso ob_b(z) <> z
+             end
+           
+(* Ob2. Enclosures
+        z = ob.e(x) ⇒ ob.a(z) = x ∧ ob.b(z) = z
+        z = ob.e(ob.a(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) = z
+        *)
+   
+val ckOb2a = let val z = ob_e(ob_b(ob_logo))
+                  in ob_a(z) = ob_b(ob_logo) andalso ob_b(z) = z
+                 end
+                 
+val ckOb2b = let val z = ob_e(ob_a(nob_logo))   
+              in z = nob_logo andalso ob_a(z) = ob_logo andalso ob_b(z) = z
+             end
+   
+(* Ob3. Individuals
+        ob.is-individual(z) ⇔ ob.a(z) = z ∧ ob.b(z) = z
+        *)
+   
+val ckOb3 =         is_ob_individual(ob_NIL) 
+            andalso not (is_ob_individual(ob_logo))
+            andalso not (is_ob_individual(nob_logo))
+            
+(* Ob4. Structural Discrimination Predicates
+        ob.is-singleton(z) ⇔ ob.b(z) = z.
+        ob.is-pair(z) ⇔ ¬ ob.is-singleton(z)
+        ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
+        *)
+   
+val ck0b4a =         is_ob_singleton(ob_NIL)
+             andalso is_ob_singleton(nob_logo)
+             andalso not(is_ob_singleton(ob_logo))
+             andalso is_ob_singleton(ob_a ob_logo)
+             andalso is_ob_singleton(ob_b ob_logo)
+             andalso not(is_ob_singleton(ob_a nob_logo))
+             andalso is_ob_singleton(ob_b nob_logo)
+             andalso is_ob_singleton(ob_b ob_NIL)
+             
+val ck0b4b =         is_ob_pair(ob_logo)
+             andalso not(is_ob_pair(nob_logo))
+             andalso not(is_ob_pair(ob_a ob_logo))
+             
+val ckOb4c =         is_ob_enclosure(nob_logo)
+             andalso is_ob_enclosure(ob_b ob_logo)
+             andalso not(is_ob_enclosure(ob_logo))
+             andalso not(is_ob_enclosure(ob_a nob_logo))
+             andalso not(is_ob_enclosure(ob_a ob_logo))
+             
+(* Ob5. Totality
+        ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z) 
+        
+   Observe that the three cases are partitioned by cases where  ob_a(z) = z
+   and/or ob_b(z) = z.  The fourth case of ob_a(z) = z with ob_b(z) <> z 
+   has no means of construction in the SML interpretation of the 
+   primitive notions.
+   *)
+        
+fun is_ob_good(z)
+        =        (z = ob_c(ob_a(z), ob_b(z)) andalso is_ob_pair(z))
+          orelse (z = ob_e(ob_a(z)) andalso is_ob_enclosure(z))
+          orelse (ob_a(z) = z andalso ob_b(z) = z andalso is_ob_individual(z))
+          
+val ckOb5 =         is_ob_good(ob_logo) andalso is_ob_good(nob_logo) 
+            andalso is_ob_good(ob_a ob_logo) andalso is_ob_good(ob_a nob_logo)
+            andalso is_ob_good(ob_NIL)
+            
+(* Ob6-Ob7. Identity
+   The SML/NJ default identity is such that obs with different constructions
+   are distinct and for results of constructors taking tuples, identity is
+   determined by identity of the corresponding tuple parts.  Named individuals
+   are distinct constructors and automatically differentiated from each other 
+   and from results of the constructors ob_c and ob_e.
+   *)
+   
+(* Ob8. Precedence 
+   Satisfaction of precedence is assured by 
+     1. SML ob datatype values being immutable
+     2. Eager evaluation of ob.c and ob.e constructor parameters prior to 
+        determination of the datatype value instance.
+   Note: The datatype definition is recursive; the datatype values are not.
+   *)
+                
                   
-(* 0.0.11 2017-08-29-13:19 Improve some wordings
+(* 0.0.12 2017-08-30-12:38 Add basic confirmation
+   0.0.11 2017-08-29-13:19 Improve some wordings
    0.0.10 2017-08-27-15:42 Factor the mathematical treatment into obtheory.txt.
           Assert the interpretation correspondence in ob.sml.  Setup the 
           confirmation of interpretation soundness by informal argument and
