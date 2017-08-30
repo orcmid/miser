@@ -1,4 +1,4 @@
-(* ob.sml 0.0.8                       UTF-8                      dh:2017-08-29
+(* ob.sml 0.0.9                       UTF-8                      dh:2017-08-30
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -11,7 +11,7 @@
    A computational manifestation of the mathematical structure, ‹ob›, in
    Standard ML of New Jersey (SML/NJ).  For the mathematical formulation,
    see <https://github.com/orcmid/miser/oMiser/obtheory.txt>.  See
-   <https://github.com/orcmid/miser/oMiser/mockups/SML/obtest.sml>
+   <https://github.com/orcmid/miser/oMiser/mockups/SML/obcheck.sml>
    for consideration of the soundness of the interpretation. 
    *)
    
@@ -59,7 +59,7 @@ fun is_ob_enclosure x
    With the choice of names, the correspondence may seem obvious.  However
    helpful the namings, do not be misled by them.  The intended interpretation
    is explicit and confirmable, even if only by inspection and attestation.  
-   See <https://github.com/orcmid/miser/oMiser/mockups/SML/obtest.sml> 
+   See <https://github.com/orcmid/miser/oMiser/mockups/SML/obcheck.sml> 
    *)
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -88,6 +88,7 @@ TODO
    namespace.
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   0.0.9 2017-08-30-12:50 Change references to obtest.sml to obcheck.sml
    0.0.8 2017-08-29-13:04 Touch up layout to reflect my preferred style of
          indentation.
    0.0.7 2017-08-27-11:57 Switch to ‹ob› and tie the three files together.

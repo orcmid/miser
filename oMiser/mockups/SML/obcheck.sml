@@ -1,9 +1,9 @@
-(* obtest.sml 0.0.12                   UTF-8                      dh:2017-08-30
+(* obcheck.sml 0.0.13                   UTF-8                     dh:2017-08-30
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
                        
-        <https://github.com/orcmid/miser/oMiser/mockups/SML/obtest.sml> 
+        <https://github.com/orcmid/miser/oMiser/mockups/SML/obcheck.sml> 
         
        VERIFICATION AND VALIDATION OF THE SML COMPUTATIONAL MANIFESTATION
        ------------------------------------------------------------------
@@ -151,7 +151,10 @@ val ckOb5 =         is_ob_good(ob_logo) andalso is_ob_good(nob_logo)
    *)
                 
                   
-(* 0.0.12 2017-08-30-12:38 Add basic confirmation
+(* 0.0.13 2017-08-30-12:48 Rename to obcheck.sml to reflect that there is only
+          simple informal checks that the mathematical conditions are satisfied
+          by the SML/NJ ob datatype implementation.         
+   0.0.12 2017-08-30-12:38 Add basic confirmation
    0.0.11 2017-08-29-13:19 Improve some wordings
    0.0.10 2017-08-27-15:42 Factor the mathematical treatment into obtheory.txt.
           Assert the interpretation correspondence in ob.sml.  Setup the 

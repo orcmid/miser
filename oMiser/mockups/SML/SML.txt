@@ -1,4 +1,4 @@
-SML.txt 0.0.5                        UTF-8                        dh:2017-08-27
+SML.txt 0.0.6                        UTF-8                        dh:2017-08-30
 
                            The Miser Project Code
                            ======================
@@ -31,7 +31,7 @@ MANIFEST
            Definitions of the datatype and functions that manifest
            the structure <ob>.
         
-    obtest.sml 
+   obcheck.sml 
            Test script that connects the abstract data type's
            mathematical characterization and manifestation via
            the SML/NJ representation.
@@ -55,32 +55,11 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
 TODO
-
-  * Defer this part until after the business of identification between 
-    the mathematical theory and the SML interpretation in ob.sml.
-    
-    val oMiser_symbol = ob_c(ob_NIL, ob_e(ob_NIL))
-                        (* pattern of the oMiser logo diagram at
-                           http://miser-theory.info *)
-    fun is_ob_good(z)
-        =        (z = ob_c(ob_a(z), ob_b(z)) andalso is_ob_pair(z))
-          orelse (z = ob_e(ob_a(z)) andalso is_ob_enclosure(z))
-          orelse (ob_a(z) = z andalso ob_b(z) = z andalso is_ob_individual(z))
-      
-    val symbol_ok = is_ob_good(oMiser_symbol) 
-                    andalso is_ob_good(ob_a oMiser_symbol)
-                    andalso is_ob_good(ob_b oMiser_symbol) 
-                    andalso is_ob_good(ob_a (ob_b oMiser_symbol))
-                
-    (* Here, we claim the datatype and related definitions ... *)
-      
+     
   * Account for the challenge of avoiding forward references and preservation
     of identity conditions for preservation of quasi-Platonism under
     decentralized, distributed operation.  (Is
     this a form of referential integrity?)
-    
-  * Introduce the initial conversation on identity around individuals,
-    including their being well-defined and immutable.
     
   * Introduce literals so that it is possible to see what we are doing
     and also demonstrate some things about representation in the absence
@@ -105,10 +84,12 @@ TODO
     
   * The oFrugal arrangement is about hosting.  Hold onto that notion.
   
-  * Add license to obtest.sml when the narration is completed.  
+  * Add license to obcheck.sml when the narration is completed.  
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2017-08-30-12:53 Rename obtest.sml to obcheck.sml and add simple
+       confirmation checks corresponding to obtheory Ob1-Ob8
  0.0.5 2017-08-27-15:48 Make ob.sml an interpretation of obtheory and have
        that be explicit in the ob.sml file now.  Refactor so that obtest
        is now just for informally-argued confirmation of the interpretation.
