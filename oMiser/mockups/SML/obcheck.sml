@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.13                   UTF-8                     dh:2017-08-30
+(* obcheck.sml 0.0.14                   UTF-8                     dh:2017-08-31
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -46,10 +46,11 @@ use "ob.sml";
 
 (* DEMONSTRATE PRIMITIVES 
    These are simple confirming demonstrations.  They are not proofs. 
-   They check simple cases just to ensure that nothing blatant has gone
+   Checking simple cases confirms that nothing blatant has gone
    amiss.  These results are predictable from the declarations in 
    ob.sml.  Note: None of these appeal directly to the SML datatype and
-   especially patterns based on the SML ob datatype.
+   especially patterns based on the SML ob datatype.  We work entirely
+   with the primitives.
    *)
 
 val ob_logo = ob_c(ob_NIL, ob_e(ob_NIL))
@@ -125,14 +126,17 @@ val ckOb4c =         is_ob_enclosure(nob_logo)
    primitive notions.
    *)
         
-fun is_ob_good(z)
-        =        (z = ob_c(ob_a(z), ob_b(z)) andalso is_ob_pair(z))
-          orelse (z = ob_e(ob_a(z)) andalso is_ob_enclosure(z))
-          orelse (ob_a(z) = z andalso ob_b(z) = z andalso is_ob_individual(z))
+fun is_ob_proper(z)
+        =        (is_ob_pair(z) andalso not(is_ob_singleton(z)))
+          orelse (is_ob_enclosure(z) andalso  not(is_ob_pair(z))
+                  andalso not(is_ob_individual(z)))
+          orelse (is_ob_individual(z) andalso not(is_ob_pair(z))
+                  andalso not(is_ob_enclosure(z)))
           
-val ckOb5 =         is_ob_good(ob_logo) andalso is_ob_good(nob_logo) 
-            andalso is_ob_good(ob_a ob_logo) andalso is_ob_good(ob_a nob_logo)
-            andalso is_ob_good(ob_NIL)
+val ckOb5 =         is_ob_proper(ob_logo) andalso is_ob_proper(nob_logo) 
+            andalso is_ob_proper(ob_a ob_logo) 
+            andalso is_ob_proper(ob_a nob_logo)
+            andalso is_ob_proper(ob_NIL)
             
 (* Ob6-Ob7. Identity
    The SML/NJ default identity is such that obs with different constructions
@@ -151,7 +155,9 @@ val ckOb5 =         is_ob_good(ob_logo) andalso is_ob_good(nob_logo)
    *)
                 
                   
-(* 0.0.13 2017-08-30-12:48 Rename to obcheck.sml to reflect that there is only
+(* 0.0.14 2017-08-31-14:18 Replace is_ob_good with is_ob_proper and reflect
+          the partitioning as well as the totality.
+   0.0.13 2017-08-30-12:48 Rename to obcheck.sml to reflect that there is only
           simple informal checks that the mathematical conditions are satisfied
           by the SML/NJ ob datatype implementation.         
    0.0.12 2017-08-30-12:38 Add basic confirmation
