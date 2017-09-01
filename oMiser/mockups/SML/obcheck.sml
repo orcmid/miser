@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.14                   UTF-8                     dh:2017-08-31
+(* obcheck.sml 0.0.15                   UTF-8                     dh:2017-09-01
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -53,22 +53,22 @@ use "ob.sml";
    with the primitives.
    *)
 
-val ob_logo = ob_c(ob_NIL, ob_e(ob_NIL))
+val ob_logo = ob_c(ob_NIL, ob_e ob_NIL)
               (* pattern of the oMiser logo diagram at 
                  <http://miser-theory.info> *)
-val nob_logo = ob_e(ob_logo)
+val nob_logo = ob_e ob_logo
                  
 (* Ob1. Pairs
         z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
         z = ob.c(ob.a(z),ob.b(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) ≠ z
         *)                 
                  
-val ckOb1a = let val z = ob_c(ob_e(ob_logo),ob_NIL)
-              in ob_a(z) = ob_e(ob_logo) andalso ob_b(z) = ob_NIL
+val ckOb1a = let val z = ob_c(ob_e ob_logo, ob_NIL)
+              in ob_a(z) = ob_e ob_logo andalso ob_b z = ob_NIL
              end
            
-val ckOb1b = let val z = ob_c(ob_a(ob_logo),ob_b(ob_logo))
-              in z = ob_logo andalso ob_a(z) <> z andalso ob_b(z) <> z
+val ckOb1b = let val z = ob_c(ob_a ob_logo, ob_b ob_logo)
+              in z = ob_logo andalso ob_a z <> z andalso ob_b z <> z
              end
            
 (* Ob2. Enclosures
@@ -76,21 +76,21 @@ val ckOb1b = let val z = ob_c(ob_a(ob_logo),ob_b(ob_logo))
         z = ob.e(ob.a(z)) ⇔ ob.a(z) ≠ z ∧ ob.b(z) = z
         *)
    
-val ckOb2a = let val z = ob_e(ob_b(ob_logo))
-                  in ob_a(z) = ob_b(ob_logo) andalso ob_b(z) = z
-                 end
+val ckOb2a = let val z = ob_e(ob_b ob_logo)
+              in ob_a(z) = ob_b ob_logo andalso ob_b z = z
+             end
                  
-val ckOb2b = let val z = ob_e(ob_a(nob_logo))   
-              in z = nob_logo andalso ob_a(z) = ob_logo andalso ob_b(z) = z
+val ckOb2b = let val z = ob_e(ob_a nob_logo)   
+              in z = nob_logo andalso ob_a z = ob_logo andalso ob_b z = z
              end
    
 (* Ob3. Individuals
         ob.is-individual(z) ⇔ ob.a(z) = z ∧ ob.b(z) = z
         *)
    
-val ckOb3 =         is_ob_individual(ob_NIL) 
-            andalso not (is_ob_individual(ob_logo))
-            andalso not (is_ob_individual(nob_logo))
+val ckOb3 =         is_ob_individual ob_NIL 
+            andalso not (is_ob_individual ob_logo)
+            andalso not (is_ob_individual nob_logo)
             
 (* Ob4. Structural Discrimination Predicates
         ob.is-singleton(z) ⇔ ob.b(z) = z.
@@ -98,22 +98,22 @@ val ckOb3 =         is_ob_individual(ob_NIL)
         ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
         *)
    
-val ck0b4a =         is_ob_singleton(ob_NIL)
-             andalso is_ob_singleton(nob_logo)
-             andalso not(is_ob_singleton(ob_logo))
+val ck0b4a =         is_ob_singleton ob_NIL
+             andalso is_ob_singleton nob_logo
+             andalso not(is_ob_singleton ob_logo)
              andalso is_ob_singleton(ob_a ob_logo)
              andalso is_ob_singleton(ob_b ob_logo)
              andalso not(is_ob_singleton(ob_a nob_logo))
              andalso is_ob_singleton(ob_b nob_logo)
              andalso is_ob_singleton(ob_b ob_NIL)
              
-val ck0b4b =         is_ob_pair(ob_logo)
-             andalso not(is_ob_pair(nob_logo))
+val ck0b4b =         is_ob_pair ob_logo
+             andalso not(is_ob_pair nob_logo)
              andalso not(is_ob_pair(ob_a ob_logo))
              
-val ckOb4c =         is_ob_enclosure(nob_logo)
+val ckOb4c =         is_ob_enclosure nob_logo
              andalso is_ob_enclosure(ob_b ob_logo)
-             andalso not(is_ob_enclosure(ob_logo))
+             andalso not(is_ob_enclosure ob_logo)
              andalso not(is_ob_enclosure(ob_a nob_logo))
              andalso not(is_ob_enclosure(ob_a ob_logo))
              
@@ -126,17 +126,21 @@ val ckOb4c =         is_ob_enclosure(nob_logo)
    primitive notions.
    *)
         
-fun is_ob_proper(z)
-        =        (is_ob_pair(z) andalso not(is_ob_singleton(z)))
-          orelse (is_ob_enclosure(z) andalso  not(is_ob_pair(z))
-                  andalso not(is_ob_individual(z)))
-          orelse (is_ob_individual(z) andalso not(is_ob_pair(z))
-                  andalso not(is_ob_enclosure(z)))
+fun is_ob_proper z
+        =        ( is_ob_pair z 
+                   andalso not(is_ob_singleton z) )
+          orelse ( is_ob_enclosure z 
+                   andalso  not(is_ob_pair z)
+                   andalso not(is_ob_individual z) )
+          orelse ( is_ob_individual z 
+                   andalso not(is_ob_pair z)
+                   andalso not(is_ob_enclosure z) )
           
-val ckOb5 =         is_ob_proper(ob_logo) andalso is_ob_proper(nob_logo) 
+val ckOb5 =         is_ob_proper ob_logo 
+            andalso is_ob_proper nob_logo 
             andalso is_ob_proper(ob_a ob_logo) 
             andalso is_ob_proper(ob_a nob_logo)
-            andalso is_ob_proper(ob_NIL)
+            andalso is_ob_proper ob_NIL
             
 (* Ob6-Ob7. Identity
    The SML/NJ default identity is such that obs with different constructions
@@ -155,7 +159,9 @@ val ckOb5 =         is_ob_proper(ob_logo) andalso is_ob_proper(nob_logo)
    *)
                 
                   
-(* 0.0.14 2017-08-31-14:18 Replace is_ob_good with is_ob_proper and reflect
+(* 0.0.15 2017-09-01-11:30 Consistent "pretty-printing" of layout and the
+          omission of unnecessary ( ... ), distinctly SML.
+   0.0.14 2017-08-31-14:18 Replace is_ob_good with is_ob_proper and reflect
           the partitioning as well as the totality.
    0.0.13 2017-08-30-12:48 Rename to obcheck.sml to reflect that there is only
           simple informal checks that the mathematical conditions are satisfied
