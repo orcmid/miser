@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.15                   UTF-8                     dh:2017-09-01
+(* obcheck.sml 0.0.16                   UTF-8                     dh:2017-09-02
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -17,8 +17,8 @@
    Here, "sound interpretation" and "soundness" are specialized beyond
    the mathematical-logic usage.  When we speak of truth in a physically-
    realizable interpretation, we mean true or false as as a matter of fact.
-   Deductions in the mathematical theory will be empirically-confirmable 
-   facts in the interpretation.
+   Deductions in the mathematical theory will have empirically-confirmable 
+   particular facts in the computational interpretation.  
              
    Verifying the ob.sml ob datatype as a sound computational manifestation
    of the mathematical ‹ob› structure is not possible by any kind of exhaustive
@@ -32,13 +32,13 @@
     1. Informal Argument.
        Appeal to predictable behavior of SML/NJ implementations.  Claim that
        the interpretation satisfies all conditions of ‹ob› theory.  Provide
-       test that demonstrate no obvious aberration is present.  Rely on the 
+       check that demonstrate no obvious aberration is present.  Rely on the 
        dependability of systematic SML/NJ behavior.
        
     2. Formal (mechanical) Proof.
        Given presentation of SML/NJ semantics in a mathematical formalism,
        apply proof techniques to establish that the ‹ob› structure conditions
-       are satisfied by the interpretation.  That is a worthwhile approach,
+       are satisfied by the interpretation.  That is an appealing notion,
        with its own difficulties, to be taken up later.
    *)
    
@@ -48,7 +48,7 @@ use "ob.sml";
    These are simple confirming demonstrations.  They are not proofs. 
    Checking simple cases confirms that nothing blatant has gone
    amiss.  These results are predictable from the declarations in 
-   ob.sml.  Note: None of these appeal directly to the SML datatype and
+   ob.sml.  NOTE: None of these appeal directly to the SML datatype and
    especially patterns based on the SML ob datatype.  We work entirely
    with the primitives.
    *)
@@ -100,12 +100,10 @@ val ckOb3 =         is_ob_individual ob_NIL
    
 val ck0b4a =         is_ob_singleton ob_NIL
              andalso is_ob_singleton nob_logo
-             andalso not(is_ob_singleton ob_logo)
-             andalso is_ob_singleton(ob_a ob_logo)
-             andalso is_ob_singleton(ob_b ob_logo)
-             andalso not(is_ob_singleton(ob_a nob_logo))
              andalso is_ob_singleton(ob_b nob_logo)
              andalso is_ob_singleton(ob_b ob_NIL)
+             andalso not(is_ob_singleton ob_logo)
+             andalso not(is_ob_singleton(ob_a nob_logo))
              
 val ck0b4b =         is_ob_pair ob_logo
              andalso not(is_ob_pair nob_logo)
@@ -115,15 +113,16 @@ val ckOb4c =         is_ob_enclosure nob_logo
              andalso is_ob_enclosure(ob_b ob_logo)
              andalso not(is_ob_enclosure ob_logo)
              andalso not(is_ob_enclosure(ob_a nob_logo))
-             andalso not(is_ob_enclosure(ob_a ob_logo))
              
 (* Ob5. Totality
         ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z) 
         
-   Observe that the three cases are partitioned by cases where  ob_a(z) = z
-   and/or ob_b(z) = z.  The fourth case of ob_a(z) = z with ob_b(z) <> z 
-   has no means of construction in the SML interpretation of the 
-   primitive notions.
+   Observe that the three cases are partitioned into three cases where  
+   ob_a(z) = z and/or ob_b(z) = z.  The fourth case, ob_a(z) = z with 
+   ob_b(z) <> z has no means of construction in the SML interpretation of the 
+   primitive notions.  There is likewise no such case in the ‹ob› structure.
+   This provides a "don't-care" simplification for ob.is-individual(z) and
+   the corresponding is_ob_individual ob.sml function.
    *)
         
 fun is_ob_proper z
@@ -159,7 +158,8 @@ val ckOb5 =         is_ob_proper ob_logo
    *)
                 
                   
-(* 0.0.15 2017-09-01-11:30 Consistent "pretty-printing" of layout and the
+(* 0.0.16 2017-09-02-11:21 Wordsmithing and simplifying some checks.
+   0.0.15 2017-09-01-11:30 Consistent "pretty-printing" of layout and the
           omission of unnecessary ( ... ), distinctly SML.
    0.0.14 2017-08-31-14:18 Replace is_ob_good with is_ob_proper and reflect
           the partitioning as well as the totality.
