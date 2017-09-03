@@ -1,4 +1,4 @@
-obtheory.txt 0.0.13                  UTF-8                       dh:2017-08-28
+obtheory.txt 0.0.14                  UTF-8                       dh:2017-09-03
 
                           MISER THEORETICAL CONCEPTION
                           =============================
@@ -75,7 +75,10 @@ PRIMITIVE NOTIONS
         ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z)
         
         It is a consequence that each ob is exactly one of pair, 
-        enclosure, and individual and there are no others. 
+        enclosure, and individual and there are no others.
+          (ob.is-individual(z) ∧ ¬ ob.is-enclosure(z) ∧ ¬ ob.is-pair(z))
+        ∨ (ob.is-enclosure(z) ∧ ¬ ob.is-individual(z) ∧ ¬ ob.is-pair(z))
+        ∨ (ob.is-pair(z) ∧ ¬ ob.is-enclosure(z) ∧ ¬ ob.is-individual(z))
       
    Ob6. Structural Identity
         u = ob.c(v,w) ∧ z = ob.c(x,y) 
@@ -154,6 +157,8 @@ TODO
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.14 2017-09-03-09:38 Make the Ob5 Totality partitioning consequence
+        formally-explicit.
  0.0.13 2017-08-28-08:56 Touch-up and add TODO about well-definedness
  0.0.12 2017-08-27-11:43 Wordsmithing and assertion of classical conditions.
  0.0.11 2017-08-26-09:56 Smooth the description of the logical notation and
