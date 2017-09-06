@@ -1,4 +1,4 @@
-SML.txt 0.0.7                        UTF-8                        dh:2017-09-05
+SML.txt 0.0.8                        UTF-8                        dh:2017-09-05
 
                            The Miser Project Code
                            ======================
@@ -39,6 +39,10 @@ MANIFEST
            Test script that connects the abstract data type's
            mathematical characterization and manifestation via
            the SML/NJ ob.sml representation.
+           
+   obadtcheck.sml
+           Comparable test script against the SML Abstract Data Type
+           as manifest via obadt.sml.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -88,10 +92,13 @@ TODO
     
   * The oFrugal arrangement is about hosting.  Hold onto that notion.
   
-  * Add license to obcheck.sml when the narration is completed.  
+  * Add license to obcheck.sml and obadtcheck.sml when the narration is
+    completed.  
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2017-09-05-21:19 Add obadtcheck.sml for counterpart checking of the
+       obadt.sml computational abstract data type manifestation.
  0.0.7 2017-09-05-18:16 Add obadt.sml for the SML/NJ form of encapsulation.
  0.0.6 2017-08-30-12:53 Rename obtest.sml to obcheck.sml and add simple
        confirmation checks corresponding to obtheory Ob1-Ob8
