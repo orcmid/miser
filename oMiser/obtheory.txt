@@ -1,4 +1,4 @@
-obtheory.txt 0.0.14                  UTF-8                       dh:2017-09-03
+obtheory.txt 0.0.15                  UTF-8                       dh:2017-09-05
 
                           MISER THEORETICAL CONCEPTION
                           =============================
@@ -94,15 +94,17 @@ PRIMITIVE NOTIONS
                    ⇒ u ≠ z                                     (d)
                    
    Ob7. Identity Among Primitive Individuals
-        Individuals identified by upper-case namings, such as ob.NIL,
-        are distinct if and only if their names differ.  Those 
-        individuals are also distinct from individuals of any other
-        kind that may arise. 
+        ob.is-individual(ob.NIL)
         
         There are a limited number of fixed-name primitive individuals.  
         They can be taken as given.  They are not definable in terms of 
         others.
-         
+        
+        Individuals identified by upper-case namings, such as ob.NIL,
+        are distinct if and only if their names differ.  Those 
+        individuals are also distinct from any other individual
+        kind that may arise. 
+                 
    Ob8. The ¶ Precedence Condition
    
         ¬ (x ¶ x)                                (a), irreflexive
@@ -157,6 +159,8 @@ TODO
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.15 2017-09-05-18:11 Make ob.NIL an individual explicitly and simplify
+        Ob7 somewhat.
  0.0.14 2017-09-03-09:38 Make the Ob5 Totality partitioning consequence
         formally-explicit.
  0.0.13 2017-08-28-08:56 Touch-up and add TODO about well-definedness
