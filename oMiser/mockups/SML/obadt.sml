@@ -1,4 +1,4 @@
-(* obadt.sml 0.0.1                   UTF-8                      dh:2017-09-05
+(* obadt.sml 0.0.23                   UTF-8                      dh:2017-09-05
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -11,50 +11,48 @@
    A computational manifestation of the mathematical structure, ‹ob›, in
    Standard ML of New Jersey (SML/NJ).  For the mathematical formulation,
    see <https://github.com/orcmid/miser/oMiser/obtheory.txt>.  See
-   <https://github.com/orcmid/miser/oMiser/mockups/SML/obcheck.sml>
-   for consideration of the soundness of the interpretation. 
+   <https://github.com/orcmid/miser/oMiser/mockups/SML/obadtcheck.sml>
+   for consideration of the soundness of this interpretation. 
    *)
    
 signature OB
  = sig
-      type t
-      val a: t -> t
-      val b: t -> t
-      val c: t * t -> t
-      val e: t -> t
-      val is_pair: t -> bool
-      val is_enclosure: t -> bool
-      val is_individual: t -> bool
-      val is_singleton: t -> bool
-      val NIL: t
-   end
-   
-   
+      eqtype ob
+      val a: ob -> ob
+      val b: ob -> ob
+      val c: ob * ob -> ob
+      val e: ob -> ob
+      val is_pair: ob -> bool
+      val is_enclosure: ob -> bool
+      val is_individual: ob -> bool
+      val is_singleton: ob -> bool
+      val NIL: ob
+   end 
    
 structure ob :> OB
  = struct
  
-   datatype t = c of t * t  
-               | e of t       
-               | NIL          
+      datatype ob = c of ob * ob  
+                  | e of ob       
+                  | NIL          
                 
-   fun a(z) = case z 
-                of c(x, _) => x
-                 | e(x) => x
-                 | _ => z
+      fun a(z) = case z 
+                   of c(x, _) => x
+                    | e(x) => x
+                    | _ => z
             
-   fun b(z) = case z 
-                of c(_, y) => y  
-                 | _ => z          
+      fun b(z) = case z 
+                   of c(_, y) => y  
+                    | _ => z          
         
-   fun is_singleton x = b(x) = x
+      fun is_singleton x = b(x) = x
 
-   fun is_individual x = a(x) = x
+      fun is_individual x = a(x) = x
 
-   fun is_pair x = not (is_singleton x)
+      fun is_pair x = not (is_singleton x)
 
-   fun is_enclosure x 
-       = is_singleton x andalso not (is_individual x)
+      fun is_enclosure x 
+          = is_singleton x andalso not (is_individual x)
        
    end
           
@@ -70,6 +68,7 @@ structure ob :> OB
         ob.is-singleton predicate   ob.is_singleton: ob -> bool
         ob.is-pair predicate        ob.is_pair: ob -> bool
         ob.is-enclosure predicate   ob.is_enclosure: ob -> bool
+        ob.NIL                      ob.NIL
         
         for obs x,y, whether x = y  (op =)
         for obs x,y, whether x ¶ y  implicit in SML constructions
@@ -109,7 +108,11 @@ TODO
    namespace.
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   0.0.1 2017-09-05-18:03 Adapt from ob.sml 0.0.9 to take advantage of the
+ 0.0.3 2017-09-05-21:14 Use eqtype to have the standard equality working
+       down through the ob.ob structures.
+ 0.0.2 2017-09-05-20:49 Touch-up, switch to ob as the internal datatype even
+       though it means the type shows on vals as ob.ob.  No for now.
+ 0.0.1 2017-09-05-18:03 Adapt from ob.sml 0.0.9 to take advantage of the
          SML/NJ signature and structure provisions.  Note that this allows
          the ob. notation, striking the correspondence with the similar
          "namespace" usage in obtheory.txt.
