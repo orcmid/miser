@@ -1,18 +1,18 @@
-(* obadtcheck.sml 0.0.1              UTF-8                       dh:2017-09-05
+(* obadtcheck.sml 0.0.2              UTF-8                       dh:2017-09-06
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
                        
-      <https://github.com/orcmid/miser/oMiser/mockups/SML/obadtcheck.sml> 
+ <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obadtcheck.sml> 
         
        VERIFICATION AND VALIDATION OF THE SML ABSTRACT TYPE MANIFESTATION
        ------------------------------------------------------------------
        
-   See <https://github.com/orcmid/miser/oMiser/mockups/SML/obadt.sml> for
-   the proposed computational interpretation of the theoretical ‹ob› structure.
+   For the computational manifestation of the theoretical ‹ob› structure, see
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obadt.sml>.
    
-   See <https://github.com/orcmid/miser/oMiser/obtheory.txt> for the 
-   mathematical formulation of the abstract theory.
+   See <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt> for 
+   the mathematical formulation of the abstract theory.
    
    Here, "sound interpretation" and "soundness" are specialized beyond
    the mathematical-logic usage.  When we speak of truth in a physically-
@@ -24,7 +24,7 @@
    of the mathematical ‹ob› structure is not possible by any kind of exhaustive
    enumeration of confirmation tests.  Testing that theory-forbidden cases are 
    not possible is unworkable.  One might demonstrate the presence of a 
-   defect; demonstrating absence of defects is out of reach.
+   defect; demonstrating absence of defects is out of reach by testing.
    
    Compare two prospects for confirmation that the interpretation is
    sound: informal argument and formal proof.
@@ -115,9 +115,9 @@ val ckOb4c =         ob.is_enclosure nob_logo
 (* Ob5. Totality
         ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z) 
         
-   Observe that the three cases are partitioned into three cases where  
+   Observe that the three flavors are partitioned by distinct cases of  
    ob.a(z) = z and/or ob.b(z) = z.  The fourth case, ob.a(z) = z with 
-   ob.b(z) ≠ z having no case in the ‹ob› structure and has no means of 
+   ob.b(z) ≠ z is not possible in the ‹ob› structure and has no means of 
    construction in the SML interpretation of the primitive notions.  This
    provides a "don't-care" simplification for ob.is-individual(z) and
    ob.is_individual(z).
@@ -156,7 +156,8 @@ val ckOb5 =         is_ob_proper ob_logo
    *)
                 
                   
-(* 0.0.1 2017-09-05-21:07 Transpose from obcheck.sml 0.0.16 for applying 
+(* 0.0.2 2017-09-06-18:13 Use verified GitHub URLs and make small touch-ups.
+   0.0.1 2017-09-05-21:07 Transpose from obcheck.sml 0.0.16 for applying 
          equivalent checks on obadt.sml as appplied to ob.sml.
          *)
          
