@@ -1,9 +1,9 @@
-obtheory.txt 0.0.15                  UTF-8                       dh:2017-09-05
+obtheory.txt 0.0.16                  UTF-8                       dh:2017-09-06
 
                           MISER THEORETICAL CONCEPTION
-                          =============================
+                          ============================
                             
-            <https://github.com/orcmid/miser/oMiser/obtheory.txt>
+        <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
                            ‹ob› MATHEMATICAL STRUCTURE
                            --------------------------
@@ -156,9 +156,22 @@ TODO
    different storage media.
    
  * Figure out what to do about well-definedness.  Is this an Ob10 condition?
+ 
+ * Find places to locate this material that is perhaps easier to reach
+   into than GitHub, and perhaps more durable.  This may depend on stability
+   of the material.
+   
+ * Introduction of the oMiser universal eval-/apply-functions requires 
+   identification of additional individuals.  Technically, they should be
+   introduced with those functions.  We want that to work in a way that
+   is not very clumsy but does spiral upward.  Having the universal function
+   definitely impacts the computational manifestation of ‹ob›, as does 
+   integration of a manifestation with oFrugal or other "peripheral processor."
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.16 2017-09-06-18:02 Correct the GitHub link and add work items about
+        further steps.
  0.0.15 2017-09-05-18:11 Make ob.NIL an individual explicitly and simplify
         Ob7 somewhat.
  0.0.14 2017-09-03-09:38 Make the Ob5 Totality partitioning consequence
