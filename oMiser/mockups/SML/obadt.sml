@@ -1,18 +1,18 @@
-(* obadt.sml 0.0.23                   UTF-8                      dh:2017-09-05
+(* obadt.sml 0.0.4                   UTF-8                      dh:2017-09-06
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
                        
-           <https://github.com/orcmid/miser/oMiser/mockups/SML/ob.sml>
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obadt.sml>
            
                         THE SML ob ABSTRACT DATA TYPE
                         -----------------------------
                          
    A computational manifestation of the mathematical structure, ‹ob›, in
    Standard ML of New Jersey (SML/NJ).  For the mathematical formulation,
-   see <https://github.com/orcmid/miser/oMiser/obtheory.txt>.  See
-   <https://github.com/orcmid/miser/oMiser/mockups/SML/obadtcheck.sml>
-   for consideration of the soundness of this interpretation. 
+   see <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+   For consideration of the soundness of this interpretation, see
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obadtcheck.sml>.
    *)
    
 signature OB
@@ -79,7 +79,8 @@ structure ob :> OB
    With the choice of names, the correspondence may seem obvious.  However
    helpful the namings, do not be misled by them.  The intended interpretation
    is explicit and confirmable, even if only by inspection and attestation.  
-   See <https://github.com/orcmid/miser/oMiser/mockups/SML/obadtcheck.sml> 
+   See
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obadtcheck.sml> 
    *)
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -102,12 +103,19 @@ structure ob :> OB
  
 TODO
 
- * Determine whether the apply-recognized individuals can be added 
+ * Determine whether the eval-/apply-recognized individuals can be added 
    separately or have to be updated here.  We could make an extension
    for primitives.  Then we have to see to its management as a kind of
    namespace.
    
+ * Look at creating a library that can be installed via the SML.NJ
+   Configuration Manager and reused easily that way.
+   
+ * Determine whether eval and apply go in here or should be separate
+   as a particular usage specific for oMiser. oFrugal runs on top.
+   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.4 2017-09-06-18:04 Correct all GitHub URLs, add work items.
  0.0.3 2017-09-05-21:14 Use eqtype to have the standard equality working
        down through the ob.ob structures.
  0.0.2 2017-09-05-20:49 Touch-up, switch to ob as the internal datatype even
