@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.3                UTF-8                       dh:2017-09-11
+obaptheory.txt 0.0.4                UTF-8                       dh:2017-09-12
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -10,19 +10,19 @@ obaptheory.txt 0.0.3                UTF-8                       dh:2017-09-11
                         
    For the mathematical structure, ‹ob› = <Ob,Of,Ot>, we demonstrate existence
    of effectively-computable universal functions among Of, the functions on 
-   obs.  The candidate functions are the pair ob.ap(x,y) and ob.eval(x). 
+   obs.  The candidate functions are the duo ob.ap(x,y) and ob.eval(x). 
    
    Demonstration of effective-computability is by representing ob.ap(x,y) and
-   ob.eval(x) in Ot, the characterization of ‹ob› as an application of first-
-   order logic.  That is accomplished below.
+   ob.eval(x) in Ot, the characterization of ‹ob› in first-order logic.  That 
+   is accomplished below.
    
    Establishing universal-computation is more involved.  It is sufficient to
    demonstrate that some existing accepted-as-universal computation models
    are simulated in ‹ob› using ob.eval and ob.ap.   Since the pair are already
    represented in an accepted universal scheme (here via Ot), ‹ob› with ob.ap
    and ob.eval are therefore as universal (and not moreso) as other accepted
-   universal-computation models.  This universality is in accord with the
-   Church-Turing thesis as expected.
+   universal-computation models.  This universality is therefore in harmony 
+   with the Church-Turing thesis.
    
    The Universality demonstration is provided separately, accompanied by
    realizations in operational computer software.
@@ -36,7 +36,7 @@ PRELIMINARIES
    For simplicity, the infix pair operator, ::, is introduced, with
    
           x :: y = ob.c(x,y)
-          x :: y :: ... :: z = x :: (y :: (... :: z)
+          t :: u :: ... :: y = t :: (u :: ... (y :: z) ...)
           
    Obap1. New Individuals
           
@@ -45,52 +45,54 @@ PRELIMINARIES
           ob.is-primitive(x) ⇒ ob.is-individual(x)
    
           ob.is-primitive(ob.NIL)
+          
           ob.is-primitive(obap.A)
           ob.is-primitive(obap.B)
           ob.is-primitive(obap.C)
           ob.is-primitive(obap.D)
           ob.is-primitive(obap.E)
           
-          ob.is-individual(obap.SELF)
-          ob.is-individual(obap.ARG)
+          ob.is-primitive(obap.SELF)
+          ob.is-primitive(obap.ARG)
           
 ADDITIONAL NOTIONS
 
    Obap2. Literal Individuals
           
-          ob.is-lindy(Ʃs) 
-             where s is a character string, of form <lindy>, consisting of
-                     a "." followed by one or more alphanumeric characters
+          ob.is-lindy(x) ⇔ x = Ʃs
+             where s is a character string, of syntactic form <lindy>,
+                     consisting of a "." followed by one or more alphanumeric
+                     characters
+                     
+          Ʃs = Ʃt ⇔ s = t
+             where s = t depends on identity of the string texts
                         
-          ob.is-lindy(x) ⇒ ob.is-individual(x)
+          ob.is-lindy(x) ⇒ ob.is-primitive(x)
           
           ob.is-lindy(x) ∧ ¬ ob.is-lindy(y) ⇒ x ≠ y
-          
-          Ʃs = Ʃt ⇔ s = t
-             where for s = t we depend on identity of the string texts
-          
-          Here we have the precarious practice of introducing text of the
-          theory language expression in the arbitrary naming of distinct
-          individuals in the subject domain.  Lindies are freely employed
-          in ‹ob›.  There is a shared and limited, though useful,
-          computational interpretation in providing symbolic "traces."  
+                   
+          Here a precarious example of introducing text into the
+          theory language expression of arbitrary namings for distinct
+          individuals in the subject domain.  Lindies are employed freely. 
           
           NOTE: Ʃs is not a function in ‹ob›.  Ʃs is a metalinguistic 
           notation for designating further, conveniently-named individuals
           in the universe of discourse.  The "." prefix disambiguates lindy
           mentions from ordinary words and from symbolic designation of any
-          other entities.
+          other ‹ob› entities.
           
   Obap3.  The Universal Applicative Functions
   
           ob.ap(p,x)  determines the application of ob p (the procedure)
                       to ob x (the argument to the procedure)
+                      
           ob.eval(e)  determines the evaluation of e as an applicative
                       expression
           
-          The functions are inter-related.
+          The function representations are interdependent (i.e., mutually
+          recursive).
           
-          All other predicates and functions defined here are provided 
+          All other predicates and functions introduced here are provided 
           in support of the representation of ob.ap and ob.eval and need
           not be relied upon otherwise.
           
@@ -102,12 +104,12 @@ THE APPLY FUNCTIONS
         ob.is-enclosure(p) ⇒ ob.ap(p,x) = ob.a(p)
         ob.is-individual(p) ⇒ ob.ap(p,x) = ob.apint(p,x)
         
-        Every ob has an applicative interpretation as a procedure.  Pairs
-        are interpreted by evaluation of ob.a as a script evaluated using
-        ob.b as the one argument and the script as its current procedure
-        as needed for self-reference/recursion.
+        Every ob has applicative evaluation as a procedure.  Pairs
+        are evaluated by taking ob.a as a script having ob.b as the 
+        single argument and having the script itself as the
+        current procedure when needed for self-reference/recursion.
 
-   Obap5. ob.apint(p,x) application of individuals.
+   Obap5. ob.apint(p,x) applicative treatment of individuals.
    
         ob.apint(ob.NIL, x) = x
         ob.apint(obap.A, x) = ob.a(x)
@@ -115,13 +117,23 @@ THE APPLY FUNCTIONS
         ob.apint(obap.C, x) = obap.C :: ob.e(x) :: obap.ARG
         ob.apint(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
         ob.apint(obap.E, x) = ob.e(x)
-                             
+               
+        ob.is-lindy(p) ∧ ob.is-lindy(ob.a(x))  
+                       => ob.apint(p,x) = p :: x
+        ob.is-lindy(p) ∧ ¬ ob.is-lindy(ob.a(x))  
+                       => ob.apint(p,x) = p :: ob.e(x)
+                       
+        ob.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
+        ob.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
+        
         ¬ ob.is-primitive(p) => ob.apint(p,x) = p :: ob.e(x)
         
-        Application of an individual having no primitive apint definition
-        determines a "trace" reflecting the uninterpreted application.  This
-        provides a form of symbolic execution when intended, a rudimentary
-        trace when inadvertent.
+        A trace is a form, t, such that ob.ap(t,x) = ob.eval(t) = t.  This
+        supports a form of symbolic evaluation in the case of lindies.
+        
+        The ob.apint evaluations for obap.C and obap.D determine partial
+        applications, effectively curried ob.c and ob.d, respectively.
+                
         
  THE EVALUATION FUNCTIONS
  
@@ -142,9 +154,9 @@ THE APPLY FUNCTIONS
         
         ob.ev(p,x,obap.C::e1::e2)
            = ob.c(ob.ev(p,x,e1), ob.ev(p,x,e2))
-        ob.ev(p,x,obap.D::e1::e2)
-           = ob.d(ob.ev(p,x,e1), ob.ev(p,x,e2))
            
+        ob.ev(p,x,obap.D::e1::e2)
+           = ob.d(ob.ev(p,x,e1), ob.ev(p,x,e2))       
         x = y ⇒ ob.d(x,y) = obap.A
         x ≠ y ⇒ ob.d(x,y) = obap.B
            
@@ -190,8 +202,84 @@ TODO
    structure obap. for this specialization.  I think I should not mess around
    about that here.  
    
+ * It remains open whether ob.ap should be exposed, although it appears to
+   be quite handy and at the root of the applicative approach.
+   
+ * Treating all unknown individuals as determining traces does not leave much 
+   room for extension mechanisms.  That and how types are handled in individuals 
+   representing extended functions remains open.
+   
+ * It is desirable to introduce obarg.PROC immediately, since it provides
+   a valuable demonstration of some of the power of immutability and the
+   ability for processors to optimize operation.  It also affirms the idea
+   of preserving extensional identity, something to be developed further.
+   
+ * It is mildly interesting that representation in a mathematical theory
+   has no concern about tail recursion or other optimizations.  It doesn't
+   even have the requirement on computation that a definite ob be arrived
+   at consisting entirely of individuals combined with ob.e and ob.c.
+   
+ * So how we establish what a computational manifestation accomplishes 
+   and how one can assert the soundness of various optimizations is not
+   found here.  This provides a possibly-interesting further contrast 
+   between the representation of ob.ap and ob.eval in a mathematical theory
+   in contrast with the reasoning that may be required to affirm the soundness
+   of a computational manifestation.  
+   
+ * The use of leading "." on lindies may turn out to be awkward, because of
+   the use of "." in a special form at the oFrugal/REPL layer. It might be
+   better to drop any prefix, but that becomes an irreversible architectural
+   decision.  More pondering required.  I should not be mixing the theoretical
+   and the applied this way, perhaps.  An interpretation can certainly use
+   a modified notation.  There is no scoping here, so maybe simplify lindies?
+   Still, it is handy in the mathematical notation if these are distinguished?
+   
+ * Need room for extension and not confining every unexpected individual to
+   tracing.  This will take far more work.  Leaving it open-ended doesn't 
+   seem workable for representation of a computable function here.
+   
+ * A trace is a kind of self-recreating K-combination application, so its
+   applications will always terminate.  As a result, it can derail an ob.d
+   in a manner that has a procedure fail to terminate.  Need to document 
+   that when it comes to testing at the oMiser level.
+   
+ * There is too much in here about intended computational manifestations,
+   and need to focus more on the theory, even though something about
+   intentions is useful.
+   
+ * Inside Joke: It was tempting to call lindies Milners because of the way
+   the SML specification uses composed words to signify grammar rules.  I'm
+   saving that for later, when the Ershov-Duncan-Milner scheme for extending
+   context-free grammars comes under scrutiny.
+   
+ * The "::" use is from SML.  It is difficult not to use it once it has been
+   seen and applied in practice.  There is no list type in our case.
+   
+ * The use of obap.SELF in ob.ev has the effect that every ob.ap has a kind
+   of Y-combinator built-in.  It depends entirely on the script, p, whether
+   and how the prospective recursion is employed.  The inspiration behind
+   obap.SELF and obap.ARG extends back to my reading the 1965 publication of
+   Strachey's macrogenerator (GPM or McG) paper in The Computer Journal,
+   <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e function is also 
+   inspired by a defect/limitation/incompleteness in McG, although
+   applied to "list" structures instead of strings having nested strings
+   as beads.  Switching to the more flexible pair structures was inspired
+   by the XLISP (1.0?) paper in Dr. Dobb's Journal in the 80s.  The coin
+   hadn't dropped until then, although I had already had seen McCarthy's 
+   "Part 1" in 1961, thanks to joining the ACM and also finding Comm.ACM back
+   issues in the stacks of the Seattle Public Library (not an ordinary public
+   library of the time before emergence of computer science as a discipline).
+   
+ * Historical Note: McG was used by the ISWIM team at Univac (using a Univac
+   1107) and, I'm told, the Backus FP team in San Jose as a means of boot-
+   strapping their respective machine-language implementations.  There was
+   no C Language yet.
+  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-09-12-12:56 Restore obap.SELF and obap.ARG to primitives and
+       correct their tracing cases.  Rework explanatory material.  Add TODOs
+       including historical notes for now.
  0.0.3 2017-09-11-19:55 Remembered to add definition for ob.d(x,y)
  0.0.2 2017-09-11-19:20 Proof-reading corrections, text touch-ups
  0.0.1 2017-09-11-19.04 Create the initial draft.
