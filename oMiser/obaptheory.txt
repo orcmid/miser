@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.4                UTF-8                       dh:2017-09-12
+obaptheory.txt 0.0.5                UTF-8                       dh:2017-09-12
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -36,7 +36,7 @@ PRELIMINARIES
    For simplicity, the infix pair operator, ::, is introduced, with
    
           x :: y = ob.c(x,y)
-          t :: u :: ... :: y = t :: (u :: ... (y :: z) ...)
+          t :: u :: ... y :: z = t :: (u :: ... (y :: z) ...)
           
    Obap1. New Individuals
           
@@ -61,13 +61,13 @@ ADDITIONAL NOTIONS
           
           ob.is-lindy(x) ⇔ x = Ʃs
              where s is a character string, of syntactic form <lindy>,
-                     consisting of a "." followed by one or more alphanumeric
+                     consisting of a letter followed by one or more alphanumeric
                      characters
                      
           Ʃs = Ʃt ⇔ s = t
              where s = t depends on identity of the string texts
                         
-          ob.is-lindy(x) ⇒ ob.is-primitive(x)
+          ob.is-lindy(x) ⇒ ob.is-individual(x)
           
           ob.is-lindy(x) ∧ ¬ ob.is-lindy(y) ⇒ x ≠ y
                    
@@ -77,9 +77,7 @@ ADDITIONAL NOTIONS
           
           NOTE: Ʃs is not a function in ‹ob›.  Ʃs is a metalinguistic 
           notation for designating further, conveniently-named individuals
-          in the universe of discourse.  The "." prefix disambiguates lindy
-          mentions from ordinary words and from symbolic designation of any
-          other ‹ob› entities.
+          in the universe of discourse.
           
   Obap3.  The Universal Applicative Functions
   
@@ -126,13 +124,12 @@ THE APPLY FUNCTIONS
         ob.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
         ob.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
         
-        ¬ ob.is-primitive(p) => ob.apint(p,x) = p :: ob.e(x)
-        
         A trace is a form, t, such that ob.ap(t,x) = ob.eval(t) = t.  This
-        supports a form of symbolic evaluation in the case of lindies.
+        supports a form of symbolic evaluation in the case of lindies.  For
+        obap.SELF and obap.ARG, it indicates that there is no reduction.
         
         The ob.apint evaluations for obap.C and obap.D determine partial
-        applications, effectively curried ob.c and ob.d, respectively.
+        applications, effectively curried ob.c and ob.d.
                 
         
  THE EVALUATION FUNCTIONS
@@ -205,9 +202,8 @@ TODO
  * It remains open whether ob.ap should be exposed, although it appears to
    be quite handy and at the root of the applicative approach.
    
- * Treating all unknown individuals as determining traces does not leave much 
-   room for extension mechanisms.  That and how types are handled in individuals 
-   representing extended functions remains open.
+ * Determining how types are handled and generally individuals representing
+   extended functions remains open.
    
  * It is desirable to introduce obarg.PROC immediately, since it provides
    a valuable demonstration of some of the power of immutability and the
@@ -226,18 +222,6 @@ TODO
    in contrast with the reasoning that may be required to affirm the soundness
    of a computational manifestation.  
    
- * The use of leading "." on lindies may turn out to be awkward, because of
-   the use of "." in a special form at the oFrugal/REPL layer. It might be
-   better to drop any prefix, but that becomes an irreversible architectural
-   decision.  More pondering required.  I should not be mixing the theoretical
-   and the applied this way, perhaps.  An interpretation can certainly use
-   a modified notation.  There is no scoping here, so maybe simplify lindies?
-   Still, it is handy in the mathematical notation if these are distinguished?
-   
- * Need room for extension and not confining every unexpected individual to
-   tracing.  This will take far more work.  Leaving it open-ended doesn't 
-   seem workable for representation of a computable function here.
-   
  * A trace is a kind of self-recreating K-combination application, so its
    applications will always terminate.  As a result, it can derail an ob.d
    in a manner that has a procedure fail to terminate.  Need to document 
@@ -255,13 +239,14 @@ TODO
  * The "::" use is from SML.  It is difficult not to use it once it has been
    seen and applied in practice.  There is no list type in our case.
    
- * The use of obap.SELF in ob.ev has the effect that every ob.ap has a kind
-   of Y-combinator built-in.  It depends entirely on the script, p, whether
-   and how the prospective recursion is employed.  The inspiration behind
-   obap.SELF and obap.ARG extends back to my reading the 1965 publication of
-   Strachey's macrogenerator (GPM or McG) paper in The Computer Journal,
-   <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e function is also 
-   inspired by a defect/limitation/incompleteness in McG, although
+ * The use of obap.SELF in ob.ev has the effect that every application has a
+   kind of Y-combinator built-in.  It depends entirely on the script, p, whether
+   and how the prospective recursion is employed.  
+   
+ * The inspiration behind obap.SELF and obap.ARG extends back to my reading the
+   1965 publication of Strachey's macrogenerator (GPM or McG) paper in The
+   Computer Journal, <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e 
+   function is inspired by a defect/limitation/incompleteness in McG, although
    applied to "list" structures instead of strings having nested strings
    as beads.  Switching to the more flexible pair structures was inspired
    by the XLISP (1.0?) paper in Dr. Dobb's Journal in the 80s.  The coin
@@ -277,6 +262,10 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.5 2017-09-12-15:05 Remove Treatment of individuals not in evidence.
+       There is no reason for this in obaptheory.  Simplify lindies to be
+       just symbols that represent themselves and have no theoretical
+       significance beyond applicative evaluation as traces.
  0.0.4 2017-09-12-12:56 Restore obap.SELF and obap.ARG to primitives and
        correct their tracing cases.  Rework explanatory material.  Add TODOs
        including historical notes for now.
