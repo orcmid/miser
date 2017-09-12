@@ -1,4 +1,4 @@
-oMiser.txt 0.0.1                    UTF-8                         dh:2017-08-24
+oMiser.txt 0.0.2                    UTF-8                         dh:2017-**-**
 
                            The Miser Project Code
                            ======================
@@ -37,16 +37,29 @@ oMiser.txt 0.0.1                    UTF-8                         dh:2017-08-24
        
     Stages beyond oMiser are envisioned.  In those cases, oMiser
     remains as a subordinate form that is relied upon when that
-    is the most required for successful, efficient operation.      
+    is the most required for successful, efficient operation, possibly
+    as part of a larger, more-interactive arrangement of computational
+    procedures.      
          
 MANIFEST
 
     oMiser.txt 
         this manifest and job-jar file
         
+    ob.txt
+        summary of how the ‹ob› structure and its computational
+        manifestations are useful as flexible, general-purpose data 
+        structures given suitable encodings and decodings for
+        achieving preferable computationa manifestations.  Conditions
+        for being universal are identified.       
+        
     obtheory.txt
-        specification of the <ob> abstract mathematical structure
+        specification of the ‹ob› abstract mathematical structure
         any computationally-implemented manifestation must satisfy.
+        
+    obaptheory.txt
+        specification of the ‹ob› universal function that every oMiser
+        implementation manifests.
         
     mockups/
         subtree for experimental mock-ups that demonstrate oMiser
@@ -94,8 +107,14 @@ TODO
     be a valid interpretation of obtheory and the other mathematically-
     characterized functions that are introduced. 
     
+  * For the SML manifestation, see if there can be a simple specialization
+    to structure obap that retains the ob functions and also the extension
+    to obap provisions in a natural manner.
+    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2017-**-**-**:** Add ob.txt and obaptheory.txt in motivating the
+       next steps.
  0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,
        ‹ob›, that all oMiser implementations must manifest correctly.
  0.0.0 2017-08-04-12:05 Create placeholder and initial job jar for the
