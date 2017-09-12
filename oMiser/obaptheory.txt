@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.2                UTF-8                       dh:2017-09-11
+obaptheory.txt 0.0.3                UTF-8                       dh:2017-09-11
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -145,6 +145,9 @@ THE APPLY FUNCTIONS
         ob.ev(p,x,obap.D::e1::e2)
            = ob.d(ob.ev(p,x,e1), ob.ev(p,x,e2))
            
+        x = y ⇒ ob.d(x,y) = obap.A
+        x ≠ y ⇒ ob.d(x,y) = obap.B
+           
         ob.is-evbinop(e1) ∧ ob.is-singleton(e2)
            ⇒ ob.ev(p,x,e1::e2) = ob.ap(e1, ob.ev(p,x,e2))
            
@@ -189,6 +192,7 @@ TODO
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2017-09-11-19:55 Remembered to add definition for ob.d(x,y)
  0.0.2 2017-09-11-19:20 Proof-reading corrections, text touch-ups
  0.0.1 2017-09-11-19.04 Create the initial draft.
 
