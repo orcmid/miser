@@ -1,0 +1,198 @@
+obaptheory.txt 0.0.2                UTF-8                       dh:2017-09-11
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+                            
+       <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
+
+                       ‹ob› APPLICATIVE UNIVERSAL FUNCTION
+                       ----------------------------------
+                        
+   For the mathematical structure, ‹ob› = <Ob,Of,Ot>, we demonstrate existence
+   of effectively-computable universal functions among Of, the functions on 
+   obs.  The candidate functions are the pair ob.ap(x,y) and ob.eval(x). 
+   
+   Demonstration of effective-computability is by representing ob.ap(x,y) and
+   ob.eval(x) in Ot, the characterization of ‹ob› as an application of first-
+   order logic.  That is accomplished below.
+   
+   Establishing universal-computation is more involved.  It is sufficient to
+   demonstrate that some existing accepted-as-universal computation models
+   are simulated in ‹ob› using ob.eval and ob.ap.   Since the pair are already
+   represented in an accepted universal scheme (here via Ot), ‹ob› with ob.ap
+   and ob.eval are therefore as universal (and not moreso) as other accepted
+   universal-computation models.  This universality is in accord with the
+   Church-Turing thesis as expected.
+   
+   The Universality demonstration is provided separately, accompanied by
+   realizations in operational computer software.
+   
+PRELIMINARIES
+
+   The notation, mathematical theory, and primitive notions at obtheory.txt
+   are incorporated directly.  See
+   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
+   
+   For simplicity, the infix pair operator, ::, is introduced, with
+   
+          x :: y = ob.c(x,y)
+          x :: y :: ... :: z = x :: (y :: (... :: z)
+          
+   Obap1. New Individuals
+          
+          Seven named individuals are employed in addition to ob.NIL:
+   
+          ob.is-primitive(x) ⇒ ob.is-individual(x)
+   
+          ob.is-primitive(ob.NIL)
+          ob.is-primitive(obap.A)
+          ob.is-primitive(obap.B)
+          ob.is-primitive(obap.C)
+          ob.is-primitive(obap.D)
+          ob.is-primitive(obap.E)
+          
+          ob.is-individual(obap.SELF)
+          ob.is-individual(obap.ARG)
+          
+ADDITIONAL NOTIONS
+
+   Obap2. Literal Individuals
+          
+          ob.is-lindy(Ʃs) 
+             where s is a character string, of form <lindy>, consisting of
+                     a "." followed by one or more alphanumeric characters
+                        
+          ob.is-lindy(x) ⇒ ob.is-individual(x)
+          
+          ob.is-lindy(x) ∧ ¬ ob.is-lindy(y) ⇒ x ≠ y
+          
+          Ʃs = Ʃt ⇔ s = t
+             where for s = t we depend on identity of the string texts
+          
+          Here we have the precarious practice of introducing text of the
+          theory language expression in the arbitrary naming of distinct
+          individuals in the subject domain.  Lindies are freely employed
+          in ‹ob›.  There is a shared and limited, though useful,
+          computational interpretation in providing symbolic "traces."  
+          
+          NOTE: Ʃs is not a function in ‹ob›.  Ʃs is a metalinguistic 
+          notation for designating further, conveniently-named individuals
+          in the universe of discourse.  The "." prefix disambiguates lindy
+          mentions from ordinary words and from symbolic designation of any
+          other entities.
+          
+  Obap3.  The Universal Applicative Functions
+  
+          ob.ap(p,x)  determines the application of ob p (the procedure)
+                      to ob x (the argument to the procedure)
+          ob.eval(e)  determines the evaluation of e as an applicative
+                      expression
+          
+          The functions are inter-related.
+          
+          All other predicates and functions defined here are provided 
+          in support of the representation of ob.ap and ob.eval and need
+          not be relied upon otherwise.
+          
+THE APPLY FUNCTIONS
+
+   Obap4. ob.ap(p,x)
+   
+        ob.is-pair(p) ⇒ ob.ap(p,x) = ob.ev(p,x,p)
+        ob.is-enclosure(p) ⇒ ob.ap(p,x) = ob.a(p)
+        ob.is-individual(p) ⇒ ob.ap(p,x) = ob.apint(p,x)
+        
+        Every ob has an applicative interpretation as a procedure.  Pairs
+        are interpreted by evaluation of ob.a as a script evaluated using
+        ob.b as the one argument and the script as its current procedure
+        as needed for self-reference/recursion.
+
+   Obap5. ob.apint(p,x) application of individuals.
+   
+        ob.apint(ob.NIL, x) = x
+        ob.apint(obap.A, x) = ob.a(x)
+        ob.apint(obap.B, x) = ob.b(x)
+        ob.apint(obap.C, x) = obap.C :: ob.e(x) :: obap.ARG
+        ob.apint(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
+        ob.apint(obap.E, x) = ob.e(x)
+                             
+        ¬ ob.is-primitive(p) => ob.apint(p,x) = p :: ob.e(x)
+        
+        Application of an individual having no primitive apint definition
+        determines a "trace" reflecting the uninterpreted application.  This
+        provides a form of symbolic execution when intended, a rudimentary
+        trace when inadvertent.
+        
+ THE EVALUATION FUNCTIONS
+ 
+   Obap6. ob.ev(p,x,e) evaluation of a procedure's expression 
+   
+        ob.is-evref(obap.SELF)
+        ob.is-evref(obap.ARG)
+        
+        ob.ev(p,x,obap.SELF) = p
+        ob.ev(p,x,obap.ARG) = x
+        
+        ob.is-individual(e) ∧ ¬ ob.is-evref(e) ⇒ ob.ev(p,x,e) = e
+        
+        ob.ev(p,x,ob.e(y)) = y
+        
+        ob.is-evbinop(obap.C)
+        ob.is-evbinop(obap.D)
+        
+        ob.ev(p,x,obap.C::e1::e2)
+           = ob.c(ob.ev(p,x,e1), ob.ev(p,x,e2))
+        ob.ev(p,x,obap.D::e1::e2)
+           = ob.d(ob.ev(p,x,e1), ob.ev(p,x,e2))
+           
+        ob.is-evbinop(e1) ∧ ob.is-singleton(e2)
+           ⇒ ob.ev(p,x,e1::e2) = ob.ap(e1, ob.ev(p,x,e2))
+           
+        ¬ ob.is-evbinop(e1)  
+           ⇒ ob.ev(p,x,e1::e2) = ob.ap(ob.ev(p,x,e1), ob.ev(p,x,e2))
+        
+   Obap7. ob.eval(e)
+   
+        ob.eval(e) = ob.ev(obap.SELF, obap.ARG, e)
+   
+   
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+
+ * Provide a stable location for obaptheory version progressions on 
+   <http://miser-theory.info>.
+   
+ * Consider whether obap prefixes should be used more for those parts that
+   are confined to this expansion on the elementary Ob provisions.  It is
+   still ‹ob› but taken as a specialization for the particular task of
+   establishing the specific universal functions.  Put simply, I am confusing
+   myself on ob.* versus obap.* and the desire for the SML/NJ mockup to use
+   structure obap. for this specialization.  I think I should not mess around
+   about that here.  
+   
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.2 2017-09-11-19:20 Proof-reading corrections, text touch-ups
+ 0.0.1 2017-09-11-19.04 Create the initial draft.
+
+
+
+                          *** end of obaptheory.txt ***                               
+   
