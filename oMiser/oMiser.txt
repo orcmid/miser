@@ -1,9 +1,9 @@
-oMiser.txt 0.0.2                    UTF-8                         dh:2017-**-**
+oMiser.txt 0.0.2                    UTF-8                         dh:2017-09-13
 
                            The Miser Project Code
                            ======================
                             
-                    <https://github.com/orcmid/miser/oMiser>
+             <https://github.com/orcmid/miser/oMiser/oMiser.txt>
 
               OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
               -------------------------------------------------
@@ -113,8 +113,8 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.2 2017-**-**-**:** Add ob.txt and obaptheory.txt in motivating the
-       next steps.
+ 0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
+       next steps.  Touch up the text.
  0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,
        ‹ob›, that all oMiser implementations must manifest correctly.
  0.0.0 2017-08-04-12:05 Create placeholder and initial job jar for the
