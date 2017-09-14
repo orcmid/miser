@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.3                  UTF-8                       dh:2017-09-14
+(* OB.sig.sml 0.0.4                  UTF-8                       dh:2017-09-14
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -52,7 +52,7 @@ signature OB
         for obs x,y, whether x = y  (op =)
         for obs x,y, whether x ¶ y  implicit in SML constructions
       
-   Any extensions of the ob datatype will be by addition of individuals.
+   Any extensions of the ob datatype shall constitute addition of individuals.
    
    Right-associative infix ## is the OB counterpart of SML ::.  The different
    notation compensates for the prohibition of :: overloading.  To use the ##
@@ -93,6 +93,7 @@ signature OB
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-09-14 15:12 Make extension only by individuals prescriptive.
  0.0.3 2017-09-14-15:08 Touch up and review TODOs.
  0.0.2 2017-09-14-11:14 Introduce :: ob manifestation counterpart ##. 
  0.0.1 2017-09-13-15:59 Extracted from obadt.sml 0.0.9, obsoleted thereby, 
