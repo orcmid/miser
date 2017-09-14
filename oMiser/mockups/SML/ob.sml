@@ -1,66 +1,52 @@
-(* ob.sml 0.0.9                       UTF-8                      dh:2017-08-30
+(* ob.sml 0.0.10                     UTF-8                      d h:2017-09-12
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
                        
-           <https://github.com/orcmid/miser/oMiser/mockups/SML/ob.sml>
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obadt.sml>
            
-                      DEFINITION OF THE SML ob DATATYPE
-                      ---------------------------------
+                        THE SML ob ABSTRACT DATA TYPE
+                        -----------------------------
                          
    A computational manifestation of the mathematical structure, ‹ob›, in
    Standard ML of New Jersey (SML/NJ).  For the mathematical formulation,
-   see <https://github.com/orcmid/miser/oMiser/obtheory.txt>.  See
-   <https://github.com/orcmid/miser/oMiser/mockups/SML/obcheck.sml>
-   for consideration of the soundness of the interpretation. 
+   see <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+   For the structure/interface requirements and connection with the primitive
+   notions of the mathematical formulation, see
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/OB.sig.sml>.
+   For consideration of the soundness of this interpretation, see
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>.
    *)
    
-datatype ob = ob_c of ob * ob  
-            | ob_e of ob       
-            | ob_NIL          
+use "OB.sig.sml";
+   
+structure ob :> OB
+ = struct
+ 
+      datatype ob = c of ob * ob  
+                  | e of ob       
+                  | NIL          
                 
-fun ob_a(x) = case x 
-                of ob_c(a, _) => a
-                 | ob_e(a) => a
-                 | _ => x
+      fun a(z) = case z 
+                   of c(x, _) => x
+                    | e(x) => x
+                    | _ => z
             
-fun ob_b(x) = case x 
-                of ob_c(_, b) => b  
-                 | _ => x          
+      fun b(z) = case z 
+                   of c(_, y) => y  
+                    | _ => z          
         
-fun is_ob_singleton x = ob_b(x) = x
+      fun is_singleton x = b(x) = x
 
-fun is_ob_individual x = ob_a(x) = x
+      fun is_individual x = a(x) = x
 
-fun is_ob_pair x = not (is_ob_singleton x)
+      fun is_pair x = not (is_singleton x)
 
-fun is_ob_enclosure x 
-       = is_ob_singleton x andalso not (is_ob_individual x)
+      fun is_enclosure x 
+          = is_singleton x andalso not (is_individual x)
        
-(* INTERPRETATION OF ‹ob› VIA ob.sml:
-
-        miser-theory ‹ob›            ob.sml interpretation
-        ----------------            ---------------------
-        ob.a function               ob_a: ob -> ob
-        ob.b function               ob_b: ob -> ob
-        ob.c function               ob_c: ob * ob -> ob (a constructor)
-        ob.e function               ob_e: ob -> ob (a constructor)
-        ob.is-individual predicate  is_ob_individual: ob -> bool
-        ob.is-singleton predicate   is_ob_singleton: ob -> bool
-        ob.is-pair predicate        is_ob_pair: ob -> bool
-        ob.is-enclosure predicate   is_ob_enclosure: ob -> bool
-        
-        for obs x,y, whether x = y  (op =)
-        for obs x,y, whether x ¶ y  implicit in SML constructions
-      
-   The definitions of fun ob_a and fun ob_b are invariant.  Consequently,
-   any extensions of the ob datatype have interpretation as individuals.  
-   
-   With the choice of names, the correspondence may seem obvious.  However
-   helpful the namings, do not be misled by them.  The intended interpretation
-   is explicit and confirmable, even if only by inspection and attestation.  
-   See <https://github.com/orcmid/miser/oMiser/mockups/SML/obcheck.sml> 
-   *)
+   end
+          
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -77,17 +63,21 @@ fun is_ob_enclosure x
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    *)
  
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
-TODO
-
- * Determine whether the apply-recognized individuals can be added 
-   separately or have to be updated here.  We could make an extension
-   for primitives.  Then we have to see to its management as a kind of
-   namespace.
+   TODO
+ 
+    * Look at creating a library that can be installed via the SML/NJ
+      Compilation Manager and reused easily that way.
    
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   *)
+   
+(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+   0.0.10 2017-09-13-16:44 Refactored with the confirmation of signature and
+         structure from obadt.sml, obsoleting that material. 
    0.0.9 2017-08-30-12:50 Change references to obtest.sml to obcheck.sml
    0.0.8 2017-08-29-13:04 Touch up layout to reflect my preferred style of
          indentation.
@@ -104,4 +94,4 @@ TODO
          is the only data structure available at the oMiser level.
          *)
          
-(*                        *** end of ob.sml ***                             *)
+(*                         *** end of ob.sml ***                             *)
