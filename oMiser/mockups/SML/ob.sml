@@ -1,4 +1,4 @@
-(* ob.sml 0.0.10                     UTF-8                      d h:2017-09-12
+(* ob.sml 0.0.11                     UTF-8                      d h:2017-09-14
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -44,6 +44,14 @@ structure ob :> OB
 
       fun is_enclosure x 
           = is_singleton x andalso not (is_individual x)
+          
+      infixr 5 ##
+      fun (x ## y) = c(x, y)
+         (* to use this infix, either open structure ob or define
+               val ## = ob.##
+            and then declare
+               infix 5 ##
+            *)
        
    end
           
@@ -76,7 +84,8 @@ structure ob :> OB
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-   0.0.10 2017-09-13-16:44 Refactored with the confirmation of signature and
+  0.0.11 2017-09-14-11:12 Implement ## counterpart of :: for obs
+  0.0.10 2017-09-13-16:44 Refactored with the confirmation of signature and
          structure from obadt.sml, obsoleting that material. 
    0.0.9 2017-08-30-12:50 Change references to obtest.sml to obcheck.sml
    0.0.8 2017-08-29-13:04 Touch up layout to reflect my preferred style of

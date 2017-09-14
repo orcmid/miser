@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.1                  UTF-8                       dh:2017-09-13
+(* OB.sig.sml 0.0.2                  UTF-8                       dh:2017-09-14
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -26,6 +26,8 @@ signature OB
       val is_individual: ob -> bool
       val is_singleton: ob -> bool
       val NIL: ob
+      val ## : ob * ob -> ob 
+          (* for infixr 5 ## with (x ## y) = c(x, y) *)
    end 
           
 (* INTERPRETATION REQUIREMENTS FOR ‹ob› MANIFESTATION OB SIGNATURE
@@ -46,10 +48,17 @@ signature OB
         for obs x,y, whether x ¶ y  implicit in SML constructions
       
    Any extensions of the ob type will be by addition of individuals.
-     
-   Script obcheck.sml provides simple confirmation checks for any SML/NJ
-   structure that exposes this signature and purport to manifest <ob>.  See
-   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml> 
+   
+   Right-associative infix ## is the OB counterpart of SML ::.  The different
+   notation compensates for the prohibition of :: overloading.  To use the ##
+   with a structure s :> OB, it is necessary to provide 
+            val ## = s.##    -- or open s here
+            infixr 5 ##
+   in the using procedure.
+   
+   Script obcheck.sml has confirmation checks for any SML/NJ structure that
+   structure that purports to manifest <ob> via signature OB and its ##.  See
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>
    *)
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -72,14 +81,14 @@ signature OB
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
     TODO:
- 
-      * See if "::" can be exposed as infix for c(x,y).  Does it have to be a
-        constructor?
+      * Make 0.1.0 when incorporated in a library via the Compilation
+        Manager.
         
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2017-09-14-11:14 Introduce :: ob manifestation counterpart ##. 
  0.0.1 2017-09-13-15:59 Extracted from obadt.sml 0.0.9 to take advantage of the
        SML/NJ signature reuse and structure provisions. 
        

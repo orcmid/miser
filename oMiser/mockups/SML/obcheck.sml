@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.17              UTF-8                         dh:2017-09-13
+(* obcheck.sml 0.0.18              UTF-8                         dh:2017-09-14
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -47,6 +47,8 @@ open ob;
 (* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE CHECKS 
    SHOULD WORK DIRECTLY.
    *)
+   
+infixr 5 ## ;
 
 (* DEMONSTRATE PRIMITIVES 
    These are simple confirming demonstrations.  They are not proofs. 
@@ -69,8 +71,12 @@ val ckOb1a = let val z = c(e ob_logo, NIL)
               in ob.a z = e ob_logo andalso b z = NIL
              end
            
-val ckOb1b = let val z = c(a ob_logo, b ob_logo)
+val ckOb1b = let val z = a ob_logo ## b ob_logo
               in z = ob_logo andalso a z <> z andalso b z <> z
+             end
+             
+val ck0b1c = let val z = ob_logo ## nob_logo ## NIL
+              in z = c(ob_logo, c(nob_logo, NIL))
              end
            
 (* Ob2. Enclosures
@@ -160,7 +166,8 @@ val ckOb5 =         is_ob_proper ob_logo
    *)
                 
                   
-(* 0.0.17 2017-09-13-16:45 Refactoring to use the form of obadtcheck.sml
+(* 0.0.18 2017-09-14-11:09 Incorporate check on infix ##.
+   0.0.17 2017-09-13-16:45 Refactoring to use the form of obadtcheck.sml
           and to rely on opening of the structure being checked.  Obsoletes
           obadtcheck.sml.
    0.0.16 2017-09-02-11:21 Wordsmithing and simplifying some checks.
