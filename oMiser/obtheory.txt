@@ -1,4 +1,4 @@
-obtheory.txt 0.0.16                  UTF-8                       dh:2017-09-06
+obtheory.txt 0.0.17                  UTF-8                       dh:2017-09-14
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -120,14 +120,29 @@ PRIMITIVE NOTIONS
         ob.is-individual(x) ⇒ x ¶ ob.c(x,y)      
         ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
      
-   Ob9. Denumerability
+   Ob9. Denumerable Canonical Form
         Ob consists of all distinct, finitely-expressible obs satisfying
-        conditions Ob1-Ob8 and having no occurrences of ob.a and ob.b
-        in their formulation.  The individuals are denumerable.
-        
+        conditions Ob1-Ob8 and expressed without use of variables and
+        without any functions other than ob.c and ob.e.  Such expressions
+        are canonical identifiers of individual obs.  Each canonical
+        identifier is unique to a particular ob and every ob is canonically
+        identifiable.
+               
         Ob is unbounded and denumerable provided that the individuals be 
         denumerable.
-
+        
+   Ob10. Effectively-Computable Functions in Of
+   
+        Without addressing fine technalities here, a function F in Of is
+        claimed to be effectively-computable if, given canonical identifiers
+        for the arguments, a canonical result is determined unambiguously and
+        explicitly by deduction based entirely on obtheory and the
+        formulation of the function in a finite number of mathematical 
+        statements that characterize F.  
+        
+        Predicates are effectively-determined to be one of true or false in a
+        similar manner.
+        
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -160,16 +175,10 @@ TODO
  * Find places to locate this material that is perhaps easier to reach
    into than GitHub, and perhaps more durable.  This may depend on stability
    of the material.
-   
- * Introduction of the oMiser universal eval-/apply-functions requires 
-   identification of additional individuals.  Technically, they should be
-   introduced with those functions.  We want that to work in a way that
-   is not very clumsy but does spiral upward.  Having the universal function
-   definitely impacts the computational manifestation of ‹ob›, as does 
-   integration of a manifestation with oFrugal or other "peripheral processor."
-   
+      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.17 2017-09-14-18:49 Add Ob10 on effective computability.
  0.0.16 2017-09-06-18:02 Correct the GitHub link and add work items about
         further steps.
  0.0.15 2017-09-05-18:11 Make ob.NIL an individual explicitly and simplify
