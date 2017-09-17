@@ -1,4 +1,4 @@
-obtheory.txt 0.0.17                  UTF-8                       dh:2017-09-14
+obtheory.txt 0.0.18                  UTF-8                       dh:2017-09-17
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -108,7 +108,7 @@ PRIMITIVE NOTIONS
    Ob8. The ¶ Precedence Condition
    
         ¬ (x ¶ x)                                (a), irreflexive
-        (x ¶ y) ⇒ ¬ (y ¶ x)                      (b), non-commutative
+        (x ¶ y) ⇒ ¬ (y ¶ x)                      (b), asymmetrical
         (x ¶ y) ∧ (y ¶ z) ⇒ (x ¶ z)             (c), transitive
         
         x = y ⇔ ¬ (x ¶ y) ∧ ¬ (y ¶ x)           (d), ordering
@@ -135,13 +135,26 @@ PRIMITIVE NOTIONS
    
         Without addressing fine technalities here, a function F in Of is
         claimed to be effectively-computable if, given canonical identifiers
-        for the arguments, a canonical result is determined unambiguously and
-        explicitly by deduction based entirely on obtheory and the
-        formulation of the function in a finite number of mathematical 
-        statements that characterize F.  
+        for the arguments, a canonical-identifier result is determined
+        unambiguously and explicitly by deduction based entirely on obtheory
+        and the formulation of the function in a finite number of mathematical 
+        statements that characterize (i.e., represent) F.  
         
         Predicates are effectively-determined to be one of true or false in a
         similar manner.
+        
+        Observe that ob.c(x,y), ob.e(x), the four ob.is-... predicates, and 
+        the "=" relation are all effectively-computable in this sense, so long
+        as individuals are distinguishable.  
+        
+        In contrast, x ¶ y is a partial ordering.  When x ≠ y is determined, 
+        it need not be determined which of x ¶ y or y ¶ x holds.  We do not
+        expect x ¶ y to be effectively-computable.  It is instead sufficient
+        that Ob8 never be violated in the mathematical representation of some
+        function F (or predicate) in the form purported to demonstrate
+        effective computability.  We leave for now the question of whether
+        there are restraints on representations that assure this without 
+        otherwise limiting effective-computability.
         
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -170,7 +183,8 @@ TODO
  * Confirm that the notation characters are preserved/presented on the
    different storage media.
    
- * Figure out what to do about well-definedness.  Is this an Ob10 condition?
+ * Figure out what to do about well-definedness.  Is this an Ob10 or Ob11
+   condition?
  
  * Find places to locate this material that is perhaps easier to reach
    into than GitHub, and perhaps more durable.  This may depend on stability
@@ -178,6 +192,9 @@ TODO
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.18 2017-09-17-11:22 Describe ¶ as asymmetrical rather than non-commutative
+        (hat tip to Paul McJones).  Expand Ob10 for improved informal treatment
+        of representation for effectively-computable functions.
  0.0.17 2017-09-14-18:49 Add Ob10 on effective computability.
  0.0.16 2017-09-06-18:02 Correct the GitHub link and add work items about
         further steps.
