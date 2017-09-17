@@ -1,4 +1,4 @@
-(* obap.sml 0.0.0                     UTF-8                      dh:2017-09-15
+(* obap.sml 0.0.1                     UTF-8                      dh:2017-09-16
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -25,8 +25,16 @@ structure obap :> OBAP
  
       datatype ob = c of ob * ob  
                   | e of ob
-                  | L of string 
-                  | NIL          
+                  | NIL 
+                  
+                  | A              (* Obap1 additions ... *)
+                  | B
+                  | C
+                  | D
+                  | E
+                  | SELF
+                  | ARG
+                  | L of string    (* Obap2 addition *)
                 
       fun a(z) = case z 
                    of c(x, _) => x
@@ -45,7 +53,7 @@ structure obap :> OBAP
 
       fun is_enclosure x 
           = is_singleton x andalso not (is_individual x)
-          
+                   
       infixr 5 ##
       fun (x ## y) = c(x, y)
          (* to use this infix, either open structure obap or define
@@ -54,9 +62,18 @@ structure obap :> OBAP
                infix 5 ##
             *)
             
+          (*  alternative for enclose (not quote) *)            
       fun ` x = e(x)
           (* likewise ... *)
-       
+          
+      (* Obap2: is-lindy manifestation *)
+      fun is_lindy (L y) = true
+        | is_lindy (_) = false
+
+      
+      fun ap(x: ob, y: ob) = y      (* stub *)
+      
+      fun eval(exp: ob) = ` exp     (* stub *)  
    end
           
 
@@ -89,7 +106,9 @@ structure obap :> OBAP
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-   0.0.0 2017-07-25-11:24 Skeleton for building up the additional notions
+   0.0.1 2017-09-16-16:58 Implement primitives and satisfy ap and eval 
+         signatures with stubs for checking the primitives.
+   0.0.0 2017-09-25-11:24 Skeleton for building up the additional notions
          and implementing the universal applicative functions ap(p,x) and
          eval(e)
          *)

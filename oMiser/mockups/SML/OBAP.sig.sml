@@ -1,4 +1,4 @@
-(* OBAP.sig.sml 0.0.0                UTF-8                       dh:2017-09-15
+(* OBAP.sig.sml 0.0.1                UTF-8                       dh:2017-09-16
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -7,7 +7,8 @@
            
            THE SML OBAP APPLICATIVE DATA TYPE SIGNATURE/INTERFACE
            ------------------------------------------------------
-                         
+   
+   [AUTHOR NOTE: Restate in terms of obap, not ob]
    SML/NJ manifestations of the mathematical structure, ‹ob›, support the common
    signature, OB.  For the applicable mathematical requirements, see
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.  SML/NJ
@@ -25,18 +26,35 @@ signature OBAP
  = sig
        include OB;
        val L : string -> ob
+       val is_lindy: ob -> bool
        val ` : ob -> ob
-       
+       val A: ob
+       val B: ob
+       val C: ob
+       val D: ob
+       val E: ob
+       val SELF: ob
+       val ARG: ob
+       val ap: ob * ob -> ob
+       val eval: ob -> ob 
    end 
           
 (* INTERPRETATION REQUIREMENTS FOR ‹ob› APPLICATIVE ABSTRACT DATA SIGNATURE
 
-        miser-theory ‹ob›            OBAP.sig.sml interpretation
-        ----------------            ---------------------------
-        obtheory                    OB.sig.sml interpretation
-        Ʃs                          L : string -> ob
-      
-
+        miser-theory ‹ob› obaptheory   OBAP.sig.sml interpretation
+        ---------------------------   ---------------------------
+        obtheory                      OB.sig.sml interpretation
+        Ʃs                            L : string -> ob
+        obap.is-lindy                 is-lindy: ob -> bool
+        obap.A                        A: ob
+        obap.B                        B: ob
+        obap.C                        C: ob
+        obap.D                        D: ob
+        obap.E                        E: ob
+        obap.SELF                     SELF: ob
+        obap.ARG                      ARG: ob
+        obap.ap                       ap: ob * ob -> ob
+        obap.eval                     eval: ob -> ob
    
    To use infix ## with a structure s :> OBAP it is necessary to provide 
             val ## = s.##    -- or open s, and also
@@ -73,14 +91,13 @@ signature OBAP
         
       * Fix the boilerplate that lingers here, avoiding repetition of
         notions in the primitive notions treatment.
-        
-      * Fix the footer of OB.sig.sml to capitalize OB.
-        
+       
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.1 2017-09-16-16:54 Alignment with obaptheory and obap.sml
  0.0.0 2017-09-15-11:34 Initial Skeleton for confirming introduction of
        Lindies and enquote prefix, `. 
        
