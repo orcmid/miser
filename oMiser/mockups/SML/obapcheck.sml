@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.2               UTF-8                        dh:2017-09-19
+(* obapcheck.sml 0.0.3               UTF-8                        dh:2017-09-20
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -164,25 +164,13 @@ val CkObap6k = let val SKK = eval((e(cS)##e(cK))##e(cK))
     
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
-        
-      * Verify lindies first.
-      
-      * Confirm that even with opening of obap, only the key functions
-        are accessible.
-        
-      * Assume that obap.obcheck.sml has been applied and should be used
-        if something fundamental seems to be amiss.
-        
-      * We need to make ` an unary operator or else there is little point, 
-        because of SML application order and treating ` as a regular function
-        name.
-        
-      * Use the symbolic execution of the derivation of cS and cK as checks.
-        
+                
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.3 2017-09-20-10:24 Remove satisfied TODOs reflecting the successful
+         alignment of obaptheory and the SML computational manifestation.
    0.0.2 2017-09-19-19:53 Confirm Obap4-Obap7 applicative operation for 
          manifestation of effectively-universal functions ap(p,x) and eval(exp)
    0.0.1 2017-09-16-17:00 Confirm primitives and Obap1-Obap2 interpretation.

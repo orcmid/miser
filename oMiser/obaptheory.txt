@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.7                 UTF-8                       dh:2017-09-19
+obaptheory.txt 0.0.8                 UTF-8                       dh:2017-09-20
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -77,15 +77,6 @@ ADDITIONAL NOTIONS
                         
           obap.is-lindy(x) ⇒ ob.is-individual(x)          
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
-          
-          obap.is-lindy(x) => obap.is-lindy-every-free(x)
-          obap.is-lindy-every-free(c(x,y))
-             ⇔ obap.is-lindy-every-free(x) ∧ obap.is-lindy-every-free(y)
-             
-          obap.is-lindy(x) => obap.is-lindy-everywhere(x)
-          obap.is-lindy-everywhere(e(x)) ⇔ obap.is-lindy-everywhere(x)
-          obap.is-lindy-everywhere(c(x,y))
-             ⇔ obap.is-lindy-everywhere(x) ∧ obap.is-lindy-everywhere(y)
                    
           Here a precarious example of introducing text into the
           theory language expression of arbitrary namings for distinct
@@ -115,10 +106,24 @@ THE APPLY FUNCTIONS
 
    Obap4. obap.ap(p,x)
    
-        ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
+          obap.is-lindy(x) => obap.is-lindy-every-free(x)
+          obap.is-lindy-every-free(c(x,y))
+             ⇔ obap.is-lindy-every-free(x) ∧ obap.is-lindy-every-free(y)
+             
+          obap.is-lindy(x) => obap.is-lindy-everywhere(x)
+          obap.is-lindy-everywhere(e(x)) ⇔ obap.is-lindy-everywhere(x)
+          obap.is-lindy-everywhere(c(x,y))
+             ⇔ obap.is-lindy-everywhere(x) ∧ obap.is-lindy-everywhere(y)
+   
         ob.is-enclosure(p) ⇒ obap.ap(p,x) = ob.a(p)
+        
         ob.is-individual(p) ⇒ obap.ap(p,x) = obap.apint(p,x)
         
+        obap.is-lindy-every-free(p) ∧ obap.is-lindy-everywhere(x)
+                => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x
+        ¬ (obap.is-lindy-every-free(p) ∧ obap.is-lindy-everywhere(x))
+                => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
+                              
         Every ob determine an applicative procedure.  Pairs
         are evaluated in obap.ev by taking ob.a as a script having ob.b as the 
         single argument, using the script itself when needed for self-
@@ -133,18 +138,18 @@ THE APPLY FUNCTIONS
         obap.apint(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
         obap.apint(obap.E, x) = ob.e(x)
                
-        obap.is-lindy(p) ∧ obap.is-lindy(x)  
+        obap.is-lindy(p) ∧ obap.is-lindy-everywhere(x)  
                          => obap.apint(p,x) = p :: x
-        obap.is-lindy(p) ∧ ¬ obap.is-lindy(x)  
+        obap.is-lindy(p) ∧ ¬ obap.is-lindy-everywhere(x)  
                          => obap.apint(p,x) = p :: ob.e(x)
                        
         obap.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
         obap.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
         
         A trace is a form, t, such that obap.ap(t,obap.NIL) = obap.eval(t) = t.
-        This supports a form of symbolic evaluation in the case of lindies.  
-        For obap.SELF and obap.ARG, it reflects that there is no (further)
-        reduction.
+        This supports a form of symbolic evaluation in the case of individuals,
+        such as lindies, that lack an applicative interpretation.  Traces are
+        determined similarly in the case of obap.SELF and obap.ARG application.
         
         The obap.apint evaluations for obap.C and obap.D determine partial
         applications, effectively currying use of functions ob.c and obap.d.
@@ -295,8 +300,12 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2017-09-20-10:09 Reflect the application of lindies in a manner that
+       supports symbolic traces of evaluations, based on the lack of any
+       distinct interpretations lindies as anything else.
  0.0.7 2017-09-19-19:45 Add is-lindy-every-free(x) and is-lindy-everywhere(x).
-       Recast the statement of universal computation in terms of effective- universality of the functions obap.ap(p,x) and obap.eval(exp).
+       Recast the statement of universal computation in terms of effective-
+       universality of the functions obap.ap(p,x) and obap.eval(exp).
  0.0.6 2017-09-16-10:22 More TODOs and some touch-ups.  Consistently use obap.*
        for notions expressed in obaptheory beyond the primitive ob.* ones that
        remain applicable to all of Ob.

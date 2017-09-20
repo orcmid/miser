@@ -1,4 +1,4 @@
-(* obap.sml 0.0.2                     UTF-8                      dh:2017-09-19
+(* obap.sml 0.0.3                     UTF-8                      dh:2017-09-20
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -66,10 +66,7 @@ structure obap :> OBAP
       fun is_lindy (L y) = true
         | is_lindy (_) = false
         
-      fun is_lindy_every_free ( L y) = true
-        | is_lindy_every_free (c(x,y)) = is_lindy_every_free x
-                                          andalso is_lindy_every_free y
-        | is_lindy_every_free (_) = false
+      
         
       fun is_lindy_everywhere (L y) = true
         | is_lindy_everywhere (e x) = is_lindy_everywhere x
@@ -81,20 +78,34 @@ structure obap :> OBAP
          applies ob p interpreted as a procedure script to argument ob x
          *)
       fun ap(p: ob, x: ob) 
-          = case p
-              of c(_,_) => if is_lindy_every_free p 
-                              andalso is_lindy_everywhere x
-                           then p ## x else ev(p,x,p)
-               | e(y) => y
+          = let fun is_lindy_everywhere (L y) = true
+                    | is_lindy_everywhere (e x) = is_lindy_everywhere x
+                    | is_lindy_everywhere (c(x,y)) 
+                            = is_lindy_everywhere x 
+                              andalso is_lindy_everywhere y
+                    | is_lindy_everywhere (_) = false
+             in case p
+                of c(_,_) => let fun is_lindy_every_free (L y) = true
+                                   | is_lindy_every_free (c(x,y)) 
+                                           = is_lindy_every_free x
+                                             andalso is_lindy_every_free y
+                                   | is_lindy_every_free (_) = false
+                              in if is_lindy_every_free p 
+                                    andalso is_lindy_everywhere x
+                                 then p ## x 
+                                 else ev(p,x,p)
+                             end
+                 | e(y) => y
                
-               | NIL => x   (* Obap5: apint(p,x) inline *)
-               | A => a(x)
-               | B => b(x)
-               | C => C ## e(x) ## ARG
-               | D => D ## e(x) ## ARG
-               | E => e(x)
-               | L s => p ## (if is_lindy_everywhere(x) then x else e x)
-               | _ => e(p) ## e(x)
+                 | NIL => x   (* Obap5: apint(p,x) inline *)
+                 | A => a(x)
+                 | B => b(x)
+                 | C => C ## e(x) ## ARG
+                 | D => D ## e(x) ## ARG
+                 | E => e(x)
+                 | L s => p ## (if is_lindy_everywhere(x) then x else e x)
+                 | _ => e(p) ## e(x)
+            end
                
       (* Obap6: obap.ev(p,x,e) evaluate e in body of obap.ap(p,x) *)        
       and ev(p: ob, x: ob, exp: ob)  
@@ -142,8 +153,10 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-   0.0.2 2017-09-19-19:48 Implement ap(p,x) and ev(p,x,exp) with is_all_lindy
-         avoidance of extraneous quotation and application.
+   0.0.3 2017-09-20-09:51 Make is_lindy_everywhere and is_lindy-every_free
+         local to app and reconciled with corrected obaptheory specification.
+   0.0.2 2017-09-19-19:48 Implement ap(p,x) and ev(p,x,exp) with avoidance
+         of extraneous quotation and application on reduction to a trace.
    0.0.1 2017-09-16-16:58 Implement primitives and satisfy ap and eval 
          signatures with stubs for checking the primitives.
    0.0.0 2017-09-25-11:24 Skeleton for building up the additional notions
