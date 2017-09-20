@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.4                  UTF-8                       dh:2017-09-14
+(* OB.sig.sml 0.0.5                  UTF-8                       dh:2017-09-19
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -32,7 +32,7 @@ signature OB
       val is_singleton: ob -> bool
       val NIL: ob
       val ## : ob * ob -> ob 
-          (* requiring infixr 5 ##, for use of (x ## y) = c(x, y) *)
+          (* requiring infixr 5 ## for use of (x ## y) = c(x, y) *)
    end 
           
 (* INTERPRETATION REQUIREMENTS FOR ‹ob› MANIFESTATION OB SIGNATURE
@@ -86,14 +86,13 @@ signature OB
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
         
-      * Confirm that incorporation in OBAP.sig.sml and use in obap.sig.sml, 
-        obap.sml, obap.obcheck.sml and obapcheck.sml all work smoothly.
-        
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.4 2017-09-14 15:12 Make extension only by individuals prescriptive.
+ 0.0.5 2017-09-19-20:06 Touchups and confirmation of use as part of the
+       ob.sml, obcheck.sml, obap.sml, obap.obcheck.sml and obapcheck.sml.
+ 0.0.4 2017-09-14-15:12 Make extension only by individuals prescriptive.
  0.0.3 2017-09-14-15:08 Touch up and review TODOs.
  0.0.2 2017-09-14-11:14 Introduce :: ob manifestation counterpart ##. 
  0.0.1 2017-09-13-15:59 Extracted from obadt.sml 0.0.9, obsoleted thereby, 
@@ -101,4 +100,4 @@ signature OB
        
        *)
          
-(*                      *** end of ob.sig.sml ***                             *)
+(*                      *** end of OB.sig.sml ***                             *)

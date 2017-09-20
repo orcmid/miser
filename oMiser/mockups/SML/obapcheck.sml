@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.1               UTF-8                        dh:2017-09-16
+(* obapcheck.sml 0.0.2               UTF-8                        dh:2017-09-19
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -53,8 +53,93 @@ val CkObap2b
                    | _ => true
        in are_diff (prims @ lindies)
       end
+      
+(* obap4: obap.ap(p,x) *)
 
-         
+val CkObap4a = ap(ARG##SELF,ARG) = e(ARG) ## e(ARG ## SELF)  
+
+val CkObap4b = ap(e(ARG) ## e(ARG ## SELF), L"Z") = e(ARG) ## e(ARG##SELF)
+      
+val CkObap4c = ap(e(L"X"),L"Y") = L"X"
+      
+(* obap5: obap.apint(p,x) via obap.ap(p,x) with individual p *)
+
+val CkObap5a = ap(NIL,L"X") = L"X"
+val CkObap5b = ap(A, L"X" ## L"Y") = L"X"
+val CkObap5c = ap(B, L"X" ## L"Y") = L"Y"
+val CkObap5d = ap(C, L"X") = C ## e(L"X") ## ARG
+val CkObap5e = ap(D, L"X") = D ## e(L"X") ## ARG
+val CkObap5f = ap(E, L"X") = e(L"X")
+val CkObap5g = ap(L"X", L"Y") = L"X" ## L"Y"
+val CkObap5h = ap(L"X", NIL) = L"X" ## e(NIL)
+val CkObap5i = ap(L"X", e(L"Y")) = L"X" ## e(L"Y")
+val CkObap5j = ap(SELF, L"X") = e(SELF) ## e(L"X")
+val CkObap5k = ap(ARG, L"X") = e(ARG) ## e(L"X")
+
+(* obap6 obap.ev(p,x,e) via obap.ap(p,x) procedures and eval(exp) expressions *)
+
+val CkObap6a = let val cKX = e(L"X")
+                in ap( cKX, NIL) = L"X"
+               end             
+val cK = E ## ARG     (* currying of cKX to cK *)          
+val CkObap6b =         ap(cK,L"X") = e(L"X")
+               andalso ap( ap(cK,L"X"), NIL) = L"X"               
+val CkObap6c = ap( e(cK)##L"X", NIL) = e(L"X")                          
+val CkObap6d = eval( (e(cK)## L"X") ## NIL ) = L"X"
+    (* demonstrating a computational manifestation of combinator K in obap *)
+              
+val CkObap6e = eval(L"X" ## L"Y") = L"X" ## L"Y"
+val CkObap6f = let val xyz = L"X" ## L"Y" ## L"Z"
+                in           ap(xyz, NIL) = xyz 
+                     andalso eval(xyz) = xyz
+               end
+
+val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG)))   
+val Ck0bap6g = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
+                    in         ap(L"X",L"Z") = L"X" ## L"Z"
+                       andalso ap(L"Y",L"Z") = L"Y" ## L"Z"
+                       andalso ap(L"X" ## L"Z", L"Y" ## L"Z") = SXYZ
+                       andalso ap(ap(L"X",L"Z"),ap(L"Y",L"Z")) = SXYZ
+                       andalso eval(SXYZ) = SXYZ 
+                   end
+val Ck0bap6h = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"   
+                   val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
+                in             ap(SXY,L"Z") = SXYZ
+                       andalso eval(e(SXY) ## L"Z") = SXYZ 
+                   end
+val Ck0bap6i = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"   
+                   val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
+                   val SX = C##e(e(L"X")##ARG)##C##(E##ARG)##e(ARG) 
+                in         ap(SX, L"Y") = SXY
+                   andalso ap(ap(SX, L"Y"), L"Z") = SXYZ
+                   andalso eval(e(SX)##L"Y") = SXY
+                   andalso eval((e(SX)##L"Y")##L"Z") = SXYZ
+               end                   
+val CkObap6j = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"   
+                   val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
+                   val SX = C##e(e(L"X")##ARG)##C##(E##ARG)##e(ARG) 
+                in         ap(cS,L"X") = SX
+                   andalso ap(ap(cS,L"X"),L"Y") = SXY
+                   andalso ap(ap(ap(cS,L"X"),L"Y"),L"Z") = SXYZ
+                   andalso eval(e(cS)##L"X") = SX
+                   andalso eval((e(cS)##L"X")##L"Y") = SXY
+                   andalso eval(((e(cS)##L"X")##L"Y")##L"Z") = SXYZ                   
+               end
+    (* demonstrating a computational manifestation of combinator S in obap *)
+
+val cI = NIL
+val CkObap6k = let val SKK = eval((e(cS)##e(cK))##e(cK))
+                in         SKK = (e(cK)##ARG)##(e(cK)##ARG)
+                   andalso ap(SKK,L"X") = L"X"
+                   andalso eval(e(SKK)##L"X") = L"X"
+                   andalso ap(cI,L"X") = L"X"
+                   andalso eval(cI ## L"X") = L"X"
+                   andalso eval(e(cI) ## L"X") = L"X"
+                   andalso ap(cI##ARG, L"X") = L"X"
+                   andalso eval(e(cI##ARG)##L"X") = L"X"
+               end
+     (* demonstrating different computational scripts for combinator I *)
+                          
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -88,8 +173,9 @@ val CkObap2b
       * Assume that obap.obcheck.sml has been applied and should be used
         if something fundamental seems to be amiss.
         
-      * Confirm that ` cannot be piled up and see if ` `x works or has a
-        type error.
+      * We need to make ` an unary operator or else there is little point, 
+        because of SML application order and treating ` as a regular function
+        name.
         
       * Use the symbolic execution of the derivation of cS and cK as checks.
         
@@ -97,6 +183,8 @@ val CkObap2b
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.2 2017-09-19-19:53 Confirm Obap4-Obap7 applicative operation for 
+         manifestation of effectively-universal functions ap(p,x) and eval(exp)
    0.0.1 2017-09-16-17:00 Confirm primitives and Obap1-Obap2 interpretation.
    0.0.0 2017-09-15-12:37 Skeleton for progressive introduction of tests
          as obap.sml is extended, starting with verificaton of the traces.

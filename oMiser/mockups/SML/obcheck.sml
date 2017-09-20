@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.18              UTF-8                         dh:2017-09-14
+(* obcheck.sml 0.0.19              UTF-8                         dh:2017-09-19
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -68,7 +68,7 @@ val nob_logo = e ob_logo
         *)                 
                  
 val ckOb1a = let val z = c(e ob_logo, NIL)
-              in ob.a z = e ob_logo andalso b z = NIL
+              in a z = e ob_logo andalso b z = NIL
              end
            
 val ckOb1b = let val z = a ob_logo ## b ob_logo
@@ -166,7 +166,9 @@ val ckOb5 =         is_ob_proper ob_logo
    *)
                 
                   
-(* 0.0.18 2017-09-14-11:09 Incorporate check on infix ##.
+(* 0.0.19 2017-09-19-19:59 Remove a stray ob.a with just a since the structure
+          used is opened and it might not be ob.sml.
+   0.0.18 2017-09-14-11:09 Incorporate check on infix ##.
    0.0.17 2017-09-13-16:45 Refactoring to use the form of obadtcheck.sml
           and to rely on opening of the structure being checked.  Obsoletes
           obadtcheck.sml.

@@ -1,4 +1,4 @@
-(* OBAP.sig.sml 0.0.1                UTF-8                       dh:2017-09-16
+(* OBAP.sig.sml 0.0.2                UTF-8                       dh:2017-09-19
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -27,7 +27,6 @@ signature OBAP
        include OB;
        val L : string -> ob
        val is_lindy: ob -> bool
-       val ` : ob -> ob
        val A: ob
        val B: ob
        val C: ob
@@ -86,9 +85,6 @@ signature OBAP
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
         
-      * Confirm that incorporation in OBAP.sig.sml and use in obap.sig.sml, 
-        obap.sml, obap.obcheck.sml and obapcheck.sml all work smoothly.
-        
       * Fix the boilerplate that lingers here, avoiding repetition of
         notions in the primitive notions treatment.
        
@@ -96,7 +92,7 @@ signature OBAP
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
+ 0.0.2 2017-09-19-20:04 Ditch ' x = e(x) as ineffective because not a prefix.
  0.0.1 2017-09-16-16:54 Alignment with obaptheory and obap.sml
  0.0.0 2017-09-15-11:34 Initial Skeleton for confirming introduction of
        Lindies and enquote prefix, `. 

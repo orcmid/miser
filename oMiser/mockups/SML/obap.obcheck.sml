@@ -1,4 +1,4 @@
-(* obap.obcheck.sml 0.0.0            UTF-8                        dh:2017-09-15
+(* obap.obcheck.sml 0.0.2            UTF-8                        dh:2017-09-19
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -26,7 +26,7 @@ infixr 5 ## ;
 val ob_logo = c(NIL, e NIL)
               (* pattern of the oMiser logo diagram at 
                  <http://miser-theory.info> *)
-val nob_logo = `ob_logo
+val nob_logo = e(ob_logo)
                  
 (* Ob1. Pairs
         z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
@@ -34,7 +34,7 @@ val nob_logo = `ob_logo
         *)                 
                  
 val ckOb1a = let val z = c(e ob_logo, NIL)
-              in a z = `ob_logo andalso b z = NIL
+              in a z = e ob_logo andalso b z = NIL
              end
            
 val ckOb1b = let val z = a ob_logo ## b ob_logo
@@ -54,7 +54,7 @@ val ckOb2a = let val z = e(b ob_logo)
               in a z = b ob_logo andalso b z = z
              end
                  
-val ckOb2b = let val z = `(a nob_logo)   
+val ckOb2b = let val z = e(a nob_logo)   
               in z = nob_logo andalso a z = ob_logo andalso b z = z
              end
    
@@ -132,15 +132,14 @@ val ckOb5 =         is_ob_proper ob_logo
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
         
-      * Confirm that incorporation in OBAP.sig.sml and use in obap.sig.sml, 
-        obap.sml, obap.obcheck.sml and obapcheck.sml all work smoothly.
-        
-      * Fix the use of ob.a in CkOb1a of obcheck.sml
-        
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.2 2017-09-19-20:01 Remove an use of `(x) that was overlooked.
+         Confirm integrated operation with obap.sml, OBAP.sig.sml, and
+         consistency with obaptheory.txt.
+   0.0.1 2017-09-18-20:17 Eliminate use of `(x) since no better than e(x).
    0.0.0 2017-09-15-11:26 Start with obcheck.sml 0.0.18 as boilerplate
          for confirming just the primitive notions and their sugar in
          obap.sml.
