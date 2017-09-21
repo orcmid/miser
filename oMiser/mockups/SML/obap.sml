@@ -1,4 +1,4 @@
-(* obap.sml 0.0.3                     UTF-8                      dh:2017-09-20
+(* obap.sml 0.0.4                     UTF-8                      dh:2017-09-20
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -27,7 +27,7 @@ structure obap :> OBAP
                   | e of ob
                   | NIL 
                   
-                  | A              (* Obap1 additions ... *)
+                  | A              (* obaptheory Obap1 additions ... *)
                   | B
                   | C
                   | D
@@ -66,32 +66,29 @@ structure obap :> OBAP
       fun is_lindy (L y) = true
         | is_lindy (_) = false
         
-      
-        
-      fun is_lindy_everywhere (L y) = true
-        | is_lindy_everywhere (e x) = is_lindy_everywhere x
-        | is_lindy_everywhere (c(x,y)) = is_lindy_everywhere x 
-                                           andalso is_lindy_everywhere y
-        | is_lindy_everywhere (_) = false
-
       (* Obap4: obap.ap(p,x)
          applies ob p interpreted as a procedure script to argument ob x
          *)
       fun ap(p: ob, x: ob) 
           = let fun is_lindy_everywhere (L y) = true
-                    | is_lindy_everywhere (e x) = is_lindy_everywhere x
-                    | is_lindy_everywhere (c(x,y)) 
+                  | is_lindy_everywhere (e x) = is_lindy_everywhere x
+                  | is_lindy_everywhere (c(x,y)) 
                             = is_lindy_everywhere x 
                               andalso is_lindy_everywhere y
-                    | is_lindy_everywhere (_) = false
+                  | is_lindy_everywhere (_) = false
+                    (* every individual leaf of the ob is a lindy *)
              in case p
-                of c(_,_) => let fun is_lindy_every_free (L y) = true
-                                   | is_lindy_every_free (c(x,y)) 
-                                           = is_lindy_every_free x
-                                             andalso is_lindy_every_free y
-                                   | is_lindy_every_free (_) = false
-                              in if is_lindy_every_free p 
+                of c(_,_) => let fun is_every_free_lindy (L y) = true
+                                   | is_every_free_lindy (c(x,y)) 
+                                           = is_every_free_lindy x
+                                             andalso is_every_free_lindy y
+                                   | is_every_free_lindy (_) = false
+                                   (* every free (unenclosed) individual
+                                      leaf of the ob is a lindy *)
+                              in if is_every_free_lindy p 
                                     andalso is_lindy_everywhere x
+                                    (* so both are effectively traces already
+                                       and let's not lose x *)
                                  then p ## x 
                                  else ev(p,x,p)
                              end
@@ -153,7 +150,9 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-   0.0.3 2017-09-20-09:51 Make is_lindy_everywhere and is_lindy-every_free
+   0.0.4 2017-09-20-19:22 Remove extraneous copy of is_lindy_everywhere and
+         rename is_lindy_every_free to is_every_free_lindy.  Touch ups.
+   0.0.3 2017-09-20-09:51 Make is_lindy_everywhere and is_lindy_every_free
          local to app and reconciled with corrected obaptheory specification.
    0.0.2 2017-09-19-19:48 Implement ap(p,x) and ev(p,x,exp) with avoidance
          of extraneous quotation and application on reduction to a trace.
