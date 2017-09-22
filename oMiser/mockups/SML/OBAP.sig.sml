@@ -1,4 +1,4 @@
-(* OBAP.sig.sml 0.0.2                UTF-8                       dh:2017-09-19
+(* OBAP.sig.sml 0.0.3                UTF-8                       dh:2017-09-21
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -8,16 +8,16 @@
            THE SML OBAP APPLICATIVE DATA TYPE SIGNATURE/INTERFACE
            ------------------------------------------------------
    
-   [AUTHOR NOTE: Restate in terms of obap, not ob]
-   SML/NJ manifestations of the mathematical structure, ‹ob›, support the common
-   signature, OB.  For the applicable mathematical requirements, see
-   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.  SML/NJ
+   Expansion of the SML/NJ manifestation of the mathematical structure, ‹ob›,
+   aligns with obaptheory, inclduing definition of two effectively universal
+   functions. For the applicable mathematical requirements, see
+   <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.  SML/NJ
    structures that expose this signature shall provide sound computational
    manifestations as interpretations of the theory. 
    
-   Script obcheck.sml has confirmation checks for any SML/NJ structure that
-   is asserted to manifest <ob> via signature OB.  Inspect the structure and see
-   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>
+   Script obapcheck.sml has confirmation checks for any SML/NJ structure that
+   is asserted to manifest <ob> via signature OBAP.  Inspect obap.sml and
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obapcheck.sml>
    *)
    
 use "OB.sig.sml";
@@ -92,6 +92,7 @@ signature OBAP
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2017-09-21-20:22 Update the synopsis to apply to OBAP, not OB.
  0.0.2 2017-09-19-20:04 Ditch ' x = e(x) as ineffective because not a prefix.
  0.0.1 2017-09-16-16:54 Alignment with obaptheory and obap.sml
  0.0.0 2017-09-15-11:34 Initial Skeleton for confirming introduction of
