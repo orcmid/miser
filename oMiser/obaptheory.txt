@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.8                 UTF-8                       dh:2017-09-20
+obaptheory.txt 0.0.9                 UTF-8                       dh:2017-09-25
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -48,7 +48,7 @@ PRELIMINARIES
           
    Obap1. New Individuals
           
-          Seven named individuals are employed in addition to ob.NIL:
+          Nine named individuals are employed in addition to ob.NIL:
    
           obap.is-primitive(x) ⇒ ob.is-individual(x)
    
@@ -62,6 +62,8 @@ PRELIMINARIES
           
           obap.is-primitive(obap.SELF)
           obap.is-primitive(obap.ARG)
+          obap.is-primitive(obap.PROC)
+          obap.is-primitive(obap.DEF)
           
 ADDITIONAL NOTIONS
 
@@ -98,9 +100,9 @@ ADDITIONAL NOTIONS
           The function representations are interdependent (i.e., mutually
           recursive).
           
-          All other predicates and functions introduced here are provided 
-          in support of the representation of obap.ap and obap.eval and need
-          not be relied upon otherwise.
+          All other predicates and functions introduced in Obap4-Obap7 are
+          provided in support of the representation of obap.ap and obap.eval 
+          and need not be relied upon otherwise.
           
 THE APPLY FUNCTIONS
 
@@ -190,7 +192,25 @@ THE APPLY FUNCTIONS
    Obap7. obap.eval(e)
    
         obap.eval(e) = obap.ev(obap.SELF, obap.ARG, e)
+        
+THE PROC AND DEF FUNCTION
+
+   Obap8. Proc and Def Individuals 
    
+        obap.is-proc(obap.apint(obap.PROC, p)) 
+        p ¶ obap.apint(obap.PROC, p))
+        obap.is-proc(x) ⇒ obap.is-individual(x)
+        
+        obap.is-proc(x) ∧ ¬ obap.is-proc(y) ⇒ x ≠ y
+        obap.apint(obap.PROC, p1) = obap.apint(obap.PROC, p2) ⇔ p1 = p2
+        
+        obap.def(apint(obap.PROC, p)) = p
+        ¬ obap.is-proc(x) ⇒ obap.def(x) = x
+        
+        obap.is-proc(p) ⇒ apint(p, x) = obap.ev(p, x, obap.def(p)) 
+        
+        apint(obap.DEF, x) = obap.def(x)
+          
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -212,6 +232,10 @@ THE APPLY FUNCTIONS
  
 TODO
 
+ * Reflect the trace business in the definition of ap and elsewhere earlier,
+   perhaps so it is easier to understand the business of tracing. Maybe this
+   goes in Obap3.
+
  * Provide a stable location for obaptheory version progressions on 
    <http://miser-theory.info>.
    
@@ -224,10 +248,16 @@ TODO
  * Determining how types are handled and generally individuals representing
    extended functions remains open.
    
- * It is desirable to introduce obap.PROC immediately, since it provides
-   a valuable demonstration of some of the power of immutability and the
+ * obap.PROC demonstrates some of the power of immutability and the
    ability for processors to optimize operation.  It also affirms the idea
    of preserving extensional identity, something to be developed further.
+   
+ * obap.DEF is not needed except that it is required in order for the 
+   effectively-universal functions to have simulations of themselves.  This is
+   a bit like reflection in some programming systems and I am not certain it
+   should be exposed generally.  I guess this is symetric with my reasoning
+   about e(x) and I should not be surprised that def is required for complete-
+   ness.  
    
  * It is mildly interesting that representation in a mathematical theory
    has no concern about tail recursion or other optimizations.  It doesn't
@@ -289,17 +319,26 @@ TODO
    of the formal computation machinery of John McCarthy's LISP.  It's too 
    powerful to avoid.  In other respects, there are an accumulation of 
    differences here.  There is no dynamic binding/scoping, there are no
-   symbolic referencs, obs are immutable, the primitives are total, and there
-   are no variables (and no FunArg problem): obap.ap and obap.eval all determine
-   results by rewriting alone.  There's also a serious limitation of useful
-   data types, and that remains to be addressed.
+   symbolic references, obs are immutable, the primitives are total, predicates
+   on the primitive notions are definable on characteristics of the structure
+   alone, and there are no variables (and no FunArg problem): obap.ap and
+   obap.eval all determine results by rewriting and application alone.  There's 
+   also a serious limitation of useful data types, and that remains to be addressed.
    
  * The special treatment for is-lindy-every-free(p) and is-lindy-everywhere(x)
    is designed to simplify the production of traces having lindies standing as
    points of abstraction for substitution of "variable" enclosure obs.
+   
+ * Construct sufficient tests of lindy treatment in an implementation to 
+   demonstrate that the current applicative interpretation is adequate and 
+   has no nasty edge cases.
+   
+ * Find my correspondence with John McCarthy about my early ideas on Miser and
+   his recommendation.
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.9 2017-09-25-16:57 Adjust TODOs, introduce ob.PROC and ob.DEF
  0.0.8 2017-09-20-10:09 Reflect the application of lindies in a manner that
        supports symbolic traces of evaluations, based on the lack of any
        distinct interpretations lindies as anything else.
