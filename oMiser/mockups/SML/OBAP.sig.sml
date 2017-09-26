@@ -1,4 +1,4 @@
-(* OBAP.sig.sml 0.0.3                UTF-8                       dh:2017-09-21
+(* OBAP.sig.sml 0.0.4                UTF-8                       dh:2017-**-**
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -85,13 +85,14 @@ signature OBAP
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
         
-      * Fix the boilerplate that lingers here, avoiding repetition of
-        notions in the primitive notions treatment.
+      * Reflect revised notions about CT-effective and Turing complete
+        here as appropriate.
        
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-**-**-**:** Adjust TODOs
  0.0.3 2017-09-21-20:22 Update the synopsis to apply to OBAP, not OB.
  0.0.2 2017-09-19-20:04 Ditch ' x = e(x) as ineffective because not a prefix.
  0.0.1 2017-09-16-16:54 Alignment with obaptheory and obap.sml

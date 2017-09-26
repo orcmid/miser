@@ -1,4 +1,4 @@
-(* ob.sml 0.0.11                     UTF-8                      d h:2017-09-14
+(* ob.sml 0.0.12                     UTF-8                       dh:2017-**-**
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -84,6 +84,7 @@ structure ob :> OB
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  0.0.12 2017-**-**-**:** Touch ups.
   0.0.11 2017-09-14-11:12 Implement ## counterpart of :: for obs
   0.0.10 2017-09-13-16:44 Refactored with the confirmation of signature and
          structure from obadt.sml, obsoleting that material. 
