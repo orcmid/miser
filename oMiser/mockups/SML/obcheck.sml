@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.19              UTF-8                         dh:2017-09-19
+(* obcheck.sml 0.0.20              UTF-8                         dh:2017-**-**
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -164,9 +164,37 @@ val ckOb5 =         is_ob_proper ob_logo
         determination of the datatype value instance.
    Note: The datatype definition is recursive; the datatype values are not.
    *)
+   
+(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    *)
+    
+(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+    TODO:
+    
+      * Move the lengthy material at the beginning, and the other prose
+        except when part of interpretation demonstration.
                 
-                  
-(* 0.0.19 2017-09-19-19:59 Remove a stray ob.a with just a since the structure
+    *)
+ 
+(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                                
+   0.0.20 2017-**-**-**:** Adjust TODOs.  Add License Notice.
+   0.0.19 2017-09-19-19:59 Remove a stray ob.a with just a since the structure
           used is opened and it might not be ob.sml.
    0.0.18 2017-09-14-11:09 Incorporate check on infix ##.
    0.0.17 2017-09-13-16:45 Refactoring to use the form of obadtcheck.sml

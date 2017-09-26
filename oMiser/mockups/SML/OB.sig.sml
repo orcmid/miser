@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.5                  UTF-8                       dh:2017-09-19
+(* OB.sig.sml 0.0.6                  UTF-8                       dh:2017-**-**
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -86,10 +86,14 @@ signature OB
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
         
+      * The statement about extensions "constitute new individuals" is off
+        and should be perhaps "occuring as additional individuals."
+        
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2017-**-**-**:** Adjust TODOs
  0.0.5 2017-09-19-20:06 Touchups and confirmation of use as part of the
        ob.sml, obcheck.sml, obap.sml, obap.obcheck.sml and obapcheck.sml.
  0.0.4 2017-09-14-15:12 Make extension only by individuals prescriptive.

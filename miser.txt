@@ -1,4 +1,4 @@
-miser.txt 0.0.1                    UTF-8                          dh:2017-07-27
+miser.txt 0.0.2                    UTF-8                          dh:2017-**-**
 
                            The Miser Project Code
                            ======================
@@ -66,14 +66,12 @@ TODO
     
   * Introduce oFrugal later when there enough oMiser to talk about.
   
-  * Under oMiser find a place for an sml/ directory holding the SML/NJ
-    demonstration.
-    
   * Ensure a hierarchical organization that fits the nfoTools construction
     sets pattern.
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2017-**-**-**:** Adjust TODOs.
  0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for 
        experiments and conceptual demonstrations such as in SML/.
  0.0.0 2017-07-26-13:31 Create placeholder and initial job jar for the

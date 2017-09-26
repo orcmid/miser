@@ -1,4 +1,4 @@
-mockups.txt 0.0.0                    UTF-8                        dh:2017-08-04
+mockups.txt 0.0.1                    UTF-8                        dh:2017-**-**
 
                            The Miser Project Code
                            ======================
@@ -53,9 +53,15 @@ TODO
   * Demonstrate the difference between the formal definition of Obs and
     the chosen universal function and the implementation and testing of
     implementations.
+    
+  * Make it clear that mockups are not the same as production versions.
+    They are more proof-of-concept and maybe pilot implementations, but
+    not qualifying as the framework that will be used for spiral development
+    of stable, production releases.
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2017-**-**-**:** Adust TODOs.
  0.0.0 2017-08-04-12:18 Create placeholder and initial job jar for
        oMiser mockup development.
 

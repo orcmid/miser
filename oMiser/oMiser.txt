@@ -1,4 +1,4 @@
-oMiser.txt 0.0.2                    UTF-8                         dh:2017-09-13
+oMiser.txt 0.0.3                    UTF-8                         dh:2017-**-**
 
                            The Miser Project Code
                            ======================
@@ -103,16 +103,18 @@ TODO
   * Address platform variety (e.g., C/C++ versus .NET, Java, etc.) and
     also using oMiser at a binary level beneath systems such as Python.
     
-  * Capture the procedure by which an implementation is verified to
-    be a valid interpretation of obtheory and the other mathematically-
-    characterized functions that are introduced. 
+  * Emphasize that this is a machine, machine data structure, and machine-
+    language in the conventional sense.  And, at the oMiser/oFrugal level,
+    we are basically seeing an assembler (reader) and a disassembler (printer)
+    of the oMiser machine code.  Where oFrugal becomes more interesting may
+    be with Proc and maybe something about data structures.
     
-  * For the SML manifestation, see if there can be a simple specialization
-    to structure obap that retains the ob functions and also the extension
-    to obap provisions in a natural manner.
+  * Complete the ob.txt sketch.  Include the actions here or there from the
+    2017-09-20 conversation with Paul McJones.
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2017-**-**-**:** Adust TODOs.  
  0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
        next steps.  Touch up the text.
  0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,

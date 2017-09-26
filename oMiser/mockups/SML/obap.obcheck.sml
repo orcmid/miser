@@ -1,4 +1,4 @@
-(* obap.obcheck.sml 0.0.2            UTF-8                        dh:2017-09-19
+(* obap.obcheck.sml 0.0.3            UTF-8                        dh:2017-**-**
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -132,10 +132,13 @@ val ckOb5 =         is_ob_proper ob_logo
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
         
+      * Replace the synopsis Author Note with appropriate text.
+        
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.3 2017-**-**-**:** Adjust TODOs.
    0.0.2 2017-09-19-20:01 Remove an use of `(x) that was overlooked.
          Confirm integrated operation with obap.sml, OBAP.sig.sml, and
          consistency with obaptheory.txt.
