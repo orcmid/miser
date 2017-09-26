@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.4               UTF-8                        dh:2017-**-**
+(* obapcheck.sml 0.0.3               UTF-8                        dh:2017-09-20
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -164,15 +164,11 @@ val CkObap6k = let val SKK = eval((e(cS)##e(cK))##e(cK))
     
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
-        
-      * Provide systematic treatment of lindy traces to identify any
-        edge cases, any disconnects with the assertion of what traps are.
                 
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
-   0.0.4 2017-**-**-**:** Adjust TODOs
    0.0.3 2017-09-20-10:24 Remove satisfied TODOs reflecting the successful
          alignment of obaptheory and the SML computational manifestation.
    0.0.2 2017-09-19-19:53 Confirm Obap4-Obap7 applicative operation for 

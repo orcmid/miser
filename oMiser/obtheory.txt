@@ -1,4 +1,4 @@
-obtheory.txt 0.0.19                  UTF-8                       dh:2017-**-**
+obtheory.txt 0.0.18                  UTF-8                       dh:2017-09-17
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -189,17 +189,9 @@ TODO
  * Find places to locate this material that is perhaps easier to reach
    into than GitHub, and perhaps more durable.  This may depend on stability
    of the material.
-   
- * Perhaps we should speak of CT-computable and not effectively computable.
-   There is probably a good diagram for this between obtheory and a suitable
-   computational manifestation.  Maybe we will need Turing-complete as well.
-   That may be better than effectively computable.  It is probably not quite
-   right to use CT-complete.  We'll have to see how these terms were originally
-   used.
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.19 2017-**-**-**:** Adjust TODOs.
  0.0.18 2017-09-17-11:22 Describe ¶ as asymmetrical rather than non-commutative
         (hat tip to Paul McJones).  Expand Ob10 for improved informal treatment
         of representation for effectively-computable functions.

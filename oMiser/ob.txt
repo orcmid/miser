@@ -1,4 +1,4 @@
-ob.txt 0.0.1                    UTF-8                            dh:2017-**-**
+ob.txt 0.0.0                    UTF-8                            dh:2017-09-13
 
                            The Miser Project Code
                            ======================
@@ -47,16 +47,11 @@ TODO
   
   * The storage model goes with the idea of quasi-Platonic presence via 
     successful computational manifestation.
+ 
     
-  * Cover the chosen point of entry and the levels above and below: Situating
-    ‹ob› and its computational manifestation.
-    
-  * Use miniature and rudimentary in place of "toy"
-     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
- 0.0.1 2017-**-**-**:** Adjust TODOs.
  0.0.0 2017-09-13-10:44 Placeholder and boiler plate for a note on Obs
        as ‹ob› mathematical structure, computational manifestation, data
        representation, and storage model.  
