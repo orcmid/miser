@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.11                 UTF-8                       dh:2017-09-28
+obaptheory.txt 0.0.12                 UTF-8                       dh:2017-09-28
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -37,7 +37,7 @@ PRELIMINARIES
           
    Obap1. New Individuals
           
-          Seven named individuals are employed in addition to ob.NIL:
+          Nine named individuals are employed including ob.NIL:
    
           obap.is-primitive(x) ⇒ ob.is-individual(x)
    
@@ -51,6 +51,8 @@ PRELIMINARIES
           
           obap.is-primitive(obap.SELF)
           obap.is-primitive(obap.ARG)
+          
+          obap.is-primitive(obap.EV)
 
           
 ADDITIONAL NOTIONS
@@ -73,7 +75,9 @@ ADDITIONAL NOTIONS
           
           NOTE: Ʃs is not a function in ‹ob›.  Ʃs is a metalinguistic 
           notation for designating further, conveniently-named individuals
-          in the universe of discourse.
+          in the universe of discourse, here written in forms such as
+          Ʃalpha, ƩABCs, ƩletterQ, and Ʃfoo but having no significance
+          in the theory and a minimal applicative interpretation (below).
           
   Obap3.  Universal Apply Function
   
@@ -126,6 +130,7 @@ THE APPLY FUNCTIONS
                        
         obap.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
         obap.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
+        obap.apint(obap.EV, x) = obap.eval(x)
         
         A trace is a form, t, such that obap.ap(t,obap.NIL) = obap.eval(t) = t.
         This supports a form of symbolic evaluation in the case of individuals,
@@ -164,7 +169,10 @@ THE APPLY FUNCTIONS
         obap.is-evbinop(e1) ∧ ob.is-singleton(e2)
            ⇒ obap.ev(p,x,e1::e2) = obap.ap(e1, obap.ev(p,x,e2))
            
-        ¬ obap.is-evbinop(e1)  
+        obap.is-evunop(obap.EV)
+        obap.ev(p,x,obap.EV :: e2) = obap.ev(p,x,obap.ev(p,x,e2))
+           
+        ¬ ( obap.is-evbinop(e1) ∨ obap.is-evunop(e1) ) 
            ⇒ obap.ev(p,x,e1::e2) = obap.ap(obap.ev(p,x,e1), obap.ev(p,x,e2))
         
    Obap7. obap.eval(e)
@@ -192,12 +200,7 @@ THE APPLY FUNCTIONS
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
 TODO
-
- * Add obap.EV and its uses as an obap.is-evunop that causes the evaluated
-   operand to be taken as procedure in the current ev environment.  It is
-   effectively a "goto" for execution of data as local expression and some-
-   times a tail-recursion case.
-   
+  
  * Reflect the trace business in the definition of ap and elsewhere earlier,
    perhaps so it is easier to understand the business of tracing. Maybe this
    goes in Obap3.
@@ -305,6 +308,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2017-09-28-15:37 Add obap.EV, its applicative interpretation and its
+       special form in obap.ev.
  0.0.11 2017-09-28-14:48 Adjust TODOs. Remove ob.PROC and ob.DEF for treat-
        ment of extension mechanisms.  Simplify the introduction of notions
        about universality based on discussion with Paul McJones.  Recover the
