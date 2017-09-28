@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.9                 UTF-8                       dh:2017-09-25
+obaptheory.txt 0.0.11                 UTF-8                       dh:2017-09-28
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -9,29 +9,18 @@ obaptheory.txt 0.0.9                 UTF-8                       dh:2017-09-25
                        -----------------------------------
                         
    For the mathematical structure, ‹ob› = <Ob,Of,Ot>, we demonstrate existence
-   of effectively-universal functions among Of with two examples.  The exemplary
-   functions are obap.ap(p,x) and obap.eval(exp).  They are related by the fact
-   that obap.ap(p,x) = ob.eval( c(e(p),e(x)) ).  It's safe to focus on obap.ap
-   in the following sketch.
+   of a universal function, obap.ap(p,x) and an important companion obap.ev 
+   employed in its construction and separate use via obap.eval(exp).   .  
    
-   obap.ap has a peculiar limitation.  It is not effectively-computable in the
-   sense considered for functions on obs.  Even though obap.ap(p,x) is clearly-
-   represented in Ot, below, what obap.ap(p,x) determines is the interpretation
-   of ob p as the expression of a procedure applied to ob x as operand. The
-   dilemma is that not all of those p-expressed procedures are effective nor
-   is there an effectively-calculable function to decide the matter.
-   
-   With that in mind, effective universality is taken here to mean that whenever
-   a function, F, on obs is effectively calculable, there is an ob p that
-   expresses an effective procedure such that obap.ap(p,x) = F(x) is determined.
-   
+   Universality of obap.ap(p,x) is taken to mean that for every function,
+   F on obs that is effectively-calculable, there is an ob p that expresses
+   an effective procedure such that obap.ap(p,x) = F(x) is determined.
+     
    The grand objective is to establish that not only is obap.ap(p,x) 
-   effectively-universal on obs, but that, in consequence, it provides a 
-   universal model of computation as powerful as any other, in harmony with
-   the Church-Turing thesis.  It is sufficient to demonstrate that some 
-   existing accepted-as-universal computation models are simulated in ‹ob› 
-   using obap.eval and obap.ap. 
-
+   a universal function in this respect, but that it provides a model of
+   commputation as powerful as any other, in harmon with the Church-Turing
+   thesis.  
+   
    Confirmation of these claims is developed separately.  Here we represent
    obap.ap(p,x) and obap.eval(exp) via Ot.
    
@@ -48,7 +37,7 @@ PRELIMINARIES
           
    Obap1. New Individuals
           
-          Nine named individuals are employed in addition to ob.NIL:
+          Seven named individuals are employed in addition to ob.NIL:
    
           obap.is-primitive(x) ⇒ ob.is-individual(x)
    
@@ -62,20 +51,18 @@ PRELIMINARIES
           
           obap.is-primitive(obap.SELF)
           obap.is-primitive(obap.ARG)
-          obap.is-primitive(obap.PROC)
-          obap.is-primitive(obap.DEF)
+
           
 ADDITIONAL NOTIONS
 
    Obap2. Literal Individuals
           
           obap.is-lindy(x) ⇔ x = Ʃs
-             where s is a character string, of syntactic form <lindy>,
-                     consisting of a letter optionally followed by one 
-                     or more alphanumeric characters
+             where s is a character string consisting of a letter optionally
+                     followed by one or more alphanumeric characters
                      
           Ʃs = Ʃt ⇔ s = t
-             where s = t depends on identity of the string texts
+             where s = t signifies identity of the string texts
                         
           obap.is-lindy(x) ⇒ ob.is-individual(x)          
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
@@ -88,20 +75,17 @@ ADDITIONAL NOTIONS
           notation for designating further, conveniently-named individuals
           in the universe of discourse.
           
-  Obap3.  The Universal Applicative Functions
+  Obap3.  Universal Apply Function
   
              obap.ap(p,x) determines the application of ob p, taken as
                           expression of a procedure, to ob x, taken as
                           the argument
                       
            obap.eval(exp) determines the evaluation of ob exp taken as an
-                          applicative expression
+                          applicative expression          
           
-          The function representations are interdependent (i.e., mutually
-          recursive).
-          
-          All other predicates and functions introduced in Obap4-Obap7 are
-          provided in support of the representation of obap.ap and obap.eval 
+          All other predicates and functions introduced in Obap4-Obap7 below
+          support the representation of obap.ap and obap.eval 
           and need not be relied upon otherwise.
           
 THE APPLY FUNCTIONS
@@ -109,8 +93,8 @@ THE APPLY FUNCTIONS
    Obap4. obap.ap(p,x)
    
           obap.is-lindy(x) => obap.is-lindy-every-free(x)
-          obap.is-lindy-every-free(c(x,y))
-             ⇔ obap.is-lindy-every-free(x) ∧ obap.is-lindy-every-free(y)
+          obap.is-every-free-lindy(c(x,y))
+             ⇔ obap.is-every-free-lindy(x) ∧ obap.is-every-free-lindy(y)
              
           obap.is-lindy(x) => obap.is-lindy-everywhere(x)
           obap.is-lindy-everywhere(e(x)) ⇔ obap.is-lindy-everywhere(x)
@@ -121,16 +105,11 @@ THE APPLY FUNCTIONS
         
         ob.is-individual(p) ⇒ obap.ap(p,x) = obap.apint(p,x)
         
-        obap.is-lindy-every-free(p) ∧ obap.is-lindy-everywhere(x)
+        obap.is-every-free-lindy(p) ∧ obap.is-lindy-everywhere(x)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x
-        ¬ (obap.is-lindy-every-free(p) ∧ obap.is-lindy-everywhere(x))
+        ¬ ( obap.is-every-free-lindy(p) ∧ obap.is-lindy-everywhere(x) )
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
                               
-        Every ob determine an applicative procedure.  Pairs
-        are evaluated in obap.ev by taking ob.a as a script having ob.b as the 
-        single argument, using the script itself when needed for self-
-        reference/recursion.
-
    Obap5. obap.apint(p,x) applicative treatment of individuals.
    
         obap.apint(ob.NIL, x) = x
@@ -150,8 +129,7 @@ THE APPLY FUNCTIONS
         
         A trace is a form, t, such that obap.ap(t,obap.NIL) = obap.eval(t) = t.
         This supports a form of symbolic evaluation in the case of individuals,
-        such as lindies, that lack an applicative interpretation.  Traces are
-        determined similarly in the case of obap.SELF and obap.ARG application.
+        such as lindies, that lack an applicative interpretation. 
         
         The obap.apint evaluations for obap.C and obap.D determine partial
         applications, effectively currying use of functions ob.c and obap.d.
@@ -193,24 +171,7 @@ THE APPLY FUNCTIONS
    
         obap.eval(e) = obap.ev(obap.SELF, obap.ARG, e)
         
-THE PROC AND DEF FUNCTION
-
-   Obap8. Proc and Def Individuals 
-   
-        obap.is-proc(obap.proc(p))
-        obap.is-proc(p) ⇒ obap.is-individual(p)
-        p ¶ obap.proc(p)
-        
-        obap.proc(p) = q ⇒ obap.def(q) = p
-        ¬ obap.is-proc(x) ⇒ obap.def(x) = x
-        
-        proc(p) = proc(q) ⇔ def(p) = def(q)
-        obap.is-proc(x) ∧ ¬ obap.is-proc(y) ⇒ x ≠ y
-
-        apint(obap.PROC, p) = proc(p)        
-        apint(obap.DEF, x) = obap.def(x)
-        
-        obap.is-proc(p) ⇒ apint(p, x) = obap.ev(p, x, obap.def(p))          
+     
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -232,6 +193,11 @@ THE PROC AND DEF FUNCTION
  
 TODO
 
+ * Add obap.EV and its uses as an obap.is-evunop that causes the evaluated
+   operand to be taken as procedure in the current ev environment.  It is
+   effectively a "goto" for execution of data as local expression and some-
+   times a tail-recursion case.
+   
  * Reflect the trace business in the definition of ap and elsewhere earlier,
    perhaps so it is easier to understand the business of tracing. Maybe this
    goes in Obap3.
@@ -248,23 +214,21 @@ TODO
  * Determining how types are handled and generally individuals representing
    extended functions remains open.
    
- * obap.PROC demonstrates some of the power of immutability and the
+ * Introduced obap.PROC to demonstrate some of the power of immutability and the
    ability for processors to optimize operation.  It also affirms the idea
    of preserving extensional identity, something to be developed further.
    
- * obap.DEF is not needed except that it is required in order for the 
-   effectively-universal functions to have simulations of themselves.  This is
-   a bit like reflection in some programming systems and I am not certain it
-   should be exposed generally.  I guess this is symetric with my reasoning
-   about e(x) and I should not be surprised that def is required for complete-
-   ness.  
+ * Introducing obap.DEF is required in order for the universal function to
+   be simulated by some script, p.  This reflection-like feature has me be
+   nervous.  The system must be able to look within.  I am resisting having 
+   scripts able to accomplish that.  
    
  * It is mildly interesting that representation in a mathematical theory
    has no concern about tail recursion or other optimizations.  It doesn't
    even have the requirement on computation that a definite ob be arrived
    at consisting entirely of individuals combined with ob.e and ob.c.
    
- * So how we establish what a computational manifestation accomplishes 
+ * How we establish what a computational manifestation accomplishes 
    and how one can assert the soundness of various optimizations is not
    found here.  This provides a possibly-interesting further contrast 
    between the representation of obap.ap and obap.eval in a mathematical theory
@@ -323,11 +287,14 @@ TODO
    on the primitive notions are definable on characteristics of the structure
    alone, and there are no variables (and no FunArg problem): obap.ap and
    obap.eval all determine results by rewriting and application alone.  There's 
-   also a serious limitation of useful data types, and that remains to be addressed.
+   also a serious absence of useful data types, and that remains to be
+   addressed.
    
  * The special treatment for is-lindy-every-free(p) and is-lindy-everywhere(x)
    is designed to simplify the production of traces having lindies standing as
-   points of abstraction for substitution of "variable" enclosure obs.
+   points of abstraction for substitution of "variable" enclosed obs.  This
+   needs to be analyzed more carefully.  It is very costly yet applicative 
+   interpretation of lindies needs to be definite.
    
  * Construct sufficient tests of lindy treatment in an implementation to 
    demonstrate that the current applicative interpretation is adequate and 
@@ -338,6 +305,11 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2017-09-28-14:48 Adjust TODOs. Remove ob.PROC and ob.DEF for treat-
+       ment of extension mechanisms.  Simplify the introduction of notions
+       about universality based on discussion with Paul McJones.  Recover the
+       change from is-lindy-every-free to is-every-free-lindy that got lsot
+       somewhere.
  0.0.10 2017-09-25-19:59 Restate Obap8 to have the definitons of obap.proc(p),
        obab.def(x), and the applicative interpretations of obap.PROC and 
        obap.DEF to parallel the approach for other parts of obaptheory.

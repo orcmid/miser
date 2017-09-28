@@ -1,4 +1,4 @@
-obtheory.txt 0.0.19                  UTF-8                       dh:2017-**-**
+obtheory.txt 0.0.19                  UTF-8                       dh:2017-09-28
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -133,7 +133,7 @@ PRIMITIVE NOTIONS
         
    Ob10. Effectively-Computable Functions in Of
    
-        Without addressing fine technalities here, a function F in Of is
+        Without addressing fine technicalities here, a function F over Of is
         claimed to be effectively-computable if, given canonical identifiers
         for the arguments, a canonical-identifier result is determined
         unambiguously and explicitly by deduction based entirely on obtheory
@@ -148,13 +148,10 @@ PRIMITIVE NOTIONS
         as individuals are distinguishable.  
         
         In contrast, x ¶ y is a partial ordering.  When x ≠ y is determined, 
-        it need not be determined which of x ¶ y or y ¶ x holds.  We do not
-        expect x ¶ y to be effectively-computable.  It is instead sufficient
-        that Ob8 never be violated in the mathematical representation of some
-        function F (or predicate) in the form purported to demonstrate
-        effective computability.  We leave for now the question of whether
-        there are restraints on representations that assure this without 
-        otherwise limiting effective-computability.
+        it need not be determined which of x ¶ y or y ¶ x holds. The purpose 
+        of the ordering is that Ob8 never be violated in the mathematical
+        representation of some function F (or predicate P) that is purported to
+        demonstrate the effective computability thereof.  
         
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -190,16 +187,20 @@ TODO
    into than GitHub, and perhaps more durable.  This may depend on stability
    of the material.
    
- * Perhaps we should speak of CT-computable and not effectively computable.
-   There is probably a good diagram for this between obtheory and a suitable
-   computational manifestation.  Maybe we will need Turing-complete as well.
-   That may be better than effectively computable.  It is probably not quite
-   right to use CT-complete.  We'll have to see how these terms were originally
-   used.
+ * When we speak of all of the effectively-computable functions on Obs, as     
+   characterized here, the claim will be that their totality is equivalent to
+   the CT-computable functions.  When a a universal function is also formulated,
+   equivalence to a Universal Turing Machine and Turing Completeness will be
+   claimed.
+   
+ * (Paul McJones) Do further research on the various treatments of effective
+   computability, the Church-Turing thesis, and Turing Completeness to ensure
+   that any characterization here is compatible. 
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.19 2017-**-**-**:** Adjust TODOs.
+ 0.0.19 2017-09-28-13:04  Adjust TODOs.  Address some comments and suggestions
+        from Paul McJones (private communication).
  0.0.18 2017-09-17-11:22 Describe ¶ as asymmetrical rather than non-commutative
         (hat tip to Paul McJones).  Expand Ob10 for improved informal treatment
         of representation for effectively-computable functions.
