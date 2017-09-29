@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.12                 UTF-8                       dh:2017-09-28
+obaptheory.txt 0.0.13                 UTF-8                       dh:2017-09-29
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -10,19 +10,19 @@ obaptheory.txt 0.0.12                 UTF-8                       dh:2017-09-28
                         
    For the mathematical structure, ‹ob› = <Ob,Of,Ot>, we demonstrate existence
    of a universal function, obap.ap(p,x) and an important companion obap.ev 
-   employed in its construction and separate use via obap.eval(exp).   .  
+   employed in its construction and separately useful via obap.eval(exp).   .  
    
    Universality of obap.ap(p,x) is taken to mean that for every function,
    F on obs that is effectively-calculable, there is an ob p that expresses
-   an effective procedure such that obap.ap(p,x) = F(x) is determined.
+   an effective procedure such that obap.ap(p,x) = F(x) is determined, given x.
      
    The grand objective is to establish that not only is obap.ap(p,x) 
    a universal function in this respect, but that it provides a model of
-   commputation as powerful as any other, in harmon with the Church-Turing
+   commputation as powerful as any other, in harmony with the Church-Turing
    thesis.  
    
-   Confirmation of these claims is developed separately.  Here we represent
-   obap.ap(p,x) and obap.eval(exp) via Ot.
+   Confirmation of these claims is developed separately.  Here we formalize
+   obap.ap(p,x) and obap.eval(exp) in mathematical terms.
    
 PRELIMINARIES
 
@@ -308,6 +308,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.13 2017-09-29-08:29 Adjust the synopsis, correcting the text and making
+       it a bit more informally readable.
  0.0.12 2017-09-28-15:37 Add obap.EV, its applicative interpretation and its
        special form in obap.ev.
  0.0.11 2017-09-28-14:48 Adjust TODOs. Remove ob.PROC and ob.DEF for treat-
@@ -338,7 +340,6 @@ TODO
  0.0.3 2017-09-11-19:55 Remembered to add definition for ob.d(x,y)
  0.0.2 2017-09-11-19:20 Proof-reading corrections, text touch-ups
  0.0.1 2017-09-11-19.04 Create the initial draft.
-
 
 
                           *** end of obaptheory.txt ***                               
