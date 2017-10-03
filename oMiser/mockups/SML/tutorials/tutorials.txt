@@ -1,9 +1,9 @@
-tutorials.txt 0.0.11                 UTF-8                        dh:2017-09-14
+tutorials.txt 0.0.12                 UTF-8                        dh:2017-10-03
 
                              The Miser Project Code
                              ======================
                             
-            <https://github.com/orcmid/miser/oMiser/mockups/SML>
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/tutorials>
 
                         SML MOCKUP TUTORIAL MATERIALS
                         -----------------------------
@@ -98,7 +98,14 @@ MANIFEST
          ‹ob› as Abstract Data Type, Part 17, Stabilized
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1958097167738190/>
          
+    ob-2017-09-29-0834-obap-Synopsis.png
+         ‹ob› as Computational Model, Part 2, The Idea
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1963207360560504/>
     
+    ob-2017-10-03-0758-obap-Preliminaries.png
+         ‹ob› as Computational Model, Part 3, Preliminaries
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1964638877084019/>
+         
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -124,6 +131,8 @@ TODO
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2017-10-03-08:47 Correct GitHub link.  Add the two Golden Geek
+       screen captures for Parts 1-3 of ‹ob› as Computational Model.
  0.0.11 2017-09-14-20:15 Preserve the image from Part 17, Stabilized.
  0.0.10 2017-09-03-10:44 Add capture of the Part 16 Totality and Partition
        update.
