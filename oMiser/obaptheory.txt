@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.13                 UTF-8                       dh:2017-09-29
+obaptheory.txt 0.0.14                 UTF-8                       dh:2017-10-04
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -60,43 +60,40 @@ ADDITIONAL NOTIONS
    Obap2. Literal Individuals
           
           obap.is-lindy(x) ⇔ x = Ʃs
-             where s is a character string consisting of a letter optionally
-                     followed by one or more alphanumeric characters
+             where s is a finite-length character string consisting of a letter
+                     optionally followed by one or more alphanumeric characters
                      
           Ʃs = Ʃt ⇔ s = t
              where s = t signifies identity of the string texts
                         
           obap.is-lindy(x) ⇒ ob.is-individual(x)          
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
-                   
-          Here a precarious example of introducing text into the
-          theory language expression of arbitrary namings for distinct
-          individuals in the subject domain.  Lindies are employed freely. 
-          
-          NOTE: Ʃs is not a function in ‹ob›.  Ʃs is a metalinguistic 
-          notation for designating further, conveniently-named individuals
-          in the universe of discourse, here written in forms such as
-          Ʃalpha, ƩABCs, ƩletterQ, and Ʃfoo but having no significance
-          in the theory and a minimal applicative interpretation (below).
+                             
+          NOTE: Lindies are distinct conveniently-named individuals that have
+          no intrinsic significance.  They are available to applications of
+          obs for any purpose as distinct literals.  Written here in forms
+          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc., lindies also have handy
+          computational interpretation when they occur as procedure operations
+          in applicative expressions.
           
   Obap3.  Universal Apply Function
   
              obap.ap(p,x) determines the application of ob p, taken as
                           expression of a procedure, to ob x, taken as
-                          the argument
+                          the operand
                       
            obap.eval(exp) determines the evaluation of ob exp taken as an
                           applicative expression          
           
           All other predicates and functions introduced in Obap4-Obap7 below
-          support the representation of obap.ap and obap.eval 
-          and need not be relied upon otherwise.
+          support the representation of obap.ap and obap.eval.  Explicit
+          computational manifestation is not required.
           
 THE APPLY FUNCTIONS
 
    Obap4. obap.ap(p,x)
    
-          obap.is-lindy(x) => obap.is-lindy-every-free(x)
+          obap.is-lindy(x) => obap.is-every-free-lindy(x)
           obap.is-every-free-lindy(c(x,y))
              ⇔ obap.is-every-free-lindy(x) ∧ obap.is-every-free-lindy(y)
              
@@ -111,7 +108,9 @@ THE APPLY FUNCTIONS
         
         obap.is-every-free-lindy(p) ∧ obap.is-lindy-everywhere(x)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x
-        ¬ ( obap.is-every-free-lindy(p) ∧ obap.is-lindy-everywhere(x) )
+        obap.is-every-free-lindy(p) ∧  ¬ obap.is-lindy-everywhere(x)
+                => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: e(x)                
+        ¬ ( obap.is-every-free-lindy(p)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
                               
    Obap5. obap.apint(p,x) applicative treatment of individuals.
@@ -134,7 +133,7 @@ THE APPLY FUNCTIONS
         
         A trace is a form, t, such that obap.ap(t,obap.NIL) = obap.eval(t) = t.
         This supports a form of symbolic evaluation in the case of individuals,
-        such as lindies, that lack an applicative interpretation. 
+        such as lindies, that lack a distinct applicative interpretation. 
         
         The obap.apint evaluations for obap.C and obap.D determine partial
         applications, effectively currying use of functions ob.c and obap.d.
@@ -201,30 +200,24 @@ THE APPLY FUNCTIONS
  
 TODO
   
- * Reflect the trace business in the definition of ap and elsewhere earlier,
-   perhaps so it is easier to understand the business of tracing. Maybe this
-   goes in Obap3.
-
  * Provide a stable location for obaptheory version progressions on 
    <http://miser-theory.info>.
-   
- * Add a section on the effective computability of Of and the necessary partial
-   nature of obap.ap and obap.eval.
-      
- * It remains open whether obap.ap should be exposed, although it appears to
-   be quite handy and at the root of the applicative approach.
-   
+     
  * Determining how types are handled and generally individuals representing
    extended functions remains open.
    
- * Introduced obap.PROC to demonstrate some of the power of immutability and the
-   ability for processors to optimize operation.  It also affirms the idea
-   of preserving extensional identity, something to be developed further.
+ * Save introduction of obap.PROC to extension treatment, their demonstrating
+   some of the power of immutability and the ability for processors to optimize
+   operation.  It also affirms the idea of preserving extensional identity,
+   something to be developed further. The use of obap.PROC can also cue the form
+   in which the operand should be presented as applicative expression rather 
+   than an uninterpreted ob data structure.  Disassembly of obs is tricky 
+   here, just as with machine-language dumps.
    
  * Introducing obap.DEF is required in order for the universal function to
-   be simulated by some script, p.  This reflection-like feature has me be
-   nervous.  The system must be able to look within.  I am resisting having 
-   scripts able to accomplish that.  
+   be simulated by some script, p when Proc is introduced.  This reflection-like
+   feature has me be nervous.  The system must be able to look within.  I am 
+   resisting having scripts and users able to accomplish that externally.  
    
  * It is mildly interesting that representation in a mathematical theory
    has no concern about tail recursion or other optimizations.  It doesn't
@@ -294,10 +287,11 @@ TODO
    addressed.
    
  * The special treatment for is-lindy-every-free(p) and is-lindy-everywhere(x)
-   is designed to simplify the production of traces having lindies standing as
-   points of abstraction for substitution of "variable" enclosed obs.  This
-   needs to be analyzed more carefully.  It is very costly yet applicative 
-   interpretation of lindies needs to be definite.
+   is to provide tracing of computations with lindies as symbolic place-holders
+   for actual operands.  When application of a lindy would occur, the trace is
+   of some use in determining the context.  Although these predicates appear
+   costly, the usual case is for false to be determined as soon as a non-lindy
+   individual is encountered. 
    
  * Construct sufficient tests of lindy treatment in an implementation to 
    demonstrate that the current applicative interpretation is adequate and 
@@ -308,6 +302,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.14 2017-10-04-09:44 Adjust TODs, Take the woowoo out of lindies.  Make
+       lindy apps the same for lindy apint and is-every-free-lindy(p) cases.
  0.0.13 2017-09-29-08:29 Adjust the synopsis, correcting the text and making
        it a bit more informally readable.
  0.0.12 2017-09-28-15:37 Add obap.EV, its applicative interpretation and its
@@ -315,7 +311,7 @@ TODO
  0.0.11 2017-09-28-14:48 Adjust TODOs. Remove ob.PROC and ob.DEF for treat-
        ment of extension mechanisms.  Simplify the introduction of notions
        about universality based on discussion with Paul McJones.  Recover the
-       change from is-lindy-every-free to is-every-free-lindy that got lsot
+       change from is-lindy-every-free to is-every-free-lindy that got lost
        somewhere.
  0.0.10 2017-09-25-19:59 Restate Obap8 to have the definitons of obap.proc(p),
        obab.def(x), and the applicative interpretations of obap.PROC and 
