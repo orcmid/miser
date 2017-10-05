@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.14                 UTF-8                       dh:2017-10-04
+obaptheory.txt 0.0.15                 UTF-8                       dh:2017-10-05
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -121,16 +121,16 @@ THE APPLY FUNCTIONS
         obap.apint(obap.C, x) = obap.C :: ob.e(x) :: obap.ARG
         obap.apint(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
         obap.apint(obap.E, x) = ob.e(x)
+        
+        obap.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
+        obap.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
+        obap.apint(obap.EV, x) = ob.e(obap.EV) :: ob.e(x)
                
         obap.is-lindy(p) ∧ obap.is-lindy-everywhere(x)  
                          => obap.apint(p,x) = p :: x
         obap.is-lindy(p) ∧ ¬ obap.is-lindy-everywhere(x)  
                          => obap.apint(p,x) = p :: ob.e(x)
-                       
-        obap.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
-        obap.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
-        obap.apint(obap.EV, x) = obap.eval(x)
-        
+                              
         A trace is a form, t, such that obap.ap(t,obap.NIL) = obap.eval(t) = t.
         This supports a form of symbolic evaluation in the case of individuals,
         such as lindies, that lack a distinct applicative interpretation. 
@@ -302,6 +302,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.15 2017-10-05-09:53 Change obap.apint(obap.EV,x) to be treated the same
+        as other non-binary eval special forms in producing traces.
  0.0.14 2017-10-04-09:44 Adjust TODs, Take the woowoo out of lindies.  Make
        lindy apps the same for lindy apint and is-every-free-lindy(p) cases.
  0.0.13 2017-09-29-08:29 Adjust the synopsis, correcting the text and making
