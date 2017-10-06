@@ -1,4 +1,4 @@
-(* obap.sml 0.0.4                     UTF-8                      dh:2017-09-20
+(* obap.sml 0.0.5                     UTF-8                      dh:2017-10-05
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -34,6 +34,7 @@ structure obap :> OBAP
                   | E
                   | SELF
                   | ARG
+                  | EV
                   | L of string    (* Obap2 addition *)
                 
       fun a(z) = case z 
@@ -110,6 +111,7 @@ structure obap :> OBAP
               of e y => y
                | c(C,c(e1,e2)) => c( ev(p,x,e1), ev(p,x,e2) )
                | c(D,c(e1,e2)) => if ev(p,x,e1) = ev(p,x,e2) then A else B
+               | c(EV,e2) => ev(p,x,ev(p,x,e2))
                | c(e1,e2) => ap( ev(p,x,e1), ev(p,x,e2) )
                | SELF => p
                | ARG => x
@@ -150,6 +152,7 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.0.5 2017-10-05-18:41 Touchup TODOs, Add handling of obap.EV cases.
    0.0.4 2017-09-20-19:22 Remove extraneous copy of is_lindy_everywhere and
          rename is_lindy_every_free to is_every_free_lindy.  Touch ups.
    0.0.3 2017-09-20-09:51 Make is_lindy_everywhere and is_lindy_every_free
