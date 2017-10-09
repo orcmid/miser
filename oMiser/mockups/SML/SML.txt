@@ -1,19 +1,22 @@
-SML.txt 0.0.9                        UTF-8                        dh:2017-09-13
+SML.txt 0.0.10                       UTF-8                        dh:2017-10-09
 
                            The Miser Project Code
                            ======================
                             
-            <https://github.com/orcmid/miser/oMiser/mockups/SML>
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML.txt>
 
-                 SML MOCKUP EXPERIMENTAL DEMONSTRATIONS
+                 SML MOCKUP PROOF-OF-CONCEPT DEMONSTRATIONS
                  --------------------------------------
               
     Standard SML of New Jersey (SML/NJ) is used for demonstration
     of the essential characteristics of Miser obs and the universal
-    computational function on obs.
+    computational functions on obs, obap.ap(p,x) and obap.eval(exp).
+    
+    The mockup is used for proof-of-concept.  It is not intended to
+    become a production implementation.
     
     This demonstration is expedient in several respects.  The
-    SML/NJ datatype implementation assures certain correctness
+    SML/NJ datatype implementation directly satisfies correctness
     requirements for obs.  And the SML/NJ REPL (Read-Evaluate-
     Print Loop) is automatically available for use as a test
     harness and front end.
@@ -27,19 +30,34 @@ MANIFEST
            subfolder of tutorial materials supporting the SML
            mockups
           
-        ob.sig.sml
+        OB.sig.sml
            Definition of the SML/NJ signature for manifestation of
            ‹ob› primitive notions.
         
        ob.sml
           Manifestation of ‹ob› primitive notions via SML/NJ abstract
-           data type signature and structure definition.
+          data type signature and structure definition.
+           
+     OBAP.sig.sml
+          Definition of the SML/NJ signature for manifestation of
+          ‹ob› as extended for obap.ap(p,x) and obap.eval(exp), along
+          with lindies and additional primitive individuals.
+          
+     obap.sml
+          Manifestation of ‹ob› extended for obap.ap(p,x) and obap.eval(exp)
+          in accordance of obaptheory.txt.
                   
   obcheck.sml 
           Test script that checks the abstract data type's
           mathematical characterization and manifestation via
           the SML/NJ ob.sml representation.
-         
+          
+  obapcheck.sml
+          Test script that checks the functioning of obap.sml definitions.
+          
+     obap.obcheck.sml
+          Test script that checks the preservation of ob.sml definitions
+          in the extended obap.sml manifestation.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -62,14 +80,9 @@ TODO
      
   * Account for the challenge of avoiding forward references and preservation
     of identity conditions for preservation of quasi-Platonism under
-    decentralized, distributed operation.  (Is
-    this a form of referential integrity?)
-    
-  * Introduce literals so that it is possible to see what we are doing
-    and also demonstrate some things about representation in the absence
-    of valuable types (such as strings), even though we will not get
-    any farther until types can work, perhaps beyond the oMiser level.
-    
+    decentralized, distributed operation.  (Is this a case of referential
+    integrity?)
+       
   * Address the run-time exception problem, especially as it will hit us
     with respect to strong typing.
     
@@ -79,36 +92,19 @@ TODO
   * Account for oMiser as a performance case within a broader set or
     hierarchy of richer (not just sugar) arrangements in which the
     oMiser level is distinguished.  (So there are higher-level forms
-    of apply and eval above and beyond ob.ap and ob.ev.)
+    of apply and eval above and beyond obap.ap and obap.eval)
     
   * Raise the fact that, with oMiser, so long as well-definedness is
     maintained, the application of an individual can involve what would
     be side-effects except they are never revealed.  This includes
-    caching of things, too.
+    caching of things and also optimization behind the scenes.
     
-  * The oFrugal arrangement is about hosting.  Hold onto that notion.
-  
-  * Add license to obcheck.sml and obadtcheck.sml when the narration is
-    completed.  
-    
-  * See if I can overload "::" for use as ob.c in the way it shows up
-    in obaptheory.txt.
-    
-  * Add odap.sml defining OBAP structure (including OB structure) and
-    see how to smooth the extension to ap and eval.
-    
-  * Make a Golden Geek post that wraps up the obtheory.txt, obadt.sml,
-    and obadtcheck.sml items.
-    
-  * Make a Golden Geek post reflecting the motivation for ob, as at
-    ob.txt in omiser/.
-    
-  * At Golden Geek, move on to the obap.sml development.
-    
-  * Look into introduction of "::" in obtheory.txt.
+  * The oFrugal arrangement is about hosting.  Hold onto that notion.  
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.10 2017-10-09-11:24 Adust TODOs.  Emphasize SML use for proof-of-concept.
+       Bring current.  Correct GitHub location.
  0.0.9 2017-09-13-17:03 More TODOs. Remove obadt.sml and obadtcheck.sml
        after refactoring the essentials to OB.sig.sml, ob.sml, and obcheck.sml
  0.0.8 2017-09-05-21:19 Add obadtcheck.sml for counterpart checking of the
