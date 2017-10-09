@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.15                 UTF-8                       dh:2017-10-05
+obaptheory.txt 0.0.16                 UTF-8                       dh:2017-10-09
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -110,7 +110,7 @@ THE APPLY FUNCTIONS
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x
         obap.is-every-free-lindy(p) ∧  ¬ obap.is-lindy-everywhere(x)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: e(x)                
-        ¬ ( obap.is-every-free-lindy(p)
+        ¬ obap.is-every-free-lindy(p) 
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
                               
    Obap5. obap.apint(p,x) applicative treatment of individuals.
@@ -302,6 +302,7 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.16 2017-10-09-09:24 Remove extraneous "(" in obap.is-every-free-lindy(p)
  0.0.15 2017-10-05-09:53 Change obap.apint(obap.EV,x) to be treated the same
         as other non-binary eval special forms in producing traces.
  0.0.14 2017-10-04-09:44 Adjust TODs, Take the woowoo out of lindies.  Make
