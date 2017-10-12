@@ -1,4 +1,4 @@
-(* obap.sml 0.0.5                     UTF-8                      dh:2017-10-05
+(* obap.sml 0.0.7                     UTF-8                      dh:2017-10-12
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -79,18 +79,17 @@ structure obap :> OBAP
                   | is_lindy_everywhere (_) = false
                     (* every individual leaf of the ob is a lindy *)
              in case p
-                of c(_,_) => let fun is_every_free_lindy (L y) = true
-                                   | is_every_free_lindy (c(x,y)) 
-                                           = is_every_free_lindy x
-                                             andalso is_every_free_lindy y
-                                   | is_every_free_lindy (_) = false
+                of c(_,_) => let fun is_pure_lindy (L y) = true
+                                   | is_pure_lindy (c(x,y)) 
+                                           = is_pure_lindy x
+                                             andalso is_pure_lindy y
+                                   | is_pure_lindy (_) = false
                                    (* every free (unenclosed) individual
                                       leaf of the ob is a lindy *)
-                              in if is_every_free_lindy p 
+                              in if is_pure_lindy p 
                                     andalso is_lindy_everywhere x
-                                    (* so both are effectively traces already
-                                       and let's not lose x *)
-                                 then p ## x 
+                                    (* trace now in order not to lose x *) 
+                                 then p ## x                
                                  else ev(p,x,p)
                              end
                  | e(y) => y
@@ -152,6 +151,10 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.0.7 2017-10-12-11:43 Change is_every_free_lindy(p) to is_pure_lindy(p) 
+         as better expression of knowing that application will not change it.
+   0.0.6 2017-10-09-12:00 Align obap(p,x) handling of is-every-free-lindy(p)
+         cases with 0.0.17 obaptheory.txt.
    0.0.5 2017-10-05-18:41 Touchup TODOs, Add handling of obap.EV cases.
    0.0.4 2017-09-20-19:22 Remove extraneous copy of is_lindy_everywhere and
          rename is_lindy_every_free to is_every_free_lindy.  Touch ups.
