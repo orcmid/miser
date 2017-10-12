@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.16                 UTF-8                       dh:2017-10-09
+obaptheory.txt 0.0.18                 UTF-8                       dh:2017-10-12
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -71,10 +71,11 @@ ADDITIONAL NOTIONS
                              
           NOTE: Lindies are distinct conveniently-named individuals that have
           no intrinsic significance.  They are available to applications of
-          obs for any purpose as distinct literals.  Written here in forms
-          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc., lindies also have handy
-          computational interpretation when they occur as procedure operations
-          in applicative expressions.
+          obs for any purpose as distinct literals, written here in forms
+          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc. 
+                Applications of lindies to operands cannot proceed further;
+          the defined applicative interpretation is a trace ob indicating 
+          cessation of the computation.          
           
   Obap3.  Universal Apply Function
   
@@ -93,9 +94,10 @@ THE APPLY FUNCTIONS
 
    Obap4. obap.ap(p,x)
    
-          obap.is-lindy(x) => obap.is-every-free-lindy(x)
-          obap.is-every-free-lindy(c(x,y))
-             ⇔ obap.is-every-free-lindy(x) ∧ obap.is-every-free-lindy(y)
+          obap.is-lindy(x) => obap.is-pure-lindy(x)
+          obap.is-pure-lindy(c(x,y))
+             ⇔ obap.is-pure-lindy(x) ∧ obap.is-pure-lindy(y)
+          ¬ obap.is-pure-lindy(e(x))
              
           obap.is-lindy(x) => obap.is-lindy-everywhere(x)
           obap.is-lindy-everywhere(e(x)) ⇔ obap.is-lindy-everywhere(x)
@@ -106,11 +108,9 @@ THE APPLY FUNCTIONS
         
         ob.is-individual(p) ⇒ obap.ap(p,x) = obap.apint(p,x)
         
-        obap.is-every-free-lindy(p) ∧ obap.is-lindy-everywhere(x)
-                => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x
-        obap.is-every-free-lindy(p) ∧  ¬ obap.is-lindy-everywhere(x)
-                => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: e(x)                
-        ¬ obap.is-every-free-lindy(p) 
+        obap.is-pure-lindy(p) ∧ obap.is-lindy-everywhere(x)
+                => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x           
+        ¬ ( obap.is-pure-lindy(p) ∧ obap.is-lindy-everywhere(x) )
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
                               
    Obap5. obap.apint(p,x) applicative treatment of individuals.
@@ -286,13 +286,6 @@ TODO
    also a serious absence of useful data types, and that remains to be
    addressed.
    
- * The special treatment for is-lindy-every-free(p) and is-lindy-everywhere(x)
-   is to provide tracing of computations with lindies as symbolic place-holders
-   for actual operands.  When application of a lindy would occur, the trace is
-   of some use in determining the context.  Although these predicates appear
-   costly, the usual case is for false to be determined as soon as a non-lindy
-   individual is encountered. 
-   
  * Construct sufficient tests of lindy treatment in an implementation to 
    demonstrate that the current applicative interpretation is adequate and 
    has no nasty edge cases.
@@ -302,6 +295,11 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.18 2017-10-12-11:39 Rename obap.is-every-free-lindy to obap.is-pure-lindy
+        for cases when a script is a non-reducible trace.  Define the negative
+        case.  Improve the description of trace production.
+ 0.0.17 2017-10-09-12:00 Simplify the obap.ap(p,x) lindy trace case, continuing
+        application if the operand, x, is not everywhere lindy.       
  0.0.16 2017-10-09-09:24 Remove extraneous "(" in obap.is-every-free-lindy(p)
  0.0.15 2017-10-05-09:53 Change obap.apint(obap.EV,x) to be treated the same
         as other non-binary eval special forms in producing traces.
