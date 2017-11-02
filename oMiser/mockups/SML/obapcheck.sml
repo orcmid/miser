@@ -1,12 +1,12 @@
-(* obapcheck.sml 0.0.4               UTF-8                        dh:2017-**-**
+(* obapcheck.sml 0.0.4               UTF-8                        dh:2017-11-02
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
                        
  <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obapcheck.sml> 
         
-              CHECKING APPLICATIVE EXTENSIONS IN OBAP STRUCTURE
-              -------------------------------------------------
+             CHECKING APPLICATIVE EXPRESSIONS IN OBAP STRUCTURE
+             --------------------------------------------------
        
    [Author Note: Tie to obcheck.sml, obtheory.txt, ob.sml, obaptheory, and
     the obap.sml structure or similar ones.]
@@ -15,7 +15,7 @@
 use "obap.sml";
 open obap;
 (* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE CHECKS 
-   SHOULD WORK DIRECTLY.
+   SHOULD WORK DIRECTLY WITHOUT MODIFICATION, BELOW.
    *)
    
 infixr 5 ## ;
@@ -24,10 +24,10 @@ infixr 5 ## ;
    *)
 
 (* Obap1: Additional individuals obap.A, obap.B, obap.C, obap.D, obap.E
-          obap.SELF, and obap.ARG
+          obap.SELF, obap.ARG, and obap.EV
           *)
           
-val prims = [A,B,C,D,E,SELF,ARG,NIL]
+val prims = [A,B,C,D,E,SELF,ARG,EV,NIL]
 
 val CkObap1 
     = let fun are_inds ([]) = true
@@ -39,97 +39,114 @@ val CkObap1
 
 val lindies = [L"A",L"a",L"lindy",L"X",L"Y",L"XY"]
 
-val CkObap2a 
-    = let fun are_lindies ([]) = true
-            | are_lindies (x::xs') = is_lindy(x) andalso are_lindies xs'
-       in are_lindies lindies
-      end
-       
-val CkObap2b
-    = let fun are_diff(xs: ob list) 
-              = case xs
-                  of x :: xs' => not (List.exists (fn a => a = x) xs')
-                                 andalso are_diff xs'
-                   | _ => true
-       in are_diff (prims @ lindies)
-      end
+val CkObap2 
+    = ( let fun are_lindies ([]) = true
+              | are_lindies (x::xs') = is_lindy(x) andalso are_lindies xs'
+         in are_lindies lindies
+        end )
+      andalso
+      ( let fun are_diff(xs: ob list) 
+                = case xs
+                    of x :: xs' => not (List.exists (fn a => a = x) xs')
+                                   andalso are_diff xs'
+                     | _ => true
+         in are_diff (prims @ lindies)
+        end )
       
-(* obap4: obap.ap(p,x) *)
+(* obap4: obap.ap(p,x) tracing some evref-stall cases *)
 
-val CkObap4a = ap(ARG##SELF,ARG) = e(ARG) ## e(ARG ## SELF)  
-
-val CkObap4b = ap(e(ARG) ## e(ARG ## SELF), L"Z") = e(ARG) ## e(ARG##SELF)
-      
-val CkObap4c = ap(e(L"X"),L"Y") = L"X"
+val CkObap4 = ap(ARG##SELF,ARG) = e(ARG) ## e(ARG ## SELF) 
+      andalso ap(e(ARG) ## e(ARG ## SELF), L"Z") = e(ARG) ## e(ARG##SELF)
+      andalso ap(e(L"X"),L"Y") = L"X"
+      andalso ap(L"X" ## L"Y", NIL) = L"X" ## L"Y"
+      andalso ap(L"X" ## L"Y", L"Z") = (L"X" ## L"Y")##L"Z"
       
 (* obap5: obap.apint(p,x) via obap.ap(p,x) with individual p *)
 
-val CkObap5a = ap(NIL,L"X") = L"X"
-val CkObap5b = ap(A, L"X" ## L"Y") = L"X"
-val CkObap5c = ap(B, L"X" ## L"Y") = L"Y"
-val CkObap5d = ap(C, L"X") = C ## e(L"X") ## ARG
-val CkObap5e = ap(D, L"X") = D ## e(L"X") ## ARG
-val CkObap5f = ap(E, L"X") = e(L"X")
-val CkObap5g = ap(L"X", L"Y") = L"X" ## L"Y"
-val CkObap5h = ap(L"X", NIL) = L"X" ## e(NIL)
-val CkObap5i = ap(L"X", e(L"Y")) = L"X" ## e(L"Y")
-val CkObap5j = ap(SELF, L"X") = e(SELF) ## e(L"X")
-val CkObap5k = ap(ARG, L"X") = e(ARG) ## e(L"X")
+val CkObap5 = ap(NIL,L"X") = L"X"
+      andalso ap(A, L"X" ## L"Y") = L"X"
+      andalso ap(B, L"X" ## L"Y") = L"Y"
+      andalso ap(C, L"X") = C ## e(L"X") ## ARG
+      andalso ap(D, L"X") = D ## e(L"X") ## ARG
+      andalso ap(E, L"X") = e(L"X")
+      andalso ap(L"X", L"Y") = L"X" ## L"Y"
+      andalso ap(L"X", NIL) = L"X" ## e(NIL)
+      andalso ap(L"X", e(L"Y")) = L"X" ## e(L"Y")
+      andalso ap(SELF, L"X") = e(SELF) ## e(L"X")
+      andalso ap(ARG, L"X") = e(ARG) ## e(L"X")
+      andalso ap(EV, L"X") = e(EV) ## e(L"X")
 
 (* obap6 obap.ev(p,x,e) via obap.ap(p,x) procedures and eval(exp) expressions *)
 
-val CkObap6a = let val cKX = e(L"X")
-                in ap( cKX, NIL) = L"X"
-               end             
-val cK = E ## ARG     (* currying of cKX to cK *)          
-val CkObap6b =         ap(cK,L"X") = e(L"X")
-               andalso ap( ap(cK,L"X"), NIL) = L"X"               
-val CkObap6c = ap( e(cK)##L"X", NIL) = e(L"X")                          
-val CkObap6d = eval( (e(cK)## L"X") ## NIL ) = L"X"
-    (* demonstrating a computational manifestation of combinator K in obap *)
-              
-val CkObap6e = eval(L"X" ## L"Y") = L"X" ## L"Y"
-val CkObap6f = let val xyz = L"X" ## L"Y" ## L"Z"
-                in           ap(xyz, NIL) = xyz 
+val ck0bap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
+      andalso (let val xyz = L"X" ## L"Y" ## L"Z"
+                in           ap(xyz, NIL) = xyz
                      andalso eval(xyz) = xyz
-               end
+               end)      
 
-val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG)))   
-val Ck0bap6g = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
-                    in         ap(L"X",L"Z") = L"X" ## L"Z"
-                       andalso ap(L"Y",L"Z") = L"Y" ## L"Z"
-                       andalso ap(L"X" ## L"Z", L"Y" ## L"Z") = SXYZ
-                       andalso ap(ap(L"X",L"Z"),ap(L"Y",L"Z")) = SXYZ
-                       andalso eval(SXYZ) = SXYZ 
-                   end
-val Ck0bap6h = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"   
-                   val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
-                in             ap(SXY,L"Z") = SXYZ
-                       andalso eval(e(SXY) ## L"Z") = SXYZ 
-                   end
-val Ck0bap6i = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"   
-                   val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
-                   val SX = C##e(e(L"X")##ARG)##C##(E##ARG)##e(ARG) 
-                in         ap(SX, L"Y") = SXY
-                   andalso ap(ap(SX, L"Y"), L"Z") = SXYZ
-                   andalso eval(e(SX)##L"Y") = SXY
-                   andalso eval((e(SX)##L"Y")##L"Z") = SXYZ
-               end                   
-val CkObap6j = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"   
-                   val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
-                   val SX = C##e(e(L"X")##ARG)##C##(E##ARG)##e(ARG) 
-                in         ap(cS,L"X") = SX
-                   andalso ap(ap(cS,L"X"),L"Y") = SXY
-                   andalso ap(ap(ap(cS,L"X"),L"Y"),L"Z") = SXYZ
-                   andalso eval(e(cS)##L"X") = SX
-                   andalso eval((e(cS)##L"X")##L"Y") = SXY
-                   andalso eval(((e(cS)##L"X")##L"Y")##L"Z") = SXYZ                   
-               end
-    (* demonstrating a computational manifestation of combinator S in obap *)
+(* Demonstrate ob cK as script for a computational manifestation of combinator K
+   having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x be determined.
+   *)
+val cK = E ## ARG
 
+val CkObap7 
+    = let val cKX = e(L"X")
+       in ap( cKX, NIL) = L"X"
+          andalso ap( cKX, L"Y") = L"X"
+          andalso ap(cK,L"X") = cKX
+          andalso ap( ap(cK,L"X"), L"Y") = L"X" 
+          andalso ap( e(cK) ## L"X", NIL) = e(L"X")   
+          andalso ap( e(cK) ## L"X", L"Y") = e(L"X")   
+          andalso eval( (e(cK) ## L"X") ## NIL ) = L"X"
+          andalso eval( (e(cK) ## e(L"X")) ## e(L"Y") ) = L"X"
+      end
+             
+(* Demonstrate ob cS as script for a computational manifestation of combinator S
+   having 
+            ap(ap(ap(cS,x),y),z) = eval( ( (e(cS) ## e(x)) ## e(y) ) ## e(z) ) 
+                                 = ap(ap(x,z),ap(y,z))
+   be determined. 
+   *)
+val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG))) 
+         (* effectively lambda.X lambda.Y lambda.Z X(Z) Y(Z) in Frugalese *)
+
+val Ck0bap8 
+    = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
+          val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
+          val SX = C##e(e(L"X")##ARG)##C##(E##ARG)##e(ARG) 
+       in ap(L"X",L"Z") = L"X" ## L"Z"
+          andalso ap(L"Y",L"Z") = L"Y" ## L"Z"
+          andalso ap(L"X" ## L"Z", L"Y" ## L"Z") = SXYZ
+          andalso ap(ap(L"X",L"Z"),ap(L"Y",L"Z")) = SXYZ
+          andalso ap(SXYZ, NIL) = SXYZ
+          andalso eval(SXYZ) = SXYZ 
+          andalso ap(SXYZ, L"more") = SXYZ ## L"more"
+          andalso eval(e(SXYZ) ## L"more") = SXYZ ## L"more"
+          andalso ap(SXY,L"Z") = SXYZ
+          andalso eval(e(SXY) ## L"Z") = SXYZ
+          andalso ap(SX, L"Y") = SXY
+          andalso ap(ap(SX, L"Y"), L"Z") = SXYZ
+          andalso eval(e(SX)##L"Y") = SXY
+          andalso eval((e(SX)##L"Y")##L"Z") = SXYZ
+          andalso ap(cS,L"X") = SX
+          andalso ap(ap(cS,L"X"),L"Y") = SXY
+          andalso ap(ap(ap(cS,L"X"),L"Y"),L"Z") = SXYZ
+          andalso eval(e(cS)##L"X") = SX
+          andalso eval((e(cS)##L"X")##L"Y") = SXY
+          andalso eval(((e(cS)##L"X")##L"Y")##L"Z") = SXYZ                         
+      end
+
+(* Demonstrate ob cI as script for a computational manifestation of combinator I
+   having
+            ap(cI,x) = eval( (e(cI) ## e(x)) ) = x
+                     = ap(ap(ap(cS,cK),cK),x)
+                     = x
+   be determined.  Equivalent manifestation using script ap(ap(cS,cK),cK) is
+   also demonstrated.
+   *)
 val cI = NIL
-val CkObap6k = let val SKK = eval((e(cS)##e(cK))##e(cK))
-                in         SKK = (e(cK)##ARG)##(e(cK)##ARG)
+val CkObap9 = let val SKK = eval((e(cS)##e(cK))##e(cK))
+                in SKK = (e(cK)##ARG)##(e(cK)##ARG)
                    andalso ap(SKK,L"X") = L"X"
                    andalso eval(e(SKK)##L"X") = L"X"
                    andalso ap(cI,L"X") = L"X"
@@ -138,9 +155,66 @@ val CkObap6k = let val SKK = eval((e(cS)##e(cK))##e(cK))
                    andalso ap(cI##ARG, L"X") = L"X"
                    andalso eval(e(cI##ARG)##L"X") = L"X"
                end
-     (* demonstrating different computational scripts for combinator I *)
-                          
 
+(* Demonstrate comparison checks and conditional evaluation of
+   the selected branches *)
+val CkObap10 
+    = eval(D ## L"X" ## L"X") = A
+      andalso eval(D ## L"X" ## NIL) = B
+      andalso eval((D ## L"X" ## L"X") ## L"true" ## L"false") = L"true"
+      andalso eval((D ## L"X" ## L"Y") ## L"true" ## L"false") = L"false"
+      andalso eval( EV ## (D ## L"X" ## L"X") ## e(L"true") ## e(L"false") )
+                = L"true"
+      andalso eval( EV ## (D ## L"X" ## L"Y") ## e(L"true") ## e(L"false") ) 
+                = L"false"
+
+(* Demonstrate a script that is one way of checking that a given ob appears
+   in a list of obs.  This is tantamount to the Frugalese definition
+   
+   fun has(x) List = let hasX L
+                       = not is-singleton L
+                         andalso (x = a L orelse hasX b L)
+                      in hasX List
+
+   with a variety of idioms.
+   *)
+   
+val hasX = EV ## (D ## ARG ## B ## ARG)
+              ## e( B ## ( EV ## (D ## e(L"X") ## A ## ARG)
+                              ## e( A ## SELF ## B ## ARG)
+                              ) )
+                              
+(*  has is effectively lambda.X hasX in Frugalese *)                                 
+val has 
+    = C ## e(EV) 
+        ## C ## e(D ## ARG ## B ## ARG)
+             ## E ## C ## B 
+                       ## C ## e(EV) 
+                            ## C ## (C ## e(D) 
+                                       ## (C ## (E ## ARG) 
+                                             ## e(A ## ARG)))
+                                 ## E ## e( A ## SELF ## B ## ARG)  
+                                 
+val ckObap11
+    = ap(hasX, NIL) = B
+      andalso eval(e(hasX) ## NIL) = B
+      andalso ap(hasX, L"X" ## NIL) = A
+      andalso ap(hasX, L"Y" ## NIL) = B
+      andalso ap(hasX, L"X") = B
+      andalso ap(hasX, L"A" ## (L"X" ## L"X") ## L"B" ## NIL) = B
+      andalso ap(hasX, L"A" ## L"B" ## L"C" ## L"X" ## NIL) = A
+      andalso eval(e(hasX) ## e(L"A" ## (L"X" ## L"X") ## L"B" ## NIL)) = B
+      andalso eval(e(hasX) ## e(L"A" ## L"B" ## L"C" ## L"X" ## NIL)) = A
+      
+val ckObap12 
+    = ap(has, L"X") = hasX
+      andalso ap(ap(has, NIL),NIL) = B 
+      andalso ap(ap(has, NIL), NIL ## NIL) = A
+      andalso eval( (e(has) ## L"X" ) 
+                    ## e(L"A" ## L"B" ## L"C" ## L"X" ## NIL)) = A
+      andalso eval( (e(has) ## L"X" ) 
+                    ## e(L"A" ## (L"X" ## L"X") ## L"B" ## NIL)) = B                                      
+    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -166,13 +240,18 @@ val CkObap6k = let val SKK = eval((e(cS)##e(cK))##e(cK))
         Manager.
         
       * Provide systematic treatment of lindy traces to identify any
-        edge cases, any disconnects with the assertion of what traps are.
+        edge cases, any disconnects with the assertion of what traces are.
+        
+      * Check that (C ## x) ## y and (C ## x ## y) work the same.
+      
+      * Check that (D ## x) ## y and (D ## x ## y) work the same.
                 
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
-   0.0.4 2017-**-**-**:** Adjust TODOs
+   0.0.4 2017-11-02-10:33 Adjust TODOs.  Add obap.D and obap.EV checks, with
+         demonstration of conditional recursion for has(x) L list membership.
    0.0.3 2017-09-20-10:24 Remove satisfied TODOs reflecting the successful
          alignment of obaptheory and the SML computational manifestation.
    0.0.2 2017-09-19-19:53 Confirm Obap4-Obap7 applicative operation for 
