@@ -1,27 +1,127 @@
-ob.txt 0.0.1                    UTF-8                            dh:2017-**-**
+ob.txt 0.0.1                    UTF-8                            dh:2017-11-10
 
                            The Miser Project Code
                            ======================
                             
-               <https://github.com/orcmid/miser/oMiser/ob.txt>
+         <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
-      ‹ob› MATHEMATICAL STRUCTURE, DATA REPRESENTATION, AND STORAGE MODEL              ------------------------------------------------------------------
+      ‹ob› MATHEMATICAL STRUCTURE, DATA REPRESENTATION, AND EXPRESSIONS
+      ----------------------------------------------------------------
               
-      [synopsis needed]
+    Formulation of the mathematical structure, ‹ob›, illustrates the bridge 
+    between mathematical logic and theoretical limitations of all present-
+    day computation systems. The ‹ob›-based computation model, although
+    low-level, is as powerful, with respect to those limits, as any other 
+    model.  A central purpose of the Miser Project is demonstration
+    of how that is the case and to draw the connection with an operational
+    realization.
       
-MATHEMATICAL STRUCTURE 
+    Under the Miser ‹ob› computational model, obs serve interchangeably as data
+    and as scripts of procedures -- computational methods -- for operating on
+    obs.  This quality of stored-program computers is central to the ‹ob›
+    formulation of a computational model.
+      
+ 1. MATHEMATICAL STRUCTURE 
 
-COMPUTATIONAL MANIFESTATION
-
-DATA REPRESENTATION
-
-STORAGE MODEL
-         
-RELATED MATERIAL
-
-    [cross reference to the companion files, the SML mockup, and, when
-     available, the web pages]
+    There are two levels to the mathematical structure: elementary data
+    representation and oMiser procedure expression.  
+    
+    Elementary data consist of arbitrary obs having no intrinsic significance
+    beyond satisfaction of the conditions specified in the file obtheory.txt,
+    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+    
+      * There are two selector functions, ob.a(z) and ob.b(z) that operate
+        on any ob and determine an ob.
         
+      * There is an arbitrary supply of distinct individuals, including ob.NIL.
+        For any individual, z, ob.a(z) = ob.b(z) = z.  
+        
+      * For z any ob, the function ob.e(z) determines the ob such that 
+        ob.a(ob.e(z)) = z and ob.b(ob.e(z)) = ob.e(z).  We speak of ob.e(z)
+        as encapsulation of z.  
+        
+      * The individuals and encapsulations together are identified as 
+        singletons because they share the property that z being either,
+        ob.b(z) = z.
+        
+      * For any obs x and y, the function ob.c(x, y) determines the pair
+        such that ob.a(ob.c(x,y)) = x and ob.b(ob.c(x,y)) = y and neither
+        x nor y is the same as ob.c(x,y).  
+        
+      * For all obs, there are definite functions that determine when 
+        obs are the same or different and also,
+           - ob.is-individual(z) true whenever ob.a(z) = z
+           - ob.is-singleton(z) true whenever ob.b(z) = z
+           - ob.is-pair(z) whenever ob.is-singleton(z) is false
+           - ob.is-enclosure(z) whenever ob.is-singleton(z) is true 
+             but ob.is-individual(z) is false.
+             
+      * The enrichment of obs for particular applications is solely by
+        introduction of distinct individuals.
+           
+ 2. DATA REPRESENTATION
+ 
+    The mathematical formulation of elementary obs provides a prescription
+    for how one can establish computational procedures that preserve exactly
+    those characteristics.
+    
+    There is a standard oMiser formula notation for more-compact expression of
+    obs 
+      
+      * distinct, fixed individuals are given unique identifiers
+        (described further below)
+        
+      * e(x) is expressed as ` x
+      
+      * c(x, y) is expressed x :: y
+      
+      * parenthesese are used for grouping.  The grouping of :: is to
+        the right:  x :: y :: z = x :: (y :: z).  ` ` z = ` ( `z)
+     
+      * Certain fixed individuals, distinguished as primitive obs, are
+        written with "." as a prefix.  E.g., ob.NIL is expressed ".NIL".
+        Primitive individuals have particular interpretation when used
+        in computational scripts.
+        
+      * There are literal individuals (lindies) that can be introduced and used
+        for any purpose.  A lindy is specified with alphanumeric sequence
+        that always begins with a letter.  E.g., X, alpha, β, デニス, and ℵ.        
+     
+    Here is expression of an ob might be used as a small dictionary
+    
+        (English::en)::(Русский::ru)::(日本語::ja)::(Français::fr)::`default
+        
+ 3. FRUGALESE EXPRESSIONS
+ 
+    The above notation is known as Frugalese.  The oFrugal computer software
+    supports this notation on all platforms.
+        
+    For convenient use of obs as lists of something, there is additional
+    Frugalese that can be very useful in the expression of data.  
+    
+        [English::en, Русский::ru, 日本語::ja, Français::fr, `default:]
+        
+    The list-style form above expresses the same ob as the preceding example.
+        
+    Here is elementary expression of an ob that happens to be useful as a
+    script.
+      
+        .C :: `.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: `.ARG)) 
+                         :: `(.C :: (.E :: .ARG) :: `.ARG) )
+                    
+    Scripts tend to be distinguished by prevalence of primitive individuals.
+    
+    Frugalese applicative-expression notation is handy for scripts.
+    
+        .C `.C  (.C  (.E  .C (.E .ARG) `.ARG) 
+                    `(.C (.E .ARG) `.ARG) )       
+    
+    This notation expresses the same ob as the preceding form.
+    
+    That everything ends up being at the ob level one way or another is
+    fundamental to the oMiser computational model and how it exhibits the
+    ability of more-elaborate general-purpose computers to turn data into
+    procedures and procedures into data.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -43,20 +143,12 @@ RELATED MATERIAL
  
 TODO
   
-  * Get past boiler plate and have some content, Dennis
-  
-  * The storage model goes with the idea of quasi-Platonic presence via 
-    successful computational manifestation.
-    
-  * Cover the chosen point of entry and the levels above and below: Situating
-    ‹ob› and its computational manifestation.
-    
-  * Use miniature and rudimentary in place of "toy"
      
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
- 0.0.1 2017-**-**-**:** Adjust TODOs.
+ 0.0.1 2017-11-10-11:59 Adjust TODOs.  Correct the GitHub URL.  Introduce
+       basic Frugalese for expression of obs as data and obs as scripts.
  0.0.0 2017-09-13-10:44 Placeholder and boiler plate for a note on Obs
        as ‹ob› mathematical structure, computational manifestation, data
        representation, and storage model.  
