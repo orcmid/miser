@@ -1,9 +1,9 @@
-miser.txt 0.0.2                    UTF-8                          dh:2017-**-**
+miser.txt 0.0.2                       UTF-8                       dh:2017-11-11
 
-                           The Miser Project Code
-                           ======================
+                             The Miser Project Code
+                             ======================
                             
-                      <https://github.com/orcmid/miser>
+                        <https://github.com/orcmid/miser>
 
            SOFTWARE AND TESTS FOR DEVELOPMENT OF MISER IMPLEMENTATIONS
 
@@ -71,7 +71,7 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.2 2017-**-**-**:** Adjust TODOs.
+ 0.0.2 2017-11-11-10:49 Adjust TODOs.  Minor text adjustments.
  0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for 
        experiments and conceptual demonstrations such as in SML/.
  0.0.0 2017-07-26-13:31 Create placeholder and initial job jar for the
