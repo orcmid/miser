@@ -1,4 +1,4 @@
-ob.txt 0.0.1                    UTF-8                            dh:2017-11-10
+ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
 
                            The Miser Project Code
                            ======================
@@ -41,8 +41,8 @@ ob.txt 0.0.1                    UTF-8                            dh:2017-11-10
         as encapsulation of z.  
         
       * The individuals and encapsulations together are identified as 
-        singletons because they share the property that z being either,
-        ob.b(z) = z.
+        singletons because they share the property that ob.b(z) = z
+        for either.
         
       * For any obs x and y, the function ob.c(x, y) determines the pair
         such that ob.a(ob.c(x,y)) = x and ob.b(ob.c(x,y)) = y and neither
@@ -65,31 +65,37 @@ ob.txt 0.0.1                    UTF-8                            dh:2017-11-10
     for how one can establish computational procedures that preserve exactly
     those characteristics.
     
-    There is a standard oMiser formula notation for more-compact expression of
-    obs 
+    There is a standard oFrugal formula notation for more-compact expression of
+    obs in Unicode texts. 
       
-      * distinct, fixed individuals are given unique identifiers
-        (described further below)
+      * distinct, fixed individuals are given unique alphanumeric identifiers.
         
-      * e(x) is expressed as ` x
-      
+      * e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
+        ‵ is the reversed prime Unicode character, U+2036 ‵.  It can be
+        entered at keyboards using the grave accent, U+0060 `, also. 
+              
       * c(x, y) is expressed x :: y
       
       * parenthesese are used for grouping.  The grouping of :: is to
-        the right:  x :: y :: z = x :: (y :: z).  ` ` z = ` ( `z)
+        the right:  x :: y :: z = x :: (y :: z).  ‵ ‵z = ‵(‵z)
      
-      * Certain fixed individuals, distinguished as primitive obs, are
-        written with "." as a prefix.  E.g., ob.NIL is expressed ".NIL".
-        Primitive individuals have particular interpretation when used
-        in computational scripts.
+      * Fixed individuals, specified as primitives in the theory, are
+        written with "." as a prefix.  E.g., ‹ob›-theory ob.NIL individual
+        is expressed ".NIL".  Similarly, obap.ARG and obap.EV primitives
+        are signified by .ARG and .EV, respectively.  Primitive individuals
+        have specific interpretation in obs that are intended as expression
+        of computations.
         
       * There are literal individuals (lindies) that can be introduced and used
         for any purpose.  A lindy is specified with alphanumeric sequence
-        that always begins with a letter.  E.g., X, alpha, β, デニス, and ℵ.        
+        that always begins with a (Unicode) letter.  E.g., X, alpha, β, デニス,
+        and ℵ.  They can serve as symbols for any user purpose.      
      
     Here is expression of an ob might be used as a small dictionary
     
-        (English::en)::(Русский::ru)::(日本語::ja)::(Français::fr)::`default
+        (English::en)::(Русский::ru)::(日本語::ja)::(Français::fr)::‵default
+        
+    All of the terms are lindies.
         
  3. FRUGALESE EXPRESSIONS
  
@@ -99,29 +105,27 @@ ob.txt 0.0.1                    UTF-8                            dh:2017-11-10
     For convenient use of obs as lists of something, there is additional
     Frugalese that can be very useful in the expression of data.  
     
-        [English::en, Русский::ru, 日本語::ja, Français::fr, `default:]
+        [English::en, Русский::ru, 日本語::ja, Français::fr, ‵default:]
         
     The list-style form above expresses the same ob as the preceding example.
         
     Here is elementary expression of an ob that happens to be useful as a
     script.
       
-        .C :: `.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: `.ARG)) 
-                         :: `(.C :: (.E :: .ARG) :: `.ARG) )
-                    
-    Scripts tend to be distinguished by prevalence of primitive individuals.
-    
+        .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG)) 
+                         :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) )
+                       
     Frugalese applicative-expression notation is handy for scripts.
     
-        .C `.C  (.C  (.E  .C (.E .ARG) `.ARG) 
-                    `(.C (.E .ARG) `.ARG) )       
+        .C ‵.C  (.C  (.E  .C (.E .ARG) ‵.ARG) 
+                    ‵(.C (.E .ARG) ‵.ARG) )       
     
     This notation expresses the same ob as the preceding form.
     
     That everything ends up being at the ob level one way or another is
-    fundamental to the oMiser computational model and how it exhibits the
-    ability of more-elaborate general-purpose computers to turn data into
-    procedures and procedures into data.
+    fundamental to the oMiser computational model.  This is the Miser form 
+    of the stored-program principle by which computers interpret data as
+    procedures and procedures as data.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -141,12 +145,7 @@ ob.txt 0.0.1                    UTF-8                            dh:2017-11-10
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
-TODO
-  
-     
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
+ 0.0.2 2017-11-11-10:44 Introduce prefix ‵ (U+2036) and text improvements.
  0.0.1 2017-11-10-11:59 Adjust TODOs.  Correct the GitHub URL.  Introduce
        basic Frugalese for expression of obs as data and obs as scripts.
  0.0.0 2017-09-13-10:44 Placeholder and boiler plate for a note on Obs
