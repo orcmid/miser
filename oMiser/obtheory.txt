@@ -1,4 +1,4 @@
-obtheory.txt 0.0.19                  UTF-8                       dh:2017-09-28
+obtheory.txt 0.0.20                  UTF-8                       dh:2017-11-11
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -133,25 +133,25 @@ PRIMITIVE NOTIONS
         
    Ob10. Effectively-Computable Functions in Of
    
-        Without addressing fine technicalities here, a function F over Of is
-        claimed to be effectively-computable if, given canonical identifiers
-        for the arguments, a canonical-identifier result is determined
-        unambiguously and explicitly by deduction based entirely on obtheory
-        and the formulation of the function in a finite number of mathematical 
-        statements that characterize (i.e., represent) F.  
+        Without addressing fine technicalities here, a function F over Ob (and
+        in Of by definition) is claimed to be effectively-computable if, given
+        canonical identifiers for the arguments, a canonical-identifier result
+        is determined unambiguously and explicitly by deduction based entirely
+        on the Ot formulation of the function in a finite number of mathematical
+        statements.  
         
-        Predicates are effectively-determined to be one of true or false in a
-        similar manner.
+        Predicates in Ot are effectively-computable as one of true or false 
+        in a similar manner and also termed effectively-decidable.
         
         Observe that ob.c(x,y), ob.e(x), the four ob.is-... predicates, and 
         the "=" relation are all effectively-computable in this sense, so long
         as individuals are distinguishable.  
         
-        In contrast, x ¶ y is a partial ordering.  When x ≠ y is determined, 
+        In contrast, x ¶ y is only partial ordering.  When x ≠ y is determined, 
         it need not be determined which of x ¶ y or y ¶ x holds. The purpose 
-        of the ordering is that Ob8 never be violated in the mathematical
-        representation of some function F (or predicate P) that is purported to
-        demonstrate the effective computability thereof.  
+        of the ordering is that the Ob8 precedence condition never be violated
+        in the mathematical representation of any function F (or predicate P) 
+        that is purported to establish the effective computability thereof.  
         
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -183,12 +183,12 @@ TODO
  * Figure out what to do about well-definedness.  Is this an Ob10 or Ob11
    condition?
  
- * Find places to locate this material that is perhaps easier to reach
+ * Find places to locate this material that are perhaps easier to reach
    into than GitHub, and perhaps more durable.  This may depend on stability
    of the material.
    
  * When we speak of all of the effectively-computable functions on Obs, as     
-   characterized here, the claim will be that their totality is equivalent to
+   characterized here, the claim will be that the totality is equivalent to
    the CT-computable functions.  When a a universal function is also formulated,
    equivalence to a Universal Turing Machine and Turing Completeness will be
    claimed.
@@ -196,9 +196,14 @@ TODO
  * (Paul McJones) Do further research on the various treatments of effective
    computability, the Church-Turing thesis, and Turing Completeness to ensure
    that any characterization here is compatible. 
+   
+ * Determine how we reconcile the desire for total functions versus having
+   partial functions under the umbrella of effectively-computable.  It looks
+   like this might be related to domain restrictions, almost by definition.
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.20 2017-11-11-11:28 Cleanup Ob10 on Effective Computability.
  0.0.19 2017-09-28-13:04  Adjust TODOs.  Address some comments and suggestions
         from Paul McJones (private communication).
  0.0.18 2017-09-17-11:22 Describe ¶ as asymmetrical rather than non-commutative
