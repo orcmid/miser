@@ -1,4 +1,4 @@
-ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
+ob.txt 0.0.3                    UTF-8                            dh:2017-11-12
 
                            The Miser Project Code
                            ======================
@@ -19,7 +19,7 @@ ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
     Under the Miser ‹ob› computational model, obs serve interchangeably as data
     and as scripts of procedures -- computational methods -- for operating on
     obs.  This quality of stored-program computers is central to the ‹ob›
-    formulation of a computational model.
+    formulation of Miser computation.
       
  1. MATHEMATICAL STRUCTURE 
 
@@ -66,7 +66,9 @@ ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
     those characteristics.
     
     There is a standard oFrugal formula notation for more-compact expression of
-    obs in Unicode texts. 
+    obs in Unicode texts.  Although adaptations are required depending on 
+    media and platform capabilities, definitions of such representations alway
+    map to the reference notation.
       
       * distinct, fixed individuals are given unique alphanumeric identifiers.
         
@@ -77,21 +79,22 @@ ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
       * c(x, y) is expressed x :: y
       
       * parenthesese are used for grouping.  The grouping of :: is to
-        the right:  x :: y :: z = x :: (y :: z).  ‵ ‵z = ‵(‵z)
+        the right:  x :: y :: z = x :: (y :: z).  Similarly, ‵, groups first:
+        ‵ ‵z = ‵(‵z) and x :: ‵y :: ‵ ‵z = x :: ((‵y) :: (‵(‵z))). 
      
       * Fixed individuals, specified as primitives in the theory, are
-        written with "." as a prefix.  E.g., ‹ob›-theory ob.NIL individual
-        is expressed ".NIL".  Similarly, obap.ARG and obap.EV primitives
-        are signified by .ARG and .EV, respectively.  Primitive individuals
-        have specific interpretation in obs that are intended as expression
-        of computations.
+        written with "." as a prefix.  E.g., ‹ob›-theory ob.NIL is expressed
+        ".NIL".  Similarly, obap.ARG and obap.EV primitives are signified
+        by .ARG and .EV, respectively.  Primitive individuals have specific
+        interpretation in obs that are treated as expression of computations.
         
       * There are literal individuals (lindies) that can be introduced and used
         for any purpose.  A lindy is specified with alphanumeric sequence
         that always begins with a (Unicode) letter.  E.g., X, alpha, β, デニス,
         and ℵ.  They can serve as symbols for any user purpose.      
      
-    Here is expression of an ob might be used as a small dictionary
+    Here is reference notation for an ob that might be used as a small
+    dictionary.
     
         (English::en)::(Русский::ru)::(日本語::ja)::(Français::fr)::‵default
         
@@ -99,7 +102,7 @@ ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
         
  3. FRUGALESE EXPRESSIONS
  
-    The above notation is known as Frugalese.  The oFrugal computer software
+    The reference notation is known as Frugalese.  The oFrugal computer software
     supports this notation on all platforms.
         
     For convenient use of obs as lists of something, there is additional
@@ -108,22 +111,29 @@ ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
         [English::en, Русский::ru, 日本語::ja, Français::fr, ‵default:]
         
     The list-style form above expresses the same ob as the preceding example.
+    This is a "sugaring" of the reference notation.  It is convenient syntax for
+    a variety of list-shaped data structures.  The ob is the same as the 
+    form without the [ ... ].
         
-    Here is elementary expression of an ob that happens to be useful as a
+    Here is reference notation for an ob that happens to be useful as a 
     script.
       
         .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG)) 
                          :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) )
                        
-    Frugalese applicative-expression notation is handy for scripts.
+    Frugalese applicative-expression notation is another sugaring that makes
+    the applicative structure of scripts more evident.
     
         .C ‵.C  (.C  (.E  .C (.E .ARG) ‵.ARG) 
                     ‵(.C (.E .ARG) ‵.ARG) )       
     
-    This notation expresses the same ob as the preceding form.
+    This sugaring expresses the same ob as the preceding form.  The use of 
+    indentations and spacing to clarify structure is a presentation convenience.
+    Sugared and reference forms can be used in combination to provide stream-
+    lined expression of the intended employment of an ob.
     
-    That everything ends up being at the ob level one way or another is
-    fundamental to the oMiser computational model.  This is the Miser form 
+    That everything ends up being at the (reference) ob level one way or another 
+    is fundamental to the oMiser computational model.  This is the Miser form 
     of the stored-program principle by which computers interpret data as
     procedures and procedures as data.
          
@@ -145,6 +155,7 @@ ob.txt 0.0.2                    UTF-8                            dh:2017-11-11
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
+ 0.0.3 2017-11-12-09:47 Manage TODOs.  Edit the text.
  0.0.2 2017-11-11-10:44 Introduce prefix ‵ (U+2036) and text improvements.
  0.0.1 2017-11-10-11:59 Adjust TODOs.  Correct the GitHub URL.  Introduce
        basic Frugalese for expression of obs as data and obs as scripts.

@@ -1,4 +1,4 @@
-miser.txt 0.0.2                       UTF-8                       dh:2017-11-11
+miser.txt 0.0.3                       UTF-8                       dh:2017-11-12
 
                              The Miser Project Code
                              ======================
@@ -64,13 +64,23 @@ TODO
     
   * Add links to other locations of materials and discussions.
     
-  * Introduce oFrugal later when there enough oMiser to talk about.
+  * Introduce oFrugal later when there is enough oMiser to talk about oFrugal.
   
   * Ensure a hierarchical organization that fits the nfoTools construction
     sets pattern.
     
+  * Add synopsis.
+  
+  * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
+    and the web site.
+    
+  * Use the logo and the block diagram (on Golden Geek) for a summary of this.
+    Don't go into the extensive detail.  Also, docs will continue to be at
+    miser-theory.info, as tempting and convenient GitHub might be.
+    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2017-11-12-09:05 Manage TODOs.  
  0.0.2 2017-11-11-10:49 Adjust TODOs.  Minor text adjustments.
  0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for 
        experiments and conceptual demonstrations such as in SML/.

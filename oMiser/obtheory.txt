@@ -1,4 +1,4 @@
-obtheory.txt 0.0.20                  UTF-8                       dh:2017-11-11
+obtheory.txt 0.0.21                  UTF-8                       dh:2017-11-12
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -189,20 +189,20 @@ TODO
    
  * When we speak of all of the effectively-computable functions on Obs, as     
    characterized here, the claim will be that the totality is equivalent to
-   the CT-computable functions.  When a a universal function is also formulated,
-   equivalence to a Universal Turing Machine and Turing Completeness will be
-   claimed.
-   
- * (Paul McJones) Do further research on the various treatments of effective
-   computability, the Church-Turing thesis, and Turing Completeness to ensure
-   that any characterization here is compatible. 
+   the CT-computable (total) functions.  When a a universal function is also
+   formulated, equivalence to a Universal Turing Machine and Turing Completeness
+   will be claimed.
    
  * Determine how we reconcile the desire for total functions versus having
    partial functions under the umbrella of effectively-computable.  It looks
    like this might be related to domain restrictions, almost by definition.
+   
+ * Rely on the Stanford Encyclopedia of Philosophy (SEP) treatment of the
+   Church-Turing thesis and how we navigate the CT-computable.
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.21 2017-11-12-09:58 Manage TODOs.  Touch up the text.
  0.0.20 2017-11-11-11:28 Cleanup Ob10 on Effective Computability.
  0.0.19 2017-09-28-13:04  Adjust TODOs.  Address some comments and suggestions
         from Paul McJones (private communication).

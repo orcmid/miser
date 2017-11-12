@@ -1,4 +1,4 @@
-oMiser.txt 0.0.3                    UTF-8                         dh:2017-**-**
+oMiser.txt 0.0.3                    UTF-8                         dh:2017-11-12
 
                            The Miser Project Code
                            ======================
@@ -50,8 +50,7 @@ MANIFEST
         summary of how the ‹ob› structure and its computational
         manifestations are useful as flexible, general-purpose data 
         structures given suitable encodings and decodings for
-        achieving preferable computationa manifestations.  Conditions
-        for being universal are identified.       
+        achieving convenient computational manifestations.  
         
     obtheory.txt
         specification of the ‹ob› abstract mathematical structure
@@ -108,13 +107,18 @@ TODO
     we are basically seeing an assembler (reader) and a disassembler (printer)
     of the oMiser machine code.  Where oFrugal becomes more interesting may
     be with Proc and maybe something about data structures.
+       
+  * The Golden Geek treatment of the connection between these could perhaps
+    be handled with an oMiser.md page here.  That could also address the 
+    programming notions.  It ties in the development of the "reference
+    notation" for obs and the two sugared forms: lists, and expressions.
     
-  * Complete the ob.txt sketch.  Include the actions here or there from the
-    2017-09-20 conversation with Paul McJones.
+  * The grammar for reference notation is also needed, along with the 
+    oFrugal REPL additions (saving and substitution, etc.).
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.3 2017-**-**-**:** Adust TODOs.  
+ 0.0.3 2017-11-12-09:09 Manage TODOs.  Touch up text.  
  0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
        next steps.  Touch up the text.
  0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,

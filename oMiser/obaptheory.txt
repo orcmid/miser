@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.19                 UTF-8                       dh:2017-11-02
+obaptheory.txt 0.0.20                 UTF-8                       dh:2017-11-02
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -14,7 +14,7 @@ obaptheory.txt 0.0.19                 UTF-8                       dh:2017-11-02
    
    Universality of obap.ap(p,x) is taken to mean that for every function,
    F on obs that is effectively-calculable, there is an ob p that expresses
-   an effective procedure such that obap.ap(p,x) = F(x) is determined, given x.
+   an effective procedure such that obap.ap(p,x) = F(x) is determined.
      
    The grand objective is to establish that not only is obap.ap(p,x) 
    a universal function in this respect, but that it provides a model of
@@ -35,9 +35,9 @@ PRELIMINARIES
           x :: y = ob.c(x,y)
           t :: u :: ... y :: z = t :: (u :: ... (y :: z) ...)
           
-   The prefix form ` x is equivalent to ob.e(x).  E.g.,
+   The prefix form ‵x is equivalent to ob.e(x).  E.g.,
    
-          `(ob.NIL :: ``ob.NIL :: `ob.NIL) 
+          `(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL) 
                 = e(c(ob.NIL,c(e(e(ob.NIL)),e(ob.NIL))))
           
    Obap1. New Individuals
@@ -299,10 +299,17 @@ TODO
    
  * Find my correspondence with John McCarthy about my early ideas on Miser and
    his recommendation.
+   
+ * Reconcile the inclusion, by some, of partial functions under the effectively-
+   computable ones.  This seems to collide with the halting problem.  Check
+   the treatment of the Church-Turing Thesis in SEP and also, possibly in Davis
+   and maybe Rogers.
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.19 2017-11-02-12:52 Manage TODOs.  Introduce `x prefix for e(x).
+ 0.0.20 2017-11-12-10:15 Manage TODOs.  Change to ‵ (reverse prime) in the
+        prefix equivalent of e(x).  
+ 0.0.19 2017-11-02-12:52 Manage TODOs.  Introduce ‵x prefix for e(x).
  0.0.18 2017-10-12-11:39 Rename obap.is-every-free-lindy to obap.is-pure-lindy
         for cases when a script is a non-reducible trace.  Define the negative
         case.  Improve the description of trace production.
