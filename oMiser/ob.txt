@@ -1,4 +1,4 @@
-ob.txt 0.0.3                    UTF-8                            dh:2017-11-12
+ob.txt 0.0.4                    UTF-8                            dh:2017-11-15
 
                            The Miser Project Code
                            ======================
@@ -132,10 +132,31 @@ ob.txt 0.0.3                    UTF-8                            dh:2017-11-12
     Sugared and reference forms can be used in combination to provide stream-
     lined expression of the intended employment of an ob.
     
+ 4. APPLICATIVE POWER
+    
     That everything ends up being at the (reference) ob level one way or another 
     is fundamental to the oMiser computational model.  This is the Miser form 
     of the stored-program principle by which computers interpret data as
     procedures and procedures as data.
+    
+    The example just-above is called cS, having the useful property that, for
+    scripts x and y and data ob z, with ap the obap.ap function,
+    
+       ap(ap(ap(cs,x),y),z) = ap(ap(x,z),ap(y,z))
+       
+    and, in Frugalese, 
+    
+       cS(x,y) z = x(z) y(z)
+       
+    or more-familiar equivalent,
+    
+       cs(x,y,z) = x(z,y(z))
+       
+    illustrating the use of scripts to distill new script objects and apply
+    them in further operations.  This sort of construction will be used in
+    useful and powerful ways.  The first challenge will be making it easier
+    to comprehend and produce such scripts.  We'll use scripts to help us 
+    make further scripts in doing so.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -155,6 +176,8 @@ ob.txt 0.0.3                    UTF-8                            dh:2017-11-12
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
+ 0.0.4 2017-11-15-08:22 Add interpretation of cS to complete the expression
+       case with section 4, Applicative Power.
  0.0.3 2017-11-12-09:47 Manage TODOs.  Edit the text.
  0.0.2 2017-11-11-10:44 Introduce prefix ‵ (U+2036) and text improvements.
  0.0.1 2017-11-10-11:59 Adjust TODOs.  Correct the GitHub URL.  Introduce
