@@ -1,0 +1,58 @@
+Bratman.txt 0.0.0                     UTF-8                       dh:2017-11-15
+
+                             The Miser Project Code
+                             ======================
+                            
+        <https://github.com/orcmid/blob/master/models/Bratman/Bratman.txt>
+
+           SOFTWARE AND TESTS FOR DEVELOPMENT OF MISER IMPLEMENTATIONS
+
+                                BRATMAN DIAGRAMS
+                                ----------------
+
+         
+MANIFEST
+
+    Bratman.txt 
+        this manifest and job-jar file
+        
+
+        
+         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2017 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+ 
+  * Provide a little bit more information about what this is and where to
+    find more about it.
+    
+  * Add links to other locations of materials and discussions.
+    
+  * Add synopsis.
+  
+  * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
+    and the web site.
+    
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2017-11-15-14:19 Create placeholder and initial job jar for the
+       introduction of diagrammatic models important to the Miser Project
+       and TROSTing.
+
+                        ***** end of Bratman.txt *****

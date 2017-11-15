@@ -1,4 +1,4 @@
-miser.txt 0.0.3                       UTF-8                       dh:2017-11-12
+miser.txt 0.0.4                       UTF-8                       dh:2017-11-15
 
                              The Miser Project Code
                              ======================
@@ -15,6 +15,9 @@ MANIFEST
 
     miser.txt 
         this manifest and job-jar file
+        
+    models/
+        subtree for model-related exposition and comparisons
         
     oMiser/
         subtree for the development of oMiser code
@@ -80,6 +83,7 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-11-15-14:07 Add models/ substructure for diagrammatic models.
  0.0.3 2017-11-12-09:05 Manage TODOs.  
  0.0.2 2017-11-11-10:49 Adjust TODOs.  Minor text adjustments.
  0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for 
