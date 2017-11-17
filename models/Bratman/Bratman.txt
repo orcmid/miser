@@ -1,4 +1,4 @@
-Bratman.txt 0.0.0                     UTF-8                       dh:2017-11-15
+Bratman.txt 0.0.1                     UTF-8                       dh:2017-11-17
 
                              The Miser Project Code
                              ======================
@@ -15,6 +15,11 @@ MANIFEST
 
     Bratman.txt 
         this manifest and job-jar file
+        
+    i051101d1.vsdx, .svg, .png
+        Diagrammatic presentation of computation as an operating process
+        by which the computational procedure is enacted, not a fixed thing.
+        Derived from <http://trosting.org/info/2005/11/i051101d.htm>.
         
 
         
@@ -51,6 +56,7 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2017-11-17-09:58 Add i051001d1 diagram symbolizing machine processing
  0.0.0 2017-11-15-14:19 Create placeholder and initial job jar for the
        introduction of diagrammatic models important to the Miser Project
        and TROSTing.
