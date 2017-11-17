@@ -1,4 +1,4 @@
-Bratman.txt 0.0.1                     UTF-8                       dh:2017-11-17
+Bratman.txt 0.0.2                     UTF-8                       dh:2017-11-17
 
                              The Miser Project Code
                              ======================
@@ -9,7 +9,47 @@ Bratman.txt 0.0.1                     UTF-8                       dh:2017-11-17
 
                                 BRATMAN DIAGRAMS
                                 ----------------
+                                
+    Bratman diagrams are employed to illustrate the process nature of 
+    computation and how that is layered to produce higher-level activities
+    such as transformation of procedures expressed in programming languages
+    to programs for computational procedures.  
+    
+    The original Bratman approach is enriched to provide diagrammatic depiction
+    of the bridge to abstractions that are manifest by the choreographed
+    computer operation.
+      
+                                  "A computational process ... cannot be seen
+                                  or touched.  It is not composed of matter at
+                                  all.  However, it is very real."
+                                  
+                                  -- Abelson and Sussman, Structure and 
+                                     Interpretation of Computer Programs,
+                                     p.1.
+                                
+BIBLIOGRAPHY
 
+    Abelson, Harold., Sussman, Gerald Jay., Sussman, Julie (1996)
+       Structure and Interpretation of Computer Programs, second edition.
+       MIT Press (Cambridge, MA: 1996).  ISBN 0-262-01153-0.  Available on
+       the Internet at <http://web.mit.edu/alexmv/6.037/sicp.pdf> and also
+       <https://mitpress.mit.edu/sicp/full-text/book/book.html>.  The first
+       five paragraphs of Chapter 1 are very much in the spirit that the
+       Miser Project is intended to celebrate.  Focused on an essentially-
+       applicative operation, oMiser is more elementary than LISP and the
+       Scheme dialect used in SICP,
+       <https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-9.html>.
+
+    Bratman, Harvey (1961)
+       An Alternate Form of the "UNCOL Diagram."  Comm. ACM 4, 3 (March 1961),
+       p.142. Available at <http://doi.acm.org/10.1145/366199.366249>.  The
+       inspiration for the Miser approach to situating computation as a
+       mechanism/process.
+       
+    Early, Jay., Sturgis, Howard (1970)
+       A formalism for Translator Interactions.  Comm. ACM 14, 10 (October
+       1970), Available at <http://doi.acm.org/10.1145/355598.362740>. A 
+       Bratman diagram reincarnation in a formal approach.
          
 MANIFEST
 
@@ -44,18 +84,16 @@ MANIFEST
  
 TODO
  
-  * Provide a little bit more information about what this is and where to
-    find more about it.
-    
-  * Add links to other locations of materials and discussions.
-    
-  * Add synopsis.
+  * Complete the build-up to Bratman diagrams for illustrating the changes
+    of abstraction that programming involves.
   
-  * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
-    and the web site.
+  * Connect to Golden Geek, Numbering Peano, and TROSTing materials as
+    they become available.
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2017-11-17-10:52 Add synopsis and annotated bibliography.  Manage
+       TODOs.
  0.0.1 2017-11-17-09:58 Add i051001d1 diagram symbolizing machine processing
  0.0.0 2017-11-15-14:19 Create placeholder and initial job jar for the
        introduction of diagrammatic models important to the Miser Project
