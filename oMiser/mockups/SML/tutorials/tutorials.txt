@@ -1,4 +1,4 @@
-tutorials.txt 0.0.12                 UTF-8                        dh:2017-10-03
+tutorials.txt 0.0.13                 UTF-8                        dh:2017-11-17
 
                              The Miser Project Code
                              ======================
@@ -9,7 +9,10 @@ tutorials.txt 0.0.12                 UTF-8                        dh:2017-10-03
                         -----------------------------
               
     Tutorial materials derive from and/or about the SML mockup creation
-    are cataloged here for document-management and preservation.
+    are cataloged here for document-management and preservation.  There is
+    also tie-in with the mathematical specifications and the computation/
+    programming model for oMiser/oFrugal for which the SML mockup provides
+    proofs-of-concept.
     
     Initial components of the tutorial sketch appeared on the Facebook
     Page "Golden Geek", <https://www.facebook.com/MiserProject/>
@@ -106,6 +109,22 @@ MANIFEST
          ‹ob› as Computational Model, Part 3, Preliminaries
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1964638877084019/>
          
+    ob-2017-10-04-0949-Additional Notions
+         ‹ob› as Computational Model, Part 4, Additional Notions
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1965113610369879/>
+         
+    (no image)
+         <ob> as Computational Model, Part 5, Computational Mathiness
+         <https://www.facebook.com/MiserProject/posts/1966565546891352>
+         
+    (no image)
+         oMiser Engine Programming Part 1 - The Stack
+         <https://www.facebook.com/MiserProject/posts/1977735585774348>
+         
+    omiser-2017-11-08-0820-1stStack.vsdx, .svg, .png
+         oMiser Engine Programming: Part 2 - Zooming In
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1978237959057444/>         
+         
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -131,6 +150,9 @@ TODO
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.13 2017-11-17-12:59 Bring Current and start including Visio diagrams
+        for images that are authored in that manner.  SVG is also derived,
+        as an alternative to the PNGs that are posted to the web, Facebook, etc.
  0.0.12 2017-10-03-08:47 Correct GitHub link.  Add the two Golden Geek
        screen captures for Parts 1-3 of ‹ob› as Computational Model.
  0.0.11 2017-09-14-20:15 Preserve the image from Part 17, Stabilized.
