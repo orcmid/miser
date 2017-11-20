@@ -1,4 +1,4 @@
-tutorials.txt 0.0.13                 UTF-8                        dh:2017-11-17
+tutorials.txt 0.0.14                 UTF-8                        dh:2017-11-20
 
                              The Miser Project Code
                              ======================
@@ -16,6 +16,9 @@ tutorials.txt 0.0.13                 UTF-8                        dh:2017-11-17
     
     Initial components of the tutorial sketch appeared on the Facebook
     Page "Golden Geek", <https://www.facebook.com/MiserProject/>
+    
+    Not all material is specific to SML and are also relevant to the treatment
+    of models at <https://github.com/orcmid/miser/tree/master/models>.
          
 MANIFEST
 
@@ -114,7 +117,7 @@ MANIFEST
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1965113610369879/>
          
     (no image)
-         <ob> as Computational Model, Part 5, Computational Mathiness
+         ‹ob› as Computational Model, Part 5, Computational Mathiness
          <https://www.facebook.com/MiserProject/posts/1966565546891352>
          
     (no image)
@@ -123,7 +126,13 @@ MANIFEST
          
     omiser-2017-11-08-0820-1stStack.vsdx, .svg, .png
          oMiser Engine Programming: Part 2 - Zooming In
-         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1978237959057444/>         
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1978237959057444/>
+
+    see <https://github.com/orcmid/miser/tree/master/models/Bratman>
+    i051101d1.vsdx, .svg, .png
+         Computation as Performance, Part 1: Engine Operation
+         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1981890868692153/>
+         
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -150,6 +159,8 @@ TODO
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.14 2017-11-20-08:46 Touch ups. Tie to models and cross-connect the
+        Computation as Performance modeling 
  0.0.13 2017-11-17-12:59 Bring Current and start including Visio diagrams
         for images that are authored in that manner.  SVG is also derived,
         as an alternative to the PNGs that are posted to the web, Facebook, etc.
