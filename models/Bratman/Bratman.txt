@@ -1,4 +1,4 @@
-Bratman.txt 0.0.2                     UTF-8                       dh:2017-11-17
+Bratman.txt 0.0.3                     UTF-8                       dh:2017-11-20
 
                              The Miser Project Code
                              ======================
@@ -59,10 +59,16 @@ MANIFEST
     i051101d1.vsdx, .svg, .png
         Diagrammatic presentation of computation as an operating process
         by which the computational procedure is enacted, not a fixed thing.
-        Derived from <http://trosting.org/info/2005/11/i051101d.htm>.
+        Derived from <http://trosting.org/info/2005/11/i051101d.htm>.  Used in
+        "Computation as Performance, Part 1: Engine Operation" on Golden Geek,
+        <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1981890868692153/>
         
-
-        
+    i051101d2.vsdx, .svg, .png
+        Accounting for typical input-output case and labeling formats versus
+        media.  Derived from <http://trosting.org/info/2005/11/i051101d.htm>.
+        Used in "Computation as Performance, Part 2: Input-Output Encodings" at
+        <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1983094308571809/>
+              
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -87,14 +93,16 @@ TODO
   * Complete the build-up to Bratman diagrams for illustrating the changes
     of abstraction that programming involves.
   
-  * Connect to Golden Geek, Numbering Peano, and TROSTing materials as
+  * Connect to Numbering Peano, and TROSTing materials as
     they become available.
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2017-11-20-09:49 Tie to "Computation as Performance" tutorial material
+       on Golden Geek, adding i051101d2.  
  0.0.2 2017-11-17-10:52 Add synopsis and annotated bibliography.  Manage
        TODOs.
- 0.0.1 2017-11-17-09:58 Add i051001d1 diagram symbolizing machine processing
+ 0.0.1 2017-11-17-09:58 Add i051101d1 diagram symbolizing machine processing
  0.0.0 2017-11-15-14:19 Create placeholder and initial job jar for the
        introduction of diagrammatic models important to the Miser Project
        and TROSTing.
