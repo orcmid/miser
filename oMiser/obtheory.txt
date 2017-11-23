@@ -1,4 +1,4 @@
-obtheory.txt 0.0.21                  UTF-8                       dh:2017-11-12
+obtheory.txt 0.0.22                  UTF-8                       dh:2017-11-23
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -87,10 +87,10 @@ PRIMITIVE NOTIONS
         u = ob.e(v) ∧ z = ob.e(x) 
                    ⇒ (u = z ⇔ v = x)                           (b)
         
-        ob.is-pair(u) ^ ob.is-singleton(z)
+        ob.is-pair(u) ∧ ob.is-singleton(z)
                    ⇒ u ≠ z                                     (c)
                    
-        ob.is-individual(u) ^ ob.a(z) ≠ z
+        ob.is-individual(u) ∧ ob.a(z) ≠ z
                    ⇒ u ≠ z                                     (d)
                    
    Ob7. Identity Among Primitive Individuals
@@ -121,6 +121,7 @@ PRIMITIVE NOTIONS
         ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
      
    Ob9. Denumerable Canonical Form
+   
         Ob consists of all distinct, finitely-expressible obs satisfying
         conditions Ob1-Ob8 and expressed without use of variables and
         without any functions other than ob.c and ob.e.  Such expressions
@@ -131,21 +132,26 @@ PRIMITIVE NOTIONS
         Ob is unbounded and denumerable provided that the individuals be 
         denumerable.
         
+        This case is important because computation, for us, involves derivation
+        of canonical obs from given ones.  This contrasts wmathematical
+        characterizations via patterned specification of functions and
+        predicates applying under ‹ob› as a whole.       
+        
    Ob10. Effectively-Computable Functions in Of
    
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
-        canonical identifiers for the arguments, a canonical-identifier result
-        is determined unambiguously and explicitly by deduction based entirely
-        on the Ot formulation of the function in a finite number of mathematical
-        statements.  
+        canonical identifiers for the arguments, any canonical-identifier result
+        is determined uniquelly and explicitly by deduction based entirely
+        on an Ot characterization of F in finite number of mathematical         statements.  
         
         Predicates in Ot are effectively-computable as one of true or false 
-        in a similar manner and also termed effectively-decidable.
+        in a similar manner and termed effectively-decidable.
         
         Observe that ob.c(x,y), ob.e(x), the four ob.is-... predicates, and 
         the "=" relation are all effectively-computable in this sense, so long
-        as individuals are distinguishable.  
+        as individuals are distinguishable.  They are also total in the sense
+        that a definite result is established for any obs given as arguments.
         
         In contrast, x ¶ y is only partial ordering.  When x ≠ y is determined, 
         it need not be determined which of x ¶ y or y ¶ x holds. The purpose 
@@ -188,20 +194,24 @@ TODO
    of the material.
    
  * When we speak of all of the effectively-computable functions on Obs, as     
-   characterized here, the claim will be that the totality is equivalent to
-   the CT-computable (total) functions.  When a a universal function is also
+   characterized here, the claim will be that the totality of them is equivalent
+   to the CT-computable (total) functions.  When a a universal function is also
    formulated, equivalence to a Universal Turing Machine and Turing Completeness
    will be claimed.
    
- * Determine how we reconcile the desire for total functions versus having
-   partial functions under the umbrella of effectively-computable.  It looks
-   like this might be related to domain restrictions, almost by definition.
+ * Determine how we reconcile having partial functions under the umbrella of   
+   effectively-computable.  It appears that this might be related to domain
+   restrictions, although the restriction might not be decidable?
    
  * Rely on the Stanford Encyclopedia of Philosophy (SEP) treatment of the
-   Church-Turing thesis and how we navigate the CT-computable.
+   Church-Turing thesis and how we navigate the CT-computable.  Put this where
+   it belongs in obaptheory, not here.
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.22 2017-11-23-14:44 Replace ^ with ∧ in a couple of places.  Touch up
+        Ob9-Ob10 to make canonical identification relevant to computation and
+        to leave open the prospect of effective-computable partial functions.
  0.0.21 2017-11-12-09:58 Manage TODOs.  Touch up the text.
  0.0.20 2017-11-11-11:28 Cleanup Ob10 on Effective Computability.
  0.0.19 2017-09-28-13:04  Adjust TODOs.  Address some comments and suggestions
