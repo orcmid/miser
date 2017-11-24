@@ -1,4 +1,4 @@
-Bratman.txt 0.0.3                     UTF-8                       dh:2017-11-20
+Bratman.txt 0.0.4                     UTF-8                       dh:2017-11-23
 
                              The Miser Project Code
                              ======================
@@ -68,7 +68,12 @@ MANIFEST
         media.  Derived from <http://trosting.org/info/2005/11/i051101d.htm>.
         Used in "Computation as Performance, Part 2: Input-Output Encodings" at
         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1983094308571809/>
-              
+    
+    i051101d3.vsdx, .svg, .png
+        Making agreement between the input-output formats, I and O, and machine
+        M.  Derived from <http://trosting.org/info/2005/11/i051101d.htm>.  Used
+        in "Computation as Performance, Part 3: Balanced Coupling" at
+        <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1984391935108713/>
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -98,6 +103,8 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-11-23-16:00 Tie in "Computation as Performance, Part 3: Balanced
+       Coupling" on Golden Geek, adding i051101d3.
  0.0.3 2017-11-20-09:49 Tie to "Computation as Performance" tutorial material
        on Golden Geek, adding i051101d2.  
  0.0.2 2017-11-17-10:52 Add synopsis and annotated bibliography.  Manage
