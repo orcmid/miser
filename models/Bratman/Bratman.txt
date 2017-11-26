@@ -1,4 +1,4 @@
-Bratman.txt 0.0.4                     UTF-8                       dh:2017-11-23
+Bratman.txt 0.0.5                     UTF-8                       dh:2017-11-25
 
                              The Miser Project Code
                              ======================
@@ -75,6 +75,12 @@ MANIFEST
         in "Computation as Performance, Part 3: Balanced Coupling" at
         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1984391935108713/>
          
+    i051101d4.vsdx, .svg, .png
+        Levels of leveled abstractions, at the computing device level and at
+        a level of usage, featuring interpretation and function.  Used in
+        "Computation as Performance, Part 4: Abstraction Leveling" at
+        <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1985273458353894/>
+        
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -103,6 +109,8 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.5 2017-11-25-16:59 Tie in "Computation as Performance, Part 4: Abstraction 
+       Leveling" on Golden Geek, adding i051101d4.
  0.0.4 2017-11-23-16:00 Tie in "Computation as Performance, Part 3: Balanced
        Coupling" on Golden Geek, adding i051101d3.
  0.0.3 2017-11-20-09:49 Tie to "Computation as Performance" tutorial material
