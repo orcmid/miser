@@ -1,11 +1,11 @@
-Bratman.txt 0.0.6                     UTF-8                       dh:2017-11-30
+Bratman.txt 0.0.7                     UTF-8                       dh:2017-12-06
 
                              The Miser Project Code
                              ======================
                             
         <https://github.com/orcmid/blob/master/models/Bratman/Bratman.txt>
 
-           SOFTWARE AND TESTS FOR DEVELOPMENT OF MISER IMPLEMENTATIONS
+           DEPICTION, ENGINEERING, AND VERIFICATION OF COMPUTATION
 
                                 BRATMAN DIAGRAMS
                                 ----------------
@@ -13,11 +13,11 @@ Bratman.txt 0.0.6                     UTF-8                       dh:2017-11-30
     Bratman diagrams are employed to illustrate the process nature of 
     computation and how that is layered to produce higher-level activities
     such as transformation of procedures expressed in programming languages
-    to programs for computational procedures.  
+    to programs for (more-) concrete computational processes.  
     
     The original Bratman approach is enriched to provide diagrammatic depiction
-    of the bridge to abstractions that are manifest by the choreographed
-    computer operation.
+    of the bridge between abstractions that are manifest by choreographed
+    computational operations.
       
                                   "A computational process ... cannot be seen
                                   or touched.  It is not composed of matter at
@@ -49,7 +49,7 @@ BIBLIOGRAPHY
     Early, Jay., Sturgis, Howard (1970)
        A formalism for Translator Interactions.  Comm. ACM 14, 10 (October
        1970), Available at <http://doi.acm.org/10.1145/355598.362740>. A 
-       Bratman diagram reincarnation in a formal approach.
+       Bratman diagram reincarnation in a formalized approach.
          
 MANIFEST
 
@@ -85,6 +85,11 @@ MANIFEST
         Turing Machines as cases of computational performance.  Adaptation for
         "Computation as Performance, Part 5: Turing Machine Functionality" at
         <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1987340014813905/>
+    
+    i051101d6.vsdx, .svg, .pnt
+        Adapted performance pattern for "Computation as Performance, Part 6:
+        Frugal Read-Eval-Print Performance/Functionality" at
+        <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1989981994549707/>
         
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -114,6 +119,9 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.7 2017-12-06-16:03 Correct banner titles and refine abstraction remarks.
+       Tie in "Computation as Performance, Part 6: Frugal Read-Eval-Print
+       Performance/Functionality" on Golden Geek, adding i051101d6.
  0.0.6 2017-11-30-14:10 Tie in "Computation as Performance, Part 5: Turing
        Machine Functionality" on Golden Geek, adding i051101d5.
  0.0.5 2017-11-25-16:59 Tie in "Computation as Performance, Part 4: Abstraction 
