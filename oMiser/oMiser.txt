@@ -1,23 +1,23 @@
-oMiser.txt 0.0.3                    UTF-8                         dh:2017-11-12
+oMiser.txt 0.0.4                    UTF-8                         dh:2017-12-27
 
                            The Miser Project Code
                            ======================
                             
-             <https://github.com/orcmid/miser/oMiser/oMiser.txt>
+        <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
               OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
               -------------------------------------------------
               
-    oMiser is the foundation software of The Miser Project.
+    oMiser is the foundation theory/software of The Miser Project.
     oMiser is the fundamental part of a software pair.
     
      - oMiser implements the representation and use of the 
-       abstract structure, ‹ob› as an encapsulated data-structure
-       and universal machine implementation as a program library.
+       abstract structure, ‹ob› as an encapsulated data-structure and
+       universal machine implementation via reusable program library.
         
      - oFrugal is a front-end processor that offers an interface for
        external exercise of oMiser functions in a more-practical
-       form for personal exploration and use of oMiser.  
+       form for personal exploration and operation of oMiser programs.  
        
     It is useful to view oMiser as a machine having obs as the form
     of its data and its programs.  The obs used as programs or
@@ -25,32 +25,33 @@ oMiser.txt 0.0.3                    UTF-8                         dh:2017-11-12
     digital computers.
     
     oFrugal implementations provide input-output and other functions
-    that oMiser itself lacks completely.  This is essentially a kind
+    that oMiser necessarily lacks.  oFrugal is essentially a kind
     of assembler of oMiser obs and a means to exercise programs
-    written as obs that compute other obs from given ones.
+    written as obs that compute other obs from given ones.  In particular,
+    it presents the results of computations in the same notation(s) employed
+    for the inputs.
     
-    There is spiral development, working through many iterations
-    of implementation until stable operation and portability of
-    oMiser and oFrugal are achieved.  Interoperation via recording
+    Development spirals, working through many iterations of implementation
+    until stable operation, full functionality, and portability of
+    oMiser and oFrugal are achieved.  Interoperation is via recording
     of oMiser dumps, oFrugal scripts, and distributed connections
-    are developed and extended over time.
+    developed and extended over time.
        
     Stages beyond oMiser are envisioned.  In those cases, oMiser
-    remains as a subordinate form that is relied upon when that
-    is the most required for successful, efficient operation, possibly
-    as part of a larger, more-interactive arrangement of computational
-    procedures.      
+    remains as a subordinate available for reliance when its simplicity
+    is sufficient for fragments of larger, more-interactive arrangements
+    of computational operations.      
          
 MANIFEST
 
     oMiser.txt 
-        this manifest and job-jar file
+        this synopsis, manifest and TODOs for this portion of the 
+        working Miser-Project working folders preserved on GitHub
         
     ob.txt
         summary of how the ‹ob› structure and its computational
         manifestations are useful as flexible, general-purpose data 
-        structures given suitable encodings and decodings for
-        achieving convenient computational manifestations.  
+        structures given suitable encodings and decodings
         
     obtheory.txt
         specification of the ‹ob› abstract mathematical structure
@@ -85,6 +86,9 @@ MANIFEST
  
 TODO
   
+  * Connect to internet-accessible resources and availability of stable 
+    materials when available.  TODOs and related work can be separated then.
+    
   * Work up a COM-based interface protected implementation and see whether
     reference-counting is a workable avoidance of garbage collection by
     other means.
@@ -112,12 +116,15 @@ TODO
     be handled with an oMiser.md page here.  That could also address the 
     programming notions.  It ties in the development of the "reference
     notation" for obs and the two sugared forms: lists, and expressions.
+    See <https://www.facebook.com/MiserProject/> for now.
     
   * The grammar for reference notation is also needed, along with the 
     oFrugal REPL additions (saving and substitution, etc.).
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2017-12-27-09:43 Touch-ups and some simplification.  Manage TODOs.
+       Correct the GitHub location of this page.
  0.0.3 2017-11-12-09:09 Manage TODOs.  Touch up text.  
  0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
        next steps.  Touch up the text.
