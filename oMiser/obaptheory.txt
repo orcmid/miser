@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.20                 UTF-8                       dh:2017-11-02
+obaptheory.txt 0.0.21                 UTF-8                       dh:2017-12-27
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -14,15 +14,17 @@ obaptheory.txt 0.0.20                 UTF-8                       dh:2017-11-02
    
    Universality of obap.ap(p,x) is taken to mean that for every function,
    F on obs that is effectively-calculable, there is an ob p that expresses
-   an effective procedure such that obap.ap(p,x) = F(x) is determined.
+   an effective procedure such that obap.ap(p,x) = F(x) is determined, where
+   p, x, and any y = F(x) are expressed as cannonical Obs.
      
    The grand objective is to establish that not only is obap.ap(p,x) 
    a universal function in this respect, but that it provides a model of
    commputation as powerful as any other, in harmony with the Church-Turing
-   thesis.  
+   thesis.  This hinges on demonstration that other deterministic models of
+   computation are representable in oMiser.
    
    Confirmation of these claims is developed separately.  Here we formalize
-   obap.ap(p,x) and obap.eval(exp) in mathematical terms.
+   obap.ap(p,x) and obap.eval(exp), in mathematical terms, in the theory Ot.
    
 PRELIMINARIES
 
@@ -38,11 +40,12 @@ PRELIMINARIES
    The prefix form ‵x is equivalent to ob.e(x).  E.g.,
    
           `(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL) 
-                = e(c(ob.NIL,c(e(e(ob.NIL)),e(ob.NIL))))
+                = ob.e(ob.c(ob.NIL,ob.c(ob.e(ob.e(ob.NIL)),ob.e(ob.NIL))))
           
-   Obap1. New Individuals
+   Obap1. Primitive Individuals
           
-          Nine named individuals are employed including ob.NIL:
+          Nine named individuals are distinguished as primitives,
+          including ob.NIL:
    
           obap.is-primitive(x) ⇒ ob.is-individual(x)
    
@@ -68,8 +71,8 @@ ADDITIONAL NOTIONS
              where s is a finite-length character string consisting of a letter
                      optionally followed by one or more alphanumeric characters
                      
-          Ʃs = Ʃt ⇔ s = t
-             where s = t signifies identity of the string texts
+          Ʃs = Ʃt ⇔ s =Ʃ t
+             where s =Ʃ t signifies identity of the string texts
                         
           obap.is-lindy(x) ⇒ ob.is-individual(x)          
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
@@ -79,8 +82,11 @@ ADDITIONAL NOTIONS
           obs for any purpose as distinct literals, written here in forms
           Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc. 
                 Applications of lindies to operands cannot proceed further;
-          the defined applicative interpretation is a trace ob indicating 
-          cessation of the computation.          
+          the defined applicative interpretation is a trace ob signifying 
+          cessation of the computation.  
+          IMPLEMENTATION NOTE: In computer representations, the alphabetic
+          characters permitted in lindies are the Unicode glyphs, encoded
+          in UTF-8, as defined for XML NCNames without any ".".
           
   Obap3.  Universal Apply Function
   
@@ -207,9 +213,17 @@ TODO
   
  * Provide a stable location for obaptheory version progressions on 
    <http://miser-theory.info>.
+   
+ * Double-check the XML NCNames rules and determine whether there are other
+   restrictions for oMiser.
      
  * Determining how types are handled and generally individuals representing
    extended functions remains open.
+   
+ * An odd characteristic of the sugarings described in ob.txt is the way
+   the REPL might infer the proper sweetener.  In particular, the use of .PROC
+   will be a major clue, as will interpretation-preserving applicatins.  This
+   takes much more pondering.
    
  * Save introduction of obap.PROC to extension treatment, their demonstrating
    some of the power of immutability and the ability for processors to optimize
@@ -260,20 +274,27 @@ TODO
    seen and applied in practice.  There is no list type at this point, however.
    
  * The use of obap.SELF in obap.ev has the effect that every procedure has a
-   kind of Y-combinator built-in.  It depends entirely on the script, p, whether
-   and how the prospective recursion is employed.  
+   kind of Y-combinator application built-in.  It depends entirely on the
+   script, p, whether and how the prospective recursion is employed and also
+   whether and how the procedure terminates in a deterministic manner, often
+   by a conditional use of ob.EV.  
    
  * The inspiration behind obap.SELF and obap.ARG extends back to my reading the
    1965 publication of Strachey's macrogenerator (GPM or McG) paper in The
    Computer Journal, <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e 
    function is inspired by a defect/limitation/incompleteness in McG, although
    here applied to "list" structures instead of strings having nested strings
-   as beads.  Switching to the more flexible pair structures was inspired
+   as beads.  
+   
+ * Switching to the more flexible pair structures was inspired
    by the XLISP (1.0?) paper in Dr. Dobb's Journal in the early 80s.  The coin
    hadn't dropped until then, although I had already had seen McCarthy's 
    "Part 1" in 1961, thanks to joining the ACM and also finding Comm.ACM back
    issues in the stacks of the Seattle Public Library (not an ordinary public
    library of the time before emergence of computer science as a discipline).
+   
+ * The terminology around individuals and singletons is borrowed from work of
+   Trenchard More on Array Theory.
    
  * Historical Note: McG was used by the ISWIM team at Univac (using a Univac
    1107, and didn't we call it YSWIM?) and, I'm told, the Backus FP team in San
@@ -307,6 +328,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.21 2017-12-27-11:37 Clarify universality a bit more in the synopsis.
+        Clean-up some text and also Review/Expand TODOs.
  0.0.20 2017-11-12-10:15 Manage TODOs.  Change to ‵ (reverse prime) in the
         prefix equivalent of e(x).  
  0.0.19 2017-11-02-12:52 Manage TODOs.  Introduce ‵x prefix for e(x).
