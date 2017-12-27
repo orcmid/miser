@@ -1,4 +1,4 @@
-obtheory.txt 0.0.22                  UTF-8                       dh:2017-11-23
+obtheory.txt 0.0.23                  UTF-8                       dh:2017-12-27
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -12,7 +12,7 @@ obtheory.txt 0.0.22                  UTF-8                       dh:2017-11-23
    
            Ob, all of the obs
            Of, all functions on obs
-           Ot, the applied logic in which the structure is 
+           Ot, the applied-logic theory in which the structure is 
                characterized
 
 LOGICAL NOTATION
@@ -24,7 +24,7 @@ LOGICAL NOTATION
    
    Specific predicates and functions are introduced by presentation of
    their characteristics in mathematical axioms that distinguish them.  The
-   logical theory is expressed using the following notation.
+   logical theory Ot is expressed using the following notation.
 
       p ⇔ q read p if-and-only-if q, true when true both are true or
              both are false, a kind of logical equality relation
@@ -47,7 +47,7 @@ LOGICAL NOTATION
    theory.  E.g., if it is asserted that p ⇔ q and also ¬ p, deduction
    that ¬ q is true is a logical inference; if it is asserted that p ⇒ q
    and also p, deduction that q is true is a logical inference.  The law
-   of excluded middle holds.  It is the case that ¬(p ∧ ¬p) and also
+   of excluded middle holds:  It is the case that ¬(p ∧ ¬p) and also
     ¬(¬p) ⇔ p and (p ⇒ q) ⇔ (¬p ∨ q).
 
 PRIMITIVE NOTIONS
@@ -132,10 +132,11 @@ PRIMITIVE NOTIONS
         Ob is unbounded and denumerable provided that the individuals be 
         denumerable.
         
-        This case is important because computation, for us, involves derivation
-        of canonical obs from given ones.  This contrasts wmathematical
-        characterizations via patterned specification of functions and
-        predicates applying under ‹ob› as a whole.       
+        This case is important because computation, for oMiser, involves
+        the systematic determination of canonical obs from given ones.  This
+        contrasts with the Ot characterizations of functions via patterned 
+        specifications employing variables that assert conditions over ‹ob› 
+        entire.       
         
    Ob10. Effectively-Computable Functions in Of
    
@@ -143,9 +144,10 @@ PRIMITIVE NOTIONS
         in Of by definition) is claimed to be effectively-computable if, given
         canonical identifiers for the arguments, any canonical-identifier result
         is determined uniquelly and explicitly by deduction based entirely
-        on an Ot characterization of F in finite number of mathematical         statements.  
+        on an Ot characterization of F by a finite number of mathematical 
+        statements.  
         
-        Predicates in Ot are effectively-computable as one of true or false 
+        Predicates in Ot are effectively-computable as true or false 
         in a similar manner and termed effectively-decidable.
         
         Observe that ob.c(x,y), ob.e(x), the four ob.is-... predicates, and 
@@ -155,9 +157,9 @@ PRIMITIVE NOTIONS
         
         In contrast, x ¶ y is only partial ordering.  When x ≠ y is determined, 
         it need not be determined which of x ¶ y or y ¶ x holds. The purpose 
-        of the ordering is that the Ob8 precedence condition never be violated
-        in the mathematical representation of any function F (or predicate P) 
-        that is purported to establish the effective computability thereof.  
+        for the ordering is that the Ob8 precedence condition never be violated
+        in a mathematical representation for any function F (or predicate P) 
+        that is asserted to demonstrate effective-computability of F (or P).  
         
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -201,7 +203,7 @@ TODO
    
  * Determine how we reconcile having partial functions under the umbrella of   
    effectively-computable.  It appears that this might be related to domain
-   restrictions, although the restriction might not be decidable?
+   restrictions, although the restriction might not be (effectively-)decidable?
    
  * Rely on the Stanford Encyclopedia of Philosophy (SEP) treatment of the
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
@@ -209,6 +211,7 @@ TODO
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.23 2017-12-27-10:45 Touch-up, especially in Ob8-Ob10.  Review TODOs. 
  0.0.22 2017-11-23-14:44 Replace ^ with ∧ in a couple of places.  Touch up
         Ob9-Ob10 to make canonical identification relevant to computation and
         to leave open the prospect of effective-computable partial functions.
