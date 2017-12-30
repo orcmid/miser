@@ -1,4 +1,4 @@
-obtheory.txt 0.0.23                  UTF-8                       dh:2017-12-27
+obtheory.txt 0.0.24                  UTF-8                       dh:2017-12-29
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -111,7 +111,7 @@ PRIMITIVE NOTIONS
         (x ¶ y) ⇒ ¬ (y ¶ x)                      (b), asymmetrical
         (x ¶ y) ∧ (y ¶ z) ⇒ (x ¶ z)             (c), transitive
         
-        x = y ⇔ ¬ (x ¶ y) ∧ ¬ (y ¶ x)           (d), ordering
+        x = y ∨ x ¶ y ∨ y ¶ x                    (d), ordering
         
         z = ob.e(y) ⇔ (y ¶ z)                    (e), construction
         z = ob.c(x,y) ⇔ (x ¶ z) ∧ (y ¶ z)
@@ -155,12 +155,14 @@ PRIMITIVE NOTIONS
         as individuals are distinguishable.  They are also total in the sense
         that a definite result is established for any obs given as arguments.
         
-        In contrast, x ¶ y is only partial ordering.  When x ≠ y is determined, 
-        it need not be determined which of x ¶ y or y ¶ x holds. The purpose 
-        for the ordering is that the Ob8 precedence condition never be violated
-        in a mathematical representation for any function F (or predicate P) 
-        that is asserted to demonstrate effective-computability of F (or P).  
-        
+        In contrast, x ¶ y is only partially-determined.  When x ≠ y is 
+        determined, it need not be made definite which of x ¶ y or y ¶ x holds. 
+        For Ot, Ob8 is definite enouth to ensure that any representation of a 
+        function F (or predicate P) must be such that Ob8 is not contradicted.
+        In addition, interpretations of ‹ob› are relieved from establishing an 
+        explicit counterpart of x ¶ y.  It is sufficient that no ob interpreta-
+        tioon can appear as a component of its own structure and no operations
+        violate that constraint.      
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -211,6 +213,10 @@ TODO
       
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.24 2017-12-29-16:48 Adjust Ob8 and Ob10 so that x ¶ y is taken as a 
+        sufficient constraint without explicit, strict ordering having to be
+        determined in a model.  Thanks to Roman Susi (rnd0101) for Questions
+        #1 discussion at <https://github.com/orcmid/miser/issues/1>.        
  0.0.23 2017-12-27-10:45 Touch-up, especially in Ob8-Ob10.  Review TODOs. 
  0.0.22 2017-11-23-14:44 Replace ^ with ∧ in a couple of places.  Touch up
         Ob9-Ob10 to make canonical identification relevant to computation and
