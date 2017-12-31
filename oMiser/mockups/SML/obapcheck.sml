@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.4               UTF-8                        dh:2017-11-02
+(* obapcheck.sml 0.0.5               UTF-8                        dh:2017-12-30
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -85,7 +85,7 @@ val ck0bap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
                end)      
 
 (* Demonstrate ob cK as script for a computational manifestation of combinator K
-   having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x be determined.
+   having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x as required.
    *)
 val cK = E ## ARG
 
@@ -105,10 +105,10 @@ val CkObap7
    having 
             ap(ap(ap(cS,x),y),z) = eval( ( (e(cS) ## e(x)) ## e(y) ) ## e(z) ) 
                                  = ap(ap(x,z),ap(y,z))
-   be determined. 
+   as required. 
    *)
 val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG))) 
-         (* effectively lambda.X lambda.Y lambda.Z X(Z) Y(Z) in Frugalese *)
+         (* effectively lambda.X lambda.Y lambda.Z ‵(X(Z) Y(Z)) in oFrugalese *)
 
 val Ck0bap8 
     = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
@@ -141,8 +141,7 @@ val Ck0bap8
             ap(cI,x) = eval( (e(cI) ## e(x)) ) = x
                      = ap(ap(ap(cS,cK),cK),x)
                      = x
-   be determined.  Equivalent manifestation using script ap(ap(cS,cK),cK) is
-   also demonstrated.
+   Equivalent manifestation using script ap(ap(cS,cK),cK) is also demonstrated.
    *)
 val cI = NIL
 val CkObap9 = let val SKK = eval((e(cS)##e(cK))##e(cK))
@@ -169,22 +168,25 @@ val CkObap10
                 = L"false"
 
 (* Demonstrate a script that is one way of checking that a given ob appears
-   in a list of obs.  This is tantamount to the Frugalese definition
+   in a list of obs.  This is tantamount to the Frugalese definitions
    
    fun has(x) List = let hasX L
                        = not is-singleton L
                          andalso (x = a L orelse hasX b L)
                       in hasX List
+                      
+   fun has(x) = rec.hasX lambda.L (not is-singleton L
+                          andalso (x = a L orelse hasX b L)
 
-   with a variety of idioms.
+   with a variety of idioms at the ob level.
    *)
    
 val hasX = EV ## (D ## ARG ## B ## ARG)
               ## e( B ## ( EV ## (D ## e(L"X") ## A ## ARG)
-                              ## e( A ## SELF ## B ## ARG)
+                              ## e( A ## (SELF ## B ## ARG) )
                               ) )
                               
-(*  has is effectively lambda.X hasX in Frugalese *)                                 
+(*  has is effectively lambda.X ‵( hasX ) in oFrugalese *)                                 
 val has 
     = C ## e(EV) 
         ## C ## e(D ## ARG ## B ## ARG)
@@ -250,6 +252,8 @@ val ckObap12
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.5 2017-12-30-16:53 Touch up oFrugalese and also make groupings so 
+         conditional pair-member selections are more evident.
    0.0.4 2017-11-02-10:33 Adjust TODOs.  Add obap.D and obap.EV checks, with
          demonstration of conditional recursion for has(x) L list membership.
    0.0.3 2017-09-20-10:24 Remove satisfied TODOs reflecting the successful
