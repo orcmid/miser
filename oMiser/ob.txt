@@ -1,4 +1,4 @@
-ob.txt 0.0.5                    UTF-8                            dh:2017-12-27
+ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
 
                            The Miser Project Code
                            ======================
@@ -73,8 +73,8 @@ ob.txt 0.0.5                    UTF-8                            dh:2017-12-27
       * distinct, fixed individuals are given unique alphanumeric identifiers.
         
       * e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
-        ‵ is the reversed prime Unicode character, U+2036 ‵.  It can be
-        entered at keyboards using the grave accent, U+0060 `, also. 
+        ‵ is the reversed prime Unicode character, U+2035 ‵.  It can be
+        entered at keyboards using the apostrophe, U+0027 ', also. 
               
       * c(x, y) is expressed x :: y
       
@@ -83,7 +83,7 @@ ob.txt 0.0.5                    UTF-8                            dh:2017-12-27
         
                        x :: y :: z = x :: (y :: z).  
                        
-      Similarly, ‵, groups first.  E.g., 
+      Similarly, ‵ groups first as a unary prefix operator.  E.g., 
       
                             ‵ ‵z = ‵(‵z), and 
                  x :: ‵y :: ‵ ‵z = x :: ((‵y) :: (‵(‵z))). 
@@ -182,6 +182,10 @@ ob.txt 0.0.5                    UTF-8                            dh:2017-12-27
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
+ 0.0.6 2018-01-01-12:20 Correct use and naming of U+2035, ‵,  and eliminate
+       acute accent as a substitute, allowing apostrophe instead.  One creates
+       problems in Markdown, the other in character [string] and other markup
+       notations.
  0.0.5 2017-12-27-13:06 Improve the layout and use consistent capitaliation of
        "cS" everywhere. 
  0.0.4 2017-11-15-08:22 Add interpretation of cS to complete the expression
