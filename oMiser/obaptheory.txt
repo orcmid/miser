@@ -13,9 +13,9 @@ obaptheory.txt 0.0.21                 UTF-8                       dh:2017-12-27
    employed in its construction and separately useful via obap.eval(exp).   .  
    
    Universality of obap.ap(p,x) is taken to mean that for every function,
-   F on obs that is effectively-calculable, there is an ob p that expresses
+   F, on obs that is effectively-calculable, there is an ob p that expresses
    an effective procedure such that obap.ap(p,x) = F(x) is determined, where
-   p, x, and any y = F(x) are expressed as cannonical Obs.
+   p, x, and any y = F(x) are expressed as cannonical obs.
      
    The grand objective is to establish that not only is obap.ap(p,x) 
    a universal function in this respect, but that it provides a model of
@@ -39,7 +39,7 @@ PRELIMINARIES
           
    The prefix form ‵x is equivalent to ob.e(x).  E.g.,
    
-          `(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL) 
+          ‵(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL) 
                 = ob.e(ob.c(ob.NIL,ob.c(ob.e(ob.e(ob.NIL)),ob.e(ob.NIL))))
           
    Obap1. Primitive Individuals
@@ -80,7 +80,8 @@ ADDITIONAL NOTIONS
           NOTE: Lindies are distinct conveniently-named individuals that have
           no intrinsic significance.  They are available to applications of
           obs for any purpose as distinct literals, written here in forms
-          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc. 
+          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc.  For more notation applications, 
+          see <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
                 Applications of lindies to operands cannot proceed further;
           the defined applicative interpretation is a trace ob signifying 
           cessation of the computation.  
@@ -99,7 +100,7 @@ ADDITIONAL NOTIONS
           
           All other predicates and functions introduced in Obap4-Obap7 below
           support the representation of obap.ap and obap.eval.  Explicit
-          computational manifestation is not required.
+          computational availability is not required.
           
 THE APPLY FUNCTIONS
 
@@ -242,7 +243,7 @@ TODO
    
  * It is mildly interesting that representation in a mathematical theory
    has no concern about tail recursion or other optimizations.  It doesn't
-   even have the requirement on computation that a definite ob be arrived
+   even have the requirement on computation that a canonical ob be arrived
    at consisting entirely of individuals combined with ob.e and ob.c.
    
  * How we establish what a computational manifestation accomplishes 
@@ -277,15 +278,24 @@ TODO
    kind of Y-combinator application built-in.  It depends entirely on the
    script, p, whether and how the prospective recursion is employed and also
    whether and how the procedure terminates in a deterministic manner, often
-   by a conditional use of ob.EV.  
+   by a conditional use of ob.EV.  A key point is that there is no magic in
+   how the least fixed-point is determined.  It is intrinsic to the expression
+   of every script, whether there is recursion or not.  This is a computational
+   resolution of a question raised by Dana Scott in his 1969/1993 LCF paper
+   concerning combinator Y as a fixed-point operator.
    
+ * The single recursion approach achieved with obap.ev(p,x,exp) does not 
+   readily extend to mutual recursion cases.  Dealing with this will come up
+   when the universal function is simulated with a script.  Systematic treat-
+   ment remains to be worked out.
+      
  * The inspiration behind obap.SELF and obap.ARG extends back to my reading the
    1965 publication of Strachey's macrogenerator (GPM or McG) paper in The
    Computer Journal, <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e 
    function is inspired by a defect/limitation/incompleteness in McG, although
    here applied to "list" structures instead of strings having nested strings
-   as beads.  
-   
+   as beads.     
+
  * Switching to the more flexible pair structures was inspired
    by the XLISP (1.0?) paper in Dr. Dobb's Journal in the early 80s.  The coin
    hadn't dropped until then, although I had already had seen McCarthy's 
@@ -328,6 +338,9 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.22 2018-01-03-09:26 Manage TODOs, make some touch-ups in the narrative
+        related to recursion.  Use reverse-prime, ‵ U+2025, consistently where
+        it is introduced.
  0.0.21 2017-12-27-11:37 Clarify universality a bit more in the synopsis.
         Clean-up some text and also Review/Expand TODOs.
  0.0.20 2017-11-12-10:15 Manage TODOs.  Change to ‵ (reverse prime) in the
