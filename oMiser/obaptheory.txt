@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.21                 UTF-8                       dh:2017-12-27
+obaptheory.txt 0.0.23                 UTF-8                       dh:2018-01-03
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -182,8 +182,10 @@ THE APPLY FUNCTIONS
            
         obap.is-evunop(obap.EV)
         obap.ev(p,x,obap.EV :: e2) = obap.ev(p,x,obap.ev(p,x,e2))
+        
+        obap.is-specialop(p) ⇔ obap.is-evunop(p) ∨ obap.is-evunop(p)
            
-        ¬ ( obap.is-evbinop(e1) ∨ obap.is-evunop(e1) ) 
+        ¬ obap.is-specialop(e1)
            ⇒ obap.ev(p,x,e1::e2) = obap.ap(obap.ev(p,x,e1), obap.ev(p,x,e2))
         
    Obap7. obap.eval(e)
@@ -338,6 +340,9 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.23 2018-01-03-09:46 Introduce obap.is-specialop(p) to isolate the 
+        special cases of p::e2 from the default e1::e2 treatment as application.  
+        Based on observation by Roman Susi in ordmid/miser GitHub #4. 
  0.0.22 2018-01-03-09:26 Manage TODOs, make some touch-ups in the narrative
         related to recursion.  Use reverse-prime, ‵ U+2025, consistently where
         it is introduced.
