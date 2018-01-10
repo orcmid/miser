@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.24                 UTF-8                       dh:2018-01-09
+obaptheory.txt 0.0.25                 UTF-8                       dh:2018-01-10
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -123,9 +123,9 @@ THE APPLY FUNCTIONS
         
         ob.is-individual(p) ⇒ obap.ap(p,x) = obap.apint(p,x)
         
-        obap.is-pure-lindy-trace(p) ∧ obap.is-pre-lindy-trace(x)
+        obap.is-pure-lindy-trace(p) ∧ obap.is-pure-lindy-trace(x)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x           
-        ¬ ( obap.is-pure-lindy(p) ∧ obap.is-lindy-everywhere(x) )
+        ¬ ( obap.is-pure-lindy-trace(p) ∧ obap.is-pure-lindy-trace(x) )
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
                               
    Obap5. obap.apint(p,x) applicative treatment of individuals.
@@ -339,6 +339,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.25 2018-01-10-11:58 Correct obap.ap conditions on pure-lindy-trace case
+        for obap.ap(p1::p2, x), with hat-tip to Roman Susi.
  0.0.24 2018-01-09-21:30 Simplify the trace use of lindies to fixed-point on
         cases where is-pure-lindy-trace(ob) appliles.
  0.0.23 2018-01-03-09:46 Introduce obap.is-specialop(p) to isolate the 
