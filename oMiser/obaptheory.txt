@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.23                 UTF-8                       dh:2018-01-03
+obaptheory.txt 0.0.24                 UTF-8                       dh:2018-01-09
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -48,19 +48,27 @@ PRELIMINARIES
           including ob.NIL:
    
           obap.is-primitive(x) ⇒ ob.is-individual(x)
-   
-          obap.is-primitive(ob.NIL)
-          
+
+          obap.is-primitive(ob.NIL)         
           obap.is-primitive(obap.A)
-          obap.is-primitive(obap.B)
-          obap.is-primitive(obap.C)
-          obap.is-primitive(obap.D)
+          obap.is-primitive(obap.B)   
           obap.is-primitive(obap.E)
+             4 obs that signify application of elementary functions in scripts
           
           obap.is-primitive(obap.SELF)
           obap.is-primitive(obap.ARG)
+             2 obs that signify references to script evaluation parameters
           
           obap.is-primitive(obap.EV)
+             1 ob that signifies a special unary operator in scripts
+          
+          obap.is-primitive(obap.C)
+          obap.is-primitive(obap.D) 
+             2 obs that signify special binary operators in scripts
+             
+          The last three are distinguished as special operators in the
+          evaluation of obs as expressions.  The last five constitute
+          special forms in the evaluation of obs as expressions.
 
           
 ADDITIONAL NOTIONS
@@ -106,21 +114,16 @@ THE APPLY FUNCTIONS
 
    Obap4. obap.ap(p,x)
    
-          obap.is-lindy(x) => obap.is-pure-lindy(x)
-          obap.is-pure-lindy(c(x,y))
-             ⇔ obap.is-pure-lindy(x) ∧ obap.is-pure-lindy(y)
-          ¬ obap.is-pure-lindy(e(x))
+          obap.is-lindy(x) => obap.is-pure-lindy-trace(x)
+          obap.is-pure-lindy-trace(c(x,y))
+             ⇔ obap.is-pure-lindy-trace(x) ∧ obap.is-pure-lindy-trace(y)
+          ¬ obap.is-pure-lindy-trace(e(x))
              
-          obap.is-lindy(x) => obap.is-lindy-everywhere(x)
-          obap.is-lindy-everywhere(e(x)) ⇔ obap.is-lindy-everywhere(x)
-          obap.is-lindy-everywhere(c(x,y))
-             ⇔ obap.is-lindy-everywhere(x) ∧ obap.is-lindy-everywhere(y)
-   
         ob.is-enclosure(p) ⇒ obap.ap(p,x) = ob.a(p)
         
         ob.is-individual(p) ⇒ obap.ap(p,x) = obap.apint(p,x)
         
-        obap.is-pure-lindy(p) ∧ obap.is-lindy-everywhere(x)
+        obap.is-pure-lindy-trace(p) ∧ obap.is-pre-lindy-trace(x)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x           
         ¬ ( obap.is-pure-lindy(p) ∧ obap.is-lindy-everywhere(x) )
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
@@ -138,14 +141,14 @@ THE APPLY FUNCTIONS
         obap.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
         obap.apint(obap.EV, x) = ob.e(obap.EV) :: ob.e(x)
                
-        obap.is-lindy(p) ∧ obap.is-lindy-everywhere(x)  
+        obap.is-lindy(p) ∧ obap.is-pure-lindy-trace(x)  
                          => obap.apint(p,x) = p :: x
-        obap.is-lindy(p) ∧ ¬ obap.is-lindy-everywhere(x)  
+        obap.is-lindy(p) ∧ ¬ obap.is-pure-lindy-trace(x)  
                          => obap.apint(p,x) = p :: ob.e(x)
                               
-        A trace is a form, t, such that obap.ap(t,obap.NIL) = obap.eval(t) = t.
-        This supports a form of symbolic evaluation in the case of individuals,
-        such as lindies, that lack a distinct applicative interpretation. 
+        A trace is a form, t, such that obap.ap(t,any) = obap.eval(t) = t.
+        This supports a form of symbolic evaluation using the fact that lindies
+        lack distinct applicative interpretations. 
         
         The obap.apint evaluations for obap.C and obap.D determine partial
         applications, effectively currying use of functions ob.c and obap.d.
@@ -326,10 +329,6 @@ TODO
    also a serious absence of useful data types, and that remains to be
    addressed.
    
- * Construct sufficient tests of lindy treatment in an implementation to 
-   demonstrate that the current applicative interpretation is adequate and 
-   has no nasty edge cases.
-   
  * Find my correspondence with John McCarthy about my early ideas on Miser and
    his recommendation.
    
@@ -340,6 +339,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.24 2018-01-09-21:30 Simplify the trace use of lindies to fixed-point on
+        cases where is-pure-lindy-trace(ob) appliles.
  0.0.23 2018-01-03-09:46 Introduce obap.is-specialop(p) to isolate the 
         special cases of p::e2 from the default e1::e2 treatment as application.  
         Based on observation by Roman Susi in ordmid/miser GitHub #4. 

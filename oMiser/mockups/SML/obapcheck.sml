@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.5               UTF-8                        dh:2017-12-30
+(* obapcheck.sml 0.0.6               UTF-8                        dh:2018-01-09
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -71,18 +71,21 @@ val CkObap5 = ap(NIL,L"X") = L"X"
       andalso ap(E, L"X") = e(L"X")
       andalso ap(L"X", L"Y") = L"X" ## L"Y"
       andalso ap(L"X", NIL) = L"X" ## e(NIL)
-      andalso ap(L"X", e(L"Y")) = L"X" ## e(L"Y")
+      andalso ap(L"X", e(L"Y")) = L"X" ## e(e(L"Y"))
       andalso ap(SELF, L"X") = e(SELF) ## e(L"X")
       andalso ap(ARG, L"X") = e(ARG) ## e(L"X")
       andalso ap(EV, L"X") = e(EV) ## e(L"X")
 
 (* obap6 obap.ev(p,x,e) via obap.ap(p,x) procedures and eval(exp) expressions *)
 
-val ck0bap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
+val ckObap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
       andalso (let val xyz = L"X" ## L"Y" ## L"Z"
                 in           ap(xyz, NIL) = xyz
                      andalso eval(xyz) = xyz
-               end)      
+               end)  
+      andalso ap(L"X" ## L"Z", L"Y" ## L"Z") = (L"X" ## L"Z") ## L"Y" ## L"Z"
+      andalso eval((L"X" ## L"Z") ## L"Y" ## L"Z") 
+                = (L"X" ## L"Z") ## L"Y" ## L"Z" 
 
 (* Demonstrate ob cK as script for a computational manifestation of combinator K
    having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x as required.
@@ -110,7 +113,7 @@ val CkObap7
 val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG))) 
          (* effectively lambda.X lambda.Y lambda.Z ‵(X(Z) Y(Z)) in oFrugalese *)
 
-val Ck0bap8 
+val CkObap8 
     = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
           val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
           val SX = C##e(e(L"X")##ARG)##C##(E##ARG)##e(ARG) 
@@ -252,6 +255,8 @@ val ckObap12
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.6 2018-01-09-21:15 Add and adjust cases for is_pure_lindy_trace(ob)
+         evaluation and interpretation confirmations.
    0.0.5 2017-12-30-16:53 Touch up oFrugalese and also make groupings so 
          conditional pair-member selections are more evident.
    0.0.4 2017-11-02-10:33 Adjust TODOs.  Add obap.D and obap.EV checks, with

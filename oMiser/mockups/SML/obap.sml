@@ -1,4 +1,4 @@
-(* obap.sml 0.0.7                     UTF-8                      dh:2017-10-12
+(* obap.sml 0.0.8                     UTF-8                      dh:2018-01-09
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -70,39 +70,29 @@ structure obap :> OBAP
       (* Obap4: obap.ap(p,x)
          applies ob p interpreted as a procedure script to argument ob x
          *)
+         
       fun ap(p: ob, x: ob) 
-          = let fun is_lindy_everywhere (L y) = true
-                  | is_lindy_everywhere (e x) = is_lindy_everywhere x
-                  | is_lindy_everywhere (c(x,y)) 
-                            = is_lindy_everywhere x 
-                              andalso is_lindy_everywhere y
-                  | is_lindy_everywhere (_) = false
-                    (* every individual leaf of the ob is a lindy *)
-             in case p
-                of c(_,_) => let fun is_pure_lindy (L y) = true
-                                   | is_pure_lindy (c(x,y)) 
-                                           = is_pure_lindy x
-                                             andalso is_pure_lindy y
-                                   | is_pure_lindy (_) = false
-                                   (* every free (unenclosed) individual
-                                      leaf of the ob is a lindy *)
-                              in if is_pure_lindy p 
-                                    andalso is_lindy_everywhere x
-                                    (* trace now in order not to lose x *) 
-                                 then p ## x                
-                                 else ev(p,x,p)
-                             end
+        = let fun is_pure_lindy_trace (L y) = true
+                | is_pure_lindy_trace (c(x,y)) = is_pure_lindy_trace x
+                                                 andalso is_pure_lindy_trace y
+                | is_pure_lindy_trace (_) = false
+                (* every singleton in the ob is a lindy *)
+           in case p
+                of c(_,_) =>  if is_pure_lindy_trace p 
+                                 andalso is_pure_lindy_trace x
+                              then p ## x 
+                                  (* trace now in order not to lose x *) 
+                              else ev(p,x,p)             
                  | e(y) => y
-               
                  | NIL => x   (* Obap5: apint(p,x) inline *)
                  | A => a(x)
                  | B => b(x)
                  | C => C ## e(x) ## ARG
                  | D => D ## e(x) ## ARG
                  | E => e(x)
-                 | L s => p ## (if is_lindy_everywhere(x) then x else e x)
+                 | L s => p ## (if is_pure_lindy_trace(x) then x else e x)
                  | _ => e(p) ## e(x)
-            end
+          end        
                
       (* Obap6: obap.ev(p,x,e) evaluate e in body of obap.ap(p,x) *)        
       and ev(p: ob, x: ob, exp: ob)  
@@ -151,6 +141,7 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.0.8 2018-01-09-21:12 Switch to is_pure_lindy-trace(op).
    0.0.7 2017-10-12-11:43 Change is_every_free_lindy(p) to is_pure_lindy(p) 
          as better expression of knowing that application will not change it.
    0.0.6 2017-10-09-12:00 Align obap(p,x) handling of is-every-free-lindy(p)
