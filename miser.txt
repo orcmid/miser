@@ -1,4 +1,4 @@
-miser.txt 0.0.4                       UTF-8                       dh:2017-11-15
+miser.txt 0.0.5                       UTF-8                       dh:2018-01-11
 
                              The Miser Project Code
                              ======================
@@ -10,8 +10,12 @@ miser.txt 0.0.4                       UTF-8                       dh:2017-11-15
                      SOURCE CODE VERSION CONTROL REPOSITORY
                      --------------------------------------
 
-         
+                       <https://github.com/orcmid/miser>
+                       
 MANIFEST
+
+    README.md
+        GitHub-rendered "home page" for the public source-code repository
 
     miser.txt 
         this manifest and job-jar file
@@ -20,8 +24,7 @@ MANIFEST
         subtree for model-related exposition and comparisons
         
     oMiser/
-        subtree for the development of oMiser code
-        
+        subtree for the development of oMiser conceptalization and code        
                       
     LICENSE.txt
          The open-source software license that applies to the entire 
@@ -59,8 +62,6 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
 TODO
-
-  * Add GitHub Readme.md when ready.
   
   * Provide a little bit more information about what this is and where to
     find more about it.
@@ -74,15 +75,27 @@ TODO
     
   * Add synopsis.
   
+  * Account for the use of these folder-specific synopsis/manifest text files.
+  
+  * Explain the reference implementation(s) and notation(s) as the mainline,
+    with mockups for proof-of-concept, demonstrations, and exercises.
+  
   * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
     and the web site.
     
   * Use the logo and the block diagram (on Golden Geek) for a summary of this.
-    Don't go into the extensive detail.  Also, docs will continue to be at
-    miser-theory.info, as tempting and convenient GitHub might be.
+    Don't go into the extensive detail.  
+    
+  * Docs will continue to be at miser-theory.info, as tempting and convenient
+    GitHub might be.  [dh:2018-01-11: It is tempting to use docs/ here along
+    with the GitHub support for wikis and documentation pages.  Whatever I do,
+    there need to be static places of preservation, including of authenticated
+    distributions, just as being worked on for nfoTools.]
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.5 2018-01-11-10:03 Introduce README.md for the GitHub front page.  Manage
+       TODOs.
  0.0.4 2017-11-15-14:07 Add models/ substructure for diagrammatic models.
  0.0.3 2017-11-12-09:05 Manage TODOs.  
  0.0.2 2017-11-11-10:49 Adjust TODOs.  Minor text adjustments.
