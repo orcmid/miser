@@ -1,5 +1,5 @@
 # orcmid / miser #
-The Miser Project for practical demonstration of computation-theoretical aspects of software
+The Miser Project for practical demonstration of computation-theoretic aspects of software
 
 ## ***WORKING DRAFT*** ##
 
@@ -10,15 +10,15 @@ The Miser Project for practical demonstration of computation-theoretical aspects
 
 The practical side to the oMiser computational model is accomplished with a stacked layering of computer software.
 
-The production/reference oMiser engine is intended for use by other software.  It will have portable implementations that operate on general-purpose computer platforms as a library to other programs on the platform.  The oMiser engine is purely algorithmic in nature.  It supports expression of a rudimentary data structure and algorithms on that structure.  The expression of algorithms is via an applicative functional notation.  oMiser lacks input-output and any kind filing ssystem for reusable artifacts, whether data or applicative-expression scripts.
+The production/reference oMiser engine is intended for use by other software.  It will have portable implementations that operate on general-purpose computer platforms as a library to other programs on the platform.  The oMiser engine is purely algorithmic in nature.  It supports expression of a rudimentary data structure and algorithmic procedures on that structure.  The expression of algorithms is via an applicative functional notation.  oMiser lacks input-output and any kind filing system for reusable artifacts, whether data or applicative-expression scripts.  A prominent feature of oMIser is how procedures and data are expressed using the same data structure, demonstrating the essence of the stored-program concept.
 
 ![Hosting oFrugal/oMiser](https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/tutorials/omiser-2017-11-08-0920-1stStack.png).
 
-Standard oFrugal software embeds an oMiser engine and delivers access to the engine via the host platform user interface.  oFrugal provides for input-output and carrying out of oMiser computations in accordance with input and/or stored scripts.  oFrugal provides means for data and results to be expressed in visible and persistent form, known as *\[o\]Frugalese*.  oFrugal reference implementations are usable interoperably by interchange of programs and data in Frugalese reference formats.
+Accompanying oFrugal software embeds an oMiser engine and delivers access to the engine via host-platform user interface.  oFrugal provides for input-output and carrying out of oMiser computations in accordance with direct input and/or previously-stored scripts.  oFrugal provides means for data and results to be expressed in visible and persistent form, known as *\[o\]Frugalese*.  oFrugal reference implementations are usable interoperably by interchange of programs and data in Frugalese reference formats.
 
 ### Current State (2018-01-11) ###
 
-The oMiser/oFrugal level of the conceptualization is being demonstrated and confirmed using proof-of-concept mockups.  The initial mockup work uses Standard ML of New Jersey (SML/NJ) as host platform.  This provides a convenient check between the mathematical representation of the conceptualization and a close computational interpretation.
+The oMiser/oFrugal level of the conceptualization is being demonstrated and confirmed using proof-of-concept mockups.  The initial mockup work uses Standard ML of New Jersey (SML/NJ) as host platform.  This provides a convenient check between the mathematical representation of the conceptualization and a close computational interpretation.  Other mockups demonstrate interpretation of the theoretical model by alternative means.
 
 As the oMiser conceptualization stabilizes, work on oFrugal pilot mockup versions is started in order to be able to make more ambitious confirmations of oMiser capabilities in representing higher abstractions.  This will allow materials to be filed and reused and used in composition of larger works.
 
