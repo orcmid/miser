@@ -14,13 +14,15 @@ The production/reference oMiser engine is intended for use by other software.  I
 
 ![Hosting oFrugal/oMiser](https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/tutorials/omiser-2017-11-08-0920-1stStack.png).
 
-Accompanying oFrugal software embeds an oMiser engine and delivers access to the engine via host-platform user interface.  oFrugal provides for input-output and carrying out of oMiser computations in accordance with direct input and/or previously-stored scripts.  oFrugal provides means for data and results to be expressed in visible and persistent form, known as *\[o\]Frugalese*.  oFrugal reference implementations are usable interoperably by interchange of programs and data in Frugalese reference formats.
+Accompanying oFrugal software embeds an oMiser engine and delivers access to the engine via host-platform user interface.  oFrugal provides for input-output and carrying out of oMiser computations in accordance with direct input and/or previously-stored scripts.  oFrugal provides means for data and results to be expressed in visible and persistent form, known as *Frugalese*.  oFrugal reference implementations are usable interoperably by interchange of programs and data in Frugalese reference formats.
 
 ### Current State (2018-01-11) ###
 
 The oMiser/oFrugal level of the conceptualization is being demonstrated and confirmed using proof-of-concept mockups.  The initial mockup work uses Standard ML of New Jersey (SML/NJ) as host platform.  This provides a convenient check between the mathematical representation of the conceptualization and a close computational interpretation.  Other mockups demonstrate interpretation of the theoretical model by alternative means.
 
-As the oMiser conceptualization stabilizes, work on oFrugal pilot mockup versions is started in order to be able to make more ambitious confirmations of oMiser capabilities in representing higher abstractions.  This will allow materials to be filed and reused and used in composition of larger works.
+Details of the conceptualization and its progression are reflected in project text files and in dialogue captured in [Issue pages](https://github.com/orcmid/miser/issues).
+
+As the oMiser conceptualization stabilizes, work on oFrugal pilot mockup versions is undertaken to support more-ambitious confirmations of oMiser capabilities in representing higher-level abstractions above the rudimentary level of oMiser.  This will include allowing materials to be filed and reused and used in composition of larger works.
 
 ### Intended Progression ###
 
