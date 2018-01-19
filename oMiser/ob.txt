@@ -1,4 +1,4 @@
-ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
+ob.txt 0.1.0                    UTF-8                            dh:2018-01-18
 
                            The Miser Project Code
                            ======================
@@ -42,14 +42,14 @@ ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
         
       * The individuals and encapsulations together are identified as 
         singletons because they share the property that ob.b(z) = z
-        for either.
+        for either.  There are oMiser idioms that rely on this quality.
         
       * For any obs x and y, the function ob.c(x, y) determines the pair
         such that ob.a(ob.c(x,y)) = x and ob.b(ob.c(x,y)) = y and neither
         x nor y is the same as ob.c(x,y).  
         
-      * For all obs, there are definite functions that determine when 
-        obs are the same or different and also,
+      * For all obs, there are convenience functions that determine when 
+        obs are the same or different based on structure alone,
            - ob.is-individual(z) true whenever ob.a(z) = z
            - ob.is-singleton(z) true whenever ob.b(z) = z
            - ob.is-pair(z) whenever ob.is-singleton(z) is false
@@ -59,11 +59,17 @@ ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
       * The enrichment of obs for particular applications is solely by
         introduction of distinct individuals.
            
- 2. DATA REPRESENTATION
+ 2. DATA REPRESENTATION TEXT NOTATION
  
     The mathematical formulation of elementary obs provides a prescription
     for how one can establish computational procedures that preserve exactly
     those characteristics.
+    
+    There are plaintext expressions, written in texts accepted by oFrugal, that
+    introduce canonical obs in a direct way.  The yielded obs would be presented
+    in the same manner when output as oFrugal results.
+    
+ 2.1 Reference Notation for Canonical Obs
     
     There is a standard oFrugal formula notation for more-compact expression of
     obs in Unicode texts.  Although adaptations are required depending on 
@@ -72,11 +78,11 @@ ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
       
       * distinct, fixed individuals are given unique alphanumeric identifiers.
         
-      * e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
+      * ob.e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
         ‵ is the reversed prime Unicode character, U+2035 ‵.  It can be
         entered at keyboards using the apostrophe, U+0027 ', also. 
               
-      * c(x, y) is expressed x :: y
+      * ob.c(x, y) is expressed x :: y
       
       * parenthesese are used for grouping.  The grouping of :: is to
         the right.  E.g.,  
@@ -95,7 +101,7 @@ ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
         interpretation in obs that are treated as expression of computations.
         
       * There are literal individuals (lindies) that can be introduced and used
-        for any purpose.  A lindy is specified with alphanumeric sequence
+        for any purpose.  A lindy is specified with an alphanumeric sequence
         that always begins with a (Unicode) letter.  E.g., X, alpha, β, デニス,
         and ℵ.  They can serve as symbols for any user purpose.      
      
@@ -104,69 +110,148 @@ ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
     
         (English::en)::(Русский::ru)::(日本語::ja)::(Français::fr)::‵default  (1)
         
-    All of the terms are lindies.
+    All of the individual terms in that expression are lindies.
+    
+ 2.2 Publication Notation
+ 
+    In formats having greater typographical flexibility than plaintest, there
+    can be useful embellishments.  Primitives can be presented in boldface, and
+    even lower-case, with the leading "." omitted, since the special formatting
+    reflects their "reserved" and distinct status as primitives. 
+    
+ 2.3 Additional Forms
+ 
+    The notation can be "pretty-printed", using indentation, to facilitate
+    comprehension.  The addition of comments, blank lines, indentations, and
+    and other typographical layout and font features do not alter the 
+    interpretation of the plaintexts that are the basis for such presentation.
+    
+    In presentation on graphical interfaces and in exemplary "code blocks" there
+    may also be use of emphasis, italic, and coloration to enhance readability.
+    These typically retain reference format, except perhaps in a publication 
+    context.
         
  3. FRUGALESE EXPRESSIONS
  
     The reference notation is known as Frugalese.  The oFrugal computer software
-    supports this notation on all platforms.
+    supports a constrained form of this notation on all platforms.  
+    
+    Frugalese allows for more than the canonical expresion of obs.  There can
+    also be special operations, including use of oMiser computations derive obs
+    that are the intended results.
+    
+ 3.1 List Constructions
         
     For convenient use of obs as lists of something, there is additional
     Frugalese that can be very useful in the expression of data.  
     
         [English::en, Русский::ru, 日本語::ja, Français::fr, ‵default:]       (2)
         
-    The list-style form above expresses the same ob as the preceding example.
+    The list-style form above expresses the same ob as preceding example (1).
     This is a "sugaring" of the reference notation.  It is convenient syntax for
-    a variety of list-shaped data structures.  The ob (2) is the same as the 
-    previous form (1).
+    a variety of list-shaped data structures.  Expression (2) is an oFrugal
+    expression that is  evaluated to yield the canonical form (1).  
+    
+    The list items shown in (2) are themselves canonical ob expressions.  Any
+    expression could have been used for a list element, including via nested
+    lists and applicative expressions (section 4, below).
+    
+ 3.2 Script constructions
         
-    Here is reference notation for an ob that happens to be useful as a 
-    script.
+    Here is canonical ob reference notation for an ob that happens to be useful
+    as a script.
       
         .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG))             (3)
                          :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) )
+                         
+    The appearance of primitives is suggestive of the intended use as a script.
                        
-    Frugalese applicative-expression notation is another sugaring that makes
-    the applicative structure of scripts more evident.
-    
-        .C ‵.C  (.C  (.E  .C (.E .ARG) ‵.ARG)                                 (4)
-                    ‵(.C (.E .ARG) ‵.ARG) )       
-    
-    The sugaring (4) expresses the same ob as the form (3).  The use of 
-    indentations and spacing to clarify structure is a presentation convenience.
-    Sugared and reference forms can be used in combination to provide stream-
-    lined expression of the intended employment of an ob.
-    
+       
  4. APPLICATIVE POWER
     
-    That everything ends up being at the (reference) ob level one way or another 
-    is fundamental to the oMiser computational model.  This is the Miser form 
-    of the stored-program principle by which computers interpret data as
-    procedures and procedures as data.
+    That everything ends up being at the canonical-ob level one way or another 
+    is fundamental to the oMiser computational model.  oFrugal expressions yield
+    canonical-ob results.
+        
+    The example (3) just-above is called cS, having the useful property that,
+    for scripts x and y and data ob z, with ap the obap.ap function,
     
-    The example just-above is called cS, having the useful property that, for
-    scripts x and y and data ob z, with ap the obap.ap function,
-    
-       ap(ap(ap(cS,x),y),z) = ap(ap(x,z),ap(y,z))                            (5)
+       ap(ap(ap(cS,x),y),z) = ap(ap(x,z),ap(y,z))                            (4)
        
-    and, in Frugalese, 
+    That and some related obs are useful in composing scripts by combining
+    others.
     
-       cS(x,y) z = x(z) y(z)                                                 (6)
        
-    or the more-familiar yet equivalent Frugalese,
+4.1 Applicative-Expression Style
+
+    The evaluation (4) can be expressed, using Frugalese applicative-expression
+    style, as 
     
-       cS(x,y,z) = x(z,y(z))                                                 (7)
+       cS(x,y) z = x(z) y(z)                                                 (5)
        
-    illustrating the use of scripts to distill new script objects and apply
-    them in further operations.  This sort of construction will be used in
-    useful and powerful ways.  The first challenge will be making it easier
-    to comprehend and produce such scripts.  We'll use scripts to help us 
-    make further scripts in doing so.
+    or the more-familiar yet equivalent form,
+    
+       cS(x,y,z) = x(z,y(z))                                                 (6)
+ 
+    The application of obs as operators to other obs as operands is signified
+    in Frugalese by the appearance of parameter lists and also by the prefixing 
+    of one ob-yielding expression form by another.
+    
+    
+4.2 Applicative Expressions in oFrugal 
+
+    oFrugal accepts applicative-expression forms in its input.  Evalation of the
+    applicative expressions yield the obs to be made use of any further.
+    
+    For example, 
+    
+    .A .B .B [English::en, Русский::ru, 日本語::ja, Français::fr, ‵default:]  (7)
+    
+    on input will yield the ob that is the lindie 日本語.   
+    
+    There is no applicative operation required in the evaluation of (2) to 
+    arrive at the ob (1).  But the leading terms, by their spacing, constitute
+    applicative-operation form, leading to applicative interpretation as 
+    
+       obap.ap(.A, obap.ap(.B, obap.ap(.B, x)))
+          = ob.a(ob.b(ob.b(x))), 
+    
+    where x is the result of (2) evaluation and the applicative operations
+    are as determined by the definition of function obap.ap.
+    
+4.3 Named Obs in oFrugal
+
+    In oFrugal, one can name the ob obtained by evaluation of an expression 
+    for use in subsequent statements.  The following statement will accomplish
+    provide that for the ob referred to as cS in (3).
+    
+    ob ^cS = .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG))       (8)
+                              :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) ) ;
+                              
+    The ^cS can be used in subsequent oFrugal input expressions as a compact
+    way of supplying that ob.   Similarly,
+    
+    ob ^langNames = [English::en, Русский::ru, 日本語::ja, Français::fr,
+                     ‵default:] ;
+                     
+    The previous examples can be written now as 
+    
+    .A .B .B ^langNames ;
+    
+    and 
+    
+    ^cS(X, Y) Z ;
+    
+ This informal introduction to the ways of expressing obs, with and without
+ applicative operations, will have precise specification.  
+ 
+ The key point is that at the foundation there are only obs in the 
+ computational model.  There is oFrugal and Frugalese for providing 
+convenient expression of obs and computations with them via oMiser.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                   Copyright 2018 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -182,6 +267,9 @@ ob.txt 0.0.6                    UTF-8                            dh:2018-01-01
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
+ 0.1.0 2018-01-18-16:40 Major editing to reflect the maturation of ideas about
+       oFrugal expressions that are evaluated to yield obs and the simple cases
+       that directly express canonical obs.
  0.0.6 2018-01-01-12:20 Correct use and naming of U+2035, ‵,  and eliminate
        acute accent as a substitute, allowing apostrophe instead.  One creates
        problems in Markdown, the other in character [string] and other markup
