@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.6               UTF-8                        dh:2018-01-09
+(* obapcheck.sml 0.0.7               UTF-8                        dh:2018-01-22
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -218,7 +218,18 @@ val ckObap12
       andalso eval( (e(has) ## L"X" ) 
                     ## e(L"A" ## L"B" ## L"C" ## L"X" ## NIL)) = A
       andalso eval( (e(has) ## L"X" ) 
-                    ## e(L"A" ## (L"X" ## L"X") ## L"B" ## NIL)) = B                                      
+                    ## e(L"A" ## (L"X" ## L"X") ## L"B" ## NIL)) = B  
+
+(* Confirm some cases of SML/NJ expression evaluation involving infix
+   operators and applicative expressions.
+   *)
+   
+val ckObap13
+    = a (L"M" ## L"X" ## NIL) :: b (L"X") :: [] = L"M" :: L"X" :: []
+      andalso let fun p(f) = (fn x => f(x)) 
+               in p a (L"M" ## L"X" ## NIL) :: p b (L"X") :: [] 
+                  = L"M" :: L"X" :: []
+              end;
     
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -255,6 +266,8 @@ val ckObap12
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.7 2018-01-22-19:57 Add ckObap13 to confirm SML's infix precedence
+         (e.g., ::) being after SML applicative expressions.
    0.0.6 2018-01-09-21:15 Add and adjust cases for is_pure_lindy_trace(ob)
          evaluation and interpretation confirmations.
    0.0.5 2017-12-30-16:53 Touch up oFrugalese and also make groupings so 
