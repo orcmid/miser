@@ -1,4 +1,4 @@
-models.txt 0.0.0                      UTF-8                       dh:2017-11-15
+models.txt 0.0.1                      UTF-8                       dh:2018-01-31
 
                              The Miser Project Code
                              ======================
@@ -18,13 +18,16 @@ MANIFEST
         
     Bratman/
         development of Bratman diagrams for depiction of computational
-        behavior in context of what the computation is and what it is for
-        and how manifest
+        behavior in context of what the computation is, what it is for,
+        and how that is made manifest
         
+    Syntactics/
+        grammar notations/diagrams, their applications, and connection 
+        with interpretation and parsing
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                       Copyright 2018 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -54,7 +57,7 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
+ 0.0.1 2018-01-31-08:50 Add Syntactics/ to the manifest.
  0.0.0 2017-11-15-14:16 Create placeholder and initial job jar for the
        introduction of diagrammatic models important to the Miser Project
        and TROSTing.
