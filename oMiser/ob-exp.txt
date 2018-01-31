@@ -73,11 +73,53 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
 
     On the right-hand side of the "=:" the category names refer to those
     in the pattern on the left-hand side, and the interpretations of those
-    occurrences is called for to determine individual obs.
+    occurrences is called for to determine the individual ob that is the 
+    evaluation.
 
- 3. TO BE CONTINUED ...
+ 3. TEXT, CHARACTERS, SPACING, AND LAYOUT CONSIDERATIONS
 
+ 4. TERMS
 
+     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+
+ 5. LIST FORMS
+   
+    〈list-body〉 ::= 〈ob-exp〉 ] | 〈ob-exp〉 :] | 〈ob-exp〉, 〈list-body〉
+    〈list-form〉 ::= [ ] | [ 〈list-body〉   
+
+    I〈list-form〉⎾[ ]⏋=: ob.NIL 
+    I〈list-form〉⎾[ 〈list-body〉 ⏋=: I〈list-body〉 
+
+    I〈list-body〉⎾〈ob-exp〉 ]⏋=: ob.c(I〈ob-exp〉, ob.NIL) 
+    I〈list-body〉⎾〈ob-exp> :]⏋=: I〈ob-exp〉 
+    I〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋=: ob.c(I〈ob-exp〉,I〈list-body〉) 
+
+ 6. FUNCTIONAL FORMS
+
+    〈function-form〉 ::=  〈term〉 | 〈function-form〉 〈list-form〉
+                        | 〈function-form〉 ( 〈arguments〉 )
+    〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈obap-form〉 〈list-form〉 
+                        | 〈obap-form〉 ( 〈arguments〉 )
+    〈arguments〉 ::= 〈ob-exp〉 | 〈arguments〉, 〈ob-exp〉
+
+    I〈function-form〉⎾〈term〉⏋=: I〈term〉 
+    I〈function-form〉⎾〈function-form> 〈list-form〉 ⏋
+                    =: obap.ap(I〈function-form〉, I〈list-form〉 ) 
+    I〈function-form〉⎾〈function-form〉 ( 〈arguments〉 )⏋
+                    =: I〈arguments〉( I〈function-form〉 ) 
+
+    I〈obap-form〉⎾( 〈ob-exp〉 )⏋=: I〈ob-exp〉 
+    I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋
+                    =: obap.ap(I〈obap-form-form〉, I〈list-form〉 ) 
+    I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋
+                    =: I〈arguments〉( I〈obap-form〉 )                     
+
+    I〈arguments〉⎾〈ob-exp〉⏋(p) =: ob.ap(p, I〈ob-exp〉 ) 
+    I〈arguments〉⎾〈arguments〉, 〈ob-exp〉⏋(p)
+                    =: obap.ap( I〈arguments〉(p), I〈ob-exp〉) 
+
+ 7. TO BE CONTINUED ...        
+        
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                    Copyright 2018 Dennis E. Hamilton
@@ -96,6 +138,7 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2018-01-30-21:42 extend the formal grammar through 6. Functional Forms
  0.0.3 2018-01-30-18:17 Capture the summary grammar and the formalism by
        which grammatical constructions are interpreted as expressions of obs.
  0.0.2 2018-01-29-21:34 Corrected with fixes from Roman Susi (@rnd0101)
