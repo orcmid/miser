@@ -1,0 +1,105 @@
+ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+                           The Miser Project Code
+                           ======================
+                            
+      <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
+
+      FRUGALESE GRAMMAR FOR EXPRESSING THE OMISER COMPUTATION OF OBS
+      --------------------------------------------------------------
+
+    Ob-exp texts are used as a means of specifying obs and computations
+    with them to derive an ob result.  Ob-exp is an expression language
+    that is used in digital communication of computations with obs and 
+    also used to submit expressions for oMiser computation via oFrugal.
+    
+    ob-exp has a context-free grammar, here specified using the original
+    Backus-Naur Form (BNR) employed in the Revised Report on the 
+    Algorithmic Language ALGOL 60.  The grammar specifies exactly those
+    expressions that can be evaluated to a single ob when submitted
+    to a processor such as an oFrugal implememtation.
+
+    In addition to the grammatical structure for composing ob-exp
+    expressions, there is also a formal definition of the the computation
+    by which an ob-exp is evaluated.
+
+ 1. SUMMARY GRAMMAR
+
+    The following summary form of the grammar is useful for reference.
+    It does not address the grammatical differences that are called for
+    to align with the interpretation rules by which an ob-exp is evaluated
+    to yield a single ob result.  Nevertheless, all ob-exps have the form
+    of the summary grammar, even if there are alternative structures for
+    interpretation of identical texts.
+
+    〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+
+    〈list-terms〉 ::= 〈ob-exp〉 | 〈list-terms〉, 〈ob-exp〉
+    〈list-form〉 ::= [ ] | [ 〈list-terms〉 ] | [ 〈list-terms〉 :]
+
+    〈parameters-form〉 ::= ( 〈list-terms〉 ) | 〈list-form〉
+
+    〈function-form〉 ::= 〈term〉 | 〈function-form〉 〈parameters-form〉
+
+    〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉 | 〈obap-form〉 〈parameters-form〉
+
+    〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉 
+
+    〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
+    〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 〈ae-form〉
+
+    〈binary〉 ::= 〈ae〉 | 〈ae〉 :: 〈binary〉
+
+    〈ob-exp〉 ::= 〈binary〉
+
+ 2. EXPRESSION INTERPRETATION
+
+    Interpretation of expressions as obs is accomplished using a special
+    formula notation in the ‹ob› theory language, Ot.
+
+        I category ⎾pattern⏋(parameter)
+
+    where    category is one of the syntactic categories, such as
+                      〈ob-exp〉, 〈ae〉, and 〈term〉
+              pattern is one of the patterns for the particular category,
+                      such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
+          (parameter) is an optional parameter.
+
+    For example,
+
+        I〈ae〉⎾〈obap-form〉 〈ae-form〉⏋=: obap.ap(I〈obap-form〉,I〈ae-form〉) 
+
+    On the right-hand side of the "=:" the category names refer to those
+    in the pattern on the left-hand side, and the interpretations of those
+    occurrences is called for to determine individual obs.
+
+ 3. TO BE CONTINUED ...
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                   Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.3 2018-01-30-18:17 Capture the summary grammar and the formalism by
+       which grammatical constructions are interpreted as expressions of obs.
+ 0.0.2 2018-01-29-21:34 Corrected with fixes from Roman Susi (@rnd0101)
+ 0.0.1 2018-01-28-15:26 Provide initial summary grammar for ob-exp.
+ 
+
+                     *** end of ob-exp.txt ***
