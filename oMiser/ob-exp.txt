@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
+ob-exp.txt 0.0.5                     UTF-8                       dh:2018-01-31
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -22,17 +22,17 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
     to a processor such as an oFrugal implememtation.
 
     In addition to the grammatical structure for composing ob-exp
-    expressions, there is also a formal definition of the the computation
-    by which an ob-exp is evaluated.
+    expressions, there is also a formal definition of the computation by
+    which an ob-exp is evaluated.
 
  1. SUMMARY GRAMMAR
 
     The following summary form of the grammar is useful for reference.
     It does not address the grammatical differences that are called for
-    to align with the interpretation rules by which an ob-exp is evaluated
-    to yield a single ob result.  Nevertheless, all ob-exps have the form
-    of the summary grammar, even if there are alternative structures for
-    interpretation of identical texts.
+    to align with the interpretation rules by which an ob-exp is evaluated.
+    All ob-exps satisfy the summary grammar.  The "official" grammar 
+    rules employ alternative syntactially-equivalent structures in order
+    to have rigorous interpretation as expressions of ob computations.
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
 
@@ -57,15 +57,20 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
  2. EXPRESSION INTERPRETATION
 
     Interpretation of expressions as obs is accomplished using a special
-    formula notation in the ‹ob› theory language, Ot.
+    schema notation that specifies the ‹ob› theory language, Ot, expression
+    that is the interpretation of a given ob-exp text.  The interpretation
+    schemas have distinct form.
 
-        I category ⎾pattern⏋(parameter)
+        I category ⎾pattern⏋(parameter) =: interpretation
 
-    where    category is one of the syntactic categories, such as
-                      〈ob-exp〉, 〈ae〉, and 〈term〉
-              pattern is one of the patterns for the particular category,
-                      such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
-          (parameter) is an optional parameter.
+    where      category is one of the syntactic categories, such as
+                        〈ob-exp〉, 〈ae〉, and 〈term〉
+                pattern is one of the patterns for the particular category,
+                        such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
+            (parameter) is an optional parameter
+         interpretation is an obaptheory expression schema in which any
+                        parameter and I category (parameter) forms are
+                        in reference to appearances in the pattern
 
     For example,
 
@@ -76,11 +81,16 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
     occurrences is called for to determine the individual ob that is the 
     evaluation.
 
- 3. TEXT, CHARACTERS, SPACING, AND LAYOUT CONSIDERATIONS
+    An example employing parameters is found in the section 6 interpretation 
+    of I〈arguments〉.
+
+ 3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
 
  4. TERMS
 
-     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+    〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+
+    [DETAILS TBD]
 
  5. LIST FORMS
    
@@ -118,8 +128,40 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
     I〈arguments〉⎾〈arguments〉, 〈ob-exp〉⏋(p)
                     =: obap.ap( I〈arguments〉(p), I〈ob-exp〉) 
 
- 7. TO BE CONTINUED ...        
-        
+ 7. UNARIES
+
+    〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉     
+
+    I〈unary〉⎾〈function-form〉⏋ =: I〈function-form〉
+    I〈unary〉⎾ ‵ 〈obap-form〉 ⏋ =: ob.e( I〈function-form〉 ) 
+    I〈unary〉⎾ ‵ 〈unary〉 ⏋ =: ob.e( I〈unary〉 )      
+
+ 8. APPLICATIVE EXPRESSIONS
+
+    〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
+    〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 〈ae-form〉
+
+    I〈ae-form〉⎾ 〈unary〉 ⏋ =: I〈unary〉
+    I〈ae-form〉⎾ 〈unary〉 〈ae-form〉 ⏋ =: obap.ap(I〈unary〉, I〈ae-form〉)
+
+    I〈ae〉⎾ 〈ae-form〉 ⏋ =: I〈ae-form〉
+    I〈ae〉⎾ 〈obap-form〉 〈ae-form〉 ⏋=: obap.ap(I〈obap-form〉, I〈ae-form〉)
+
+ 9. OB-EXP
+
+    〈binary〉 ::= 〈ae〉 | 〈ae〉 :: 〈binary〉
+
+    〈ob-exp〉 ::= 〈binary〉
+
+    I〈binary〉⎾ 〈ae〉 ⏋ =: I〈ae〉
+    I〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋ =: ob.c(I〈ae〉, I〈binary〉)
+
+    I〈ob-exp〉⎾ 〈binary〉 ⏋ =: I〈binary〉
+
+    The 〈ob-exp〉 grammar production is designed to allow for additional 
+    forms beyond 〈binary〉.  None are anticipated at this time.
+
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                    Copyright 2018 Dennis E. Hamilton
@@ -138,6 +180,45 @@ ob-exp.txt 0.0.3                     UTF-8                       dh:2018-01-30
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+TODO
+
+ * Find reference to the BNF specification used, captured here somewhere
+   and also where formally published.
+
+ * Connect the interpretation schemata to attribution grammars, to the
+   degree that matters here.  There might be a better reference to this
+   rather simple case.
+
+ * Add the handling of concrete cases and the tie-in to a reference 
+   character code, akin to the counterpart in the XML specification.
+
+ * Use the XML 1.0 characterization of white space, letters, digits,
+   and the restricted allowance of other characters in ob-exp terms.
+
+ * Allow the SML/NJ form of comments as an uninterpreted separator.
+
+ * Use the SML/NJ use of \<white-space>\ as null. 
+
+ * Do we require white-space anywhere or is it optional everywhere
+   except between two terms that must remain separated?
+
+ * Is it necessary to include spacing explicitly in the grammar?  It is
+   far more convenient to treat that as a concrete text condition and
+   not in the grammar.
+
+ * Likewise, at the concrete term level, there is the matter of IRI
+   encoding for characters having no available font glyph.  How does
+   that work into interchange of concrete ob-exp texts?
+
+ * Complete the production of 〈term〉s and their interpretations.
+
+ * explain the resolution of binding names by the presumption of an
+   (oFrugal) environment in which the binding can be resolved.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.5 2018-01-31-10:56 Complete first pass through to 9, Ob-Exp, adding
+       TODOs.
  0.0.4 2018-01-30-21:42 extend the formal grammar through 6. Functional Forms
  0.0.3 2018-01-30-18:17 Capture the summary grammar and the formalism by
        which grammatical constructions are interpreted as expressions of obs.
