@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.5                     UTF-8                       dh:2018-01-31
+ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -48,7 +48,7 @@ ob-exp.txt 0.0.5                     UTF-8                       dh:2018-01-31
     〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉 
 
     〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
-    〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 〈ae-form〉
+    〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 | 〈obap-form〉 〈ae-form〉
 
     〈binary〉 ::= 〈ae〉 | 〈ae〉 :: 〈binary〉
 
@@ -108,7 +108,8 @@ ob-exp.txt 0.0.5                     UTF-8                       dh:2018-01-31
 
     〈function-form〉 ::=  〈term〉 | 〈function-form〉 〈list-form〉
                         | 〈function-form〉 ( 〈arguments〉 )
-    〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈obap-form〉 〈list-form〉 
+    〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉
+                        | 〈obap-form〉 〈list-form〉 
                         | 〈obap-form〉 ( 〈arguments〉 )
     〈arguments〉 ::= 〈ob-exp〉 | 〈arguments〉, 〈ob-exp〉
 
@@ -119,8 +120,9 @@ ob-exp.txt 0.0.5                     UTF-8                       dh:2018-01-31
                     =: I〈arguments〉( I〈function-form〉 ) 
 
     I〈obap-form〉⎾( 〈ob-exp〉 )⏋=: I〈ob-exp〉 
+    I〈obap-form〉⎾ 〈list-form〉 ⏋=: I〈list-form〉 
     I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋
-                    =: obap.ap(I〈obap-form-form〉, I〈list-form〉 ) 
+                    =: obap.ap(I〈obap-form〉, I〈list-form〉 ) 
     I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋
                     =: I〈arguments〉( I〈obap-form〉 )                     
 
@@ -139,12 +141,13 @@ ob-exp.txt 0.0.5                     UTF-8                       dh:2018-01-31
  8. APPLICATIVE EXPRESSIONS
 
     〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
-    〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 〈ae-form〉
+    〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 | 〈obap-form〉 〈ae-form〉
 
     I〈ae-form〉⎾ 〈unary〉 ⏋ =: I〈unary〉
     I〈ae-form〉⎾ 〈unary〉 〈ae-form〉 ⏋ =: obap.ap(I〈unary〉, I〈ae-form〉)
 
     I〈ae〉⎾ 〈ae-form〉 ⏋ =: I〈ae-form〉
+    I〈ae〉⎾ 〈obap-form〉 ⏋ =: I〈obap-form〉
     I〈ae〉⎾ 〈obap-form〉 〈ae-form〉 ⏋=: obap.ap(I〈obap-form〉, I〈ae-form〉)
 
  9. OB-EXP
@@ -217,6 +220,10 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2018-02-03-14:33 Add typo and correct for absence of an 〈ae〉 that is
+       simply an 〈obap-form〉, including a standalone 〈list-form〉.  Hat tip to
+       Roman Susi (@rnd0101). 
+ 0.0.6 2018-02-03-14:29 Add typo and correct for absence of an 
  0.0.5 2018-01-31-10:56 Complete first pass through to 9, Ob-Exp, adding
        TODOs.
  0.0.4 2018-01-30-21:42 extend the formal grammar through 6. Functional Forms
