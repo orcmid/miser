@@ -1,0 +1,101 @@
+show-ob.txt 0.0.1                    UTF-8                       dh:2018-02-04
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+                           The Miser Project Code
+                           ======================
+                            
+      <https://github.com/orcmid/miser/blob/master/oMiser/show-ob.txt>
+
+       FRUGALESE GRAMMAR FOR DISPLAYING CANONICAL OBS IN OB-EXP FORM
+       -------------------------------------------------------------
+
+    Show-ob is the grammar for Canonical Obs that exploits the right-
+    associativity of "::" to eliminate unnecessary parentheses.  This
+    is, apart from the presence of white space, a unique ob-exp for
+    every Canonical Ob.
+    
+    The grammar is essentially ob-exp without anything that involves
+    an application in its interpretation.
+
+    See also
+    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
+
+ 1. SUMMARY GRAMMAR
+
+    Here is the reduced summary grammar for the Canonical Obs.  Any
+    of these forms are suitable.  Reducing the use of parentheses is
+    handled in the procedure for expressing obs.
+
+    〈term〉 ::= 〈lindy〉 | 〈primitive〉
+
+    〈unary〉 ::= 〈term〉 | ( 〈canonical〉 ) | ‵ 〈unary〉 
+
+    〈binary〉 ::= 〈unary〉 | 〈unary〉 :: 〈binary〉
+
+    〈canonical〉 ::= 〈binary〉
+
+ 2. SIMPLE EXPRESSION
+
+    Using SML/NJ, the expression of an ob, x, is as follows:
+
+    def term(x: ob)
+      = case x
+          of obap.L(s) => s
+           | ob.A => ".A"
+           | ob.B => ".B"
+           | ob.C => ".C"
+           | ob.E => ".E"
+           | obap.D => ".D"
+           | obap.SELF => ".SELF"
+           | obap.ARG => ".ARG"
+           | obap.EV => ".EV"
+           | _ => "?!"
+
+    def canonical(x: ob)
+      = let unary(x) 
+            = if ob.is_individual(x)
+              then term(x)
+              else if ob.is_singleton(x)
+                   then "`" ^ unary(ob.a x)
+                   else "( " ^ canonical(x) ^ " )"
+         in if ob.is_pair(x)
+            then unary(ob.a x) " :: " canonical(ob.b x)
+            else unary(x)
+        end;
+              
+    To avoid Unicode console difficulties, the back-tick is used in
+    this procedure.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                   Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+  * In practice, we don't want to ever to insert more than one space at
+    any point in the ob-exp.  The simple expression avoids that but it
+    is more involved when there are more forms.
+
+  * A pretty-print form that uses indentation is a bit trickier.  That
+    needs to be done.  Line wraps should be used to honor margins.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.1 2018-02-04-11:58 Provide direct basic expression.
+ 
+                     *** end of show-ob.txt ***

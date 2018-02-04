@@ -1,4 +1,4 @@
-oMiser.txt 0.0.5                    UTF-8                         dh:2018-01-30
+oMiser.txt 0.0.6                    UTF-8                         dh:2018-02-04
 
                            The Miser Project Code
                            ======================
@@ -65,6 +65,10 @@ MANIFEST
         specification of the grammar for expressions that determine obs by
         computations using obs as procedure scripts and as data.
         
+    show-ob.txt
+        description of the grammar for Canonical Obs and a procedure for
+        expressiong them in ob-exp form that minimizes the use of ( ... ).
+        
     mockups/
         subtree for experimental mock-ups that demonstrate oMiser
         features
@@ -127,6 +131,7 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2018-02-04-11:52 Add show-ob.txt to the manifest
  0.0.5 2018-01-30-18:28 Reflect addition of ob-exp.txt in the manifest.
  0.0.4 2017-12-27-09:43 Touch-ups and some simplification.  Manage TODOs.
        Correct the GitHub location of this page.
