@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.8               UTF-8                        dh:2018-02-07
+(* obapcheck.sml 0.0.9               UTF-8                        dh:2018-02-08
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -90,7 +90,7 @@ val ckObap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
 (* Demonstrate ob cK as script for a computational manifestation of combinator K
    having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x as required.
    *)
-val cK = E ## ARG;
+val cK = E ;
 
 val CkObap7 
     = let val cKX = e(L"X")
@@ -101,7 +101,9 @@ val CkObap7
           andalso ap( e(cK) ## L"X", NIL) = e(L"X")   
           andalso ap( e(cK) ## L"X", L"Y") = e(L"X")   
           andalso eval( (e(cK) ## L"X") ## NIL ) = L"X"
+          andalso eval( (cK ## L"X") ## NIL ) = L"X"
           andalso eval( (e(cK) ## e(L"X")) ## e(L"Y") ) = L"X"
+           andalso eval( (cK ## e(L"X")) ## e(L"Y") ) = L"X"
       end
              
 (* Demonstrate ob cS as script for a computational manifestation of combinator S
@@ -152,10 +154,9 @@ val CkObap9 = let val SKK = eval((e(cS)##e(cK))##e(cK))
                    andalso ap(SKK,L"X") = L"X"
                    andalso eval(e(SKK)##L"X") = L"X"
                    andalso ap(cI,L"X") = L"X"
-                   andalso eval(cI ## L"X") = L"X"
                    andalso eval(e(cI) ## L"X") = L"X"
-                   andalso ap(cI##ARG, L"X") = L"X"
-                   andalso eval(e(cI##ARG)##L"X") = L"X"
+                   andalso ap(cI, L"X") = L"X"
+                   andalso eval(e(cI ## ARG)##L"X") = L"X"
                end;
 
 
@@ -232,11 +233,14 @@ val ckObap13
                   = L"M" :: L"X" :: []
               end;
               
-print( "\ncK =" ^ obstring(cK) ^ "\n");         
-print ("\ncS =" ^ obstring(cS) ^ "\n");                 
-print( "\ncI =" ^ obstring(cI) ^ "\n");                              
-print( "\nhasX =" ^ obstring(hasX) ^ "\n");                                     
-print( "\nhas =" ^ obstring(has) ^ "\n");                 
+print( "\ncK = " ^ obstring(cK) ^ "\n");         
+print("\ncS = " ^ obstring(cS) ^ "\n");                 
+print( "\ncI = " ^ obstring(cI) ^ "\n");   
+print("\ncSKK = " ^ obstring(ap(ap(cS,cK),cK)) ^ "\n");
+print("\n(cSKK) x) = " ^ obstring(ap(ap(ap(cS,cK),cK),L"x")) ^ "\n");
+print("\ncI x = " ^ obstring(ap(cI,L"x")) ^ "\n");
+print( "\nhasX = " ^ obstring(hasX) ^ "\n");                                     
+print( "\nhas = " ^ obstring(has) ^ "\n");                 
     
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -275,6 +279,9 @@ print( "\nhas =" ^ obstring(has) ^ "\n");
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.9 2018-02-08-10:50 Add checks that cI and cSKK are both identity
+         combinators, but not the same, adjusting the cI checks and also
+         simplifying cK.
    0.0.8 2018-02-07-18:12 Touch up some comments, demonstrate obstring.
    0.0.7 2018-01-22-19:57 Add ckObap13 to confirm SML's infix precedence
          (e.g., ::) being after SML applicative expressions.
