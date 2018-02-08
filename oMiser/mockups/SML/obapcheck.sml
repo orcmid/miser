@@ -1,4 +1,4 @@
-(* obapcheck.sml 0.0.7               UTF-8                        dh:2018-01-22
+(* obapcheck.sml 0.0.8               UTF-8                        dh:2018-02-07
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
@@ -53,7 +53,7 @@ val CkObap2
          in are_diff (prims @ lindies)
         end )
       
-(* obap4: obap.ap(p,x) tracing some evref-stall cases *)
+(* obap4: obap.ap(p,x) cases of traces where application stalls *)
 
 val CkObap4 = ap(ARG##SELF,ARG) = e(ARG) ## e(ARG ## SELF) 
       andalso ap(e(ARG) ## e(ARG ## SELF), L"Z") = e(ARG) ## e(ARG##SELF)
@@ -90,7 +90,7 @@ val ckObap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
 (* Demonstrate ob cK as script for a computational manifestation of combinator K
    having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x as required.
    *)
-val cK = E ## ARG
+val cK = E ## ARG;
 
 val CkObap7 
     = let val cKX = e(L"X")
@@ -111,8 +111,8 @@ val CkObap7
    as required. 
    *)
 val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG))) 
-         (* effectively lambda.X lambda.Y lambda.Z ‵(X(Z) Y(Z)) in oFrugalese *)
-
+         (* effectively lambda.X lambda.Y lambda.Z ‵(X(Z) Y(Z)) in oFrugalese *);
+       
 val CkObap8 
     = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
           val SXY = (e(L"X") ## ARG) ## e(L"Y") ## ARG
@@ -156,7 +156,8 @@ val CkObap9 = let val SKK = eval((e(cS)##e(cK))##e(cK))
                    andalso eval(e(cI) ## L"X") = L"X"
                    andalso ap(cI##ARG, L"X") = L"X"
                    andalso eval(e(cI##ARG)##L"X") = L"X"
-               end
+               end;
+
 
 (* Demonstrate comparison checks and conditional evaluation of
    the selected branches *)
@@ -187,7 +188,7 @@ val CkObap10
 val hasX = EV ## (D ## ARG ## B ## ARG)
               ## e( B ## ( EV ## (D ## e(L"X") ## A ## ARG)
                               ## e( A ## (SELF ## B ## ARG) )
-                              ) )
+                              ) );                          
                               
 (*  has is effectively lambda.X ‵( hasX ) in oFrugalese *)                                 
 val has 
@@ -198,7 +199,7 @@ val has
                             ## C ## (C ## e(D) 
                                        ## (C ## (E ## ARG) 
                                              ## e(A ## ARG)))
-                                 ## E ## e( A ## SELF ## B ## ARG)  
+                                 ## E ## e( A ## SELF ## B ## ARG);                              
                                  
 val ckObap11
     = ap(hasX, NIL) = B
@@ -230,6 +231,12 @@ val ckObap13
                in p a (L"M" ## L"X" ## NIL) :: p b (L"X") :: [] 
                   = L"M" :: L"X" :: []
               end;
+              
+print( "\ncK =" ^ obstring(cK) ^ "\n");         
+print ("\ncS =" ^ obstring(cS) ^ "\n");                 
+print( "\ncI =" ^ obstring(cI) ^ "\n");                              
+print( "\nhasX =" ^ obstring(hasX) ^ "\n");                                     
+print( "\nhas =" ^ obstring(has) ^ "\n");                 
     
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -261,11 +268,14 @@ val ckObap13
       * Check that (C ## x) ## y and (C ## x ## y) work the same.
       
       * Check that (D ## x) ## y and (D ## x ## y) work the same.
+      
+      * Get string output in Unicode and verify that functionality 
                 
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.8 2018-02-07-18:12 Touch up some comments, demonstrate obstring.
    0.0.7 2018-01-22-19:57 Add ckObap13 to confirm SML's infix precedence
          (e.g., ::) being after SML applicative expressions.
    0.0.6 2018-01-09-21:15 Add and adjust cases for is_pure_lindy_trace(ob)
@@ -282,7 +292,7 @@ val ckObap13
    0.0.0 2017-09-15-12:37 Skeleton for progressive introduction of tests
          as obap.sml is extended, starting with verificaton of the traces.
          
-       *)
+   *)
          
 (*                         *** end of obapcheck.sml ***                     *)        
         

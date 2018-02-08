@@ -1,4 +1,4 @@
-(* OBAP.sig.sml 0.0.5                UTF-8                       dh:2017-10-05
+(* OBAP.sig.sml 0.0.5                UTF-8                       dh:2018-02-07
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -37,6 +37,7 @@ signature OBAP
        val EV: ob
        val ap: ob * ob -> ob
        val eval: ob -> ob 
+       val obstring: ob -> string
    end 
           
 (* INTERPRETATION REQUIREMENTS FOR ‹ob› APPLICATIVE ABSTRACT DATA SIGNATURE
@@ -86,11 +87,15 @@ signature OBAP
     
       * Make 0.1.0 when incorporated in a library via the Compilation
         Manager.
+        
+      * Determine how to use Unicode and wide characters, including for
+        the reverse-prime operation.
        
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.5 2018-02-07-16:52 Add obstring to the signature.
  0.0.4 2017-10-05-18:35 Adjust TODOs, Add obap.EV to the primitives
  0.0.3 2017-09-21-20:22 Update the synopsis to apply to OBAP, not OB.
  0.0.2 2017-09-19-20:04 Ditch ' x = e(x) as ineffective because not a prefix.

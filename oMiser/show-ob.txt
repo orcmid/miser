@@ -39,31 +39,34 @@ show-ob.txt 0.0.1                    UTF-8                       dh:2018-02-04
 
     Using SML/NJ, the expression of an ob, x, is as follows:
 
-    def term(x: ob)
+    fun term(x: ob)
       = case x
-          of obap.L(s) => s
-           | ob.A => ".A"
-           | ob.B => ".B"
-           | ob.C => ".C"
-           | ob.E => ".E"
-           | obap.D => ".D"
-           | obap.SELF => ".SELF"
-           | obap.ARG => ".ARG"
-           | obap.EV => ".EV"
+          of L(s) => s
+           | NIL => ".NIL"
+           | A => ".A"
+           | B => ".B"
+           | C => ".C"
+           | E => ".E"
+           | D => ".D"
+           | SELF => ".SELF"
+           | ARG => ".ARG"
+           | EV => ".EV"
            | _ => "?!"
 
-    def canonical(x: ob)
-      = let unary(x) 
-            = if ob.is_individual(x)
+    fun canonical(x: ob)
+      = let fun unary(x) 
+            = if is_individual(x)
               then term(x)
-              else if ob.is_singleton(x)
-                   then "`" ^ unary(ob.a x)
+              else if is_singleton(x)
+                   then "`" ^ unary(a x)
+                        (* XXX: Using back-tick here *)
                    else "( " ^ canonical(x) ^ " )"
-         in if ob.is_pair(x)
-            then unary(ob.a x) " :: " canonical(ob.b x)
+         in if is_pair(x)
+            then unary(a x) ^ " :: " ^ canonical(b x)
             else unary(x)
         end;
-              
+ 
+               
     To avoid Unicode console difficulties, the back-tick is used in
     this procedure.
 
@@ -96,6 +99,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2018-02-07-18:24 Correct the term and canonical functions to agree with
+       the test results for the implementation in obap.sml 0.0.9.
  0.0.1 2018-02-04-11:58 Provide direct basic expression.
  
                      *** end of show-ob.txt ***
