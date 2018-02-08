@@ -1,4 +1,4 @@
-ob.txt 0.1.1                    UTF-8                            dh:2018-01-30
+ob.txt 0.1.2                    UTF-8                            dh:2018-02-08
 
                            The Miser Project Code
                            ======================
@@ -99,7 +99,7 @@ ob.txt 0.1.1                    UTF-8                            dh:2018-01-30
         
       * ob.e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
         ‵ is the reversed-prime Unicode character, U+2035.  It can be
-        significed at keyboards by using the apostrophe, U+0027 ', also. 
+        significed at keyboards by using the grave accent, U+0060 `, also. 
               
       * ob.c(x, y) is expressed x :: y
       
@@ -304,6 +304,8 @@ all involves just obs.
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
+ 0.1.2 2018-02-08-11:18 Correct to use back-tick, not apostrophe, as alternative
+       to reversed prime in ob-exps.
  0.1.1 2018-01-30-11:40 Editing for alignment with terminology and format for
        the oFrugal-expression of ob calculation.
  0.1.0 2018-01-18-16:40 Major editing to reflect the maturation of ideas about
