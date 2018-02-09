@@ -1,22 +1,22 @@
-show-ob.txt 0.0.1                    UTF-8                       dh:2018-02-04
+obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
                            ======================
                             
-      <https://github.com/orcmid/miser/blob/master/oMiser/show-ob.txt>
+      <https://github.com/orcmid/miser/blob/master/oMiser/obstring.txt>
 
        FRUGALESE GRAMMAR FOR DISPLAYING CANONICAL OBS IN OB-EXP FORM
        -------------------------------------------------------------
 
-    Show-ob is the grammar for Canonical Obs that exploits the right-
+    obstring is the string expression of obs that exploits the right-
     associativity of "::" to eliminate unnecessary parentheses.  This
     is, apart from the presence of white space, a unique ob-exp for
     every Canonical Ob.
     
-    The grammar is essentially ob-exp without anything that involves
-    an application in its interpretation.
+    The grammar satisfied by the string is essentially ob-exp without 
+    anything that involves an application in its interpretation.
 
     See also
     <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
@@ -25,7 +25,7 @@ show-ob.txt 0.0.1                    UTF-8                       dh:2018-02-04
 
     Here is the reduced summary grammar for the Canonical Obs.  Any
     of these forms are suitable.  Reducing the use of parentheses is
-    handled in the procedure for expressing obs.
+    handled in the procedure for expressing such obs.
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉
 
@@ -67,8 +67,8 @@ show-ob.txt 0.0.1                    UTF-8                       dh:2018-02-04
         end;
  
                
-    To avoid Unicode console difficulties, the back-tick is used in
-    this procedure.
+    To avoid console Unicode limitations/difficulties, the back-tick is 
+    used in this procedure.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -90,15 +90,17 @@ show-ob.txt 0.0.1                    UTF-8                       dh:2018-02-04
 
 TODO
 
-  * In practice, we don't want to ever to insert more than one space at
-    any point in the ob-exp.  The simple expression avoids that but it
+  * In practice, we don't want to insert more than one space at
+    any point in the ob-exp.  This simple expression avoids that but it
     is more involved when there are more forms.
 
   * A pretty-print form that uses indentation is a bit trickier.  That
-    needs to be done.  Line wraps should be used to honor margins.
+    needs to be done.  Line wraps should be used to honor margins also.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2018-02-09-11:16 Rename to obstring.txt to reflect the expected
+       function/method name.
  0.0.2 2018-02-07-18:24 Correct the term and canonical functions to agree with
        the test results for the implementation in obap.sml 0.0.9.
  0.0.1 2018-02-04-11:58 Provide direct basic expression.
