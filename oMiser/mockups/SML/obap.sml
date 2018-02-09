@@ -1,4 +1,4 @@
-(* obap.sml 0.0.9                     UTF-8                      dh:2018-02-07
+(* obap.sml 0.0.10                    UTF-8                      dh:2018-02-09
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -17,7 +17,7 @@
    For consideration of the soundness of this interpretation, see
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>.
    For the grammar used to express Canonical Obs and obaptheory terms, see
-   <https://github.com/orcmid/miser/blob/master/oMiser/show-ob.txt>.
+   <https://github.com/orcmid/miser/blob/master/oMiser/obstring.txt>.
    *)
    
 use "OBAP.sig.sml";
@@ -111,34 +111,34 @@ structure obap :> OBAP
       (* Obap7: obap.eval(e) *)
       fun eval(exp: ob) = ev(SELF, ARG, exp)
       
-      (* show-ob.txt presentation of canonical ob structure in a string *)
+      (* obstring.txt presentation of canonical ob structure in a string *)
       
-    fun term(x: ob)
-      = case x
-          of L(s) => s
-           | NIL => ".NIL"
-           | A => ".A"
-           | B => ".B"
-           | C => ".C"
-           | E => ".E"
-           | D => ".D"
-           | SELF => ".SELF"
-           | ARG => ".ARG"
-           | EV => ".EV"
-           | _ => "?!"
+       fun term(x: ob)
+         = case x
+             of L(s) => s
+              | NIL => ".NIL"
+              | A => ".A"
+              | B => ".B"
+              | C => ".C"
+              | E => ".E"
+              | D => ".D"
+              | SELF => ".SELF"
+              | ARG => ".ARG"
+              | EV => ".EV"
+              | _ => "?!"
 
-    fun obstring(x: ob)
-      = let fun unary(x) 
+       fun obstring(x: ob)
+         = let fun unary(x) 
             = if is_individual(x)
-              then term(x)
-              else if is_singleton(x)
-                   then "`" ^ unary(a x)
-                        (* XXX: Using back-tick here *)
-                   else "( " ^ obstring(x) ^ " )"
-         in if is_pair(x)
-            then unary(a x) ^ " :: " ^ obstring(b x)
-            else unary(x)
-        end;
+                 then term(x)
+                 else if is_singleton(x)
+                      then "`" ^ unary(a x)
+                           (* XXX: Using back-tick here *)
+                      else "( " ^ obstring(x) ^ " )"
+            in if is_pair(x)
+               then unary(a x) ^ " :: " ^ obstring(b x)
+               else unary(x)
+           end;
  
       
    end
@@ -176,6 +176,7 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.0.10 2018-02-09-12:17 Reflect change from show-ob.txt to obstring.txt
    0.0.9 2018-02-07-17:09 Add obstring implementation to the structure
    0.0.8 2018-01-09-21:12 Switch to is_pure_lindy-trace(op).
    0.0.7 2017-10-12-11:43 Change is_every_free_lindy(p) to is_pure_lindy(p) 
