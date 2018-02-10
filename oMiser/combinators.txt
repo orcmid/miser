@@ -1,0 +1,62 @@
+combinators.txt 0.0.0                UTF-8                       dh:2018-02-08
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+                            
+    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+
+       REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
+       --------------------------------------------------------------
+              
+    Combinators are important theoretical objects in theories of computation
+    related to the lambda calculus.  Realization of combinators using oMiser
+    demonstrates an important form of universality.
+    
+    To establish an effective representation, it is important to understand
+    the theoretical characteristics and how the representation provides 
+    faithful interpretations.  An important consideration involves the fact
+    that representations are not unique.  There will be many ways to achieve
+    representation of the same combinator.  This applies at the theoretical
+    level and also at the representation level.
+
+    An important quality of the chosen representations will be the fact that
+    oMiser application of combinator representations are all interpretation
+    preserving.  This is developed further because it is the avenue to
+    consideration of representations of non-combinator operations that are
+    composable using combinators.  
+    
+    The interpretation-preserving composition of combinator forms provide
+    a kind of universal expression of functional compositions over particular
+    data-type abstractions.  Confirmation of those qualities, and the 
+    qualifications that apply, is an important exploration of the oMiser
+    computation model.
+
+         
+ 1. MATHEMATICAL STRUCTURE 
+
+ [** DRAFT SO FAR **]
+         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                   Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+ 0.0.0 2018-02-10-13:28 Placeholder and boiler plate for a description of the
+       nature of combinators, the chosen representations, and the power of
+       interpretation-preserving operation.
+
+                   *** end of combinators.txt ***
