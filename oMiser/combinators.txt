@@ -1,4 +1,4 @@
-combinators.txt 0.0.0                UTF-8                       dh:2018-02-08
+combinators.txt 0.0.1                UTF-8                       dh:2018-02-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -9,33 +9,92 @@ combinators.txt 0.0.0                UTF-8                       dh:2018-02-08
        REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
        --------------------------------------------------------------
               
-    Combinators are important theoretical objects in theories of computation
-    related to the lambda calculus.  Realization of combinators using oMiser
-    demonstrates an important form of universality.
-    
-    To establish an effective representation, it is important to understand
-    the theoretical characteristics and how the representation provides 
-    faithful interpretations.  An important consideration involves the fact
-    that representations are not unique.  There will be many ways to achieve
-    representation of the same combinator.  This applies at the theoretical
-    level and also at the representation level.
+    Combinators are important theoretical objects related to the lambda (λ)
+    calculus.  Realization of combinators using oMiser demonstrates a form 
+    of computational universality: expressing all of the computable functions
+    over a given datatype, including ‹ob› and further datatypes represented 
+    in ‹ob›.
 
-    An important quality of the chosen representations will be the fact that
-    oMiser application of combinator representations are all interpretation
-    preserving.  This is developed further because it is the avenue to
-    consideration of representations of non-combinator operations that are
-    composable using combinators.  
+    The key is having representations of combinators that are interpretation-
+    preserving.  That is, they work fine in combining function-representing
+    obs beyond those interpretable as combinators.  
     
-    The interpretation-preserving composition of combinator forms provide
-    a kind of universal expression of functional compositions over particular
-    data-type abstractions.  Confirmation of those qualities, and the 
-    qualifications that apply, is an important exploration of the oMiser
-    computation model.
+    Development of combinator representations proceeds from the theory of
+    combinators to the demonstration of interpretation-preserving utility.
+    This provides a key component in demonstration that the oMiser obap.ap
+    function is computational universal.
 
-         
+        
  1. MATHEMATICAL STRUCTURE 
 
- [** DRAFT SO FAR **]
+    1.1 The Combinators
+
+    The account of [Rosenbloom1950] is adapted heere.
+
+    C0. For combinators x and y, | x y is the combinator formed by
+        application of x to y.
+    C1. For combinator x, x ≈ x.
+    C2. For combinators x and y, x ≈ y ⇒ y ≈ x.
+    C3. For combinators x, y, and z, x ≈ y ∧ y ≈ z ⇒ x ≈ x. 
+    C4. For combinators x, y, a, and b, x ≈ y ∧ a ≈ b ⇒ | x a ≈ | y b.
+    C5. S and K are combinators.
+    C6. For combinators x, y, and z, ||| S x y z ≈ || x z | y z.
+    C7. For combinators x and y, || K x y ≈ x.
+
+    The logical notation is that given in obtheory.txt,
+    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+    
+    This is not about ‹ob›.  The combinators are not obs.  Likewise, the
+    application, | f x, is an application of combinators that yields
+    combinators.
+
+    The notation with "|" for application is an useful reminder that this
+    application operation is in the realm of combinators.  It is convenient
+     to omit leading "|" since they can be added automatically: the total 
+     number of "|" must be one less than the number of terms in the 
+     expression.  We can write
+
+       S x y z for ||| S x y z
+       K x y for || K x y
+       x z | y z for || x z | y z
+
+    The symbol "≈" is for equivalence of combinators.  This is distinct
+    from the "=" equality relationship among obs.  
+
+    1.2 Useful Combinators
+
+    It is established that all of the combinators can be expressed in terms
+    of the combinators S and K alone  Some are so handy that they have been
+    given individual names
+    
+      I x ≈ x
+        I ≈ S K K.
+
+      B f g x ≈ f | g x
+            B ≈ S | K S K
+
+      C f x y ≈ f | y x
+            C ≈ S | D S | K K
+
+      D f x g y ≈ f x | g y
+              D ≈ B B
+
+      T x f ≈ f x
+          T ≈ C I
+
+      W f x ≈ f x x
+          W ≈ S S | S K
+
+    
+              
+
+x. REFERENCES AND RESOURCES
+
+   [Rosenbloom1950]
+      Rosenbloom, Paul C.  The Elements of Mathematical Logic.  Dover (New
+      York: 1950).  ISBN 0-486-60227-3 pbk.  The notation for expressing 
+      combinators (1.1 here) is derived from section III.4, Combinatory 
+      Logics. 
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -54,7 +113,26 @@ combinators.txt 0.0.0                UTF-8                       dh:2018-02-08
     limitations under the License.
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ TODO:
+
+  * Add references and related resources for further information.
+
+  * Address the recognition of multiple expressions for the same combinator 
+    and especially at the level of oMiser representation.
+
+  * Address the absence of an identity on representations of combinators,
+    and ways of getting close in certain cases.
+
+  * Decide whether or not the principle of extensionality, CE, is required
+    as a very convenient way to determine certain equivalences and complete
+    the reasoning about basic combinators.  It does avoid the axioms that
+    are required without it.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  
+ 0.0.1 2018-02-11-21:10 Add section 1.1-1.2 In continuing development of
+       the mathematical structure of combinators.
  0.0.0 2018-02-10-13:28 Placeholder and boiler plate for a description of the
        nature of combinators, the chosen representations, and the power of
        interpretation-preserving operation.
