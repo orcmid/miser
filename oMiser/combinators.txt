@@ -1,4 +1,4 @@
-combinators.txt 0.0.1                UTF-8                       dh:2018-02-11
+combinators.txt 0.0.2                UTF-8                       dh:2018-02-13
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -22,14 +22,14 @@ combinators.txt 0.0.1                UTF-8                       dh:2018-02-11
     Development of combinator representations proceeds from the theory of
     combinators to the demonstration of interpretation-preserving utility.
     This provides a key component in demonstration that the oMiser obap.ap
-    function is computational universal.
+    function is computationally universal.
 
         
  1. MATHEMATICAL STRUCTURE 
 
     1.1 The Combinators
 
-    The account of [Rosenbloom1950] is adapted heere.
+    The account of [Rosenbloom1950] is adapted here.
 
     C0. For combinators x and y, | x y is the combinator formed by
         application of x to y.
@@ -40,13 +40,16 @@ combinators.txt 0.0.1                UTF-8                       dh:2018-02-11
     C5. S and K are combinators.
     C6. For combinators x, y, and z, ||| S x y z ≈ || x z | y z.
     C7. For combinators x and y, || K x y ≈ x.
+    CE. For combinators x and y, if | x a ≈ | y a for all combinators, a,
+        then x ≈ y.
 
     The logical notation is that given in obtheory.txt,
     <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
     
     This is not about ‹ob›.  The combinators are not obs.  Likewise, the
     application, | f x, is an application of combinators that yields
-    combinators.
+    combinators.  It must not be confused with the obap.ap of obaptheory,
+    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
 
     The notation with "|" for application is an useful reminder that this
     application operation is in the realm of combinators.  It is convenient
@@ -64,37 +67,117 @@ combinators.txt 0.0.1                UTF-8                       dh:2018-02-11
     1.2 Useful Combinators
 
     It is established that all of the combinators can be expressed in terms
-    of the combinators S and K alone  Some are so handy that they have been
-    given individual names
+    of combinators S and K alone  Some are so handy that there are constant
+    names for them.  There are also corresponding λ-expressions.
+
+      S x y z ≈ x z | y z
+            S ≈ λx.λy.λz.( x(z)(y z) )
+
+      K x y ≈ x   
+          K ≈ λx.λy.x  
     
       I x ≈ x
-        I ≈ S K K.
+        I ≈ S K K
+          ≈ λx.x
 
       B f g x ≈ f | g x
             B ≈ S | K S K
+              ≈ λf.λg.λx.( f(g x) )
 
       C f x y ≈ f | y x
             C ≈ S | D S | K K
+              ≈ λf.λx.λy.( f(y x) )
 
       D f x g y ≈ f x | g y
               D ≈ B B
+                ≈ λf.λx.λg.λy.( f(x)(g y) )
 
       T x f ≈ f x
           T ≈ C I
+            ≈ λx.λf.( f x )
 
       W f x ≈ f x x
           W ≈ S S | S K
+            ≈ λf.λx.( f(x) x )
 
-    
+      The λ-expression notation is written such that the applications are
+      expressed unambiguously using parentheses, corresponding rather 
+      directly with the combinatory notation.  Also, there are no variables
+      (e.g., f, g, x, y) for which there is no λ term. This strict form will
+      be used interchangeably with the notation for combinators of (1.1) as
+      shown above.
+
+      Extensive literature on combinatory logic and the λ-calculus involves
+      some sophisticated mathematical-logic considerations.  Informal 
+      introductions are found in [Revesz1988] and [Burge1975].
+
+      1.3 What Combinator Is It?  
+
+      Formally, all we can do is manipulate formulas of combinators in 
+      ways that demonstrate two forms are equivalent.  To assess the nature
+      of some combinator in achieving a particular applicative arrangement, 
+      a simple procedure consists of the following:
+
+       * Given some combinator expression having only constants (such as
+         B, K, and S) write the expression where the given expression is
+         applied to the succession of variables, a, b, c, ..., so that
+         constants are applied to enough operands so that the expansion
+         has no constants.  For example, given S K, expand via
+         
+             S K a b = K b | a b ≈ b.  
+
+       * Stop when there are no constants remaining, or when that is 
+         clearly unachievable.
+
+      In the case of S K a b, we have that S K a b ≈ b ≈ I b, and so by (CE)
+      S K a ≈ I, for a any combinator.
+
+      Since B yields a form of only its arguments when there are 
+      three arguments, consider
+                   B I a b  ≈  I | a b  ≈  a b.
+      then         B I a ≈ a
+      by (CE), and B I ≈ I 
+      as well.
+
+      There is more difficulty determining what combinator | W W W might be.
+      Substituting in | W a b ≈ | a b b simply yields | W W W and there is
+      no progress to be made.
+
+      1.4 The Power of Combinators
+
+      Even in a system where the only mathematical entities are the 
+      combinators, whether expressed in a pure combinatory manner, or with
+      λ-expressions, it is possible to represent all manner of data and
+      operations on such data.  The question does move, in such cases, from
+      what combinator is it to what data is it.  There is an oMiser version
+      of these questions and that is where further attention is provided.
+
+
               
 
 x. REFERENCES AND RESOURCES
+
+   [Burge1975]
+      Burge, William H.  Recursive Programming Techniques.  Addison-Wesley
+      (Reading, MA: 1975).  ISBN 0-201-14450-6.
+
+   [Révész1988]
+      Révész, György E.  Lambda-Calculus, Combinators and Functional 
+      Programming.  Cambridge University Press (Cambridge: 1988), ISBN
+      0-521-345589-8.  The notational use of (f)(x)y for conventional f(x(y))
+      and the applicative f(x y) requires careful reading.  Chapter 3,
+      Combinators and Constant Symbols, provides extensive examples also
+      relevant to computational representations.  Section 2.4 provides
+      a treatment of λ-expressions that can be adapted to the strict use
+      in (1.2) here.
 
    [Rosenbloom1950]
       Rosenbloom, Paul C.  The Elements of Mathematical Logic.  Dover (New
       York: 1950).  ISBN 0-486-60227-3 pbk.  The notation for expressing 
       combinators (1.1 here) is derived from section III.4, Combinatory 
       Logics. 
+
+
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -124,13 +207,13 @@ x. REFERENCES AND RESOURCES
   * Address the absence of an identity on representations of combinators,
     and ways of getting close in certain cases.
 
-  * Decide whether or not the principle of extensionality, CE, is required
-    as a very convenient way to determine certain equivalences and complete
-    the reasoning about basic combinators.  It does avoid the axioms that
-    are required without it.
+  * Find a combinator form for Y ≈ λy.(λx.y(x x) λx.y(x x) ) and verify in
+    [Revesz1988: p.44].
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  
+ 0.0.2 2018-02-13-10:00 Get past the Combinator Theory enough to talk about
+       interpretation preservation.  Introduce λ-expressions.
  0.0.1 2018-02-11-21:10 Add section 1.1-1.2 In continuing development of
        the mathematical structure of combinators.
  0.0.0 2018-02-10-13:28 Placeholder and boiler plate for a description of the
