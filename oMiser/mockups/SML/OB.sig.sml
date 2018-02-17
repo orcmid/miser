@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.6                  UTF-8                       dh:2017-**-**
+(* OB.sig.sml 0.0.6                  UTF-8                       dh:2017-02-17
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -31,6 +31,7 @@ signature OB
       val is_individual: ob -> bool
       val is_singleton: ob -> bool
       val NIL: ob
+      val ` : ob -> ob
       val ## : ob * ob -> ob 
           (* requiring infixr 5 ## for use of (x ## y) = c(x, y) *)
    end 
@@ -93,7 +94,7 @@ signature OB
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.6 2017-**-**-**:** Adjust TODOs
+ 0.0.6 2018-02-17-13:06 Adjust TODOs and add ` x as a "unary" operator
  0.0.5 2017-09-19-20:06 Touchups and confirmation of use as part of the
        ob.sml, obcheck.sml, obap.sml, obap.obcheck.sml and obapcheck.sml.
  0.0.4 2017-09-14-15:12 Make extension only by individuals prescriptive.

@@ -1,4 +1,4 @@
-(* obap.sml 0.0.10                    UTF-8                      dh:2018-02-09
+(* obap.sml 0.0.11                    UTF-8                      dh:2018-02-17
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        ================================
@@ -56,6 +56,8 @@ structure obap :> OBAP
 
       fun is_enclosure x 
           = is_singleton x andalso not (is_individual x)
+
+      fun ` x = e(x)
                    
       infixr 5 ##
       fun (x ## y) = c(x, y)
@@ -176,6 +178,7 @@ structure obap :> OBAP
    
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.0.11 2018-02-17-13:09 Include ' x "unary" operation for use
    0.0.10 2018-02-09-12:17 Reflect change from show-ob.txt to obstring.txt
    0.0.9 2018-02-07-17:09 Add obstring implementation to the structure
    0.0.8 2018-01-09-21:12 Switch to is_pure_lindy-trace(op).
@@ -197,4 +200,4 @@ structure obap :> OBAP
          eval(e)
          *)
          
-(*                         *** end of ob.sml ***                             *)
+(*                       *** end of obap.sml ***                            *)
