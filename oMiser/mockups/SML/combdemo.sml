@@ -1,4 +1,4 @@
-(* combdemo.sml 0.0.0                UTF-8                       dh:2018-02-17
+(* combdemo.sml 0.0.1                UTF-8                       dh:2018-02-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
@@ -21,19 +21,57 @@ open obap;
    
 infixr 5 ## ;
 
-(* START WITH THE Y COMBINATOR
+(* STARTING WITH THE Y COMBINATOR
    The others are straightforward.  This one is more delicate. 
    *)
 
-              
-print( "\ncK = " ^ obstring(cK) ^ "\n");         
-print("\ncS = " ^ obstring(cS) ^ "\n");                 
-print( "\ncI = " ^ obstring(cI) ^ "\n");   
-print("\ncSKK = " ^ obstring(ap(ap(cS,cK),cK)) ^ "\n");
-print("\n(cSKK) x) = " ^ obstring(ap(ap(ap(cS,cK),cK),L"x")) ^ "\n");
-print("\ncI x = " ^ obstring(ap(cI,L"x")) ^ "\n");
-print( "\nhasX = " ^ obstring(hasX) ^ "\n");                                     
-print( "\nhas = " ^ obstring(has) ^ "\n");                 
+(* RECURSION AND THE Y-COMBINATOR *)
+
+fun emptied obList
+    = if is_singleton obList then obList else emptied(b obList);
+      (* a simple recursive function that empties a list, illustrating
+         of how recursion is accomplished with oMiser 
+         *)
+
+val aList = L"1st" ## L"2nd" ## L"3rd" ## L"end" 
+    (* a simple list that is just L"end" when emptied *);
+
+print( "\n        aList = " ^ obstring(aList) ^ "\n" );
+print( "\n  emptied NIL = " ^ obstring(emptied NIL) ^ "\n" );
+print( "\nemptied aList = " ^ obstring(emptied aList) ^ "\n" );
+
+val oEmptiedNR
+    = EV ## (D ## ARG ## B ## ARG) ## `(ARG ## L"oEmptiedNR" ## B ## ARG);
+print ("\n        oEmptiedNR = " ^ obstring(oEmptiedNR) ^ "\n" );
+print ("\n   oEmptiedNR(NIL) = " ^ obstring(ap(oEmptiedNR,NIL)) ^ "\n" );
+print ("\n oEmptiedNR(aList) = " ^ obstring(ap(oEmptiedNR,aList)) ^ "\n" );
+
+
+val oEmptied
+    = EV ## (D ## ARG ## B ## ARG) ## `(ARG ## SELF ## B ## ARG);
+print ("\n        oEmptied = " ^ obstring(oEmptied) ^ "\n" );
+print ("\n   oEmptied(NIL) = " ^ obstring(ap(oEmptied,NIL)) ^ "\n" );
+print ("\n oEmptied(aList) = " ^ obstring(ap(oEmptied,aList)) ^ "\n" );
+
+val oEmptiedR
+    = C ## ` EV
+        ## C ## `(D ## ARG ## B ## ARG)
+             ## E ## C ## ` ARG
+                       ## C ## (E ## ARG)
+                            ## `(B ## ARG);
+print ("\n                 oEmptiedR = " ^ obstring(oEmptiedR) ^ "\n" );
+print ("\n       oEmptiedR(oEmptied) = " 
+       ^ obstring(ap(oEmptiedR,oEmptied)) ^ "\n" );
+print ("\n   oEmptiedR(oEmptied,NIL) = "
+       ^ obstring( ap(ap(oEmptiedR,oEmptied),NIL) ) ^ "\n" );
+print ("\n oEmptiedR(oEmptied,aList) = "
+       ^ obstring( ap(ap(oEmptiedR,oEmptied),aList) ) ^ "\n" );
+
+(* TBD: NOW INTRODUCE THE FORM OF Y-COMBINATOR REQUIRED FOR BY-VALUE
+        CONDITIONALS AND SEE HOW TO WORK THAT INTO ONE MORE LIKE HOW
+        oMISER CONDITIONALS CAN BE HELPFUL.
+        SEE "MS for the Working Programmer" p.341.
+        *)  
     
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -68,6 +106,8 @@ print( "\nhas = " ^ obstring(has) ^ "\n");
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
 
+   0.0.1 2018-02-17-13:00 Work through recursive emptied(list) with the Ob
+         versions, confirming operation as prelude to the Y-combinator case.
    0.0.0 2018-02-17-10:12 Skeleton for progressive introduction of combinator
          representations and demonstration of their functionality.
          
