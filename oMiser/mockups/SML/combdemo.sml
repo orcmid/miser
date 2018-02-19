@@ -1,4 +1,4 @@
-(* combdemo.sml 0.0.1                UTF-8                       dh:2018-02-17
+(* combdemo.sml 0.0.2                UTF-8                       dh:2018-02-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
@@ -21,57 +21,88 @@ open obap;
    
 infixr 5 ## ;
 
-(* STARTING WITH THE Y COMBINATOR
-   The others are straightforward.  This one is more delicate. 
-   *)
+
 
 (* RECURSION AND THE Y-COMBINATOR *)
+
+print(  "\nRECURSION AND THE Y-COMBINATOR" 
+      ^ "\n------------------------------\n\n" );
 
 fun emptied obList
     = if is_singleton obList then obList else emptied(b obList);
       (* a simple recursive function that empties a list, illustrating
-         of how recursion is accomplished with oMiser 
+         how recursion is accomplished with oMiser 
          *)
 
 val aList = L"1st" ## L"2nd" ## L"3rd" ## L"end" 
     (* a simple list that is just L"end" when emptied *);
 
-print( "\n        aList = " ^ obstring(aList) ^ "\n" );
+print(  "\n   The sml function emptied(L) returns the empty form"
+      ^ "\n   of L, the ending singleton.  It has simple recursion,"
+      ^ "\n   fun emptied L = if L = b(L) then L else emptied(b L)\n\n" );
+print( "\n    ob ^aList = " ^ obstring(aList) ^ "\n" );
 print( "\n  emptied NIL = " ^ obstring(emptied NIL) ^ "\n" );
 print( "\nemptied aList = " ^ obstring(emptied aList) ^ "\n" );
 
-val oEmptiedNR
-    = EV ## (D ## ARG ## B ## ARG) ## `(ARG ## L"oEmptiedNR" ## B ## ARG);
-print ("\n        oEmptiedNR = " ^ obstring(oEmptiedNR) ^ "\n" );
-print ("\n   oEmptiedNR(NIL) = " ^ obstring(ap(oEmptiedNR,NIL)) ^ "\n" );
-print ("\n oEmptiedNR(aList) = " ^ obstring(ap(oEmptiedNR,aList)) ^ "\n" );
-
-
 val oEmptied
     = EV ## (D ## ARG ## B ## ARG) ## `(ARG ## SELF ## B ## ARG);
-print ("\n        oEmptied = " ^ obstring(oEmptied) ^ "\n" );
-print ("\n   oEmptied(NIL) = " ^ obstring(ap(oEmptied,NIL)) ^ "\n" );
-print ("\n oEmptied(aList) = " ^ obstring(ap(oEmptied,aList)) ^ "\n" );
 
-val oEmptiedR
+print(  "\n   The oMiser script ^oEmptied is a direct counterpart of"
+      ^ "\n   the SML emptied function, with explicit recursion.\n\n" );
+
+print ("\n     ob ^oEmptied = " ^ obstring(oEmptied) ^ "\n" );
+print ("\n  ^oEmptied(.NIL) = " ^ obstring(ap(oEmptied,NIL)) ^ "\n" );
+print ("\n^oEmptied(^aList) = " ^ obstring(ap(oEmptied,aList)) ^ "\n" );
+
+val oTailer
     = C ## ` EV
         ## C ## `(D ## ARG ## B ## ARG)
              ## E ## C ## ` ARG
                        ## C ## (E ## ARG)
                             ## `(B ## ARG);
-print ("\n                 oEmptiedR = " ^ obstring(oEmptiedR) ^ "\n" );
-print ("\n       oEmptiedR(oEmptied) = " 
-       ^ obstring(ap(oEmptiedR,oEmptied)) ^ "\n" );
-print ("\n   oEmptiedR(oEmptied,NIL) = "
-       ^ obstring( ap(ap(oEmptiedR,oEmptied),NIL) ) ^ "\n" );
-print ("\n oEmptiedR(oEmptied,aList) = "
-       ^ obstring( ap(ap(oEmptiedR,oEmptied),aList) ) ^ "\n" );
 
-(* TBD: NOW INTRODUCE THE FORM OF Y-COMBINATOR REQUIRED FOR BY-VALUE
-        CONDITIONALS AND SEE HOW TO WORK THAT INTO ONE MORE LIKE HOW
-        oMISER CONDITIONALS CAN BE HELPFUL.
-        SEE "MS for the Working Programmer" p.341.
-        *)  
+print(  "\n   The oMiser script ^oTailer is a version of oEmptied where"
+      ^ "\n   (^oTailer g) L returns L if L is an empty list, and returns"
+      ^ "\n   g(ob.b L) when L is a pair.  The goal is to use a by-value"
+      ^ "\n   Y combinator to turn oTailer into a script that's equivalent" 
+      ^ "\n   to oEmptied without rewriting or treating oTailer as anything" 
+      ^ "\n   but an interpretation-preserving combinator form.\n\n");
+
+print ("\nob ^oTailer = " ^ obstring(oTailer) ^ "\n" );
+
+(* If Y f ≈ f (Y f), the first operand g of (f g) x will conditionally
+   evaluate g(y) for some y only when continuing by recursion is needed.  For
+   oMiser, when g is cY(f) that will be available as SELF in obap(g, y). So
+   What is to be applied to y is (f (cY f)).  The script (`f :: SELF) :: ARG
+   has precisely that quality.  
+
+   With    cY f ≈ (` f :: SELF) :: ARG,
+             cY ≈ .C :: (.C :: (.E :: .ARG)
+                            :: ` .SELF )
+                     :: ` .ARG
+
+   and we only need to derive cY f, since (cY f) x = f(CY f) x and the proper
+   evaluation happens on application to x.
+   *)
+
+val cY = C ## (C ## (E ## ARG)
+                 ## ` SELF )
+           ## ` ARG;
+
+print(  "\n   Script cY represents combinator Y such that (^cY ^oTailer) L"
+      ^ "\n   evaluates as ^oTailer(^cY ^oTailer) L, equivalent in operation"
+      ^ "\n   to ^oEmptied(L).\n\n" );
+print("\nob ^cY =" ^ obstring(cY) ^ "\n" );
+
+val oEmptied2 = ap(cY, oTailer);
+print(  "\n    ob ^oEmptied2 = ^cY ^oTailer;"
+      ^ "\noEmptied2 = " ^ obstring(oEmptied2) ^ "\n" );
+print( "\n  ^oEmptied2(.NIL) = " 
+       ^ obstring(ap(oEmptied2, NIL)) ^ "\n" ); 
+print( "\n^oEmptied2(^aList) = " 
+       ^ obstring(ap(oEmptied2, aList)) ^ "\n" );
+
+
     
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -94,18 +125,22 @@ print ("\n oEmptiedR(oEmptied,aList) = "
  
     TODO:
     
-      * Get Y Combinator figured out and demonstrated.
+      * Move the derivation of cY to combinators.txt and appeal to that for
+        it.
         
       * Work through the straightforward transformations
         
       * Set up more-sophisticated combinators for later.
-      
-                
+
+      * Acknowledge [Paulson1996: p.391] for an important clue concerning
+        call-by-value appropriate Y combinators.
+                     
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
-
+   0.0.2 2018-02-18-18:56 Derive the provisional cY and confirm simple
+         operation.
    0.0.1 2018-02-17-13:00 Work through recursive emptied(list) with the Ob
          versions, confirming operation as prelude to the Y-combinator case.
    0.0.0 2018-02-17-10:12 Skeleton for progressive introduction of combinator
