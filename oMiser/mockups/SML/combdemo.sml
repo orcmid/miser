@@ -1,4 +1,4 @@
-(* combdemo.sml 0.0.2                UTF-8                       dh:2018-02-18
+(* combdemo.sml 0.0.3                UTF-8                       dh:2018-02-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
@@ -15,8 +15,8 @@
     
 use "obap.sml";
 open obap;
-(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE CHECKS 
-   SHOULD WORK DIRECTLY WITHOUT MODIFICATION, BELOW.
+(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE 
+   CHECKS SHOULD WORK DIRECTLY WITHOUT MODIFICATION, BELOW.
    *)
    
 infixr 5 ## ;
@@ -30,8 +30,8 @@ print(  "\nRECURSION AND THE Y-COMBINATOR"
 
 fun emptied obList
     = if is_singleton obList then obList else emptied(b obList);
-      (* a simple recursive function that empties a list, illustrating
-         how recursion is accomplished with oMiser 
+      (* a simple recursive function that empties a list, for illustration
+         of recursively-defined function evaluations with oMiser 
          *)
 
 val aList = L"1st" ## L"2nd" ## L"3rd" ## L"end" 
@@ -72,7 +72,7 @@ print ("\nob ^oTailer = " ^ obstring(oTailer) ^ "\n" );
 
 (* If Y f ≈ f (Y f), the first operand g of (f g) x will conditionally
    evaluate g(y) for some y only when continuing by recursion is needed.  For
-   oMiser, when g is cY(f) that will be available as SELF in obap(g, y). So
+   oMiser, when g is cY(f) that will be available as SELF in obap.ap(g, y). So
    What is to be applied to y is (f (cY f)).  The script (`f :: SELF) :: ARG
    has precisely that quality.  
 
@@ -81,7 +81,7 @@ print ("\nob ^oTailer = " ^ obstring(oTailer) ^ "\n" );
                             :: ` .SELF )
                      :: ` .ARG
 
-   and we only need to derive cY f, since (cY f) x = f(CY f) x and the proper
+   and we only need to derive cY f, since (cY f) x = f(cY f) x and the proper
    evaluation happens on application to x.
    *)
 
@@ -126,19 +126,26 @@ print( "\n^oEmptied2(^aList) = "
     TODO:
     
       * Move the derivation of cY to combinators.txt and appeal to that for
-        it.
+        it.  Or move it into a separate exotics or ycominator file.
         
       * Work through the straightforward transformations
         
       * Set up more-sophisticated combinators for later.
 
       * Acknowledge [Paulson1996: p.391] for an important clue concerning
-        call-by-value appropriate Y combinators.
+        call-by-value-appropriate Y combinators.
+
+      * Confirm the proper use of cY in the definition of has(x) L, which
+        partially evaluates has(x) with x fixed and that is the recursive
+        function.
+
+      * Introduce ρf.E ≈ Y λf.E, the basis for rec.f in oMiser.
                      
     *)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.3 2018-02-19-10:49 Touch up, expanding TODOs
    0.0.2 2018-02-18-18:56 Derive the provisional cY and confirm simple
          operation.
    0.0.1 2018-02-17-13:00 Work through recursive emptied(list) with the Ob
