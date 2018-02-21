@@ -1,4 +1,4 @@
-combinators.txt 0.0.3                UTF-8                       dh:2018-02-17
+combinators.txt 0.0.4                UTF-8                       dh:2018-02-21
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -54,9 +54,9 @@ combinators.txt 0.0.3                UTF-8                       dh:2018-02-17
 
     The notation with "|" for application is an useful reminder that this
     application operation is in the realm of combinators.  It is convenient
-     to omit leading "|" since they can be added automatically: the total 
-     number of "|" must be one less than the number of terms in the 
-     expression.  We can write
+    to omit leading "|" since they can be added automatically: the total 
+    number of "|" must be one less than the number of terms in the 
+    expression.  We can write
 
        S x y z for ||| S x y z
        K x y for || K x y
@@ -105,28 +105,28 @@ combinators.txt 0.0.3                UTF-8                       dh:2018-02-17
           W ≈ S S | S K
             ≈ λf.λx.( (f x) x )
 
-      There are no combinator "constants" (e.g., S, K, or others) in these 
-      λ-expressions and variables in the expressions are ones for which there 
-      is an outer (preceding) λ form. This closed form of λ-expression is
-      interchangeable with the notation for combinators of (1.1) in the 
-      equivalences above.
+    There are no combinator "constants" (e.g., S, K, or others) in these 
+    λ-expressions and variables in the expressions are ones for which there 
+    is an outer (preceding) λ form. This closed form of λ-expression is
+    interchangeable with the notation for combinators of (1.1) in the 
+    equivalences above.
 
-      Precise rules for using λ-expression forms and reasoning about them
-      are complicated by the use of variables.  For a typical explanation, see
-      [Révész1988: 2.1].  Detailed descriptions are found on the Internet,
-      e.g., <https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition>.
+    Precise rules for using λ-expression forms and reasoning about them
+    are complicated by the use of variables.  For a typical explanation, see
+    [Révész1988: 2.1].  Detailed descriptions are found on the Internet,
+    e.g., <https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition>.
       
-      In Miser Project usage, parentheses are retained as necessary to avoid 
-      ambiguity between typical λ-calculus notations for applicative 
-      expressions and the Frugalese form of such expressions.  The forms used
-      above are interpreted the same in most flavors of λ-expression.
+    In Miser Project usage, parentheses are retained in (closed) λ-expressions
+    as shown above to avoid ambiguity between typical λ-calculus notations
+    for applicative expressions and the Frugalese expressions having the same
+    λ-calculus/combinatory-logic interpretations.
     
-      1.3 What Combinator Is It?  
+    1.3 What Combinator Is It?  
 
-      Formally, all we can do is manipulate formulas of combinators in 
-      ways that demonstrate two forms are equivalent.  To assess the nature
-      of some combinator in achieving a particular applicative arrangement, 
-      a simple approach consists of the following:
+    Formally, all we can do is manipulate formulas of combinators in 
+    ways that demonstrate two forms are equivalent.  To assess the nature
+    of some combinator in achieving a particular applicative arrangement, 
+    a simple approach consists of the following:
 
        * Given some combinator expression having only constants (such as
          B, K, and S) write the expression applied to a succession of 
@@ -135,36 +135,105 @@ combinators.txt 0.0.3                UTF-8                       dh:2018-02-17
          Stop application to variables once expansion leaves no constants 
          or when that is clearly not achievable.  
          
-      For example, given | S K, expand via
+    For example, given | S K, expand via
          
              S K a b = K b | a b ≈ b.  
 
-      In the case of S K a b, we see that S K a b ≈ b ≈ I b, and so by (CE)
-      S K a ≈ I, for a any combinator, including K.
+    In the case of S K a b, we see that S K a b ≈ b ≈ I b, and so by (CE)
+    S K a ≈ I, for a any combinator, including K.
 
-      Consider
+    Consider
                    B I a b  ≈  I | a b  ≈  a b.
-      Then         B I a ≈ a
-      by (CE), and B I ≈ I 
-      by (CE) as well.
+    Then              B I a ≈ a
+    by (CE), and        B I ≈ I 
+    by (CE) as well.
 
-      There is more difficulty determining what combinator | W W W might be.
-      Substituting in | W a b ≈ | a b b simply yields | W W W and there is
-      no progress to be made.
+    There is more difficulty determining what combinator | W W W might be.
+    Substituting in | W a b ≈ | a b b simply yields | W W W and there is
+    no progress to be made.  Additional exotic cases of practical importance
+    are addressed in Section 3, below.
 
-      1.4 The Power of Combinators
+    1.4 The Power of Combinators
 
-      Even in a system where the only mathematical entities are the 
-      combinators, whether expressed in a pure combinatory manner, or with
-      closed λ-expressions, it is possible to represent all manner of data and
-      operations on such data.  Examples of this representation of other 
-      flavors of entities are found in [Révész1988: Chapters 3-4].
+    Even in CA, where the only mathematical entities are the combinators, 
+    whether expressed in a pure combinatory manner or with closed 
+    λ-expressions, it is possible to represent all manner of data and
+    operations on such data.  Such representations are found in  [Burge1975],
+    [Révész1988: Chapters 3-4], and [Paulson1996].
       
-      The question does move, in such cases, from what combinator is it to 
-      what data is it.  There is an oMiser version of these questions that
-      will be the topic of further investigation.
+    Fundamentally, the combinators and equivalent closed λ-expressions are
+    all about ways of composing functions from other ones.  Although this
+    can be employed indefinitely using combinators as the only entities, the
+    capabilities of CA are also of practical use in composing applications
+    of other types of functions, so long as those functions are compatible
+    with the combinators applied to them.  That is, the application of 
+    combinators can be employed in a manner that is indifferent to the nature
+    of the other types of functions, using the same concrete realization of
+    application, with all of the combinational power of combinators available.
+    
+    This power is exploited in the concrete representation of combinators via
+    oMiser script obs.  Combinator representations applied to representations
+    of other types of functions will lead to some valuable idioms in the 
+    composition of oMiser applicative scripts from other, simpler ones.
 
  2. FUNCTIONAL TYPE AND INTERPRETATION PRESERVATION
+
+    2.1 Functional Type
+
+    The usual notation for functional type is used here.  We designate types
+    using Greek letters.  
+
+       f: α → β
+       
+    expresses that f is a function that, when applied to an operand of type α
+    yields a result of type β.  The type of f is (α → β).
+
+    In these terms, from inspection of the definitions, (1.2), we can infer
+    the simplest functional types as follows
+
+       K x y ≈ x
+       x: α
+       y: β
+       K: α → (β → α)
+
+      S x y z = x z | y z
+      z: α
+      y: α → β
+      x: α → (β → γ)
+      S: (α → (β → γ)) → (α → β) → (α → γ)
+
+      I x ≈ x
+      x: α
+      I: α → α
+
+      B f g x ≈ f | g x
+      x: α
+      g: α → β
+      f: β → γ
+      B: (β → γ) → (α → β) → (α → γ)
+
+      C f x y ≈ f | y x
+      x: α
+      y: α → β
+      f: β → γ
+      C: (β → γ) → α → (α → β) → γ
+
+      D f x g y ≈ f x | g y
+      y: α
+      g: α → β
+      x: γ
+      f: γ → (β → δ)
+      D: (γ → (β → δ)) → γ → (α → β) → (α → δ)
+
+      T x f ≈ f x
+      x: α
+      f: α → β   
+      T: α → (α → β) → β
+
+      W f x ≈ f x x
+      x: α
+      f: α → (α → β)
+      W: (α → (α → β)) -> (α → β)      
 
 
  3. RECURSION AND ITS DIFFICULTIES
@@ -174,7 +243,17 @@ x. REFERENCES AND RESOURCES
 
    [Burge1975]
       Burge, William H.  Recursive Programming Techniques.  Addison-Wesley
-      (Reading, MA: 1975).  ISBN 0-201-14450-6.
+      (Reading, MA: 1975).  ISBN 0-201-14450-6.  Although the approach starts
+      with a functional-style, the interconnections and definability in terms
+      of combinators and closed λ-expressions is worked up to in Chapter 1,
+      with further refinement (and implementation matters) thereafter. 
+
+   [Paulson1996]
+      Pauson, Lawrence C.  ML for the Working Programmer, ed.2.  Cambridge 
+      University Press (Cambridge: 1991, 1996).  ISBN 0-521-56543-X pbk. 
+      Digging into the combinators, λ-calculus, and representation of other
+      types as interpretations of λ-expressions occurs in Chapter 9, Writing
+      Interpreters for the λ-Calculus, starting in section 9.5.
 
    [Révész1988]
       Révész, György E.  Lambda-Calculus, Combinators and Functional 
@@ -189,20 +268,24 @@ x. REFERENCES AND RESOURCES
    [Rosenbloom1950]
       Rosenbloom, Paul C.  The Elements of Mathematical Logic.  Dover (New
       York: 1950).  ISBN 0-486-60227-3 pbk.  The notation for expressing 
-      combinators (1.1 here) is derived from section III.4, Combinatory 
-      Logics. 
+      combinators (1.1 here) and the expression of CA are derived from 
+      section III.4, Combinatory Logics. 
 
    [Scott1993]
       Scott, Dana S.  A Type-Theoretic Alternative to ISWIM, CUCH, OWHY.
       Theoretical Computer Science 121, 1-2 (December 1993), 411-440. At
       <https://www.sciencedirect.com/science/article/pii/030439759390095B>.
+      The type-theoretic approach treats type as definite and distinguished
+      even though the formalism is interpretable as polymorphic in the manner
+      proposed here for the functional types of combinators.
 
    [Scott1977]
       Scott, Dana S.  Logic and Programming Languages. 1976 ACM Turing Award
       Lecture.  Comm. ACM 20, 9 (September 1977), 634-641.  PDF availabe at
       <http://delivery.acm.org/10.1145/1290000/1283932/a1976-scott.pdf>.  The
-      discussion on semantic structures and then function space is a valuable
-      collateral on the use of monotonicity and continuity in [Scott1993].
+      discussion on semantic structures and function space is a valuable
+      collateral on the use of monotonicity and continuity in [Scott1993],
+      a paper originally circulated informally in 1969.
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -231,10 +314,16 @@ x. REFERENCES AND RESOURCES
     accordance with [Revesz1988: p.44].
 
   * Link to other materials of the Miser Project that explore some of these
-    matters in greater detail.
+    matters in greater detail.  Connect to combdemo.sml, and also work in
+    Ycombinator (.txt or .sml?), and comblib.sml.
+
+  * Introduce the notion of concrete entities with respect to representation
+    via obs.
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  
+ 0.0.4 2018-02-21-14:48 Introduce 2.1 on Functional Type; manage TODOs 
  0.0.3 2018-02-17-10:56 Polish and set the stage for the Y combinator.
  0.0.2 2018-02-13-10:00 Get past the Combinator Theory enough to talk about
        interpretation preservation.  Introduce λ-expressions.
