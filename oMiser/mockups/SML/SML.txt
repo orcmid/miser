@@ -1,4 +1,5 @@
-SML.txt 0.0.10                       UTF-8                        dh:2017-10-09
+SML.txt 0.0.11                       UTF-8                       dh:2017-02-23
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
@@ -6,7 +7,7 @@ SML.txt 0.0.10                       UTF-8                        dh:2017-10-09
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML.txt>
 
                  SML MOCKUP PROOF-OF-CONCEPT DEMONSTRATIONS
-                 --------------------------------------
+                 ------------------------------------------
               
     Standard SML of New Jersey (SML/NJ) is used for demonstration
     of the essential characteristics of Miser obs and the universal
@@ -20,6 +21,11 @@ SML.txt 0.0.10                       UTF-8                        dh:2017-10-09
     requirements for obs.  And the SML/NJ REPL (Read-Evaluate-
     Print Loop) is automatically available for use as a test
     harness and front end.
+
+    The objective will be demonstration of an oFrugal REPL with
+    standard parsing and pretty-printed output presentation.  The
+    operation will be limited to ASCII code points in input-output
+    texts although Unicode is required of complete implementations.
          
 MANIFEST
 
@@ -58,6 +64,14 @@ MANIFEST
      obap.obcheck.sml
           Test script that checks the preservation of ob.sml definitions
           in the extended obap.sml manifestation.
+
+ combdemo.sml
+          Demonstration of the basic combinators expressed as interpretation-
+          preserving oMiser applicative scripts.
+
+Ycombdemo.sml
+          Demonstration of the oMiser script that provides an interpretation-
+          preserving interpretation as a Y-Combinator.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -97,12 +111,13 @@ TODO
   * Raise the fact that, with oMiser, so long as well-definedness is
     maintained, the application of an individual can involve what would
     be side-effects except they are never revealed.  This includes
-    caching of things and also optimization behind the scenes.
+    caching of things and also optimization behind the scenes.  Also,
+    output counts, but not input.
     
-  * The oFrugal arrangement is about hosting.  Hold onto that notion.  
-     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2018-02-23-09:30 Touch up synopsis and account for combdemo.sml and
+        its Ycombdemo fork.
  0.0.10 2017-10-09-11:24 Adust TODOs.  Emphasize SML use for proof-of-concept.
        Bring current.  Correct GitHub location.
  0.0.9 2017-09-13-17:03 More TODOs. Remove obadt.sml and obadtcheck.sml
