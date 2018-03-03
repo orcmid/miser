@@ -1,4 +1,4 @@
-combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
+combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -20,24 +20,65 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
     representing entities beyond those interpretable as combinators. 
 
     The challenge is oMiser being a concrete system in which applicative
-    interpretation is not a formal matter, but a computational procedure 
+    interpretation is not a formal matter but a computational procedure 
     that yields a definite ob result, if any, on each obap.ap or obap.eval
     evaluation.  Achievement of combinator representations is required to
     fit that computational apparatus (and visa versa).
     
     Development of oMiser combinator representations proceeds from the theory
     of combinators through demonstration of interpretation-preserving utility.
-    This provides a key component in demonstration that the oMiser obap.ap
-    function is computationally universal.
+    This, followed by oMiser representation of combinators, provides a key 
+    component in demonstration of oMiser computational universality.
+
+    There is, thereby, exhibition of an important aspect of software
+    engineering: successful intended interpretation of other, higher-order
+    computational entities via functions over quite different, lower-level
+    data structures, bridging between different levels of abstraction.
+
+                                  CONTENT
+
+              1. MATHEMATICAL STRUCTURE
+                 An abstract theory in the manner of obtheory that
+                 is at a powerful though not so grounded level of
+                 abstraction
+
+                 1.1 Theory of Combinator Arithmetic, ‹ca›
+                 1.2 Useful Simple Combinators
+                 1.3 What Combinator Is It?
+                 1.4 The Power of Combinators
+
+              2. FUNCTIONAL TYPE AND INTERPRETATION PRESERVATION
+                 The important quality that, embodied in concrete
+                 representations of combinators, extends to intended
+                 interpretations of oMiser scripts as functions on 
+                 many types of computational entity
+
+                 2.1 Functional Type
+                 2.2 Interpretation Preservation by Functional Type
+                 2.3 The Avenue to Concrete Interpretations
+                 2.4 Restricted Interpretation as Types
+
+              3. The oMISER COMBINATOR IDIOMS, cCA
+                 Demonstration of scripts that are equivalent to 
+                 combinators under a straightforward interpretation
+
+              4. RECURSION AND EXOTIC COMBINATORS
+                 Achievement of recursive operation and conditional
+                 evaluation in terms of combinators
+
+              5. REFERENCES AND RESOURCES
+                 Sources of further details and theoretical work 
+                 behind the kind of functional programming that
+                 oMiser affords
         
  1. MATHEMATICAL STRUCTURE 
 
-    1.1 Theory of Combinator Arithmetic, CA
+    1.1 Theory of Combinator Arithmetic, ‹ca›
 
     The account of [Rosenbloom1950] is adapted here.
 
     C0. For combinators x and y, | x y is the combinator formed by
-        application of x to y.
+        application of (operator) x to (operand) y. 
     C1. For combinator x, x ≈ x.
     C2. For combinators x and y, x ≈ y ⇒ y ≈ x.
     C3. For combinators x, y, and z, x ≈ y ∧ y ≈ z ⇒ x ≈ x. 
@@ -55,14 +96,15 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
     application, | f x, is an application of combinators that yields
     combinators.  It must not be confused with the obap.ap of obaptheory,
     <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>,
-    where application is of the procedure encoded in one ob to the operand
-    ob.
+    where application is of the procedure encoded in one ob, as operator, to 
+    the operand ob.
 
     The notation with "|" for application is an useful reminder that this
-    application operation is in the realm of combinators.  It is convenient
-    to omit leading "|" since they can be added automatically: the total 
-    number of "|" must be one less than the number of terms in the 
-    expression.  We can write
+    application operation is in the realm of combinators.  
+    
+    It is convenient to omit leading "|" since they can be supplied
+    automatically: the total number of "|" must be one less than the number
+    of terms in the expression.  We can write
 
        S x y z for ||| S x y z
        K x y for || K x y
@@ -70,17 +112,19 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
 
     The symbol "≈" is for equivalence of combinators.  This is distinct
     from the "=" equality relationship among obs.  Although "≈" is tantamount
-    to an equality in CA, that interpretation is avoided here.  It is unclear 
-    that there are distinguished, unique mathematical entities for any 
-    combinator.  We shall simply skirt the question with "≈", accepting that 
-    there might be multiple but equivalent concrete interpretations in a model
-     of CA and be content with that.
+    to an equality in ‹ca›, that interpretation is avoided here.  It is 
+    unclear that there are distinguished, unique mathematical entities for any 
+    combinator.  We shall skirt the question with "≈", accepting that there
+    might be multiple but equivalent concrete interpretations in a 
+    computational model of ‹ca› and be content with that.
 
-    1.2 Useful Combinators
+    1.2 Useful Simple Combinators
 
-    It is known for CA that all combinators can be expressed in terms
-    of combinators S and K alone  Some are so handy that there are constant
-    names for them.  There are also equivalent λ-expressions, shown below.
+    It is known for ‹ca› that all combinators can be expressed in terms
+    of combinators S and K alone (with certain reservations concerning
+    concrete representation that will be addressed in Section 3).  Some 
+    derived combinators are so handy that there are constant names for them. 
+    There are also equivalent λ-expressions, shown below.
 
       S x y z ≈ x z | y z
             S ≈ λx.λy.λz.( (x z)(y z) )
@@ -113,13 +157,13 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
             ≈ λf.λx.( (f x) x )
 
     In these λ-expressions there are no combinator "constants" (e.g., S, K, or
-    others) and variables in the expressions are ones for which there 
-    is an outer (preceding) λ form. This closed form of λ-expression is
-    interchangeable with the notation for combinators of (1.1), demonstrated 
-    in the equivalences above.
+    others) and variables in the expressions are ones for which there is an
+    outer (preceding) λ form. This closed form of λ-expression is inter-
+    changeable with the notation for combinators of (1.1), as demonstrated 
+    with the equivalences above.
 
-    Precise rules for using λ-expression forms and reasoning about them
-    are complicated by the use of variables.  For a typical explanation, see
+    Precise rules for using λ-expression forms and reasoning about them are
+    complicated by the use of variables.  For a typical explanation, see
     [Révész1988: 2.1].  Detailed descriptions are found on the Internet,
     e.g., <https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition>.
       
@@ -127,7 +171,12 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
     λ-expressions as shown above to avoid any ambiguity in application order
     between typical λ-calculus notations for applicative expressions and the 
     different unparenthesized construction of applications in Frugalese.  See
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt> summary.
+    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+
+    Equivalent λ-expressions make the applicative structure more apparent, 
+    easier to express, and suggestive of intermediate forms.  That utility
+    will be exploited later by introduction of a computationally-defined
+    λ-abstraction as an oMiser script.
     
     1.3 What Combinator Is It?  
 
@@ -142,17 +191,21 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
          of a combinator constant can be replaced by its equivalent defined
          form.  Stop application to variables once expansion leaves no 
          constants or when that is clearly not achievable.  
+
+       * An expansion can also go no further when not all of the arguments of 
+         a defined combinator are available, including when a variable of
+         unknown definition is shown as the operator of an application.
          
     For example, given | S K, expand via
          
              S K a b = K b | a b ≈ b.  
 
     In the case of S K a b, we see that S K a b ≈ b ≈ I b, and so by (CE)
-    S K a ≈ I, for any combinator, a, including K.
+    S K a ≈ I for any combinator, a, including K.
 
     Consider
                    B I a b  ≈  I | a b  ≈  a b.
-    Then              B I a ≈ a
+    Then              B I a ≈ a ≈ I a
     by (CE), and        B I ≈ I 
     by (CE) as well.
 
@@ -163,43 +216,38 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
 
     1.4 The Power of Combinators
 
-    Even in CA, where the only mathematical entities are the combinators, 
+    Even in ‹ca›, where the only mathematical entities are the combinators, 
     whether expressed in a pure combinatory manner or with closed 
     λ-expressions, it is possible to represent all manner of data and
     operations on such data.  Such representations are found in  [Burge1975],
-    [Révész1988: Chapters 3-4], and [Paulson1996].
+    [Révész1988: Chapters 3-4], and [Paulson1996].  [Scott2012], focusing on
+    the λ-calculus view, sketches the variety of constructions and connections
+    in mathematical logic and other theoretical mathematical approaches.
       
     Fundamentally, the combinators and equivalent closed λ-expressions are
     all about ways of composing functions from other ones.  Although this
-    can be employed indefinitely using combinators as the only entities, the
-    capabilities of CA are also of practical use in composing applications
-    of other types of functions, so long as those functions are compatible
-    with the combinators applied to them.  That is, the application of 
-    combinators can be employed in a manner that is indifferent to the nature
-    of the other types of functions, using the same concrete realization of
-    application, delivering all of the combinational power of combinators.
+    can be employed indefinitely presuming combinators as the only entities, 
+    the capabilities of ‹ca› are also of practical use in composing other
+    types of functions, so long as those functions are compatible with the
+    combinators applied to them.  
     
     This power is exploited in the concrete representation of combinators via
-    oMiser script obs.  
-    
-    Combinator representations applied to representations of other types of 
-    functions will lead to some valuable idioms in the composition of oMiser 
-    applicative scripts from other, simpler ones.
+    oMiser script obs in Section 3.  
 
  2. FUNCTIONAL TYPE AND INTERPRETATION PRESERVATION
 
     2.1 Functional Type
 
-    The usual notation for functional type is used here.  We designate types
-    using Greek letters.  
+    The usual notation for functional type is used here.  We designate type
+    variables using Greek letters.  
 
        x: α
        f: α → β
        
-    expresses that x is an entity of type α and f is a function that, 
-    when applied to an operand of type α yields a result of type β.  The type 
-    of f is (α → β).  Types can be composed further as functions of other 
-    types.
+    expresses that x is an entity of type α and f is a function that when 
+    applied to an operand of type α yields a result of type β.  The type of
+    f is (α → β).  Types can be composed further by substitutions in that
+    pattern.
 
     In these terms, from inspection of the definitions, (1.2), we can infer
     the simplest functional types of well-known combinators as follows
@@ -249,14 +297,13 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
       W: (α → (α → β)) -> (α → β)  
 
     2.2 Interpretation Preservation via Functional Type      
-
-    In terms of CA, even combinators have this apparent intrinsic degree of
-    interpretation-preservation with regard to functional type.  
     
-    For pure CA, one can take all of the types as simply CAtype.  Functional 
-    types are more informative however.  
+    For pure ‹ca›, one can take all of the types as simply tCA (a common 
+    shorthand), since combination of combinators has no limitations.  Even so,
+    combinators have this apparent intrinsic degree of interpretation
+    preservation with respect to functional type.  
     
-    Functional types in CA reveal the extent to which a combinator can be 
+    Functional types in ‹ca› reveal the extent to which a combinator can be 
     indifferent to the functional interpretation of entities involving other 
     types under the same system of functional application.
 
@@ -264,55 +311,72 @@ combinators.txt 0.0.5                UTF-8                       dh:2018-02-26
 
     For a concrete computational mechanism, such as that for oMiser, one can
     simply substitute Ob for all of the type variables, α, β, γ, δ.  There is
-    a similarity with combinators in every ob having interpretation as an 
+    similarity with combinators in every ob having interpretation as an 
     (Ob → Ob) type. That does not assure interpretation as a combinator
-    under obap.ap, however (cf. 2.4, below).
+    under obap.ap, however.
 
-    In the concrete representation of combinators, limiting interpretations
-    to be as combinators and/or functional types has great practical value.
-
-    Having a script, cK, interpretable as combinator K, gives us oFrugal
+    Having a script, cK interpretable as combinator K, it must be the case
+    that, in oFrugal notation,
 
       (^cK x) y = x
 
     so if x is interpretable as a combinator, that interpretation is 
-    preserved just as it is for x interpretable as an entity of any type.
+    preserved just as it is for x interpretable as an entity of any type,
+    since it preserves the ob, x, and whatever interpretation that might
+    be intended for it.  In this manner, functional type is honored and cK
+    interpretation as combinator K is satisfied.
 
     Likewise, for 
 
-      ((^cS x) y) z = (x z) (y z)  
+      ((^cS x) y) z = (x z) (y z),  
 
         ^cS: (α → (β → γ)) → (α → β) → (α → γ)
 
-    works if α, β, and γ have interpretation as combinators and also when they
-    have interpretations as any other type representations, given proper
-    substitution and interpretation in (α → (β → γ)) → (α → β) → (α → γ).
+    works if α, β, and γ have interpretation as combinators or as other
+    types of entities consistent with the functional types of the supplied
+    x, y, and z.  It is only necessary for ^cS operation to preserve the
+    interpretations of x, y, and z provided that those interpretations fit 
+    functional-type pattern (α → (β → γ)) → (α → β) → (α → γ).
 
-    Note that now we are using Ot "=" and definite computational results,
-    yet having interpretation preservation with regard to functional types.
-    Representing the combinators in this manner is sufficient for composing
-    combinators as well as composing interpretation-preserving applications
-     with non-CA functional types.
+    Here there are Ot "=" and definite computational results, yet preserving 
+    interpretation with regard to functional type. Representing combinators in 
+    this manner is sufficient for reliably composing interpretation-preserving
+    operations with combinator representations and non-‹ca› functional-type 
+    interpretations.
 
-    Such combinator interpretations are described to be polymorphic to the 
-    degree that interpretation-preservation is honored by interpretations of 
-    operands and operators that conform to these and other functional-type 
-    patterns.
+    Combinators taken as interpretation-preserving of functional types, as 
+    here, are said to be polymorphic with regard to interpretation of fixed
+    types of operands and operators that conform to the variable functional-
+    type patterns.  
 
-    2.4 Restricted Interpretation on Types
+    2.4 Restricted Interpretation as Types
+
+    In ‹ca› there are only combinators and the application operation; in ‹ob› 
+    there are only obs, some primitive functions, and other functions on obs
+    including application operations obap.ap and obap.eval.  
+    
+    Within those respective theoretical structures, as given for oMiser, 
+    the notion of different functional types and different individual types 
+    is all somehow based on interpretations, interpretations that are usually 
+    not satisfied by all of the entities with respect to application.  E.g, 
+    not every ob has interpretation as a combinator.  Similarly, certain 
+    interpretations of combinators (e.g., as predicates) do not extend to all 
+    ‹ca› combinators.
 
 
 
  3. oMISER COMBINATOR IDIOMS
 
-
+    In the case of ‹ob›, there are only obs, with whatever the preservation 
+    of intended interpretations as (concretized) entities is achieved along
+    with handy interpretation-preserving combinators representations.  
 
  4. RECURSION AND EXOTIC COMBINATORS
 
 
 
 
-x. REFERENCES AND RESOURCES
+ 5. REFERENCES AND RESOURCES
 
    [Burge1975]
       Burge, William H.  Recursive Programming Techniques.  Addison-Wesley
@@ -332,10 +396,10 @@ x. REFERENCES AND RESOURCES
       Révész, György E.  Lambda-Calculus, Combinators and Functional 
       Programming.  Cambridge University Press (Cambridge: 1988), ISBN
       0-521-345589-8.  The notational use of (f)(x)y for conventional f(x(y)),
-      applicative f(x y) and combinator f | x y requires careful reading.  
+      applicative f(x y), and combinatory | f | x y requires careful reading.  
       Chapter 3, Combinators and Constant Symbols, provides extensive examples
        also relevant to computational representations.  Section 2.4 provides
-      a treatment of λ-expressions that can be adapted to the strict use
+      a treatment of λ-expressions that can be adapted to the closed use
       in (1.2) here.
 
    [Rosenbloom1950]
@@ -358,8 +422,14 @@ x. REFERENCES AND RESOURCES
       <https://www.sciencedirect.com/science/article/pii/030439759390095B>.
       The type-theoretic approach treats type as definite and distinguished
       even though the combinators are interpretable as polymorphic in the 
-      manner proposed here for the combinators represented in oMiser.  The
-      matter of distinguishing type is not escaped with oMiser, however.    
+      manner proposed here for the combinators represented in oMiser.  
+
+   [Scott2012]
+      Scott, Dana S. λ-Calculus Then & Now.  Annotated slides presented at
+      conferences, PDF version of 2012-08-25 available on the Internet at
+      <http://logic.berkeley.edu/colloquium/ScottACMTuring.pdf>.  Presented
+      at the ACM Turing Centenary Celebration, San Francisco, June 15-16, 
+      2012.  Video presentation at <https://doi.org/10.1145/2322176.2322185>.   
          
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -397,9 +467,14 @@ x. REFERENCES AND RESOURCES
   * Link in Scott's Turing Centenary presentation and the available slides and
     bibliography.
 
+  * Salvage this statement somewhere here? "Combinator representations applied
+    to representations of other types of functions will lead to some valuable 
+    idioms in the composition of oMiser applicative scripts from other, 
+    simpler ones."
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  
+ 0.0.6 2018-03-02-19:14 Continue refinement and working through to section 2.4
  0.0.5 2018-02-26-10:39 Continue polishing and lead up to 2.4 on restricted
        interpretation.
  0.0.4 2018-02-21-14:48 Introduce 2.1 on Functional Type; manage TODOs 
