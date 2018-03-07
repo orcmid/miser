@@ -1,4 +1,4 @@
-combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
+combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -39,7 +39,7 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
 
               1. MATHEMATICAL STRUCTURE
                  An abstract theory in the manner of obtheory that
-                 is at a powerful though not so grounded level of
+                 is at a powerful though not-so-grounded level of
                  abstraction
 
                  1.1 Theory of Combinator Arithmetic, ‹ca›
@@ -200,8 +200,8 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
          
              S K a b = K b | a b ≈ b.  
 
-    In the case of S K a b, we see that S K a b ≈ b ≈ I b, and so by (CE)
-    S K a ≈ I for any combinator, a, including K.
+    In the case of | S K a b, we see that | S K a b ≈ b ≈ I b, and so by (CE)
+    | S K a ≈ I for any combinator, a, including K.
 
     Consider
                    B I a b  ≈  I | a b  ≈  a b.
@@ -219,10 +219,11 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
     Even in ‹ca›, where the only mathematical entities are the combinators, 
     whether expressed in a pure combinatory manner or with closed 
     λ-expressions, it is possible to represent all manner of data and
-    operations on such data.  Such representations are found in  [Burge1975],
-    [Révész1988: Chapters 3-4], and [Paulson1996].  [Scott2012], focusing on
-    the λ-calculus view, sketches the variety of constructions and connections
-    in mathematical logic and other theoretical mathematical approaches.
+    operations on such entities.  Such representations are found in 
+    [Burge1975], [Révész1988: Chapters 3-4], and [Paulson1996].  [Scott2012], 
+    focusing on the λ-calculus view, sketches the variety of constructions and
+    connections in mathematical logic and other theoretical mathematical 
+    approaches.
       
     Fundamentally, the combinators and equivalent closed λ-expressions are
     all about ways of composing functions from other ones.  Although this
@@ -232,9 +233,16 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
     combinators applied to them.  
     
     This power is exploited in the concrete representation of combinators via
-    oMiser script obs in Section 3.  
+    oMiser script obs in Section 3.  The bridge is via functional type and
+    interpretation-preserving use of combinators and combinator-like entities.
 
  2. FUNCTIONAL TYPE AND INTERPRETATION PRESERVATION
+
+    Despite ‹ca› having only combinators and application as the only function
+    yielding a combinator on application of one combinator (the operator) to
+    another combinator (the operand), there is another level of abstractions
+    immediately available as a potential interpretation: that of functional 
+    types. 
 
     2.1 Functional Type
 
@@ -297,26 +305,29 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
       W: (α → (α → β)) -> (α → β)  
 
     2.2 Interpretation Preservation via Functional Type      
-    
-    For pure ‹ca›, one can take all of the types as simply tCA (a common 
-    shorthand), since combination of combinators has no limitations.  Even so,
-    combinators have this apparent intrinsic degree of interpretation
-    preservation with respect to functional type.  
-    
+       
     Functional types in ‹ca› reveal the extent to which a combinator can be 
-    indifferent to the functional interpretation of entities involving other 
-    types under the same system of functional application.
+    indifferent to the functional interpretation of entities involving various 
+    types under the same system of application.  
+
+    The trivial case is when all of the type variables are replaced by the 
+    same specific type, whether CA or Ob.
+
+    Combinators taken as interpretation-preserving of functional types, as 
+    here, are said to be polymorphic with regard to interpretation of fixed
+    types of operands and operators that conform to the variable functional-
+    type patterns. 
 
     2.3 The Avenue to Concrete Interpretations
 
     For a concrete computational mechanism, such as that for oMiser, one can
     simply substitute Ob for all of the type variables, α, β, γ, δ.  There is
-    similarity with combinators in every ob having interpretation as an 
+    similarity with ‹ca› in the sense that every ob has interpretation as an 
     (Ob → Ob) type. That does not assure interpretation as a combinator
     under obap.ap, however.
 
     Having a script, cK interpretable as combinator K, it must be the case
-    that, in oFrugal notation,
+    that, in oFrugalese notation,
 
       (^cK x) y = x
 
@@ -326,28 +337,23 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
     be intended for it.  In this manner, functional type is honored and cK
     interpretation as combinator K is satisfied.
 
-    Likewise, for 
+    Likewise, supposing there is a script, cS, such that, in oFrugalese, 
 
       ((^cS x) y) z = (x z) (y z),  
 
         ^cS: (α → (β → γ)) → (α → β) → (α → γ)
 
-    works if α, β, and γ have interpretation as combinators or as other
-    types of entities consistent with the functional types of the supplied
-    x, y, and z.  It is only necessary for ^cS operation to preserve the
-    interpretations of x, y, and z provided that those interpretations fit 
+    works when x, y, and z have interpretation as combinators or as other
+    types of entities consistent with the functional type of cS.  It is
+    sufficient for cS operation to preserve the interpretations of x, y, and
+    z and that those operand interpretations satisfy their role in the
     functional-type pattern (α → (β → γ)) → (α → β) → (α → γ).
 
     Here there are Ot "=" and definite computational results, yet preserving 
-    interpretation with regard to functional type. Representing combinators in 
-    this manner is sufficient for reliably composing interpretation-preserving
-    operations with combinator representations and non-‹ca› functional-type 
-    interpretations.
-
-    Combinators taken as interpretation-preserving of functional types, as 
-    here, are said to be polymorphic with regard to interpretation of fixed
-    types of operands and operators that conform to the variable functional-
-    type patterns.  
+    interpretation with regard to functional type. Representing combinators 
+    via scripts that provide interpretation-preserving concrete ob results is 
+    sufficient for modeling computational structures.  We can describe this
+    condition as quasi-combinatory.
 
     2.4 Restricted Interpretation as Types
 
@@ -357,19 +363,157 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
     
     Within those respective theoretical structures, as given for oMiser, 
     the notion of different functional types and different individual types 
-    is all somehow based on interpretations, interpretations that are usually 
-    not satisfied by all of the entities with respect to application.  E.g, 
-    not every ob has interpretation as a combinator.  Similarly, certain 
-    interpretations of combinators (e.g., as predicates) do not extend to all 
-    ‹ca› combinators.
+    is a higher level of abstraction based on achievement of intended 
+    interpretations, interpretations that are usually not satisfied by all 
+    operators and operands with respect to application. E.g, not every ob has 
+    interpretation as a combinator.  Similarly, certain interpretations of 
+    combinators (e.g., as predicates) do not extend to all ‹ca› combinators.
 
+    For the oMiser representation of ‹ob›, the interpretation of an ob apart
+    from being just an ob depends on some characterization that some obs
+    satisfy and, presumably, others do not.  
 
+    To manifest a level of abstraction in which the specific functional types
+    are satisfied, there must be some restraint to using obs that are computa-
+    tional representations of and interpretable as individuals of specific 
+    functional types.  Maintaining the semblance involves restraints on the 
+    use of the computational entities (e.g., representations via obs) in a 
+    manner that orchestrate computational procedures in satisfaction of the 
+    restricted interpretation(s).
+
+    In the context of digital computation, the orchestration of available
+    types in manifestation of other (higher-order) types is characteristic
+    of computer software programming.  There are practices which are employed
+    to engineer the layering of abstractions in dependable ways.
+
+      * Preserved interpretations.  Restraints are applied in the design,
+        combination, and operation of scripts such that particular representa-
+        tions are confirmed to be interpretable as particular types.  For 
+        example, the representation of combinators by obs that are used in
+        accordance with the related functional types.  The demonstration that
+        the abstraction is preserved is usually established externally and 
+        with computational tests that confirm satisfaction and preservation
+        of particular types.
+
+      * Distinguished interpretations.  Having a computational means to 
+        discriminate entities that definitely satisfy a particular interpreta-
+        tion from those that are not so distinguished.  This can be used by
+        procedures to verify that their operands satisfy the interpretation.
+
+      * Designated interpretations.  Providing some sort of decoration on
+        entities that names or annotates the representations themselves.  This
+        provides a strict labelling of a type interpretation for an entity.
+
+    Typically, there are many ways to represent entities of some type, and
+    it then becomes interesting to deal with (1) the different interpretations
+    that a single computational entity might satisfy and (2) inter-operation
+    with different representations of the same type.
+
+    We use the oMiser idioms for combinators to launch Miser Project investi-
+    gation of levels of computational abstraction and how computational means
+    are applicable to manage and confirm representations and satisfaction of
+    theoretical interpretations.
 
  3. oMISER COMBINATOR IDIOMS
 
-    In the case of ‹ob›, there are only obs, with whatever the preservation 
-    of intended interpretations as (concretized) entities is achieved along
-    with handy interpretation-preserving combinators representations.  
+    3.1 Combinator Representation Constraints
+
+    The conditions on the concrete representation of combinators via obs are
+
+      * The application obap.ap(f,x) of ‹ob› is interpreted as the application
+        | f x of ‹ca›, where f and x are interpreted as combinators.
+
+      * The application of an ob interpretable as a combinator is 
+        interpretation-preserving and exhibits the same polymorphic functional
+        type as the represented combinator.
+
+      * The application of an ob interpretable as a combinator determines a
+        definite result in accordance with the combinator's definition.
+
+          o Here, the determination is of ‹ob› equality, "=" with regard to 
+            the derivation and its result.
+
+          o There is no counterpart of ‹ca› equivalence, "≈" in ‹ob›.  When
+            "≈" is asserted with respect to obs, it is relative to the 
+            interpretations.           
+
+          o The relational "f ≅ g" is used to signify that obs f and g, 
+            interpreted as operator scripts, are either identical or have the
+            same effect when interpreted as functions in ‹ob› having the same
+            functional type. 
+
+    3.2 Representing K, I, and S
+
+    Three simple combinators are derived completely to illustrate the
+    methodology of combinator definition satisfaction.
+
+    3.2.1 Representing K
+
+    obap.E ≈ K
+
+    For | K x y ≈ x, obap.ap(obap.ap(obap.E, a), b) = a.  
+    Also,            obap.eval((obap.E :: ` a) :: ` b) = a
+    for any obs a, b, including representations of combinators.
+    In oFrugalese,   (.E x) y = x 
+
+    This is very direct because 
+    
+         obap.ap(obap.E,x) = ob.e(x), 
+         obap.ap(ob.e(x),y) = x, 
+    and  obap.eval(obap.E) = obap.E,
+    all by definition.
+
+    Although it seems rather wasteful and difficult to interpret that y
+    must be evaluated for no apparent purpose, it happens that there are 
+    valuable idioms where y is fixed (e.g., `z) and is so encapsulated
+    within a script as a payload for some idiomatic purpose.
+
+    3.2.2 Representing | I x ≈ x
+
+    ob.NIL ≈ I
+
+    For | I x ≈ x,  obap.ap(ob.NIL, a) = a.
+    Also,           obap.eval(ob.NIL :: ` a) = a
+    In oFrugalese,  .NIL x = x
+
+    This is also very direct because
+         obap.ap(ob.NIL,x) = x, 
+    and  obap.eval(ob.NIL) = ob.NIL,
+    also all by definition.    
+    
+    3.2.3 Representing | S x y z ≈ x z | y z
+
+    ^cS ≈ S
+
+    where  ^cS = .C :: `.C
+                    :: .C :: (.E :: .C :: (.E :: .ARG)
+                                       :: `.ARG)
+                          :: `(.C :: (.E :: .ARG)
+                                  :: `ARG), 
+           obap.ap(^cS, x) 
+               = .C :: `( `x :: .ARG)
+                    :: .C :: (.E :: .ARG) :: `.ARG),
+           obap.ap(obap.ap(^cS, x), y) 
+               = (`x :: .ARG) :: `y :: .ARG),
+           obap.ap(obap.ap(obap.ap(^cS, x), y), z)
+               = obap.ap( obap.ap(x, z), obap.ap(y, z) ),
+    and in oFrugalese, ^cS(x, y) z = x(z) y z. 
+
+    3.3 Derived Combinators
+
+    For the additional useful combinators (1.2), we provide the chosen
+    representation as operator script obs.  The derivations have been 
+    obtained and confirmed using the SML/NJ mockup at
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/combdemo.sml>.
+    These tend to be more compact than equivalent combinator representations 
+    obtained by application of cS, cK, and other combinator representations.
+
+    3.3.1 Representing | B f g x ≈ f | g x
+
+    ^cB ≈ B
+
+    where  ^cB =  
+               
 
  4. RECURSION AND EXOTIC COMBINATORS
 
@@ -454,18 +598,12 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
   * Address the recognition of multiple expressions for the same combinator 
     and especially at the level of oMiser representation.
 
-  * Find a combinator form for Y ≈ λy.(λx.y(x x) λx.y(x x) ) and verify in
-    accordance with [Revesz1988: p.44].
-
   * Link to other materials of the Miser Project that explore some of these
     matters in greater detail.  Connect to combdemo.sml, and also work in
     Ycombinator (.txt or .sml?), and comblib.sml.
 
   * Introduce the notion of concrete entities with respect to representation
     via obs.
-
-  * Link in Scott's Turing Centenary presentation and the available slides and
-    bibliography.
 
   * Salvage this statement somewhere here? "Combinator representations applied
     to representations of other types of functions will lead to some valuable 
@@ -474,6 +612,8 @@ combinators.txt 0.0.6                UTF-8                       dh:2018-03-02
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  
+ 0.0.7 2018-03-07-14:16 Complete full draft of section 2 on Functional Type
+       and Interpretation Preservation
  0.0.6 2018-03-02-19:14 Continue refinement and working through to section 2.4
  0.0.5 2018-02-26-10:39 Continue polishing and lead up to 2.4 on restricted
        interpretation.
