@@ -1,4 +1,4 @@
-combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
+combinators.txt 0.0.8                UTF-8                       dh:2018-03-08
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -58,7 +58,7 @@ combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
                  2.3 The Avenue to Concrete Interpretations
                  2.4 Restricted Interpretation as Types
 
-              3. The oMISER COMBINATOR IDIOMS, cCA
+              3. The oMISER UTILITY COMBINATOR IDIOMS
                  Demonstration of scripts that are equivalent to 
                  combinators under a straightforward interpretation
 
@@ -414,7 +414,7 @@ combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
     are applicable to manage and confirm representations and satisfaction of
     theoretical interpretations.
 
- 3. oMISER COMBINATOR IDIOMS
+ 3. oMISER UTILITY COMBINATOR IDIOMS
 
     3.1 Combinator Representation Constraints
 
@@ -512,7 +512,43 @@ combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
 
     ^cB ≈ B
 
-    where  ^cB =  
+    where  ^cB = .C :: `.C 
+                    :: .C ::  ( .E :: .E :: .ARG ) 
+                          :: `( .C :: ( .E :: .ARG ) :: `.ARG ) 
+
+    3.3.2 Representing | C f x y = f | y x
+
+    ^cC ≈ C
+
+    where ^cC = .C :: `.C 
+                   :: .C :: ( .E :: .E :: .ARG ) 
+                         :: `( .C :: `.ARG :: .E :: .ARG )   
+
+    3.3.3 Representing | D f x g y = f x | g y
+
+    ^cD ≈ D
+
+    where ^cD = obap.ap(^cB, ^cB)
+              = .C :: ``^cB 
+                   :: .C :: (.E :: .ARG) :: `.ARG                 
+              = .C :: ``( .C :: `.C 
+                             :: .C :: ( .E :: .E :: .ARG ) 
+                                   :: `( .C :: ( .E :: .ARG ) :: `.ARG ) ) 
+                   :: .C :: ( .E :: .ARG ) :: `.ARG
+
+    3.3.4 Representing | T x f ≈ f x
+
+    ^cT ≈ T
+
+    where ^cT = .C :: `.ARG :: .E :: .ARG
+
+    3.3.5 Representing | W f x ≈ f x x   
+
+    ^cW ≈ W
+
+    where ^cW = .C :: ( .C :: ( .E :: .ARG ) :: `.ARG ) 
+                   :: `.ARG
+   
                
 
  4. RECURSION AND EXOTIC COMBINATORS
@@ -595,15 +631,9 @@ combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
 
  TODO:
 
-  * Address the recognition of multiple expressions for the same combinator 
-    and especially at the level of oMiser representation.
-
   * Link to other materials of the Miser Project that explore some of these
     matters in greater detail.  Connect to combdemo.sml, and also work in
     Ycombinator (.txt or .sml?), and comblib.sml.
-
-  * Introduce the notion of concrete entities with respect to representation
-    via obs.
 
   * Salvage this statement somewhere here? "Combinator representations applied
     to representations of other types of functions will lead to some valuable 
@@ -612,6 +642,8 @@ combinators.txt 0.0.7                UTF-8                       dh:2018-03-07
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  
+ 0.0.8 2018-03-08-15:37 Complete the first full draft of section 3 on the
+       representation of the basic utility combinators.
  0.0.7 2018-03-07-14:16 Complete full draft of section 2 on Functional Type
        and Interpretation Preservation
  0.0.6 2018-03-02-19:14 Continue refinement and working through to section 2.4
