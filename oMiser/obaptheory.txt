@@ -1,4 +1,5 @@
-obaptheory.txt 0.0.25                 UTF-8                       dh:2018-01-10
+obaptheory.txt 0.0.26                UTF-8                       dh:2018-03-12
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -26,7 +27,7 @@ obaptheory.txt 0.0.25                 UTF-8                       dh:2018-01-10
    Confirmation of these claims is developed separately.  Here we formalize
    obap.ap(p,x) and obap.eval(exp), in mathematical terms, in the theory Ot.
    
-PRELIMINARIES
+1. PRELIMINARIES
 
    The notation, mathematical theory, and primitive notions at obtheory.txt
    are incorporated directly.  See
@@ -71,16 +72,17 @@ PRELIMINARIES
           special forms in the evaluation of obs as expressions.
 
           
-ADDITIONAL NOTIONS
+2. ADDITIONAL NOTIONS
 
    Obap2. Literal Individuals
           
           obap.is-lindy(x) ⇔ x = Ʃs
-             where s is a finite-length character string consisting of a letter
-                     optionally followed by one or more alphanumeric characters
+             where s is a finite-length character string consisting of a 
+                     letter optionally followed by one or more alphanumeric 
+                     characters
                      
-          Ʃs = Ʃt ⇔ s =Ʃ t
-             where s =Ʃ t signifies identity of the string texts
+          Ʃs = Ʃt ⇔ s =Ʃt
+             where s =Ʃt signifies identity of the string texts
                         
           obap.is-lindy(x) ⇒ ob.is-individual(x)          
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
@@ -90,10 +92,10 @@ ADDITIONAL NOTIONS
           obs for any purpose as distinct literals, written here in forms
           Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc.  For more notation applications, 
           see <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
-                Applications of lindies to operands cannot proceed further;
-          the defined applicative interpretation is a trace ob signifying 
+             Applications of lindies to operands cannot proceed further; the
+          defined applicative interpretation is a trace ob signifying
           cessation of the computation.  
-          IMPLEMENTATION NOTE: In computer representations, the alphabetic
+             IMPLEMENTATION NOTE: In computer representations, the alphabetic
           characters permitted in lindies are the Unicode glyphs, encoded
           in UTF-8, as defined for XML NCNames without any ".".
           
@@ -110,7 +112,7 @@ ADDITIONAL NOTIONS
           support the representation of obap.ap and obap.eval.  Explicit
           computational availability is not required.
           
-THE APPLY FUNCTIONS
+3. THE APPLY FUNCTIONS
 
    Obap4. obap.ap(p,x)
    
@@ -147,14 +149,14 @@ THE APPLY FUNCTIONS
                          => obap.apint(p,x) = p :: ob.e(x)
                               
         A trace is a form, t, such that obap.ap(t,any) = obap.eval(t) = t.
-        This supports a form of symbolic evaluation using the fact that lindies
-        lack distinct applicative interpretations. 
+        This supports a form of symbolic evaluation using the fact that 
+        lindies lack distinct applicative interpretations. 
         
         The obap.apint evaluations for obap.C and obap.D determine partial
         applications, effectively currying use of functions ob.c and obap.d.
              
        
- THE EVALUATION FUNCTIONS
+4. THE EVALUATION FUNCTIONS
  
    Obap6. obap.ev(p,x,e) evaluation of script e as part of determining the
           application of procedure p to argument x
@@ -199,7 +201,7 @@ THE APPLY FUNCTIONS
    
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                  Copyright 2017, 2018 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -232,17 +234,17 @@ TODO
    takes much more pondering.
    
  * Save introduction of obap.PROC to extension treatment, their demonstrating
-   some of the power of immutability and the ability for processors to optimize
-   operation.  It also affirms the idea of preserving extensional identity,
-   something to be developed further. The use of obap.PROC can also cue the form
-   in which the operand should be presented as applicative expression rather 
-   than an uninterpreted ob data structure.  Disassembly of obs is tricky 
-   here, just as with machine-language dumps.
+   some of the power of immutability and the ability for processors to 
+   optimize operation.  It also affirms the idea of preserving extensional 
+   identity, something to be developed further. The use of obap.PROC can also 
+   cue the form in which the operand should be presented as applicative 
+   expression rather than an uninterpreted ob data structure.  Disassembly of 
+   obs is tricky here, just as with machine-language dumps.
    
  * Introducing obap.DEF is required in order for the universal function to
-   be simulated by some script, p when Proc is introduced.  This reflection-like
-   feature has me be nervous.  The system must be able to look within.  I am 
-   resisting having scripts and users able to accomplish that externally.  
+   be simulated by some script, p when Proc is introduced.  This reflection-
+   like feature has me be nervous.  The system must be able to look within.  
+   I am resisting having scripts and users able to accomplish that externally.  
    
  * There is a similar capability required for reflection of lindies.
    
@@ -254,9 +256,9 @@ TODO
  * How we establish what a computational manifestation accomplishes 
    and how one can assert the soundness of various optimizations is not
    found here.  This provides a possibly-interesting further contrast 
-   between the representation of obap.ap and obap.eval in a mathematical theory
-   in contrast with the reasoning that may be required to affirm the soundness
-   of a computational manifestation.  
+   between the representation of obap.ap and obap.eval in a mathematical 
+   theory in contrast with the reasoning that may be required to affirm the 
+   soundness of a computational manifestation.  
    
  * A trace is a kind of self-recreating K-combinator application, so its
    applications will always terminate.  As a result, it can derail an ob.d
@@ -277,7 +279,8 @@ TODO
    context-free grammars comes under scrutiny.
    
  * The "::" use is from SML.  It is difficult not to use it once it has been
-   seen and applied in practice.  There is no list type at this point, however.
+   seen and applied in practice.  There is no list type at this point, 
+   however.
    
  * The use of obap.SELF in obap.ev has the effect that every procedure has a
    kind of Y-combinator application built-in.  It depends entirely on the
@@ -285,7 +288,7 @@ TODO
    whether and how the procedure terminates in a deterministic manner, often
    by a conditional use of ob.EV.  A key point is that there is no magic in
    how the least fixed-point is determined.  It is intrinsic to the expression
-   of every script, whether there is recursion or not.  This is a computational
+   of every script, whether there is recursion or not.  This is computational
    resolution of a question raised by Dana Scott in his 1969/1993 LCF paper
    concerning combinator Y as a fixed-point operator.
    
@@ -294,51 +297,52 @@ TODO
    when the universal function is simulated with a script.  Systematic treat-
    ment remains to be worked out.
       
- * The inspiration behind obap.SELF and obap.ARG extends back to my reading the
-   1965 publication of Strachey's macrogenerator (GPM or McG) paper in The
+ * The inspiration behind obap.SELF and obap.ARG extends back to my reading 
+   the 1965 publication of Strachey's macrogenerator (GPM or McG) paper in The
    Computer Journal, <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e 
    function is inspired by a defect/limitation/incompleteness in McG, although
    here applied to "list" structures instead of strings having nested strings
    as beads.     
 
- * Switching to the more flexible pair structures was inspired
-   by the XLISP (1.0?) paper in Dr. Dobb's Journal in the early 80s.  The coin
-   hadn't dropped until then, although I had already had seen McCarthy's 
-   "Part 1" in 1961, thanks to joining the ACM and also finding Comm.ACM back
-   issues in the stacks of the Seattle Public Library (not an ordinary public
-   library of the time before emergence of computer science as a discipline).
+ * Switching to the more flexible pair structures was inspired by the XLISP 
+   (1.0?) paper in Dr. Dobb's Journal in the early 80s.  The coin hadn't 
+   dropped until then, although I had already had seen McCarthy's "Part 1" in
+   1961, thanks to joining the ACM and also finding Comm.ACM back issues in 
+   the stacks of the Seattle Public Library (not an ordinary public library
+   of the time before emergence of computer science as a discipline).
    
  * The terminology around individuals and singletons is borrowed from work of
    Trenchard More on Array Theory.
    
  * Historical Note: McG was used by the ISWIM team at Univac (using a Univac
-   1107, and didn't we call it YSWIM?) and, I'm told, the Backus FP team in San
-   Jose as a means of boot-strapping their respective machine-language 
-   implementations.  There was no C Language yet and work on creating the then-
-   called system-programming language PLUS/0 was post-YSWIM.  I don't know if
-   IBM's BSL (PL/S) was a candidate for the Backus FP team.
+   1107, and didn't we call it YSWIM?) and, I'm told, the Backus FP team in 
+   San Jose as a means of boot-strapping their respective machine-language 
+   implementations.  There was no C Language yet and work on creating the 
+   then-called system-programming language PLUS/0 was post-YSWIM.  I don't 
+   know if IBM's BSL (PL/S) was a candidate for the Backus FP team.
    
  * Historical Note: The intimate connection of ap and ev is characteristic 
    of the formal computation machinery of John McCarthy's LISP.  It's too 
    powerful to avoid.  In other respects, there are an accumulation of 
    differences here.  There is no dynamic binding/scoping, there are no
-   symbolic references, obs are immutable, the primitives are total, predicates
-   on the primitive notions are definable on characteristics of the structure
-   alone, and there are no variables (and no FunArg problem): obap.ap and
-   obap.eval all determine results by rewriting and application alone.  There's 
-   also a serious absence of useful data types, and that remains to be
-   addressed.
+   symbolic references, obs are immutable, the primitives are total, 
+   predicates on the primitive notions are definable on characteristics of 
+   the structure alone, and there are no variables (and no FunArg problem): 
+   obap.ap and obap.eval all determine results by rewriting and application 
+   alone.  There's also a serious absence of useful data types, and that 
+   remains to be addressed.
    
  * Find my correspondence with John McCarthy about my early ideas on Miser and
    his recommendation.
    
- * Reconcile the inclusion, by some, of partial functions under the effectively-
-   computable ones.  This seems to collide with the halting problem.  Check
-   the treatment of the Church-Turing Thesis in SEP and also, possibly in Davis
-   and maybe Rogers.
+ * Reconcile the inclusion, by some, of partial functions under the 
+   effectively-computable ones.  This seems to collide with the halting 
+   problem.  Check the treatment of the Church-Turing Thesis in SEP and also, 
+   possibly in Davis and maybe Rogers.
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.26 2018-03-12-14:46 Clean up some typography and review TODOs
  0.0.25 2018-01-10-11:58 Correct obap.ap conditions on pure-lindy-trace case
         for obap.ap(p1::p2, x), with hat-tip to Roman Susi.
  0.0.24 2018-01-09-21:30 Simplify the trace use of lindies to fixed-point on
