@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.26                UTF-8                       dh:2018-03-12
+obaptheory.txt 0.0.27                UTF-8                       dh:2018-03-14
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -81,8 +81,8 @@ obaptheory.txt 0.0.26                UTF-8                       dh:2018-03-12
                      letter optionally followed by one or more alphanumeric 
                      characters
                      
-          Ʃs = Ʃt ⇔ s =Ʃt
-             where s =Ʃt signifies identity of the string texts
+          Ʃs = Ʃt ⇔ s Ʃ= t
+             where s Ʃ= t signifies identity of the string texts
                         
           obap.is-lindy(x) ⇒ ob.is-individual(x)          
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
@@ -90,7 +90,7 @@ obaptheory.txt 0.0.26                UTF-8                       dh:2018-03-12
           NOTE: Lindies are distinct conveniently-named individuals that have
           no intrinsic significance.  They are available to applications of
           obs for any purpose as distinct literals, written here in forms
-          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc.  For more notation applications, 
+          Ʃalpha, ƩABCs, ƩletterQ, Ʃfoo, etc.  For more notational conventions 
           see <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
              Applications of lindies to operands cannot proceed further; the
           defined applicative interpretation is a trace ob signifying
@@ -102,8 +102,8 @@ obaptheory.txt 0.0.26                UTF-8                       dh:2018-03-12
   Obap3.  Universal Apply Function
   
              obap.ap(p,x) determines the application of ob p, taken as
-                          expression of a procedure, to ob x, taken as
-                          the operand
+                          expression of an operator procedure, to ob x, 
+                          taken as the operand
                       
            obap.eval(exp) determines the evaluation of ob exp taken as an
                           applicative expression          
@@ -188,7 +188,7 @@ obaptheory.txt 0.0.26                UTF-8                       dh:2018-03-12
         obap.is-evunop(obap.EV)
         obap.ev(p,x,obap.EV :: e2) = obap.ev(p,x,obap.ev(p,x,e2))
         
-        obap.is-specialop(p) ⇔ obap.is-evunop(p) ∨ obap.is-evunop(p)
+        obap.is-specialop(p) ⇔ obap.is-evunop(p) ∨ obap.is-evbinop(p)
            
         ¬ obap.is-specialop(e1)
            ⇒ obap.ev(p,x,e1::e2) = obap.ap(obap.ev(p,x,e1), obap.ev(p,x,e2))
@@ -224,10 +224,7 @@ TODO
    
  * Double-check the XML NCNames rules and determine whether there are other
    restrictions for oMiser.
-     
- * Determining how types are handled and generally individuals representing
-   extended functions remains open.
-   
+       
  * An odd characteristic of the sugarings described in ob.txt is the way
    the REPL might infer the proper sweetener.  In particular, the use of .PROC
    will be a major clue, as will interpretation-preserving applicatins.  This
@@ -264,11 +261,7 @@ TODO
    applications will always terminate.  As a result, it can derail an ob.d
    in a manner that has a procedure fail to terminate.  Need to document 
    that when it comes to testing at the oMiser level.
-   
- * I could have called trace "trap" instead, since it traps the computation.
-   In that case, it is different than "trap" as originally introduced for
-   hardware interrupts and throwing of (catch-able) exceptions.
-   
+     
  * There is too much in here about intended computational manifestations,
    and need to focus more on the theory, even though something about
    intentions is useful.
@@ -342,6 +335,8 @@ TODO
   
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.27 2018-03-14-09:43 Correct obap.is-specialop(p) predicate, use Ʃ= as
+        less ambiguous for string identity, and some touch-ups.
  0.0.26 2018-03-12-14:46 Clean up some typography and review TODOs
  0.0.25 2018-01-10-11:58 Correct obap.ap conditions on pure-lindy-trace case
         for obap.ap(p1::p2, x), with hat-tip to Roman Susi.
