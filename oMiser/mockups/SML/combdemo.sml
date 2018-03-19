@@ -1,4 +1,4 @@
-(* combdemo.sml 0.0.6                UTF-8                       dh:2018-03-19
+(* combdemo.sml 0.0.7                UTF-8                       dh:2018-03-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
@@ -248,7 +248,8 @@ print(  "\n    cSS|SK = " ^ obstring(cSSaSK)
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
-   0.0.7 2018-03-19-11:24 Adjusted to align with combinators.txt, touch-ups,
+   0.0.7 2018-03-19-11:44 Correct glitch in version-number sequencing
+   0.0.6 2018-03-19-11:24 Adjusted to align with combinators.txt, touch-ups,
          and completion of synopsis.
    0.0.5 2018-03-08-15:24 Complete with demonstration of all simple utility
          combinators.
