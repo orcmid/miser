@@ -1,4 +1,4 @@
-(* combdemo.sml 0.0.5                UTF-8                       dh:2018-03-08
+(* combdemo.sml 0.0.6                UTF-8                       dh:2018-03-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
@@ -9,8 +9,37 @@
               DEMONSTRATING COMBINATOR REPRESENTATIONS IN oMISER
               --------------------------------------------------
        
-   [Author Note: Tie to obcheck.sml, obtheory.txt, ob.sml, obaptheory, and
-    the obap.sml structure or similar ones.]
+   This file demonstrates successful oMiser representation of the basic
+   utility combinators of the Combinatory Algebra structure, ‹ca›.  The
+   representations preserve functional type interpretations of operands.  See
+   <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>.  The
+   
+
+   Demonstration uses the SML/NJ mock-up of the oMiser universal function,
+   obap.ap(p,x).  Alternative mock-ups and production deliverables have 
+   equivalent demonstrations as part of evolving confirmation suites.
+
+   Related Information:
+   
+    * obtheory.txt Specifies the abstract mathematical structure of the 
+      underlying data format on which oMiser is founded,
+      <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.  The
+      <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/OB.sig.sml>
+      signature asserts sound interpretation as an SML/NJ datatype.
+
+    * obaptheory.txt Specifies the abstract mathematical representation
+      of the universal function, obap.ap(p,x) and companion obap.eval(exp),
+      <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
+      <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/OBAP.sig.sml>
+      asserts the sound interpretation as an extended SML/NJ datatype.
+
+    * ob.txt reviews the connections from theory to notations used to express
+      obs and applicative expressions that operate on obs.
+      <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
+
+    * ob-exp.txt provides the formal grammar for expressions read and produced
+      by oFrugal.  The output obstring function produces that format.
+      <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
     *)
     
 use "obap.sml";
@@ -20,6 +49,8 @@ open obap;
    *)
    
 infixr 5 ## ;
+(*       The ob-exp "::" for pairing is represented by "##" in SML 
+         *)
 
 (* THE BASIC COMBINATORS S, K, AND I *)
 
@@ -33,17 +64,46 @@ val cI = NIL;
     sections 1.1, 1.2, 2.1, 2.3, and 3.2.  
     *)
 
+(* Representing | S f g x = | f x | g x *)
+(*    This and the further utility combinators are derived using a form of
+      lindy-abstraction, a hand-abstracted approach that uses lindy-tracing
+      in a careful manner to confirm successful abstraction.
+      *)
+
+val cSFGX = (L"F" ## L"X") ## L"G" ## L"Y"
+val cSFG = (e(L"F") ## ARG) ## e(L"G") ## ARG
+val cSF = C##e(e(L"F")##ARG)##C##(E##ARG)##e(ARG)       
 val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG))); 
-         (* effectively lambda.X lambda.Y lambda.Z ‵((X :: Z) :: Y :: Z) 
+         (* effectively ^lambda.F ^lambda.G ^lambda.X ‵((F :: X) :: G :: X) 
             in oFrugalese, although lindy tracing allows it to also be 
-            written     lambda.X lambda.Y lambda.Z X(Z) Y Z 
+            written ^lambda.F ^lambda.G ^lambda.X F(X) G X.  
+                The key rule in lindy abstraction and confirmation via 
+            application to lindies is that interpretation preservation is 
+            demonstrated with no lindy application happening before any 
+            other supplied operator script would be applied in its exact form 
+            at the same point.
+                Similarly, use of unabstracted-lindy operands that require 
+            them to be interpreted as structured obs by the applied procedure
+            will likely fail to achieve the intended purpose of the procedure.
+            In such cases, confirmation of sound interpretation is more 
+            involved.
             *)
+print(  "\n       cSFGX = " ^ obstring(cSFGX) 
+      ^ "\n        cSFG = " ^ obstring(cSFG)
+      ^ "\n     cSFG(x) = " ^ obstring( ap(cSFG, L"x") )
+      ^ "\n         cSF = " ^ obstring(cSF)
+      ^ "\n      cSF(g) = " ^ obstring( ap(cSF, L"g") )
+      ^ "\n    cSF(g,x) = " ^ obstring( ap(ap(cSF, L"g"), L"x") )
+      ^ "\n          cS = " ^ obstring(cS)
+      ^ "\n       cS(f) = " ^ obstring( ap(cS, L"f") )
+      ^ "\n     cs(f,g) = " ^ obstring( ap(ap(cS,L"f"),L"g") )
+      ^ "\n   cS(f,g) x = " ^ obstring( ap(ap(ap(cS,L"f"),L"g"),L"x") )
+      ^ "\n   Demonstrating that ^cS(f,g) x yields f(x) g x.\n" );
 
 val cSKK = ap(ap(cS,cK),cK);
 print(  "\n       cSKK = " ^ obstring(cSKK) 
       ^ "\n    cSKK(X) = " ^ obstring( ap(cSKK, L"X") )
       ^ "\n      cI(X) = " ^ obstring( ap(cI, L"X")  ) 
-      ^ "\n         cS = " ^ obstring(cS) ^ "\n" 
       ^ "\n    Demonstrating that |SKK = I and how preferable cI is.\n" );
 
 (* THE ADDITIONAL UTILITY COMBINATORS B, C, D, T, W *)
@@ -66,6 +126,7 @@ print(  "\n        cS|KSK = " ^ obstring(cSaKSK)
       ^ "\n     cB(F,G) X = " ^ obstring( ap(ap(ap(cB, L"F"), L"G"), L"X") ) 
       ^ "\n            cB = " ^ obstring(cB) 
       ^ "\n" 
+      ^ "\n Demonstrating that ^cB(f,g) x = f g x in oFrugal"
       ^ "\n        cS|KSK = cB is " 
                           ^ (if cSaKSK = cB then "true." else "false.")
       ^ "\n" );     
@@ -84,6 +145,7 @@ print(  "\n   cCFX(Y) = " ^ obstring( ap(cCFX, L"Y") )
       ^ "\n     cC(F) = " ^ obstring( ap(cC, L"F") )
       ^ "\n   cC(F,X) = " ^ obstring( ap(ap(cC, L"F"), L"X") )
       ^ "\n cC(F,X) Y = " ^ obstring( ap(ap(ap(cC, L"F"), L"X"), L"Y") ) 
+      ^ "\n Demonstrating that ^cC(f, x) g = f g x in oFrugal"
       ^ "\n" );   
 
 (* Representing | D f x g y ≈ f x | g y 
@@ -91,7 +153,7 @@ print(  "\n   cCFX(Y) = " ^ obstring( ap(cCFX, L"Y") )
    is defined in [Rosenbloom1950: D4, p.113].  For oMiser the B | f x case
    allows early computation of f(x), fixing it in susequent applications. 
    In this case, cD = ap(cB,cB) is exactly the same as the manually-created
-   bracket-abstraction shown.
+   lindy-abstraction shown.
    *)
 val cDFX = `cB ## L"F" ## L"X"
 val  cDF = ` cB ## L"F" ## ARG
@@ -113,6 +175,7 @@ print(  "\n             cBB = " ^ obstring( cBB )
       ^ "\n     cD(F,X,G) Y = " 
                  ^ obstring( ap(ap(ap(ap(cD, L"F"), L"X"), L"G"),L"Y") )  
       ^ "\n" 
+      ^ "\n Demonstrating that ^cD(f, x, g) y = (f x) g y in oFrugal"
       ^ "\n             cBB = cD is " 
                             ^ (if cBB = cD then "true." else "false.")
       ^ "\n        cS|DS|KK = cC is " 
@@ -133,6 +196,7 @@ print(  "\n          cCI = " ^ obstring(cCI)
       ^ "\n         cT X = " ^ obstring( ap(cT, L"X") )
       ^ "\n      cT(X) F = " ^ obstring( ap(ap(cT, L"X"), L"F") )
       ^ "\n" 
+      ^ "\n Demonstrating that ^cT(x) f = f x in oFrugal"
       ^ "\n          cCI = cT is " ^ (if cCI = cT then "true." else "false.")
       ^ "\n" ); 
 
@@ -149,6 +213,8 @@ print(  "\n    cSS|SK = " ^ obstring(cSSaSK)
       ^ "\n           cW = " ^ obstring(cW)
       ^ "\n        cW(f) = " ^ obstring( ap(cW, L"f") )
       ^ "\n      cW(f,x) = " ^ obstring( ap(ap(cW, L"f"), L"x") )
+      ^ "\n"
+      ^ "\n  Demonstrating that ^cW(f) x = (f x) x in oFrugal"
       ^ "\n       cSS|SK = cW is " 
                          ^ (if cSSaSK = cW then "true." else "false.")
       ^ "\n" ); 
@@ -174,16 +240,16 @@ print(  "\n    cSS|SK = " ^ obstring(cSSaSK)
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
    TODO:
-     * Complete this information with definition of the simple utility
-       combinators.
 
-     * Add the Φ and Ψ combinators too.  We leave everything else to
+     * Add the Θ and Ψ combinators too.  We leave everything else to
        the treatment of exotics.
 
 *)   
   
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
                  
+   0.0.7 2018-03-19-11:24 Adjusted to align with combinators.txt, touch-ups,
+         and completion of synopsis.
    0.0.5 2018-03-08-15:24 Complete with demonstration of all simple utility
          combinators.
    0.0.4 2018-02-23-09:37 Fork the Y combinator material to Ycombdemo.sml.
