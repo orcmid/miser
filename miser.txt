@@ -1,5 +1,5 @@
-miser.txt 0.0.5                       UTF-8                       dh:2018-01-11
-
+miser.txt 0.0.6                      UTF-8                       dh:2018-03-20
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
                             
@@ -10,7 +10,7 @@ miser.txt 0.0.5                       UTF-8                       dh:2018-01-11
                      SOURCE CODE VERSION CONTROL REPOSITORY
                      --------------------------------------
 
-                       <https://github.com/orcmid/miser>
+             <https://github.com/orcmid/miser/blob/master/miser.txt>
                        
 MANIFEST
 
@@ -24,7 +24,11 @@ MANIFEST
         subtree for model-related exposition and comparisons
         
     oMiser/
-        subtree for the development of oMiser conceptalization and code        
+        subtree for the development of oMiser conceptalization and code    
+
+    background.txt
+        Description of the inspirational sources of the ideas behind The 
+        Miser Project.    
                       
     LICENSE.txt
          The open-source software license that applies to the entire 
@@ -94,6 +98,7 @@ TODO
     
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2018-03-20-09:19 Touch-ups and addition of background.txt to manifest.   
  0.0.5 2018-01-11-10:03 Introduce README.md for the GitHub front page.  Manage
        TODOs.
  0.0.4 2017-11-15-14:07 Add models/ substructure for diagrammatic models.
