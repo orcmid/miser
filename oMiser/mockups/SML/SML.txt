@@ -1,66 +1,91 @@
-SML.txt 0.0.11                       UTF-8                       dh:2017-02-23
+SML.txt 0.0.12                       UTF-8                       dh:2017-03-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
-                            
+
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML.txt>
 
                  SML MOCKUP PROOF-OF-CONCEPT DEMONSTRATIONS
                  ------------------------------------------
-              
+
     Standard SML of New Jersey (SML/NJ) is used for demonstration
     of the essential characteristics of Miser obs and the universal
     computational functions on obs, obap.ap(p,x) and obap.eval(exp).
-    
+
     The mockup is used for proof-of-concept.  It is not intended to
     become a production implementation.
-    
+
     This demonstration is expedient in several respects.  The
     SML/NJ datatype implementation directly satisfies correctness
     requirements for obs.  And the SML/NJ REPL (Read-Evaluate-
     Print Loop) is automatically available for use as a test
     harness and front end.
 
-    The objective will be demonstration of an oFrugal REPL with
-    standard parsing and pretty-printed output presentation.  The
-    operation will be limited to ASCII code points in input-output
-    texts although Unicode is required of complete implementations.
-         
+    The objective is demonstration of an oFrugal REPL with standard
+    parsing and pretty-printed output presentation.  REPL operation
+    will be limited to ASCII code points in input-output texts although
+    Unicode is required of complete implementations.
+
+    As a mockup, there is little diagnostic support and one will simply
+    have to be meticulous about confirming the implementation of code via
+    obs used as procedure scripts.
+
+SETUP
+
+    The implementation of SML/NJ used in these mockups is located at
+    <http://smlnj.org/>.  These mockups are being created and verified
+    using the latest Microsoft Windows MSI installer.
+
+
+RELATED INFORMATION
+
+    For more information about oMiser and the connection between mockup
+    code and Miser conception, consult the files at
+    <https://github.com/orcmid/miser/tree/master/oMiser>.  There are also
+    useful comments and discussions on the project Issues Questions at
+    <https://github.com/orcmid/miser/issues>.
+
+
 MANIFEST
 
-       SML.txt 
+       SML.txt
            this manifest and job-jar file
-         
- tutorials/  
+
+ SML-setup.txt
+           information on the download, installation and Windows 10
+           operation of the SML/NJ used to confirm the SML mockups
+           of oMiser and limited oFrugal REPL
+
+ tutorials/
            subfolder of tutorial materials supporting the SML
            mockups
-          
+
         OB.sig.sml
            Definition of the SML/NJ signature for manifestation of
            ‹ob› primitive notions.
-        
+
        ob.sml
           Manifestation of ‹ob› primitive notions via SML/NJ abstract
           data type signature and structure definition.
-           
+
      OBAP.sig.sml
           Definition of the SML/NJ signature for manifestation of
           ‹ob› as extended for obap.ap(p,x) and obap.eval(exp), along
           with lindies and additional primitive individuals.
-          
+
      obap.sml
           Manifestation of ‹ob› extended for obap.ap(p,x) and obap.eval(exp)
           in accordance of obaptheory.txt.
-                  
-  obcheck.sml 
+
+  obcheck.sml
           Test script that checks the abstract data type's
           mathematical characterization and manifestation via
           the SML/NJ ob.sml representation.
-          
+
   obapcheck.sml
           Test script that checks the functioning of obap.sml definitions.
-          
+
      obap.obcheck.sml
           Test script that checks the preservation of ob.sml definitions
           in the extended obap.sml manifestation.
@@ -87,35 +112,37 @@ Ycombdemo.sml
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
 TODO
-     
+
   * Account for the challenge of avoiding forward references and preservation
     of identity conditions for preservation of quasi-Platonism under
     decentralized, distributed operation.  (Is this a case of referential
     integrity?)
-       
+
   * Address the run-time exception problem, especially as it will hit us
     with respect to strong typing.
-    
+
   * Look at the non-irreversible architectual change consideration here
     around typing and also the distribution mechanism.
-    
+
   * Account for oMiser as a performance case within a broader set or
     hierarchy of richer (not just sugar) arrangements in which the
     oMiser level is distinguished.  (So there are higher-level forms
     of apply and eval above and beyond obap.ap and obap.eval)
-    
+
   * Raise the fact that, with oMiser, so long as well-definedness is
     maintained, the application of an individual can involve what would
     be side-effects except they are never revealed.  This includes
     caching of things and also optimization behind the scenes.  Also,
     output counts, but not input.
-    
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2018-03-24-16:52 Add connections to Miser Conception and SML/J
+        installation and usage.
  0.0.11 2018-02-23-09:30 Touch up synopsis and account for combdemo.sml and
         its Ycombdemo fork.
  0.0.10 2017-10-09-11:24 Adust TODOs.  Emphasize SML use for proof-of-concept.
@@ -134,7 +161,7 @@ TODO
        elevate the <ob> miser-theory for the Ob set.
  0.0.3 2017-08-19-12:11 Add TODOs and advancing treatment of the
        SML/NJ manifestation as a model of the theoretical <ob> structure.
- 0.0.2 2017-08-06-08:55 Add more work items on goals for what the 
+ 0.0.2 2017-08-06-08:55 Add more work items on goals for what the
        SML mockup and the mathematical connections are intended to
        demonstrate.
  0.0.1 2017-08-05-19:54 Move tutorial-intended screen captures to a
@@ -143,4 +170,3 @@ TODO
        oMiser mockup development.
 
                          *** end of SML.txt ***
-                         

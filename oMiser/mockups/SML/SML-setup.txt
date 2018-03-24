@@ -1,0 +1,54 @@
+SML-setup.txt 0.0.0                  UTF-8                       dh:2018-03-24
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+     Installation instructions for SML/NJ under Windows
+     -------------------------------------------------- 
+     We now provide a Microsoft Installer package for SML/NJ. The installer 
+     contains a full installation including nearly all optional components. 
+     (We only exclude "mlrisc-tools" and "nowhere".) You can choose the 
+     installation directory. The default is C:\Program Files\SMLNJ. The bin 
+     directory containing the sml command is added to the default PATH, though 
+     note that you will need to re-open command windows to see the binding. 
+     The SMLNJ_HOME environment variable is also set up to point at the 
+     location that SML/NJ was installed. You can either launch the interpreter
+     directly from a Start Menu entry or by opening a command prompt and 
+     typing "sml". 
+     [ ... ]
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                       Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+TODO
+     
+  * Capture a complete installation with screen shots and descriptive
+    materials.
+
+  * Add attribution for the WININSTALL quote from the SMLNJ site.
+       
+
+    
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+ 0.0.0 2018-03-24-13:12 Create placeholder and initial job jar for
+       recording of setup and operation information used to operate and
+       confirm the SML mockups of oMiser and a limited oFrugal REPL
+
+                      *** end of SML-setup.txt ***
+                               
