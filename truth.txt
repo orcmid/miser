@@ -1,0 +1,84 @@
+truth.txt 0.0.0                      UTF-8                       dh:2018-04-17
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+                     COMPUTATIONAL NOTIONS OF TRUTH FOR MISER
+                     ----------------------------------------
+
+              <https://github.com/orcmid/miser/blob/master/truth.txt>
+
+[SYNOPSIS: TBD]
+
+[CONTENT: TBD]
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                        Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+ * Establish the notion that a predicate is any script that only yields
+   obap.A and obap.B.
+
+ * Start from the computational representation of truth values being what
+   obap.d(x, y) yields, although the choice between truth versus falsity
+   is operationally arbitrary so long as interpretation-preserving in
+   context.
+
+ * Consider the problem of a predicate that determines whether a given ob
+   constitutes a predicate and also how it would report about itself.
+
+ * Consider the is-definitely-x and is-definitely-not-x flavors having
+   truth values and avoidance of three-valued results.
+
+ * Contrast with the difference between definite obap.A and obap.B and
+   returning a script that will, on application to an ob, yield either
+   the a-part or the b-part and be indifferent to the nature of the ob.
+   That is, the result of the predicate is equivalent, with respect to
+   obap.ap, to ob.a(x) or ob.b(x).
+
+ * Contrast with Scott's U-combinator (P -> X, Y) and the counterpart in
+   (concrete) Cartesian Closed Categories a la Feferman.
+
+ * McCarthy used a form (p1 -> x1, p2 ->x2, ..., pn -> xn)  which is
+   clumsier.  McCarthy also did short-circuit evaluations and could
+   have undefined results.
+
+ * Distinguish truth in this definite manner for oMiser and truth
+   over intended interpretations.
+
+ * Note that historically, computational truth has been by yielding
+   definite two-valued results from primitive predicates (e.g., atom[x])
+   and also creating partitions of the value space (e.g., 0 and not-0).
+
+ * We are also determined to have binary choice and no other.  In cases
+   where that cannot be achieved, we consider heuristic cases where
+   something is definitely the case, or not.  An example would be
+   concerning x ¶ y.  (And how do capsules figure in?)
+
+ * We may need to consider solvability or recursive later when there is
+   something about that to consider.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2018-04-17-13:27 Create placeholder, with starter TODOs on the
+       notions of computational truth.
+
+
+                        *** end of truth.txt ***
