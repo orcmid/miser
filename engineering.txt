@@ -1,0 +1,52 @@
+engineering.txt 0.0.0                UTF-8                       dh:2018-04-17
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+                     BACKGROUND HISTORY OF THE MISER PROJECT
+                     ---------------------------------------
+
+       <https://github.com/orcmid/miser/blob/master/engineering.txt>
+
+[SYNOPSIS: TBD]
+
+[CONTENT: TBD]
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                        Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+ * Transform the TODOs into sections of History, Current Challenges, and
+   references/bibliography.
+
+ * Find other TODOs of this nature and transpose them to this file.
+
+ * Engineering is about dependability and reliability of implementations,
+   along with achievement of confirmable experiences, replication/
+   reproducibility of results, and a reliable development process.
+
+ * Having a low-end-of-the-pool on-ramp for developers is an important
+   aspect.  Reflect this.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2018-04-17-10:29 Create placeholder, with starter TODOs.
+
+                        *** end of engineering.txt ***
