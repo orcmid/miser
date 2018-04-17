@@ -1,0 +1,90 @@
+principles.txt 0.0.0                 UTF-8                       dh:2018-04-17
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+                         PRINCIPLES OF MISER CONCEPTION
+                         ------------------------------
+
+          <https://github.com/orcmid/miser/blob/master/principles.txt>
+
+[SYNOPSIS: TBD]
+
+[CONTENT: TBD]
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                        Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+ * Establish the proximity of oMiser as a computational interpretation of
+   the mathematical structure, ‹ob›.
+
+ * Immutability assures a quasi-Platonic correspondence along with the obs
+   being distinguishable and identifiable.  [There is an observation on
+   this by Bertrand Russel although despair of ever finding it again.]
+
+ * Establish well-definedness and also computation as working from
+   canonical obs to canonical obs
+
+ * Enuerability of all finite obs establishes the correspondence to the
+   set of integers, even though no particular enumeration is required.
+
+ * Having the universality sufficient to represent arithmetics and also
+   other models of computation including Turing Machines and lambda-
+   calculus.
+
+ * The constraints are sufficient to ensure that mathematical interpretation
+   is sound.
+
+ * Use as a springboard/component of "higher-order" computational regimes.
+
+ * Consideration of the programming of deductive confirmation of the
+   representation of functions in ‹ob› with its universal apply function.
+
+ * Connect to empirical/engineering matters concerning the prospect of
+   resource exhaustion and other failures.
+
+ * Find out where to address the lack of bottom as a distinguished ob, but
+   as a meta-condition in which a computation fails to yield a definite
+   ob.  This could be a constraint here too, but also needs to be addressed
+   in theory.txt?
+
+ * That the primitives are all total functions is significant, as is all of
+   the structural characteristics of obs being distinguished by various
+   equalities and inequalities.
+
+ * Use of eager evaluation and requiring operators and operands to be
+   computationally determined before computation can proceed is also
+   a key principle.
+
+ * The use of extensional equality alone on obs has profound limitations
+   and we will stick to it.  It is part of the oMiser level and, perhaps,
+   its completeness.
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2018-04-17-13:10 Create placeholder, with starter TODOs on the
+       principles by which application of mathematics to the computational
+       model is assured and how one preserves that with expansion beyond
+       the quasi-Platonic.
+
+
+                      *** end of principles.txt ***
