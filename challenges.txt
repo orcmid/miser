@@ -1,4 +1,4 @@
-challenges.txt 0.0.0                 UTF-8                       dh:2018-04-12
+challenges.txt 0.0.1                 UTF-8                       dh:2018-04-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -86,8 +86,66 @@ TODO
 
  * Find other TODOs of this nature and transpose them to this file.
 
+ * There is a challenge of obap extension (obapx) principles.  These
+   remain functional in oMiser.
+
+ * There needs to be distinction of types, implementations, classes,
+   encapsulated interpretation, and semblance.
+
+ * At the oMiser level there is only extensional equality and this limits
+   identification of types as identification of specific interpretations.
+   The challenge is to have a worthy nomenclature on the matter.
+
+ * The idea of semblance has to do with a level-up (interface) common
+   interpretation.  It is still an interpretation even though commonly
+   described as an abstract data type.
+
+ * We have to navigate that semblance is evocative, suggestive, and
+   can be convenient yet precise enough to be rigorous even when
+   casually generalized yet without causing human confusion.  How is
+   that to be established?
+
+ * Although output can be implicit, explicit output can be considered
+   in the manner of the SML/NJ print operation.  That is not entirely
+   satisfying. It may be an essential hack but perhaps it is more about
+   engineering than theoretical challenge.
+
+ * The idea of reproducibility might fit with allowing external input
+   also, in the sense that the stream becomes immutable and can be
+   re-processed?  Will this keep things well-defined for oMiser?
+
+ * Is there something paradoxical about a sink providing source that
+   has simply not been accessed yet?  One must then deal with the
+   matter of encountering the/an end of the source and acting on that,
+   so the sink becomes a problem?
+
+ * A challenge in the above is considering any kind of self-interactive
+   operation as still well-defined because there is no time-traveling
+   required?  Or is this some weird computational causality business?
+
+ * Another challenge has to do with attacks against the engine and/or
+   storage of obs.  This may between difficult and impossible to
+   prevent.  The question is whether it becomes detectable and
+   amenable to forensic analysis?
+
+ * Move some of these to engineering, since they seem to be beyond
+   the association of theory and representation/interpretation.
+
+ * Moving from reasoning about ‹ob› to reasoning about code and the
+   compiling of the script interpretation of an ob is going to be a
+   major challenge.  There may be something in the work of McCarthy
+   that began from dealing with flow charts, along with later
+   efforts in that respect.  This has to do with machine models.
+
+ * Optimization across interface boundaries (i.e., erasing the
+   interface and optimizing what's possible by blending implementa-
+   tions) is a big challenge.  Although it is an engineering matter,
+   it requires theoretical support and constraints against improper
+   optimizations.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2018-04-17-10:26 Additional challenge TODOs
  0.0.0 2018-04-12-12:12 Create placeholder, with starter TODOs.
 
                          *** end of challenges.txt ***
