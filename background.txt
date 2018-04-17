@@ -1,18 +1,51 @@
-background.txt 0.0.0                 UTF-8                       dh:2018-03-20
+background.txt 0.0.1                 UTF-8                       dh:2018-04-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
                           ============================
 
                      BACKGROUND HISTORY OF THE MISER PROJECT
-                     ---------------------------------------                          
-                            
+                     ---------------------------------------
+
        <https://github.com/orcmid/miser/blob/master/background.txt>
 
 [SYNOPSIS: TBD]
 
 [CONTENT: TBD]
-   
+
+REFERENCES AND BIBLIOGRAPHY
+
+[Carr1959]
+   Carr, John W, III.  Programming and Coding.  Chapter 2 in Handbook of
+   Automation, Computation, and Control, vol.2, E. M. Grabbe (ed.).  Wiley
+   (New York: 1959).
+
+[McCarthy1960]
+   McCarthy, John.  Recursive Functions of Symbolic Expressions and
+   Their Computation by Machine, Part 1.  Comm. ACM 3, 4 (April, 1960),
+   184-195.  A 1995 version with minor edits and some footnotes is available
+   at <http://www-formal.stanford.edu/jmc/recursive.pdf>.
+
+[McCarthy1962]
+   McCarthy, John.  Towards a Mathematical Science of Computation.
+   pp. 21-28 in Proceedings of IFIP Congress 1962.  A 1996 version as PDF
+   is available at <http://www-formal.stanford.edu/jmc/towards.pdf>.
+
+[McCarthy1963]
+   McCarthy, John.  A Basis for a Mathematical Theory of Computation.
+   pp.33-70 in Computer Programming and Formal Systems, P. Braffort and D.
+   Hirschberg (eds), North Holland (1963).  Corrected and extended from
+   a paper of that title presented in May, 1961.  An archived version
+   is available at <http://www-formal.stanford.edu/jmc/basis1.pdf>.
+
+[Stoyan1991]
+   Stoyan, Herbert.  The Influence of the Designer on the Design --
+   J. McCarthy and LISP.  pp.409-426 in "Artificial Intelligence and
+   Mathematical Theory of Computation: Papers in Honor of John McCarthy,"
+   Vladimir Lifschitz (ed), Academic Press (San Diego: 1991).  ISBN
+   0-12-450010-2 (acid free paper). The 1995 [McCarthy1960] has a footnote
+   on the efforts to have a correct eval regarding label and the funarg
+   problem, in the course of initial LISP development.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                         Copyright 2018 Dennis E. Hamilton
@@ -28,13 +61,22 @@ background.txt 0.0.0                 UTF-8                       dh:2018-03-20
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
 TODO
 
- * Transform the TODOs into sections of History, Current Challenges, and 
+ * Transform the TODOs into sections of History, Current Challenges, and
    references/bibliography.
+
+ * Find DOI for the three McCarthy papers and their citations in the ACM
+   Bibliography/Repository.
+
+ * [McCarthy1960] uses T and F, short-circuit p -> xt, xf), and also label
+   in precisely the way rec is used in the oMiser compilation of lambda-
+   expressions.  Also, MCarthy used (m1,..., mn . x) where we write
+   [m1, ..., mn, x:].  atom[X] is defined to yield one of T or F if X is
+   computationally-determined.  The default x is NIL.
 
  * Find other TODOs of this nature and transpose them to this file.
 
@@ -42,55 +84,55 @@ TODO
    technologies.  Perhaps an "engineering.txt" page to address that. This
    might also be a preamble for the dev/ folder and all of the production
    platform constructions.
-  
- * Provide a stable location for obaptheory version progressions on 
+
+ * Provide a stable location for obaptheory version progressions on
    <http://miser-theory.info>.
-   
+
  * Save introduction of obap.PROC to extension treatment, their demonstrating
-   some of the power of immutability and the ability for processors to 
-   optimize operation.  It also affirms the idea of preserving extensional 
-   identity, something to be developed further. The use of obap.PROC can also 
-   cue the form in which the operand should be presented as applicative 
-   expression rather than an uninterpreted ob data structure.  Disassembly of 
+   some of the power of immutability and the ability for processors to
+   optimize operation.  It also affirms the idea of preserving extensional
+   identity, something to be developed further. The use of obap.PROC can also
+   cue the form in which the operand should be presented as applicative
+   expression rather than an uninterpreted ob data structure.  Disassembly of
    obs is tricky here, just as with machine-language dumps.
-   
+
  * Introducing obap.DEF is required in order for the universal function to
    be simulated by some script, p when Proc is introduced.  This reflection-
-   like feature has me be nervous.  The system must be able to look within.  
-   I am resisting having scripts and users able to accomplish that externally.  
-   
+   like feature has me be nervous.  The system must be able to look within.
+   I am resisting having scripts and users able to accomplish that externally.
+
  * There is a similar capability required for reflection of lindies.
-   
+
  * It is mildly interesting that representation in a mathematical theory
    has no concern about tail recursion or other optimizations.  It doesn't
    even have the requirement on computation that a canonical ob be arrived
    at consisting entirely of individuals combined with ob.e and ob.c.
-   
- * How we establish what a computational manifestation accomplishes 
+
+ * How we establish what a computational manifestation accomplishes
    and how one can assert the soundness of various optimizations is not
-   found here.  This provides a possibly-interesting further contrast 
-   between the representation of obap.ap and obap.eval in a mathematical 
-   theory in contrast with the reasoning that may be required to affirm the 
-   soundness of a computational manifestation.  
-   
+   found here.  This provides a possibly-interesting further contrast
+   between the representation of obap.ap and obap.eval in a mathematical
+   theory in contrast with the reasoning that may be required to affirm the
+   soundness of a computational manifestation.
+
  * A trace is a kind of self-recreating K-combinator application, so its
    applications will always terminate.  As a result, it can derail an ob.d
-   in a manner that has a procedure fail to terminate.  Need to document 
+   in a manner that has a procedure fail to terminate.  Need to document
    that when it comes to testing at the oMiser level.
-     
+
  * There is too much in here about intended computational manifestations,
    and need to focus more on the theory, even though something about
    intentions is useful.
-   
+
  * Inside Joke: It was tempting to call lindies Milners because of the way
    the SML specification uses composed words to signify grammar rules.  I'm
    saving that for later, when the Ershov-Duncan-Milner scheme for extending
    context-free grammars comes under scrutiny.
-   
+
  * The "::" use is from SML.  It is difficult not to use it once it has been
-   seen and applied in practice.  There is no list type at this point, 
+   seen and applied in practice.  There is no list type at this point,
    however.
-   
+
  * The use of obap.SELF in obap.ev has the effect that every procedure has a
    kind of Y-combinator application built-in.  It depends entirely on the
    script, p, whether and how the prospective recursion is employed and also
@@ -100,60 +142,84 @@ TODO
    of every script, whether there is recursion or not.  This is computational
    resolution of a question raised by Dana Scott in his 1969/1993 LCF paper
    concerning combinator Y as a fixed-point operator.
-   
- * The single recursion approach achieved with obap.ev(p,x,exp) does not 
+
+ * The single recursion approach achieved with obap.ev(p,x,exp) does not
    readily extend to mutual recursion cases.  Dealing with this will come up
    when the universal function is simulated with a script.  Systematic treat-
    ment remains to be worked out.
-      
- * The inspiration behind obap.SELF and obap.ARG extends back to my reading 
+
+ * The inspiration behind obap.SELF and obap.ARG extends back to my reading
    the 1965 publication of Strachey's macrogenerator (GPM or McG) paper in The
-   Computer Journal, <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e 
+   Computer Journal, <https://doi.org/10.1093/comjnl/8.3.225>.  The ob.e
    function is inspired by a defect/limitation/incompleteness in McG, although
    here applied to "list" structures instead of strings having nested strings
-   as beads.     
+   as beads.
 
- * Switching to the more flexible pair structures was inspired by the XLISP 
-   (1.0?) paper in Dr. Dobb's Journal in the early 80s.  The coin hadn't 
+ * Switching to the more flexible pair structures was inspired by the XLISP
+   (1.0?) paper in Dr. Dobb's Journal in the early 80s.  The coin hadn't
    dropped until then, although I had already had seen McCarthy's "Part 1" in
-   1961, thanks to joining the ACM and also finding Comm.ACM back issues in 
+   1961, thanks to joining the ACM and also finding Comm.ACM back issues in
    the stacks of the Seattle Public Library (not an ordinary public library
    of the time before emergence of computer science as a discipline).
-   
+
  * The terminology around individuals and singletons is borrowed from work of
    Trenchard More on Array Theory.
-   
+
  * Historical Note: McG was used by the ISWIM team at Univac (using a Univac
-   1107, and didn't we call it YSWIM?) and, I'm told, the Backus FP team in 
-   San Jose as a means of boot-strapping their respective machine-language 
-   implementations.  There was no C Language yet and work on creating the 
-   then-called system-programming language PLUS/0 was post-YSWIM.  I don't 
+   1107, and didn't we call it YSWIM?) and, I'm told, the Backus FP team in
+   San Jose as a means of boot-strapping their respective machine-language
+   implementations.  There was no C Language yet and work on creating the
+   then-called system-programming language PLUS/0 was post-YSWIM.  I don't
    know if IBM's BSL (PL/S) was a candidate for the Backus FP team.
-   
- * Historical Note: The intimate connection of ap and ev is characteristic 
-   of the formal computation machinery of John McCarthy's LISP.  It's too 
-   powerful to avoid.  In other respects, there are an accumulation of 
+
+ * Historical Note: The intimate connection of ap and ev is characteristic
+   of the formal computation machinery of John McCarthy's LISP.  It's too
+   powerful to avoid.  In other respects, there are an accumulation of
    differences here.  There is no dynamic binding/scoping, there are no
-   symbolic references, obs are immutable, the primitives are total, 
-   predicates on the primitive notions are definable on characteristics of 
-   the structure alone, and there are no variables (and no FunArg problem): 
-   obap.ap and obap.eval all determine results by rewriting and application 
-   alone.  There's also a serious absence of useful data types, and that 
+   symbolic references, obs are immutable, the primitives are total,
+   predicates on the primitive notions are definable on characteristics of
+   the structure alone, and there are no variables (and no FunArg problem):
+   obap.ap and obap.eval all determine results by rewriting and application
+   alone.  There's also a serious absence of useful data types, and that
    remains to be addressed.
-   
+
  * Find my correspondence with John McCarthy about my early ideas on Miser and
    his recommendation.
-   
- * Reconcile the inclusion, by some, of partial functions under the 
-   effectively-computable ones.  This seems to collide with the halting 
-   problem.  Check the treatment of the Church-Turing Thesis in SEP and also, 
+
+ * Reconcile the inclusion, by some, of partial functions under the
+   effectively-computable ones.  This seems to collide with the halting
+   problem.  Check the treatment of the Church-Turing Thesis in SEP and also,
    possibly in Davis and maybe Rogers.
-  
+
+ * Recover the John W. Carr III "Programming and Coding" link and some content
+   from the Handbook of Automation, Computation, and Control, vol.2
+
+ * Recover the panel discussion where I said that programming languages
+   needed to move to the handling of data beyond the procedural structure
+   that was now well-established.
+
+ * Get the Newell, Simon, and Shaw IPL5 references.  I note that McCarthy was
+   familiar with that work and he took some inspiration from it.
+
+ * Account for Backus and FP/FFP, at original publication and current review.
+
+ * Consider the first AAAI and first LISP conferences, "Ivory Snow LISP" and
+   thinking of the time.
+
+ * Also, Peter Naur on Programming as Theory Building
+
+ * Find the Bill Burge "Reprogramming Machine" paper.
+
+ * Capture the Doug Ross "Inverted Indexing" paper and the demonstration
+   using a propositional logic tautology checker
+
+ * Get the [MEE] reference and a couple more of the early Landin references.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2018-04-17-10:20 Capture McCarthy bibliography, expand TODO notes
  0.0.0 2018-03-20-10:00 Create placeholder, with starter TODOs gleaned from
        obaptheory.txt 0.0.27.
 
 
-                        *** end of background.txt ***                               
-   
+                        *** end of background.txt ***
