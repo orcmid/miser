@@ -1,0 +1,63 @@
+theory.txt 0.0.0                     UTF-8                       dh:2018-04-17
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+                   BASIS AS A THEORETICAL MODEL OF COMPUTATION
+                   -------------------------------------------
+
+             <https://github.com/orcmid/miser/blob/master/theory.txt>
+
+[SYNOPSIS: TBD]
+
+[CONTENT: TBD]
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                        Copyright 2018 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+ * Find other TODOs of this nature and transpose them to this file.
+
+ * Reconcile the inclusion, by some, of partial functions under the
+   effectively-computable ones.  This seems to collide with the halting
+   problem.  Check the treatment of the Church-Turing Thesis in SEP and also,
+   possibly in Davis and maybe Rogers.
+
+ * Recover the article on the completeness of cons, car, and cdr for appeal
+   with respect to ob.c, ob.a, ob.b, and ob.e.  Make the bridge to the
+   completeness with respect to effectively computable obs.
+
+ * Identify the stages for establishment of universality.
+
+ * Identify the confirmations, including lambda-calculus, Turing Machine,
+   and other simulations.
+
+ * It might not be here, but the relationship to the Backus FP and FFP may
+   require some explanation as well.
+
+ * Address the apparent distinction around flavors of interpretation.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2018-04-17-13:25 Create placeholder, with starter TODOs on the
+       connection of oMiser to computation theory.
+
+
+                        *** end of theory.txt ***
