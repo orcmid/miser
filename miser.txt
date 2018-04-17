@@ -1,8 +1,8 @@
-miser.txt 0.0.6                      UTF-8                       dh:2018-03-20
+miser.txt 0.0.7                      UTF-8                       dh:2018-04-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
-                            
+
                         <https://github.com/orcmid/miser>
 
            SOFTWARE AND TESTS FOR DEVELOPMENT OF MISER IMPLEMENTATIONS
@@ -11,42 +11,69 @@ miser.txt 0.0.6                      UTF-8                       dh:2018-03-20
                      --------------------------------------
 
              <https://github.com/orcmid/miser/blob/master/miser.txt>
-                       
+
 MANIFEST
 
     README.md
         GitHub-rendered "home page" for the public source-code repository
 
-    miser.txt 
+    miser.txt
         this manifest and job-jar file
-        
+
     models/
         subtree for model-related exposition and comparisons
-        
+
     oMiser/
-        subtree for the development of oMiser conceptalization and code    
+        subtree for working out and confirming oMiser conceptalization and proof-of-concept demonstrations
 
     background.txt
-        Description of the inspirational sources of the ideas behind The 
-        Miser Project.    
-                      
+        description of the inspirational sources and evolution of the ideas behind The Miser Project
+
+    challenges.txt
+        description of challenges to be worked through in the development
+        of oMiser and its integration in higher-level functions and lower-
+        level implementations.
+
+    engineering.txt
+        on the engineering approach to the Miser project and the
+        development of reliable implementations of oMiser and oFrugal
+
+    principles.txt
+        description of the strong principles by which the connection
+        between theory and achieved computational interpretation are
+        sustained, from the computational perspective
+
+    programming.txt
+        text description of information for programming in oFrugal
+        notation with the oFrugal REPL
+
+    theory.txt
+        account for the theoretical progressions that are the foundation
+        for achievement of the oMiser computational model and its
+        concrete representations
+
+    truth.txt
+        explanation of the use of "truth" in the context of a concrete
+        computational model and how it figures in computational interpre-
+        tations and abstraction representations
+
     LICENSE.txt
-         The open-source software license that applies to the entire 
-         nfoTools collection except where stated otherwise.
-         
+         The open-source software license that applies to the entire
+         Miser Project repository content except where stated otherwise.
+
     NOTICE.txt
          Notice that applies with respect to particular components of
          Miser Project software.
-         
+
     .gitattributes
          A declaration of file attributes for use in Git repositories of
          the miser source code.
-         
+
     .gitignore
          A declaration of artifacts to be ignored and excluded from Git
          repositories, applying to working files that are not part of the
          managed archive materials
-         
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -62,49 +89,52 @@ MANIFEST
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
 TODO
-  
+
   * Provide a little bit more information about what this is and where to
     find more about it.
-    
+
   * Add links to other locations of materials and discussions.
-    
+
   * Introduce oFrugal later when there is enough oMiser to talk about oFrugal.
-  
+
   * Ensure a hierarchical organization that fits the nfoTools construction
     sets pattern.
-    
+
   * Add synopsis.
-  
+
   * Account for the use of these folder-specific synopsis/manifest text files.
-  
+
   * Explain the reference implementation(s) and notation(s) as the mainline,
     with mockups for proof-of-concept, demonstrations, and exercises.
-  
+
   * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
     and the web site.
-    
+
   * Use the logo and the block diagram (on Golden Geek) for a summary of this.
-    Don't go into the extensive detail.  
-    
+    Don't go into the extensive detail.
+
   * Docs will continue to be at miser-theory.info, as tempting and convenient
     GitHub might be.  [dh:2018-01-11: It is tempting to use docs/ here along
     with the GitHub support for wikis and documentation pages.  Whatever I do,
     there need to be static places of preservation, including of authenticated
     distributions, just as being worked on for nfoTools.]
-    
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.6 2018-03-20-09:19 Touch-ups and addition of background.txt to manifest.   
+ 0.0.7 2018-04-17-13:23 Touch-ups and addition of the additional files
+       challenges.txt, engineering.txt, principles.txt, programming.txt,
+       theory.txt, and truth.txt, all mainly placeholders with many TODOs.
+ 0.0.6 2018-03-20-09:19 Touch-ups and addition of background.txt to manifest.
  0.0.5 2018-01-11-10:03 Introduce README.md for the GitHub front page.  Manage
        TODOs.
  0.0.4 2017-11-15-14:07 Add models/ substructure for diagrammatic models.
- 0.0.3 2017-11-12-09:05 Manage TODOs.  
+ 0.0.3 2017-11-12-09:05 Manage TODOs.
  0.0.2 2017-11-11-10:49 Adjust TODOs.  Minor text adjustments.
- 0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for 
+ 0.0.1 2017-07-27-18:23 Add oMiser/ substructure.  Use mockups/ for
        experiments and conceptual demonstrations such as in SML/.
  0.0.0 2017-07-26-13:31 Create placeholder and initial job jar for the
        Miser Project code.
