@@ -1,10 +1,10 @@
-(* Ydemo.sml 0.0.5                    UTF-8                      dh:2018-04-19
+(* Ydemo.sml 0.0.6                    UTF-8                      dh:2018-04-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         =================================
 
-<https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/combdemo.sml>
+  <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/Ydemo.sml>
 
               DEMONSTRATING Y-COMBINATOR REPRESENTATION IN oMISER
               ---------------------------------------------------
@@ -140,6 +140,7 @@ print( "\n^oEmptied2(^aList) = "
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.0.6 2018-04-19-13:27 Correc the permalink for the Ydemo.sml file.
    0.0.5 2018-04-19-13:22 Rename from Ycombdemo.sml to Ydemo.sml and touch
          up a little.
    0.0.4 2018-02-23-09:40 combdemo.sml forked here as Ycombdemo.sml for
