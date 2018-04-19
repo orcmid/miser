@@ -1,4 +1,4 @@
-miser.txt 0.0.7                      UTF-8                       dh:2018-04-17
+miser.txt 0.0.8                      UTF-8                       dh:2018-04-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
@@ -19,6 +19,9 @@ MANIFEST
 
     miser.txt
         this manifest and job-jar file
+
+    dev/
+        subtree of materials on the development of Miser Project releases
 
     models/
         subtree for model-related exposition and comparisons
@@ -125,6 +128,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2018-04-19-10:32 Add dev/ to the manifest
  0.0.7 2018-04-17-13:23 Touch-ups and addition of the additional files
        challenges.txt, engineering.txt, principles.txt, programming.txt,
        theory.txt, and truth.txt, all mainly placeholders with many TODOs.
