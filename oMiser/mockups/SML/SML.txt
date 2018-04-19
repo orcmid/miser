@@ -1,4 +1,4 @@
-SML.txt 0.0.12                       UTF-8                       dh:2017-03-24
+SML.txt 0.0.13                       UTF-8                       dh:2017-04-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -65,41 +65,41 @@ MANIFEST
            Definition of the SML/NJ signature for manifestation of
            ‹ob› primitive notions.
 
-       ob.sml
-          Manifestation of ‹ob› primitive notions via SML/NJ abstract
-          data type signature and structure definition.
+        ob.sml
+           Manifestation of ‹ob› primitive notions via SML/NJ abstract
+           data type signature and structure definition.
 
-     OBAP.sig.sml
-          Definition of the SML/NJ signature for manifestation of
-          ‹ob› as extended for obap.ap(p,x) and obap.eval(exp), along
-          with lindies and additional primitive individuals.
+      OBAP.sig.sml
+           Definition of the SML/NJ signature for manifestation of
+           ‹ob› as extended for obap.ap(p,x) and obap.eval(exp), along
+           with lindies and additional primitive individuals.
 
-     obap.sml
-          Manifestation of ‹ob› extended for obap.ap(p,x) and obap.eval(exp)
-          in accordance of obaptheory.txt.
+      obap.sml
+           Manifestation of ‹ob› extended for obap.ap(p,x) and obap.eval(exp)
+           in accordance of obaptheory.txt.
 
-  obcheck.sml
-          Test script that checks the abstract data type's
-          mathematical characterization and manifestation via
-          the SML/NJ ob.sml representation.
+   obcheck.sml
+           Test script that checks the abstract data type's
+           mathematical characterization and manifestation via
+           the SML/NJ ob.sml representation.
 
-  obapcheck.sml
-          Test script that checks the functioning of obap.sml definitions.
+ obapcheck.sml
+           Test script that checks the functioning of obap.sml definitions.
 
-     obap.obcheck.sml
-          Test script that checks the preservation of ob.sml definitions
-          in the extended obap.sml manifestation.
+      obap.obcheck.sml
+           Test script that checks the preservation of ob.sml definitions
+           in the extended obap.sml manifestation.
 
- combdemo.sml
-          Demonstration of the basic combinators expressed as interpretation-
-          preserving oMiser applicative scripts.
+  combdemo.sml
+           Demonstration of the basic combinators expressed as interpretation-
+           preserving oMiser applicative scripts.
 
-Ycombdemo.sml
-          Demonstration of the oMiser script that provides an interpretation-
-          preserving interpretation as a Y-Combinator.
+     Ydemo.sml
+           Demonstration of the oMiser script that provides an interpretation-
+           preserving interpretation as a Y-Combinator.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                      Copyright 2017 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -141,6 +141,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.13 2018-04-19-12:58 Simplify to Ydemo.sml name and fix columnar
+        alignment in manifest.
  0.0.12 2018-03-24-16:52 Add connections to Miser Conception and SML/J
         installation and usage.
  0.0.11 2018-02-23-09:30 Touch up synopsis and account for combdemo.sml and
