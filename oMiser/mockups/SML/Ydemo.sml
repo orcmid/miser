@@ -1,40 +1,40 @@
-(* Ycombdemo.sml 0.0.4                UTF-8                      dh:2018-02-23
+(* Ydemo.sml 0.0.5                    UTF-8                      dh:2018-04-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         =================================
-                       
- <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/combdemo.sml> 
-        
+
+<https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/combdemo.sml>
+
               DEMONSTRATING Y-COMBINATOR REPRESENTATION IN oMISER
               ---------------------------------------------------
-       
+
    [Author Note: Tie to obcheck.sml, obtheory.txt, ob.sml, obaptheory, and
     the obap.sml structure or similar ones.]
     *)
-    
+
 use "obap.sml";
 open obap;
-(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE 
+(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE
    CHECKS SHOULD WORK DIRECTLY WITHOUT MODIFICATION, BELOW.
    *)
-   
+
 infixr 5 ## ;
 
 
 
 (* RECURSION AND THE Y-COMBINATOR *)
 
-print(  "\nRECURSION AND THE Y-COMBINATOR" 
+print(  "\nRECURSION AND THE Y-COMBINATOR"
       ^ "\n------------------------------\n\n" );
 
 fun emptied obList
     = if is_singleton obList then obList else emptied(b obList);
       (* a simple recursive function that empties a list, for illustration
-         of recursively-defined function evaluations with oMiser 
+         of recursively-defined function evaluations with oMiser
          *)
 
-val aList = L"1st" ## L"2nd" ## L"3rd" ## L"end" 
+val aList = L"1st" ## L"2nd" ## L"3rd" ## L"end"
     (* a simple list that is just L"end" when emptied *);
 
 print(  "\n   The sml function emptied(L) returns the empty form"
@@ -64,8 +64,8 @@ val oTailer
 print(  "\n   The oMiser script ^oTailer is a version of oEmptied where"
       ^ "\n   (^oTailer g) L returns L if L is an empty list, and returns"
       ^ "\n   g(ob.b L) when L is a pair.  The goal is to use a by-value"
-      ^ "\n   Y combinator to turn oTailer into a script that's equivalent" 
-      ^ "\n   to oEmptied without rewriting or treating oTailer as anything" 
+      ^ "\n   Y combinator to turn oTailer into a script that's equivalent"
+      ^ "\n   to oEmptied without rewriting or treating oTailer as anything"
       ^ "\n   but an interpretation-preserving combinator form.\n\n");
 
 print ("\nob ^oTailer = " ^ obstring(oTailer) ^ "\n" );
@@ -74,7 +74,7 @@ print ("\nob ^oTailer = " ^ obstring(oTailer) ^ "\n" );
    evaluate g(y) for some y only when continuing by recursion is needed.  For
    oMiser, when g is cY(f) that will be available as SELF in obap.ap(g, y). So
    What is to be applied to y is (f (cY f)).  The script (`f :: SELF) :: ARG
-   has precisely that quality.  
+   has precisely that quality.
 
    With    cY f ≈ (` f :: SELF) :: ARG,
              cY ≈ .C :: (.C :: (.E :: .ARG)
@@ -96,14 +96,14 @@ print("\nob ^cY =" ^ obstring(cY) ^ "\n" );
 
 val oEmptied2 = ap(cY, oTailer);
 print(  "\n    ob ^oEmptied2 = ^cY ^oTailer;"
-      ^ "\noEmptied2 = " ^ obstring(oEmptied2) ^ "\n" );
-print( "\n  ^oEmptied2(.NIL) = " 
-       ^ obstring(ap(oEmptied2, NIL)) ^ "\n" ); 
-print( "\n^oEmptied2(^aList) = " 
+      ^ "\n^oEmptied2 = " ^ obstring(oEmptied2) ^ "\n" );
+print( "\n  ^oEmptied2(.NIL) = "
+       ^ obstring(ap(oEmptied2, NIL)) ^ "\n" );
+print( "\n^oEmptied2(^aList) = "
        ^ obstring(ap(oEmptied2, aList)) ^ "\n" );
 
 
-    
+
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2018 Dennis E. Hamilton
@@ -120,11 +120,11 @@ print( "\n^oEmptied2(^aList) = "
     See the License for the specific language governing permissions and
     limitations under the License.
     *)
- 
+
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
     TODO:
-           
+
       * Work through the straightforward transformations
 
       * Acknowledge [Paulson1996: p.391] for an important clue concerning
@@ -135,12 +135,14 @@ print( "\n^oEmptied2(^aList) = "
         function.
 
       * Introduce ρf.E ≈ Y λf.E, the basis for rec.f in oMiser.
-                     
+
     *)
-  
-(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -          
-                 
-   0.0.4 2018-02-23-09:40 combdemo.sml forked here as Ycombdemo.sml for 
+
+(* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+   0.0.5 2018-04-19-13:22 Rename from Ycombdemo.sml to Ydemo.sml and touch
+         up a little.
+   0.0.4 2018-02-23-09:40 combdemo.sml forked here as Ycombdemo.sml for
          careful, standalone demonstration of this important capability.
    0.0.3 2018-02-19-10:49 Touch up, expanding TODOs
    0.0.2 2018-02-18-18:56 Derive the provisional cY and confirm simple
@@ -149,9 +151,7 @@ print( "\n^oEmptied2(^aList) = "
          versions, confirming operation as prelude to the Y-combinator case.
    0.0.0 2018-02-17-10:12 Skeleton for progressive introduction of combinator
          representations and demonstration of their functionality.
-         
+
    *)
-         
-(*                         *** end of combdemo.sml ***                      *)        
-        
-   
+
+(*                          *** end of Ydemo.sml ***                        *)
