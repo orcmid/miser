@@ -1,4 +1,4 @@
-background.txt 0.0.1                 UTF-8                       dh:2018-04-17
+background.txt 0.0.2                 UTF-8                       dh:2018-05-10
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -16,9 +16,17 @@ background.txt 0.0.1                 UTF-8                       dh:2018-04-17
 REFERENCES AND BIBLIOGRAPHY
 
 [Carr1959]
-   Carr, John W, III.  Programming and Coding.  Chapter 2 in Handbook of
-   Automation, Computation, and Control, vol.2, E. M. Grabbe (ed.).  Wiley
-   (New York: 1959).
+   Carr, John W., III.  Programming and Coding.  Chapter 2 in "Handbook of
+   Automation, Computation, and Control," vol.2, Eugene M. Grabbe, Simon Ramo,
+   Dean E. Wooldridge (eds.).  Wiley (New York: 1959).
+
+[Lee2017]
+   Lee, Edward Ashford.  Plato and the Nerd: The Creative Partnership of
+   Humans and Technology.  MIT Press (Cambridge, MA: 2017).  296pp.
+   ISBN 0-262-03648-7.  An useful introduction to the positioning of software
+   development as engineering can be found in the 20-minute extract,
+   <https://www.youtube.com/watch?v=WBlWc6fJL_c>, of a larger discussion
+   held in Vienna.
 
 [McCarthy1960]
    McCarthy, John.  Recursive Functions of Symbolic Expressions and
@@ -170,7 +178,7 @@ TODO
    San Jose as a means of boot-strapping their respective machine-language
    implementations.  There was no C Language yet and work on creating the
    then-called system-programming language PLUS/0 was post-YSWIM.  I don't
-   know if IBM's BSL (PL/S) was a candidate for the Backus FP team.
+   know if IBM's BSL was a candidate for usage by the Backus FP team.
 
  * Historical Note: The intimate connection of ap and ev is characteristic
    of the formal computation machinery of John McCarthy's LISP.  It's too
@@ -181,7 +189,8 @@ TODO
    the structure alone, and there are no variables (and no FunArg problem):
    obap.ap and obap.eval all determine results by rewriting and application
    alone.  There's also a serious absence of useful data types, and that
-   remains to be addressed.
+   remains to be addressed.  The rewriting model is not far from the copy
+   semantics of ALGOL 60 procedures.
 
  * Find my correspondence with John McCarthy about my early ideas on Miser and
    his recommendation.
@@ -211,12 +220,33 @@ TODO
  * Find the Bill Burge "Reprogramming Machine" paper.
 
  * Capture the Doug Ross "Inverted Indexing" paper and the demonstration
-   using a propositional logic tautology checker
+   using a propositional logic tautology checker using the Wang Algorithm.
 
  * Get the [MEE] reference and a couple more of the early Landin references.
 
+ * Find the Polyani paper where the notion of focal and subordinate attention
+   came to my attention.  Also, the simple thing about two levels of
+   "attention" in the basic operation of digital computers.
+
+ * September 1950 Scientific American article by E.C.Berkeley, Jerry Cook and
+   the Tacoma Chess Club.
+
+ * Optimizing Boolean expressions by Quine method and prime implicants as part
+   of a project to convert Fieldata character codes to the code set of the
+   Univac Solid State 80 printer.  The clever hardware fix tht solved the
+   problem better.
+
+ * Smullyan's "Theory of Formal Systems" and puzzling on how those productions
+   correspond to, e.g., the even numbers, etc.
+
+ * Get [MEE] citation and also find a copy.
+
+ * For [Carr1959] an important aspect is the notion of "Automatic Programming"
+   and the expected outgrowth.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2018-05-10-09:31 More bibliography,
  0.0.1 2018-04-17-10:20 Capture McCarthy bibliography, expand TODO notes
  0.0.0 2018-03-20-10:00 Create placeholder, with starter TODOs gleaned from
        obaptheory.txt 0.0.27.
