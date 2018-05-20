@@ -1,4 +1,4 @@
-combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
+combinators.txt 0.0.10               UTF-8                       dh:2018-05-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -70,7 +70,7 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
 
                  4.1 Conditional Behavior
                  4.2 Y Combinator Interpretation
-                 4.3 The U Combinator and Truth Value Interpretation
+                 4.3 The Uβ Combinator and Truth Indifference
 
               5. REFERENCES AND RESOURCES
                  Sources of further details and theoretical work
@@ -258,7 +258,7 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
     2.1 Functional Type
 
     The usual notation for functional type is used here, as in [Burge1975:1.2,Feferman1977:2.1, Scott1993:1].  We use Greek letters to signify
-    variables over types.
+    arbitrary types.
 
        x: α
        f: α → β
@@ -408,7 +408,7 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
     of computer software programming.  There are practices which are employed
     to engineer the layering of abstractions in dependable ways.
 
-      * Preserved interpretations.  Restraints are applied in the design,
+     A. Preserved interpretations.  Restraints are applied in the design,
         combination, and operation of scripts such that particular representa-
         tions are confirmed to be interpretable as particular types.  For
         example, the representation of combinators by obs that are used in
@@ -417,13 +417,13 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
         with computational tests that confirm satisfaction and preservation
         of particular-type semblance.
 
-      * Distinguished interpretations.  Having a computational means to
+     B. Distinguished interpretations.  Having a computational means to
         discriminate entities that definitely satisfy a particular interpreta-
         tion from those that are not so distinguished.  This can be used by
         procedures to verify that their operands satisfy an intended
         interpretation of the procedure authors.
 
-      * Designated interpretations.  Providing some sort of decoration on
+     C. Designated interpretations.  Providing some sort of decoration on
         entities that names or annotates the representations themselves.  This
         provides a strict labelling of a type interpretation for an entity.
 
@@ -594,44 +594,36 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
 
     4.2 The Y Combinator Interpretation
 
-    4.3 The U Combinator and Truth-Value Interpretation
+    4.3 The Uβ Combinator and Truth Indifference
 
-    The combinator U is such that
+    The quasi-combinator Uβ is fixed on a definite type, β, having exactly
+    two values, such that
 
-        | U b x y
+           Uβ: β → (α -> (α → α) )
 
-    is equivalent to one of x or y depending on whether b is distinguished
-    as one of two distinct cases.
+         | Uβ b x y is equivalent to either x or y depending on b,
 
-    It is sufficient, then, that
+         | Uβ b ≈ K, when b is the first case, so that | K x y ≈ y
 
-        | U b ≈ K, when b is of the first case, since | K x y ≈ y
+                ≈ K I, when b is the second case, so that | K I x y ≈ y
 
-              ≈ K I, when b is of the second case, since ! K I x y ≈ y
 
-    It remains to determine what b can be that is so distinguishable.
+    Requiring that operands x and y be of the same functional type, α, is
+    consistent with the notion that they each be applicable in the same
+    interpretation-preserving context.
 
-    The means of choosing, arriving at K or | K I, is not so simple if we
-    expect that b be a combinator.  ‹ca› lacks a means for discriminating
-    any single combinator.  We can work around that question altogether by
-    considering the functional type of U.
+    Requiring that β be a type of two distinguishable entities is baffling
+    if we expect that β be a combinator.  We do not presume any means for
+    such strict differentiation among combinators [CL2018: 5. Undecidability of Combinatorial Calculus].
 
-       U: β → (α -> (α → α) )
+    For oMiser, we have, under ‹ob›, any number of distinct obs from which
+    we can select two as comprising a suitable type as β.  With respect to
+    obap.ap, the natural choice is the two primitive individuals obap.A and obap.B, the specific results of the obap.d function.  We define type obAB.
 
-    requiring that operands x and y be of the same functional type, α.  This
-    is consistent with the notion that they must each be applicable in the
-    same interpretation-preserving context.
+        obap.A: obAB,
+        obap.B: obAB
 
-    The type β must be one for which there can be explicit, computationally-
-    determined distinctions.  Ob is already at hand and suitable for that
-    purpose, with the Obs all distinguishable.
-
-    For oMiser there is a natural choice of a binary pair, the primitive
-    individuals obap.A and obap.B.  They have applicative interpretations as
-    the selection operations ob.a(x) and ob.b(x).
-
-    We can fix β as the type obAB consisting of obap.A and obap.B.  We then
-    define
+    and now UobAB can be determined.
 
         UobAB: obAB -> (α -> (α → α) )
         | UobAB obap.A ≈ K
@@ -642,6 +634,48 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
         ^UobAB ≈ UobAB
                = .ARG :: `(^cK :: ^cK ^cI)
                = .ARG :: `(.E :: `.NIL)
+
+    In usage of the ^UobAB operator script, it is required that the operand
+    be restricted to type obAB (section 2.4).  The definition of ^UobAB
+    is here based on the assumption (a pre-condition) that the operand will be
+    derived in a manner that any yield is of type obAB, affording this
+    streamlined computation.
+
+    It is commonplace to associate the notions of truth and falsity with
+    specific entities.  For example, in use of combinators, one practice is
+    to associate K and | K I with true and false, respectively.  The same
+    temptation arises for obap.A and obap.B as representations of true and
+    false.  Even though definition of UobAB preserves such a correspondence,
+    the intention to correspond to particular truth values is not inherent,
+    and such an association can vary from one case to another.  Specific truth-value interpretation is not inherent in the definitions as given.
+
+    In practice, the interpretation of certain functions that yield values of
+    type obAB is as if obap.A corresponds to the satisfaction (truth) of some
+    condition and obap.B corresponds to the condition not being satisfied (and
+    false).  This commonplace is a matter of interpretation and it is not
+    inherent to the obap.A and obap.B themselves.
+
+    The connection with obap.ap function D(ob1,ob2) is suggestive of an useful idiomatic interpretation.  But note that D(ob1,ob2) of obap.ap determines equally whether ob1 and ob2 are the same or whehter they are different and that intension determines which of obAB is "truth" in the respective case of usage.  That is not to say there is no value in a
+    fixed convention, only to affirm that it is by convention.
+
+    Akin to our observation of the interpretation-preserving nature of
+    combinator functional types, we state that Uβ and type β are truth
+    indifferent while also truth-value interpretation-preserving.  It all
+    depends on how the choice of x versus choice of y is interpreted.
+    For more on the trickiness of computational notions of truth, see
+    <https://github.com/orcmid/miser/blob/master/truth.txt>.
+
+    Treatment of Uβ is inspired by the function | ⊃ b x y of [Scott1993],
+    also written (b → x, y), where the type of b is of two distinct values,
+    signified ⊤ and ⊥ (typically interpreted as T and F or true and false).
+    Scott's inclusion of an undefined entity, Ω, is not a notion of ‹ca›
+    nor of ‹ob›.  For oMiser, an expression (evaluation) can be said to be
+    undefined in speaking about an evaluation, but not about any result an evaluation yields within the computational model.  In oMiser, such cases
+    yield no result whatsoever as does any application depending on their
+    being a determined value.
+
+    There is a similar treatment to | ⊃ b x y for the form | D x y b in  [Feferman1977: 2.1.2], where | D x y 0 = x and |D x y 1 = y, without
+    explicit association with truth values.  There is some association with Boolean algebras and also with sets being empty (by 1) or not (by 0).
 
 
  5. REFERENCES AND RESOURCES
@@ -745,6 +779,8 @@ combinators.txt 0.0.9                UTF-8                       dh:2018-05-18
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.10 2018-05-20-13:25 Complete the draft of 4.3, introducing Uβ and Truth
+       Indifference.   Related touch-ups.
  0.0.9 2018-05-18-17:40 Touch-ups, have functional-type derivation of K be
        on the same pattern as the others (arguments taken right to left).
        Expand section 4 and add draft of 4.1.3 for the U combinator.
