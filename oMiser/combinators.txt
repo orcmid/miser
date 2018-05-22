@@ -1,4 +1,4 @@
-combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
+combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -29,9 +29,9 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
     of combinators through demonstration of interpretation-preserving utility.
 
     There is, thereby, exhibition of an important aspect of software
-    engineering: successful intended interpretation of other, higher-order
-    computational entities via functions over quite different, lower-level
-    data structures, bridging between different levels of abstraction.
+    engineering and stored-program computational schemes: successful intended
+    interpretation of other, higher-order computational entities via functions over quite different, lower-level data structures, bridging
+    between different levels of abstraction via computational instruments.
 
                                   CONTENT
 
@@ -104,10 +104,10 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
     combinators.  It must not be confused with the obap.ap of obaptheory,
     <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>,
     where application is of the procedure encoded in one ob, as operator, to
-    the operand ob.
+    the other of as operand.
 
-    The notation with "|" for application is an useful reminder that this
-    application operation is in the realm of combinators.
+    The notation with "|" for application is an useful reminder that this is
+    an expression in the ‹ca› form of applicative expression.
 
     It is convenient to omit leading "|" since they can be supplied
     automatically: the total number of "|" must be one less than the number
@@ -151,9 +151,9 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
             B ≈ S | K S K
               ≈ λf.λg.λx.( f(g x) )
 
-      C f x y ≈ f | y x
+      C f x g ≈ f | g x
             C ≈ S | D S | K K
-              ≈ λf.λx.λy.( f(y x) )
+              ≈ λf.λx.λg.( f(g x) )
 
       D f x g y ≈ f x | g y
               D ≈ B B
@@ -293,9 +293,9 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
       f: β → γ
       B: (β → γ) → (α → β) → (α → γ)
 
-      C f x y ≈ f | y x
+      C f x g ≈ f | g x
       x: α
-      y: α → β
+      g: α → β
       f: β → γ
       C: (β → γ) → α → (α → β) → γ
 
@@ -555,7 +555,7 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
                     :: .C ::  ( .E :: .E :: .ARG )
                           :: `( .C :: ( .E :: .ARG ) :: `.ARG )
 
-    3.3.2 Representing | C f x y = f | y x
+    3.3.2 Representing | C f x g = f | gation x
 
           ^cC ≈ C
 
@@ -597,8 +597,6 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
 
     4.3 The Uβ Combinator
 
-    4.4 Truth Indifference
-
     The quasi-combinator Uβ is fixed on a definite type, β, having exactly
     two values, such that
 
@@ -606,23 +604,24 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
 
          | Uβ b x y is equivalent to either x or y depending on b,
 
-         | Uβ b ≈ K, when b is the first case, so that | K x y ≈ y
+         | Uβ b ≈ K, when b is the distinct first case, so that | K x y ≈ y
 
-                ≈ K I, when b is the second case, so that | K I x y ≈ y
+                ≈ K I, when b is the distinct second case,
+                  so that | K I x y ≈ y
 
 
     Requiring that operands x and y be of the same functional type, α, is
-    consistent with the notion that they each be applicable in the same
-    interpretation-preserving context.
+    consistent with the notion that they each satisfy the same
+    interpretation context.
 
-    Requiring that β be a type of two distinguishable entities is baffling
+    Requiring that β be a type of two distiguished entities is baffling
     if we expect that β be a combinator.  We do not presume any means for
     such strict differentiation among combinators [CL2018: 5. Undecidability of Combinatorial Calculus].
 
     For oMiser, we have, under ‹ob›, any number of distinct obs from which
     we can select two as comprising a suitable type as β.  With respect to
     obap.ap, the natural choice is the two primitive individuals obap.A and obap.B, the specific results of the obap.d function that distinguishes
-    whether two presented ob operands are equal or not.  We define type obAB.
+    whether the ob operands are equal or not.  We define type obAB.
 
         obap.A: obAB,
         obap.B: obAB
@@ -639,13 +638,13 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
                = .ARG :: `(^cK :: ^cK ^cI)
                = .ARG :: `(.E :: `.NIL)
 
-    In usage of the ^UobAB operator script, it is required that the operand
-    be restricted to type obAB (section 2.4).  The definition of ^UobAB
-    is here based on the assumption (a pre-condition) that the operand will be
-    derived in a manner that any yield is of type obAB, affording this
-    streamlined computation.
+    In application of the ^UobAB operator script, it is required that the
+    operand be restricted to type obAB (section 2.4).  The definition of
+     ^UobAB is here based on the assumption (a pre-condition) that the
+     operand will be derived in a manner that any yield is of type obAB, affording this streamlined procedure for ^UobAB.
 
-    For any Uβ, we can achieve the corresponding obAB element by formulation
+    For any Uβ, we can achieve the corresponding type obAB value by
+    formulation
 
         | Uβ b obap.A obap.B
 
@@ -661,7 +660,7 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
     nor of ‹ob›.  For oMiser, an expression (evaluation) can be said to be
     undefined in speaking about an evaluation, but not about any result an evaluation yields within the computational model.  In oMiser, such cases
     yield no result whatsoever as will any application depending on their
-    being a determined value.
+    being determined values for the operator ob and the operand ob.
 
     There is a similar treatment to | ⊃ b x y for the form | D x y b in  [Feferman1977: 2.1.2], where | D x y 0 = x and |D x y 1 = y, without
     explicit association with truth values.  There is some association with Boolean algebras and also with sets being empty (by 1) or not (by 0).
@@ -685,13 +684,13 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
     And, having said that, we will often apply type obAB in arrangements
     that correspond to the truth-value Boolean algebra interpretation of
     obap.A as 1 (or T) amd obap.B as 0 (or F).  These idiomatic interpreta-
-    tions account for having expressions such as
+    tions account for having Frugal expressions such as
 
        if b then x else y
 
-    corresponding to some semblance of | | Uβ b x y, and usually UoAB there.
+    corresponding to some semblance of | Uβ b x y, and usually UoAB there.
 
-    It will be useful to keep in mind that there is no "truth" there as any
+    It will be useful to keep in mind that there is no "truth" as any kind
     kind of object, and we will seek better ways of speaking that do not
     suggest any such thing in the realm of computation.
 
@@ -793,10 +792,12 @@ combinators.txt 0.0.11               UTF-8                       dh:2018-05-21
     idioms in the composition of oMiser applicative scripts from other,
     simpler ones."
 
-  * Find an accessible, specific reference for the functional-type notation.
+  * Find a way to be more flat-footed about the use of type obAB and similar
+    ones with idiomatic truth-value interpretation.  4.4 is unsatisfactory.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2018-05-22-15:03 Touch-ups and wrangling with 4.4
  0.0.11 2018-05-21-10:03 Split 4.4 Truth Indifference out of 4.3 and
        streamline the treatment.
  0.0.10 2018-05-20-13:25 Complete the draft of 4.3, introducing Uβ and Truth
