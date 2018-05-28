@@ -1,4 +1,4 @@
-combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
+combinators.txt 0.0.13               UTF-8                       dh:2018-05-**
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -602,31 +602,37 @@ combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
 
            Uβ: β → (α -> (α → α) )
 
-         | Uβ b x y is equivalent to either x or y depending on b,
+         | Uβ c x y is equivalent to either x or y depending on whether a
+                  condition, represented by c, is satisfied or not,
 
-         | Uβ b ≈ K, when b is the distinct first case, so that | K x y ≈ y
+         | Uβ c ≈ K, when the condition is satisied,
+                  so that | K x y ≈ y
 
-                ≈ K I, when b is the distinct second case,
-                  so that | K I x y ≈ y
+                ≈ K I, when the condition is not satisfied,                     so that | K I x y ≈ y
 
 
     Requiring that operands x and y be of the same functional type, α, is
     consistent with the notion that they each satisfy the same
     interpretation context.
 
-    Requiring that β be a type of two distiguished entities is baffling
-    if we expect that β be a combinator.  We do not presume any means for
-    such strict differentiation among combinators [CL2018: 5. Undecidability of Combinatorial Calculus].
+    For oMiser representation, β must have a computationally-definite
+    determination of the satisfaction of a condition.  We have that
+    evaluation of c delivers a definite value.  An easy case is for β to
+    be type Ob, and derivation of a specific value signifies satisfaction of the represented condition.
 
-    For oMiser, we have, under ‹ob›, any number of distinct obs from which
-    we can select two as comprising a suitable type as β.  With respect to
-    obap.ap, the natural choice is the two primitive individuals obap.A and obap.B, the specific results of the obap.d function that distinguishes
-    whether the ob operands are equal or not.  We define type obAB.
+    It is valuable to express the results of conditions indirectly, using
+    two chosen values.  For oMiser, we have, under ‹ob›, any number of distinct obs from which we can select any two as comprising a suitable type as β, one for satisfaction of some condition and the other for
+    when the condition is not satisfied.
+
+    A natural choice is the two primitive individuals obap.A and obap.B,
+    since those are the associated results of the obap.d(ob1,ob2) function
+    that determines whether the operands ob1 and ob2 are the same ob or not.  We define type obAB accordingly.
 
         obap.A: obAB,
         obap.B: obAB
 
-    and now UobAB can be determined.
+    with restriction of ob values to obAB accomplished at least by interpretation-preserving limitation on the use of UobAB (section
+    2.4(A)).  Now UobAB can be specified.
 
         UobAB: obAB -> (α -> (α → α) )
         | UobAB obap.A ≈ K
@@ -638,10 +644,11 @@ combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
                = .ARG :: `(^cK :: ^cK ^cI)
                = .ARG :: `(.E :: `.NIL)
 
-    In application of the ^UobAB operator script, it is required that the
-    operand be restricted to type obAB (section 2.4).  The definition of
-     ^UobAB is here based on the assumption (a pre-condition) that the
-     operand will be derived in a manner that any yield is of type obAB, affording this streamlined procedure for ^UobAB.
+    it depends on the expression provided for c to ensure that any result will always be one of obap.A or obap.B and the definition of ^UobAB is
+    sufficient.
+
+    The type naming "obAB" is a mnenomic aid to the selection of x versus
+    selection of y in | UobAB b x y.
 
     For any Uβ, we can achieve the corresponding type obAB value by
     formulation
@@ -650,17 +657,19 @@ combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
 
     where b is of functional type β.
 
-    The type naming "obAB" is a mnenomic aid to the selection of x versus
-    selection of y in | UobAB b x y.
-
     Treatment of Uβ is inspired by the function | ⊃ b x y of [Scott1993],
     also written (b → x, y), where the type of b is of two distinct values,
     signified ⊤ and ⊥ (sometimes interpreted as T and F or true and false).
+
     Scott's inclusion of an undefined entity, Ω, is not a notion of ‹ca›
     nor of ‹ob›.  For oMiser, an expression (evaluation) can be said to be
     undefined in speaking about an evaluation, but not about any result an evaluation yields within the computational model.  In oMiser, such cases
-    yield no result whatsoever as will any application depending on their
+    yield no result whatsoever as will any application depending on there
     being determined values for the operator ob and the operand ob.
+
+    With respect to ^UobAB as specified above, it depends on the expression
+    provided for c to ensure that any result will always be one of obap.A or
+    obap.B.
 
     There is a similar treatment to | ⊃ b x y for the form | D x y b in  [Feferman1977: 2.1.2], where | D x y 0 = x and |D x y 1 = y, without
     explicit association with truth values.  There is some association with Boolean algebras and also with sets being empty (by 1) or not (by 0).
@@ -668,31 +677,32 @@ combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
     4.4 Truth Indifference
 
     It is a common practice to associate the notions of truth and falsity with
-    specific entities.  For example, in use of combinators, one practice is
+    specific entities that indicate satisfaction or non-satisfaction of some
+    condition.  For example, in use of combinators, one practice is to
     to associate K and | K I with true and false, respectively, as in
     [Barendregt1981:6.2.2, Revesz1998:3.1, Scott1993].
 
-    The same temptation arises for obap.A and obap.B as representations of true and false via the correspondence made by UobAB and, more than that, by the definition of obap.d(ob1,ob2).  This is no less a matter of (non-unique) interpretation and it is not inherent to obap.A and obap.B themselves.  It is also very handy.
+    The same temptation arises for obap.A and obap.B as representations of true and false via the correspondence made by UobAB and, more than that, by the definition of obap.d(ob1,ob2).  This is no less a matter of (non-unique) interpretation and it is not inherent to obap.A and obap.B themselves.
+
+    It will be useful to avoid claiming "truth" as any kind of object, using
+    ways of speaking that do not suggest any such thing in the realm of computation.  In the case of obAB and ^UobAB, we will stick with the
+    use of obap.A and obap.B as selectors of the first or second of a pair
+    and anything else is some higher-level of interpretation/representation.
 
     Akin to our observation of the interpretation-preserving nature of
     combinator functional types, we state that Uβ and type β are truth
-    indifferent while also truth-value interpretation-preserving.  It all
-    depends on how the choice of x versus choice of y is interpreted.
-    For more on the trickiness of computational notions of truth, see
+    indifferent while also truth-value interpretation-preserving.  For
+    more on the trickiness of computational notions of truth, see
     <https://github.com/orcmid/miser/blob/master/truth.txt>.
 
-    And, having said that, we will often apply type obAB in arrangements
-    that correspond to the truth-value Boolean algebra interpretation of
-    obap.A as 1 (or T) amd obap.B as 0 (or F).  These idiomatic interpreta-
-    tions account for having Frugal expressions such as
+    There will often be use of type obAB in arrangements that correspond
+    to a truth-value Boolean algebra interpretation of obap.A as 1 (or T)
+    and obap.B as 0 (or ⊥).  These idiomatic interpretations account for
+    having Frugal expressions such as
 
        if b then x else y
 
-    corresponding to some semblance of | Uβ b x y, and usually UoAB there.
-
-    It will be useful to keep in mind that there is no "truth" as any kind
-    kind of object, and we will seek better ways of speaking that do not
-    suggest any such thing in the realm of computation.
+    corresponding to a semblance of | Uβ b x y.
 
 
  5. REFERENCES AND RESOURCES
@@ -787,16 +797,9 @@ combinators.txt 0.0.12               UTF-8                       dh:2018-05-22
     matters in greater detail.  Connect to combdemo.sml, and also work in
     Ycombinator (.txt or .sml?), and comblib.sml.
 
-  * Salvage this statement somewhere here? "Combinator representations applied
-    to representations of other types of functions will lead to some valuable
-    idioms in the composition of oMiser applicative scripts from other,
-    simpler ones."
-
-  * Find a way to be more flat-footed about the use of type obAB and similar
-    ones with idiomatic truth-value interpretation.  4.4 is unsatisfactory.
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.13 2018-05-**-**:** Bring 4.3/4.4 closer to being simply extensional.
  0.0.12 2018-05-22-15:03 Touch-ups and wrangling with 4.4
  0.0.11 2018-05-21-10:03 Split 4.4 Truth Indifference out of 4.3 and
        streamline the treatment.
