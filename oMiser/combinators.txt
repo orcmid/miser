@@ -1,4 +1,4 @@
-combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
+combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -398,9 +398,9 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
 
     To manifest a level of abstraction in which the specific functional types
     are satisfied, there must be some restraint to using obs that are computa-
-    tional representations of and interpretable as individuals of specific
-    functional types.  Maintaining the semblance involves restraints on the
-    use of the computational entities (e.g., representations via obs) in a
+    tional representations of and interpretable as entities of specific
+    functional types.  Maintaining the semblance involves restraints on use
+    of the computational entities (e.g., representations via obs) in a
     orchestrates computational procedures in satisfaction of the restricted
      interpretation(s).
 
@@ -474,7 +474,8 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
     3.2 Representing K, I, and S
 
     Three simple combinators are derived completely to illustrate the
-    methodology of combinator definition satisfaction (cf. 2.3).
+    methodology of combinator definition satisfaction (cf. 2.3), keeping in
+    mind that these are cases calling for preserved interpretation (2.4(A)).
 
     3.2.1 Representing K
 
@@ -499,7 +500,7 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
     (e.g., `z) and is so-encapsulated within a script as a payload for
     some idiomatic purpose.
 
-    Important.  It is part of the strict semantics for oMiser that an
+    IMPORTANT.  It is part of the strict semantics for oMiser that an
     application (^cK x) y cannot be simplified unless it is assured that
     evaluation of y has a definite computational result whenever evaluation
     of x does.
@@ -619,13 +620,11 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
 
     In order for the two cases of type β to provide definite selection of
     one of x or y, it is not proposed that type β consist of combinators.
-    For computational interpretation, c must be distinguishable by
-    computational means.  For oMiser interpretation, we require that β
-    be represented by distinct obs, with derivation of a specific one
-    providing clear-cut interpretation.
+    For computational interpretation, c must be determined and its elements
+    distinguished by computational means.
 
-    With oMiser, appealing choice for β is a type consisting of the two
-    two primitive individuals obap.A and obap.B.  Concrete type obAB is defined accordingly.
+    With oMiser, an appealing choice for β is a type consisting of the two
+    primitive individuals obap.A and obap.B.  Concrete type obAB is defined accordingly.
 
         obap.A: obAB,
         obap.B: obAB
@@ -640,11 +639,11 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
 
     with representation
 
-        ^UobAB ≈ UobAB
-               = .ARG :: `(^cK :: ^cK ^cI)
-               = .ARG :: `(.E :: `.NIL)
+        ^cUobAB ≈ UobAB
+                = .ARG :: `(^cK :: ^cK ^cI)
+                = .ARG :: `(.E :: `.NIL)
 
-    it depends on the expression provided for c to ensure that any result
+    depending on the expression provided for c being such that any result
     will always be one of obap.A or obap.B such that ^UobAB(c) is definite.
 
     The type naming "obAB" is a mnenomic aid to the selection of x versus
@@ -658,13 +657,31 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
     where c is of functional type β.
 
     With UobAB, we have the means to introduce definite selection of
-    alternative results based on some determination of an obAB value.
+    alternative results based on determination of an obAB value by some
+    definite means.
+
+    Finally, restriction to obAB can always be ensured within the capabilities
+    of the ‹ob› obap.ap function by some filter on any ob, such as
+
+       is-A: Ob -> obAB
+       is-A(x) = obap.A when x = obap.A
+               = obap.B otherwise
+
+       with ^is-A = obap.D :: obap.A :: obap.ARG
+
+    then using
+
+       ^cUobA = ^cB(^cUobAB,^is-A)
+
+    to represent a kind of UobA conditional.  Many arrangements of this kind
+    are at hand, with preferences among them based on the context of intended
+    interpretation.
 
     4.4 Truth Indifference
 
     Combinator (Uβ b) is inspired by the form | ⊃ b x y of [Scott1993],
     also written (b → x, y), where the type of b is of two distinct values,
-    signified ⊤ and ⊥.  (We could designate U⊤⊥ for the case with Scott's
+    signified ⊤ and ⊥.  (We could designate U⊤⊥ for the case of Scott's
     strict type ⊤⊥.)
 
     There is a similar treatment to | ⊃ b x y of the form | D x y b in
@@ -672,9 +689,10 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
     distinct individuals 0 and 1.
 
     One can also interpret a type, such as obAB, as representing truth
-    (obap.A) and falsity (obap.B) with respect to some condition.  Likewise,
-    one convention is to take K and | K I as representing "true" and "false",
-    respectively, as in [Barendregt1981:6.2.2, Revesz1998:3.1, Scott1993].
+    (obap.A) and falsity (obap.B) with respect to some condition such as the
+    result of obap.d(x,y).  Likewise, one convention is to take K and | K I
+    as representing "true" and "false", respectively, as in
+    [Barendregt1981:6.2.2, Revesz1998:3.1, Scott1993].
 
     With respect to computational interpretations of logical notions it
     is valuable to avoid claiming "truth" as any kind of (computational)
@@ -684,14 +702,19 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
 
     There will be some idiomatic oMiser computational definitions that are
     valuable in representing Boolean logical operations.  type obAB will
-    be applied in such representation.  That is a possible interpretation of
-    obAB cases.  It is not what the type obAB "is."
+    be employed in one representation of a structure, ‹bool›.  It is not what
+    the type obAB "is."
 
     Akin to the observation of the interpretation-preserving nature of
     combinator functional types, Uβ and type β are taken to be "truth"
-    indifferent while also truth-value interpretation-preserving.  For
-    more on the trickiness of computational notions of truth, see
-    <https://github.com/orcmid/miser/blob/master/truth.txt>.
+    indifferent while also truth-value interpretation-preserving, depending
+    on how the alternatives x and y of | Uβ c x y are construed in
+    conjunction with the sense given to the prescribed alternatives of the
+    type β operand c.
+
+    See <https://github.com/orcmid/miser/blob/master/truth.txt> for more on
+    the trickiness of computational notions of truth and the representation
+    of logical truth-value semantics.
 
 
  5. REFERENCES AND RESOURCES
@@ -786,14 +809,30 @@ combinators.txt 0.0.13               UTF-8                       dh:2018-05-28
     matters in greater detail.  Connect to combdemo.sml, and also work in
     Ycombinator (.txt or .sml?), and comblib.sml.
 
+  * We need to separate performance concerning conditional operations as
+    ways to economize computations.  While one can economize expression,
+    perhaps, around the conditional choice among combinators, the strong
+    optimization over when evaluation happens and factoring of evaluations
+    needs to be left at the engineered deterministic level of operation.
+
+  * Consider whether the proper order of presentation has the conditional
+    last or whether it should precede the treatment of the Y combinator.
+    That treatment is an appropriate place for the performance topic about
+    deterministic versus non-deterministic and also versus eager versus
+    lazy.  I suspect that re-ordering will improve the narrative as fond
+    as I am of presenting the Y combinator early.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.14 2018-05-30-09:33 Tweek 4.3/4.4.  Touch up elsewhere.  Manage TODOs
+        considering whether the narrative should be re-organized to aid in
+        consideration of deterministic performance matters.
  0.0.13 2018-05-28-11:45 Bring 4.3/4.4 closer to being entirely extensional.
  0.0.12 2018-05-22-15:03 Touch-ups and wrangling with 4.4
  0.0.11 2018-05-21-10:03 Split 4.4 Truth Indifference out of 4.3 and
-       streamline the treatment.
+        streamline the treatment.
  0.0.10 2018-05-20-13:25 Complete the draft of 4.3, introducing Uβ and Truth
-       Indifference.   Related touch-ups.
+        Indifference.   Related touch-ups.
  0.0.9 2018-05-18-17:40 Touch-ups, have functional-type derivation of K be
        on the same pattern as the others (arguments taken right to left).
        Expand section 4 and add draft of 4.1.3 for the U combinator.
