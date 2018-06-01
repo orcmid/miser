@@ -1,4 +1,4 @@
-combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
+combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -64,14 +64,14 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
                  3.2 Representing K, I, and S
                  3.3 Derived Utility Combinators B, C, D, T, and W
 
-              4. RECURSION AND EXOTIC COMBINATORS
+              4. EXOTIC COMBINATORS: CONDITIONAL AND RECURSIVE OPERATION
                  Achievement of recursive operation and conditional
                  evaluation in terms of combinators
 
                  4.1 Conditional Behavior
-                 4.2 Y Combinator Interpretation
-                 4.3 The Uβ Selectors
-                 4.4 Truth Indifference
+                 4.2 The Uβ Conditional Selectors
+                 4.3 Truth Indifference
+                 4.4 Y Combinator Interpretation
 
               5. REFERENCES AND RESOURCES
                  Sources of further details and theoretical work
@@ -431,7 +431,9 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
     Typically, there are many ways to represent entities of some type, and
     it then becomes interesting to deal with (1) the different interpretations
     that a single computational entity might satisfy and (2) inter-operation
-    with different representations of the same type.
+    with different representations of the same type.  By virtue of (2) it
+    will be appropriate to identify a representation with the type and the
+    specific interpretation that the computational representation satisfies.
 
     We use the oMiser idioms for combinators to launch Miser Project investi-
     gation of levels of computational abstraction and how computational means
@@ -590,22 +592,21 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
                    :: `.ARG
 
 
- 4. RECURSION AND EXOTIC COMBINATORS
+ 4. EXOTIC COMBINATORS: CONDITIONAL AND RECURSIVE OPERATION
 
     4.1 Conditional Behavior
 
-    4.2 The Y Combinator Interpretation
 
-    4.3 The Uβ Selectors
+
+    4.2 The Uβ Conditional Selectors
 
     The quasi-combinator Uβ is fixed on a definite type, β, having exactly
     two values, such that
 
            Uβ: β → (α -> (α → α) )
 
-         | Uβ c x y is equivalent to either x or y depending on whether a
-                  which of two definite cases is satisfied by the operand,
-                  c
+         | Uβ c x y is equivalent to either x or y depending on which of
+                  two definite cases is satisfied by the operand, c
 
          | Uβ c ≈ K, when c is of the first case,
                   and then | K x y ≈ y
@@ -616,12 +617,12 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
 
     Requiring that operands x and y be of the same functional type, α, is
     consistent with the notion that they each satisfy the same
-    interpretation context.
+    interpretation context in the intended place of use.
 
     In order for the two cases of type β to provide definite selection of
     one of x or y, it is not proposed that type β consist of combinators.
     For computational interpretation, c must be determined and its elements
-    distinguished by computational means.
+    precisely distinguished by computational means.
 
     With oMiser, an appealing choice for β is a type consisting of the two
     primitive individuals obap.A and obap.B.  Concrete type obAB is defined accordingly.
@@ -656,10 +657,6 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
 
     where c is of functional type β.
 
-    With UobAB, we have the means to introduce definite selection of
-    alternative results based on determination of an obAB value by some
-    definite means.
-
     Finally, restriction to obAB can always be ensured within the capabilities
     of the ‹ob› obap.ap function by some filter on any ob, such as
 
@@ -677,7 +674,7 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
     are at hand, with preferences among them based on the context of intended
     interpretation.
 
-    4.4 Truth Indifference
+    4.3 Truth Indifference
 
     Combinator (Uβ b) is inspired by the form | ⊃ b x y of [Scott1993],
     also written (b → x, y), where the type of b is of two distinct values,
@@ -690,8 +687,8 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
 
     One can also interpret a type, such as obAB, as representing truth
     (obap.A) and falsity (obap.B) with respect to some condition such as the
-    result of obap.d(x,y).  Likewise, one convention is to take K and | K I
-    as representing "true" and "false", respectively, as in
+    result of obap.d(x,y).  Likewise, one convention is to treat combinators
+    K and | K I as representing "true" and "false", respectively, as in
     [Barendregt1981:6.2.2, Revesz1998:3.1, Scott1993].
 
     With respect to computational interpretations of logical notions it
@@ -715,6 +712,8 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
     See <https://github.com/orcmid/miser/blob/master/truth.txt> for more on
     the trickiness of computational notions of truth and the representation
     of logical truth-value semantics.
+
+    4.4 The Y Combinator Interpretation
 
 
  5. REFERENCES AND RESOURCES
@@ -824,6 +823,9 @@ combinators.txt 0.0.14               UTF-8                       dh:2018-05-30
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.15 2018-06-01-14:46 Touch ups on conditionality and accomodation of the
+        deterministic computation model of obap.ap.  Refactor to cover the
+        conditionality before recursion.
  0.0.14 2018-05-30-09:33 Tweek 4.3/4.4.  Touch up elsewhere.  Manage TODOs
         considering whether the narrative should be re-organized to aid in
         consideration of deterministic performance matters.
