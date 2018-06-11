@@ -1,4 +1,4 @@
-combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
+combinators.txt 0.0.16               UTF-8                       dh:2018-06-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -118,7 +118,7 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
        x z | y z for || x z | y z
 
     In text and some other places, at least one "|" is retained to signal
-    that the expression is in ‹ca›, not ‹ob›.
+    that the expression is in ‹ca› rather than in ‹ob›.
 
     The symbol "≈" is for equivalence of combinators.  This is distinct
     from the "=" equality relationship among obs.  Although "≈" is tantamount
@@ -335,7 +335,7 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
     The oMiser interpretation of ‹ca› is as follows.
 
      * The interpretation of |x y is as obap.ap(cx, cy) where cx and cy are
-       the oMIser interpretations of combinators x an y, respectively.
+       oMIser interpretations of combinators x an y, respectively.
 
     For the concrete computational mechanism of oMiser obap.ap, one can simply
     substitute Ob for all of the type variables, α, β, γ, δ.  There is
@@ -349,9 +349,9 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
       (^cK x) y = x
 
     so if x is interpretable as a combinator, that interpretation is
-    preserved just as it is for x interpretable as an entity of any type,
-    since it preserves the ob, x, and whatever interpretation that might
-    be intended for it.  In this manner, ^cK interpretation as combinator K
+    preserved just as it is for x interpretable as an entity of any type.
+    The ob, x, and whatever interpretation that might be intended for it
+    are preserved.  In this manner, ^cK interpretation as combinator K
     is satisfied and functional type is also honored.
 
     The ^-notation as part of a constant name is oFrugalese for a binding to
@@ -407,7 +407,7 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
     In the context of digital computation, the orchestration of available
     types in manifestation of other (higher-order) types is characteristic
     of computer software programming.  There are practices which are employed
-    to engineer the layering of abstractions in dependable ways.
+    to engineer such layering of abstractions in dependable ways.
 
      A. Preserved interpretations.  Restraints are applied in the design,
         combination, and operation of scripts such that particular representa-
@@ -432,13 +432,15 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
     it then becomes interesting to deal with (1) the different interpretations
     that a single computational entity might satisfy and (2) inter-operation
     with different representations of the same type.  By virtue of (2) it
-    will be appropriate to identify a representation with the type and the
-    specific interpretation that the computational representation satisfies.
+    will be appropriate to identify a representation with the type in
+    combination with the specific interpretation that the computational
+    representation satisfies.
 
     We use the oMiser idioms for combinators to launch Miser Project investi-
-    gation of levels of computational abstraction and how computational means
-    are applicable to manage and confirm representations and satisfaction of
-    theoretical interpretations.
+    gation of levels of computational abstraction.  Exploration is as to how
+    computational means serve to manage and confirm representations and
+    satisfaction of theoretical interpretations.
+
 
  3. oMISER UTILITY COMBINATOR IDIOMS
 
@@ -471,12 +473,13 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
 
       * The computational interpretation in ‹ob› is imperative and eager.
         Applications are carried out once the operator and the operand are
-        each computationally determined and not before.
+        each computationally determined, not before and not later.  Any
+        result is by deterministic procedure.
 
     3.2 Representing K, I, and S
 
     Three simple combinators are derived completely to illustrate the
-    methodology of combinator definition satisfaction (cf. 2.3), keeping in
+    methodology of combinator-definition satisfaction (cf. 2.3), keeping in
     mind that these are cases calling for preserved interpretation (2.4(A)).
 
     3.2.1 Representing K
@@ -596,6 +599,21 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
 
     4.1 Conditional Behavior
 
+    In the use of mathematical theories to present characterize functions,
+    there are two important provisions that we have not seen, so far, in ‹ca›.
+
+     * Differentiation by cases.  There are distinguished cases in the
+       characterization of obs in ‹ob›.  There are even more cases established
+       in the characterization of the application function, obap.ap(p,x).
+       Imperative computation based on distinguished cases is important,
+       with deterministic selection of cases without evaluation of any cases
+       that are not satisfied.
+
+     * Recursion.  A companion to separation of cases is the conditional
+       use of the function being characterized in an expression that
+       simplifies continued characterization.  Computational interpretation
+       is by reuse of the procedure in a manner that reduces the computation
+       to a simpler use of the procedure.
 
 
     4.2 The Uβ Conditional Selectors
@@ -622,7 +640,7 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
     In order for the two cases of type β to provide definite selection of
     one of x or y, it is not proposed that type β consist of combinators.
     For computational interpretation, c must be determined and its elements
-    precisely distinguished by computational means.
+    precisely distinguished by computational means.  We lack that in ‹ob›.
 
     With oMiser, an appealing choice for β is a type consisting of the two
     primitive individuals obap.A and obap.B.  Concrete type obAB is defined accordingly.
@@ -705,9 +723,8 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
     Akin to the observation of the interpretation-preserving nature of
     combinator functional types, Uβ and type β are taken to be "truth"
     indifferent while also truth-value interpretation-preserving, depending
-    on how the alternatives x and y of | Uβ c x y are construed in
-    conjunction with the sense given to the prescribed alternatives of the
-    type β operand c.
+    on how the alternatives x and y of | Uβ c x y are construed as consistent
+    with such interpretation of c in a given context.
 
     See <https://github.com/orcmid/miser/blob/master/truth.txt> for more on
     the trickiness of computational notions of truth and the representation
@@ -814,15 +831,10 @@ combinators.txt 0.0.15               UTF-8                       dh:2018-06-01
     optimization over when evaluation happens and factoring of evaluations
     needs to be left at the engineered deterministic level of operation.
 
-  * Consider whether the proper order of presentation has the conditional
-    last or whether it should precede the treatment of the Y combinator.
-    That treatment is an appropriate place for the performance topic about
-    deterministic versus non-deterministic and also versus eager versus
-    lazy.  I suspect that re-ordering will improve the narrative as fond
-    as I am of presenting the Y combinator early.
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.16 2018-06-11-14:56 Add section 4.1 on handling conditional distinction
+        by cases, touching up as usual.
  0.0.15 2018-06-01-14:46 Touch ups on conditionality and accomodation of the
         deterministic computation model of obap.ap.  Refactor to cover the
         conditionality before recursion.
