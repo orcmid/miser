@@ -1,4 +1,4 @@
-combinators.txt 0.0.17               UTF-8                       dh:2018-06-17
+combinators.txt 0.0.18               UTF-8                       dh:2018-06-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -397,7 +397,7 @@ combinators.txt 0.0.17               UTF-8                       dh:2018-06-17
 
     IMPORTANT: Interpretation-preservation flexibility as described here
     relies on the use of obap.ap as the counter-part of functional
-    application in the system for which an interpretation is being provided.
+    application in the system for which an interpretation is being claimed.
     More indirect approaches can be operationally successful.  That is not
     presumed here.
 
@@ -755,6 +755,66 @@ combinators.txt 0.0.17               UTF-8                       dh:2018-06-17
 
     4.4 The Y Combinator Interpretation
 
+    Consider, now, an applicative expression, f, where there is a case selection in which one wants to apply f itself as part of the continuing
+    evaluation of a determined case.  Assume the typical form
+
+        f ≈ λx.(... (f M) ...)
+
+    where the (f M), and other occurrences of (f ...) in the expression are
+    conditionally-chosen based on satisfaction of particular cases. No evaluation of (f M) occurs until the governing case is satisfied.
+
+    There is no form of lambda-expression or combinator-expression by which
+    the expression of f can refer to and employ that expression as a whole.
+
+    A solution is by first applying the following transformation, replacing
+    all occurrences of f of this kind in the right-hand side to achieve
+
+        fs ≈ λf.λx.(... (f M) ...).
+
+    Clearly, fs is not f.  It has the structure of f, but there is now an
+    operand to be supplied for use where application of operand f occurs in
+    fs application to the next operand, x.  Notice that, on the other hand,
+    hand, fs has no references of any kind to itself.
+
+    The next step is to suppose the existence of a combinator, Y, that will
+    make the recursive connection, satisfying
+
+        f ≈ Y fs ≈ fs(Y fs) ≈ fs(f).
+
+    Whatever Y is, when applied to fs it provides a version where fs is
+    applied to its first operand, the recursive version (Y fs).
+
+    It is not necessary to ponder this too closely.  It suffices to determine
+    how an interpretation, ^cY, is achieved that fully satisfies this defining
+    Y combinator characteristic in oMiser.
+
+    When evaluation of any ((^cY fs) M) is carried out via oMiser obap.ap
+    expansion
+
+       obap.ap((^cY fs), eM) = obap.ev((^cY fs), eM, cY fs),
+
+    we have      eM, the evaluated M as operand, and
+           (^cY fs), the evaluated recursive form interpreted as f
+
+    At this point with obap.ev, (^cY fs) is available as the value of
+    obap.SELF and eM is available as the value of obap.ARG.  What is needed
+    to continue is (fs (^cY fs)) eM.  This leads to the solution
+
+         (^cY fs) ≅ (`fs :: .SELF) :: ARG
+
+    so that
+
+          ^cY ≈ Y
+
+    with  ^cY = .C :: (.C :: (.E :: .ARG)
+                          :: `.SELF )
+                   :: `.ARG
+
+    This imperative solution for the Y combinator, and the presumption that
+    a recursion occurs conditionally by case is an example of provisions to
+    be made for systems, such as oMiser, where obap.ap(p,x) operands are "by
+    value" [Paulson1996:p.391].
+
 
  5. REFERENCES AND RESOURCES
 
@@ -861,8 +921,17 @@ combinators.txt 0.0.17               UTF-8                       dh:2018-06-17
     provides the deterministic operational representation.  This needs to
     be affirmed elsewhere and relied upon here.
 
+  * Add something after 4.4 to point out that, for practical application,
+    more machinery and useful definitions are required.  We have demonstrated
+    key components with respect to the interpretation of combinators, but
+    much has been assumed about how scripts are arranged to satisfy the
+    various conditions, demonstrated so far by "[bracket abstraction]" in
+    presentation of scripts.  Getting from Theory to Practice is probably
+    important.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.18 2018-06-17-15:23 First Draft of 4.4 The Y Combinator Interpretation
  0.0.17 2018-06-17-11:16 Touched-up readiness for 4.3 on Recursion
  0.0.16 2018-06-11-14:56 Add section 4.1 on handling conditional distinction
         by cases, touching up as usual.
