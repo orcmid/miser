@@ -1,4 +1,4 @@
-obtheory.txt 0.0.25                  UTF-8                       dh:2018-07-07
+obtheory.txt 0.0.26                  UTF-8                       dh:2018-07-09
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -144,10 +144,9 @@ PRIMITIVE NOTIONS
 
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
-        canonical identifiers for the arguments, any canonical-identifier result
-        is determined uniquelly and explicitly by deduction based entirely
-        on an Ot characterization of F by a finite number of mathematical
-        statements.
+        canonical identifiers for the arguments, any canonical-identifier result is determined uniquelly and explicitly by deduction based
+        entirely on an Ot characterization of F by a finite number of
+        mathematical statements.
 
         Predicates in Ot are effectively-computable as true or false
         in a similar manner and termed effectively-decidable.
@@ -158,13 +157,12 @@ PRIMITIVE NOTIONS
         that a definite result is established for any obs given as arguments.
 
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
-        determined, it need not be made definite which of x ¶ y or y ¶ x holds.
-        For Ot, Ob8 is definite enouth to ensure that any representation of a
-        function F (or predicate P) must be such that Ob8 is not contradicted.
-        In addition, interpretations of ‹ob› are relieved from establishing an
-        explicit counterpart of x ¶ y.  It is sufficient that no ob interpreta-
-        tioon can appear as a component of its own structure and no operations
-        violate that constraint.
+        determined, it need not be made definite which of x ¶ y or y ¶ x
+        holds.  For Ot, Ob8 is definite enouth to ensure that any representation of a function F (or predicate P) must be such that Ob8
+        is not contradicted.  In addition, interpretations of ‹ob› are
+        relieved from establishing an    explicit counterpart of x ¶ y.  It
+        is sufficient that no ob interpretation can appear as a component of
+        its own structure and no operations violate that constraint.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -200,9 +198,10 @@ TODO
    of the material.
 
  * When we speak of all of the effectively-computable functions on Obs, as
-   characterized here, the claim will be that the totality of them is equivalent to the CT-computable (total) functions.  When a a universal
+   characterized here, the claim will be that the totality of them is
+   equivalent to the CT-computable (total) functions.  When a a universal
    function is also formulated, equivalence to a Universal Turing Machine and
-    Turing Completeness will be claimed.
+   Turing Completeness will be claimed.
 
  * Determine how we reconcile having partial functions under the umbrella of
    effectively-computable.  It appears that this might be related to domain
@@ -215,6 +214,9 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.26 2018-07-09-15:33 Correct line flow and a typo.  There is no change
+        of substance, making this a worthy substitute for reference from
+        existing blog posts.
  0.0.25 2018-07-07-11:05 Repair text-flow in Visual Code and point out the
         intended truth-value semantics of Ot.
  0.0.24 2017-12-29-16:48 Adjust Ob8 and Ob10 so that x ¶ y is taken as a
