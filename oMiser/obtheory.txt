@@ -1,4 +1,4 @@
-obtheory.txt 0.0.26                  UTF-8                       dh:2018-07-09
+obtheory.txt 0.0.27                  UTF-8                       dh:2018-07-14
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -160,7 +160,7 @@ PRIMITIVE NOTIONS
         determined, it need not be made definite which of x ¶ y or y ¶ x
         holds.  For Ot, Ob8 is definite enouth to ensure that any representation of a function F (or predicate P) must be such that Ob8
         is not contradicted.  In addition, interpretations of ‹ob› are
-        relieved from establishing an    explicit counterpart of x ¶ y.  It
+        relieved from establishing an explicit counterpart of x ¶ y.  It
         is sufficient that no ob interpretation can appear as a component of
         its own structure and no operations violate that constraint.
 
@@ -212,8 +212,19 @@ TODO
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
    it belongs in obaptheory, not here.
 
+ * Ob8 must be adjusted in the case of extensions that introduce individuals.
+   It will be the case that the canonical form has a couple of other
+   functions, ones that derive distinct individuals from canonical obs.
+
+ * We need to introduce more clearly what qualifies as a computational
+   interpretation in the context of oMiser, and how such an interpretation
+   is to be established and confirmed.  This will feature the interpretation
+   as an engineered accomplishment.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.27 2018-07-14-12:50 Manage TODOs, anticipating Ob8 requiriing extension
+        later on.
  0.0.26 2018-07-09-15:33 Correct line flow and a typo.  There is no change
         of substance, making this a worthy substitute for reference from
         existing blog posts.
