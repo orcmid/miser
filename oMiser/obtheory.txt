@@ -1,4 +1,4 @@
-obtheory.txt 0.0.27                  UTF-8                       dh:2018-07-14
+obtheory.txt 0.0.28                  UTF-8                       dh:2018-07-25
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -115,8 +115,8 @@ PRIMITIVE NOTIONS
 
         x = y ∨ x ¶ y ∨ y ¶ x                    (d), ordering
 
-        z = ob.e(y) ⇔ (y ¶ z)                    (e), construction
-        z = ob.c(x,y) ⇔ (x ¶ z) ∧ (y ¶ z)
+        z = ob.e(y) ⇒ (y ¶ z)                    (e), construction
+        z = ob.c(x,y) ⇒ (x ¶ z) ∧ (y ¶ z)
 
         ob.is-individual(x) ⇒ x ¶ ob.e(x)         (f), floating
         ob.is-individual(x) ⇒ x ¶ ob.c(x,y)
@@ -197,8 +197,8 @@ TODO
    into than GitHub, and perhaps more durable.  This may depend on stability
    of the material.
 
- * When we speak of all of the effectively-computable functions on Obs, as
-   characterized here, the claim will be that the totality of them is
+ * When we speak of all of the effectively-computable functions on Obs, as Obs
+   ae characterized here, the claim will be that the totality of them is
    equivalent to the CT-computable (total) functions.  When a a universal
    function is also formulated, equivalence to a Universal Turing Machine and
    Turing Completeness will be claimed.
@@ -223,6 +223,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.28 2018-07-25-18:02 Correct serious error in Ob8.
  0.0.27 2018-07-14-12:50 Manage TODOs, anticipating Ob8 requiriing extension
         later on.
  0.0.26 2018-07-09-15:33 Correct line flow and a typo.  There is no change
