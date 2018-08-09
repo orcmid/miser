@@ -1,4 +1,4 @@
-theory.txt 0.0.0                     UTF-8                       dh:2018-04-17
+theory.txt 0.0.1                     UTF-8                       dh:2018-08-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -9,9 +9,41 @@ theory.txt 0.0.0                     UTF-8                       dh:2018-04-17
 
              <https://github.com/orcmid/miser/blob/master/theory.txt>
 
+             If a result is important, you badly want to find different
+             ways to see that fact; that's much safer.  If you have only
+             one proof, and it contains an error, then you're left with
+             nothing.  Having several proofs is not only safer, it gives
+             you more insight, and it gives you more understanding.  After
+             all, the real goal of mathematics is to obtain insight, not
+             just proofs.
+                                 -- Gregory Chaitin [Chaitin2005, p.25]
+
 [SYNOPSIS: TBD]
 
 [CONTENT: TBD]
+
+REFERENCES AND BIBLIOGRAPHY
+
+[Chaitin1998]
+   Chaitin, Gregory J.  The Limits of Mathematics: A Course on Information
+   Theory and the Limits of Formal Reasoning.  Springer (Singapore: 1998).
+   ISBN 981-3083-59-X.  An objective in exploration of this material is using
+   oMiser to demonstrate Algorithmic Information Theory, and its concrete
+   cases, with sufficient translation of the version of LISP used by Chaitin.
+
+[Chaitin1999]
+   Chaitin, Gregory J.  The Unknowable.  Springer (Singapore: 1999).  ISBN
+   981-4021-72-5.  This follow-in to [Chaitin1998] provides some additional
+   support including application to incompleteness and the Turing halting
+   problem.  These should have aligned demonstrations in the oMiser computa-
+   tional model interpretation of ‹ob› obap.ap.
+
+[Chaitin2005]
+   Chaitin, Gregory J.  Meta Math!: the Quest for Omega.  Pantheon (New York:
+   2005).  ISBN 0-375-42313-3.  Digging deeper into the nature of mathematics,
+   computation, and scientific understanding.  We make no metaphysical
+   commitments in our application of Chaitin's ideas and algorithmic
+   information theory.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -56,6 +88,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2018-08-09-11:48 Add Chaitin material.  This is not primary, but an
+       element of what to explore via the Miser Project.
  0.0.0 2018-04-17-13:25 Create placeholder, with starter TODOs on the
        connection of oMiser to computation theory.
 
