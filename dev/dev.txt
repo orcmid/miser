@@ -1,4 +1,4 @@
-dev.txt 0.0.0                        UTF-8                       dh:2018-04-19
+dev.txt 0.0.1                        UTF-8                       dh:2018-08-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
@@ -49,8 +49,24 @@ TODO
   * Describe the development principles with respect to having a shallow
     end to the pool and easy confirmability.
 
+  * Look into multi-platform support at the potential production library
+    level for C/C++ constructed libraries for oMiser and using oMiser.
+    Reconcile with the desire to minimize tooling and preservation of
+    an on-ramp for enthusiasts, students, and novices.
+
+  * E.g.,
+  <https://blogs.msdn.microsoft.com/vcblog/2018/04/24/announcing-a-single-c-library-manager-for-linux-macos-and-windows-vcpkg/>
+  and
+  <https://blogs.msdn.microsoft.com/vcblog/2016/09/19/vcpkg-a-tool-to-acquire-and-build-c-open-source-libraries-on-windows/>
+  with particular interest in how "repeatable builds" are achieved.
+
+  * Noticing that <https://github.com/Microsoft/vcpkg> depends on Powershell,
+    and that interferes with the "shallow-end" and minimal tooling notions
+    I have been attempting for nfoTools.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2018-08-09-11:34 Elaborate TODOs.  Stop sitting on check-in for more.
  0.0.0 2018-04-19-10:29 Create placeholder and initial job jar for the
        Miser Project code.
 
