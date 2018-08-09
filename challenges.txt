@@ -1,4 +1,4 @@
-challenges.txt 0.0.1                 UTF-8                       dh:2018-04-17
+challenges.txt 0.0.2                 UTF-8                       dh:2018-08-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -12,6 +12,19 @@ challenges.txt 0.0.1                 UTF-8                       dh:2018-04-17
 [SYNOPSIS: TBD]
 
 [CONTENT: TBD]
+
+REFERENCES AND BIBLIOGRAPHY
+
+[Okasaki1998]
+   Okasaki, Chris.  Purely Functional Data Structures.  Cambridge University
+   Press (New York: 1998).  ISBN 0-521-66350-4 pbk.  This extensive treatment
+   on means of efficient functional implementations for data structures is
+   mined for potential under-the-covers optimizations.  Exploration of the
+   structures, and the ML laziness extension, aids in the establishment of
+   an ontology that reconciles differences between implementations, and their
+   encapsulations, and ideas of concrete types tied to abstract types/classes.
+   The handiness of the machine-like interpretation of ‹ob› into oMiser is to
+   be investigated.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -143,8 +156,17 @@ TODO
    it requires theoretical support and constraints against improper
    optimizations.
 
+ * The explicit applications in the REPL are opportunities for
+   code optimization when an extension is constructed. This can take
+   advantage of there being an enhanced implementation in oFrugal that
+   exploits the definition time of a binding.  This may depend on there
+   being delayed evaluation for usability reasons (avoiding evaluation
+   until well-formedness and binding values are confirmed) as a guide
+   to where optimization is not wasted.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2018-08-09-11:40 Add [Okasaki1998], ...
  0.0.1 2018-04-17-10:26 Additional challenge TODOs
  0.0.0 2018-04-12-12:12 Create placeholder, with starter TODOs.
 
