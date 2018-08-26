@@ -1,4 +1,4 @@
-obtheory.txt 0.0.28                  UTF-8                       dh:2018-07-25
+obtheory.txt 0.0.29                  UTF-8                       dh:2018-08-26
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -87,7 +87,7 @@ PRIMITIVE NOTIONS
                    ⇒ (u = z ⇔ v = x ∧ w = y)                  (a)
 
         u = ob.e(v) ∧ z = ob.e(x)
-                   ⇒ (u = z ⇔ v = x)                           (b)
+                   ⇒ (u = z ⇔ v = x)                          (b)
 
         ob.is-pair(u) ∧ ob.is-singleton(z)
                    ⇒ u ≠ z                                     (c)
@@ -106,6 +106,8 @@ PRIMITIVE NOTIONS
         are distinct if and only if their names differ.  Those
         individuals are also distinct from any other individual
         kind that may arise.
+
+DENUMERABILITY AND EFFECTIVENESS
 
    Ob8. The ¶ Precedence Condition
 
@@ -144,7 +146,8 @@ PRIMITIVE NOTIONS
 
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
-        canonical identifiers for the arguments, any canonical-identifier result is determined uniquelly and explicitly by deduction based
+        canonical identifiers for the arguments, any canonical-identifier
+        result is determined uniquelly and explicitly by deduction based
         entirely on an Ot characterization of F by a finite number of
         mathematical statements.
 
@@ -158,7 +161,8 @@ PRIMITIVE NOTIONS
 
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
         determined, it need not be made definite which of x ¶ y or y ¶ x
-        holds.  For Ot, Ob8 is definite enouth to ensure that any representation of a function F (or predicate P) must be such that Ob8
+        holds.  For Ot, Ob8 is definite enouth to ensure that any
+        representation of a function F (or predicate P) must be such that Ob8
         is not contradicted.  In addition, interpretations of ‹ob› are
         relieved from establishing an explicit counterpart of x ¶ y.  It
         is sufficient that no ob interpretation can appear as a component of
@@ -206,7 +210,8 @@ TODO
  * Determine how we reconcile having partial functions under the umbrella of
    effectively-computable.  It appears that this might be related to domain
    restrictions, although the restriction might not be (effectively-)
-   decidable?
+   decidable?  It is also the case that the Universal Function is a partial
+   function, since it cannot be total or the halting problem would be trivial.
 
  * Rely on the Stanford Encyclopedia of Philosophy (SEP) treatment of the
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
@@ -223,6 +228,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.29 2018-08-26-10:22 Clean up white space and headings, manage TODOs.
  0.0.28 2018-07-25-18:02 Correct serious error in Ob8.
  0.0.27 2018-07-14-12:50 Manage TODOs, anticipating Ob8 requiriing extension
         later on.
