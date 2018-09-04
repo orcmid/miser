@@ -1,4 +1,4 @@
-obtheory.txt 0.0.31                  UTF-8                       dh:2018-09-04
+obtheory.txt 0.0.32                  UTF-8                       dh:2018-09-04
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -144,6 +144,9 @@ DENUMERABILITY AND EFFECTIVENESS
         entire.  This is comparable to the situation with arithmetic where
         decimal numerals are typical as the canonical identifiers of numbers.
 
+        Certain extensions to ‹ob› will augment the variety of canonical forms
+        without ever altering the denumerability of them, preserving Ob7-Ob9.
+
    Ob10. Effectively-Computable Functions in Of
 
         Without addressing fine technicalities here, a function F over Ob (and
@@ -166,7 +169,7 @@ DENUMERABILITY AND EFFECTIVENESS
         determined, it need not be definite which of x ¶ y or y ¶ x holds.
         For Ot, Ob8 is definite enough to ensure that any representation of a
         function F (or predicate P) in Ot must be such that Ob8 shall not be
-         contradicted.  The strength of Ob8 is that x ¶ x be preserved.
+        contradicted.  The strength of Ob8 is that ¬(x ¶ x) be preserved.
 
         Later, when we make computational interpretations of ‹ob›, there'll
         be no need for an explicit counterpart of x ¶ y.  It is sufficient
@@ -227,7 +230,8 @@ TODO
    different storage media.
 
  * Figure out what to do about well-definedness.  Is this an Ob10 or Ob11
-   condition?
+   condition?  I claim it is implicit in Ob10 and it can be made explicit
+   in one of the companion text files such as miser/theory.txt.
 
  * Find places to locate this material that are perhaps easier to reach
    into than GitHub, and perhaps more durable.  This may depend on stability
@@ -243,8 +247,9 @@ TODO
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
    it belongs in obaptheory, not here.
 
- * Ob8-Ob9 must be adjusted in the case of extensions that introduce
-   new distinct individuals from distinct canonical obs.
+ * Ob7-Ob9 must be augmented in the case of extensions that introduce
+   new distinct individuals based on distinct canonical obs.  Supplementary
+   definitions will be provided along with the introduction of extensions.
 
  * We need to introduce more clearly what qualifies as a computational
    interpretation in the context of oMiser, and how such an interpretation
@@ -253,6 +258,9 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.32 2018-09-04-10:56 Correct howler in Ob10 about strength of Ob8, since
+        it is a negation that must be preserved.  Touch up and also manage
+        TODOs.
  0.0.31 2018-09-04-08:30 Expand and identify Ob8(d) as distinction.  This
         is a theorem and worth making explicit for our purposes.
  0.0.30 2018-08-29-12:37 Layout touch-ups, refinement of Ob8-Ob10 and
