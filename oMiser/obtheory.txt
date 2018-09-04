@@ -1,4 +1,4 @@
-obtheory.txt 0.0.30                  UTF-8                       dh:2018-08-28
+obtheory.txt 0.0.31                  UTF-8                       dh:2018-09-04
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -115,7 +115,8 @@ DENUMERABILITY AND EFFECTIVENESS
         (x ¶ y) ⇒ ¬ (y ¶ x)                     (b), asymmetrical
         (x ¶ y) ∧ (y ¶ z) ⇒ (x ¶ z)             (c), transitive
 
-        x = y ∨ x ¶ y ∨ y ¶ x                    (d), ordering
+        x = y ∨ x ¶ y ∨ y ¶ x                    (d), distinction
+        x = y ⇔ ¬ (x ¶ y ∨ y ¶ x)
 
         z = ob.e(y) ⇒ (y ¶ z)                    (e), construction
         z = ob.c(x,y) ⇒ (x ¶ z) ∧ (y ¶ z)
@@ -252,6 +253,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.31 2018-09-04-08:30 Expand and identify Ob8(d) as distinction.  This
+        is a theorem and worth making explicit for our purposes.
  0.0.30 2018-08-29-12:37 Layout touch-ups, refinement of Ob8-Ob10 and
         initiation of Notes and References.  Manage TODOs.
  0.0.29 2018-08-26-10:22 Clean up white space and headings, manage TODOs.
