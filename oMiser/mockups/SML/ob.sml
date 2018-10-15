@@ -1,4 +1,4 @@
-(* ob.sml 0.0.13                     UTF-8                       dh:2018-10-09
+(* ob.sml 0.0.14                     UTF-8                       dh:2018-10-15
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                        OMISER ‹ob› INTERPRETATION IN SML
@@ -47,7 +47,7 @@ structure ob :> OB
           = is_singleton x andalso not (is_individual x)
 
       fun ` x = e(x)
-         (* stick with ASCII codes but provide the notation *)
+         (* stick with ASCII codes but provide the ` x notation *)
 
       infixr 5 ##
       fun (x ## y) = c(x, y)
@@ -88,6 +88,8 @@ structure ob :> OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  0.0.14 2018-10-15-15:31 Clarify the introduction of unary ` and ensure that
+         we speak of validity, not soundness.
   0.0.13 2018-10-09-10:23 Touch ups to align with the signature description.
   0.0.12 2018-02-17-13:04 Touch ups and addition of ` x "unary".
   0.0.11 2017-09-14-11:12 Implement ## counterpart of :: for obs
@@ -97,7 +99,7 @@ structure ob :> OB
    0.0.8 2017-08-29-13:04 Touch up layout to reflect my preferred style of
          indentation.
    0.0.7 2017-08-27-11:57 Switch to ‹ob› and tie the three files together.
-         Perform some wordsmithing, including specialized notion of soundness.
+         Perform some wordsmithing, including the notion of validity.
    0.0.6 2017-08-26-11:37 Recast as an interpretation of obtheory in
          in SML/NJ.  Add license and GitHub location information.
    0.0.5 2017-07-28-11:22 Complete the quartet of structural predicates.
