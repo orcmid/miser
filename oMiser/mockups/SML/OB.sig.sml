@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.8                  UTF-8                       dh:2018-10-15
+(* OB.sig.sml 0.0.9                  UTF-8                       dh:2018-10-15
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -11,7 +11,7 @@
    For oMiser, SML/NJ manifestations of the mathematical structure, ‹ob›,
    support the common signature, OB.  For the mathematical requirements see
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.  SML/NJ
-   structures that expose this signature shall provide sound computational
+   structures that expose this signature shall provide valid computational
    manifestations as interpretations of the theory.
 
    For an exemplary computational interpretation see the implementation at
@@ -104,6 +104,8 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.9 2018-10-15-15:00 Use "validity" rather than "soundness" when speaking
+       of interpretations.
  0.0.8 2018-10-15-09:51 Touch up layout and elaborate more on what it takes
        beside signature agreement to have valid computational interpretations.
  0.0.7 2018-10-09-10:35 Touch up and manage TODOs.
