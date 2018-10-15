@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.7                  UTF-8                       dh:2018-10-09
+(* OB.sig.sml 0.0.8                  UTF-8                       dh:2018-10-15
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -19,7 +19,7 @@
 
    Script obcheck.sml has confirmation checks for SML/NJ structures asserted
    to manifest <ob> via signature OB.  See
-   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>
+ <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>
    *)
 
 signature OB
@@ -39,7 +39,7 @@ signature OB
           (* requiring infixr 5 ## for use of (x ## y) = c(x, y) *)
    end
 
-(* INTERPRETATION REQUIREMENTS FOR SOUND MANIFESTATION OF ‹ob›
+(* INTERPRETATION REQUIREMENTS FOR VALID MANIFESTATION OF ‹ob›
 
         miser-theory ‹ob›           OB.sig.sml interpretation
         -----------------           -------------------------
@@ -56,10 +56,17 @@ signature OB
         for obs x,y, whether x = y  (op =)
         for obs x,y, whether x ¶ y  implicit in SML constructions
 
-   Extensions of an OB datatype shall be exclusively by adjoining additional
-   individuals.  Functions that are fundamental to the oMiser computational
-   model will be expressed in Ot, the ‹ob› theory language and their
-   computational interpretations will comply with an extended signature.
+   The OB.sig.sml interpretations are given in the language of SML/NJ.  The
+   correspondence between fixed ‹ob› entities and this computational
+   interpretation is not by the convenient correspondence of names but by
+   their pairing in the above tabulation and by SML/NJ implementations that
+   satisfy the essential characteristics, Ob1-Ob10, of the ‹ob› formulation.
+
+   Extensions of an SML/NJ OB datatype shall be exclusively by adjoining
+   additional individual interpretations.  Functions that are fundamental to
+   the oMiser computational model will be expressed in Ot, the ‹ob› theory
+   anguage and their computational interpretations will be identified with an
+   extended SML/NJ signature definition and implementation.
 
    Right-associative infix ## is the OB counterpart of SML ::.  The different
    notation compensates for the prohibition of :: overloading.  To use the ##
@@ -97,6 +104,8 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2018-10-15-09:51 Touch up layout and elaborate more on what it takes
+       beside signature agreement to have valid computational interpretations.
  0.0.7 2018-10-09-10:35 Touch up and manage TODOs.
  0.0.6 2018-02-17-13:06 Adjust TODOs and add ` x as a "unary" operator
  0.0.5 2017-09-19-20:06 Touchups and confirmation of use as part of the
