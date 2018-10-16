@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.10                 UTF-8                       dh:2018-10-16
+(* OB.sig.sml 0.0.11                 UTF-8                       dh:2018-10-16
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -8,11 +8,22 @@
              THE SML OB ABSTRACT DATA TYPE SIGNATURE/INTERFACE
              -------------------------------------------------
 
-   For oMiser, SML/NJ manifestations of the mathematical structure, ‹ob›,
-   support the common signature, OB.  For the mathematical requirements see
+   Demonstration of oMiser computational interpretations of the mathematical
+   structure, ‹ob›, is easily accomplished with a mock-up using the SML/NJ
+   programming language and system.
+
+   SML implementation is not a limitation for oMIser.  A variety of valid
+   implementations will be demonstrated to interoperate.  SML is convenient
+   because its provisions are harmonious with the characteristics that ‹ob›
+   interpretations must preserve, making for easy prototyping and verification
+   of alternative implementations against this already-confirmed to be valid
+   one.
+
+   For oMiser, the SML/NJ interpretations of ‹ob› support the common shared
+   signature, OB, by convention.  For the mathematical requirements see
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.  SML/NJ
    structures that expose this signature shall provide valid computational
-   manifestations as interpretations of the theory.
+   interpretations of the theory.
 
    For an exemplary computational interpretation see the implementation at
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/ob.sml>.
@@ -39,7 +50,7 @@ signature OB
           (* requiring infixr 5 ## for use of (x ## y) = c(x, y) *)
    end
 
-(* INTERPRETATION REQUIREMENTS FOR VALID MANIFESTATION OF ‹ob›
+(* REQUIREMENTS FOR VALID INTERPRETATION OF ‹ob›
 
         miser-theory ‹ob›           OB.sig.sml interpretation
         -----------------           -------------------------
@@ -63,12 +74,12 @@ signature OB
    satisfy the essential characteristics, Ob1-Ob10, of the ‹ob› formulation
    at obtheory.txt.
 
-   Extensions of an SML/NJ OB datatype shall be exclusively by adjoining
-   additional individual interpretations.  Functions that are fundamental to
-   the oMiser computational model will be expressed in Ot, the ‹ob› theory
-   language.  Computational interpretations of those functions will be
-   identified as part of an extended SML/NJ signature definition and
-   corresponding implementation structure.
+   Extensions of SML/NJ OB datatypes shall be exclusively by adjoining
+   interpretations of further individuals in expanded signatures based on
+   this one.  Functions fundamental to the oMiser computational model will be
+   expressed in Ot, the ‹ob› theory language.  Computational interpretations
+   of those functions will be provided in such extended SML/NJ signatures and
+   corresponding implementation structures.
 
    Right-associative infix ## is the OB counterpart of SML ::.  The different
    notation compensates for the prohibition of :: overloading.  To use the ##
@@ -106,6 +117,8 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2018-10-16-09:54 Further adjustment of the commentary to smoothly
+        connect with the tutorial-style article, "Interpreting Obs as Data."
  0.0.10 2018-10-16-08:55 Correct typos and wordsmith the commentary.
  0.0.9 2018-10-15-15:00 Use "validity" rather than "soundness" when speaking
        of interpretations.
@@ -123,4 +136,4 @@ signature OB
 
        *)
 
-(*                      *** end of OB.sig.sml ***                             *)
+(*                      *** end of OB.sig.sml ***                           *)
