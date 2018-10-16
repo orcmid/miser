@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.9                  UTF-8                       dh:2018-10-15
+(* OB.sig.sml 0.0.10                 UTF-8                       dh:2018-10-16
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -60,18 +60,20 @@ signature OB
    correspondence between fixed ‹ob› entities and this computational
    interpretation is not by the convenient correspondence of names but by
    their pairing in the above tabulation and by SML/NJ implementations that
-   satisfy the essential characteristics, Ob1-Ob10, of the ‹ob› formulation.
+   satisfy the essential characteristics, Ob1-Ob10, of the ‹ob› formulation
+   at obtheory.txt.
 
    Extensions of an SML/NJ OB datatype shall be exclusively by adjoining
    additional individual interpretations.  Functions that are fundamental to
    the oMiser computational model will be expressed in Ot, the ‹ob› theory
-   anguage and their computational interpretations will be identified with an
-   extended SML/NJ signature definition and implementation.
+   language.  Computational interpretations of those functions will be
+   identified as part of an extended SML/NJ signature definition and
+   corresponding implementation structure.
 
    Right-associative infix ## is the OB counterpart of SML ::.  The different
    notation compensates for the prohibition of :: overloading.  To use the ##
    with a structure s :> OB it is necessary to provide
-            val ## = s.##    -- or open s, and also
+            val ## = s.##    -- or by opening s, and also
             infixr 5 ##      -- either way
    in the using procedure.
    *)
@@ -104,6 +106,7 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.10 2018-10-16-08:55 Correct typos and wordsmith the commentary.
  0.0.9 2018-10-15-15:00 Use "validity" rather than "soundness" when speaking
        of interpretations.
  0.0.8 2018-10-15-09:51 Touch up layout and elaborate more on what it takes
