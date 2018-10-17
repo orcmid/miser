@@ -1,4 +1,4 @@
-(* ob.sml 0.0.14                     UTF-8                       dh:2018-10-15
+(* ob.sml 0.0.15                     UTF-8                       dh:2018-10-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                        OMISER ‹ob› INTERPRETATION IN SML
@@ -15,7 +15,7 @@
    For the structure/interface requirements and connection with the primitive
    notions of the mathematical formulation, see
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/OB.sig.sml>.
-   For consideration of the soundness of this interpretation, see
+   For consideration of the validity of this interpretation, see
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>.
    *)
 
@@ -88,6 +88,7 @@ structure ob :> OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  0.0.15 2018-10-17-09:54 Replaced "soundness" with "validity"
   0.0.14 2018-10-15-15:31 Clarify the introduction of unary ` and ensure that
          we speak of validity, not soundness.
   0.0.13 2018-10-09-10:23 Touch ups to align with the signature description.
