@@ -1,4 +1,4 @@
-obtheory.txt 0.0.32                  UTF-8                       dh:2018-09-04
+obtheory.txt 0.1.0                  UTF-8                        dh:2018-10-17
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -129,20 +129,24 @@ DENUMERABILITY AND EFFECTIVENESS
 
         Ob consists of all distinct, finitely-expressible obs satisfying
         conditions Ob1-Ob8 and expressed without use of variables and
-        without any functions other than ob.c and ob.e.  Such expressions
-        are canonical identifiers of individual obs.  Each canonical
-        identifier is unique to a particular ob and every ob is canonically
-        identifiable.
+        without any functions other than ob.c and ob.e, and without any
+        extraneous parentheses.  Such expressions are canonical forms in
+        that each form is unique to a particular ob and every ob is
+        expressible as a canonical form.
 
         Ob is unbounded and denumerable provided that the individuals be
-        denumerable.
+        denumerable.  This is the case for the canonical forms, and the obs
+        are in one-to-one correspondence with their canonical forms.
 
-        This case is important because computation, for oMiser, involves
-        the systematic determination of canonical obs from given ones.  This
+        We say that an ob is definite, or determined, when its canonical form
+        can be exhibited explicitly.
+
+        This case is important because computation, for oMiser, can be viewed
+        as systematic determination of obs from given definite ones.  This
         contrasts with the Ot characterizations of functions via patterned
         specifications employing variables that assert conditions over ‹ob›
         entire.  This is comparable to the situation with arithmetic where
-        decimal numerals are typical as the canonical identifiers of numbers.
+        decimal numerals are typical canonical forms for numbers.
 
         Certain extensions to ‹ob› will augment the variety of canonical forms
         without ever altering the denumerability of them, preserving Ob7-Ob9.
@@ -151,19 +155,18 @@ DENUMERABILITY AND EFFECTIVENESS
 
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
-        canonical identifiers for the arguments, any canonical-identifier
-        result is determined uniquelly and explicitly by deduction based
-        entirely on an Ot characterization of F by a finite number of
-        mathematical statements.  It can be the case that there is no definite
-        result whatsoever for some definite values of arguments.
+        definite obs as arguments, any definite result is determined by
+        deduction based entirely on an Ot characterization of F in a finite
+        number of mathematical statements.  It can be the case that there is
+        no definite result for some definite arguments.
 
         Predicates in Ot are effectively-computable as true or false
         in a similar manner and termed effectively-decidable.
 
         Observe that ob.c(x,y), ob.e(x), the four ob.is-... predicates, and
-        the "=" relation are all effectively-computable in this sense so long
-        as individuals are distinguishable.  They are also total in the sense
-        that a definite result is established for any obs given as arguments.
+        the "=" relation are all effectively-computable in this sense.  They
+        are also total in the sense that a result is determined whenever
+        there are definite arguments.
 
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
         determined, it need not be definite which of x ¶ y or y ¶ x holds.
@@ -191,7 +194,17 @@ NOTES AND REFERENCES
 
      * Miser Project: ‹ob› Primitive Functions
        <https://orcmid.wordpress.com/2018/08/26/miser-project-ob-primitive-functions/>
-       introducing Ob1-Ob7 here
+       including introduction of Ob1-Ob7 here.
+
+     * Miser Project: Narrowing ‹ob› for Computational Interpretation
+       <https://orcmid.wordpress.com/2018/09/05/miser-project-narrowing-ob-for-computational-interpretation/>
+       including introduction of Ob8-Ob10 here.
+
+     * Miser Project: Interpreting Obs as Data
+       <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
+       introducing computational interpretations of obs and obs as encodings
+       (interpretations for) data as an initial step toward the oMiser
+       computational model.
 
     [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
@@ -202,6 +215,9 @@ NOTES AND REFERENCES
        of data.  pp. 55-73 in "APL '79 Proceedings of the international
        conference on APL: Part 1."  doi>10.1145/390009.804440 available at
        <https://dl.acm.org/citation.cfm?id=804440>
+
+    [Wikipedia2018] Canonical form.  2018-10-10 article available on the
+       Internet at <https://en.wikipedia.org/w/index.php?title=Canonical_form&oldid=863443547>
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -251,13 +267,11 @@ TODO
    new distinct individuals based on distinct canonical obs.  Supplementary
    definitions will be provided along with the introduction of extensions.
 
- * We need to introduce more clearly what qualifies as a computational
-   interpretation in the context of oMiser, and how such an interpretation
-   is to be established and confirmed.  This will feature the interpretation
-   as an engineered accomplishment.  This might be accounted for separately.
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.0 2018-10-17-15:41 Clarify the situation of canonical forms and update
+       the Notes and References.  Manage TODOs.  Reflect confidence with the
+       increase to version 0.1.0.
  0.0.32 2018-09-04-10:56 Correct howler in Ob10 about strength of Ob8, since
         it is a negation that must be preserved.  Touch up and also manage
         TODOs.
