@@ -1,4 +1,4 @@
-tutorials.txt 0.0.15                 UTF-8                       dh:2018-07-07
+tutorials.txt 0.0.16                 UTF-8                       dh:2018-08-17
 
                              The Miser Project Code
                              ======================
@@ -17,7 +17,7 @@ tutorials.txt 0.0.15                 UTF-8                       dh:2018-07-07
     Initial components of the tutorial sketch appeared on the Facebook
     Page "Golden Geek", <https://www.facebook.com/MiserProject/>
 
-    Not all material is specific to SML and are also relevant to the treatment
+    Not all material is specific to SML.  Some are relevant to the treatment
     of models at <https://github.com/orcmid/miser/tree/master/models>.
 
 MANIFEST
@@ -121,6 +121,20 @@ MANIFEST
          Miser Project: Hark! Is That a Theory I See Before Me?
          <https://orcmid.wordpress.com/2018/07/07/miser-project-hark-is-that-a-theory-i-see-before-me/>
 
+    ob-2018-08-26-1030-PrimitiveNotions.png
+         Miser Project: ‹ob› Primitive Functions
+         <https://orcmid.wordpress.com/2018/08/26/miser-project-ob-primitive-functions/>
+
+    ob-2018-09-04-DenumerabilityEffectiveness.png
+         Miser Project: Narrowing ‹ob› for Computational Interpretation
+         <https://orcmid.wordpress.com/2018/09/05/miser-project-narrowing-ob-for-computational-interpretation/>
+
+    ob-2018-10-15-1681-ob.sml-0.0.14-structure.png
+    ob-2018-10-16-0958-OB.sig.sml-0.0.11.png
+    obap-2018-10-16-1532-obaptheory.txt-0.0.29.png
+         Miser Project: Interpreting Obs as Data (3 images)
+         <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
+
     (no image)
          ‹ob› as Computational Model, Part 5, Computational Mathiness
          <https://www.facebook.com/MiserProject/posts/1966565546891352>
@@ -137,7 +151,6 @@ MANIFEST
          i051101d1.vsdx, .svg, .png
          Computation as Performance, Part 1: Engine Operation
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1981890868692153/>
-
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -164,6 +177,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.16 2018-10-17-09:46 Bring Manifest current with images in Orcmid's
+        Live HideOut Miser Project articles through 2018-10-16
  0.0.15 2018-07-07-12:42 Touch up and add
         ob-2018-07-07-1105-theory-0.0.25-notation.png
  0.0.14 2017-11-20-08:46 Touch ups. Tie to models and cross-connect the
