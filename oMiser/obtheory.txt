@@ -1,4 +1,4 @@
-obtheory.txt 0.1.0                  UTF-8                        dh:2018-10-17
+obtheory.txt 0.1.1                  UTF-8                        dh:2018-10-22
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -38,7 +38,7 @@ LOGICAL NOTATION
 
       p ∧ q is logical and, true when p and q are both true
 
-        ¬ p is logical not, true when p is false, false when q is true
+        ¬ p is logical not, true when p is false, false when p is true
 
       x = y is the identity relationship, with ≠ its negation
 
@@ -269,6 +269,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.1 2018-10-22-17:37 Correct a surprising typo in the definition of ¬ p.
  0.1.0 2018-10-17-15:41 Clarify the situation of canonical forms and update
        the Notes and References.  Manage TODOs.  Reflect confidence with the
        increase to version 0.1.0.
