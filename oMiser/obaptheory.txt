@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.29                UTF-8                       dh:2018-10-16
+obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -16,7 +16,7 @@ obaptheory.txt 0.0.29                UTF-8                       dh:2018-10-16
    Universality of obap.ap(p,x) is taken to mean that for every function,
    F, on obs that is effectively-calculable, there is an ob p that expresses
    an effective procedure such that obap.ap(p,x) = F(x) is determined, where
-   p, x, and any y = F(x) are expressed as canonical obs.
+   p, x, and any y = F(x) are expressed as canonical forms.
 
    The grand objective is to establish that not only is obap.ap(p,x)
    a universal function in this respect, but that it provides a model of
@@ -230,6 +230,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.30 2018-10-24-16:30 Use canonical form instead of canonical ob
  0.0.29 2018-10-16-15:23 Adjust the Ʃ-expression of Lindies to use '.  Improve
         the layout and proof-read one more time.
  0.0.28 2018-03-20-10:05 Move TODOs on historical and background matters to
