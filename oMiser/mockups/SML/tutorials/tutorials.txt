@@ -1,4 +1,4 @@
-tutorials.txt 0.0.16                 UTF-8                       dh:2018-08-17
+tutorials.txt 0.0.17                 UTF-8                       dh:2018-10-24
 
                              The Miser Project Code
                              ======================
@@ -117,6 +117,7 @@ MANIFEST
          ‹ob› as Computational Model, Part 4, Additional Notions
          <https://www.facebook.com/MiserProject/photos/a.1938469166367657.1073741828.1935440363337204/1965113610369879/>
 
+    ob-2018-10-24-0929-obtheory.txt-0.1.1-Notation.png (correction)
     ob-2018-07-07-1105-theory-0.0.25-notation.png
          Miser Project: Hark! Is That a Theory I See Before Me?
          <https://orcmid.wordpress.com/2018/07/07/miser-project-hark-is-that-a-theory-i-see-before-me/>
@@ -125,6 +126,7 @@ MANIFEST
          Miser Project: ‹ob› Primitive Functions
          <https://orcmid.wordpress.com/2018/08/26/miser-project-ob-primitive-functions/>
 
+    ob-2018-10-17-1557-obtheory.txt-0.1.0-Ob8-10.png (correction)
     ob-2018-09-04-DenumerabilityEffectiveness.png
          Miser Project: Narrowing ‹ob› for Computational Interpretation
          <https://orcmid.wordpress.com/2018/09/05/miser-project-narrowing-ob-for-computational-interpretation/>
@@ -177,6 +179,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.17 2018-10-24-09:45 Bring Manifest current with correction made to
+        replace earlier captures of obtheory.txt.
  0.0.16 2018-10-17-09:46 Bring Manifest current with images in Orcmid's
         Live HideOut Miser Project articles through 2018-10-16
  0.0.15 2018-07-07-12:42 Touch up and add
