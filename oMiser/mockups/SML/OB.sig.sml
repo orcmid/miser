@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.0.11                 UTF-8                       dh:2018-10-16
+(* OB.sig.sml 0.0.12                 UTF-8                       dh:2018-10-29
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -117,8 +117,12 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2018-10-29-09:23 Reflect change of the tutorial-style article name
+        from "Interpreting Obs as Data" to "Representing Data as Obs", since
+        it is (some) Obs that are the interpretations, rather than having such
+        interpretations although that becomes a consequence.
  0.0.11 2018-10-16-09:54 Further adjustment of the commentary to smoothly
-        connect with the tutorial-style article, "Interpreting Obs as Data."
+        connect with the tutorial-style article, "Representing Data as Obs."
  0.0.10 2018-10-16-08:55 Correct typos and wordsmith the commentary.
  0.0.9 2018-10-15-15:00 Use "validity" rather than "soundness" when speaking
        of interpretations.
