@@ -1,4 +1,4 @@
-tutorials.txt 0.0.17                 UTF-8                       dh:2018-10-24
+tutorials.txt 0.0.18                 UTF-8                       dh:2018-10-30
 
                              The Miser Project Code
                              ======================
@@ -131,8 +131,9 @@ MANIFEST
          Miser Project: Narrowing ‹ob› for Computational Interpretation
          <https://orcmid.wordpress.com/2018/09/05/miser-project-narrowing-ob-for-computational-interpretation/>
 
-    ob-2018-10-15-1681-ob.sml-0.0.14-structure.png
+    ob-2018-10-30-1239-OB.sig.sml-0.1.0-validity.png (update)
     ob-2018-10-16-0958-OB.sig.sml-0.0.11.png
+    ob-2018-10-15-1681-ob.sml-0.0.14-structure.png
     obap-2018-10-16-1532-obaptheory.txt-0.0.29.png
          Miser Project: Interpreting Obs as Data (3 images)
          <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
@@ -179,6 +180,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.18 2018-10-30-13:03 Addition of ob-2018-10-30-1239-OB.sig.sml-0.1.0.png
+        to update the image in "Representing Data as Obs."
  0.0.17 2018-10-24-09:45 Bring Manifest current with correction made to
         replace earlier captures of obtheory.txt.
  0.0.16 2018-10-17-09:46 Bring Manifest current with images in Orcmid's
