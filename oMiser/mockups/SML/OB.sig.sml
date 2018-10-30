@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.1.0                 UTF-8                       dh:2018-10-30
+(* OB.sig.sml 0.1.1                 UTF-8                       dh:2018-10-30
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -75,8 +75,8 @@ signature OB
           z = φ(x1, ..., xn), n > 0      φr(xr1, ..., xrn), n > 0
         and the xi are definite obs   where the xri are the computational
                                       interpretations of the xi and the
-                                      SML definitions for the φr are
-                                      such that the procedure yields
+                                      SML definition for the φr procedure
+                                      is suche that evaluation yields
                                       the computational interpretation
                                       of the definite z
 
@@ -105,10 +105,11 @@ signature OB
    domains of discourse are different.
 
    In SML/NJ the notation for application of procedures to operands mimics
-   the mathematical notation.  The resemblance of SML/NJ notational form to
-   the mathematical one is convenient for signalling intended interpretation
-   of SML/NJ expressions.  The coincidence of notations should not be read as
-   one having the same meaning as the other.
+   the mathematical notation.  The coincidence of notations should not be
+   read as one having the same meaning as the other.  It is useful to view
+   the evaluation of SML/NJ scripts as having defined computational
+   interpretations and the computational interpretation of ‹ob› relies on
+   this restrained use of the SML language's computational interpretation.
 
    Extensions of SML/NJ OB datatypes shall be exclusively by adjoining
    interpretations of further individuals in expanded signatures based on
@@ -153,6 +154,9 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.1 2018-10-30-14:37 Provide clarity on the relationship between ‹ob›
+       computational interpretation and the defined computational interpreta-
+       tion of the SML language.
  0.1.0 2018-10-30-10:52 Expand on how the computational-interpretation
        extends to interpretation of functions and predicates in Of and also
        how the similarity of function notations between ‹ob› and SML/NJ
