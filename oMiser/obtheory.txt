@@ -1,4 +1,4 @@
-obtheory.txt 0.1.1                  UTF-8                        dh:2018-10-22
+obtheory.txt 0.1.2                  UTF-8                        dh:2018-11-02
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -174,6 +174,10 @@ DENUMERABILITY AND EFFECTIVENESS
         function F (or predicate P) in Ot must be such that Ob8 shall not be
         contradicted.  The strength of Ob8 is that ¬(x ¶ x) be preserved.
 
+        The significant mathematical benefit of the partial well-ordering by
+        x ¶ y is the availability of structural induction for deductions about
+        functions in Of.
+
         Later, when we make computational interpretations of ‹ob›, there'll
         be no need for an explicit counterpart of x ¶ y.  It is sufficient
         that no ob interpretation can appear as a component within its own
@@ -216,8 +220,11 @@ NOTES AND REFERENCES
        conference on APL: Part 1."  doi>10.1145/390009.804440 available at
        <https://dl.acm.org/citation.cfm?id=804440>
 
-    [Wikipedia2018] Canonical form.  2018-10-10 article available on the
+    [Wikipedia2018a] Canonical form.  2018-10-10 article available on the
        Internet at <https://en.wikipedia.org/w/index.php?title=Canonical_form&oldid=863443547>
+
+    [Wikipedia2018b] Structural induction. 2018-09-09 article available on the
+       Internet at <https://en.wikipedia.org/w/index.php?title=Structural_induction&oldid=858748480>
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -269,6 +276,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.2 2018-11-02-13:13 Introduce structural induction as a critical benefit
+       of requiring the existence of the partial well-ordering via x ¶ y.
  0.1.1 2018-10-22-17:37 Correct a surprising typo in the definition of ¬ p.
  0.1.0 2018-10-17-15:41 Clarify the situation of canonical forms and update
        the Notes and References.  Manage TODOs.  Reflect confidence with the
