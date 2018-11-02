@@ -1,4 +1,4 @@
-tutorials.txt 0.0.19                 UTF-8                       dh:2018-10-30
+tutorials.txt 0.0.20                 UTF-8                       dh:2018-11-02
 
                              The Miser Project Code
                              ======================
@@ -126,6 +126,7 @@ MANIFEST
          Miser Project: ‹ob› Primitive Functions
          <https://orcmid.wordpress.com/2018/08/26/miser-project-ob-primitive-functions/>
 
+    ob-2018-11-02-1313-obtheory.txt-0.1.2-Denumerability.png (update)
     ob-2018-10-17-1557-obtheory.txt-0.1.0-Ob8-10.png (correction)
     ob-2018-09-04-DenumerabilityEffectiveness.png
          Miser Project: Narrowing ‹ob› for Computational Interpretation
@@ -181,6 +182,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.20 2018-11-02-13:43 Addition of structural induction mentioning
+        ob-2018-11-02-1313-obtheory.txt-0.1.2-Denumerability.png
  0.0.19 2018-10-30-14:55 Addition of ob-2018-10-30-1437-OB.sig.sml-0.1.1.png
         second update to the image in "Representing Data as Obs."
  0.0.18 2018-10-30-13:03 Addition of ob-2018-10-30-1239-OB.sig.sml-0.1.0.png
