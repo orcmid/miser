@@ -1,4 +1,4 @@
-boole.txt 0.0.0                      UTF-8                       dh:2018-11-13
+boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -15,19 +15,109 @@ boole.txt 0.0.0                      UTF-8                       dh:2018-11-13
 
               1. MATHEMATICAL STRUCTURES
                  Abstract theories of Boolean Algebras in the manner of
-                 obtheory that is at a different level of abstraction.
+                 obtheory although at a different level of abstraction.
 
                  1.1 Notation
 
 
 
 
-              ?. REFERENCES AND RESOURCES
+              ?. NOTES AND REFERENCES
                  Sources of further details and theoretical work
                  behind the kind of functional programming that
                  oMiser affords
 
  1. MATHEMATICAL STRUCTURES
+
+    We introduce two mathematical structures.
+
+    ‹ba› = 〈Ba,Baf,Bat〉
+    ‹bp› = 〈Bp,Bpf,Bpt〉
+
+    The logical theories Bpt and Bat are applications of First Order Logic with = (FOL=) and the notation introduced in Section 1 of obtheory.txt,
+    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+
+ 1.1 Notation
+
+    The domain of discourse, Bp, consists of exactly two distinguished entities.
+
+       ⊤ (nickname "top")
+       ⊥ (nickname "bot")
+
+    Domain of discourse, Ba, is a finite set having at least two distinct
+    members, including ⊤ and ⊥.
+
+    The additional primitive notions consist of a small number of functions
+    typically expressed as operations.
+
+        ~ x  "comp" x, signifies the complement of x
+
+      x ∩ y  x "cap" y also known as the meet of x and y
+
+      x ∪ y  x "cup" y also known as the join of x and y
+
+      x ∸ y  x "sep" y is x ∪ y excluding x ∩ y, also known as the symmetric
+             difference, that which is separate between x and y, if anything.
+
+    In addition to equality, there is also an ordering relation,
+
+      x ⊆ y  x "sub" y, comparable to the subset relation among sets.
+
+    To simplify expressions and reduce parentheses, the above listing is
+    taken as an order of precedence, from strongest to weakest.  That is
+
+        x ∩ ~ y ∪ ~ x ∩ y = (x ∩ (~ y) ∪ ((~ x) ∩ y)
+
+ 1.2 Essential Notions
+
+    Ba1. Commutativity
+         x ∪ y = y ∪ x
+         x ∩ y = y ∩ x
+
+    Ba2. Identity
+         x ∪ ⊥ = x
+         x ∩ ⊤ = x
+
+    Ba3. Distributivity
+         x ∪ (y ∩ z) = (x ∪ y) ∩ (x ∪ z)
+         x ∩ (y ∪ z) = (x ∩ y) ∪ (x ∩ z)
+
+    Ba4. Complements
+         x ∪ ~ x = ⊤
+         x ∩ ~ x = ⊥
+
+    Ba5. Subordination
+         x ⊆ y ⇔ x = x ∩ y
+
+
+ ?. NOTES AND REFERENCES
+
+    [EncycMath2012]
+        Boolean algebra.  2012-04-04 article accessed on the Internet at
+        <https://www.encyclopediaofmath.org/index.php?title=Boolean_algebra&oldid=24193>.
+
+    [Forster2003]
+        Forster, Thomas.  Reasoning About Theoretical Entities.  World Scientific (New Jersey: 2003). ISBN 981-238-567-3
+
+    [Knuth2011]
+        Knuth, Donald E.  Zeros and Ones.  Section 7.1, pp. 47-280 in The Art
+        of Computer Programming, Volume 4A: Combinatorial Algorithms, Part 1.
+        Addison-Wesley (Upper Saddle River, NJ: 2011). ISBN 978-0-201-03804-0
+    [Rosenbloom1950]
+        Rosenbloom, Paul C. The Logic of Classes.  Chapter 1, pp. 1-27 in The
+        Elements of Mathematical Logic.  Dover (New York: 1950).  ISBN
+        0-486-60227-3 pbk.
+
+    [Stoll1979]
+        Stoll, Robert R.  Boolean Algebra.  Chapter 6, pp. 248-288 in Set Theory and Logic.  Dover (New York: 1979).  ISBN 0-486-63829-4
+
+    [Wikipedia2018a]
+        Boolean algebra.  2018-11-04 article accessed on the Internet at
+        <https://en.wikipedia.org/w/index.php?title=Boolean_algebra&oldid=867188281>.
+
+    [Wikipedia2018b]
+        Boolean algebra (structure).  2018-11-06 article accessed on the Internet at <https://en.wikipedia.org/w/index.php?title=Boolean_algebra_(structure)&oldid=867568743>.
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -50,7 +140,7 @@ boole.txt 0.0.0                      UTF-8                       dh:2018-11-13
  TODO:
 
   * Establish the characters for the expression notations:
-    ~ ‹ › ∩ ∪ ⊆ ⊤ ⊥ ⨁ ⨡ ∊
+    ~ ‹ › ∩ ∪ ⊆ ⊤ ⊥ ∸ ⨡ ∊
 
   * Provide the two structures, ‹bp› and ‹ba›.
 
@@ -68,12 +158,18 @@ boole.txt 0.0.0                      UTF-8                       dh:2018-11-13
 
   * Deal with the limitation on powers-of-2 for set Ba.
 
-  * For references use the Elseviere, Wikipedia, Knuth, and Stoll.
+  * For references use the Elseviere, Wikipedia, Knuth, Forster, and Stoll.
 
   * Well-ordering will be important (?)
 
+  * We will distinguish Interpretation of one structure in another and how
+    the interpretation can be an implementation or a simulation.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2018-11-15-14:38 Manage TODOs. Replace ⨁ with ∸ for symmetric
+       difference.  Draft essentials of structures ‹ba› and ‹bp›.  Add initial
+       references.
  0.0.0 2018-11-13-10:38 Placeholder and boiler plate for bridging between
        Boolean Algebras and computational interpretations in ‹ob›.
 
