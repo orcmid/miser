@@ -1,4 +1,4 @@
-boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
+boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -17,10 +17,12 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
                  Abstract theories of Boolean Algebras in the manner of
                  obtheory although at a different level of abstraction.
 
-                 1.1 Notation
+                 1.1 Notation and Basic Operations
+                 1.2 Basic Conditions
+                 1.3 Additional Characteristics
+                 1.4 Interpretations
 
-
-
+              2. ‹bp› REPRESENTATION
 
               ?. NOTES AND REFERENCES
                  Sources of further details and theoretical work
@@ -37,17 +39,16 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
     The logical theories Bpt and Bat are applications of First Order Logic with = (FOL=) and the notation introduced in Section 1 of obtheory.txt,
     <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
 
- 1.1 Notation
+ 1.1 Notation and Basic Operations
 
-    The domain of discourse, Bp, consists of exactly two distinguished entities.
+    The ‹bp› domain of discourse, Bp, consists of exactly two distinguished entities.
 
        ⊤ (nickname "top")
        ⊥ (nickname "bot")
 
-    Domain of discourse, Ba, is a finite set having at least two distinct
-    members, including ⊤ and ⊥.
+    The ‹ba› domain of discourse, Ba, is a finite set having at least two distinct members, distinguished as ⊤ and ⊥.
 
-    The additional primitive notions consist of a small number of functions
+    The additional basic notions consist of a small number of functions
     typically expressed as operations.
 
         ~ x  "comp" x, signifies the complement of x
@@ -68,7 +69,7 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
 
         x ∩ ~ y ∪ ~ x ∩ y = (x ∩ (~ y) ∪ ((~ x) ∩ y)
 
- 1.2 Essential Notions
+ 1.2 Basic Conditions
 
     Ba1. Commutativity
          x ∪ y = y ∪ x
@@ -89,8 +90,81 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
     Ba5. Subordination
          x ⊆ y ⇔ x = x ∩ y
 
+ 1.3 Additional Characteristics
+
+    The following are consequences of the basic conditions, being applicable
+    to any Boolean Algebra structure ‹ba› with distinguished domain of
+    discourse and definite basic operations.
+
+    Ba6. Associativity
+         x ∪ (y ∪ z) = (x ∪ y) ∪ z
+         x ∩ (y ∩ z) = (x ∩ y) ∩ z
+
+    Ba7. Absorption
+         x ∪ (x ∩ y) = x
+         x ∩ (x ∪ y) = x
+
+    Ba8. Unique Complement Pairs
+         x = ~ ~ x
+         x ≠ ~ x
+
+    Ba9. Separation (definition)
+         x ∸ y = x ∩ ~ y ∪ ~ x ∩ y
+
+    Ba10. Well-Ordering
+         ⊥ ⊆ y (hence "bot")
+         x ⊆ ⊤ (hence "top")
+
+    Ba11. The number of members in the domain of discourse Ba is even and a
+         power of 2.
+
+ 1.4 Interpretations
+
+    The structures, ‹ba› and the special case ‹bp› are highly abstract.
+    The only requirement for representing any ‹ba› is to distinguish the
+    (finitely) enumerable members of the domain of discourse in some manner;
+    then represent the basic functions such that all of the basic conditions
+    are satisfied.
+
+ 2. ‹bp› REPRESENTATION
+
+    bp.comp(⊥) = ⊤
+    bp.comp(⊤) = ⊥
+
+    bp.meet(⊤, ⊤) = ⊤
+    bp.meet(⊥, x) = ⊥
+    bp.meet(⊤, ⊥) = ⊥
+
+    bp.join(⊤, ⊤) = ⊤
+    bp.join(⊥, x) = x
+    bp.join(⊤, ⊥) = ⊤
+
+    bp.sep(⊤, ⊤) = ⊥
+    bp.sep(⊥, x) = x
+    bp.sep(⊤, ⊥) = ⊤
+
+    bp.sub(⊤, ⊤) ∧ bp.sub(⊥, x)
 
  ?. NOTES AND REFERENCES
+
+    Limitation of ‹ba› to a domain of discourse having at least two members
+    and being finite is appropriate for consideration of computational
+    interpretations unde oMiser.  Although there are Boolean Algebras having
+    unbounded domains, that is not considered for ‹ba› here.
+
+    Formulation of ‹ba› is an amalgam of the various treatments cited below.
+    Symbols ⊤ and ⊥ are are chosen to avoid the common use of 1 and 0 and
+    confusion with interpretation as numbers and binary bits, despite the
+    historical roots in [Boole1834] notation.  Likewise, the symbols for
+    Boolean operations are kept distinct from the logical connectives used throughout oMiser in FOL= notation, hence the use of complement, meet, and sep symbols instead (contrasting with [Knuth2011]).  The distinct
+    notation is intended to facilitate recognition of representations
+    and interpretations, emphasizing correspondence without suggesting identity.
+
+    [Boole1854]
+        Boole, George.  An Investigation of the Laws of Thought: on which
+        are founded the mathematical theories of logic and probabilities.
+        Dover (New York: 1958), original 1854 edition reprinted with all
+        corrections made within the text.  ISBN 0-486-60028-9
 
     [EncycMath2012]
         Boolean algebra.  2012-04-04 article accessed on the Internet at
@@ -103,6 +177,7 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
         Knuth, Donald E.  Zeros and Ones.  Section 7.1, pp. 47-280 in The Art
         of Computer Programming, Volume 4A: Combinatorial Algorithms, Part 1.
         Addison-Wesley (Upper Saddle River, NJ: 2011). ISBN 978-0-201-03804-0
+
     [Rosenbloom1950]
         Rosenbloom, Paul C. The Logic of Classes.  Chapter 1, pp. 1-27 in The
         Elements of Mathematical Logic.  Dover (New York: 1950).  ISBN
@@ -139,11 +214,6 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
 
  TODO:
 
-  * Establish the characters for the expression notations:
-    ~ ‹ › ∩ ∪ ⊆ ⊤ ⊥ ∸ ⨡ ∊
-
-  * Provide the two structures, ‹bp› and ‹ba›.
-
   * Interpret ‹bp› in ‹ob›.  Characterize as an implementation.
 
   * Deal with the partiality of ‹bp› interpretation and the restriction.
@@ -156,17 +226,15 @@ boole.txt 0.0.1                      UTF-8                       dh:2018-11-15
   * Find out if ⊤ ⊥ are legitimate lindies or not.  It might be best that
     they not be.
 
-  * Deal with the limitation on powers-of-2 for set Ba.
-
-  * For references use the Elseviere, Wikipedia, Knuth, Forster, and Stoll.
-
   * Well-ordering will be important (?)
 
   * We will distinguish Interpretation of one structure in another and how
-    the interpretation can be an implementation or a simulation.
+    the interpretation can be an implementation or a simulation.  (terms
+    from Forster)
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2018-11-18-12:14 Expand and refine coverage to ‹bp› representation.
  0.0.1 2018-11-15-14:38 Manage TODOs. Replace ⨁ with ∸ for symmetric
        difference.  Draft essentials of structures ‹ba› and ‹bp›.  Add initial
        references.
