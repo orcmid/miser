@@ -1,4 +1,4 @@
-boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
+boole.txt 0.0.3                      UTF-8                       dh:2018-11-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -7,27 +7,35 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
         <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>
 
 
-
      INTERPRETATION OF BOOLEAN ALGEBRAS IN THE ‹ob› MODEL OF COMPUTATION
      -------------------------------------------------------------------
+
+        Boolean Algebras have rich application in connection with digital computation.
+
+        For oMiser, we exhibit enough Boolean Algebra to illuminate important
+        features of representation and interpretation of mathematical
+        structures in ‹ob› as computational-interpretation intermediary.
 
                               CONTENT
 
               1. MATHEMATICAL STRUCTURES
                  Abstract theories of Boolean Algebras in the manner of
-                 obtheory although at a different level of abstraction.
+                 obtheory although at a different level of abstraction
 
                  1.1 Notation and Basic Operations
-                 1.2 Basic Conditions
+                 1.2 Basic Constraints
                  1.3 Additional Characteristics
                  1.4 Interpretations
 
               2. ‹bp› REPRESENTATION
 
+                 2.1 Unique Representation
+                 2.2 Notable Qualities
+                 2.3 ‹bp› Interpretation in ‹ob›
+
               ?. NOTES AND REFERENCES
-                 Sources of further details and theoretical work
-                 behind the kind of functional programming that
-                 oMiser affords
+                 Sources of further details and theoretical work concerning
+                 Boolean Algebras and computational matters
 
  1. MATHEMATICAL STRUCTURES
 
@@ -46,7 +54,7 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
        ⊤ (nickname "top")
        ⊥ (nickname "bot")
 
-    The ‹ba› domain of discourse, Ba, is a finite set having at least two distinct members, distinguished as ⊤ and ⊥.
+    The ‹ba› domain of discourse, Ba, is a finite set having at least two distinct members, two of which are distinguished as ⊤ and ⊥, respectively.
 
     The additional basic notions consist of a small number of functions
     typically expressed as operations.
@@ -69,7 +77,12 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
 
         x ∩ ~ y ∪ ~ x ∩ y = (x ∩ (~ y) ∪ ((~ x) ∩ y)
 
- 1.2 Basic Conditions
+ 1.2 Basic Constraints
+
+    The basic conditions on all ‹ba› structures are presented in terms of
+    axioms, arrangements that hold whatever the domain of discourse, Ba,
+    happens to be and however the operations are defined in satisfaction
+    of these constraints.
 
     Ba1. Commutativity
          x ∪ y = y ∪ x
@@ -92,9 +105,9 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
 
  1.3 Additional Characteristics
 
-    The following are consequences of the basic conditions, being applicable
-    to any Boolean Algebra structure ‹ba› with distinguished domain of
-    discourse and definite basic operations.
+    The following are consequences of the basic constraints.  They are
+    consequences for any Boolean Algebra structure ‹ba› with distinguished
+    domain Ba and definite basic operations.
 
     Ba6. Associativity
          x ∪ (y ∪ z) = (x ∪ y) ∪ z
@@ -126,7 +139,13 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
     then represent the basic functions such that all of the basic conditions
     are satisfied.
 
+
  2. ‹bp› REPRESENTATION
+
+ 2.1 Unique Representation
+
+    Given definite Bp = {⊥, ⊤}, the basic constraints are uniquelly satisfied
+    by the functions represented as bp.comp, bp.meet, bp.join, etc.
 
     bp.comp(⊥) = ⊤
     bp.comp(⊤) = ⊥
@@ -135,30 +154,56 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
     bp.meet(⊥, x) = ⊥
     bp.meet(⊤, ⊥) = ⊥
 
-    bp.join(⊤, ⊤) = ⊤
+    bp.join(⊤, x) = ⊤
     bp.join(⊥, x) = x
-    bp.join(⊤, ⊥) = ⊤
 
-    bp.sep(⊤, ⊤) = ⊥
-    bp.sep(⊥, x) = x
-    bp.sep(⊤, ⊥) = ⊤
+    bp.sep(⊤, x) = bp.comp(x)
+    bp.sep(⊥, x) = y
 
-    bp.sub(⊤, ⊤) ∧ bp.sub(⊥, x)
+    bp.sub(⊤, ⊤)
+    bp.sub(⊥, x)
+
+ 2.2 Notable Qualities
+
+     * Verification of a computational interpretation of Ba1-Ba10 by
+       exhaustive testing is feasible.
+
+     * All computable functions, bp.f(x1, x2, ..., xn) in Bpf are
+       representable via Bpt using only bp.comp, bp.meet, and bp.join operations.
+
+     * Propositions of the form bp.f(x1, x2, ..., xn) = ⊤ correspond to
+       propositional logic assertions s(p1, p2, ..., pn) by rewriting the representation of bp.f such that ~ x becomes ¬ p, x ∩ y becomes p ∧ q,
+       x ∪ y becomes p ∨ q, and x ∸ y becomes ¬ (p ⇔ q), the latter also
+       known as exclusive-or.
+
+     * The form bp.f(x1, x2, .., xn) is satisfiable if there is an assignment
+       of {⊥, ⊤} values to the xi such that bp.f(x1, x2, .., xn) = ⊤.  The
+       determination of satisfiability from the representation of bp.f can
+       grow exponentially in the worst case as the number of variables increases.  That the worst case cannot be improved figures in an
+       important conjecture (P ≠ NP) concerning computational complexity.
+
+2.3 ‹bp› Interpretation in ‹ob›
+
+
+
 
  ?. NOTES AND REFERENCES
 
     Limitation of ‹ba› to a domain of discourse having at least two members
     and being finite is appropriate for consideration of computational
-    interpretations unde oMiser.  Although there are Boolean Algebras having
-    unbounded domains, that is not considered for ‹ba› here.
+    interpretations under oMiser.  Although there are Boolean Algebras having
+    unbounded domains, that is not considered here.
 
     Formulation of ‹ba› is an amalgam of the various treatments cited below.
     Symbols ⊤ and ⊥ are are chosen to avoid the common use of 1 and 0 and
     confusion with interpretation as numbers and binary bits, despite the
-    historical roots in [Boole1834] notation.  Likewise, the symbols for
-    Boolean operations are kept distinct from the logical connectives used throughout oMiser in FOL= notation, hence the use of complement, meet, and sep symbols instead (contrasting with [Knuth2011]).  The distinct
-    notation is intended to facilitate recognition of representations
-    and interpretations, emphasizing correspondence without suggesting identity.
+    historical roots in [Boole1834] and the practical application to binary
+    representations in digital computing [Knuth2011].
+
+    Likewise, the symbols for Boolean operations are kept distinct from the
+    logical connectives used throughout oMiser in FOL= notation, hence the
+    use of complement, meet, join, and sep symbols.  Notation separation
+    facilitates recognition of correspondence without suggestion of identity.
 
     [Boole1854]
         Boole, George.  An Investigation of the Laws of Thought: on which
@@ -224,7 +269,8 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
   * Interpret ‹bp› as a restriction of ‹ba›.
 
   * Find out if ⊤ ⊥ are legitimate lindies or not.  It might be best that
-    they not be.
+    they not be.  (This is a question about Unicode characters and what
+    qualifies as alphanumeric.)
 
   * Well-ordering will be important (?)
 
@@ -232,8 +278,15 @@ boole.txt 0.0.2                      UTF-8                       dh:2018-11-18
     the interpretation can be an implementation or a simulation.  (terms
     from Forster)
 
+  * Be consistent in the use of qualified names for entities, such that the
+    structural context is explicit.
+
+  * At some point, we need to deal with labeling of entities, sequences,
+    and class membership.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2018-11-19-11:49 Refine in preparation for ‹bp› Interpretation in ‹ob›.
  0.0.2 2018-11-18-12:14 Expand and refine coverage to ‹bp› representation.
  0.0.1 2018-11-15-14:38 Manage TODOs. Replace ⨁ with ∸ for symmetric
        difference.  Draft essentials of structures ‹ba› and ‹bp›.  Add initial
