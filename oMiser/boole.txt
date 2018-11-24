@@ -1,4 +1,4 @@
-boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
+boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,6 +41,9 @@ boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
               3. ‹ba› REPRESENTATION
 
                  3.1 Concrete Representation
+                 3.2 Boolean-Vector Structures
+                 3.3 Characteristic-Sequence Interpretation
+                 3.4 ‹ba› Interpretation in ‹ob›
 
               4. NOTES AND REFERENCES
                  Sources of further details and theoretical work concerning
@@ -288,19 +291,19 @@ boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
     where the simplicity is important for understanding of validity and also
     improvement/simplification of operational performance.
 
-    After [Forster2003], an interpretation where "=" carries over is termed
-    an implementation.  When "=" does not carry over directly, but has a
-    representation, the arrangement is known as a simulation.
+    After [Forster2003], an interpretation where "="s correspond is termed
+    an implementation.  When "="s do not correspond directly, but there is a
+    corresponding representation in the interpretation, the interpretation is
+    known as a simulation.
 
 
  3. ‹ba› REPRESENTATION
 
-    When the domain of discourse, Ba, consists of more than two distinct
-    members, finding a representation is not immediately obvious, in contrast
-    with the handy representation of ‹bp› (section 2.1).  ‹ba› representation
-    depends on identification of the members of domain Ba and how the comp,
-    join, and meet are represented in Bat such that the basic constraints
-    are satisfied (section 1.2).
+    When the ‹ba› = 〈Ba,Baf,Bat〉 domain of discourse, Ba, consists of more than two distinct members, finding a representation is not immediately
+    obvious, in contrast with the handy representation of ‹bp› (section 2.1).
+    ‹ba› representation depends on identification of the members of domain Ba
+     and representing comp, join, and meet in Bat such that the basic
+     constraints are satisfied (section 1.2).
 
     The mathematical theory of Boolean Algebras provides an assurance that
     every Boolean Algebra is isomorphic to what is known as a concrete Boolean Algebra [Wikipedia2018a].  By isomorphic is meant interpretation of one in the other works in both directions, without domain restriction.
@@ -319,40 +322,90 @@ boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
     Choose a set of n distinct entities, An = {a1 ,a2, ..., an}.  Let Bn
     consist of all of the subsets of the set An, inclusive.  The empty subset corresponds to ⊥; the full (sub)set corresponds to ⊤.
 
-    The operations of comp, meet, and join are here represented by the set-
+    The operations of comp, meet, and join are then represented by the set-
     theoretical domain-relative difference, set intersection, and set union,
     respectively.
 
-    For example, if n = 1, A1 = {a1} and B1 has 2 members: { } (the empty set)
-    and {a1} the entire set.  Taking ⊥ = { } and ⊤ = A1, ‹b1› is isomorphic
-    to ‹bp›.
+    For example, if n = 1, A1 = {a1} then B1 has 2 members: { } (the empty
+    set) and {a1} the entire set.  Taking ⊥ = { } and ⊤ = A1, ‹b1› is isomorphic to ‹bp›.
 
-    When n = 2, A1 = {a1, a2} and B2 has 4 members:
+    When n = 2 and A2 = {a1, a2} and B2 has 4 members:
          ⊥ = { }, {a1}, {a2}, {a1, a2} = ⊤
 
-    The same set-theoretic representation applies as n increases.
+    Corresponding set-theoretic representations apply as n increases.
 
     For any ‹ba› where Ba has 2^n members, there must be a correspondence
     between those members and the members of Bn in structure ‹bn› such that
     however comp, meet, and join are represented in that ‹ba›, those
-    functions then correspond to the comp, meet, and join of ‹bn›.
+    functions corresponding to the comp, meet, and join of ‹bn›.
 
-    This is not claimed to be easy, merely possible.
+    Establishment of isomorphism between a ‹ba› and a ‹bn› constitutes an
+    interpretation of the ‹ba› in ‹bn›, and vice versa.  A computational
+    interpretation of one is, thereby, a computational interpretation of the
+    other.  It is profitable to focus on concrete representations for this
+    purpose.
 
+ 3.2 Boolean-Vector Structures
 
- 3.2 Characteristic-Sequence Interpretation
+    The structure ‹bvn› = 〈Bvn,Bvnf,Bvnt〉, with n a natural number is a
+    Boolean Algebra with representation as follows.
 
-    The same set-theoretic representation applies as n increases.
+    The domain, Bvn, consists of all sequences [v1, v2, ..., vn], known as
+    n-tuples, where each vi is a member of the structure ‹bp› = 〈Bp,Bpf,Bpt〉
+    domain Bp.  By convention, we record each vi as 0 for ⊥ and as 1 for ⊤.
 
-    Now establish the domain of discourse by all of the sequences
+    The Boolean Algebra representation of ‹bvn› is accomplished as follows.
 
-        [b1, b2, ..., bn]
+        ⊥ identifies [0, 0, ..., 0], with n places, in Bvn
+        ⊤ identifies [1, 1, ..., 1] similarly
 
-    where each sequence stands for a subset of {a1, a2, ..., an} with bi = 0
-    when ai is not in the represented subset and bi = 1 when ai is in the
-    represented subset.
+        [x1, x2, ..., xn] = [y1, y2, ..., yn]
+           ⇔ x1=y1 ∧ x2 = y2 ∧ ... ∧ xn = yn
 
+        bvn.comp([x1, x2, ..., xn])
+           = [bp.comp(x1), bp.comp(x2), ..., bp.comp(xn)]
 
+        bvn.join([x1, x2, ..., xn], [y1, y2, ..., yn])
+           = [bp.join(x1, y1), bp.join(x2, y2), ... bp.join(xn,yn)]
+
+        bvn.meet([x1, x2, ..., xn], [y1, y2, ..., yn])
+           = [bp.meet(x1, y1), bp.meet(x2, y2), ... bp.meet(xn,yn)]
+
+        bvn.sep([x1, x2, ..., xn], [y1, y2, ..., yn])
+           = [bp.sep(x1, y1), bp.sep(x2, y2), ... bp.sep(xn,yn)]
+
+        bvn.sub(X, Y) ⇔ X = bvn.meet(X, Y)
+
+    Here, each occurrence of "=" is based on the structure in which the
+    operands are distinguished.  The use of 0 and 1 disambiguates the
+    distinction of ⊥ and ⊤ with respect to the two structures, ‹bvn› and ‹bp›.
+
+    In this representation, we have presumed the ability to pair corresponding
+    elements of ordered sequences (n-tuples) with the same number of elements.
+    For computational interpretation in ‹ob›, there will be additional rigor
+    in that accomplishment.
+
+ 3.3 Characteristic-Sequence Interpretation
+
+    ‹bvn›, thus represented, is a Boolean Algebra by virtue of satisfaction
+    of the necessary constraints (section 1.2).  It is not a concrete Boolean
+    Algebra insofar as there is no connection with subsets of sets.
+
+    Isomorphism of every ‹bvn› with a concrete Boolean Algebra structure,
+    ‹bn›, is simple and useful.
+
+    For any distinguished set, An = {a1, a2, ..., an}, establish the sequence
+    of those distinct elements, [a1, a2, ..., an].  Correspond each entity,
+    X = [x1, x2, ..., xn], in the ‹bvn› domain, Bvn, with a subset in the
+    ‹bn› domain Bn as follows.
+
+      * If xi = 1, then element ai is in the corresponding subset.
+      * If xi = 0, then element ai is not in the corresponding subset.
+
+    The ‹bvn› representations (3.2) are immediately interpreted in ‹bn› with
+    entities of the same names and with correspondence of the ‹bvn› and ‹bn› "=".
+
+ 3.4 ‹ba› Interpretation in ‹ob›
 
     [tbd]
 
@@ -361,7 +414,7 @@ boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
 
     The extension of an interpretation to equivalence classes is an appealing
     idiom for computational interpretations.  The specific relaxation in (2.5)
-    is remaniscent of provision in LISP, with atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.
+    is remaniscent of provision in LISP, with atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.  Anything else is taken as ⊤.
 
     Limitation of ‹ba› to a domain of discourse having at least two members
     and being finite is appropriate for consideration of computational
@@ -376,8 +429,11 @@ boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
 
     Likewise, the symbols for Boolean operations are kept distinct from the
     logical connectives used throughout oMiser use of FOL= notation, hence the
-    use of complement, meet, join, and sep symbols.  Notational separation
-    facilitates recognition of correspondences without implying identity.
+    use of complement, meet, join, and sep symbols and certain frussiness in
+    qualifying represented functions by the name of the particular structure
+    being represented.  Notational separation facilitates recognition of correspondences without implying identity, avoiding for a time any tacit
+    collapsing of separate notions together as if about the same (abstract)
+    entities.
 
     [Boole1854]
         Boole, George.  An Investigation of the Laws of Thought: on which
@@ -436,11 +492,30 @@ boole.txt 0.0.6                      UTF-8                       dh:2018-11-22
 
  TODO:
 
-  * Establish ‹ba› and see what we need to differ with respect to ‹bp›.
+  * In 3.3, lay out the binary-number ordering (or alphabetic ordering)
+    to depict how the ‹bvn› ‹bn› line up.
 
-  * Well-ordering will be important (?)
+  * In 3.4 do a generic interpretation of ‹bvn› and then label the ‹bn›
+    interpretation.
+
+  * Not certain where is the best place to talk about the brittleness of ‹bn›
+    interpretation, when the mappings are different sequences but not
+    necessarily different sets.  Also, that these are *into* ob, not *onto*
+    and there can be many disparate interpretations of the same ob become
+    matters of note.
+
+  * The fact that ‹b1› corresponds with ‹bp› and is not the same is useful
+    to note.
+
+  * Well-ordering will be important (?).  Does it matter that Boolean Algebras
+    are well-ordered and computational-interpretation must correspond, or is
+    this a red herring?
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.7 2018-11-24-12:41 Expand ‹ba› representation to interpretation of
+       Boolean-Vector Boolean Algebras in concrete Boolean algebras that can
+       then represent any Boolean Algebra on a finite and distinguished
+       domain of discourse.
  0.0.6 2018-11-22-12:12 More smoothing and addition of 3.1 on concrete ‹ba›
        representations.
  0.0.5 2018-11-21-11:10 Proofing corrections, text improvements, and revamping
