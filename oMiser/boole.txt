@@ -1,4 +1,4 @@
-boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
+boole.txt 0.0.8                      UTF-8                       dh:2018-11-25
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -42,7 +42,7 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
 
                  3.1 Concrete Representation
                  3.2 Boolean-Vector Structures
-                 3.3 Characteristic-Sequence Interpretation
+                 3.3 Concrete Boolean-Vector Interpretation
                  3.4 ‹ba› Interpretation in ‹ob›
 
               4. NOTES AND REFERENCES
@@ -238,7 +238,8 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
     Whereas the ‹bp› domain of discourse has exactly two mathematical
     entities, that is not the case for ‹ob›.  Carrying over the Bpt function
     representations of ‹bp› functions to corresponding representations in
-    ‹ob› leads to partial functions in Of, ones undefined/ill-defined when an operand is neither an interpretation of ⊥ nor of ⊤.  That is no such
+    ‹ob› leads to partial functions in Of, ones undefined/ill-defined when an
+     operand is neither an interpretation of ⊥ nor of ⊤.  That is no such
     difficulty as long as operands are confined to the interpretations.
 
     The undefined cases confound computational interpretations where direct
@@ -248,7 +249,8 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
 
  2.5 Domain-Relaxation Equivalence
 
-    Alternatively, consider ob.NE.bp.comp(x), ..., ob.NE.bp.sub(x, y) with these representations:
+    Alternatively, consider ob.NE.bp.comp(x), ..., ob.NE.bp.sub(x, y) with
+    these representations:
 
          ob.is-individual(x) ⇒ ob.NE.bc.comp(x) = ob.e(ob.NIL)
        ¬ ob.is-individual(x) ⇒ ob.NE.bc.comp(x) = ob.NIL
@@ -277,7 +279,8 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
 
          ob.NE.bp.cf(x) = ob.NE.bp.comp(ob.NE.bp.comp( x )).
 
-    We can now remove the domain restriction by simply replacing the ‹ob› interpretation of x = y in (2.3) with
+    We can now remove the domain restriction by simply replacing the ‹ob›
+    interpretation of x = y in (2.3) with
 
                     ob.NE.bp.cf(x) = ob.NE.bp.cf(y).
 
@@ -299,18 +302,21 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
 
  3. ‹ba› REPRESENTATION
 
-    When the ‹ba› = 〈Ba,Baf,Bat〉 domain of discourse, Ba, consists of more than two distinct members, finding a representation is not immediately
+    When the ‹ba› = 〈Ba,Baf,Bat〉 domain of discourse, Ba, consists of more
+    than two distinct members, finding a representation is not immediately
     obvious, in contrast with the handy representation of ‹bp› (section 2.1).
     ‹ba› representation depends on identification of the members of domain Ba
      and representing comp, join, and meet in Bat such that the basic
      constraints are satisfied (section 1.2).
 
     The mathematical theory of Boolean Algebras provides an assurance that
-    every Boolean Algebra is isomorphic to what is known as a concrete Boolean Algebra [Wikipedia2018a].  By isomorphic is meant interpretation of one in the other works in both directions, without domain restriction.
-    We start by demonstrating representation of concrete Boolean Algebras and leaving open what a corresponding non-concrete Boolean Algebra may happen
-    to be.  The appeal of this approach is having assured representations
-    and ready availability of computational interpretations for the concrete
-    Boolean Algebras.
+    every Boolean Algebra is isomorphic to what is known as a concrete
+    Boolean Algebra [Wikipedia2018a].  By isomorphic is meant, here, that
+    interpretation of one in the other works in both directions, without
+    domain restriction.
+
+    Having representations of concrete Boolean Algebras achieves ready
+    availability of computational interpretations for those and also whatever isomorphic ‹ba› representations that are identified.
 
  3.1 Concrete Representation
 
@@ -320,16 +326,18 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
     even and a power of two, symbolized 2^n.
 
     Choose a set of n distinct entities, An = {a1 ,a2, ..., an}.  Let Bn
-    consist of all of the subsets of the set An, inclusive.  The empty subset corresponds to ⊥; the full (sub)set corresponds to ⊤.
+    consist of all of the subsets of the set An, inclusive.  The empty subset
+    corresponds to ⊥; the full (sub)set corresponds to ⊤.
 
     The operations of comp, meet, and join are then represented by the set-
     theoretical domain-relative difference, set intersection, and set union,
     respectively.
 
     For example, if n = 1, A1 = {a1} then B1 has 2 members: { } (the empty
-    set) and {a1} the entire set.  Taking ⊥ = { } and ⊤ = A1, ‹b1› is isomorphic to ‹bp›.
+    set) and {a1} the entire set.  Taking ⊥ = { } and ⊤ = A1, ‹b1› is
+    isomorphic to ‹bp›.
 
-    When n = 2 and A2 = {a1, a2} and B2 has 4 members:
+    When n = 2 and A2 = {a1, a2}, B2 has 4 members:
          ⊥ = { }, {a1}, {a2}, {a1, a2} = ⊤
 
     Corresponding set-theoretic representations apply as n increases.
@@ -337,7 +345,10 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
     For any ‹ba› where Ba has 2^n members, there must be a correspondence
     between those members and the members of Bn in structure ‹bn› such that
     however comp, meet, and join are represented in that ‹ba›, those
-    functions corresponding to the comp, meet, and join of ‹bn›.
+    functions corresponding to the comp, meet, and join of ‹bn›.  This is
+    an interpretation in ‹bn› and there will be an appropriate interpretation
+    of the ‹ba› equality as well, providing an implementation or a simulation
+    as the case may be.
 
     Establishment of isomorphism between a ‹ba› and a ‹bn› constitutes an
     interpretation of the ‹ba› in ‹bn›, and vice versa.  A computational
@@ -385,25 +396,56 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
     For computational interpretation in ‹ob›, there will be additional rigor
     in that accomplishment.
 
- 3.3 Characteristic-Sequence Interpretation
+ 3.3 Concrete Boolean-Vector Interpretation
 
-    ‹bvn›, thus represented, is a Boolean Algebra by virtue of satisfaction
-    of the necessary constraints (section 1.2).  It is not a concrete Boolean
+    ‹bvn›, thus represented (3.2), satisfies the necessary constraints (1.2)
+    for constituting a Boolean ALgebra.  It is not a concrete Boolean
     Algebra insofar as there is no connection with subsets of sets.
 
     Isomorphism of every ‹bvn› with a concrete Boolean Algebra structure,
     ‹bn›, is simple and useful.
 
     For any distinguished set, An = {a1, a2, ..., an}, establish the sequence
-    of those distinct elements, [a1, a2, ..., an].  Correspond each entity,
-    X = [x1, x2, ..., xn], in the ‹bvn› domain, Bvn, with a subset in the
+    of those distinct elements, [an, ..., a2, a1].  Correspond each entity,
+    Xj = [xjn, ..., xj2, xj1], in the ‹bvn› domain, Bvn, with a subset in the
     ‹bn› domain Bn as follows.
 
-      * If xi = 1, then element ai is in the corresponding subset.
-      * If xi = 0, then element ai is not in the corresponding subset.
+      * If xji = 1, then element ai is in the Xj-corresponding subset.
+      * If xji = 0, then element ai is not in the Xj-corresponding subset.
 
     The ‹bvn› representations (3.2) are immediately interpreted in ‹bn› with
-    entities of the same names and with correspondence of the ‹bvn› and ‹bn› "=".
+    entities of the same names and with correspondence of the ‹bvn› and ‹bn›
+    "=".
+
+    The situation can be visualized in a tabulation.
+
+         an  a(n-1)  ...  a2  a1   An
+
+          0     0    ...   0   0   X0 = ⊥
+          0     0    ...   0   1   X1
+          0     0    ...   1   0   X2
+          0     0    ...   1   1   X3
+                     ...
+         xjn xj(n-1) ...  xj2 xj1  Xj
+                     ...
+          1     1    ...   0   0   X(2^n-4)
+          1     1    ...   0   1   X(2^n-3)
+          1     1    ...   1   0   X(2^n-2)
+          1     1    ...   1   1   X(2^n-1) = ⊤
+
+    All 2^n Xj are tabulated in the above scheme.  The elements, Xj of
+    domain Bvn are strictly ordered alphabetically assuming 0 < 1.  The Xj
+    are enumerated numbered in that sequence, starting from j = 0.
+
+    Each column beneath an ai in the table represents an indicator function
+    for the associated ai, specifying 1 where ai is in that Xj row's
+    corresponding concrete-interpretation subset and specifying 0 when that
+    is not the case.
+
+    Writing the xi values in decreasing order left-to-right is convenient for
+    enumerating the Xj by interpreting the Xj sequence as the number j in
+    binary notation.  The result is a strict enumeration of the 2^n unique Xj.
+
 
  3.4 ‹ba› Interpretation in ‹ob›
 
@@ -492,9 +534,6 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
 
  TODO:
 
-  * In 3.3, lay out the binary-number ordering (or alphabetic ordering)
-    to depict how the ‹bvn› ‹bn› line up.
-
   * In 3.4 do a generic interpretation of ‹bvn› and then label the ‹bn›
     interpretation.
 
@@ -511,7 +550,11 @@ boole.txt 0.0.7                      UTF-8                       dh:2018-11-24
     are well-ordered and computational-interpretation must correspond, or is
     this a red herring?
 
+  * Define the indicator functions better.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.8 2018-11-25-10:31 Complete the bvn interpretation in bn.  Repair text
+       flow and rework 3.3.
  0.0.7 2018-11-24-12:41 Expand ‹ba› representation to interpretation of
        Boolean-Vector Boolean Algebras in concrete Boolean algebras that can
        then represent any Boolean Algebra on a finite and distinguished
