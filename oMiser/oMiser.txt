@@ -1,84 +1,89 @@
-oMiser.txt 0.0.8                     UTF-8                      dh:2018-02-10
+oMiser.txt 0.0.9                     UTF-8                       dh:2018-11-28
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
-                            
+
         <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
               OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
               -------------------------------------------------
-              
+
     oMiser is the foundation theory/software of The Miser Project.
     oMiser is the fundamental part of a software pair.
-    
-     - oMiser implements the representation and use of the 
+
+     - oMiser implements the representation and use of the
        abstract structure, ‹ob› as an encapsulated data-structure and
        universal machine implementation via reusable program library.
-        
+
      - oFrugal is a front-end processor that offers an interface for
        external exercise of oMiser functions in a more-practical
-       form for personal exploration and operation of oMiser programs.  
-       
+       form for personal exploration and operation of oMiser programs.
+
     It is useful to view oMiser as a machine having obs as the form
     of its data and its programs.  The obs used as programs or
     scripts are akin to the machine-/assembly-language of conventional
     digital computers.
-    
+
     oFrugal implementations provide input-output and other functions
     that oMiser necessarily lacks.  oFrugal is essentially a kind
     of assembler of oMiser obs and a means to exercise programs
     written as obs that compute other obs from given ones.  In particular,
     it presents the results of computations in the same notation(s) employed
     for the inputs.
-    
+
     Development spirals, working through many iterations of implementation
     until stable operation, full functionality, and portability of
     oMiser and oFrugal are achieved.  Interoperation is via recording
     of oMiser dumps, oFrugal scripts, and distributed connections
     developed and extended over time.
-       
+
     Stages beyond oMiser are envisioned.  In those cases, oMiser
     remains as a subordinate available for reliance when its simplicity
     is sufficient for fragments of larger, more-interactive arrangements
-    of computational operations.      
-         
+    of computational operations.
+
 MANIFEST
 
-    oMiser.txt 
-        this synopsis, manifest and TODOs for this portion of the 
+    oMiser.txt
+        this synopsis, manifest and TODOs for this portion of the
         working Miser-Project working folders preserved on GitHub
-        
+
     ob.txt
         summary of how the ‹ob› structure and its computational
-        manifestations are useful as flexible, general-purpose data 
+        manifestations are useful as flexible, general-purpose data
         structures given suitable encodings and decodings
-        
+
     obtheory.txt
         specification of the ‹ob› abstract mathematical structure
         any computationally-implemented manifestation must satisfy.
-        
+
+    boole.txt
+        Using abstract Boolean Algebra, demonstrating interpretations
+        of additional abstractions in each other and in ‹ob›, arriving
+        at idiomatic cases for computational-interpretation in oMiser
+
     obaptheory.txt
         specification of the ‹ob› universal function that every oMiser
         implementation manifests.
-        
-    ob-exp.txt
-        specification of the grammar for expressions that determine obs by
-        computations using obs as procedure scripts and as data.
-        
-    obstring.txt
-        description of the grammar for Canonical Obs and a procedure for
-        expressiong them in ob-exp strings that minimize use of "( ... )".
 
     conbinators.txt
         description of the nature of combinators and how they are represented
         in oMiser scripts for applicative interpretation.
-        
+
+    ob-exp.txt
+        specification of the grammar for expressions that determine obs by
+        computations using obs as procedure scripts and as data.
+
+    obstring.txt
+        description of the grammar for Canonical Obs and a procedure for
+        expressiong them in ob-exp strings that minimize use of "( ... )".
+
     mockups/
         subtree for experimental mock-ups that demonstrate oMiser
         features
-        
-         
+
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2018 Dennis E. Hamilton
@@ -94,55 +99,66 @@ MANIFEST
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
 TODO
-  
-  * Connect to internet-accessible resources and availability of stable 
+
+  * Connect to internet-accessible resources and availability of stable
     materials when available.  TODOs and related work can be separated then.
-    
+
   * Work up a COM-based interface protected implementation and see whether
     reference-counting is a workable avoidance of garbage collection by
     other means.
-    
+
   * Check out Henry Baker's approach to using stack drag as a way to have
     rapid pair construction with only longer-lived material swept to the
     heap.
-    
+
   * Deal with experimental speed-up devices, including tail recursion,
     to determine whether they are effective storage-reduction measures.
-    
+
   * Consider a lab structure alongside the main dev and source-code
     structures.
-    
+
   * Address platform variety (e.g., C/C++ versus .NET, Java, etc.) and
     also using oMiser at a binary level beneath systems such as Python.
-    
+
   * Emphasize that this is a machine, machine data structure, and machine-
     language in the conventional sense.  And, at the oMiser/oFrugal level,
     we are basically seeing an assembler (reader) and a disassembler (printer)
     of the oMiser machine code.  Where oFrugal becomes more interesting may
     be with Proc and maybe something about data structures.
-       
+
   * The Golden Geek treatment of the connection between these could perhaps
-    be handled with an oMiser.md page here.  That could also address the 
+    be handled with an oMiser.md page here.  That could also address the
     programming notions.  It ties in the development of the "reference
     notation" for obs and the two sugared forms: lists, and expressions.
     See <https://www.facebook.com/MiserProject/> for now.
-    
-  * The grammar for reference notation is also needed, along with the 
+
+  * The grammar for reference notation is also needed, along with the
     oFrugal REPL additions (saving and substitution, etc.).
-    
+
+  * When representation, interpretation, manifestation, implementation,
+    and simulation are worked out more clearly, review these materials
+    for consistent usage and links to related resources of the project and
+    and elsewhere, especially ones of reference/historical value.
+
+  * There are a number engineering and programming matters in these TODOs
+    that are best moved to an alternative place, such as engineering.txt
+    for the overall project.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.9 2018-11-28-08:14 Add boole.txt and arrange manifest in a recommended
+       reading order.
  0.0.8 2018-02-10-13:37 Introduce combinators.txt in the manifest.
  0.0.7 2018-02-09-12:10 Reflect change of show-ob.txt to obstring.txt
  0.0.6 2018-02-04-11:52 Add show-ob.txt to the manifest
  0.0.5 2018-01-30-18:28 Reflect addition of ob-exp.txt in the manifest.
  0.0.4 2017-12-27-09:43 Touch-ups and some simplification.  Manage TODOs.
        Correct the GitHub location of this page.
- 0.0.3 2017-11-12-09:09 Manage TODOs.  Touch up text.  
+ 0.0.3 2017-11-12-09:09 Manage TODOs.  Touch up text.
  0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
        next steps.  Touch up the text.
  0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,
