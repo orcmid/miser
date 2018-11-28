@@ -1,4 +1,4 @@
-boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
+boole.txt 0.0.10                     UTF-8                       dh:2018-11-28
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -14,10 +14,10 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
         computation.
 
         For oMiser, enough Boolean Algebra theory is presented to illuminate
-        important representation and interpretation features of other
-        mathematical structures in ‹ob›.  Interpretations in ‹ob› will
-        thereby have representation-preserving computational interpretations
-        that are directly available in the unfolding ‹ob› computational model.
+        important representation, interpretation and manifestation features
+        of other mathematical structures in ‹ob›.  Interpretations in ‹ob›
+        will directly imply representation-preserving computational
+        interpretations available in the unfolding ‹ob› model of computation.
 
                               CONTENT
 
@@ -30,7 +30,7 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
                  1.3 Additional Characteristics
                  1.4 Interpretations
 
-              2. ‹bp› REPRESENTATION
+              2. ‹bp› REPRESENTATIONS
 
                  2.1 Unique Representation
                  2.2 Notable Qualities
@@ -38,12 +38,13 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
                  2.4 Domain-Restriction Consequences
                  2.5 Domain-Relaxation Equivalence
 
-              3. ‹ba› REPRESENTATION
+              3. ‹ba› REPRESENTATIONS
 
                  3.1 Concrete Representation
                  3.2 Boolean-Vector Structures
                  3.3 Concrete Boolean-Vector Interpretation
-                 3.4 ‹ba› Interpretation in ‹ob›
+                 3.4 ‹ba› Simulation in ‹ob›
+                 3.5 The Cost of Mathematics
 
               4. NOTES AND REFERENCES
                  Sources of further details and theoretical work concerning
@@ -88,6 +89,8 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
 
       x ⊆ y  x "sub" y, sub(x, y) comparable to the subset relation among
              sets.
+
+      x = y  ⇔ x ⊆ y
 
     To simplify expressions and reduce parentheses, the above listing is
     taken as an order of precedence, from strongest to weakest.  That is
@@ -153,16 +156,22 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     The structures, ‹ba› and the special case ‹bp› are highly abstract.
     The only requirement for representing any ‹ba› is to distinguish the
     (finitely) enumerable members of the domain of discourse in some manner;
-    then represent basic functions such that all of the basic conditions
-    are satisfied.
+    then represent basic operations (1.1) satisfying the basic constraints
+    (1.2).
 
-    Boolean Algebra structures do not solve all problems.  Even if such
-    a structure can be imposed, it might not be particularly interesting or
-    useful.  One flavor of Boolean Algebra that is known to be extremely
-    valuable for work in logic and in computation is the simple case, ‹bp›.
+    The straighforward ‹bp› flavor is known to be extremely valuable
+    for work in logic and in computation (section 2).  A related Boolean
+    Algebra structure, ‹bvn›, is one means of interpreting all other Boolean
+    Algebras, ‹ba›, with finite domains of discourse.  ‹bvn›, along with ‹bp›,
+    offers a means of computational interpretation of ‹ba› structures that has
+    widespread computational application (section 3).
 
+    For the Miser Project, demonstration of computational interpretation of
+    ‹ba› structures is by establishing an interpretation in ‹ob› and then
+    relying on the effective computability of the ‹ob› representations
+    introduced.
 
- 2. ‹bp› REPRESENTATION
+ 2. ‹bp› REPRESENTATIONS
 
  2.1 Unique Representation
 
@@ -233,11 +242,11 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     Representation of the given ‹ob› interpretation can be accomplished
     directly.  Simply rewrite the unique representation (2.1) in Ot such that
     each occurrence of "bp" in the formulation is written "ob.NE.bp".
-    The validity of the interpretation is direct.
+    Validity of the interpretation is direct.
 
-    The elaborate namings, such as ob.NE.comp, reflect the specific
-    interpretation based on the sequence NE, emphasizing that there are any
-    number of distinct interpretations of ‹bp› in ‹ob›.
+    The elaborate namings, such as ob.NE.comp, reflect interpretation
+    based on the pair NE = [ob.NIL, ob.e(ob.NIL)], distinguishing among
+    the extensive number of distinct interpretations of ‹bp› in ‹ob›.
 
  2.4 Domain-Restriction Consequences
 
@@ -249,9 +258,9 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     difficulty as long as operands are confined to interpretations.
 
     The undefined cases confound computational interpretations where direct
-    lack of definition interferes with reasoning about computations and also
-    raises questions about what operational behavior must be introduced in
-    the case of computational-interpretation infractions.
+    lack of definition interferes with reasoning about computations. Lack of
+    specification also raises questions about what operational behavior must
+    be introduced in the case of computational-interpretation infractions.
 
  2.5 Domain-Relaxation Equivalence
 
@@ -305,8 +314,7 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     corresponding representation in the interpretation, the interpretation is
     known as a simulation, the equivalence case here.
 
-
- 3. ‹ba› REPRESENTATION
+ 3. ‹ba› REPRESENTATIONS
 
     When the ‹ba› = 〈Ba,Baf,Bat〉 domain of discourse, Ba, consists of more
     than two distinct members, finding a representation is not immediately
@@ -322,11 +330,13 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     domain restriction.
 
     Having representations of concrete Boolean Algebras achieves ready
-    availability of computational interpretations for those and also whatever isomorphic ‹ba› representations are identified.
+    availability of computational interpretations for those and also whatever
+    isomorphic ‹ba› representations are identified.
 
  3.1 Concrete Representation
 
-    We define ‹bn› = 〈Bn,Bnf,Bnt〉, with n a natural number, to be a Concrete <ba> structure as follows.
+    We define ‹bn› = 〈Bn,Bnf,Bnt〉, with n a natural number, to be a
+    concrete <ba> structure as follows.
 
     The number of distinguished members in the domain of discourse, Bn, is
     even and a power of two, symbolized 2^n.
@@ -440,8 +450,8 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
           1     1    ...   1   1   X(2^n-1) = ⊤
 
     All 2^n Xj are tabulated in the above scheme.  The elements, Xj of
-    domain Bvn are strictly ordered alphabetically assuming 0 < 1.  The Xj
-    are enumerated in that sequence, starting from j = 0.
+    domain Bvn are strictly ordered alphabetically assuming 0 before 1.
+    The Xj are enumerated in that sequence, starting from j = 0.
 
     Each column beneath an ai in the table represents an indicator function
     for the associated ai, specifying 1 where ai is in that Xj row's
@@ -458,7 +468,7 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     enumerating the Xj by interpreting the Xj sequence as the number j in
     binary notation.  The result is a strict enumeration of the 2^n unique Xj.
 
- 3.4 ‹ba› Interpretation in ‹ob›
+ 3.4 ‹ba› Simulation in ‹ob›
 
     By virtue of the isomorphism between any ‹ba› and some ‹bn› (section 3.1) and thence some ‹bvn› (section 3.2), it is sufficient to interpret the
     ‹bvn› in ‹ob›.
@@ -467,87 +477,172 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
         interpretation ob.NE.bp in the equivalence form (section 2.5),
         signified I(vi).
 
-      * Interpret the sequence [v1, v2, ..., vn] with the construction
-        ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(vn), ob.NIL)...))))
-
-      * Relax the ending ob.NIL requirement, allowing any singleton there.
-        (This anticipates idiomatic practices involving the ‹ob› model of
-        computation.)
+      * Interpret the sequence [v1, v2, ..., vn, xbit:] with the construction
+        ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(vn), xbit)...)))) where
+        xbit is a singleton under interpretation ob.NE.bp and is used as
+        an "expander."  When "xbit:" is omitted, ob.NIL is understood.
 
       * For representation of corresponding ‹bvn› and the concrete-isomorph
         sequence [xn, ... x2, x1] (section 3.3), use the interpretation
-        of sequence [x1, x2, ..., xn].
+        of sequence [x1, x2, ..., xn, xbit:].
 
-    Interpretation of ‹bvn›-represented functions is by the corresponding ob.NE.bvn functions represented as follows.
+    Interpretation of the ‹bvn›-represented functions is by corresponding ob.bvx functions represented as follows.
 
-         ob.is-singleton(x) ⇒ ob.NE.bvn.comp(x) = x
-       ¬ ob.is-individual(x)
-           ⇒ ob.NE.bvn.comp(x) = ob.c( ob.NE.bp.comp(ob.a(x)),
-                                       ob.NE.bvn.comp(ob.b(x)) )
+         ob.is-singleton(x) ⇒ ob.bvx.comp(x) = ob.NE.bp.comp(x)
+       ¬ ob.is-singleton(x)
+           ⇒ ob.bvx.comp(x) = ob.c( ob.NE.bp.comp(ob.a(x)),
+                                       ob.bvx.comp(ob.b(x)) )
 
-         ob.is-singleton(x) ⇒ ob.NE.bvn.meet(x, y) = x
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) ⇒ ob.NE.bvn.meet(x, y) = y
+         ob.is-singleton(x) ∧ ob.is-singleton(y)
+           ⇒ ob.bvx.meet(x, y) = ob.NE.bp.meet(x, y)
+         ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
+           ⇒ ob.bvx.meet(x, y) = ob.bvx.meet(y, x)
+       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
+           ⇒ ob.bvx.meet(x, y)
+               = ob.c( ob.NE.bp.meet(ob.a(x), y),
+                       ob.bvx.meet(ob.b(x), y) )
        ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.NE.bvn.meet(x, y) = ob.c( ob.NE.bp.meet(ob.a(x), ob.a(y)),
-                                          ob.NE.bvn.meet(ob.b(x),ob.b(y)) )
+           ⇒ ob.bvx.meet(x, y) = ob.c( ob.NE.bp.meet(ob.a(x), ob.a(y)),
+                                          ob.bvx.meet(ob.b(x),ob.b(y)) )
 
-         ob.is-singleton(x) ⇒ ob.NE.bvn.join(x, y) = y
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) ⇒ ob.NE.bvn.join(x, y) = x
+    Using the above representation of ob.bvx.meet, represent each of
+    ob.bvx.join and ob.bvx.sep by substitution of "join" for "meet"
+    and substitution of "sep" for "meet", respectively.
+
+         ob.is-singleton(x) ∧ ob.is-singleton(y)
+           ⇒ (ob.bvx.sub(x, y) ⇔ ob.NE.bp.sub(x, y)
+         ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
+           ⇒ ( ob.n.sub(x, y)
+                 ⇔ ob.NE.bp.sub(x, ob.a(y)) ∧ ob.bvx.sub(x, ob.b(y)) )
+       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
+           ⇒ ( ob.bvx.sub(x, y)
+                 ⇔ ob.NE.bp.sub(ob.a(x), y) ∧ ob.bvx.sub(ob.b(x), y) )
        ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.NE.bvn.join(x, y) = ob.c( ob.NE.bp.join(ob.a(x), ob.a(y)),
-                                          ob.NE.bvn.join(ob.b(x),ob.b(y)) )
+           ⇒ ( ob.bvx.sub(x, y)
+                 ⇔ ob.NE.bp.sub(ob.a(x), ob.a(y))
+                      ∧ ob.bvx.sub(ob.b(x),ob.b(y)) )
 
-         ob.is-singleton(x) ⇒ ob.NE.bvn.sep(x, y) = y
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) ⇒ ob.NE.bvn.sep(x, y) = x
-       ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.NE.bvn.sep(x, y) = ob.c( ob.NE.bp.sep(ob.a(x), ob.a(y)),
-                                          ob.NE.bvn.sep(ob.b(x),ob.b(y)) )
+         ob.bvx.is-eq(x, y) ⇔ ob.bvx.sub(x,y) ∧ ob.bvx.sub(y,x)
 
-         ob.is-singleton(x) ⇒ ob.NE.bvn.sub(x, y)
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) ⇒ ob.NE.bvn.sub(y, x)
-       ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.NE.bvn.sub(x, y) = ob.NE.bp.sub(ob.a(x), ob.a(y))
-                                     ∧ ob.NE.bvn.sub(ob.b(x),ob.b(y)) )
-
-         ob.is-singleton(x) ⇒ ( ob.NE.bvn.eq(x, y) ⇔ ob.is-singleton(y) )
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) ⇒ ¬ ob.NE.bvn.eq(x, y)
-       ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.NE.bvn.eq(x, y) = ob.NE.bp.cf(ob.a(x)) = ob.NE.bp.cf(ob.a(y))
-                                     ∧ ob.NE.bvn.eq(ob.b(x),ob.b(y)) )
-
-    with the interpretation of ‹bvn› x = y being ob.NE.bvn.eq(I(x),I(y)).
+    with the interpretation of ‹bvn› x = y being ob.bvx.is-eq(I(x),I(y)).
 
     Note some features of this interpretation.
 
+      * The ob.bvx representations are total.  Every ob has interpretation
+        as a sequence under this simulation of ‹bvn› and the representation
+        is defined over all definite obs.
+
       * Provided that the represented operations are confined to operand
-        obs that are interpretations of ‹bvn› = 〈Bvn,Bvnf,Bvnt〉 = 〈Bvn,Bvnf,Bvnt〉 domain Bvn
-        members, there is complete fidelity of the ob.NE.bvn simulation.
+        obs that are interpretations of ‹bvn› = 〈Bvn,Bvnf,Bvnt〉, there is
+        complete fidelity of the ob.bvx as a simulation.
 
-      * When an operand sequence [x1, x2, ..., xm] is of length less than
-        that of [y1, y2, ..., yn], the interpretation via the ob.NE.bvn
-        representation is as if the shorter sequence is adjusted to the
-        longer length by suffixing 0 terms:
-                     [x1, x2, ..., xm, 0 ... 0n].
+      * When an operand sequence [x1, x2, ..., xm, xbit:] is of length less
+        than that of another operand [y1, y2, ..., yn, ybit:], the ob.bvx
+        representation is as if the shorter sequence is extended to match the
+        length of the longer one by suffixing its xbit element enought times.
 
-      * There is no such provision for ob.NE.bvn.comp(x), however.
+      * ob.bvx.comp([x1, x2, ..., xn, xbit:]) operates on the xbit the same
+        as the bits of the x1, x2, ..., xn.
 
-      * The ob.NE.bvn representation is total.  Every ob has interpretation
-        as a sequence under this simulatiopn of ‹bvn› and the representation
-        of ob.NE.bvn is defined over all determined obs.
+      * ob.bvx simulates a Boolean Algebra, one that accomodates all ‹bvn› of
+        arbitrary (but finite) n.
 
-    It should be clear, in this treatment of Boolean Algebra interpretations,
-    that there is no basis for determining what an intended interpretation is
-    simply by inspection of an ob.  One can ascertain whether an ob admits of
-    being such an interpretation, and sometimes the contrary, but there is no
-    means by which any ob is confined to serving as some unique, self-evident
-    interpretation.
+      * Another interpretation of ob.bvx is as a simulation of 2's complement
+        signed binary numerals of arbitrary length.  Addressing this and other
+        arithmetic interpretations in ‹ob› is a separate, later topic useful
+        when assessing the model of computation.
 
+    The extension of shorter sequences can be taken as viewing the shortened
+    one as contraction of an arbitrary x.  We can go farther and derive
+    canonical forms from contractions.
 
- 4. NOTES AND REFERENCES
+         ob.is-singleton(x)
+           ⇒ ob.bvx.cf(x) = ob.NE.bp.cf(x)
+       ¬ ob.is-singleton(x)
+           ⇒ ob.bvx.cf(x) = contraction(ob.NE.bp.cf(ob.a(x)), ob.b(x))
+      where
+         ob.is-singleton(y)
+           ⇒ contraction(x, y) = trimback(x, ob.NE.bp.cf(y))
+       ¬ ob.is-singleton(y)
+           ⇒ contraction(x, y)
+                 = contraction(ob.c(ob.NE.bp.cf(ob.a(y)),x), ob.b(y))
+      where
+         ob.is-singleton(x) ∧ x = y
+           ⇒ trimback(x, y) = y
+         ob.is-singleton(x) ∧ x ≠ y
+           ⇒ trimback(x, y) = ob.c(x, y)
+       ¬ ob.is-singleton(x) ∧ ob.a(x) = y
+           ⇒ trimback(x, y) = trimback(ob.b(x), y)
+       ¬ ob.is-singleton(x) ∧ ob.a(x) ≠ y
+           ⇒ trimback(x, y) = repack(x, y)
+      where
+         ob.is-singleton(x)
+           ⇒ repack(x, y) = ob.c(x, y)
+       ¬ ob.is-singleton(x)
+           ⇒ repack(x, y) = repack(ob.b(x), ob.c(ob.a(x), y))
+
+    Here the auxiliary function representations for contraction, trimback,
+    and repack are internal to the representation of ob.bvx.cf(x).  There are
+    preconditions only satisfied by how the subordinate representations are
+    appealed to in the representation of their superiors, above.  These
+    together ensure that the result is an ob.bvx canonical form.
+
+ 3.5 The Cost of Mathematics
+
+    Do not regard the elaborate formulations, especially for interpretations
+    in ‹ob›, as a liability of mathematical formulations and reliance on
+    logical deductions.  Rather, the elaborate cases are a consequence of
+    having to encode (represent as data) entities in mathematical domains
+    using only the primitive notions of ‹ob›.  In so doing, we retain the
+    opportunity to reason about the representations using mathematical
+    methods.
+
+    For example, one can establish mathematically that ob.bvx represents a
+    Boolean Algebra, ‹bvx›.
+
+    It can also be shown that ob.bvx.cf(x) is an ob sequence in which the
+    only elements are ob.NE.bp.cf canonical forms, whether labelled as
+    ⊥ and ⊤ or 0 and 1.  Furthermore, ob.bvx.cf(x) is the shortest ob
+    sequence, a [vbit:] or a [v1, v2, ..., vn, vbit:] where vn is different
+    than vbit.  It can be seen that [0:] in this notation is  eqivalent to
+    [0, 0, 0, ...], hence the ⊥ of ‹bvx›, and [1:] is equivalent to [1, 1, 1,
+    ...] and hence the ⊤.
+
+    There are ideas from software development that do inform some of the
+    mathematical engineering applied for interpretations in ‹ob›.  This
+    is shown in the avoidance of edge cases and preference for expanding
+    representations to the entire ‹ob› domain of discourse.  In cases such
+    as ob.NE.bp and ob.bvx, unrestricted representations are found to
+    provide proper interpretations as well.
+
+    Confinement of interpretation to a restriction on an unrestricted domain
+    imposes restraints on how unrestricted function representations are
+    applied.  Infractions become mathematical counterparts of the garbage-in,
+    garbage-out maxim from computing.  The mitigating practice is the same:
+    express restriction to the subdomain of interpretations at the highest
+    level, eliminating tedious defensive confirmations among the fine details.
+
+    The restrained context of the subordinate representations in the
+    represention of ob.bvx.cf(x) illustrate how preserving higher-order
+    pre-conditions/-restrictions can be ensured in some cases: All of the
+    singletons in operands of trimback and repack are in ob.NE.bp.cf form
+    and nothing more need be said about it.
+
+4. NOTES AND REFERENCES
+
+    It should be clear, from this treatment of Boolean Algebra interpretation,that there is generally no basis for determining what any intended
+    interpretation is simply by inspection of an ob.  One can ascertain
+    whether an ob admits of being such an interpretation, and sometimes the
+    contrary.  Nonetheless, there is no intrinsic means by which any ob is
+    confined to some unique, self-evident interpretation no matter the tacit
+    appeal of a seeming manifestation.
 
     The extension of an interpretation to equivalence classes is an appealing
     idiom for computational interpretations.  The specific relaxation in (2.5)
     is remaniscent of provision in LISP, with atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.  Anything else is taken as ⊤.
+    The canonical forms, however, are revealed by the results of relational
+    operators, such as the interpretation of x = y in those programming
+    systems.
 
     Limitation of ‹ba› to a domain of discourse having at least two members
     and being finite is appropriate for consideration of computational
@@ -564,7 +659,8 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
     logical connectives used throughout oMiser use of FOL= notation, hence the
     use of complement, meet, join, and sep symbols and certain frussiness in
     qualifying represented functions by the name of the particular structure
-    being represented.  Notational separation facilitates recognition of correspondences without implying identity, avoiding for a time any tacit
+    being represented.  Notational separation facilitates recognition of
+    correspondences without implying identity, avoiding for a time any tacit
     collapsing of separate notions together as if about the same (abstract)
     entities.
 
@@ -625,25 +721,29 @@ boole.txt 0.0.9                      UTF-8                       dh:2018-11-26
 
  TODO:
 
-  * Add 3.5 for a flexible interpretation.
+  * When representation, interpretation, manifestation, implementation,
+    and simulation are worked out more clearly, review these materials
+    for consistent usage and links to related resources of the project and
+    and elsewhere, especially ones of reference/historical value.  This is
+    rather valuable here in boole.txt.
 
-  * Do not label ‹bn› interpretations at this point.  Consider when
-    and how to do that.
+  * Remark on how experience with computational interpretations informs the
+    engineering of mathematical representations.
 
-  * Not certain where is the best place to talk about the brittleness of ‹bn›
-    interpretation, when the mappings are different sequences but not
-    necessarily different sets.  Also, that these are *into* ob, not *onto*
-    and there can be many disparate interpretations of the same ob become
-    matters of note.
+  * Use manifestation here, since the demonstrations are powerful for that.
 
-  * The fact that ‹b1› corresponds with ‹bp› and is not the same is useful
-    to note.
+  * Comment on how we do not rely on the ‹ob› model of computation explicitly
+    in this account, since we are looking at the domain of discourse but not
+    with any determination of the model of computation.  The mockups rely
+    on the representation of ‹ob› as abstract data and operational schemes
+    using available computational methods, such as via SML/NJ.
 
-  * Well-ordering will be important (?).  Does it matter that Boolean Algebras
-    are well-ordered and computational-interpretation must correspond, or is
-    this a red herring?
+  * Find an accessible reference to the conclusion of representation of non-    concrete ‹ba›s via isomorphisms to concrete ‹ba›s.  Stone's theorem may
+    be too much of a stretch.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.10 2018-11-28-14:53 Complete sections 3.4-3.5 and wrap up the essential
+       draft of coverage for oMiser purposes.
  0.0.9 2018-11-26-14:32 Smooth some and complete section 3.4 giving one ‹ba› interpretation in ‹ob›.
  0.0.8 2018-11-25-10:31 Complete the bvn interpretation in bn.  Repair text
        flow and rework 3.3.
