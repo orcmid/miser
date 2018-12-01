@@ -1,4 +1,4 @@
-boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
+boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -26,13 +26,13 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
                  obtheory although at a different level of abstraction
 
                  1.1 Notation and Basic Operations
-                 1.2 Basic Constraints
+                 1.2 Basic Constraints (Axioms)
                  1.3 Additional Characteristics
                  1.4 Interpretations
 
               2. ‹bp› REPRESENTATIONS
 
-                 2.1 Unique Representation
+                 2.1 Standard Representation
                  2.2 Notable Qualities
                  2.3 ‹bp› Interpretation in ‹ob›
                  2.4 Domain-Restriction Consequences
@@ -63,17 +63,17 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
 
  1.1 Notation and Basic Operations
 
-    The ‹bp› domain of discourse, Bp, consists of exactly two distinguished
+    The ‹ba› domain of discourse, Ba, is a finite set having at least two
+    distinct members, two of which are distinguished as ⊤ and ⊥, respectively.
+
+    The ‹bp› domain of discourse, Bp, consists of only the two distinguished
     entities.
 
        ⊤ (nickname "top")
        ⊥ (nickname "bot")
 
-    The ‹ba› domain of discourse, Ba, is a finite set having at least two
-    distinct members, two of which are distinguished as ⊤ and ⊥, respectively.
-
-    The additional basic notions consist of a small number of functions
-    typically expressed as operations.
+    The basic operations consist of a small number of functions typically
+    expressed as operations.
 
         ~ x  "comp" x, signifies the complement of x, comp(x)
 
@@ -95,12 +95,13 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
 
         x ∩ ~ y ∪ ~ x ∩ y = (x ∩ (~ y)) ∪ ((~ x) ∩ y)
 
- 1.2 Basic Constraints
+ 1.2 Basic Constraints (Axioms)
 
     The basic conditions on all ‹ba› structures are presented in terms of
     axioms, arrangements that hold whatever the domain of discourse, Ba,
     happens to be and however the operations are defined in satisfaction
-    of these constraints.
+    of these constraints without inconsistency.  These ae often taken as
+    axioms for Boolean Algebras.
 
     Ba1. Commutativity
          x ∪ y = y ∪ x
@@ -123,9 +124,8 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
 
  1.3 Additional Characteristics
 
-    The following are consequences of the basic constraints.  They are
-    applicable to any Boolean Algebra structure ‹ba› with distinguished
-    domain Ba and definite basic operations satisfying Ba1-Ba5.
+    The following are consequences of the chosen axioms.  They apply to any
+    Boolean Algebra structure ‹ba› with distinguished domain of discourse Ba and definite basic operations satisfying Ba1-Ba5.
 
     Ba6. Associativity
          x ∪ (y ∪ z) = (x ∪ y) ∪ z
@@ -142,7 +142,7 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     Ba9. Separation (definition)
          x ∸ y = x ∩ ~ y ∪ ~ x ∩ y
 
-    Ba10. Well-Ordering
+    Ba10. Partial Ordering
          ⊥ ⊆ y (hence "bot")
          x ⊆ ⊤ (hence "top")
 
@@ -167,17 +167,23 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     offers a means of computational interpretation of ‹ba› structures that has
     widespread computational application (section 3).
 
-    For the Miser Project, demonstration of computational interpretation of
-    ‹ba› structures is by establishing an interpretation in ‹ob› and then
-    relying on the effective computability of the ‹ob› representations
-    introduced.
+    For the Miser Project, one exploitation of the effective computability of
+    of ‹ba› structures is by establishing an interpretation in ‹ob› and then
+    relying on the corresponding effective computability of the ‹ob›
+    representations.  That brings us to the vicinity of computational
+    interpretation in the ‹ob› model of computation.
+
+    For representations and interpretations in any domains, we'll use the
+    functional notations (comp(x), meet(x,y), join(x,y), sub, etc.) with a naming practice that distinguishes the structure involved.  Expression
+    operators ~, ∪, ∩, etc., are only used where the intended structure is
+    implicit or unimportant to distinguish.
 
  2. ‹bp› REPRESENTATIONS
 
- 2.1 Unique Representation
+ 2.1 Standard Representation
 
-    Given definite Bp = {⊥, ⊤}, the basic constraints are uniquelly satisfied
-    by the functions represented here as bp.comp, bp.meet, bp.join, etc.
+    Given definite Bp = {⊥, ⊤}, the ‹ba› are fully satisfied by the functions
+    represented here as bp.comp, bp.meet, bp.join, etc.
 
     bp.comp(⊥) = ⊤
     bp.comp(⊤) = ⊥
@@ -194,18 +200,14 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     bp.sub(⊤, ⊤)
     bp.sub(⊥, x)
 
-    In demonstrating representations, functional notation makes the related
-    structure explicit.  Expression operators ~, ∪, ∩, etc., are used where
-    the intended structure is implicit (or unimportant).
-
  2.2 Notable Qualities
 
      * Verification of a computational interpretation of (1.3) Ba1-Ba11 by
-       exhaustive testing is feasible in the case of ‹bp›.
+       exhaustive testing is feasible in the case of ‹bp› = 〈Bp,Bpf,Bpt〉.
 
      * All effectively computable functions, bp.f(x1, x2, ..., xn) in Bpf are
        representable via Bpt using only bp.comp, bp.meet, and bp.join
-       operations along with equality.
+       operations along with ‹bp› equality.
 
      * Propositions of the form bp.f(x1, x2, ..., xn) = ⊤ correspond to
        propositional logic assertions s(p1, p2, ..., pn) by rewriting the Bt
@@ -265,26 +267,29 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
 
  2.5 Domain-Relaxation Equivalence
 
-    Alternatively, consider ob.NE.bp.comp(x), ..., ob.NE.bp.sub(x, y) with
+    Alternatively, consider ob.p01.bp.comp(x), ..., ob.p01.bp.sub(x, y) with
     these representations:
 
-         ob.is-individual(x) ⇒ ob.NE.bc.comp(x) = ob.e(ob.NIL)
-       ¬ ob.is-individual(x) ⇒ ob.NE.bc.comp(x) = ob.NIL
+         ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.e(ob.NIL)
+       ¬ ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.NIL
 
-         ob.is-individual(x) ⇒ ob.NE.bc.meet(x, y) = x
-       ¬ ob.is-individual(x) ⇒ ob.NE.bc.meet(x, y) = y
+         ob.is-individual(x) ⇒ ob.p01.bp.meet(x, y) = x
+       ¬ ob.is-individual(x) ⇒ ob.p01.bp.meet(x, y) = y
 
-         ob.is-individual(x) ⇒ ob.NE.bc.join(x, y) = y
-       ¬ ob.is-individual(x) ⇒ ob.NE.bc.join(x, y) = x
+         ob.is-individual(x) ⇒ ob.p01.bp.join(x, y) = y
+       ¬ ob.is-individual(x) ⇒ ob.p01.bp.join(x, y) = x
 
-         ob.is-individual(x) ⇒ ob.NE.bc.sep(x, y) = y
-       ¬ ob.is-individual(x) ⇒ ob.NE.bc.sep(x, y) = ob.NE.bc.comp(y)
+         ob.is-individual(x) ⇒ ob.p01.bp.sep(x, y) = y
+       ¬ ob.is-individual(x) ⇒ ob.p01.bp.sep(x, y) = ob.p01.bp.comp(y)
 
-         ob.is-individual(x) ⇒ ob.NE.bc.sub(x, y)
-       ¬ ob.is-individual(x) ⇒ ob.NE.bc.sub(y, x)
+         ob.is-individual(x) ⇒ ob.p01.bp.sub(x, y)
+       ¬ ob.is-individual(x) ⇒ ob.p01.bp.sub(y, x)
 
     Under restriction of all operands to members of NE, the previous interpre-
-    tation (2.3) is satisfied under domain restriction, just as in (2.4).
+    tation (2.3) is satisfied under domain restriction, just as in (2.4).  The
+    use of p01 is a concession to the practice of designating ‹bp› ⊥ and ⊤
+    with symbols 0 and 1, respectively although the ob.p01.bp interpretation
+    is rather different.  That will be useful in interpretations of ‹ba› (section 3).
 
     This relaxed ‹ob› representation has the interesting quality that any
     individual is an interpretation of ⊥ and any non-individual is an
@@ -293,12 +298,12 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     canonical form for interpretation of ⊤.  The canonical form of an ob, x,
     in this interpretation is uniquelly determined by
 
-         ob.NE.bp.cf(x) = ob.NE.bp.comp(ob.NE.bp.comp( x )).
+         ob.p01.bp.cf(x) = ob.p01.bp.comp(ob.p01.bp.comp( x )).
 
     We can now remove the domain restriction by simply replacing the ‹ob›
     interpretation of x = y in (2.3) with
 
-                    ob.NE.bp.cf(x) = ob.NE.bp.cf(y).
+                    ob.p01.bp.cf(x) = ob.p01.bp.cf(y).
 
     This alternative effectively partitions the obs into two equivalence
     classes, one of all individuals and the other of everything else, and
@@ -307,13 +312,13 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     Generalizations that preserve constraints while simplifying the
     formulation can be seen as a form of mathematical engineering.  Such
     approaches arise in the generalization of computational interpretations
-    where the simplicity is important for understanding of validity and also
-    improvement/simplification of operational performance.
+    where the simplicity is important for understanding of validity and may
+    also improve/simplify operational performance.
 
     After [Forster2003], an interpretation where "="s correspond is termed
     an implementation.  When "="s do not correspond directly, but there is a
     corresponding representation in the interpretation, the interpretation is
-    known as a simulation, the equivalence case here.
+    known as a simulation, the case of ob.p01.bp here.
 
  3. ‹ba› REPRESENTATIONS
 
@@ -321,8 +326,8 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     than two distinct members, finding a representation is not immediately
     obvious, in contrast with the handy representation of ‹bp› (section 2.1).
     ‹ba› representation depends on identification of the members of domain Ba
-     and representing comp, join, and meet in Bat such that the basic
-     constraints are satisfied (section 1.2).
+    and representing comp, join, and meet in Bat such that the axioms are
+    consistently satisfied (section 1.2).
 
     The mathematical theory of Boolean Algebras provides an assurance that
     every Boolean Algebra is isomorphic to what is known as a concrete
@@ -475,12 +480,12 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     ‹bvn› in ‹ob›.
 
       * For 0 and 1 vi entities in n-tuples [v1, v2, ..., vn], use the
-        interpretation ob.NE.bp in the equivalence form (section 2.5),
+        interpretation ob.p01.bp in the equivalence form (section 2.5),
         signified I(vi).
 
       * Interpret the sequence [v1, v2, ..., vn, xbit:] with the construction
         ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(vn), xbit)...)))) where
-        xbit is a singleton under interpretation ob.NE.bp and is used as
+        xbit is a singleton under interpretation ob.p01.bp and is used as
         an "expander."  When "xbit:" is omitted, ob.NIL is understood.
 
       * For representation of corresponding ‹bvn› and the concrete-isomorph
@@ -489,21 +494,21 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
 
     Interpretation of the ‹bvn›-represented functions is by corresponding ob.bvx functions represented as follows.
 
-         ob.is-singleton(x) ⇒ ob.bvx.comp(x) = ob.NE.bp.comp(x)
+         ob.is-singleton(x) ⇒ ob.bvx.comp(x) = ob.p01.bp.comp(x)
        ¬ ob.is-singleton(x)
-           ⇒ ob.bvx.comp(x) = ob.c( ob.NE.bp.comp(ob.a(x)),
+           ⇒ ob.bvx.comp(x) = ob.c( ob.p01.bp.comp(ob.a(x)),
                                        ob.bvx.comp(ob.b(x)) )
 
          ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ ob.bvx.meet(x, y) = ob.NE.bp.meet(x, y)
+           ⇒ ob.bvx.meet(x, y) = ob.p01.bp.meet(x, y)
          ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
            ⇒ ob.bvx.meet(x, y) = ob.bvx.meet(y, x)
        ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
            ⇒ ob.bvx.meet(x, y)
-               = ob.c( ob.NE.bp.meet(ob.a(x), y),
+               = ob.c( ob.p01.bp.meet(ob.a(x), y),
                        ob.bvx.meet(ob.b(x), y) )
        ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.bvx.meet(x, y) = ob.c( ob.NE.bp.meet(ob.a(x), ob.a(y)),
+           ⇒ ob.bvx.meet(x, y) = ob.c( ob.p01.bp.meet(ob.a(x), ob.a(y)),
                                           ob.bvx.meet(ob.b(x),ob.b(y)) )
 
     Using the above representation of ob.bvx.meet, represent each of
@@ -511,16 +516,16 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     and substitution of "sep" for "meet", respectively.
 
          ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ (ob.bvx.sub(x, y) ⇔ ob.NE.bp.sub(x, y)
+           ⇒ (ob.bvx.sub(x, y) ⇔ ob.p01.bp.sub(x, y)
          ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
            ⇒ ( ob.n.sub(x, y)
-                 ⇔ ob.NE.bp.sub(x, ob.a(y)) ∧ ob.bvx.sub(x, ob.b(y)) )
+                 ⇔ ob.p01.bp.sub(x, ob.a(y)) ∧ ob.bvx.sub(x, ob.b(y)) )
        ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
            ⇒ ( ob.bvx.sub(x, y)
-                 ⇔ ob.NE.bp.sub(ob.a(x), y) ∧ ob.bvx.sub(ob.b(x), y) )
+                 ⇔ ob.p01.bp.sub(ob.a(x), y) ∧ ob.bvx.sub(ob.b(x), y) )
        ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
            ⇒ ( ob.bvx.sub(x, y)
-                 ⇔ ob.NE.bp.sub(ob.a(x), ob.a(y))
+                 ⇔ ob.p01.bp.sub(ob.a(x), ob.a(y))
                       ∧ ob.bvx.sub(ob.b(x),ob.b(y)) )
 
          ob.bvx.is-eq(x, y) ⇔ ob.bvx.sub(x,y) ∧ ob.bvx.sub(y,x)
@@ -558,15 +563,15 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     canonical forms by contraction.
 
          ob.is-singleton(x)
-           ⇒ ob.bvx.cf(x) = ob.NE.bp.cf(x)
+           ⇒ ob.bvx.cf(x) = ob.p01.bp.cf(x)
        ¬ ob.is-singleton(x)
-           ⇒ ob.bvx.cf(x) = contraction(ob.NE.bp.cf(ob.a(x)), ob.b(x))
+           ⇒ ob.bvx.cf(x) = contraction(ob.p01.bp.cf(ob.a(x)), ob.b(x))
       where
          ob.is-singleton(y)
-           ⇒ contraction(x, y) = trimback(x, ob.NE.bp.cf(y))
+           ⇒ contraction(x, y) = trimback(x, ob.p01.bp.cf(y))
        ¬ ob.is-singleton(y)
            ⇒ contraction(x, y)
-                 = contraction(ob.c(ob.NE.bp.cf(ob.a(y)),x), ob.b(y))
+                 = contraction(ob.c(ob.p01.bp.cf(ob.a(y)),x), ob.b(y))
       where
          ob.is-singleton(x) ∧ x = y
            ⇒ trimback(x, y) = y
@@ -602,9 +607,9 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     Boolean Algebra, ‹bvx›, which accomplishes all ‹bvn› for fixed n's.
 
     It can also be shown that ob.bvx.cf(x) is an ob sequence in which the
-    only elements are ob.NE.bp.cf canonical forms, whether labelled as
+    only elements are ob.p01.bp.cf canonical forms, whether labelled as
     ⊥ and ⊤ or 0 and 1.  Furthermore, ob.bvx.cf(x) is the shortest ob
-    sequence, a [vbit:] or a [v1, v2, ..., vn, vbit:] where vn is different
+    sequence, a [vbit:] or a [v1, v2, ..., vn, vbit:], where vn is different
     than vbit.  It can be seen that [0:] in this notation is  eqivalent to
     [0, 0, 0, ...], hence the ⊥ of ‹bvx›, and [1:] is equivalent to [1, 1, 1,
     ...] and hence the ⊤.
@@ -613,7 +618,7 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     mathematical engineering applied for interpretations in ‹ob›.  This
     is shown in the avoidance of edge cases and preference for expanding
     representations to the entire ‹ob› domain of discourse.  In cases such
-    as ob.NE.bp and ob.bvx, unrestricted representations are found to
+    as ob.p01.bp and ob.bvx, unrestricted representations are found to
     provide proper interpretations as well.
 
     Confinement of interpretation to a restriction on an unrestricted domain
@@ -626,7 +631,7 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     The restrained context of the subordinate representations in the
     represention of ob.bvx.cf(x) illustrate how preserving higher-order
     pre-conditions/-restrictions can be ensured in some cases: All of the
-    singletons in operands of trimback and repack are in ob.NE.bp.cf form
+    singletons in operands of trimback and repack are in ob.p01.bp.cf form
     and nothing more need be said about it.
 
 4. NOTES AND REFERENCES
@@ -640,7 +645,7 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
 
     The extension of an interpretation to equivalence classes is an appealing
     idiom for computational interpretations.  The specific relaxation in (2.5)
-    is remaniscent of provision in LISP, with atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.  Anything else is taken as ⊤.
+    is reminiscent of provision in LISP, with atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.  Anything else is taken as ⊤.
     The canonical forms, however, are revealed by the results of relational
     operators, such as the interpretation of x ≠ y in those programming
     systems.
@@ -651,7 +656,7 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     unbounded domains, that is not considered here.
 
     Formulation of ‹ba› is an amalgam of the various treatments cited below.
-    Symbols ⊤ and ⊥ are chosen to avoid the common use of 1 and 0 and
+    Symbols ⊤ and ⊥ are chosen to restrain the common use of 1 and 0 and
     confusion with interpretation as numbers and binary bits, despite the
     historical roots in [Boole1834] and the practical application to binary
     representations in digital computing [Knuth2011].
@@ -743,6 +748,8 @@ boole.txt 0.0.11                     UTF-8                       dh:2018-11-30
     be too much of a stretch.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.1.0 2018-12-01-11:49 More corrections, adjustment of notation, some
+       smoothing declaration ready for prime-time as 0.1.0.
  0.0.11 2018-11-30-14:19 Correct some typos and a howler about = now correct
        at BA11 in section 1.3.
  0.0.10 2018-11-28-14:53 Complete sections 3.4-3.5 and wrap up the essential
