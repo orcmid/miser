@@ -1,4 +1,4 @@
-boole.txt 0.1.1                     UTF-8                        dh:2018-12-03
+boole.txt 0.1.2                     UTF-8                        dh:2018-12-03
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -230,8 +230,9 @@ boole.txt 0.1.1                     UTF-8                        dh:2018-12-03
  2.3 ‹bp› Interpretation in ‹ob›
 
     A straightforward interpretation of ‹bp› in ‹ob› is by choosing any two
-    distinct obs as ⊥ and ⊤ and matching representation of the unique ‹bp›
-    functions with functions having corresponding representations in ‹ob›.
+    distinct obs as ⊥ and ⊤ and matching the standard representation of the
+    ‹bp› functions with functions having corresponding representations in
+    ‹ob›.
 
            ‹bp› notion (in Bpt)          an ‹ob› interpretation (in Ot)
 
@@ -756,6 +757,7 @@ boole.txt 0.1.1                     UTF-8                        dh:2018-12-03
     be too much of a stretch.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.1.2 2018-12-03-10:19 touch-ups to section 2.3 wording for accuracy.
  0.1.1 2018-12-03-09:34 touch-ups for smoother Live Hideout blog quotation.
  0.1.0 2018-12-01-11:49 More corrections, adjustment of notation, some
        smoothing declaration ready for prime-time as 0.1.0.
