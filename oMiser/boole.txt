@@ -1,4 +1,4 @@
-boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
+boole.txt 0.1.1                     UTF-8                        dh:2018-12-03
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -15,9 +15,11 @@ boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
 
         For oMiser, enough Boolean Algebra theory is presented to illuminate
         important representation, interpretation and manifestation features
-        of other mathematical structures in ‹ob›.  Interpretations in ‹ob›
-        will directly imply representation-preserving computational
-        interpretations available in the unfolding ‹ob› model of computation.
+        of other mathematical structures in each other and in ‹ob›.
+
+        Effectively computable interpretations in ‹ob› will directly imply
+        representation-preserving computational interpretations available in
+        the unfolding ‹ob› model of computation.
 
                               CONTENT
 
@@ -100,8 +102,11 @@ boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
     The basic conditions on all ‹ba› structures are presented in terms of
     axioms, arrangements that hold whatever the domain of discourse, Ba,
     happens to be and however the operations are defined in satisfaction
-    of these constraints without inconsistency.  These ae often taken as
-    axioms for Boolean Algebras.
+    of these constraints without any inconsistency.  The conditions Ba1-Ba5
+    are standard axioms for Boolean Algebras.  They are invariants, applying
+    without exception in the context of a structure that satisfies Boolean
+    Algebra conditions.  This can also be said to constitute a Boolean Algebra
+    interpretation of a satisfying structure.
 
     Ba1. Commutativity
          x ∪ y = y ∪ x
@@ -604,7 +609,7 @@ boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
     methods.
 
     For example, one can establish mathematically that ob.bvx represents a
-    Boolean Algebra, ‹bvx›, which accomplishes all ‹bvn› for fixed n's.
+    Boolean Algebra, ‹bvx›, which simulates all ‹bvn›s for fixed n's.
 
     It can also be shown that ob.bvx.cf(x) is an ob sequence in which the
     only elements are ob.p01.bp.cf canonical forms, whether labelled as
@@ -727,6 +732,9 @@ boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
 
  TODO:
 
+  * Tie to tutorial clippings and blog posts as they pertain to the treatment
+    of Boolean Algebras here.
+
   * When representation, interpretation, manifestation, implementation,
     and simulation are worked out more clearly, review these materials
     for consistent usage and links to related resources of the project and
@@ -748,6 +756,7 @@ boole.txt 0.1.0                     UTF-8                        dh:2018-12-01
     be too much of a stretch.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.1.1 2018-12-03-09:34 touch-ups for smoother Live Hideout blog quotation.
  0.1.0 2018-12-01-11:49 More corrections, adjustment of notation, some
        smoothing declaration ready for prime-time as 0.1.0.
  0.0.11 2018-11-30-14:19 Correct some typos and a howler about = now correct
