@@ -1,4 +1,4 @@
-tutorials.txt 0.0.20                 UTF-8                       dh:2018-11-02
+tutorials.txt 0.0.21                 UTF-8                       dh:2018-12-04
 
                              The Miser Project Code
                              ======================
@@ -140,6 +140,21 @@ MANIFEST
          Miser Project: Interpreting Obs as Data (3 images)
          <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
 
+    ob-2018-10-28-0909-mirror.jpg
+    Ob-2018-10-28-0909-mirror.nef
+    ob-2018-12-01-1558-boole.txt-0.1.0-basics.png
+    ob-2018-12-03-0934-boole.txt-0.1.1-axioms.png
+    ob-2018-12-03-0955-boole.txt-0.1.1-bpRep.png
+    ob-2018-12-03-1022-boole.txt-0.1.2-bpObRep.png
+    ob-2018-12-03-1036-boole.txt-0.1.2-ob.p01.pbRep.png
+    ob-2018-12-03-1113-boole.txt-0.1.2-baRep.png
+    ob-2018-12-03-1140-boole.txt-0.1.2-bvn.png
+    ob-2018-12-03-1735-boole.txt-0.1.2-bn-iso-bvn.png
+    ob-2018-12-03-1753-boole.txt-0.1.2-ob.bvx.png
+    ob-2018-12-03-1812-boole.txt-0.1.2-ob.bvx.cf.png
+         Miser Project: Expressing Functions in ‹ob›'s Abstract World (11
+         images) <https://orcmid.wordpress.com/2018/12/03/miser-project-expressing-functions-in-obs-abstract-world/>
+
     (no image)
          ‹ob› as Computational Model, Part 5, Computational Mathiness
          <https://www.facebook.com/MiserProject/posts/1966565546891352>
@@ -182,6 +197,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.21 2018-12-04-13:42 Additions from "Expressing Functions in ‹ob›'s
+        Abstract World" article at <https://orcmid.wordpress.com>
  0.0.20 2018-11-02-13:43 Addition of structural induction mentioning
         ob-2018-11-02-1313-obtheory.txt-0.1.2-Denumerability.png
  0.0.19 2018-10-30-14:55 Addition of ob-2018-10-30-1437-OB.sig.sml-0.1.1.png
