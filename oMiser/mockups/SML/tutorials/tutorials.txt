@@ -1,4 +1,4 @@
-tutorials.txt 0.0.21                 UTF-8                       dh:2018-12-04
+tutorials.txt 0.0.22                 UTF-8                       dh:2018-12-08
 
                              The Miser Project Code
                              ======================
@@ -145,14 +145,21 @@ MANIFEST
     ob-2018-12-01-1558-boole.txt-0.1.0-basics.png
     ob-2018-12-03-0934-boole.txt-0.1.1-axioms.png
     ob-2018-12-03-0955-boole.txt-0.1.1-bpRep.png
+    ob-2018-12-07-0948-boole.txt-0.2.0-bpRep.png (update)
     ob-2018-12-03-1022-boole.txt-0.1.2-bpObRep.png
-    ob-2018-12-03-1036-boole.txt-0.1.2-ob.p01.pbRep.png
+    ob-2018-12-03-1036-boole.txt-0.1.2-ob.p01.bpRep.png
+    ob-2018-12-07-1007-boole.txt-0.2.0-ob.p01.bpRep.png (update)
     ob-2018-12-03-1113-boole.txt-0.1.2-baRep.png
     ob-2018-12-03-1140-boole.txt-0.1.2-bvn.png
     ob-2018-12-03-1735-boole.txt-0.1.2-bn-iso-bvn.png
     ob-2018-12-03-1753-boole.txt-0.1.2-ob.bvx.png
+    ob-2018-12-06-1559-boole.txt-0.2.0-ob.bvx.png (update)
     ob-2018-12-03-1812-boole.txt-0.1.2-ob.bvx.cf.png
-         Miser Project: Expressing Functions in ‹ob›'s Abstract World (11
+    ob-2018-12-06-1606-boole.txt.0.2.0-ob.bvx.cf.png (update)
+    ob-2018-12-07-1444-boole.txt-0.2.0-ob.bvx-cirleback.png
+    ob-2018-12-07-1517-boole.txt-0.2.0-Notes.png
+    ob-2018-12-07-1520-boolw.txt-0.2.0-References.png
+         Miser Project: Expressing Functions in ‹ob›'s Abstract World (14
          images) <https://orcmid.wordpress.com/2018/12/03/miser-project-expressing-functions-in-obs-abstract-world/>
 
     (no image)
@@ -197,6 +204,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.22 2018-12-08-11:37 Additions from the major revision to "Representing
+        Functions in ‹ob›'s Abstract World" article (renamed) at <https://orcmid.wordpress.com>
  0.0.21 2018-12-04-13:42 Additions from "Expressing Functions in ‹ob›'s
         Abstract World" article at <https://orcmid.wordpress.com>
  0.0.20 2018-11-02-13:43 Addition of structural induction mentioning
