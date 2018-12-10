@@ -1,4 +1,4 @@
-boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
+boole.txt 0.3.0                     UTF-8                        dh:2018-12-**
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -357,7 +357,7 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
 
  3.1 Concrete Representation, ‹bn›
 
-    We define ‹bn› = 〈Bn,Bnf,Bnt〉, with n a natural number, to be a
+    We define ‹bn› = 〈Bn,Bnf,Bnt〉, with natural number n > 0, to be a
     concrete <ba> structure as follows.
 
     The number of distinguished members in the domain of discourse, Bn, is
@@ -399,9 +399,10 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
     The structure ‹bvn› = 〈Bvn,Bvnf,Bvnt〉, with n a natural number is a
     Boolean Algebra with representation as follows.
 
-    The domain, Bvn, consists of all sequences [v1, v2, ..., vn], known as
-    n-tuples, where each vi is a member of the structure ‹bp› = 〈Bp,Bpf,Bpt〉
-    domain Bp.  By convention, we record each vi as 0 for ⊥ and as 1 for ⊤.
+    The domain, Bvn, consists of all sequences [v1, v2, ..., vn], n > 0,
+    known as n-tuples, where each vi is a member of the structure
+    ‹bp› = 〈Bp,Bpf,Bpt〉 domain Bp.  By convention, we record each vi as 0
+    for ⊥ and as 1 for ⊤.
 
     The Boolean Algebra representation of ‹bvn› is accomplished as follows.
 
@@ -443,10 +444,10 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
     Isomorphism of every ‹bvn› with a concrete Boolean Algebra structure,
     ‹bn›, is simple and useful.
 
-    For any distinguished set, An = {a1, a2, ..., an}, establish the sequence
-    of those distinct elements, [an, ..., a2, a1].  Correspond each entity,
-    Xj = [xjn, ..., xj2, xj1], in the ‹bvn› domain, Bvn, with a subset in the
-    ‹bn› domain Bn as follows.
+    For any distinguished set, An = {a1, a2, ..., an}, n > 0, establish the
+    sequence of those distinct elements, [an, ..., a2, a1].  Correspond each
+    entity, Xj = [xjn, ..., xj2, xj1], in the ‹bvn› domain, Bvn, with a
+    subset in the ‹bn› domain Bn as follows.
 
       * If xji = 1, then element ai is in the Xj-corresponding subset.
       * If xji = 0, then element ai is not in the Xj-corresponding subset.
@@ -500,14 +501,13 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
         interpretation ob.p01.bp in the equivalence form (section 2.5),
         signified I(vi).
 
-      * Interpret the sequence [v1, v2, ..., vn, xbit:] with the construction
-        ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(vn), xbit)...)))) where
-        xbit is a singleton under interpretation ob.p01.bp and is used as
-        an "expander."  When "xbit:" is omitted, ob.NIL is understood.
+      * Interpret the sequence [v1, v2, ..., vn] with the construction
+        ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(v(n-1)), xn)...)))) where
+        xn is restricted to a singleton under interpretation ob.p01.bp.
 
       * For representation of corresponding ‹bvn› and the concrete-isomorph
         sequence [xn, ... x2, x1] (section 3.3), use the interpretation
-        of sequence [x1, x2, ..., xn, xbit:].
+        of sequence [x1, x2, ..., xn:].
 
     Interpretation of the ‹bvn›-represented functions is by corresponding
     ob.bvx functions represented as follows.
@@ -559,25 +559,24 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
         as a sequence under this simulation of ‹bvn› and the representation
         is defined over all definite obs.
 
-      * Provided that the represented operations are confined to operand
-        obs that are interpretations of ‹bvn› = 〈Bvn,Bvnf,Bvnt〉, there is
-        complete fidelity of the ob.bvx as a simulation, ignoring the xbit.
+      * Provided that the represented operations are confined to operand obs
+        that are interpretations of ‹bvn› = 〈Bvn,Bvnf,Bvnt〉 domain elements,
+        there is complete fidelity of ob.bvx as a simulation of ‹bvn›.
 
-      * When an operand sequence [x1, x2, ..., xm, xbit:] is of length less
-        than that of another operand [y1, y2, ..., yn, ybit:], the ob.bvx
+      * The interpretation of ‹bv1› in ob.bvx is equivalent to simulation in
+        ob.p01.bp restricted to singletons.
+
+      * When an operand sequence [x1, x2, ..., xm:] is of length less
+        than that of another operand [y1, y2, ..., yn:], the ob.bvx
         representation is as if the shorter sequence is extended to match the
-        length of the longer one by suffixing its xbit element enought times.
-
-      * ob.bvx.comp([x1, x2, ..., xn, xbit:]) operates on the xbit the same
-        as the bits of the x1, x2, ..., xn.
+        length of the longer one by suffixing its xm element enought times.
 
       * ob.bvx simulates a Boolean Algebra, one that accomodates all ‹bvn› of
-        arbitrary (but finite) n, although there is a n+1 term (the xbit).
+        arbitrary (but finite) n.
 
-      * Another interpretation of ob.bvx is as a simulation of 2's complement
-        signed binary numerals of arbitrary length.  Addressing this and other
-        arithmetic interpretations in ‹ob› is a separate, later topic useful
-        when assessing the model of computation.
+      * Another interpretation of ob.bvx is as a simulation of binary numerals
+        of arbitrary length.  In this case, xi corresponds to 2^(i-1) and a
+        subset corresponds to to the sum of those powers for which xi = 1.
 
     The extension of shorter sequences can be taken as viewing the shortened
     one as contraction of an arbitrary x.  We can go farther and derive
@@ -616,9 +615,9 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
 
     ob.bvx.cf(x) is an ob sequence in which the elements are ob.p01.bp.cf
     canonical forms, whether labelled as ⊥ and ⊤ or 0 and 1.  Furthermore,
-    ob.bvx.cf(x) is the shortest ob sequence, [vbit:] or [v1, v2, ..., vx,
-    vbit:], where vx is different than vbit.  It can be seen that [0:] in
-    this notation is  eqivalent to [0, 0, 0, ...], hence the ⊥ of ‹bvx›, and
+    ob.bvx.cf(x) is the shortest ob sequence, [v1:] or [v1, v2, ..., v(n-1),
+    vn:], where v(n-1) is different than vn.  It can be seen that [0:] in
+    this notation is  equivalent to [0, 0, 0, ...], hence the ⊥ of ‹bvx›, and
     [1:] is equivalent to [1, 1, 1, ...] and hence the ⊤.
 
  3.5 Circling back: Distinguishing ob.bvx as ‹ba› interpretation
@@ -629,43 +628,31 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
 
     Assuming some sequence, An = [a1, a2, ..., an], the indicator functions
     (section 3.3), can be represented as follows.  Associate, with An, the
-    corresponding vectors Vn = [[1], [0, 1], ..., [0, ..., 0, 1]] where
-    the last has n-1 0's.  (Here, xbit is 0 by default and not written.)
+    corresponding vectors Vn = [[1,0:], [0,1,0:], ..., [0, ..., 0,1:]] where
+    the last has n-1 leading 0's and V1 = [[1:]].
 
-    Then ob.bvx.sub(Vi, x) ⇔ ob.bvx.Iai(x) = 1, by definition.
+    Then ob.bvx.sub(vi, x) ⇔ ob.bvx.bvn.Iai(x) = 1, by definition.
 
     Association with ai is still implicit and also order-dependent.  It is
     tempting to go farther and present the association explicitly, say with
 
         Mn = [[v1, I(a1)], [v2, I(a2)], ..., [vn, I(an)]]
 
-    where we require some manner of interpretation of the ai, internal to
-    the structure, especially in simple domains such as that of ‹ob›.
-
-    For interpretations in ob.bvx, there is the small matter of extra
-    variability by virtue of vbit being two-valued (under ob.p01.bp
-    interpretation) and beyond the notional n-th position.  When the
-    interpretation is to be strictly confined for a fixed An, obtain unique
-     canonical forms for just those vectors via
-
-          ob.bvx.bvn.cf(x) = ob.bvx.cf( ob.bvx.meet(x, [1,1,...,1]) )
-
-    where there are exactly n elements in [1,1,...,1], the ob.bvx.join of
-    the v1, v2, ..., vn.
+    where we require some manner of interpretation/expression of the ai,
+    internal to the structure, especially in simple domains such as that of ‹ob›.
 
     For interpretation in ‹ob› by means such as ob.bvx, there are two
     important circumstances to be dealt with, especially when carried into
     computational-interpretation: the designation of the ai and preserving
     association with vi in operands of the represented primitive operations.
-    There are such implementation/simulation exigencies that apply in the
-    reduction to computation no matter how simple it seems in mathematical
-    formulations.
+    Such implementation/simulation exigencies apply in the reduction to
+    computation no matter the simplicity of the mathematical formulations.
 
     There are provisions in computational systems that bring some order to
     securing of interpretation constraints by computational means, including
     reconciliation between what appear to be incompatible interpretations of
     the same structures.  Investigation of those prospects is left to
-    consideration of extensions to the ‹ob› model of computation.
+    consideration of extensions to the ‹ob› basic model of computation.
 
 4. NOTES AND REFERENCES
 
@@ -678,12 +665,11 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
     methods such as structural induction.
 
     It should be clear, from this treatment of Boolean Algebra interpretation,
-    that there is generally no basis for determining what any intended
-    interpretation is simply by inspection of an ob.  One can ascertain
-    whether an ob admits of being such an interpretation, and sometimes the
-    contrary.  Nonetheless, there is no intrinsic means by which any ob is
-    confined to some unique, self-evident interpretation no matter the tacit
-    appeal.
+    that there is no basis for determining what an intended interpretation is
+    simply by inspection of an ob.  One can ascertain whether an ob admits of
+    being a particular interpretation, and sometimes the contrary.  Yet there
+    is no intrinsic means by which any ob is confined to some unique, self-
+    evident interpretation no matter the tacit appeal.
 
     The extension of an interpretation to equivalence classes is an appealing
     idiom for computational interpretations.  The specific relaxation in (2.5)
@@ -696,22 +682,39 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
     Limitation of ‹ba› to a finite domain of discourse having at least two
     members is appropriate for computational interpretations and oMiser.
     Although there are Boolean Algebras having unbounded domains, that is not
-    considered here, even though ob.bvx is suggestive.
+    considered here, even though formulation of ob.bvx is suggestive of a
+    denumerable, exponentially-growing case.
 
-    Formulation of ‹ba› is an amalgam of the various treatments cited below.
-    Symbols ⊤ and ⊥ are chosen to restrain the common use of 1 and 0 and
-    confusion with interpretation as numbers and binary bits, despite the
-    historical roots in [Boole1834] and the practical application to binary
-    representations in digital computing [Knuth2011].
+    Formulation of ‹ba› is an amalgam of the Boolean Algebra treatments cited
+    below. Symbols ⊤ and ⊥ are chosen to restrain the common use of 1 and 0.
+    Assumption that 0 and 1 signify numbers and also binary bits is avoided
+    here, although 0 and 1 are notationally convenient for ‹bvn› and have
+    historical roots in [Boole1834] and practical application to binary
+    representations in digital computation [Knuth2011].  Explicit interpre-
+    tions of arithmetics in ‹ob› extends beyond Boolean Algebra.
 
-    Likewise, the symbols for Boolean operations are kept distinct from the
-    logical connectives used in FOL= notation, hence the use of complement,
-    meet, join, and sep symbols and certain fussiness in qualifying
-    represented functions by the name of the particular structure
-    in which a function representation applies.  Notational separation
-    facilitates recognition of correspondences without implying identity,
-    avoiding for a time any tacit collapsing of separate notions together as
-    if about the same (abstract) entities.
+    Symbols for Boolean operations are kept distinct from the logical
+    connectives used in FOL= notation, hence the use of complement,
+    meet, join, sep symbols and fussiness in qualifying names of function
+    representations by the name of the particular structure and interpreta-
+    tion, if any.
+
+    These notational devices facilitate recognition of correspondences
+    without implying identity, avoiding for a time any tacit collapsing of
+    separate notions together as if about the same theoretical entities,
+    however much manifestations of abstract entities are perceived.
+
+      * Miser Project: Representing Functions in ‹ob›'s Abstract World.
+        Orcmid's Live Hideout blog article, available at
+        <https://orcmid.wordpress.com/2018/12/03/miser-project-expressing-functions-in-obs-abstract-world/>
+        in a series of posts that articulate ‹ob› structure, featuring
+        representations include those for Boolean Algebra, here.  This
+        material prefaces introduction of the model of computation,
+
+      * Hamilton, Dennis E.  ‹ob› Mathematical Structure.  2018-11-17 article
+        obtheory.txt 0.2.1, accessed on the Internet at
+        <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+        The mathematical formulation of the essential structure.
 
     [Boole1854]
         Boole, George.  An Investigation of the Laws of Thought: on which
@@ -770,13 +773,6 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
 
  TODO:
 
-  * Add a new 3.5 that ties bvx back to concrete Boolean Algebras.  This has
-    to do with indicator functions and preserving the association of positions
-    in the bvx vector.
-
-  * Tie to tutorial clippings and blog posts as they pertain to the treatment
-    of Boolean Algebras here.
-
   * When representation, interpretation, manifestation, implementation,
     and simulation are worked out more clearly, review these materials
     for consistent usage and links to related resources of the project and
@@ -785,7 +781,11 @@ boole.txt 0.2.0                     UTF-8                        dh:2018-12-**
   * Find an accessible reference to the conclusion of representation of non-    concrete ‹ba›s via isomorphisms to concrete ‹ba›s.  Stone's theorem may
     be too much of a stretch.
 
+  * Add attribution statement.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.3.0 2018-12-10-13:20 Tuning, Manage TODOs, cross-reference, and simplify
+       ob.bvx significantly.
  0.2.0 2018-12-07-15:25 Review and smooth as needed for the post on
        "Representing Functions in ‹ob›’s Abstract World", also putting more
        care in offering of ob.bvx with addition of section 3.5.
