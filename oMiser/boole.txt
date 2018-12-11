@@ -1,4 +1,4 @@
-boole.txt 0.3.0                     UTF-8                        dh:2018-12-**
+boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -628,10 +628,26 @@ boole.txt 0.3.0                     UTF-8                        dh:2018-12-**
 
     Assuming some sequence, An = [a1, a2, ..., an], the indicator functions
     (section 3.3), can be represented as follows.  Associate, with An, the
-    corresponding vectors Vn = [[1,0:], [0,1,0:], ..., [0, ..., 0,1:]] where
+    corresponding vectors Vn = [[1,0:], [0,1,0:], ..., [0,...,0,1:]] where
     the last has n-1 leading 0's and V1 = [[1:]].
 
     Then ob.bvx.sub(vi, x) ⇔ ob.bvx.bvn.Iai(x) = 1, by definition.
+
+    In order to interpret a specific ‹bvn›, n > 0, in ob.bvx, one can clamp
+    the canonical forms such that only n bits of variation are in the
+    interpretation and the set of canonical forms.
+
+        ob.bvx.bvn.clamp = [1,...,1,0:]                    "with n 1's"
+
+        ob.bvx.bvn.cf(x) = ob.bvx.cf(ob.bvx.meet(x, ob.bvx.bvn.clamp ) )
+
+    That some vectors have an additional (n+1)-th position does not impact
+    other ob.bvx operations, provided that the ‹bvn› x = y is interpreted in
+    ‹ob› as
+
+        ob.bvx.bvn.cf(x) = ob.bvx.bvn.cf(y)
+
+    and ob.bvx.bvn.sub(x,y) ⇔ ob.bvx.sub(ob.bvx.bvn.cf(x), y)
 
     Association with ai is still implicit and also order-dependent.  It is
     tempting to go farther and present the association explicitly, say with
@@ -784,6 +800,7 @@ boole.txt 0.3.0                     UTF-8                        dh:2018-12-**
   * Add attribution statement.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.3.1 2018-12-11-15:00 Add bvx clamping to fixed n as an option in 3.5.
  0.3.0 2018-12-10-13:20 Tuning, Manage TODOs, cross-reference, and simplify
        ob.bvx significantly.
  0.2.0 2018-12-07-15:25 Review and smooth as needed for the post on
