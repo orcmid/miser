@@ -1,4 +1,4 @@
-boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
+boole.txt 0.4.0                     UTF-8                        dh:2018-12-12
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -358,7 +358,7 @@ boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
  3.1 Concrete Representation, ‹bn›
 
     We define ‹bn› = 〈Bn,Bnf,Bnt〉, with natural number n > 0, to be a
-    concrete <ba> structure as follows.
+    concrete ‹ba› structure as follows.
 
     The number of distinguished members in the domain of discourse, Bn, is
     even and a power of two, symbolized 2^n.
@@ -497,20 +497,22 @@ boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
     and thence some ‹bvn› (section 3.2), it is sufficient to interpret the
     ‹bvn› in ‹ob›.
 
-      * For 0 and 1 vi entities in n-tuples [v1, v2, ..., vn], use the
+      * For 0 and 1 vi entities in ‹bvn› n-tuples [v1, v2, ..., vn], use the
         interpretation ob.p01.bp in the equivalence form (section 2.5),
         signified I(vi).
 
       * Interpret the sequence [v1, v2, ..., vn] with the construction
         ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(v(n-1)), xn)...)))) where
-        xn is restricted to a singleton under interpretation ob.p01.bp.
+        xn is restricted to a singleton under interpretation ob.p01.bp.  This
+        ‹ob› representation is abbreviated [I(v1), I(v2), ..., I(vn):] with
+        I(vn) not a pair.
 
       * For representation of corresponding ‹bvn› and the concrete-isomorph
-        sequence [xn, ... x2, x1] (section 3.3), use the interpretation
-        of sequence [x1, x2, ..., xn:].
+        sequence [xn, ... x2, x1] (section 3.3), interpret via ‹ob› sequence
+        representation [I(x1), I(x2), ..., I(xn):].
 
-    Interpretation of the ‹bvn›-represented functions is by corresponding
-    ob.bvx functions represented as follows.
+    Interpretation of the ‹bvn›-represented basic operations (section 1.1) is
+    by corresponding ob.bvx functions represented as follows.
 
          ob.bvx.bot = ob.p01.bp.bot  (i.e., representing [0, 0, ...] here)
          ob.bvx.top = ob.p01.bp.top  (i.e., representing [1, 1, ...] here)
@@ -524,23 +526,28 @@ boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
            ⇒ ob.bvx.meet(x, y) = ob.p01.bp.meet(x, y)
          ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
            ⇒ ob.bvx.meet(x, y) = ob.bvx.meet(y, x)
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ ob.bvx.meet(x, y)
-               = ob.c( ob.p01.bp.meet(ob.a(x), y),
-                       ob.bvx.meet(ob.b(x), y) )
+       ¬ ob.is-singleton(x) ∧ ob.is-individual(y)
+           ⇒ ob.bvx.meet(x, y) = y
+       ¬ ob.is-singleton(x) ∧ ob.is-enclosure(y)
+            ⇒ ob.bvx.meet(x, y) = x
        ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
            ⇒ ob.bvx.meet(x, y) = ob.c( ob.p01.bp.meet(ob.a(x), ob.a(y)),
                                           ob.bvx.meet(ob.b(x),ob.b(y)) )
 
     Using the above representation of ob.bvx.meet, represent each of
     ob.bvx.join and ob.bvx.sep by substitution of "join" for "meet"
-    and substitution of "sep" for "meet", respectively.
+    and substitution of "sep" for "meet", respectively.  Adjust the two
+    ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) cases appropriately (in the
+    manner of section 2.1 standard operations) taking y as if one of
+    ob.bvx.bot or ob.bvx.top.
 
          ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ (ob.bvx.sub(x, y) ⇔ ob.p01.bp.sub(x, y)
-         ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ( ob.n.sub(x, y)
-                 ⇔ ob.p01.bp.sub(x, ob.a(y)) ∧ ob.bvx.sub(x, ob.b(y)) )
+           ⇒ ( ob.bvx.sub(x, y) ⇔ ob.p01.bp.sub(x, y) )
+         ob.is-individual(x) ∧ ¬ ob.is-singleton(y)
+           ⇒ ob.bvx.sub(x, y)
+         ob.is-enclosure(x) ∧ ¬ ob.is-singleton(y)
+           ⇒ ( ob.bvx.sub(x, y)
+                  ⇔ ob.bvx.sub(x, ob.b(y)) )
        ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
            ⇒ ( ob.bvx.sub(x, y)
                  ⇔ ob.p01.bp.sub(ob.a(x), y) ∧ ob.bvx.sub(ob.b(x), y) )
@@ -569,7 +576,8 @@ boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
       * When an operand sequence [x1, x2, ..., xm:] is of length less
         than that of another operand [y1, y2, ..., yn:], the ob.bvx
         representation is as if the shorter sequence is extended to match the
-        length of the longer one by suffixing its xm element enought times.
+        length of the longer one by suffixing its xm element enought times,
+        [x1, x2, ..., xm, xm, ..., xm:]
 
       * ob.bvx simulates a Boolean Algebra, one that accomodates all ‹bvn› of
         arbitrary (but finite) n.
@@ -800,6 +808,8 @@ boole.txt 0.3.1                     UTF-8                        dh:2018-12-11
   * Add attribution statement.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.4.0 2018-12-12-11:14 Touch-ups and streamlining of 3.4 ob.bvx to short-
+       circuit operations with different-length operands where possible.
  0.3.1 2018-12-11-15:00 Add bvx clamping to fixed n as an option in 3.5.
  0.3.0 2018-12-10-13:20 Tuning, Manage TODOs, cross-reference, and simplify
        ob.bvx significantly.
