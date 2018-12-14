@@ -1,4 +1,4 @@
-obtheory.txt 0.2.1                  UTF-8                        dh:2018-11-17
+obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -231,6 +231,12 @@ obtheory.txt 0.2.1                  UTF-8                        dh:2018-11-17
    Turing Completeness will be claimed under the CT-computable umbrella.
    These stages will be demonstrated in later progressions.
 
+     * "Golden Geek" is a Facebook Page that covers topics related to the
+       Miser Project, including some narration of computational models and
+       also how computer simulations of the ob model of computation are
+       established.  The blog posts, below, may be more current.
+       <https://www.facebook.com/MiserProject>
+
    An account of this foundational theory for the abstract data type
    that underlies all oMiser implementations is narrated in a progression
    of blog posts.
@@ -247,11 +253,18 @@ obtheory.txt 0.2.1                  UTF-8                        dh:2018-11-17
        <https://orcmid.wordpress.com/2018/09/05/miser-project-narrowing-ob-for-computational-interpretation/>
        including introduction of Ob8-Ob10 here.
 
-     * Miser Project: Interpreting Obs as Data
+     * Miser Project: Representing Data as Obs
        <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
        introducing computational interpretations of obs and obs as encodings
        (interpretations for) data as an initial step toward the oMiser
-       computational model.
+       computational model.  A compact canonical form expression is
+       defined.
+
+     * Miser Project: Representing Functions in ‹ob›’s Abstract World
+       <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
+       reasoning about functions on obs and then exploring interpretation
+       of other structures with representation of functions in each other
+       and in ‹ob›.
 
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
@@ -310,6 +323,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.2 2018-12-14-10:45 Update Notes to reflect additional blog articles.
  0.2.1 2018-11-17-14:05 Wordsmithing and tough-ups
  0.2.0 2018-11-14-08:38 Editorial cleanups, add table of contents, and more
        connective text.
