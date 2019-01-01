@@ -1,4 +1,4 @@
-boole.txt 0.4.2                     UTF-8                        dh:2018-12-17
+boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -285,8 +285,8 @@ boole.txt 0.4.2                     UTF-8                        dh:2018-12-17
          ob.p01.bp.bot = ob.NIL
          ob.p01.bp.top = ob.e(ob.NIL)
 
-         ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.e(ob.NIL)
-       ¬ ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.NIL
+         ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.p01.bp.top
+       ¬ ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.p01.bp.bot
 
          ob.is-individual(x) ⇒ ob.p01.bp.meet(x, y) = x
        ¬ ob.is-individual(x) ⇒ ob.p01.bp.meet(x, y) = y
@@ -298,7 +298,8 @@ boole.txt 0.4.2                     UTF-8                        dh:2018-12-17
        ¬ ob.is-individual(x) ⇒ ob.p01.bp.sep(x, y) = ob.p01.bp.comp(y)
 
          ob.is-individual(x) ⇒ ob.p01.bp.sub(x, y)
-       ¬ ob.is-individual(x) ⇒ ob.p01.bp.sub(y, x)
+       ¬ ob.is-individual(x)
+            ⇒ ( ob.p01.bp.sub(x, y) ⇔ ¬ ob.is-individual(y) )
 
     Under restriction of all operands to members of NE, the previous interpre-
     tation (2.3) is satisfied under domain restriction, just as in (2.4).  The
@@ -317,9 +318,12 @@ boole.txt 0.4.2                     UTF-8                        dh:2018-12-17
          ob.p01.bp.cf(x) = ob.p01.bp.comp(ob.p01.bp.comp( x )).
 
     We can now remove the domain restriction by simply replacing the ‹ob›
-    interpretation of x = y in (2.3) with
+    interpretation of x = y in (2.3) with ob.p01.bp.is-eq(x, y)
 
-                    ob.p01.bp.cf(x) = ob.p01.bp.cf(y).
+         ob.p01.bp.is-eq(x,y) ⇔ ob.p01.bp.comp(x) = ob.p01.bp.comp(y).
+
+    because ob.p01.bp.comp only yields canonical forms and if the complements
+    are equal so are the canonical forms.
 
     This alternative effectively partitions the obs into two equivalence
     classes, one of all individuals and the other of everything else, and
@@ -432,8 +436,8 @@ boole.txt 0.4.2                     UTF-8                        dh:2018-12-17
 
     In this representation, we have presumed the ability to pair corresponding
     elements of ordered sequences (n-tuples) with the same number of elements.
-    For computational interpretation in ‹ob›, there will be additional rigor
-    in that accomplishment.
+    For interpretation in ‹ob›, there will be additional rigor in that
+    accomplishment.
 
  3.3 Concrete Interpretation: ‹bvn› - ‹bn› isomorphism
 
@@ -811,6 +815,8 @@ boole.txt 0.4.2                     UTF-8                        dh:2018-12-17
   * Add attribution statement.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.5.0 2019-01-01-15:43 Clean up 2.5, with corrected sub(x,y) and simpler
+       is-eq(x,y)
  0.4.2 2018-12-17-10:50 Correct title of Section 3.4
  0.4.1 2018-12-12-12:44 Cleanup Section 3.6 interpretation ob.bvx.bvn.
  0.4.0 2018-12-12-11:14 Touch-ups and streamlining of 3.4 ob.bvx to short-
