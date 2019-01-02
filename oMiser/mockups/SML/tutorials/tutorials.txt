@@ -1,4 +1,4 @@
-tutorials.txt 0.0.25                 UTF-8                       dh:2018-12-12
+tutorials.txt 0.0.26                 UTF-8                       dh:2019-01-02
 
                              The Miser Project Code
                              ======================
@@ -149,6 +149,7 @@ MANIFEST
     ob-2018-12-03-1022-boole.txt-0.1.2-bpObRep.png
     ob-2018-12-03-1036-boole.txt-0.1.2-ob.p01.bpRep.png
     ob-2018-12-07-1007-boole.txt-0.2.0-ob.p01.bpRep.png (update)
+    ob-2019-01-02-0929-boole.txt-0.5.0-ob.p01.bpRep.png (update 2)
     ob-2018-12-03-1113-boole.txt-0.1.2-baRep.png
     ob-2018-12-10-1423-boole.txt-0.3.0-baRep.png (update)
     ob-2018-12-03-1140-boole.txt-0.1.2-bvn.png
@@ -215,6 +216,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.26 2019-01-02-09:54 Corrected 2.5 in boole.txt in the blog post.
  0.0.25 2018-12-12-14:08 Addition of the updates to boole.txt reflected in
         the 2018-12-12 "Representing Functions in ‹ob›'s Abstract World"
  0.0.24 2018-12-11-15:44 Addition of the 3.5 circling-back update as boole.txt
