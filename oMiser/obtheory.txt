@@ -1,4 +1,4 @@
-obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
+obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -61,7 +61,7 @@ obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
    We intend truth-value semantics of deductions involving propositions
    expressed in Ot.  Use of notions "true" and "false" is in that sense.
 
-      p ⇔ q read p if-and-only-if q, true when true both are true or
+      p ⇔ q read p if-and-only-if q, true when both are true or
              both are false, a kind of logical equality relation
 
       p ⇒ q read if p then q and when p ⇒ q and p both hold, it is
@@ -231,6 +231,11 @@ obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
    Turing Completeness will be claimed under the CT-computable umbrella.
    These stages will be demonstrated in later progressions.
 
+   Ob7-Ob9 must be augmented in the case of extensions that introduce
+   new distinct individuals constructed from canonical obs.  Supplementary
+   definitions will be provided along with the introduction of such
+   extensions.
+
      * "Golden Geek" is a Facebook Page that covers topics related to the
        Miser Project, including some narration of computational models and
        also how computer simulations of the ob model of computation are
@@ -264,7 +269,9 @@ obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
        <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
        reasoning about functions on obs and then exploring interpretation
        of other structures with representation of functions in each other
-       and in ‹ob›.
+       and in ‹ob›.  There is extensive attention to interpretations and
+       representations of Boolean Algebras by way of illustration and for
+       future application.
 
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
@@ -284,7 +291,7 @@ obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2017-2018 Dennis E. Hamilton
+                   Copyright 2017-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -299,6 +306,13 @@ obtheory.txt 0.2.2                  UTF-8                        dh:2018-12-14
     limitations under the License.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
+   text file obtheory.txt version 0.2.3 dated 2019-01-08-10:16, available on
+   the Internet at
+   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
 TODO
 
@@ -317,12 +331,10 @@ TODO
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
    it belongs in obaptheory, not here.
 
- * Ob7-Ob9 must be augmented in the case of extensions that introduce
-   new distinct individuals based on distinct canonical obs.  Supplementary
-   definitions will be provided along with the introduction of extensions.
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.3 2019-01-08-10:16 Manage TODOs, add attribution, expand notes and
+       repair definition of p ⇔ q caught by William L. Anderson (issue #16).
  0.2.2 2018-12-14-10:45 Update Notes to reflect additional blog articles.
  0.2.1 2018-11-17-14:05 Wordsmithing and tough-ups
  0.2.0 2018-11-14-08:38 Editorial cleanups, add table of contents, and more
