@@ -1,4 +1,4 @@
-boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
+boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -177,8 +177,8 @@ boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
     widespread computational application (section 3).
 
     For the Miser Project, one exploitation of the effective computability of
-    of ‹ba› structures is by establishing an interpretation in ‹ob› and then
-    relying on the corresponding effective computability of the ‹ob›
+    ‹ba› structures is by establishing an interpretation in ‹ob› and then
+    relying on the corresponding effective computability of such ‹ob›
     representations.  That brings us to the vicinity of computational
     interpretation in the ‹ob› model of computation.
 
@@ -216,7 +216,7 @@ boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
      * Verification of a computational interpretation of (1.3) Ba1-Ba11 by
        exhaustive testing is feasible in the case of ‹bp› = 〈Bp,Bpf,Bpt〉.
 
-     * All effectively computable functions, bp.f(x1, x2, ..., xn) in Bpf are
+     * All effectively-computable functions, bp.f(x1, x2, ..., xn) in Bpf are
        representable via Bpt using only bp.comp, bp.meet, and bp.join
        operations along with ‹bp› equality.
 
@@ -693,7 +693,9 @@ boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
     having to encode (represent as data) entities in mathematical domains
     using only the primitive notions of ‹ob›.  In so doing, we retain the
     opportunity to reason about the representations using mathematical
-    methods such as structural induction.
+    methods such as structural induction.  And, wherever an interpretation is
+    valid, it is often helpful to reason in the the theory being interpreted
+    rather than in the structure having the interpretation.
 
     It should be clear, from this treatment of Boolean Algebra interpretation,
     that there is no basis for determining what an intended interpretation is
@@ -786,7 +788,7 @@ boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018 Dennis E. Hamilton
+                 Copyright 2018-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -815,6 +817,7 @@ boole.txt 0.5.0                     UTF-8                        dh:2019-01-01
   * Add attribution statement.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.5.1 2019-01-10-10:48 Touch-ups
  0.5.0 2019-01-01-15:43 Clean up 2.5, with corrected sub(x,y) and simpler
        is-eq(x,y)
  0.4.2 2018-12-17-10:50 Correct title of Section 3.4
