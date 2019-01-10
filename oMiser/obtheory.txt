@@ -1,4 +1,4 @@
-obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
+obtheory.txt 0.2.4                  UTF-8                        dh:2019-01-10
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -36,7 +36,7 @@ obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
                  structures.
 
               2. PRIMITIVE NOTIONS
-                 Three functions, together with "=" that are sufficient
+                 Four functions, together with "=" that are sufficient
                  for expressing all Obs, given a set of initial individuals.
                  All functions in Of (and predicates in Ot) can be expressed
                  in terms of the primitives.
@@ -140,7 +140,7 @@ obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
 
         Individuals identified by upper-case namings, such as ob.NIL,
         are distinct if and only if their names differ.  Those
-        individuals are also distinct from any other individual
+        individuals are also distinct from individuals of any other
         kind that may arise.
 
 3. DENUMERABILITY AND EFFECTIVENESS
@@ -199,10 +199,10 @@ obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
         Predicates in Ot are effectively-computable as true or false
         in a similar manner and termed effectively-decidable.
 
-        Observe that ob.c(x,y), ob.e(x), the four ob.is-... predicates, and
-        the "=" relation are all effectively-computable in this sense.  They
-        are also total in the sense that a result is determined whenever
-        there are definite arguments.
+        Observe that ob.a(x), ob.b(x), ob.c(x,y), ob.e(x), the four ob.is-...
+        predicates, and the "=" relation are all effectively-computable in
+        this sense.  They are also total in the sense that a result is
+        determined whenever there are definite arguments.
 
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
         determined, it need not be definite which of x ¶ y or y ¶ x holds.
@@ -271,7 +271,8 @@ obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
        of other structures with representation of functions in each other
        and in ‹ob›.  There is extensive attention to interpretations and
        representations of Boolean Algebras by way of illustration and for
-       future application.
+       future application.  See
+       <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>.
 
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
@@ -310,8 +311,8 @@ obtheory.txt 0.2.3                  UTF-8                        dh:2019-01-08
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.3 dated 2019-01-08-10:16, available on
-   the Internet at
+   text file obtheory.txt version 0.2.4 dated 2019-01-10-10:49, available on
+   the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
 TODO
@@ -329,10 +330,18 @@ TODO
 
  * Rely on the Stanford Encyclopedia of Philosophy (SEP) treatment of the
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
-   it belongs in obaptheory, not here.
+   it belongs in obaptheory.txt, not here.
+
+ * Add references on FOL=.
+
+ * Explain the reason for [McCarthy1960] and [More1979].
+
+ * Mention Strachey McG inspiration also?
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.4 2019-01-10-10:49 Correct the count of primitive functions in the
+       table of content. Touch up a little.
  0.2.3 2019-01-08-10:16 Manage TODOs, add attribution, expand notes and
        repair definition of p ⇔ q caught by William L. Anderson (issue #16).
  0.2.2 2018-12-14-10:45 Update Notes to reflect additional blog articles.
@@ -367,8 +376,8 @@ TODO
         #1 discussion at <https://github.com/orcmid/miser/issues/1>.
  0.0.23 2017-12-27-10:45 Touch-up, especially in Ob8-Ob10.  Review TODOs.
  0.0.22 2017-11-23-14:44 Replace ^ with ∧ in a couple of places.  Touch up
-        Ob9-Ob10 to make canonical identification relevant to computation and
-        to leave open the prospect of effective-computable partial functions.
+        Ob9-Ob10 to make canonical form relevant to computation and leave
+        open the prospect of effectively-computable partial functions.
  0.0.21 2017-11-12-09:58 Manage TODOs.  Touch up the text.
  0.0.20 2017-11-11-11:28 Cleanup Ob10 on Effective Computability.
  0.0.19 2017-09-28-13:04  Adjust TODOs.  Address some comments and suggestions
@@ -384,10 +393,10 @@ TODO
         Ob7 somewhat.
  0.0.14 2017-09-03-09:38 Make the Ob5 Totality partitioning consequence
         formally-explicit.
- 0.0.13 2017-08-28-08:56 Touch-up and add TODO about well-definedness
+ 0.0.13 2017-08-28-08:56 Touch-up and add TODO about well-definedness.
  0.0.12 2017-08-27-11:43 Wordsmithing and assertion of classical conditions.
  0.0.11 2017-08-26-09:56 Smooth the description of the logical notation and
-        distinguish it from similar-appearing computational operations
+        distinguish it from similar-appearing computational operations.
  0.0.10 2017-08-24-10:17 Adapted from the SML mockup obtest.sml 0.0.9 for
         reference in all mockups and the expanded development for oMiser.
 
