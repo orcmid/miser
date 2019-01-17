@@ -1,4 +1,4 @@
-obtheory.txt 0.2.4                  UTF-8                        dh:2019-01-10
+obtheory.txt 0.2.5                  UTF-8                        dh:2019-01-17
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -15,56 +15,51 @@ obtheory.txt 0.2.4                  UTF-8                        dh:2019-01-10
            Ot, the applied-logic theory in which the structure is
                characterized
 
-   ‹ob› is of a simple nature that captures the idea of data structures,
-   the encoding of data thereby, and expressing those functions on such data
-   that are seen to be effectively computable.  This will be the foundation on
-   which the oMiser computation model will be erected and then demonstrated
-   to be universal with respect to the Church-Turing thesis.
+   Obs are mathematical entities used to demonstrate encoding of data and
+   effectively-computable functions on such data. This is the foundation on
+   which the oMiser computation model is constructed.
 
-   The simple ‹ob› formulation is easily given a computational interpretation
-   and serves to illustrate key aspects of the stored-program principle and
-   the manner in which levels of abstraction become available and useful in
-   general-purpose computing.  We start with mathematical formulations as
-   launch-pads for connecting mathematics with computation and exposing
-   the practical value (and certain limitations) of the computational model.
+   The appeal of ‹ob› among computational models is how interpretation of obs
+   as programs exhibits the stored-program principle and the manner in which
+   levels of abstraction become available and useful in general-purpose
+   computing.  The Miser Project provides an operational implementation that
+   demonstrates shared universality with prominent models recognized as
+   Church-Turing Complete.
 
                                   CONTENT
 
-              1. LOGICAL NOTATION
-                 Notation for First Order Logic with Equality (FOL=) employed
-                 in mathematical characterization of ‹ob› as well as of other
-                 structures.
+     1. LOGICAL NOTATION
+        Notation for First Order Logic with Equality (FOL=) employed in
+        mathematical characterization of ‹ob› as well as of other structures.
 
-              2. PRIMITIVE NOTIONS
-                 Four functions, together with "=" that are sufficient
-                 for expressing all Obs, given a set of initial individuals.
-                 All functions in Of (and predicates in Ot) can be expressed
-                 in terms of the primitives.
+     2. PRIMITIVE NOTIONS
+        Four functions, together with "=" that are sufficient for expressing
+        all Obs, given a set of initial individuals.  All functions in Of
+        (and predicates in Ot) can be expressed in terms of the primitives.
 
-              3. DENUMERABILITY AND EFFECTIVENESS
-                 Constraints on the composition of Obs in relationship to
-                 other Obs such that there is a precedence ordering among
-                 them.  Conditions on the effectiveness of representations of
-                 functions in Ot are elaborated.  Canonical forms for
-                 distinguishing Obs and identifying any of them are
-                 established.
+     3. DENUMERABILITY AND EFFECTIVENESS
+        Constraints on the composition of obs in relationship to other obs
+        such that there is a precedence ordering among them.  Conditions on
+        the effective representation of functions in Ot are elaborated.
+        Canonical forms for distinguishing Obs and identifying any of them
+        are established.
 
-              4. NOTES AND REFERENCES
+     4. NOTES AND REFERENCES
 
 1. LOGICAL NOTATION
 
-   For Ot, standard First-Order Logic with Equality (FOL=) is employed.  An
-   equational format is used with variables understood to be universally
-   quantified over the domain of discourse, Ob.  Set theory is not employed.
+   For Ot, standard First-Order Logic with Equality (FOL=) is employed
+   [Wikipedia2019].  An equational format is used with variables understood
+   to be universally quantified over the domain of discourse, Ob.  Set theory is not employed.
 
    Logical aspects of theory Ot are expressed using the following notation.
    We intend truth-value semantics of deductions involving propositions
    expressed in Ot.  Use of notions "true" and "false" is in that sense.
 
-      p ⇔ q read p if-and-only-if q, true when both are true or
-             both are false, a kind of logical equality relation
+      p ⇔ q read p if-and-only-if q, true when both are true or both
+             are false, a kind of logical equality relation
 
-      p ⇒ q read if p then q and when p ⇒ q and p both hold, it is
+      p ⇒ q read if p then q; when p ⇒ q and p both hold, it is
              deducible that q holds.
 
       p ∨ q is logical or, true when p and q are not both false
@@ -290,6 +285,9 @@ obtheory.txt 0.2.4                  UTF-8                        dh:2019-01-10
    [Wikipedia2018b] Structural induction. 2018-09-09 article available on the
        Internet at <https://en.wikipedia.org/w/index.php?title=Structural_induction&oldid=858748480>
 
+   [Wikipedia2019] First-order logic. 2019-01-07 article available on the
+       Internet at <https://en.wikipedia.org/w/index.php?title=First-order_logic&oldid=877262034>
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                    Copyright 2017-2019 Dennis E. Hamilton
@@ -311,8 +309,8 @@ obtheory.txt 0.2.4                  UTF-8                        dh:2019-01-10
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.4 dated 2019-01-10-10:49, available on
-   the Internet as a version of
+   text file obtheory.txt version 0.2.5 dated 2019-01-17, available on the
+   Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
 TODO
@@ -332,14 +330,14 @@ TODO
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
    it belongs in obaptheory.txt, not here.
 
- * Add references on FOL=.
-
  * Explain the reason for [McCarthy1960] and [More1979].
 
  * Mention Strachey McG inspiration also?
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.5 2019-01-17-12:40  After conversation with Bill Anderson, replaced the
+       preamble to reflect the purpose of introducing structure ‹ob›.
  0.2.4 2019-01-10-10:49 Correct the count of primitive functions in the
        table of content. Touch up a little.
  0.2.3 2019-01-08-10:16 Manage TODOs, add attribution, expand notes and
