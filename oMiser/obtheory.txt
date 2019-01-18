@@ -1,4 +1,4 @@
-obtheory.txt 0.2.5                  UTF-8                        dh:2019-01-17
+obtheory.txt 0.2.6                  UTF-8                        dh:2019-01-18
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -200,22 +200,20 @@ obtheory.txt 0.2.5                  UTF-8                        dh:2019-01-17
         determined whenever there are definite arguments.
 
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
-        determined, it need not be definite which of x ¶ y or y ¶ x holds.
-        For Ot, Ob8 is definite enough to ensure that any representation of a
-        function F (or predicate P) in Ot must be such that Ob8 shall not be
-        contradicted.  The strength of Ob8 is that ¬(x ¶ x) be preserved.
-
-        The significant mathematical benefit of the partial well-ordering by
-        x ¶ y is the availability of structural induction for deductions about
-        functions in Of.
+        determined, it need not be deducible which of x ¶ y or y ¶ x holds.
+        This is the case among definite individuals that are distinguished
+        by literal identifiers and no other condition on comparability.  The
+        strength of Ob8 is that ¬(x ¶ x) be preserved.  The mathematical
+        benefit of the strict partial-ordering x ¶ y is the availability of
+        structural induction for deductions about functions in Of.
 
         Later, when we make computational interpretations of ‹ob›, there'll
         be no need for an explicit counterpart of x ¶ y.  It is sufficient
         that no ob interpretation can appear as a component within its own
         composition, however deeply, and supporting operations cannot violate
-        that constraint.  In valid computational interpretations, the
-        counterparts of obs are immutable and have no cycles, the special
-        case of singletons notwithstanding.
+        that constraint.  In valid computational interpretations, counter-
+        parts of obs are immutable and have no cycles, the special case of
+        singletons notwithstanding.
 
 4. NOTES AND REFERENCES
 
@@ -336,7 +334,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.2.5 2019-01-17-12:40  After conversation with Bill Anderson, replaced the
+ 0.2.6 2019-01-18-11"47 In Ob10, name x ¶ y as a strict partial-ordering.
+ 0.2.5 2019-01-17-12:40 After conversation with Bill Anderson, replaced the
        preamble to reflect the purpose of introducing structure ‹ob›.
  0.2.4 2019-01-10-10:49 Correct the count of primitive functions in the
        table of content. Touch up a little.
