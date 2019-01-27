@@ -1,4 +1,4 @@
-obtheory.txt 0.2.6                  UTF-8                        dh:2019-01-18
+obtheory.txt 0.2.7                  UTF-8                        dh:2019-01-19
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -217,15 +217,23 @@ obtheory.txt 0.2.6                  UTF-8                        dh:2019-01-18
 
 4. NOTES AND REFERENCES
 
-   When we speak of all of the effectively-computable functions on Obs, as
-   Obs are characterized here, the claim will be that the totality of them is
+   The notions of individual, enclosure, singleton, and pair have their
+   inspiration in the nested-array work of [More1979] and the foundation
+   structure of LISP [McCarthy1960].  The importance of enclosure as a
+   structural feature of obs was observed in an incompleteness regarding
+   nested strings in [Strachey1965].  The computational model founded on ‹ob›
+   for oMiser is a fully-applicative scheme inspired through my association
+   with Peter Landin and William H. Burge in the mid-1960s, with operation via a list-processing adaptation of [Strachey1965].
+
+   When we speak of all of the effectively-computable functions on obs, as
+   obs are characterized here, the claim will be that the totality of them is
    equivalent to the CT-computable (total) functions.  When a a universal
-   function is also formulated, correspondence to a Universal Turing Machine,
-   Turing Completeness will be claimed under the CT-computable umbrella.
-   These stages will be demonstrated in later progressions.
+   function is also formulated, correspondence to a Universal Turing Machine
+   and Church-Turing Completeness will be claimed.  These stages will be
+   demonstrated in later progressions.
 
    Ob7-Ob9 must be augmented in the case of extensions that introduce
-   new distinct individuals constructed from canonical obs.  Supplementary
+   new distinct individuals constructed from other obs.  Supplementary
    definitions will be provided along with the introduction of such
    extensions.
 
@@ -277,6 +285,10 @@ obtheory.txt 0.2.6                  UTF-8                        dh:2019-01-18
        conference on APL: Part 1."  doi>10.1145/390009.804440 available at
        <https://dl.acm.org/citation.cfm?id=804440>
 
+   [Strachey1965] Strachey, Christopher.  A General Purpose Macrogenerator.
+       The Computer Journal 8, 3 (January 1965), 225-241.  Available at
+       <https://doi.org/10.1093/comjnl/8.3.225>
+
    [Wikipedia2018a] Canonical form.  2018-10-10 article available on the
        Internet at <https://en.wikipedia.org/w/index.php?title=Canonical_form&oldid=863443547>
 
@@ -307,7 +319,7 @@ obtheory.txt 0.2.6                  UTF-8                        dh:2019-01-18
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.5 dated 2019-01-17, available on the
+   text file obtheory.txt version 0.2.7 dated 2019-01-19, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -328,12 +340,11 @@ TODO
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
    it belongs in obaptheory.txt, not here.
 
- * Explain the reason for [McCarthy1960] and [More1979].
-
- * Mention Strachey McG inspiration also?
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.7 2019-01-19-12:07 In Notes, connect the arrival at ‹ob› to inspirations
+       in work of John McCarthy, Trenchard More, Christopher Strachey, Peter
+       Landin and W. H. Burge.
  0.2.6 2019-01-18-11"47 In Ob10, name x ¶ y as a strict partial-ordering.
  0.2.5 2019-01-17-12:40 After conversation with Bill Anderson, replaced the
        preamble to reflect the purpose of introducing structure ‹ob›.
