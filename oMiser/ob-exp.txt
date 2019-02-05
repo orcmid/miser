@@ -1,10 +1,10 @@
-ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
+ob-exp.txt 0.0.7                     UTF-8                       dh:2018-03-**
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
                            ======================
-                            
+
       <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
       FRUGALESE GRAMMAR FOR EXPRESSING THE OMISER COMPUTATION OF OBS
@@ -12,11 +12,11 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
 
     Ob-exp texts are used as a means of specifying obs and computations
     with them to derive an ob result.  Ob-exp is an expression language
-    that is used in digital communication of computations with obs and 
+    that is used in digital communication of computations with obs and
     also used to submit expressions for oMiser computation via oFrugal.
-    
+
     ob-exp has a context-free grammar, here specified using the original
-    Backus-Naur Form (BNR) employed in the Revised Report on the 
+    Backus-Naur Form (BNF) employed in the Revised Report on the
     Algorithmic Language ALGOL 60.  The grammar specifies exactly those
     expressions that can be evaluated to a single ob when submitted
     to a processor such as an oFrugal implememtation.
@@ -30,8 +30,8 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
     The following summary form of the grammar is useful for reference.
     It does not address the grammatical differences that are called for
     to align with the interpretation rules by which an ob-exp is evaluated.
-    All ob-exps satisfy the summary grammar.  The "official" grammar 
-    rules employ alternative syntactially-equivalent structures in order
+    All ob-exps satisfy the summary grammar.  The "official" grammar
+    rules employ alternative syntactically-equivalent structures in order
     to have rigorous interpretation as expressions of ob computations.
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
@@ -45,7 +45,7 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
 
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉 | 〈obap-form〉 〈parameters-form〉
 
-    〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉 
+    〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
     〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
     〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 | 〈obap-form〉 〈ae-form〉
@@ -61,27 +61,27 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
     that is the interpretation of a given ob-exp text.  The interpretation
     schemas have distinct form.
 
-        I category ⎾pattern⏋(parameter) =: interpretation
+        I category ⎾pattern⏋(parameter-list) =: interpretation
 
     where      category is one of the syntactic categories, such as
                         〈ob-exp〉, 〈ae〉, and 〈term〉
                 pattern is one of the patterns for the particular category,
                         such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
-            (parameter) is an optional parameter
+       (parameter-list) is an optional list of one-or-more parameters
          interpretation is an obaptheory expression schema in which any
-                        parameter and I category (parameter) forms are
+                        parameter and I category (parameter-list) forms are
                         in reference to appearances in the pattern
 
     For example,
 
-        I〈ae〉⎾〈obap-form〉 〈ae-form〉⏋=: obap.ap(I〈obap-form〉,I〈ae-form〉) 
+        I〈ae〉⎾〈obap-form〉 〈ae-form〉⏋=: obap.ap(I〈obap-form〉,I〈ae-form〉)
 
     On the right-hand side of the "=:" the category names refer to those
     in the pattern on the left-hand side, and the interpretations of those
-    occurrences is called for to determine the individual ob that is the 
+    occurrences is called for to determine the individual ob that is the
     evaluation.
 
-    An example employing parameters is found in the section 6 interpretation 
+    An example employing parameters is found in the section 6 interpretation
     of I〈arguments〉.
 
  3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
@@ -93,50 +93,50 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
     [DETAILS TBD]
 
  5. LIST FORMS
-   
+
     〈list-body〉 ::= 〈ob-exp〉 ] | 〈ob-exp〉 :] | 〈ob-exp〉, 〈list-body〉
-    〈list-form〉 ::= [ ] | [ 〈list-body〉   
+    〈list-form〉 ::= [ ] | [ 〈list-body〉
 
-    I〈list-form〉⎾[ ]⏋=: ob.NIL 
-    I〈list-form〉⎾[ 〈list-body〉 ⏋=: I〈list-body〉 
+    I〈list-form〉⎾[ ]⏋=: ob.NIL
+    I〈list-form〉⎾[ 〈list-body〉 ⏋=: I〈list-body〉
 
-    I〈list-body〉⎾〈ob-exp〉 ]⏋=: ob.c(I〈ob-exp〉, ob.NIL) 
-    I〈list-body〉⎾〈ob-exp> :]⏋=: I〈ob-exp〉 
-    I〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋=: ob.c(I〈ob-exp〉,I〈list-body〉) 
+    I〈list-body〉⎾〈ob-exp〉 ]⏋=: ob.c(I〈ob-exp〉, ob.NIL)
+    I〈list-body〉⎾〈ob-exp> :]⏋=: I〈ob-exp〉
+    I〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋=: ob.c(I〈ob-exp〉,I〈list-body〉)
 
  6. FUNCTIONAL FORMS
 
     〈function-form〉 ::=  〈term〉 | 〈function-form〉 〈list-form〉
                         | 〈function-form〉 ( 〈arguments〉 )
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉
-                        | 〈obap-form〉 〈list-form〉 
+                        | 〈obap-form〉 〈list-form〉
                         | 〈obap-form〉 ( 〈arguments〉 )
     〈arguments〉 ::= 〈ob-exp〉 | 〈arguments〉, 〈ob-exp〉
 
-    I〈function-form〉⎾〈term〉⏋=: I〈term〉 
+    I〈function-form〉⎾〈term〉⏋=: I〈term〉
     I〈function-form〉⎾〈function-form> 〈list-form〉 ⏋
-                    =: obap.ap(I〈function-form〉, I〈list-form〉 ) 
+                    =: obap.ap(I〈function-form〉, I〈list-form〉 )
     I〈function-form〉⎾〈function-form〉 ( 〈arguments〉 )⏋
-                    =: I〈arguments〉( I〈function-form〉 ) 
+                    =: I〈arguments〉( I〈function-form〉 )
 
-    I〈obap-form〉⎾( 〈ob-exp〉 )⏋=: I〈ob-exp〉 
-    I〈obap-form〉⎾ 〈list-form〉 ⏋=: I〈list-form〉 
+    I〈obap-form〉⎾( 〈ob-exp〉 )⏋=: I〈ob-exp〉
+    I〈obap-form〉⎾ 〈list-form〉 ⏋=: I〈list-form〉
     I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋
-                    =: obap.ap(I〈obap-form〉, I〈list-form〉 ) 
+                    =: obap.ap(I〈obap-form〉, I〈list-form〉 )
     I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋
-                    =: I〈arguments〉( I〈obap-form〉 )                     
+                    =: I〈arguments〉( I〈obap-form〉 )
 
-    I〈arguments〉⎾〈ob-exp〉⏋(p) =: ob.ap(p, I〈ob-exp〉 ) 
+    I〈arguments〉⎾〈ob-exp〉⏋(p) =: ob.ap(p, I〈ob-exp〉 )
     I〈arguments〉⎾〈arguments〉, 〈ob-exp〉⏋(p)
-                    =: obap.ap( I〈arguments〉(p), I〈ob-exp〉) 
+                    =: obap.ap( I〈arguments〉(p), I〈ob-exp〉)
 
  7. UNARIES
 
-    〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉     
+    〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
     I〈unary〉⎾〈function-form〉⏋ =: I〈function-form〉
-    I〈unary〉⎾ ‵ 〈obap-form〉 ⏋ =: ob.e( I〈function-form〉 ) 
-    I〈unary〉⎾ ‵ 〈unary〉 ⏋ =: ob.e( I〈unary〉 )      
+    I〈unary〉⎾ ‵ 〈obap-form〉 ⏋ =: ob.e( I〈function-form〉 )
+    I〈unary〉⎾ ‵ 〈unary〉 ⏋ =: ob.e( I〈unary〉 )
 
  8. APPLICATIVE EXPRESSIONS
 
@@ -161,7 +161,7 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
 
     I〈ob-exp〉⎾ 〈binary〉 ⏋ =: I〈binary〉
 
-    The 〈ob-exp〉 grammar production is designed to allow for additional 
+    The 〈ob-exp〉 grammar production is designed to allow for additional
     forms beyond 〈binary〉.  None are anticipated at this time.
 
 
@@ -180,7 +180,7 @@ ob-exp.txt 0.0.6                     UTF-8                       dh:2018-02-03
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 TODO
@@ -192,7 +192,7 @@ TODO
    degree that matters here.  There might be a better reference to this
    rather simple case.
 
- * Add the handling of concrete cases and the tie-in to a reference 
+ * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
 
  * Use the XML 1.0 characterization of white space, letters, digits,
@@ -200,7 +200,7 @@ TODO
 
  * Allow the SML/NJ form of comments as an uninterpreted separator.
 
- * Use the SML/NJ use of \<white-space>\ as null. 
+ * Use the SML/NJ use of \<white-space>\ as null.
 
  * Do we require white-space anywhere or is it optional everywhere
    except between two terms that must remain separated?
@@ -218,12 +218,18 @@ TODO
  * explain the resolution of binding names by the presumption of an
    (oFrugal) environment in which the binding can be resolved.
 
+ * The function for resolving binding names can be expressed in
+   oFrugal, but it requires a way to fail when the encountered
+   binding name is not bound.  So we need to have a *fail* interpretation
+   different from there being an explicit fail in oMiser.  We might
+   call it an event, but need to be careful.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.6 2018-02-03-14:33 Add typo and correct for absence of an 〈ae〉 that is
+ 0.0.7 2018-03-**-**:** More touch-ups.  Adjust for bindings semantics.
+ 0.0.6 2018-02-03-14:33 Fix typo and correct for absence of an 〈ae〉 that is
        simply an 〈obap-form〉, including a standalone 〈list-form〉.  Hat tip to
-       Roman Susi (@rnd0101). 
- 0.0.6 2018-02-03-14:29 Add typo and correct for absence of an 
+       Roman Susi (@rnd0101).
  0.0.5 2018-01-31-10:56 Complete first pass through to 9, Ob-Exp, adding
        TODOs.
  0.0.4 2018-01-30-21:42 extend the formal grammar through 6. Functional Forms
@@ -231,6 +237,6 @@ TODO
        which grammatical constructions are interpreted as expressions of obs.
  0.0.2 2018-01-29-21:34 Corrected with fixes from Roman Susi (@rnd0101)
  0.0.1 2018-01-28-15:26 Provide initial summary grammar for ob-exp.
- 
+
 
                      *** end of ob-exp.txt ***

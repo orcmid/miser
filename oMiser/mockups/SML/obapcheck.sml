@@ -1,12 +1,12 @@
-(* obapcheck.sml 0.0.9               UTF-8                        dh:2018-02-08
+(* obapcheck.sml 0.0.10             UTF-8                        dh:2018-03-**
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         ================================
                        
  <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obapcheck.sml> 
         
-             CHECKING APPLICATIVE EXPRESSIONS IN OBAP STRUCTURE
-             --------------------------------------------------
+           CHECKING APPLICATIVE EXPRESSIONS IN SML OBAP STRUCTURE
+           ------------------------------------------------------
        
    [Author Note: Tie to obcheck.sml, obtheory.txt, ob.sml, obaptheory, and
     the obap.sml structure or similar ones.]
@@ -14,8 +14,8 @@
     
 use "obap.sml";
 open obap;
-(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE CHECKS 
-   SHOULD WORK DIRECTLY WITHOUT MODIFICATION, BELOW.
+(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE 
+   CHECKS SHOULD WORK DIRECTLY WITHOUT MODIFICATION, BELOW.
    *)
    
 infixr 5 ## ;
@@ -76,7 +76,8 @@ val CkObap5 = ap(NIL,L"X") = L"X"
       andalso ap(ARG, L"X") = e(ARG) ## e(L"X")
       andalso ap(EV, L"X") = e(EV) ## e(L"X")
 
-(* obap6 obap.ev(p,x,e) via obap.ap(p,x) procedures and eval(exp) expressions *)
+(* obap6 obap.ev(p,x,e) via obap.ap(p,x) procedures and eval(exp) expressions 
+   *)
 
 val ckObap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
       andalso (let val xyz = L"X" ## L"Y" ## L"Z"
@@ -87,10 +88,13 @@ val ckObap6 = eval(L"X" ## L"Y") = L"X" ## L"Y"
       andalso eval((L"X" ## L"Z") ## L"Y" ## L"Z") 
                 = (L"X" ## L"Z") ## L"Y" ## L"Z" 
 
-(* Demonstrate ob cK as script for a computational manifestation of combinator K
-   having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x as required.
+(* Demonstrate ob cK as script for a computational manifestation of combinator 
+   K having ap(ap(cK,x),y) = eval( (e(cK) ## e(x)) ## e(y) ) = x as required.
+   See <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+   sections 1.1, 1.2, 2.1, 2.3, and 3.2.
    *)
-val cK = E ;
+val cK = E 
+         (* effectively lambda.X lambda.Y ‵X in oFrugalese *);
 
 val CkObap7 
     = let val cKX = e(L"X")
@@ -106,14 +110,18 @@ val CkObap7
            andalso eval( (cK ## e(L"X")) ## e(L"Y") ) = L"X"
       end
              
-(* Demonstrate ob cS as script for a computational manifestation of combinator S
-   having 
+(* Demonstrate ob cS as script for a computational manifestation of combinator
+   S having 
             ap(ap(ap(cS,x),y),z) = eval( ( (e(cS) ## e(x)) ## e(y) ) ## e(z) ) 
                                  = ap(ap(x,z),ap(y,z))
    as required. 
+   See <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+   sections 1.1, 1.2, 2.1, 2.3, and 3.2.
    *)
 val cS = C##e(C)##(C##(E##(C##(E##ARG)##e(ARG)))##e(C##(E##ARG)##e(ARG))) 
-         (* effectively lambda.X lambda.Y lambda.Z ‵(X(Z) Y(Z)) in oFrugalese *);
+         (* effectively lambda.X lambda.Y lambda.Z ‵((X :: Z) :: Y :: Z) 
+            in oFrugalese 
+            *);
        
 val CkObap8 
     = let val SXYZ = (L"X" ## L"Z") ## L"Y" ## L"Z"
@@ -141,8 +149,8 @@ val CkObap8
           andalso eval(((e(cS)##L"X")##L"Y")##L"Z") = SXYZ                         
       end
 
-(* Demonstrate ob cI as script for a computational manifestation of combinator I
-   having
+(* Demonstrate ob cI as script for a computational manifestation of combinator
+   I having
             ap(cI,x) = eval( (e(cI) ## e(x)) ) = x
                      = ap(ap(ap(cS,cK),cK),x)
                      = x
