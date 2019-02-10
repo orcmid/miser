@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.7                     UTF-8                       dh:2018-03-**
+ob-exp.txt 0.0.7                     UTF-8                       dh:2019-02-10
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -224,9 +224,13 @@ TODO
    different from there being an explicit fail in oMiser.  We might
    call it an event, but need to be careful.
 
+ * Incorporate the interpretation of sequences of REPL commands with respect
+   to the sequential interpretation of bindings.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.7 2018-03-**-**:** More touch-ups.  Adjust for bindings semantics.
+ 0.0.7 2019-02-10-09:29 More touch-ups.  Adjust for bindings semantics in
+       in anticipation of including REPL interpretation.
  0.0.6 2018-02-03-14:33 Fix typo and correct for absence of an 〈ae〉 that is
        simply an 〈obap-form〉, including a standalone 〈list-form〉.  Hat tip to
        Roman Susi (@rnd0101).
