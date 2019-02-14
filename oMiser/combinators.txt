@@ -1,4 +1,4 @@
-combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
+combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -290,7 +290,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
 
     2.1 Functional Type
 
-    The usual notation for functional type is used here, as in [Burge1975:1.2,Feferman1977:2.1, Scott1993:1].  Greek letters signify arbitrary types.
+    The usual notation for functional type is used here, as in [Burge1975:1.2,
+    Feferman1977:2.1, Scott1993:1].  Greek letters signify arbitrary types.
 
        x: α
        f: α → β
@@ -433,7 +434,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
     are satisfied, there must be some restraint to using obs that are computa-
     tional representations of and interpretable as entities of specific
     functional types.  Maintaining the semblance involves restraints on use
-    of the computational entities (e.g., representations via obs), orchestrating computational procedures in a manner that preserves the
+    of the computational entities (e.g., representations via obs),
+    orchestrating computational procedures in a manner that preserves the
     restricted interpretation(s).
 
     In the context of digital computation, the orchestration of available
@@ -637,7 +639,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
     4.1 Conditional Behavior
 
     In the use of mathematical theories, such as Ot, to represent computable
-    functions, there are two important provisions that we have not seen, so far, in ‹ca›.
+    functions, there are two important provisions that we have not seen, so
+    far, in ‹ca›.
 
      * Definition by cases.  There are distinguished cases in the
        characterization of obs in ‹ob›.  There are even more cases established
@@ -648,7 +651,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
 
      * Recursion.  A companion to separation of cases is the conditional
        use of the function being characterized in an expression that
-       applies in the specified case.  Computational interpretation is by conditional reuse of the procedure in a manner that reduces the
+       applies in the specified case.  Computational interpretation is by
+       conditional reuse of the procedure in a manner that reduces the
        computation to a (simpler) use of the same procedure.  We see recursion
        in the definition of obap.ap(p,x) and implicitly in transitive
        relations of ‹ob›.
@@ -667,7 +671,7 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
                   two definite cases is satisfied by the operand, c
 
          | Uβ c ≈ K, when c is of the first case,
-                  and then | K x y ≈ y
+                  and then | K x y ≈ x
 
                 ≈ K I, when c is of the second case,
                   and then | K I x y ≈ y
@@ -682,7 +686,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
     precisely distinguished by computational means.  We lack that in ‹ca›.
 
     With oMiser, an appealing choice for β is a type consisting of the two
-    primitive individuals obap.A and obap.B.  Concrete type obAB is defined accordingly.
+    primitive individuals obap.A and obap.B.  Concrete type obAB is defined
+    accordingly.
 
         obap.A: obAB,
         obap.B: obAB
@@ -690,7 +695,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
     with restriction of ob values to obAB accomplished at least by
     interpretation-preserving limitation on the use of UobAB (section
     2.4(A)). obAB is a base type, one that is not functional in nature but
-    which may be a type within an  → functional-type form. Now UobAB can be specified.
+    which may be a type within an  → functional-type form. Now UobAB can be
+     specified.
 
         UobAB: obAB → (α → (α → α) )
         | UobAB obap.A ≈ K
@@ -746,20 +752,22 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
 
     One can also interpret a type, such as obAB, as representing truth
     (obap.A) and falsity (obap.B) with respect to some condition such as the
-    result of obap.d(x,y).  Likewise, one convention is to treat combinators
-    K and | K I as designating "true" and "false", respectively, as in
-    [Barendregt1981:6.2.2, Revesz1998:3.1, Scott1993].
+    result of obap.eval(.D :: x :: y).  Likewise, one convention is to treat
+    combinators K and | K I as designating "true" and "false", respectively,
+    as in [Barendregt1981:6.2.2, Revesz1998:3.1, Scott1993].
 
     With respect to computational interpretations of logical notions it
     is valuable to avoid claiming "truth" as any kind of (computational)
-    object.  In the case of obAB and ^UobAB, we will stick with the
+    object.  In the case of obAB and ^UobAB, we will stick with applicative
     use of obap.A and obap.B as selectors of the first or second of a pair
     and anything else is some higher-level of interpretation/representation.
 
     There will be some idiomatic oMiser computational definitions that are
     valuable in representing Boolean logical operations.  type obAB will
     be employed in one representation of a structure, ‹bool›.  It is not what
-    the type obAB "is."
+    the type obAB "is."  The file boole.txt illustrates some rather different
+    representations of Boolean Algebras, and those could be applied here as
+    well.
 
     Akin to the observation of the interpretation-preserving nature of
     combinator functional types, Uβ and type β are taken to be "truth"
@@ -773,7 +781,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
 
     4.4 The Y Combinator Interpretation
 
-    Consider, now, an applicative expression, f, where there is a case selection in which one wants to apply f itself as part of the continuing
+    Consider, now, an applicative expression, f, where there is a case
+    selection in which one wants to apply f itself as part of the continuing
     evaluation of a determined case.  Assume the typical form
 
         f ≈ λx.(... (f M) ...)
@@ -781,7 +790,8 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
         f: α → β
 
     where the (f M), and other occurrences of (f ...) in the expression are
-    conditionally-chosen based on satisfaction of particular cases. No evaluation of (f M) occurs until the governing case is satisfied.
+    conditionally-chosen based on satisfaction of particular cases. No
+    evaluation of (f M) occurs until the governing case is satisfied.
 
     There is no form of lambda-expression or combinator-expression by which
     the expression of f can refer to and employ that expression as a whole.
@@ -965,8 +975,21 @@ combinators.txt 0.0.19               UTF-8                       dh:2018-06-22
 
   * Add links to additional companion materials hinted at in Section 5.
 
+  * Revamp and simplify, relying on the refinements in obtheory.txt,
+    obaptheory.txt, boole.txt, and the "Interpretation, Representation,
+    Computation, Manifestation" article.
+
+  * Make section 6 into "Notes and References".
+
+  * Identify companion files and related articles.
+
+  * Make certain that the definitions of combinators continue to verify
+    after updating of the SML/NJ mockup.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.20 2019-02-14-12:16 Revamp based on the latest obtheory.txt and
+        obaptheory.txt, manage TODOs, and smooth some text.
  0.0.19 2018-06-22-11:47 Reworking on the bridge between theoretical and
         practical use of combinator representations and the value of ‹ca›
         interpretation with respect to models of computation.  Add section 5
