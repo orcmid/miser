@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
+obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -9,8 +9,7 @@ obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
                        ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS
                        ------------------------------------
 
-   For the mathematical structure, ‹ob› = <Ob,Of,Ot>, we demonstrate existence
-   of a universal function, obap.ap(p,x) and an important companion obap.ev
+   For the mathematical structure, ‹ob› = 〈Ob,Of,Ot〉, we represent a universal function, obap.ap(p,x) and an important companion obap.ev
    employed in its construction and separately useful via obap.eval(exp).   .
 
    Universality of obap.ap(p,x) is taken to mean that for every function,
@@ -29,16 +28,17 @@ obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
 
 1. PRELIMINARIES
 
-   The notation, mathematical theory, and primitive notions at obtheory.txt
-   are incorporated directly.  See
-   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
+   First, the structure ‹ob› is employed in its entirety, as defined at
+   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+   The CFob notation for expession of ob canonical forms is employed.  Viz.,
 
-   For simplicity, the infix pair operator, ::, is introduced, with
+
+   The infix pair operator, ::, is introduced, with
 
           x :: y = ob.c(x,y)
-          t :: u :: ... y :: z = t :: (u :: ... (y :: z) ...)
+          t :: u :: v:: ... y :: z = t :: (u :: (v :: ... (y :: z) ... ) )
 
-   The prefix form ‵x is equivalent to ob.e(x).  E.g.,
+   The prefix form ‵ x is equivalent to ob.e(x).  E.g.,
 
           ‵(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL)
                 = ob.e(ob.c(ob.NIL,ob.c(ob.e(ob.e(ob.NIL)),ob.e(ob.NIL))))
@@ -58,7 +58,7 @@ obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
 
           obap.is-primitive(obap.SELF)
           obap.is-primitive(obap.ARG)
-             2 obs that signify references to script evaluation parameters
+             2 obs that signify references to script-evaluation operands
 
           obap.is-primitive(obap.EV)
              1 ob that signifies a special unary operator in scripts
@@ -67,9 +67,12 @@ obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
           obap.is-primitive(obap.D)
              2 obs that signify special binary operators in scripts
 
-          The last three are distinguished as special operators in the
-          evaluation of obs as expressions.  The last five constitute
-          special forms in the evaluation of obs as expressions.
+          The last five constitute special forms in the evaluation of obs as
+          expressions of scripts.
+
+          For simplicity of expression, the CFob notation for fixed
+          individuals uses the name with only the prefix ".".  For example,
+          .NIL, .A, and .SELF.
 
 
 2. ADDITIONAL NOTIONS
@@ -81,23 +84,32 @@ obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
                      letter optionally followed by one or more alphanumeric
                      characters
 
+          In the CFob notation, lindy Ʃ's' is simply expressed by the string
+          s text.
+
+          IMPLEMENTATION NOTE: In computer representations, the alphabetic
+          characters permitted in lindies are the Unicode glyphs, encoded
+          in UTF-8, as defined for XML NCNames without any ".".
+
           Ʃ's' = Ʃ't' ⇔ s Ʃ= t
              where s Ʃ= t signifies identity of the string texts
 
           obap.is-lindy(x) ⇒ ob.is-individual(x)
           obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
 
-          NOTE: Lindies are distinct conveniently-named individuals that have
+          Lindies are distinct conveniently-named individuals that have
           no intrinsic significance.  They are available to applications of
-          obs for any purpose as distinct literals, written here in forms
-          Ʃ'alpha', Ʃ'ABCs', Ʃ'letterQ', Ʃ'foo', etc.  For more conventions
-          see <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
-             Applications of lindies to operands cannot proceed further; the
-          defined applicative interpretation is a trace ob signifying
-          cessation of the computation.
-             IMPLEMENTATION NOTE: In computer representations, the alphabetic
-          characters permitted in lindies are the Unicode glyphs, encoded
-          in UTF-8, as defined for XML NCNames without any ".".
+          obs for any purpose as distinct literals, written in Ot forms
+          Ʃ'alpha', Ʃ'ABCs', Ʃ'letterQ', Ʃ'foo', etc.
+
+          Applications of lindies to operands in scripts cannot proceed
+          further, since there is no intrinsic interpretation of lindies
+          for that purpose.  Instead, the application is defined to yield a trace ob as the result.  To provide maximum information, pure lindy forms defined as so limiting when occuring as operators in scripts:
+
+          obap.is-lindy(x) => obap.is-pure-lindy-trace(x)
+          obap.is-pure-lindy-trace(ob.c(x,y))
+             ⇔ obap.is-pure-lindy-trace(x) ∧ obap.is-pure-lindy-trace(y)
+          ¬ obap.is-pure-lindy-trace(ob.e(x))
 
   Obap3.  Universal Apply Function
 
@@ -116,92 +128,84 @@ obaptheory.txt 0.0.30                UTF-8                       dh:2018-10-24
 
    Obap4. obap.ap(p,x)
 
-          obap.is-lindy(x) => obap.is-pure-lindy-trace(x)
-          obap.is-pure-lindy-trace(c(x,y))
-             ⇔ obap.is-pure-lindy-trace(x) ∧ obap.is-pure-lindy-trace(y)
-          ¬ obap.is-pure-lindy-trace(e(x))
+        obap.ap(ob.e(k),x) = k
 
-        ob.is-enclosure(p) ⇒ obap.ap(p,x) = ob.a(p)
+        obap.ap(ob.NIL, x) = x
+        obap.ap(obap.A, x) = ob.a(x)
+        obap.ap(obap.B, x) = ob.b(x)
+        obap.ap(obap.C, x) = obap.C :: ob.e(x) :: obap.ARG
+        obap.ap(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
+        obap.ap(obap.E, x) = ob.e(x)
 
-        ob.is-individual(p) ⇒ obap.ap(p,x) = obap.apint(p,x)
+        obap.ap(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
+        obap.ap(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
+        obap.ap(obap.EV, x) = ob.e(obap.EV) :: ob.e(x)
+                three non-lindy trace cases
 
         obap.is-pure-lindy-trace(p) ∧ obap.is-pure-lindy-trace(x)
-                => ob.is-pair(p) ⇒ obap.ap(p,x) = p :: x
-        ¬ ( obap.is-pure-lindy-trace(p) ∧ obap.is-pure-lindy-trace(x) )
-                => ob.is-pair(p) ⇒ obap.ap(p,x) = obap.ev(p,x,p)
-
-   Obap5. obap.apint(p,x) applicative treatment of individuals.
-
-        obap.apint(ob.NIL, x) = x
-        obap.apint(obap.A, x) = ob.a(x)
-        obap.apint(obap.B, x) = ob.b(x)
-        obap.apint(obap.C, x) = obap.C :: ob.e(x) :: obap.ARG
-        obap.apint(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
-        obap.apint(obap.E, x) = ob.e(x)
-
-        obap.apint(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
-        obap.apint(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
-        obap.apint(obap.EV, x) = ob.e(obap.EV) :: ob.e(x)
-
-        obap.is-lindy(p) ∧ obap.is-pure-lindy-trace(x)
-                         => obap.apint(p,x) = p :: x
+                ⇒ obap.ap(p,x) = p :: x
         obap.is-lindy(p) ∧ ¬ obap.is-pure-lindy-trace(x)
-                         => obap.apint(p,x) = p :: ob.e(x)
-
-        A trace is a form, t, such that obap.ap(t,any) = obap.eval(t) = t.
-        This supports a form of symbolic evaluation using the fact that
-        lindies lack distinct applicative interpretations.
+                ⇒ obap.ap(p,x) = p :: ob.e(x)
+        ¬ obap.is-pure-lindy-trace(p)
+                => ob.is-pair(p) ⇒ obap.ap(p,x) = ev(p,x,p)
 
         The obap.apint evaluations for obap.C and obap.D determine partial
-        applications, effectively currying use of functions ob.c and obap.d.
+        applications, effectively currying use of functions ob.c and obap.d,
+        in comparison with the obap.ev treatment.
 
 
 4. THE EVALUATION FUNCTIONS
 
-   Obap6. obap.ev(p,x,e) evaluation of script e as part of determining the
-          application of procedure p to argument x
+   Obap5. obap.eval(e)
+
+        obap.eval(e) = ev(obap.SELF, obap.ARG, e)
+             effectively forcing a trace in the event of inappropriate
+             top-level occurences of obap.SELF and obap.ARG in operand e.
+
+   Obap6. ev(p,x,e) evaluation of script e as part of determining the
+          application of procedure script ob p to operand ob x.
+          This function is internal to the obap.ap and obap.eval pair,
+          and mutually-recursive with obap.ap.
+
+        ev(p,x,ob.e(y)) = y
 
         obap.is-evref(obap.SELF)
         obap.is-evref(obap.ARG)
 
-        obap.ev(p,x,obap.SELF) = p
-        obap.ev(p,x,obap.ARG) = x
+        ev(p,x,obap.SELF) = p
+        ev(p,x,obap.ARG) = x
 
-        ob.is-individual(e) ∧ ¬ obap.is-evref(e) ⇒ obap.ev(p,x,e) = e
-
-        obap.ev(p,x,ob.e(y)) = y
+        ob.is-individual(e) ∧ ¬ obap.is-evref(e) ⇒ ev(p,x,e) = e
 
         obap.is-evbinop(obap.C)
         obap.is-evbinop(obap.D)
 
-        obap.ev(p,x,obap.C::e1::e2)
-           = ob.c(obap.ev(p,x,e1), obap.ev(p,x,e2))
+        ev(p,x,obap.C::e1::e2)
+           = ob.c(ev(p,x,e1), ev(p,x,e2))
 
-        obap.ev(p,x,obap.D::e1::e2)
-           = obap.d(obap.ev(p,x,e1), obap.ev(p,x,e2))
-        x = y ⇒ obap.d(x,y) = obap.A
-        x ≠ y ⇒ obap.d(x,y) = obap.B
+        ev(p,x,obap.D::e1::e2)
+           = d(ev(p,x,e1), ev(p,x,e2))
+        x = y ⇒ d(x,y) = obap.A
+        x ≠ y ⇒ d(x,y) = obap.B
+            function d(x,y) being internal to ev and providing for
+            selection of alternatives based on the comparison result
 
         obap.is-evbinop(e1) ∧ ob.is-singleton(e2)
-           ⇒ obap.ev(p,x,e1::e2) = obap.ap(e1, obap.ev(p,x,e2))
+           ⇒ ev(p,x,e1::e2) = obap.ap(e1, ev(p,x,e2))
 
         obap.is-evunop(obap.EV)
-        obap.ev(p,x,obap.EV :: e2) = obap.ev(p,x,obap.ev(p,x,e2))
+
+        ev(p,x,obap.EV :: e2) = ev(p,x, ev(p,x,e2))
 
         obap.is-specialop(p) ⇔ obap.is-evunop(p) ∨ obap.is-evbinop(p)
 
         ¬ obap.is-specialop(e1)
-           ⇒ obap.ev(p,x,e1::e2) = obap.ap(obap.ev(p,x,e1), obap.ev(p,x,e2))
-
-   Obap7. obap.eval(e)
-
-        obap.eval(e) = obap.ev(obap.SELF, obap.ARG, e)
-
+           ⇒ ev(p,x,e1::e2) = obap.ap(ev(p,x,e1), ev(p,x,e2))
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                  Copyright 2017, 2018 Dennis E. Hamilton
+                  Copyright 2017-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -228,8 +232,17 @@ TODO
  * Items related to the ob-exp concrete syntax should be resolved there, and
    under oFrugal.  Link to the detailed cases.
 
+ * In anticipation of narration on Orcmid's Live Hideout, simplify the
+   treatment, using patterns more, and see if apint can be eliminated.
+
+ * Switch from the use of ‵ (leading prime) to ` (grave accent) as standard
+   so that obexp and CFob canonical forms can always be expressed in the
+   Basic Latin printable characters and the corresponding subset of Unicode
+   code points.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.31 2019-02-13-15:50 Touch ups and Manage TODOs
  0.0.30 2018-10-24-16:30 Use canonical form instead of canonical ob
  0.0.29 2018-10-16-15:23 Adjust the Ʃ-expression of Lindies to use '.  Improve
         the layout and proof-read one more time.
