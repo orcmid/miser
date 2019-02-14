@@ -1,4 +1,4 @@
-obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
+obaptheory.txt 0.0.32                UTF-8                       dh:2019-02-14
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -9,8 +9,13 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
                        ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS
                        ------------------------------------
 
-   For the mathematical structure, ‹ob› = 〈Ob,Of,Ot〉, we represent a universal function, obap.ap(p,x) and an important companion obap.ev
-   employed in its construction and separately useful via obap.eval(exp).   .
+   For the mathematical structure, ‹ob› = 〈Ob,Of,Ot〉, we represent a
+   universal function, obap.ap(p,x) and important companion obap.ev(p,x,e)
+   employed in its construction and separately useful via obap.eval(e).
+
+   The use of prefix ob.ap (obap for short) reflects the reliance on ‹ob›
+   with identification of additional primitive individuals on which the
+   obap.ap and obap.eval function representations depend.
 
    Universality of obap.ap(p,x) is taken to mean that for every function,
    F, on obs that is effectively-calculable, there is an ob p that expresses
@@ -21,7 +26,7 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
    a universal function in this respect, but that it provides a model of
    commputation as powerful as any other, in harmony with the Church-Turing
    thesis.  This hinges on demonstration that other deterministic models of
-   computation are representable in oMiser.
+   computation are representable in oMiser and applications of obap.ap(p,x).
 
    Confirmation of these claims is developed separately.  Here we formalize
    obap.ap(p,x) and obap.eval(exp), in mathematical terms, in the theory Ot.
@@ -32,7 +37,6 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
    The CFob notation for expession of ob canonical forms is employed.  Viz.,
 
-
    The infix pair operator, ::, is introduced, with
 
           x :: y = ob.c(x,y)
@@ -41,7 +45,12 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
    The prefix form ‵ x is equivalent to ob.e(x).  E.g.,
 
           ‵(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL)
-                = ob.e(ob.c(ob.NIL,ob.c(ob.e(ob.e(ob.NIL)),ob.e(ob.NIL))))
+                = ob.e(ob.c( ob.NIL,
+                             ob.c( ob.e(ob.e(ob.NIL)),
+                                   ob.e(ob.NIL) ) ))
+
+    with the (optional) indentation as a visual aid to recognition of
+    pairings.
 
    Obap1. Primitive Individuals
 
@@ -74,7 +83,6 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
           individuals uses the name with only the prefix ".".  For example,
           .NIL, .A, and .SELF.
 
-
 2. ADDITIONAL NOTIONS
 
    Obap2. Literal Individuals
@@ -104,7 +112,10 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
 
           Applications of lindies to operands in scripts cannot proceed
           further, since there is no intrinsic interpretation of lindies
-          for that purpose.  Instead, the application is defined to yield a trace ob as the result.  To provide maximum information, pure lindy forms defined as so limiting when occuring as operators in scripts:
+          for that purpose.  Instead, the application is defined to yield a
+          trace ob as the result.  To provide maximum information, pure lindy
+          forms defined as so limited are detected early when occuring as
+          operators in scripts:
 
           obap.is-lindy(x) => obap.is-pure-lindy-trace(x)
           obap.is-pure-lindy-trace(ob.c(x,y))
@@ -120,11 +131,12 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
            obap.eval(exp) determines the evaluation of ob exp taken as an
                           applicative expression
 
-          All other predicates and functions introduced in Obap4-Obap7 below
+          All other predicates and functions introduced in Obap4-Obap6 below
           support the representation of obap.ap and obap.eval.  Explicit
-          computational availability is not required.
+          computational-interpretation availability of such "helper" functions
+          shall not be provided.
 
-3. THE APPLY FUNCTIONS
+3. THE APPLY FUNCTION
 
    Obap4. obap.ap(p,x)
 
@@ -140,7 +152,9 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
         obap.ap(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)
         obap.ap(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
         obap.ap(obap.EV, x) = ob.e(obap.EV) :: ob.e(x)
-                three non-lindy trace cases
+                three non-lindy trace cases for the absence of sensible
+                interpretation for these primitives as operators apart from
+                their syntactic function in ev(p, x, e) in Obap6, below.
 
         obap.is-pure-lindy-trace(p) ∧ obap.is-pure-lindy-trace(x)
                 ⇒ obap.ap(p,x) = p :: x
@@ -151,8 +165,9 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
 
         The obap.apint evaluations for obap.C and obap.D determine partial
         applications, effectively currying use of functions ob.c and obap.d,
-        in comparison with the obap.ev treatment.
-
+        consistent with the special-form treatment of obap.C and obap.D in
+        ev(p,x, obap.C :: u :: v) and ev(p,x, obap.D :: u :: v) in obap6,
+        below.
 
 4. THE EVALUATION FUNCTIONS
 
@@ -187,8 +202,11 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
            = d(ev(p,x,e1), ev(p,x,e2))
         x = y ⇒ d(x,y) = obap.A
         x ≠ y ⇒ d(x,y) = obap.B
-            function d(x,y) being internal to ev and providing for
-            selection of alternatives based on the comparison result
+            function d(x,y) being exclusive to ev here and providing for
+            selection of alternatives based on application of the comparison
+            result. This is the basis for conditional processing in
+            deterministic computational-interpretations of this model of
+            computation.
 
         obap.is-evbinop(e1) ∧ ob.is-singleton(e2)
            ⇒ ev(p,x,e1::e2) = obap.ap(e1, ev(p,x,e2))
@@ -221,6 +239,13 @@ obaptheory.txt 0.0.31                UTF-8                       dh:2019-02-13
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ ATTRIBUTION
+
+   Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
+   Conception text file obaptheory.txt version 0.0.32 dated 2019-02-14,
+   available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
+
 TODO
 
  * Provide a stable location for obaptheory version progressions on
@@ -232,18 +257,31 @@ TODO
  * Items related to the ob-exp concrete syntax should be resolved there, and
    under oFrugal.  Link to the detailed cases.
 
- * In anticipation of narration on Orcmid's Live Hideout, simplify the
-   treatment, using patterns more, and see if apint can be eliminated.
+ * In the reference notation and UTF8 files, the ‵ (REVERSED PRIME) is the
+   official glyph for the ob.e unary operator.  As an accomodation for texts
+   that rely on the Basic Latin character codes, the ` (GRAVE ACCENT) is an
+   acceptable substitution, including when fonts lack the ‵ glyph.  The
+   ob-exp.txt grammar must account for this.
 
- * Switch from the use of ‵ (leading prime) to ` (grave accent) as standard
-   so that obexp and CFob canonical forms can always be expressed in the
-   Basic Latin printable characters and the corresponding subset of Unicode
-   code points.
+ * The three obap.ap(p,x) (pure)-lindy cases on p must be reverified with
+   the current test suite and with a streamlined mockup.  Create an issue
+   and track that accomplishment.  It is important that the combinators.txt
+   verification be preserved.
+
+ * Add Notes and References section to connect this with related project
+   materials and also the origins of the ideas reflected here, especially
+   Robinson, McCarthy, Strachey, Burge, and Landin.  (Scott comes in later.)
+
+ * Say more about obap.A and obap.B in the context of boole.txt and contrast
+   with treatment of ‹bp› and of combinators.txt with regard to Scott's
+   formulation.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.32 2019-02-14-09:55 Manage TODOs, complete Lindy cases, touch up text,
+        and note that the revised formulation's verification is required.
  0.0.31 2019-02-13-15:50 Touch ups and Manage TODOs
- 0.0.30 2018-10-24-16:30 Use canonical form instead of canonical ob
+ 0.0.30 2018-10-24-16:30 Say "canonical form" instead of "canonical ob"
  0.0.29 2018-10-16-15:23 Adjust the Ʃ-expression of Lindies to use '.  Improve
         the layout and proof-read one more time.
  0.0.28 2018-03-20-10:05 Move TODOs on historical and background matters to
@@ -292,7 +330,7 @@ TODO
  0.0.9 2017-09-25-16:57 Adjust TODOs, introduce ob.PROC and ob.DEF
  0.0.8 2017-09-20-10:09 Reflect the application of lindies in a manner that
        supports symbolic traces of evaluations, based on the lack of any
-       distinct interpretations lindies as anything else.
+       distinct interpretations of lindies as anything else.
  0.0.7 2017-09-19-19:45 Add is-lindy-every-free(x) and is-lindy-everywhere(x).
        Recast the statement of universal computation in terms of effective-
        universality of the functions obap.ap(p,x) and obap.eval(exp).
