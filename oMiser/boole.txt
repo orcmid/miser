@@ -1,4 +1,4 @@
-boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
+boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -683,7 +683,7 @@ boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
     securing of interpretation constraints by computational means, including
     reconciliation between what appear to be incompatible interpretations of
     the same structures.  Investigation of those prospects is left to
-    consideration of extensions to the ‹ob› basic model of computation.
+    consideration of extensions to the basic ‹ob› model of computation.
 
 4. NOTES AND REFERENCES
 
@@ -694,7 +694,7 @@ boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
     using only the primitive notions of ‹ob›.  In so doing, we retain the
     opportunity to reason about the representations using mathematical
     methods such as structural induction.  And, wherever an interpretation is
-    valid, it is often helpful to reason in the the theory being interpreted
+    valid, it is often helpful to reason in the structure being interpreted
     rather than in the structure having the interpretation.
 
     It should be clear, from this treatment of Boolean Algebra interpretation,
@@ -704,19 +704,36 @@ boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
     is no intrinsic means by which any ob is confined to some unique, self-
     evident interpretation no matter the tacit appeal.
 
-    The extension of an interpretation to equivalence classes is an appealing
-    idiom for computational interpretations.  The specific relaxation in (2.5)
-    is reminiscent of provision in LISP, with atom NIL taken as ⊥, and in
-    C-inspired languages, with 0 taken as ⊥.  Anything else is taken as ⊤.
-    The canonical forms, however, are revealed by the results of relational
-    operators, such as the interpretation of x ≠ y in those programming
+    This fluidity of interpretation and its usage in ob.bvx slides into a
+    computational commonplace that is easy to overlook.  In the formulation
+    of ‹bvn›, there is explicit reliance on ‹bp› which remains abstract in
+    that arrangement.  Interpretation via ob.bvx.bvn (and general ob.bvx) has
+    fixed interpretation of ‹bp›, namely ob.p01.bp.  That is exploited in
+    somewhat-simplified ob.bvx representations that are streamlined based on
+    known features of ob.p01.bp.  This coupling becomes inflexible compared
+    with an approach that, for example, makes ob....bp representations
+    substitutable via some formulation such as ob.bvx(ob...bp), maintaining
+    harmony with reliance on abstract ‹bp› in structure ‹bvn›.  The prospect
+    of interpretation composition modularizes the validation of computational
+    interpretations, a capability worth investigation.  Software developers
+    will recognize this pattern in the use of templates in some object-
+    oriented programming systems.  A primeval counterpart at the level of the
+    ‹ob› computational model will be investigated.
+
+    The extension of an interpretation to representation via equivalence
+    classes is an appealing idiom for computational interpretations.  The
+    specific relaxation in (2.5) is reminiscent of provision in LISP, with
+    atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.
+    Anything else is taken as ⊤.  Canonical forms, however, are revealed by
+    the results of relational operators, such as x ≠ y, in those programming
     systems.
 
     Limitation of ‹ba› to a finite domain of discourse having at least two
     members is appropriate for computational interpretations and oMiser.
     Although there are Boolean Algebras having unbounded domains, that is not
     considered here, even though formulation of ob.bvx is suggestive of a
-    denumerable, exponentially-growing case.
+    denumerable, exponentially-growing case including representation of
+    2's-complement binary arithmetic.
 
     Formulation of ‹ba› is an amalgam of the Boolean Algebra treatments cited
     below. Symbols ⊤ and ⊥ are chosen to restrain the common use of 1 and 0.
@@ -734,8 +751,7 @@ boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
 
     These notational devices facilitate recognition of correspondences
     without implying identity, avoiding for a time any tacit collapsing of
-    separate notions together as if about the same theoretical entities,
-    however much manifestations of abstract entities are perceived.
+    separate notions together as if about the same theoretical entities.
 
       * Miser Project: Representing Functions in ‹ob›'s Abstract World.
         Orcmid's Live Hideout blog article, available at
@@ -804,6 +820,15 @@ boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ ATTRIBUTION
+
+   Hamilton, Dennis E. Interpretation of Boolean Algebras in the ‹ob› Model
+   of Computation. Miser Theory Conception text file boole.txt version 0.5.2
+   dated 2019-03-06, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
  TODO:
 
   * When representation, interpretation, manifestation, implementation,
@@ -816,7 +841,17 @@ boole.txt 0.5.1                     UTF-8                        dh:2019-01-10
 
   * Add attribution statement.
 
+  * Address ob.bvx being an optimization of the composition of of one
+    representation in another, exploiting structural characteristics of obs.
+    The result is interpretation-preserving.  The route is from an interpre-
+    tation ob.p01.bp of ‹bp› into an interpretation ob.bvx.ba that involves
+    composition with ob.p01.bp in a manner that preserves the constituent
+    interpretation.  In computational-system terms, there is primeval
+    presence of the idea of templates and certain ideas of classes and types.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.5.2 2019-03-06-11:31 Raise the prospect of primeval representation
+       compositions.  Manage TODOs.  Some touch-ups
  0.5.1 2019-01-10-10:48 Touch-ups
  0.5.0 2019-01-01-15:43 Clean up 2.5, with corrected sub(x,y) and simpler
        is-eq(x,y)
