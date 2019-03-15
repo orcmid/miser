@@ -907,7 +907,7 @@ combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018 Dennis E. Hamilton
+                 Copyright 2018-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -959,7 +959,7 @@ combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.21 2019-03-15-10:34 Touch-ups, wordsmithing, manage TODOs
+ 0.0.21 2019-03-15-10:39 Touch-ups, wordsmithing, manage TODOs
  0.0.20 2019-02-14-12:16 Revamp based on the latest obtheory.txt and
         obaptheory.txt, manage TODOs, and smooth some text.
  0.0.19 2018-06-22-11:47 Reworking on the bridge between theoretical and
