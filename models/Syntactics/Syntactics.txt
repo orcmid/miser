@@ -1,39 +1,40 @@
-Syntactics.txt 0.0.0                  UTF-8                       dh:2018-01-31
+Syntactics.txt 0.0.1                  UTF-8                     dh:2018-01-31
 
                              The Miser Project Code
                              ======================
-                            
+
     <https://github.com/orcmid/blob/master/models/Syntactics/Syntactics.txt>
 
            DEPICTION, ENGINEERING, AND VERIFICATION OF COMPUTATION
 
                     GRAMMAR AND INTERPRETATION SPECIFICATIONS
                     -----------------------------------------
-                                
-    Synopsis TBD
-    
 
-                                
+    Synopsis TBD
+
+
+
 BIBLIOGRAPHY
 
     References TBD
-         
+
 MANIFEST
 
-    Syntactics.txt 
+    Syntactics.txt
         this synopsis, manifest and job-jar file
-        
+
     ob-exp-0.0.1-2018-01-28-1526-BNF.png
         character-set-preserving capture of the summary grammar for oFrugal
         ob-exp expression of ob computations, developed and presented at
         <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt> and
         <https://github.com/orcmid/miser/issues/8#issuecomment-361106826>
-        
+
     ob-exp-0.0.2-2018-01-29-2134-BNF.png
         0.0.2 ob-exp.txt correction of typos detected by Roman Susi (@rnd0101)
-        at <https://github.com/orcmid/miser/issues/14#issuecomment-361385492>. 
-        
-        
+        at
+        <https://github.com/orcmid/miser/issues/14#issuecomment-361385492>.
+
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2018 Dennis E. Hamilton
@@ -49,23 +50,53 @@ MANIFEST
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
 TODO
- 
+
   * Find good reference on BNF and its ALGOL-memorializtion.
-  
+
   * Include the Interpretation formalism and its connection with attribute
     grammars.
-  
+
   * Tie in with diagnostics and the idea of not producing the result until
     the syntax of an input has been verified.  This might spin out into
     an engineering topic.
-    
+
+  * Find a good character set and character-codes approach, perhaps following
+    one of the IETF/ISO specifications.
+
+  * Review the current ob-exp.txt to see what should be captured and
+    accounted for.
+
+  * One does need something about Chomsky's Context-Free Grammars too, and
+    maybe what the inspiration was with respect to ALGOL 60 and the 1960s
+    notion of syntax-directed parsing and compiling of programming languages.
+
+  * There may be a problem with this folder.  It is capturing and preserving
+    some images used in various places.  We also want to be able to speak of
+    different things, including things such as the precedence rules for
+    parsing ob-exp input, and also pretty-printing output of ob-exp forms.
+    These all seem to be about grammar schemes as background generally and
+    also specifically for oFrugal.
+
+  * Keep in mind that all of this does not go on this page.  There will be
+    additional files on these topics (e.g., BNF.txt, precedence.txt,
+    parsing.txt, prettyprint.txt), etc.
+
+  * <https://en.wikipedia.org/wiki/Prettyprint> Does not go back far enough
+    to Landin and also to Oppen (?) or whoever produced the one that I
+    converted to doing the job on Fortran programs.
+
+  * Paulsen gives [Oppen1980] as the source.  That is what I used and wrote
+    to Oppen about it.  Oppen, D.C.  Pretty Printing. ACM TOPLAS 2, 465-483.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.0 2018-01-31-09:33 Placeholder with initial capture of syntactics materials     
-       that summarize the ob-exp grammar.
+ 0.0.1 2019-03-15-08:31 Fix text flow and manage TODOs for expansion of
+       this topic and folder.
+ 0.0.0 2018-01-31-09:33 Placeholder with initial capture of syntactics
+       materials that summarize the ob-exp grammar.
 
                        ***** end of Syntactics.txt *****
