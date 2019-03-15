@@ -1,4 +1,4 @@
-combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
+combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -15,46 +15,20 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     is sufficient for that and also serves as the kind of demonstration that
     is applied in other cases.
 
-    Combinators are also usable in programming of oMiser scripts and are of
-    practical use.  Further development on that theme is a separate matter.
-    The current focus is on demonstration of interpretation with limited
-    illustration of practical usage cases.
-
-    The challenge is oMiser being a concrete system in which applicative
-    interpretation is not a formal matter but a computational procedure
-    that yields a definite ob result, if any, on each obap.ap or obap.eval
-    evaluation.  Successful combinator representation depends on interpreta-
-    on in terms of computational operation.
-
-    Achievement of a combinator-system interpretation in oMiser is also
-    demonstration that the oMiser provides a universal computational
-    mechanism able to express all computable functions at the same strength
-    as other approaches accepted as having that power.  This will be
-    elaborated on in separate exploration of Church's thesis and the
-    comparable power of systems recognized under that thesis.
+    Achievement of a combinator-system interpretation in oMiser is important
+    in demonstration that oMiser provides a universal computational mechanism
+    at the same strength as other approaches accepted as having that power.
 
     Practical benefit of oMiser computational representation of combinators,
     beyond the theoretical generality, is exploiting that the combinators and
     the oMiser interpretations are interpretation-preserving of functional
-    type.  The combinators, and their oMiser computational interpretations
-    extend indifferently to combining function-representing entities beyond
-    those interpretable as combinators and this leads to practical utility
-    in development of computer software.
+    type with respect to the operation of application.  This allows use of
+    the representations in the expression of all manner of composed functions
+    under the ‹ob› model of computation.
 
     Development of oMiser combinator representations proceeds from the theory
     of combinators through demonstration of interpretation-preserving utility
-    by which the chosen oMiser interpretation achieves universality.  The
-    demonstrated is limited to a sufficient fragment of the combinator system
-    sufficient for demonstration that complete interpretation follows.
-
-    There will be, thereby, exhibition of an essential aspect of software
-    engineering and stored-program computational schemes: interpretation of
-    other, higher-order computational entities via functions over quite
-    different, lower-level data structures.  Such bridging between different
-    levels of abstraction is how computer software, running at the level of
-    the computing machine, achieves practical functions at a level of
-    expression and operation serving human purpose and inspiring the
-    imaginative inventions of software developers.
+    in oMiser scripts.
 
                                   CONTENT
 
@@ -126,6 +100,8 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
 
     The logical notation is that used in obtheory.txt,
     <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+    The structure, ‹ca› = 〈CA,{apply},CAt〉has the single function, apply,
+    designated by operator "|" and CAt is FOL without "=".
 
     This is not about ‹ob›.  The combinators are not obs.  Likewise, the
     application, | f x, is an application of combinators that yields
@@ -154,9 +130,9 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     Although "≈" is tantamount to an equality in ‹ca›, that inference is
     avoided here.  It is unclear that there are distinguishable, unique
     mathematical entities for combinators.  We shall skirt the question by
-    using "≈", accepting that there might be multiple but equivalent concrete
-    interpretations of a combinator in a computational model of ‹ca› and be
-    content with that.
+    using "≈", since like functions, combinators have no canonical forms.
+    We cannot rely on definiteness and identifiability as tacitly assumed
+    in Miser Project reliance on FOL=.
 
     1.2 Useful Simple Combinators
 
@@ -423,20 +399,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     is a higher level of abstraction based on achievement of intended
     interpretations, interpretations that are usually not satisfied by all
     operators and operands with respect to application. E.g, not every ob has
-    interpretation as a combinator.  Similarly, certain interpretations of
-    combinators (e.g., as predicates) do not extend to all ‹ca› combinators.
-
-    For the oMiser representation of ‹ob›, the interpretation of an ob apart
-    from being just an ob depends on some characterization that some obs
-    satisfy and, presumably, others do not.
-
-    To manifest a level of abstraction in which the specific functional types
-    are satisfied, there must be some restraint to using obs that are computa-
-    tional representations of and interpretable as entities of specific
-    functional types.  Maintaining the semblance involves restraints on use
-    of the computational entities (e.g., representations via obs),
-    orchestrating computational procedures in a manner that preserves the
-    restricted interpretation(s).
+    interpretation as a combinator.
 
     In the context of digital computation, the orchestration of available
     types in manifestation of other (higher-order) types is characteristic
@@ -475,7 +438,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     specific interpretation that the computational representation satisfies.
 
     We use the oMiser idioms for combinators to launch Miser Project investi-
-    gation of levels of computational abstraction.
+    gation of such levels of computational abstraction.
 
 
  3. oMISER UTILITY COMBINATOR IDIOMS
@@ -571,7 +534,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
                     :: .C :: (.E :: .C :: (.E :: .ARG)
                                        :: `.ARG)
                           :: `(.C :: (.E :: .ARG)
-                                  :: `ARG),
+                                  :: `.ARG),
            obap.ap(^cS, x)
                = .C :: `( `x :: .ARG)
                     :: .C :: (.E :: .ARG) :: `.ARG),
@@ -590,7 +553,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     These tend to be more compact than equivalent combinator representations
     obtained by application of cS, cK, and other combinator representations
     alone.  Automation of such streamlining and further optimizations are
-    separate topics and treated elsewhere.
+    separate topics treated elsewhere.
 
     3.3.1 Representing | B f g x ≈ f | g x
 
@@ -651,11 +614,11 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
 
      * Recursion.  A companion to separation of cases is the conditional
        use of the function being characterized in an expression that
-       applies in the specified case.  Computational interpretation is by
+       applies in a specified case.  Computational interpretation is by
        conditional reuse of the procedure in a manner that reduces the
        computation to a (simpler) use of the same procedure.  We see recursion
        in the definition of obap.ap(p,x) and implicitly in transitive
-       relations of ‹ob›.
+       relations of ‹ob› and in structural inductions.
 
     We see both of these in the use of Ot to characterize computable functions
     including the claimed universal function, obap.ap.
@@ -764,7 +727,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
 
     There will be some idiomatic oMiser computational definitions that are
     valuable in representing Boolean logical operations.  type obAB will
-    be employed in one representation of a structure, ‹bool›.  It is not what
+    be employed in one representation of a structure, ‹bp›.  It is not what
     the type obAB "is."  The file boole.txt illustrates some rather different
     representations of Boolean Algebras, and those could be applied here as
     well.
@@ -791,7 +754,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
 
     where the (f M), and other occurrences of (f ...) in the expression are
     conditionally-chosen based on satisfaction of particular cases. No
-    evaluation of (f M) occurs until the governing case is satisfied.
+    evaluation of (f M) occurs unless the governing case is satisfied.
 
     There is no form of lambda-expression or combinator-expression by which
     the expression of f can refer to and employ that expression as a whole.
@@ -826,7 +789,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     When evaluation of any ((^cY fs) M) is carried out via oMiser obap.ap
     expansion
 
-       obap.ap((^cY fs), eM) = obap.ev((^cY fs), eM, cY fs),
+       obap.ap((^cY fs), eM) = obap.ev((^cY fs), eM, ^cY fs),
 
     we have      eM, the evaluated M as operand, and
            (^cY fs), the evaluated recursive form interpreted as f
@@ -835,7 +798,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     obap.SELF and eM is available as the value of obap.ARG.  What is needed
     to continue is (fs (^cY fs)) eM.  This leads to the solution
 
-         (^cY fs) ≅ (`fs :: .SELF) :: ARG
+         (^cY fs) ≅ (`fs :: .SELF) :: .ARG
 
     so that
 
@@ -874,7 +837,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     materials.
 
 
- 6. REFERENCES AND RESOURCES
+ 6. NOTES AND REFERENCES
 
    [Barendregt1981]
       Barendregt, Hendrik Pieter.  The Lambda Calculus: Its Syntax and
@@ -909,7 +872,7 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
       0-521-345589-8.  The notational use of (f)(x)y for conventional f(x(y)),
       applicative f(x y), and combinatory | f | x y requires careful reading.
       Chapter 3, Combinators and Constant Symbols, provides extensive examples
-       also relevant to computational representations.  Section 2.4 provides
+      also relevant to computational representations.  Section 2.4 provides
       a treatment of λ-expressions that can be adapted to the closed use
       in (1.2) here.
 
@@ -960,7 +923,14 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- TODO:
+  ATTRIBUTION
+
+   Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
+   Computation. Miser Theory Conception text file combinators.txt version
+   0.0.21 dated 2019-03-15, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+
+ TODO
 
   * Link to other materials of the Miser Project that explore some of these
     matters in greater detail.  Connect to combdemo.sml, and also work in
@@ -979,15 +949,17 @@ combinators.txt 0.0.20               UTF-8                       dh:2019-02-14
     obaptheory.txt, boole.txt, and the "Interpretation, Representation,
     Computation, Manifestation" article.
 
-  * Make section 6 into "Notes and References".
-
-  * Identify companion files and related articles.
+  * Identify all companion files and related articles.
 
   * Make certain that the definitions of combinators continue to verify
     after updating of the SML/NJ mockup.
 
+  * Rework section 4.2 on Uβ to include the idiomatic case that involves
+    conditional evaluation.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.21 2019-03-15-10:34 Touch-ups, wordsmithing, manage TODOs
  0.0.20 2019-02-14-12:16 Revamp based on the latest obtheory.txt and
         obaptheory.txt, manage TODOs, and smooth some text.
  0.0.19 2018-06-22-11:47 Reworking on the bridge between theoretical and
