@@ -1,9 +1,9 @@
-categories.txt 0.0.0                  UTF-8                     dh:2019-03-17
+categories.txt 0.0.1                  UTF-8                     dh:2019-03-17
 
                              The Miser Project Code
                              ======================
 
-    <https://github.com/orcmid/blob/master/models/Syntactics/Syntactics.txt>
+    <https://github.com/orcmid/blob/master/models/categories/categories.txt>
 
            DEPICTION, ENGINEERING, AND VERIFICATION OF COMPUTATION
 
@@ -22,6 +22,14 @@ MANIFEST
 
     categories.txt
         this synopsis, manifest and job-jar file
+
+    Interpretation-2019-03-17-1013.jpg (update)
+    Interpretation-2019-02-05-1314.jpg
+        category-theory style diagram of typical interpretation of one
+        structure in another, accompanying the narrative in the article on
+        Interpretation, Representation, Computation, and Manifestation at
+        <https://orcmid.wordpress.com/2019/02/11/miser-project-interpretation-representation-computation-and-manifestation/>
+
 
 
 
@@ -46,10 +54,6 @@ MANIFEST
 
 TODO
 
-  * Move the interpretation diagram here from mockups.txt
-
-  * Introduce the repaired diagram here
-
   * Introduce the representation diagram here also.
 
   * Emphasize the informality and keeping it simple without the intricacies
@@ -60,6 +64,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  0.0.1 2019-03-17-10:23 Corrections, addition of interpretation diagrams
   0.0.0 2019-03-17-09:47 Placeholder for capturing category-style diagrams
         in modeling as part of the Miser conception.
 
