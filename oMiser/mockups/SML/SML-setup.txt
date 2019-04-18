@@ -1,20 +1,101 @@
-SML-setup.txt 0.0.0                  UTF-8                       dh:2018-03-24
+SML-setup.txt 0.0.1                  UTF-8                       dh:2019-04-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+                           The Miser Project Code
+                           ======================
 
-     Installation instructions for SML/NJ under Windows
-     -------------------------------------------------- 
-     We now provide a Microsoft Installer package for SML/NJ. The installer 
-     contains a full installation including nearly all optional components. 
-     (We only exclude "mlrisc-tools" and "nowhere".) You can choose the 
-     installation directory. The default is C:\Program Files\SMLNJ. The bin 
-     directory containing the sml command is added to the default PATH, though 
-     note that you will need to re-open command windows to see the binding. 
-     The SMLNJ_HOME environment variable is also set up to point at the 
-     location that SML/NJ was installed. You can either launch the interpreter
-     directly from a Start Menu entry or by opening a command prompt and 
-     typing "sml". 
-     [ ... ]
+<https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML-setup.txt>
+
+                    INSTALLATION OF SML/NJ UNDER WINDOWS
+                    ------------------------------------
+
+    Standard ML of New Jersey (SML/NJ) is used for the initial mockups and
+    proof-of-concept demonstrations of oMiser and oFrugal operations.  This
+    is particularly convenient because the functional-programming model of
+    ML is well-suited to the easy expression of the ‹ob› computational model
+    and the oFrugal Read-Eval-Print Loop (REPL).
+
+    The primary implementation of SML/NJ used for Miser Project mockups is
+    that for Microsoft Windows.  Other implementations will also be usable.
+    The following information focuses on Windows usage so that anyone can
+    confirm and replicate the precise development of SML mockups.
+
+    Beside the installation of an SML/NJ implementation, there are three other
+    facets to the development and confirmation of mockups.
+
+        * Installation of SML/NJ software (sections 1 and 2 below).
+        * Selection of an editor
+        * Cloning of the oMiser GitHub materials
+        * Using the SML/NJ REPL in Windows Console sessions
+
+    You may also require some materials on the ML language and use of the
+    SML/NJ implementation to gain more understanding of how the SML mockups
+    work and trouble-shooting any difficulties you might have in replicating
+    successful tests and operations of your own.
+
+ 1. LOCATING SML/NJ DISTRIBUTIONS
+
+    Installers for SML/NJ are found via the official Standard ML of New
+    Jersey site, <https://www.smlnj.org>.  That page will resemble the image
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1359-HomePage.png>.
+
+    Under the Downloads topic, note the latest release in the "What's New"
+    list.  E.g., "[12/21/18] Version 110.85 is released. ... ."
+
+    Use the Downloads title to link to the list of version download sets,
+    <https://www.smlnj.org/dist/working/index.html>.  The page will resemble
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1406-Versions.png>.
+
+    For the latest (such as 110.85), select the Software Links "files" link
+    (e.g., to https://www.smlnj.org/dist/working/110.85/index.html) for that
+    version. <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1411-110.85-files.png>.
+
+    For generic Unix (including Linux) and macOS, follow those instructions.
+
+    For Microsoft Windows, the WININSTALL instructions are not very useful.
+    Do not worry about it.  Click on the link to the MSI file (e.g., smlnj-110.85.msi).  The download can be to a default downloads directory
+    or another location that you prefer for this purpose.
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1427-Downloading.png>.
+
+    If there is no smlnj-xxx.yy.msi file for the latest version, it may be
+    preferable to download the most-recent older SML/NJ release that has one.
+
+ 2. INSTALLING AN SML/NJ VERSION MSI PACKAGE FOR WINDOWS
+
+    For the Miser Project, Windows versions are used for all of the mockups,
+    tests, and proof-of-concept demonstrations employing SML/NJ.  Adaptations
+    to other platforms are straightforward for technical users.
+
+    Navigate to the PC file-system location where the MSI file is downloaded.
+    E.g., <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1436-install.png>.
+
+    Double-click on the file in the File Explorer.  You may receive a warning
+    that the file is not digitally signed and might be dangerous.  You have
+    a decision to make.  I scanned the file with Windows Defender and there
+    were no "known" threats.  So ...
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SMLNJ-110.85-2019-04-10-1623-install.png>
+
+    Choose your own location for the install or continue with the default.
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SMLNJ-110.85-2019-04-10-1633-install.png>
+
+    If you continue with a successful installation, you will find the program
+    on the all-programs list (here found from a Windows 10 Start Page)
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SMLNJ-110.85-2019-04-10-1643-install.png>
+
+    This is a good opportunity to add the tile to your Start Page.  On
+    finding it added there, place it where you like and then click on it.
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SMLNJ-110.85-2019-04-10-1650-install.png>
+
+    If all is well you'll see the first-run of the SML/NJ processor in a
+    console window.  Type "Hello World"; and ENTER after the ";".  See the
+    response.  Then type Ctrl-Z.  When you type ENTER, the console will close.
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SMLNJ-110.85-2019-04-10-1721-1stRun.png>
+
+ 3. NOTES AND REFERENCES
+
+    [TBD]
+
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,24 +112,34 @@ SML-setup.txt 0.0.0                  UTF-8                       dh:2018-03-24
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
 TODO
-     
+
   * Capture a complete installation with screen shots and descriptive
     materials.
 
-  * Add attribution for the WININSTALL quote from the SMLNJ site.
-       
+  * Create a blog-post version of this material and the images, then link
+    to it as an alternative.
 
-    
+  * In Notes and References, locate reference materials on SML/NJ here or
+    in the description of the REPL setup.  Maybe both?
+
+  * The use of Visual Studio Code (VSCode) applies to all development here
+    so there might need to be a higher-level treatment of it.  Or enough
+    here to establish it in the load, edit-save-REPL, preserve cycles.
+
+  * Similar ideas apply to use of the SML/NJ REPL in a Windows Console
+    session.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.1 2019-04-18-09:57 Add section on downloading and installing SML/NJ on
+       Microsoft Windows, featuring Windows 10.
  0.0.0 2018-03-24-13:12 Create placeholder and initial job jar for
        recording of setup and operation information used to operate and
        confirm the SML mockups of oMiser and a limited oFrugal REPL
 
                       *** end of SML-setup.txt ***
-                               

@@ -1,10 +1,10 @@
-obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
+obstring.txt 0.0.4                  UTF-8                       dh:2018-02-**
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
                            ======================
-                            
+
       <https://github.com/orcmid/miser/blob/master/oMiser/obstring.txt>
 
        FRUGALESE GRAMMAR FOR DISPLAYING CANONICAL OBS IN OB-EXP FORM
@@ -14,8 +14,8 @@ obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
     associativity of "::" to eliminate unnecessary parentheses.  This
     is, apart from the presence of white space, a unique ob-exp for
     every Canonical Ob.
-    
-    The grammar satisfied by the string is essentially ob-exp without 
+
+    The grammar satisfied by the string is essentially ob-exp without
     anything that involves an application in its interpretation.
 
     See also
@@ -29,7 +29,7 @@ obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉
 
-    〈unary〉 ::= 〈term〉 | ( 〈canonical〉 ) | ‵ 〈unary〉 
+    〈unary〉 ::= 〈term〉 | ( 〈canonical〉 ) | ‵ 〈unary〉
 
     〈binary〉 ::= 〈unary〉 | 〈unary〉 :: 〈binary〉
 
@@ -54,7 +54,7 @@ obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
            | _ => "?!"
 
     fun canonical(x: ob)
-      = let fun unary(x) 
+      = let fun unary(x)
             = if is_individual(x)
               then term(x)
               else if is_singleton(x)
@@ -65,10 +65,10 @@ obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
             then unary(a x) ^ " :: " ^ canonical(b x)
             else unary(x)
         end;
- 
-               
-    To avoid console Unicode limitations/difficulties, the back-tick is 
-    used in this procedure.
+
+
+    To avoid console Unicode limitations/difficulties, the back-tick (grave
+    accent) is used in this procedure.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -85,7 +85,7 @@ obstring.txt 0.0.3                  UTF-8                       dh:2018-02-09
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 TODO
@@ -99,10 +99,12 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2019-02-**-**:** Manage TODOs and reconcile with latest refinement
+       of applicable concepts.  Touch-ups
  0.0.3 2018-02-09-11:16 Rename to obstring.txt to reflect the expected
        function/method name.
  0.0.2 2018-02-07-18:24 Correct the term and canonical functions to agree with
        the test results for the implementation in obap.sml 0.0.9.
  0.0.1 2018-02-04-11:58 Provide direct basic expression.
- 
+
                      *** end of show-ob.txt ***

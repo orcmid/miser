@@ -1,4 +1,4 @@
-SML.txt 0.0.13                       UTF-8                       dh:2017-04-19
+SML.txt 0.0.14                       UTF-8                       dh:2019-04-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -52,11 +52,6 @@ MANIFEST
        SML.txt
            this manifest and job-jar file
 
- SML-setup.txt
-           information on the download, installation and Windows 10
-           operation of the SML/NJ used to confirm the SML mockups
-           of oMiser and limited oFrugal REPL
-
  tutorials/
            subfolder of tutorial materials supporting the SML
            mockups
@@ -97,6 +92,22 @@ MANIFEST
      Ydemo.sml
            Demonstration of the oMiser script that provides an interpretation-
            preserving interpretation as a Y-Combinator.
+
+ SML-setup.txt
+           information on the download, installation and Windows 10
+           operation of the SML/NJ used to confirm the SML mockups
+           of oMiser and limited oFrugal REPL
+    smlnj.org-2019-04-10-1359-HomePage.png
+    smlnj.org-2019-04-10-1406-Versions.png
+    smlnj.org-2019-04-10-1411-110.85-Files.png
+    smlnj.org-2019-04-10-1436-install.png
+    SMLNJ-110.85-2019-04-10-1623-install.png
+    SMLNJ-110.85-2019-04-10-1633-install.png
+    SMLNJ-110.85-2019-04-10-1643-install.png
+    SMLNJ-110.85-2019-04-10=1650-install.png
+    SMLNJ-110.85-2019-04-10-1721-1stRun.png
+            images linked from SML-setup.txt
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                       Copyright 2017 Dennis E. Hamilton
@@ -141,6 +152,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.14 2019-04-18-10:07 Add images that accompany SML-setup.txt 0.0.1.
  0.0.13 2018-04-19-12:58 Simplify to Ydemo.sml name and fix columnar
         alignment in manifest.
  0.0.12 2018-03-24-16:52 Add connections to Miser Conception and SML/J
