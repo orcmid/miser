@@ -1,4 +1,4 @@
-obstring.txt 0.0.4                  UTF-8                       dh:2018-02-**
+obstring.txt 0.0.4                  UTF-8                        dh:2018-04-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -97,9 +97,14 @@ TODO
   * A pretty-print form that uses indentation is a bit trickier.  That
     needs to be done.  Line wraps should be used to honor margins also.
 
+  * When there are extensions, we need applicative expressions for their
+    canonical expression.  These are for the application of specific
+    extension primitives and they support maintenance of extensional
+    identity among all obs.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.4 2019-02-**-**:** Manage TODOs and reconcile with latest refinement
+ 0.0.4 2019-04-18-10:24 Manage TODOs and reconcile with latest refinement
        of applicable concepts.  Touch-ups
  0.0.3 2018-02-09-11:16 Rename to obstring.txt to reflect the expected
        function/method name.
