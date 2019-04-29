@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.7                     UTF-8                       dh:2019-02-10
+ob-exp.txt 0.0.8                     UTF-8                       dh:2019-04-29
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -18,23 +18,58 @@ ob-exp.txt 0.0.7                     UTF-8                       dh:2019-02-10
     ob-exp has a context-free grammar, here specified using the original
     Backus-Naur Form (BNF) employed in the Revised Report on the
     Algorithmic Language ALGOL 60.  The grammar specifies exactly those
-    expressions that can be evaluated to a single ob when submitted
+    expressions that can be evaluated to (at most) a single ob when submitted
     to a processor such as an oFrugal implememtation.
 
     In addition to the grammatical structure for composing ob-exp
     expressions, there is also a formal definition of the computation by
     which an ob-exp is evaluated.
 
+    For an informal introduction to the use of Frugalese in the computational
+    model defined on the mathematical structure ‹ob› = 〈Ob,Of,Ot〉, see
+    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt> and other
+    material cited there.
+
  1. SUMMARY GRAMMAR
 
     The following summary form of the grammar is useful for reference.
     It does not address the grammatical differences that are called for
     to align with the interpretation rules by which an ob-exp is evaluated.
+
     All ob-exps satisfy the summary grammar.  The "official" grammar
-    rules employ alternative syntactically-equivalent structures in order
-    to have rigorous interpretation as expressions of ob computations.
+    rules detailed in subsequent sections employ syntactically-equivalent
+    structures in order to provide rigorous interpretation as expressions of
+    ob computations.
+
+    The SML form of (* ... *) multi-line comments is allowed and defined
+    as white-space.
+
+    The concrete reference syntax consists of Unicode, usually in UTF8
+    encoding, and a %-escape mechanism is used when a character is not
+    printable.  It is recommended that characters that are not easily typed
+    be avoided by authors of ob expressions, recognizing that a recipient
+    may encounter %-encoding instead.  If you don't know what this is about,
+    you are probably on safe ground.
+
+    Basically, white-space is allowed wherever it does not change the
+    grammar of a 〈term〉 and required where consecutive 〈term〉 occurrences
+    would not be disambiguated. Using a (* ... *) comment alone for this
+    purpose is discouraged but not prohibited.
+
+    For simplicity of keyboarding, the reversed-prime, ‵, left-tick, `, and
+    apostrophe, ', are all treated the same.  The reversed-prime is the
+    "official" reference character.
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+
+    〈binding-name〉 ::= ^〈lindy〉
+
+    〈primitive〉 ::= .〈lindy〉
+                        from a fixed predefined list
+
+    〈lindy〉 is an alphanumeric name not beginning with a digit and without
+           spaces, corresponding to an XML NCName without "."
+
 
     〈list-terms〉 ::= 〈ob-exp〉 | 〈list-terms〉, 〈ob-exp〉
     〈list-form〉 ::= [ ] | [ 〈list-terms〉 ] | [ 〈list-terms〉 :]
@@ -65,9 +100,12 @@ ob-exp.txt 0.0.7                     UTF-8                       dh:2019-02-10
 
     where      category is one of the syntactic categories, such as
                         〈ob-exp〉, 〈ae〉, and 〈term〉
+
                 pattern is one of the patterns for the particular category,
                         such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
+
        (parameter-list) is an optional list of one-or-more parameters
+
          interpretation is an obaptheory expression schema in which any
                         parameter and I category (parameter-list) forms are
                         in reference to appearances in the pattern
@@ -85,6 +123,8 @@ ob-exp.txt 0.0.7                     UTF-8                       dh:2019-02-10
     of I〈arguments〉.
 
  3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
+
+    [DETAILS TBD]
 
  4. TERMS
 
@@ -188,35 +228,33 @@ TODO
  * Find reference to the BNF specification used, captured here somewhere
    and also where formally published.
 
- * Connect the interpretation schemata to attribution grammars, to the
-   degree that matters here.  There might be a better reference to this
-   rather simple case.
+ * Connect the interpretation schemata to Knuth's attribute grammars to the
+   degree that matters here.  There might be a better reference for the
+   rather simple oFrugal case.
 
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
 
- * Use the XML 1.0 characterization of white space, letters, digits,
-   and the restricted allowance of other characters in ob-exp terms.
-
- * Allow the SML/NJ form of comments as an uninterpreted separator.
+ * Use the XML 1.0 (Namespaces) characterization of white space, letters,
+   digits, and the restricted allowance of other characters in ob-exp terms.
+   Provide a reference.
 
  * Use the SML/NJ use of \<white-space>\ as null.
 
  * Do we require white-space anywhere or is it optional everywhere
    except between two terms that must remain separated?
 
- * Is it necessary to include spacing explicitly in the grammar?  It is
-   far more convenient to treat that as a concrete text condition and
-   not in the grammar.
-
  * Likewise, at the concrete term level, there is the matter of IRI
    encoding for characters having no available font glyph.  How does
-   that work into interchange of concrete ob-exp texts?
+   that work into interchange of concrete ob-exp texts?  Use a rigorous
+   IRI case and provide reference to the (latest?) IETF specification on
+   the matter.  Masinter, where are you when I need you? :)
 
  * Complete the production of 〈term〉s and their interpretations.
 
  * explain the resolution of binding names by the presumption of an
-   (oFrugal) environment in which the binding can be resolved.
+   (oFrugal) environment in which the binding can be resolved.  Complete
+   this specification by including the oFrugal REPL statement sequencing.
 
  * The function for resolving binding names can be expressed in
    oFrugal, but it requires a way to fail when the encountered
@@ -225,10 +263,14 @@ TODO
    call it an event, but need to be careful.
 
  * Incorporate the interpretation of sequences of REPL commands with respect
-   to the sequential interpretation of bindings.
+   to the sequential (and context-free!) interpretation of bindings.
+
+ * Add attribution statement.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2019-04-29-11:10 Touch-ups, TODO management, connection to ob.txt
+       along with more detailing of the summary grammar and concrete usage.
  0.0.7 2019-02-10-09:29 More touch-ups.  Adjust for bindings semantics in
        in anticipation of including REPL interpretation.
  0.0.6 2018-02-03-14:33 Fix typo and correct for absence of an 〈ae〉 that is
