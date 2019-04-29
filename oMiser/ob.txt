@@ -1,4 +1,4 @@
-ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
+ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
 
                            The Miser Project Code
                            ======================
@@ -12,9 +12,8 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
     between mathematical logic and theoretical limitations of all present-
     day computation systems. The ‹ob›-based computation model, although
     low-level, is as powerful, with respect to those limits, as any other
-    model.  A central purpose of the Miser Project is demonstration
-    of how that is the case and to draw the connection with an operational
-    realization.
+    model.  A central purpose of the Miser Project demonstration of how that
+    is the case and to draw the connection with an operational realization.
 
     Under the Miser ‹ob› computational model, obs serve interchangeably as
     data and as scripts of procedures -- computational methods -- operating on
@@ -25,7 +24,7 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
 
     There are two levels to the mathematical structure: elementary data
     representation and oMiser procedure expression (illustrated later in
-    sections 3-4).
+    sections 3-4) employing the computation model's universal function.
 
     Elementary data consist of arbitrary obs having no intrinsic significance
     beyond satisfaction of the conditions specified in the file obtheory.txt,
@@ -64,32 +63,32 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
 
  2.1 Canonical Forms
 
-     Every ob is one of an individual, the enclosure of an ob, ob.e(x), or the
-     pairing of two obs ob.c(x,y).  Each ob has a finite expression in those
-     terms, with all enclosures and pairs expanded out until the interior
-     individuals are reached.  Individuals have no further decomposition
-     and there are no cycles.  An ob.e(x) does not have itself anywhere in the
-     composition of x, and an ob.c(x,y) does not have itself anywhere in the
-     composition of either x or y.
+    Every ob is one of an individual, the enclosure of an ob, ob.e(x), or the
+    pairing of two obs ob.c(x,y).  Each ob has a finite expression in those
+    terms, with all enclosures and pairs expanded out until the interior
+    individuals are reached.  Individuals have no further decomposition (so
+    far) and there are no cycles.  An ob.e(x) does not have itself anywhere
+    in the composition of x, and an ob.c(x,y) does not have itself anywhere
+    in the composition of either x or y.
 
-     By virtue of the unique expression of every ob in this manner, we can
-     take those expressions as unique identifiers of obs.  We refer to that
-     as the Canonical Form.
+    By virtue of the unique expression of every ob in this manner, we can
+    take those expressions as unique identifiers of obs.  We refer to that
+    as the Canonical Form.
 
-     Having a finite canonical form for every ob provides a basis for
-     computational manipulation of obs, a kind of ob arithmetic.  We can
-     always answer the question, "which ob is this?" if its canonical
-     form can be obtained.
+    Having a finite canonical form for every ob provides a basis for
+    computational manipulation of obs, a kind of ob arithmetic.  We can
+    always answer the question, "which ob is this?" if its canonical
+    form can be obtained.
 
-     There is similarity with ordinary arithmetic.  Consider that each decimal
-     numeral written out without any leading zeroes (except for "0" alone)
-     is the unique identifier of a single number.  This connection is so
-     strong that in ordinary language we might treat the numeral as the
-     number although in mathematics these are distinct.
+    There is similarity with ordinary arithmetic.  Consider that each decimal
+    numeral written out without any leading zeroes (except for "0" alone)
+    is the unique identifier of a single number.  This connection is so
+    strong that in ordinary language we might treat the numeral as the
+    number although in mathematics these can be taken as distinct notions.
 
-     The Ob form is to an ob as a decimal numeral is to a number.
+    The Ob canonical form is to an ob as a decimal numeral is to a number.
 
- 2.1 CFob Reference Notation for Canonical Forms
+ 2.2 CFob Reference Notation for Canonical Forms
 
     There is a standard oFrugal formula notation for compact expression
     of obs in Unicode texts.  Although adaptations are required depending on
@@ -100,7 +99,10 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
 
       * ob.e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
         ‵ is the reversed-prime Unicode character, U+2035.  It can be
-        significed at keyboards by using the grave accent, U+0060 `, also.
+        significed at keyboards by using the grave accent, U+0060 `, although
+        the preferred substitute is the apostrophe, U+0027.  Keep in mind
+        that this is an expression operator and not the same as syntactical
+        "quotation."
 
       * ob.c(x, y) is expressed x :: y
 
@@ -156,7 +158,7 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
     The reference notation is known as Frugalese.  The oFrugal computer
     software supports a constrained form of this notation on all platforms.
 
-    The CFob canonical form is an oFrugalize expression, as defined above
+    The CFob canonical form is an oFrugalese expression, as defined above
     (section 2.1).
 
     oFrugalese also provides for expressing all possible computations on
@@ -172,7 +174,7 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
     The list-style form above expresses the same ob as preceding example (1).
     This is a "sugaring" of the reference notation.  It is convenient syntax
     for a variety of list-shaped encodings of ob structures.  Expression (2)
-    is an oFrugal expression that is evaluated to yield the Canonical Ob (1).
+    is oFrugal expression of a construction that yields CFob form (1).
 
     The list elements shown in (2) are canonical forms.  Any other oFrugalese
     expression can be used for list elements, including nested lists and
@@ -190,12 +192,13 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
 
  4. APPLICATIVE POWER
 
-    That everything ends up being at the canonical form level one way or another is fundamental to the oMiser computational model.  oFrugal
+    That everything ends up being at the canonical form level one way or
+    another is fundamental to the oMiser computational model.  oFrugal
     expressions yield canonical forms by application of scripted procedures
     to given obs.  Every ob has interpretation as a script, p, for a
     procedure to be carried out on an ob given as the operand, x.  Determined
-     results, obap.ap(p,x), are in accordance with the mathematical
-     definition of obap.ap specified in the file obaptheory.txt,
+    results, obap.ap(p,x), are in accordance with the mathematical
+    definition of obap.ap specified in the file obaptheory.txt,
     <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
 
 
@@ -206,13 +209,15 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
 
     Without getting into the details, here is a case where a procedure is used
     to combine obs x and y, also as scripts, into a procedure that involves
-     even further applications to achieve the intended result.
+    even further applications to achieve the intended result.
 
     Many obs are useful in composing scripts by combining others in this
     manner.  Using procedures to compute other scripts from given ones and
     data demonstrates a critical characteristic of stored-program computation.
     This capability is at the heart of how software is used to build higher-
-    level tools and their programming languages.
+    level tools and their programming languages, although the mechanisms of
+    general-purpose procedures do not "rewrite" scripts to make other scripts
+    as a general approach.
 
 4.1 Applicative-Expression Style
 
@@ -230,19 +235,19 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
     of the result of one ob-yielding application, here x(z), to the result of
     another ob-yielding expression, such as y(z), as in (5).  All of the
     examples in (5-6) are formulas for the same applicative operations, namely
-    those in (4).
+    those that deliver (4).
 
 4.2 Applicative Expressions in oFrugal
 
     oFrugal accepts applicative-expression forms in its input.  Evaluation of
     the applicative expressions yield the obs to be made use of any further
-    until a canonical form is yielded as the result.
+    until an intended canonical form is yielded as the result.
 
     For example,
 
    .A .B .B[English::en, Русский::ru, 日本語::ja, Français::fr, ‵default:] (7)
 
-    on input will yield the ob that is the lindie 日本語.
+    on input will yield the ob that is the lindie designated by 日本語.
 
     There is no applicative operation required in the evaluation of (2) to
     arrive at the ob (1).  But the leading terms in (7), by their spacing,
@@ -251,9 +256,11 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
        obap.ap(.A, obap.ap(.B, obap.ap(.B, x)))
           = ob.a(ob.b(ob.b(x))),
 
-    where x is the result of (2) evaluation.  The script interpretations
-    of primitives .A and .B are determined, according to obap.ap(p,x) to be
-     applications of ob.a(x) and ob.b(x).
+       where x is the result of (2) evaluation.
+
+    The script interpretations of primitives .A and .B are determined,
+    according to the definition of obap.ap(p,x) and obap.eval(e) to be
+    applications of ob.a(x) and ob.b(x).
 
 4.3 Named Obs in oFrugal
 
@@ -265,7 +272,7 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
                               :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) ) ;
 
     The ^cS can be used in subsequent oFrugal input expressions as a compact
-    way of supplying that ob.   Similarly,
+    way of introducing that ob.   Similarly,
 
     ob ^langNames = [English::en, Русский::ru, 日本語::ja, Français::fr,
                      ‵default:] ;
@@ -279,12 +286,17 @@ ob.txt 0.1.3                    UTF-8                            dh:2018-10-24
     ^cS(X, Y) Z ;
 
  This informal introduction to the ways of expressing obs, with and without
- applicative operations, will have precise specification.
+ applicative operations, has precise specification.  See
+ <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
 
  The key point is that at the foundation there are only obs in the
  computational model.  There is oFrugal and Frugalese for providing
-convenient expression of obs and computations using them via oMiser, but it
-all involves just obs.
+ convenient expression of obs and computations using them via oMiser, and it
+ all involves just obs.
+
+ Given some means to express manipulation of strings of character codes,
+ and streams of input and output, we could define the oFrugal REPL itself
+ in Frugalese.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -304,6 +316,17 @@ all involves just obs.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ TODO
+
+  * Add an attribution statement
+
+  * Get straight on the elimination of acute accent in 0.0.6 and however this
+    works, in ob-exp. It is the case that we will use apostrophe over back-
+    tick if it is necessary to make a plaintext substitution for reverse-prime
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.1.4 2019-04-29-12:07 Smooth the text flow and touch up in places.  Add TODO
  0.1.3 2018-10-24-16:58 Update to use canonical form with respect to the
        computational interpretation of obs and universal function obap.ap.
  0.1.2 2018-02-08-11:18 Correct to use back-tick, not apostrophe, as
