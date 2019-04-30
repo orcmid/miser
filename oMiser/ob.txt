@@ -1,4 +1,4 @@
-ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
+ob.txt 0.1.5                    UTF-8                            dh:2019-04-30
 
                            The Miser Project Code
                            ======================
@@ -12,8 +12,8 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
     between mathematical logic and theoretical limitations of all present-
     day computation systems. The ‹ob›-based computation model, although
     low-level, is as powerful, with respect to those limits, as any other
-    model.  A central purpose of the Miser Project demonstration of how that
-    is the case and to draw the connection with an operational realization.
+    model.  A central purpose of the Miser Project is demonstration of how
+    that and then to draw the connection with an operational realization.
 
     Under the Miser ‹ob› computational model, obs serve interchangeably as
     data and as scripts of procedures -- computational methods -- operating on
@@ -30,8 +30,8 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
     beyond satisfaction of the conditions specified in the file obtheory.txt,
     <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
 
-      * There are two selector functions, ob.a(z) and ob.b(z) that operate
-        on any ob and determine an ob.
+      * There are two selector functions, ob.a(z) and ob.b(z) that given
+        any ob and determine an ob as their result.
 
       * There is an arbitrary supply of distinct individuals, including
         ob.NIL.  For any individual, z, ob.a(z) = ob.b(z) = z.
@@ -41,8 +41,8 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
         as encapsulation of z.
 
       * The individuals and encapsulations together are identified as
-        singletons because they share the property that ob.b(z) = z
-        for either.  There are oMiser idioms that rely on this quality.
+        singletons because they have in common that ob.b(z) = z.  There
+        are oMiser idioms that exploit this.
 
       * For any obs x and y, the function ob.c(x, y) determines the pair
         such that ob.a(ob.c(x,y)) = x and ob.b(ob.c(x,y)) = y and neither
@@ -114,13 +114,13 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
       Similarly, ‵ groups first as a unary prefix operator.  E.g.,
 
                             ‵‵z = ‵(‵z), and
-                 x :: ‵y :: ‵‵z = x :: ((‵y) :: (‵‵z)).
+                  x :: ‵y :: ‵‵z = x :: ((‵y) :: (‵‵z)).
 
       * Fixed individuals, specified as primitives for oMiser, are written
         with "." as a prefix.  E.g., ‹ob›-theory ob.NIL is expressed
         ".NIL".  Similarly, obap.ARG and obap.EV primitives are signified
         by .ARG and .EV, respectively.  Primitive individuals have specific
-        interpretation in obs that are treated as scripts of procedures.
+        interpretation in obs that are taken to be scripts of procedures.
 
       * There are literal individuals (lindies) that can be introduced and
         used for any purpose.  A lindy is specified with an alphanumeric
@@ -187,7 +187,7 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
       .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG))           (3)
                       :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) )
 
-    The appearance of primitives is suggestive of the intended use as the
+    The appearance of primitives is suggestive of intended use as the
     script for a procedure to be performed.
 
  4. APPLICATIVE POWER
@@ -205,7 +205,7 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
     The example (3) just-above is called cS, having the useful property that,
     for scripts x and y and data ob z, with ap the obap.ap function,
 
-      ap(ap(ap(cS,x),y),z) = ap(ap(x,z),ap(y,z))                         (4)
+      ap(ap(ap(cS,x),y),z) = ap(ap(x,z),ap(y,z))                           (4)
 
     Without getting into the details, here is a case where a procedure is used
     to combine obs x and y, also as scripts, into a procedure that involves
@@ -216,8 +216,8 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
     data demonstrates a critical characteristic of stored-program computation.
     This capability is at the heart of how software is used to build higher-
     level tools and their programming languages, although the mechanisms of
-    general-purpose procedures do not "rewrite" scripts to make other scripts
-    as a general approach.
+    general-purpose procedures do not "rewrite" scripts to make other scripts,
+    having alternative mechanisms at hand.
 
 4.1 Applicative-Expression Style
 
@@ -226,9 +226,11 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
 
        cS(x,y) z = x(z) y(z)                                               (5)
 
-    or the more-familiar yet equivalent form,
+    or equivalent forms, including
 
+       ((cs x) y) z = (x z)(y z)
        cS(x,y,z) = x(z,y(z))                                               (6)
+       (cs(x) y) z = x(z)(y(z))
 
     The application of obs as procedures to other obs as operands is signified
     in Frugalese by the appearance of parameter lists and also by application
@@ -257,10 +259,6 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
           = ob.a(ob.b(ob.b(x))),
 
        where x is the result of (2) evaluation.
-
-    The script interpretations of primitives .A and .B are determined,
-    according to the definition of obap.ap(p,x) and obap.eval(e) to be
-    applications of ob.a(x) and ob.b(x).
 
 4.3 Named Obs in oFrugal
 
@@ -294,13 +292,13 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
  convenient expression of obs and computations using them via oMiser, and it
  all involves just obs.
 
- Given some means to express manipulation of strings of character codes,
- and streams of input and output, we could define the oFrugal REPL itself
+ Given some means to express manipulation of strings of character codes
+ and of input-output streams, we could define the oFrugal REPL itself
  in Frugalese.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018 Dennis E. Hamilton
+                   Copyright 2018-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -326,6 +324,8 @@ ob.txt 0.1.4                    UTF-8                            dh:2019-04-29
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.5 2019-04-30-13:06 Smooth a few places and make adjustments in early
+       passages thanks to comments from colleague William L. Anderson.
  0.1.4 2019-04-29-12:07 Smooth the text flow and touch up in places.  Add TODO
  0.1.3 2018-10-24-16:58 Update to use canonical form with respect to the
        computational interpretation of obs and universal function obap.ap.
