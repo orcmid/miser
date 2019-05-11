@@ -1,4 +1,4 @@
-ob.txt 0.1.6                    UTF-8                            dh:2019-05-10
+ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
 
                            The Miser Project Code
                            ======================
@@ -19,6 +19,23 @@ ob.txt 0.1.6                    UTF-8                            dh:2019-05-10
     data and as scripts of procedures -- computational methods -- operating on
     obs.  This quality of stored-program computers is central to the Miser
     formulation of a model of computation.
+
+             1. Mathematical Structure
+
+             2. Data Representation Text Notation
+                2.1 Canonical forms
+                2.2 DFob reference notation for canonical forms
+                2.3 Publication notation
+                2.4 Additional forms
+
+             3. Frugalese Expressions
+                3.1 List constructions
+                3.2 Script constructions
+
+             4. Applicative Power
+                4.1 Applicative-expression style
+                4.2 Applicative expressions in oFrugal
+                4.3 Named obs in oFrugal
 
  1. MATHEMATICAL STRUCTURE
 
@@ -135,9 +152,25 @@ ob.txt 0.1.6                    UTF-8                            dh:2019-05-10
 
     All of the individual terms in that expression are lindies.
 
+    Observe how ob.a(z) and ob.b(z) are sufficient for navigating into the
+    interior of a construction, z, such as the one given at (1).  In this
+    case
+
+            ob.b(ob.b(ob.b(z))) = (Français::fr)::‵default
+            ob.a(ob.b(z)) = Русский::ru
+            ob.b(ob.a(ob.b(ob.b(z)))) = ja
+
+    In this manner, ‹ob› affords idioms for list structures and functions
+    on them.  There are simplifications (4.2) that allow writing in a
+    a form akin to
+
+             .b .a .b .b ^z = ja
+
+    when expressing computations on obs.
+
  2.3 Publication Notation
 
-    In formats having greater typographical flexibility than plaintest, there
+    In formats having greater typographical flexibility than plaintext, there
     can be useful embellishments.  Primitives can be presented in boldface
     and even lower-case, with the leading "." omitted, since the special
     typography reflects their "reserved" and distinct status as primitives.
@@ -252,7 +285,9 @@ ob.txt 0.1.6                    UTF-8                            dh:2019-05-10
 
     For example,
 
-   .A .B .B[English::en, Русский::ru, 日本語::ja, Français::fr, ‵default:] (7)
+    .A .A .B .B [English::en, Русский::ru,
+                 日本語::ja, Français::fr,                                (7)
+                 ‵default:]
 
     on input will yield the ob that is the lindie designated by 日本語.
 
@@ -321,8 +356,8 @@ ob.txt 0.1.6                    UTF-8                            dh:2019-05-10
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.6 dated
-   2019-05-10, available on the Internet as a version of
+   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.7 dated
+   2019-05-11, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
  TODO
@@ -331,13 +366,14 @@ ob.txt 0.1.6                    UTF-8                            dh:2019-05-10
 
   * Add Notes and Reference section.
 
-  * Also add Content table.
-
   * Explain more about traces and the ^cS application in the final example.
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.7 2019-05-11-09:46 Correct issue #19 typo spotted by William L. Anderson,      fix a howler at (7) and provide more clarification on the value of
+       ob.a and ob.b in navigating representations of list structures (#20).
+       Add table of content.
  0.1.6 2019-05-10-07:49 Correct issue #16 typo spotted by William L. Anderson.
        Be more careful about enclosure per issue #20 by William L. Anderson.
        Provide further editorial improvements throughout the text.
