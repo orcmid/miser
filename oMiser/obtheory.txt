@@ -1,4 +1,4 @@
-obtheory.txt 0.2.8                  UTF-8                        dh:2019-03-23
+obtheory.txt 0.2.9                  UTF-8                        dh:2019-05-11
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -25,6 +25,10 @@ obtheory.txt 0.2.8                  UTF-8                        dh:2019-03-23
    computing.  The Miser Project provides an operational implementation that
    demonstrates shared universality with prominent models recognized as
    Church-Turing Complete.
+
+   An informal overview, with illustrative usage, is found in the file
+   <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
+
 
                                   CONTENT
 
@@ -108,7 +112,7 @@ obtheory.txt 0.2.8                  UTF-8                        dh:2019-03-23
         ob.is-individual(z) ∨ ob.is-enclosure(z) ∨ ob.is-pair(z)
 
         It is a consequence that each ob is exactly one of pair,
-        enclosure, and individual and there are no others.
+        enclosure, or individual and there are no others.
           (ob.is-individual(z) ∧ ¬ ob.is-enclosure(z) ∧ ¬ ob.is-pair(z))
         ∨ (ob.is-enclosure(z) ∧ ¬ ob.is-individual(z) ∧ ¬ ob.is-pair(z))
         ∨ (ob.is-pair(z) ∧ ¬ ob.is-enclosure(z) ∧ ¬ ob.is-individual(z))
@@ -347,7 +351,7 @@ obtheory.txt 0.2.8                  UTF-8                        dh:2019-03-23
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.8 dated 2019-03-23, available on the
+   text file obtheory.txt version 0.2.9 dated 2019-05-11, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -368,8 +372,16 @@ TODO
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
    it belongs in obaptheory.txt, not here.
 
+ * Consider Markdown versions that GitHub will render in a more-presentable
+   form.  Keep in mind that the .txt version is always definitive.
+
+ * Provide a little more about FOL= as used for ‹ob› structure, especially
+   with regard to universal quantification and similarity to familiar algebra.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.9 2019-05-11-09:10 Adjust to wording suggested by William L. Anderson in
+       issue #19, cross-reference with ob.txt, and manage TODOs.
  0.2.8 2019-03-23-10:28 Correct text flow, add [Rogers1987] and [Church1936]
        remarking use of "effective computability" here, and referencing the
        further Orcmid's Live Hideout article of 2019-02-11.
