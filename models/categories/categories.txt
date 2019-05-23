@@ -1,4 +1,4 @@
-categories.txt 0.0.2                  UTF-8                     dh:2019-03-26
+categories.txt 0.0.3                  UTF-8                     dh:2019-05-23
 
                              The Miser Project Code
                              ======================
@@ -7,7 +7,7 @@ categories.txt 0.0.2                  UTF-8                     dh:2019-03-26
 
            DEPICTION, ENGINEERING, AND VERIFICATION OF COMPUTATION
 
-                       STRUCTURE AND CATEGORY DEPECTIONS
+                       STRUCTURE AND CATEGORY DEPICTIONS
                        ---------------------------------
 
     Synopsis TBD
@@ -54,7 +54,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Structure and Category Depictions.  Miser Theory
-   Conception text file version 0.0.2 categories.txt dated 2019-03-26,
+   Conception text file version 0.0.3 categories.txt dated 2019-05-23,
    available, with folder of materials, on the Internet as a version of
    <https://github.com/orcmid/blob/master/models/categories/categories.txt>
 
@@ -62,17 +62,30 @@ TODO
 
   * Introduce the representation diagram here also.
 
+  * Get to Manifestation.
+
+  * Introduce ontological commitment in the reconciliation of interpretation,
+    representation, and manifestation.  Identify affordance in the matter.
+    See Issue #16 discussion related to this.  Emphasize the contribution of
+    William L. Anderson in the discussion leading to and clarifying the idea
+    of ontological commitment.  Contrast with the notion of "paradigm."
+
   * Emphasize the informality and keeping it simple without the intricacies
     of category theory, available for separate investigation but not crucial
     for demonstration of the computational model.
 
+  * Not just turtles all the way down, it is turtles everywhere.
+
   * Add connections to category theory.
 
-  * There might need to be some smoothing of boole.txt to around awkwardness
+  * There might need to be some smoothing of boole.txt around awkwardness
     and the choice of representation.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  0.0.3 2019-05-23-09:14 Introduce ontological commitment into the effort to
+        reconcile interpretation, representation, and manifestation.  Manage
+        TODOs
   0.0.2 2019-03-26-09:59 Add third Interpretation image, attribution,
         manage ToDos.
   0.0.1 2019-03-17-10:23 Corrections, addition of interpretation diagrams
