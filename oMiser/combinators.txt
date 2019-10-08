@@ -1,4 +1,4 @@
-combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
+combinators.txt 0.0.22               UTF-8                       dh:2019-10-08
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -850,6 +850,17 @@ combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
       of combinators and closed λ-expressions is worked up to in Chapter 1,
       with further refinement (and implementation matters) thereafter.
 
+   [Church1940]
+      Church, Alonzo. A Formulation of the Simple Theory of Types. J. Symbolic
+      Logic 5, 2 (June 1940), 56-68.  DOI: 10.2307/2266170 available on JSTOR
+      <https://www.jstor.org/stable/2266170>.  Identified as inspirational in
+      [Scott1993] and [Paulson2018], this work identifies simple type ο
+      (omicron) as the type of propositions and represents a logic thereby.
+      That may now be quaint with the type taken to consist of distinguished
+      truth values as in the manner of our discriminator, Uβ.  The notation
+      for functional type has also been refined over the years to the form
+      adopted here.
+
    [CL2018]
       Combinatory Logic, Wikipedia Article, accessed on the Internet on
       2018-05-15 at <https://en.wikipedia.org/w/index.php?title=Combinatory_logic&oldid=840550936>.
@@ -865,6 +876,11 @@ combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
       Digging into the combinators, λ-calculus, and representation of other
       types as interpretations of λ-expressions occurs in Chapter 9, Writing
       Interpreters for the λ-Calculus, starting in section 9.5.
+
+    [Paulson2018]
+      Paulson, Lawrence C.  Formalising Mathematics in Simple Type Theory.
+      arXiv preprint arXiv:1804.07860. 2018-04-20. Available at
+      <https://arxiv.org/abs/1804.07860>.
 
    [Révész1988]
       Révész, György E.  Lambda-Calculus, Combinators and Functional
@@ -927,7 +943,7 @@ combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.0.21 dated 2019-03-15, available on the Internet as a version of
+   0.0.22 dated 2019-10-08, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
 
  TODO
@@ -959,6 +975,9 @@ combinators.txt 0.0.21               UTF-8                       dh:2019-03-15
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.22 2019-10-08-10:05 Introduce and acknowledge [Church1940] as the
+        progenitor of functional type and the requirement for a concrete β
+        (Boolean truth-valued) type.  Identify [Paulson2018] as part of that.
  0.0.21 2019-03-15-10:39 Touch-ups, wordsmithing, manage TODOs
  0.0.20 2019-02-14-12:16 Revamp based on the latest obtheory.txt and
         obaptheory.txt, manage TODOs, and smooth some text.
