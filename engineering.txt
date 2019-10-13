@@ -1,4 +1,4 @@
-engineering.txt 0.0.0                UTF-8                       dh:2018-04-17
+engineering.txt 0.0.1                UTF-8                       dh:2019-10-13
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -45,8 +45,34 @@ TODO
  * Having a low-end-of-the-pool on-ramp for developers is an important
    aspect.  Reflect this.
 
+ * Introduce a section on use of a list-structured storage system.
+   o employ reference counting for enduring constructions
+   o employ Cheney copying and the Henry Baker techniques for seemingly
+     ephemeral constructions
+   o consider what is facilitated by immutability with respect to having
+     coalescing of identical obs-in-storage and also accelerated applicative
+     interpretations of obs.
+
+ * Discuss the ob.c equality proposition and how to accelerate it.
+   o when two pointers to obs are the same, we know the obs are identical.
+   o if individuals have different locations, we know they are different.
+   o when two pointers to obs are different, we know we have to compare the
+     components.
+   o if we find that the corresponding components are equal, we can substitute
+     the older one for the younger in wherever the younger link is anchored.
+   o if we have hashes, we can know that two obs are different if there
+     hashes are different.  But if they are the same, we have to look
+     further because there may simply be a hash collision.
+   o the use of hashes for acceleration of comparisons in LISP was mentioned
+     to me by Paul McJones. Find a link to that.
+   o When obs have accelerated applicative interpretations, and they are found
+     to be equal, we need to determine what to do when the younger has
+     an/the accelerator.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-10-13-13:01 Add notes on storage implementation, comparison
+       shortening and applicative interpretation accelerators.
  0.0.0 2018-04-17-10:29 Create placeholder, with starter TODOs.
 
                         *** end of engineering.txt ***
