@@ -1,4 +1,4 @@
-background.txt 0.0.3                 UTF-8                       dh:2019-05-27
+background.txt 0.0.4                 UTF-8                       dh:2019-10-13
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -14,6 +14,20 @@ background.txt 0.0.3                 UTF-8                       dh:2019-05-27
 [CONTENT: TBD]
 
 REFERENCES AND BIBLIOGRAPHY
+
+[Burge1966]
+   Burge, William H.  A reprogramming machine.  C.ACM 9, 2 (Feb. 1966), 60-66.
+   Available on the Internet at <https://doi.org/10.1145/365170.365174>.
+      I had Burge's draft of this paper, which was presented at the ACM Reprogramming Conference in June 1965.  Datamation included a review of
+   the conference and reported that this paper was completely inscrutible and
+   did not seem to help with regard to the purpose of the conference.
+      2019-10-13: I had despaired of every finding my copy of this paper until
+   today when I crafted a successful Internet search. I did not realize it
+   had appeared in CACM, even though I also had that issue.  The paper is
+   difficult and also interesting, especially with regards to libraries and
+   extracting common functions as part of rewriting programs for various
+   purposes.  I thought this might have been useful to Dana Scott and now
+   maybe Lawrence Paulson.  Maybe not.
 
 [Carr1959]
    Carr, John W., III.  Programming and Coding.  Chapter 2 in "Handbook of
@@ -60,8 +74,8 @@ REFERENCES AND BIBLIOGRAPHY
    <https://doi.org/10.1093/comjnl/8.3.22>.  The inspiration behind obap.SELF
    and obap.ARG originated in the handling of parameters in this GPM (or McG)
    paper.  The ob.e function remedies a defect/limitation/incompleteness,
-   here applied to "list" structures, in that strings having nested strings
-   as beads could be processed but not constructed.
+   here applied to "list" structures, whereby McG strings having nested
+   strings as beads could be processed but not constructed.
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                      Copyright 2018-2019 Dennis E. Hamilton
@@ -232,8 +246,6 @@ TODO
 
  * Also, Peter Naur on Programming as Theory Building
 
- * Find the Bill Burge "Reprogramming Machine" paper.
-
  * Capture the Doug Ross "Inverted Indexing" paper and the demonstration
    using a propositional logic tautology checker using the Wang Algorithm.
 
@@ -261,6 +273,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2019-10-13-11:18 Clarify [Strachey1965] annotation.  Add [Burge1966].
  0.0.3 2019-05-27-09:07 Manage TODOs, small editing cleanups
  0.0.2 2018-05-10-09:31 More bibliography,
  0.0.1 2018-04-17-10:20 Capture McCarthy bibliography, expand TODO notes
