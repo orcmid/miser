@@ -1,4 +1,4 @@
-obtheory.txt 0.2.9                  UTF-8                        dh:2019-05-11
+obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -54,7 +54,8 @@ obtheory.txt 0.2.9                  UTF-8                        dh:2019-05-11
 
    For Ot, standard First-Order Logic with Equality (FOL=) is employed
    [Wikipedia2019].  An equational format is used with variables understood
-   to be universally quantified over the domain of discourse, Ob.  Set theory is not employed.
+   to be universally quantified over the domain of discourse, Ob.  Set theory
+   is not employed.
 
    Logical aspects of theory Ot are expressed using the following notation.
    We intend truth-value semantics of deductions involving propositions
@@ -351,7 +352,7 @@ obtheory.txt 0.2.9                  UTF-8                        dh:2019-05-11
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.9 dated 2019-05-11, available on the
+   text file obtheory.txt version 0.2.10 dated 2019-10-30, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -380,6 +381,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.10 2019-10-30-10:12 Fix a line-wrap
  0.2.9 2019-05-11-09:10 Adjust to wording suggested by William L. Anderson in
        issue #19, cross-reference with ob.txt, and manage TODOs.
  0.2.8 2019-03-23-10:28 Correct text flow, add [Rogers1987] and [Church1936]
