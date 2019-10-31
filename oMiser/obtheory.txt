@@ -1,9 +1,10 @@
-obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
+obtheory.txt 0.2.11                 UTF-8                        dh:2019-10-31
 
                           MISER THEORETICAL CONCEPTION
                           ============================
 
         <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
+            The latest version is always available at this location.
 
                            ‹ob› MATHEMATICAL STRUCTURE
                            ---------------------------
@@ -38,15 +39,16 @@ obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
 
      2. PRIMITIVE NOTIONS
         Four functions, together with "=" that are sufficient for expressing
-        all Obs, given a set of initial individuals.  All functions in Of
-        (and predicates in Ot) can be expressed in terms of the primitives.
+        all Obs, given a set of initial individuals.  All computable
+        functions in Of (and decidable predicates) can be expressed in Ot in
+        terms of the primitives.
 
      3. DENUMERABILITY AND EFFECTIVENESS
         Constraints on the composition of obs in relationship to other obs
         such that there is a precedence ordering among them.  Conditions on
         the effective representation of functions in Ot are elaborated.
-        Canonical forms for distinguishing Obs and identifying any of them
-        are established.
+        Canonical forms are established for distinguishing and identifying
+        obs.
 
      4. NOTES AND REFERENCES
 
@@ -182,7 +184,7 @@ obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
         contrasts with the Ot characterizations of functions via patterned
         specifications employing variables that assert conditions over ‹ob›
         entire.  This is comparable to the situation with arithmetic where
-        decimal numerals are typical canonical forms for numbers.
+        decimal numerals are typical canonical forms for (natural) numbers.
 
         Certain extensions to ‹ob› will augment the variety of canonical forms
         without ever altering the denumerability of them, preserving Ob7-Ob9.
@@ -233,23 +235,23 @@ obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
    with Peter Landin and William H. Burge in the mid-1960s, with operation
    now via a list-processing adaptation of [Strachey1965].
 
-   The choice of "effectively computable" and "effective computability" is
-   used in the manner of the title of [Rogers1987].  Identification, for now,
-   with a kind of deduction separate from computational interpretations (e.g.,
-   kinds of algorithms) is meant as a case of effective calculability, the
-   term employed in [Church1936] before a general-purpose digital computer had
+   "Effectively computable" and "effective computability" are used in the
+   manner of the title of [Rogers1987].  Identification, for now, with a kind
+   of deduction separate from computational interpretations (e.g., as
+   algorithms) is meant as a case of effective calculability, the term
+   employed in [Church1936] before a general-purpose digital computer had
    ever been seen or described.  For the Miser Project, we do not confine
    computability to Turing Computability, despite demonstrable equivalence.
 
    When we speak of all of the effectively-computable functions on obs, as
    obs are characterized here, the claim will be that the totality of them is
-   equivalent to the CT-computable (total) functions.  When a a universal
+   equivalent to the CT-computable (total) functions.  When a universal
    function is also formulated, correspondence to a Universal Turing Machine
    and hence Church-Turing Completeness will be claimed.  These stages will be
-   demonstrated in later progressions.
+   demonstrated in later progressions of these Miser Project notes.
 
-   Ob7-Ob9 must be augmented in the case of extensions that introduce
-   new distinct individuals constructed from other obs.  Supplementary
+   Ob7-Ob9 must be augmented in the case of extensions that introduce new
+   distinct individuals constructed from other obs.  Supplementary
    definitions will be provided along with the introduction of such
    extensions.
 
@@ -264,7 +266,7 @@ obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
    of blog posts.
 
      * Miser Project: Hark! Is That a Theory I See Before Me?
-       <https://orcmid.wordpress.com/2018/07/07/miser-project-hark-is-that-a-theory-i-see-before-me/>
+       <https://orcmid.blogspot.com/2018/07/miser-project-hark-is-that-theory-i-see.html>
        on the mathematical-logic notation used at the mathematical level
 
      * Miser Project: ‹ob› Primitive Functions
@@ -352,7 +354,7 @@ obtheory.txt 0.2.10                 UTF-8                        dh:2019-10-30
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.10 dated 2019-10-30, available on the
+   text file obtheory.txt version 0.2.11 dated 2019-10-31, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -381,6 +383,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.11 2019-10-31-13:43 Wordsmithing and beginning adjustment of blog post
+       locations
  0.2.10 2019-10-30-10:12 Fix a line-wrap
  0.2.9 2019-05-11-09:10 Adjust to wording suggested by William L. Anderson in
        issue #19, cross-reference with ob.txt, and manage TODOs.
