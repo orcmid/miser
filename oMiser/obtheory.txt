@@ -1,4 +1,4 @@
-obtheory.txt 0.2.11                 UTF-8                        dh:2019-10-31
+obtheory.txt 1.0.9                 UTF-8                        dh:2019-1107
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -270,7 +270,7 @@ obtheory.txt 0.2.11                 UTF-8                        dh:2019-10-31
        on the mathematical-logic notation used at the mathematical level
 
      * Miser Project: ‹ob› Primitive Functions
-       <https://orcmid.wordpress.com/2018/08/26/miser-project-ob-primitive-functions/>
+       <https://orcmid.blogspot.com/2018/08/miser-project-ob-primitive-functions.html>
        including introduction of Ob1-Ob7 here.
 
      * Miser Project: Narrowing ‹ob› for Computational Interpretation
@@ -278,14 +278,14 @@ obtheory.txt 0.2.11                 UTF-8                        dh:2019-10-31
        including introduction of Ob8-Ob10 here.
 
      * Miser Project: Representing Data as Obs
-       <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
+       <https://orcmid.blogspot.com/2018/11/miser-project-representing-data-as-obs.html>
        introducing computational interpretations of obs and obs as encodings
        (interpretations for) data as an initial step toward the oMiser
        computational model.  A compact canonical form expression is
        defined.
 
      * Miser Project: Representing Functions in ‹ob›’s Abstract World
-       <https://orcmid.wordpress.com/2018/10/16/miser-project-interpreting-obs-as-data/>
+       <https://orcmid.blogspot.com/2018/12/miser-project-representing-functions-in.html>
        reasoning about functions on obs and then exploring interpretation
        of other structures with representation of functions in each other
        and in ‹ob›.  There is extensive attention to interpretations and
@@ -295,7 +295,7 @@ obtheory.txt 0.2.11                 UTF-8                        dh:2019-10-31
 
      * Miser Project: Interpretation, Representation, Computation, and
        Manifestation
-       <https://orcmid.wordpress.com/2019/02/11/miser-project-interpretation-representation-computation-and-manifestation/>
+       <https://orcmid.blogspot.com/2019/02/miser-project-interpretation.html>
        expanding on some specialized notions applied throughout development
        of the Miser Project.
 
@@ -354,7 +354,7 @@ obtheory.txt 0.2.11                 UTF-8                        dh:2019-10-31
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 0.2.11 dated 2019-10-31, available on the
+   text file obtheory.txt version 1.0.0 dated 2019-11-07, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -383,6 +383,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.0 2019-11-07-12:49 Replace Wordpress Miser Project links with ones to
+       Orcmid's Lair on Blogger, declaring version 1.0.0.
  0.2.11 2019-10-31-13:43 Wordsmithing and beginning adjustment of blog post
        locations
  0.2.10 2019-10-30-10:12 Fix a line-wrap
