@@ -1,4 +1,4 @@
-tutorials.txt 0.0.28                 UTF-8                       dh:2019-11-07
+tutorials.txt 0.0.29                 UTF-8                       dh:2019-11-09
 
                              The Miser Project Code
                              ======================
@@ -146,9 +146,6 @@ MANIFEST
     ob-2018-12-10-1423-boole.txt-0.3.0-baRep.png (update)
     ob-2018-12-10-1419-boole.txt-0.3.0-bvn.png
     ob-2018-12-10-1405-boole.txt-0.3.0-bn-iso-bvn.png
-    ob-2018-12-03-1753-boole.txt-0.1.2-ob.bvx.png
-    ob-2018-12-06-1559-boole.txt-0.2.0-ob.bvx.png (update)
-    ob-2018-12-10-1353-boole.txt-0.3.0-ob.bvx.png (update 2)
     ob-2018-12-12-1059-boole.txt-0.4.0-ob.bvx.png (update 3)
     ob-2018-12-12-1250-boole.txt-0.4.0-ob.bvx.cf.png (update 3)
     ob-2018-12-12-1250-boole.txt-0.4.1-ob-bvx-circleback.png (update 3)
@@ -203,6 +200,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.29 2019-11-09-09:53 Tidy up, removing names of some files that have been
+        deleted.
  0.0.28 2019-11-07-14:26 Replace Wordpress links with Blogspot ones for
         Orcmid's Lair, deleting those images that have updates and are no
         longer referenced in existing blog posts.
