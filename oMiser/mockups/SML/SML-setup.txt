@@ -1,4 +1,4 @@
-SML-setup.txt 0.0.1                  UTF-8                       dh:2019-04-18
+SML-setup.txt 0.0.2                  UTF-8                       dh:2019-11-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -48,23 +48,25 @@ SML-setup.txt 0.0.1                  UTF-8                       dh:2019-04-18
 
     For the latest (such as 110.85), select the Software Links "files" link
     (e.g., to https://www.smlnj.org/dist/working/110.85/index.html) for that
-    version. <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1411-110.85-files.png>.
+    version. <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1411-110.85-Files.png>.
 
     For generic Unix (including Linux) and macOS, follow those instructions.
+    See <http://smlnj.org/install/index.html> for those.
+
+    For the Miser Project, Windows versions are used for all of the mockups,
+    tests, and proof-of-concept demonstrations employing SML/NJ.  Technical
+    users will find straightforward adaptations to other platforms.
+
+ 2. INSTALLING AN SML/NJ VERSION MSI PACKAGE FOR WINDOWS
 
     For Microsoft Windows, the WININSTALL instructions are not very useful.
-    Do not worry about it.  Click on the link to the MSI file (e.g., smlnj-110.85.msi).  The download can be to a default downloads directory
+    Do not worry about it.  Click on the link to the MSI file (e.g.,
+    smlnj-110.85.msi).  The download can be to a default downloads directory
     or another location that you prefer for this purpose.
     <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1427-Downloading.png>.
 
     If there is no smlnj-xxx.yy.msi file for the latest version, it may be
     preferable to download the most-recent older SML/NJ release that has one.
-
- 2. INSTALLING AN SML/NJ VERSION MSI PACKAGE FOR WINDOWS
-
-    For the Miser Project, Windows versions are used for all of the mockups,
-    tests, and proof-of-concept demonstrations employing SML/NJ.  Adaptations
-    to other platforms are straightforward for technical users.
 
     Navigate to the PC file-system location where the MSI file is downloaded.
     E.g., <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/smlnj.org-2019-04-10-1436-install.png>.
@@ -88,18 +90,63 @@ SML-setup.txt 0.0.1                  UTF-8                       dh:2019-04-18
 
     If all is well you'll see the first-run of the SML/NJ processor in a
     console window.  Type "Hello World"; and ENTER after the ";".  See the
-    response.  Then type Ctrl-Z.  When you type ENTER, the console will close.
+    response.  Then type Ctrl-Z.  When you follow that with ENTER, the
+    console will close.
     <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SMLNJ-110.85-2019-04-10-1721-1stRun.png>
+
+ 3. NEXT STEPS
+
+    We've now found, installed, and confirmed installation of SML/NJ on
+    Microsoft Windows 10.  This will let you replicate the operations that
+    the Miser Project author employs.  For operation with SML/NJ there are
+    some further steps.
+
+     * Creating an SML/NJ operation setup for running mockups and also
+       creating and operating your own creations/modification.  This is
+       recommended for any projects you undertake using SML/NJ on Windows.
+
+     * Forking and Cloning the Miser Project GitHub repository so that you
+       can operate with it on your own computer, make your own modifications,
+       and also merge any updates and additions to the Miser Project files
+       when you wish to do so.
+
+     * If you choose, reporting defects, improvement requests, and also
+       submitting changes to the project.
 
  3. NOTES AND REFERENCES
 
-    [TBD]
+    [Grossman]
+        Grossman, Dan.  SML installation.  Video tutorial. (undated).
+        Available at
+        <https://www.coursera.org/lecture/programming-languages/sml-installation-Gm2WF>
+        A modified setup is recommended for the Miser Project that does
+        not require learning installation and use of eMacs.  If you're keen
+        on that, by all means use the setup described in this and its
+        following video.  Either way, (1) the Coursera course is highly
+        recommended and (2) the author of the Miser Project employed the
+        Miser mockup setup when undertaking this course.
 
+    [Wikipedia2019a]
+        Standard ML. Wikipedia entry.  Available at
+        <https://en.wikipedia.org/wiki/Standard_ML>
 
+    [Wikipedia2019b]
+        ML (programming language).  Wikipedia entry.  Available at
+        <https://en.wikipedia.org/wiki/ML_(programming_language)>
+
+    [Wikipedia2019c]
+        ISWIM.  Wikipedia entry.  Available at
+        <https://en.wikipedia.org/wiki/ISWIM>.
+
+    The Wikipedia articles are rather esoteric and probably not suitable for
+    novices (or maybe working software developers).  The ISWIM article is
+    cited with regard to ML.  I do not endorse the lineage, although the
+    Miser Project was inspired by personal contact with the ISWIM effort in
+    the 1960s.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2018 Dennis E. Hamilton
+                  Copyright 2018-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -115,16 +162,18 @@ SML-setup.txt 0.0.1                  UTF-8                       dh:2019-04-18
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-TODO
+ ATTRIBUTION
 
-  * Capture a complete installation with screen shots and descriptive
-    materials.
+   Hamilton, Dennis E. Installation of SML/NJ under Windows.  Miser Theory
+   Conception text file SML-setup.txt version 0.0.2 dated 2019-11-09, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML-setup.txt>
+
+TODO
 
   * Create a blog-post version of this material and the images, then link
     to it as an alternative.
 
-  * In Notes and References, locate reference materials on SML/NJ here or
-    in the description of the REPL setup.  Maybe both?
+  * Oh wait, use Markdown for that purpose and have it right here also :).
 
   * The use of Visual Studio Code (VSCode) applies to all development here
     so there might need to be a higher-level treatment of it.  Or enough
@@ -133,11 +182,15 @@ TODO
   * Similar ideas apply to use of the SML/NJ REPL in a Windows Console
     session.
 
+  * There is now, also, the Windows Terminal to consider.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.2 2019-11-09-11:08 Complete the material, proofing that the image links
+       all work.
  0.0.1 2019-04-18-09:57 Add section on downloading and installing SML/NJ on
-       Microsoft Windows, featuring Windows 10.
+       Microsoft Windows featuring Windows 10.
  0.0.0 2018-03-24-13:12 Create placeholder and initial job jar for
        recording of setup and operation information used to operate and
        confirm the SML mockups of oMiser and a limited oFrugal REPL
