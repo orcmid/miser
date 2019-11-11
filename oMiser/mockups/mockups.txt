@@ -1,32 +1,44 @@
-mockups.txt 0.0.1                    UTF-8                        dh:2017-**-**
+mockups.txt 0.0.1                    UTF-8                       dh:2019-11-11
 
                            The Miser Project Code
                            ======================
-                            
-              <https://github.com/orcmid/miser/oMiser/mockups>
+
+       <https://github.com/orcmid/miser/blob/master/oMiser/mockups>
 
                 OMISER MOCKUP EXPERIMENTAL DEMONSTRATIONS
                 -----------------------------------------
-              
-    Operating oMiser obs as an abstract data type along with a universal 
-    computational function on pairs of abstract data is demonstrated using
-    existing programming systems that have more-or-less direct means for
-    representing new types and functions over those types.  
-      
-    Efficiency concerns notwithstanding, these mockups provide rapid
-    experimentation and demonstration of essential characteristics of
-    oMiser implementations.      
-         
+
+    oMiser mockups are proof-of-concept demonstrations using available
+    programming-language arrangements.
+
+    There is sufficient companion documentation with the mockups so that
+    others can operate them, confirm the test cases, and observe how the
+    abstract computational interpretation can be manifest using available
+    computational mechanisms with desktop PCs.  Empirical validation and
+    verification is demonstrated thereby.  The difference between the formal
+    definitions of the ‹ob› computational model and the programming and
+    testing of implementations is demonstrated in this manner.
+
+    The mockups are not production level.  They need only be simple enough
+    and sufficient for demonstration of oMiser and oFrugal representations.
+    A different framework will be employed for spiral development of stable,
+    production releases with more-appealing stability, performance, and
+    interchange of developed computational-model scripts.
+
+    The first mockups are written in Standard ML and processed using Standard
+    ML of New Jersey.  Down the road, the affinity with SML/NJ and its roots
+    in Logic for Computable Functions will be examined more closely.
+
 MANIFEST
 
-    mockups.txt 
+    mockups.txt
         this manifest and job-jar file
-        
+
     SML/
         subtree for mockup effort employing Standard ML of New Jersey
         for rapid prototyping, testing, and demonstration.
-        
-         
+
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                        Copyright 2017 Dennis E. Hamilton
@@ -42,28 +54,28 @@ MANIFEST
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- 
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. oMiser Mockup Experimental Demonstrations.  Miser
+   Theory Conception text file mockups.txt version 0.0.1 dated 2019-11-11,
+   available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/mockups.txt>
+
 TODO
 
-  * Encapsulate the datatype and primitive-function definitions in an
-    SML library.
-    
-  * Demonstrate the difference between the formal definition of Obs and
-    the chosen universal function and the implementation and testing of
-    implementations.
-    
-  * Make it clear that mockups are not the same as production versions.
-    They are more proof-of-concept and maybe pilot implementations, but
-    not qualifying as the framework that will be used for spiral development
-    of stable, production releases.
-     
+  * Document the SML mockups sufficient for others to replicate and also
+    contribute to the work.
+
+  * Choose among F#, Java, Python, JavaScript and Clean C COM demonstrations
+    for further confirmations of the ‹ob› computational model at the oMiser level.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.1 2017-**-**-**:** Adust TODOs.
+ 0.0.1 2019-11-11-08:55 Adust TODOs and revise the synopsis.
  0.0.0 2017-08-04-12:18 Create placeholder and initial job jar for
        oMiser mockup development.
 
                         *** end of mockups.txt ***
-                         
