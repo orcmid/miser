@@ -7,7 +7,7 @@ construction.txt 0.0.0               UTF-8                       dh:2019-11-20
 <https://github.com/orcmid/miser/blob/master/docs/about/construction/construction.txt>
 
                    ABOUT DOCS WEB AUTHORING CONSTRUCTION
-                   ------------------------------------
+                   -------------------------------------
 
 MANIFEST
 
@@ -39,17 +39,10 @@ MANIFEST
 
  TODO
 
-  * Determine whether the docs.txt is recognized as a page or whether it
-    can sit here intact and be used as a job jar.
-
   * Find a theme that supports reflow.  The Pages templates do not seem to
     provide for that.
 
   * If a theme is customized, determine where and how that works.
-
-  * The publishing mechanism is a little unclear.  It does seem that I
-    require an index.md for home page.  It appears that .txt files should
-    not be altered by the publishing mechanism.  This needs to be confirmed.
 
   * I am trusting that this material is current as of 2019-11-20:
     <https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages>
@@ -66,8 +59,15 @@ MANIFEST
      works with the default template.  Use construction/test/ or example/
      for that.
 
+   * Create a test document (set) that demonstrates the main Markup
+     provisions.
+
+   * Create a folder (i.e., plain/ that carries captured images of the
+     current test/demo document under the default template)
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-11-20-15:19 Manage TODOs
  0.0.0 2019-11-20-14:01 Create placeholder and initial job jar for Miser
        Project documentation authoring "about/construction/"
 
