@@ -1,4 +1,4 @@
-miser.txt 0.0.9                      UTF-8                       dh:2019-11-20
+miser.txt 0.0.10                     UTF-8                       dh:2019-11-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
@@ -30,10 +30,12 @@ MANIFEST
         subtree for model-related exposition and comparisons
 
     oMiser/
-        subtree for working out and confirming oMiser conceptalization and proof-of-concept demonstrations
+        subtree for working out and confirming oMiser conceptalization and
+        proof-of-concept demonstrations
 
     background.txt
-        description of the inspirational sources and evolution of the ideas behind The Miser Project
+        description of the inspirational sources and evolution of the ideas
+         behind The Miser Project
 
     challenges.txt
         description of challenges to be worked through in the development
@@ -82,7 +84,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                    Copyright 2017-2019 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -124,10 +126,11 @@ TODO
     Don't go into the extensive detail.
 
   * Docs will continue to be at miser-theory.info, as tempting and convenient
-    GitHub might be.  [dh:2018-01-11: It is tempting to use docs/ here along
-    with the GitHub support for wikis and documentation pages.  Whatever I do,
-    there need to be static places of preservation, including of authenticated
-    distributions, just as being worked on for nfoTools.]
+    GitHub might be.  [dh:2018-01-20: Attempting to use docs/ here along
+    with the GitHub support for wikis and documentation pages.]
+
+  * There need to be static places of preservation of this project, including
+    authenticated distributions, just as being worked on for nfoTools.
 
   * Explore using GitHub for Pages (docs/), maybe blogging.
 
@@ -136,8 +139,15 @@ TODO
     using GitHub versus Blogger at the moment.  The GitHub support is more
     desirable if view reflow works.  It seems to in the Wiki theme.
 
+  * Upload the Miser diagram as the Social Preview under GitHub Settings.
+
+  * Review the efficacy of the various text files.  This may be too much
+    subdivision.  Documentation might address this better.  Those files/topics
+    might move accordingly.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.10 2019-11-20-08:19 Touch-ups and Managing TODOs
  0.0.9 2019-11-20-07:14 Add docs/ subfolder for employment as GitHub pages
        and/or any blogging, substitution for a Wiki, etc.
  0.0.8 2018-04-19-10:32 Add dev/ to the manifest
