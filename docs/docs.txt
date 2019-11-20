@@ -59,9 +59,28 @@ TODO
   * I am grasping at straws here. There seems to be no satisfactory
     authoring mechanism for what I want in support of The Miser Project.
 
+  * At <https://help.github.com/en/github/getting-started-with-github/githubs-products#github-pro>
+    it appears that Pages and Wikis are available on public GitHub Free
+    accounts.  I need to make that clear.
+
+   * The publishing mechanism is a little unclear.  It does seem that I
+     require an index.md for home page.  It appears that .txt files should
+     not be altered by the publishing mechanism.  This needs to be confirmed.
+
+   * I am relying on <https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages>
+     and trusting the material is current as of 2019-11-20.
+
+   * I notice that the Wiki pages reflow properly but don't know the
+     connection.  Check into <https://help.github.com/en/github/building-a-strong-community/about-wikis>.
+
+   * The Clone in Desktop does not seem to work on my computer.  The option
+     does not come up.  I am uncertain how the Git process for working locally
+     is intended to function.
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-11-20-08:07 Manage TODOs
  0.0.0 2019-11-20-07:38 Create placeholder and initial job jar for Miser
        Project documentation under GitHub.
 
