@@ -1,0 +1,74 @@
+construction.txt 0.0.0               UTF-8                       dh:2019-11-20
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+<https://github.com/orcmid/miser/blob/master/docs/about/construction/construction.txt>
+
+                   ABOUT DOCS WEB AUTHORING CONSTRUCTION
+                   ------------------------------------
+
+MANIFEST
+
+  construction.txt
+               this manifest and job-jar file
+
+         index.md
+               <https://orcmid.github.io/miser/about/construction/>
+               authoring material
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2019 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ TODO
+
+  * Determine whether the docs.txt is recognized as a page or whether it
+    can sit here intact and be used as a job jar.
+
+  * Find a theme that supports reflow.  The Pages templates do not seem to
+    provide for that.
+
+  * If a theme is customized, determine where and how that works.
+
+  * The publishing mechanism is a little unclear.  It does seem that I
+    require an index.md for home page.  It appears that .txt files should
+    not be altered by the publishing mechanism.  This needs to be confirmed.
+
+  * I am trusting that this material is current as of 2019-11-20:
+    <https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages>
+
+  * The default rendering, with no template, provides reflow in the manner
+    required for Miser Project documentation.  How to ensure that with any
+    of the provided themes remains to be understood.
+
+   * Determine how I can have some kind of versioning on my .md pages and
+     have that part be private (not rendered).  It depends on the GitHub
+     Markdown and maybe some YAML control.  Must find out about that.
+
+   * Work through all of the feature cases of GitHub Markdown to see what
+     works with the default template.  Use construction/test/ or example/
+     for that.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2019-11-20-14:01 Create placeholder and initial job jar for Miser
+       Project documentation authoring "about/construction/"
+
+                      *** end of construction.txt ***

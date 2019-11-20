@@ -1,0 +1,61 @@
+about.txt 0.0.0                      UTF-8                       dh:2019-11-20
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+     <https://github.com/orcmid/miser/blob/master/docs/about/about.txt>
+
+                  ABOUT THE GITHUB-HOSTED DOCUMENTATION
+                  -------------------------------------
+
+MANIFEST
+
+         about.txt
+               this manifest and job-jar file
+
+         index.md
+               authoring of the <https://orcmid.github.io/miser/about/> page.
+
+  construction/
+               folder on the construction and organization of the docs/
+               site authoring content and related material
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2019 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ TODO
+
+  * Find a clean way to talk about the *authored" documentation and the
+    *authoring" source that is published to be the documentation.  Need some
+    nomenclature that I don't keep tripping over.
+
+  * Emphasize that the about page addresses the documentation web site
+    and not the overall project.  It might link to the project on GitHub.
+    It might link to other collateral sources as well.
+
+  * The construction subsection documents the authoring arrangement and
+    also provides confirmation checks, any template modification, etc.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2019-11-20-14:10 Create placeholder and initial job jar for Miser
+       Project documentation web site "About" section.
+
+                        *** end of about.txt ***

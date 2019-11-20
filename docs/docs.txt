@@ -1,4 +1,4 @@
-docs.txt 0.0.2                       UTF-8                       dh:2019-11-20
+docs.txt 0.0.3                       UTF-8                       dh:2019-11-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -13,16 +13,17 @@ docs.txt 0.0.2                       UTF-8                       dh:2019-11-20
     of GitHub Pages, possible Miser Project blog, and other documentation.
     A Wiki is also desirable but curation has not been established.
 
-    This page is introduced to force recognition of the folder in Git
-    and on GitHub.
-
 
 MANIFEST
 
       docs.txt
            this manifest and job-jar file
 
+     index.md
+           markdown of the <https://orcmid.github.io/miser/> home page.
 
+     about/
+           subfolder for the about page and any of its subordinates
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -44,54 +45,12 @@ MANIFEST
 
 TODO
 
-  * Determine whether the docs.txt is recognized as a page or whether it
-    can sit here intact and be used as a job jar.
-
-  * Find a theme that supports reflow.  The Pages templates do nto seem to
-    provide for that.
-
-  * If a theme is customized, determine where and how that works.
-
-  * GitHub Pages in docs/ is a bit like a wiki without the history and
-    provision for other authors.  There is also no commenting mechanism.
-    Having a blog here might work better.
-
-  * I am grasping at straws here. There seems to be no satisfactory
-    authoring mechanism for what I want in support of The Miser Project.
-
-  * At <https://help.github.com/en/github/getting-started-with-github/githubs-products#github-pro>
-    it appears that Pages and Wikis are available on public GitHub Free
-    accounts.  I need to make that clear.
-
-   * The publishing mechanism is a little unclear.  It does seem that I
-     require an index.md for home page.  It appears that .txt files should
-     not be altered by the publishing mechanism.  This needs to be confirmed.
-
-   * I am relying on <https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages>
-     and trusting the material is current as of 2019-11-20.
-
-   * I notice that the Wiki pages reflow properly but don't know the
-     connection.  Check into <https://help.github.com/en/github/building-a-strong-community/about-wikis>.
-
-   * The Clone in Desktop does not seem to work on my computer.  The option
-     does not come up.  I am uncertain how the Git process for working locally
-     is intended to function.
-
-   * Determine how I can have some kind of versioning on my .md pages and
-     have that part be private (not rendered).  It depends on the GitHub
-     Markdown and maybe some YAML control.  Must find out about that.
-
-   * Try embedding HTML comments.
-
-   * There seems to be a default theme if I don't pick one.  A nice feature
-     of that is reflow works :).
-
-   * Work through all of the feature cases of GitHub Markdown to see what
-     works on the default page.  This might be in a subfolder at some point.
-
+  * Fill in about/ and about/construction/ index.htm pages.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2019-11-20-14:17 Split out about/ to account for the .io/miser web site
+       and its authoring/construction.
  0.0.2 2019-11-20-09:11 More TODOs, experimentation
  0.0.1 2019-11-20-08:07 Manage TODOs
  0.0.0 2019-11-20-07:38 Create placeholder and initial job jar for Miser

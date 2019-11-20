@@ -10,7 +10,8 @@ with minimal fuss.
 The published form of the pages is at <https://orcmid.github.io/miser/>
 
 Local references to content are in the manner of [docs.txt](docs.txt),
-perhaps.
+perhaps.  Notice that non-markdown pages are moved intact to the published
+form.
 
 The footer, offering page improvement (and presumably requiring a push
 request) is maybe not what I had in mind.
@@ -30,7 +31,8 @@ Demonstration of the current theme can be found at [demo](demo.html)
 here.
 
 Placeholder initiated 2019-11-20T08:37
-<!-- 0.0.1 2019-11-20-09:43 Fussing with formatting
+<!-- 0.0.2 2019-11-20-09:51 First-level of success
+     0.0.1 2019-11-20-09:43 Fussing with formatting
      0.0.0 2019-11-20-08:37 Initial placeholder
      -->
 <!--                   *** end of index.md ***                             -->
