@@ -1,0 +1,68 @@
+docs.txt 0.0.0                       UTF-8                       dh:2019-11-20
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+       <https://github.com/orcmid/miser/blob/master/docs/docs.txt>
+
+                     GITHUB-AWARE DOCUMENTATION FOLDER
+                     ---------------------------------
+
+    This docs/ folder is setup as a GitHub aware location for management
+    of GitHub Pages, possible Miser Project blog, and other documentation.
+    A Wiki is also desirable but curation has not been established.
+
+    This page is introduced to force recognition of the folder in Git
+    and on GitHub.
+
+
+MANIFEST
+
+      docs.txt
+           this manifest and job-jar file
+
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2019 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+  * Determine whether the docs.txt is recognized as a page or whether it
+    can sit here intact and be used as a job jar.
+
+  * Find a theme that supports reflow.  The Pages templates do nto seem to
+    provide for that.
+
+  * If a theme is customized, determine where and how that works.
+
+  * GitHub Pages in docs/ is a bit like a wiki without the history and
+    provision for other authors.  There is also no commenting mechanism.
+    Having a blog here might work better.
+
+  * I am grasping at straws here. There seems to be no satisfactory
+    authoring mechanism for what I want in support of The Miser Project.
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2019-11-20-07:38 Create placeholder and initial job jar for Miser
+       Project documentation under GitHub.
+
+                         *** end of docs.txt ***
