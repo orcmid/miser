@@ -1,4 +1,4 @@
-docs.txt 0.0.0                       UTF-8                       dh:2019-11-20
+docs.txt 0.0.2                       UTF-8                       dh:2019-11-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -77,9 +77,22 @@ TODO
      does not come up.  I am uncertain how the Git process for working locally
      is intended to function.
 
+   * Determine how I can have some kind of versioning on my .md pages and
+     have that part be private (not rendered).  It depends on the GitHub
+     Markdown and maybe some YAML control.  Must find out about that.
+
+   * Try embedding HTML comments.
+
+   * There seems to be a default theme if I don't pick one.  A nice feature
+     of that is reflow works :).
+
+   * Work through all of the feature cases of GitHub Markdown to see what
+     works on the default page.  This might be in a subfolder at some point.
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2019-11-20-09:11 More TODOs, experimentation
  0.0.1 2019-11-20-08:07 Manage TODOs
  0.0.0 2019-11-20-07:38 Create placeholder and initial job jar for Miser
        Project documentation under GitHub.
