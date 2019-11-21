@@ -77,9 +77,22 @@ MANIFEST
 
    * Also, "Document Engineering"
 
+   * Add a "plain" folder and include forensic-information screen captures
+     also.
+
+   * Add a forensics folder on web-site and authoring, plus trouble-shooting,
+     reverse-engineering, etc.
+
+   * Could also introduce document-engineering in a sub-folder also.
+
+   * Confirm preservation with pre-HTML5 browsers, such as Internet Explorer.
+
+   * Use edit/master to show unrendered markdown pages :).  Need to explain
+     that down in current, it seems.  It is another "plain" thing.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.3 2019-11-21-08:41 Touch-up and manage TODOs
+ 0.0.3 2019-11-21-09:53 Touch-up and manage TODOs
  0.0.2 2019-11-20-17:46 Add current/
  0.0.1 2019-11-20-15:19 Manage TODOs
  0.0.0 2019-11-20-14:01 Create placeholder and initial job jar for Miser
