@@ -90,9 +90,12 @@ MANIFEST
    * Use edit/master to show unrendered markdown pages :).  Need to explain
      that down in current, it seems.  It is another "plain" thing.
 
+   * The "improve this page" and edit/master link requires being logged-in to
+     GitHub.  We need a way to suppress that.  Document this in "plain."
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.3 2019-11-21-09:53 Touch-up and manage TODOs
+ 0.0.3 2019-11-21-10:29 Touch-up and manage TODOs
  0.0.2 2019-11-20-17:46 Add current/
  0.0.1 2019-11-20-15:19 Manage TODOs
  0.0.0 2019-11-20-14:01 Create placeholder and initial job jar for Miser
