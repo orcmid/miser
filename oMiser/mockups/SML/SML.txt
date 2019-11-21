@@ -1,4 +1,4 @@
-SML.txt 0.0.14                       UTF-8                       dh:2019-04-18
+SML.txt 0.0.15                       UTF-8                       dh:2019-11-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -71,7 +71,7 @@ MANIFEST
 
       obap.sml
            Manifestation of ‹ob› extended for obap.ap(p,x) and obap.eval(exp)
-           in accordance of obaptheory.txt.
+           in conformance with obaptheory.txt.
 
    obcheck.sml
            Test script that checks the abstract data type's
@@ -128,6 +128,13 @@ MANIFEST
 
 TODO
 
+  * Some of these TODOs are about issues that maybe belong somewhere else.
+
+  * Encapsulate the datatype and primitive-function definitions in an
+    SML library.
+
+  * Make certain the test files include an account of the expected outputs.
+
   * Account for the challenge of avoiding forward references and preservation
     of identity conditions for preservation of quasi-Platonism under
     decentralized, distributed operation.  (Is this a case of referential
@@ -147,11 +154,13 @@ TODO
   * Raise the fact that, with oMiser, so long as well-definedness is
     maintained, the application of an individual can involve what would
     be side-effects except they are never revealed.  This includes
-    caching of things and also optimization behind the scenes.  Also,
-    output counts, but not input.
+    caching of things and also optimization behind the scenes.  Input-
+    output remain problematic in the monad sense of carrying the stream in
+    either direction and handling the carrying of state.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.15 2019-11-20-18:15 Manage TODOs
  0.0.14 2019-04-18-10:07 Add images that accompany SML-setup.txt 0.0.1.
  0.0.13 2018-04-19-12:58 Simplify to Ydemo.sml name and fix columnar
         alignment in manifest.
