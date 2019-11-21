@@ -1,4 +1,4 @@
-docs.txt 0.0.3                       UTF-8                       dh:2019-11-20
+docs.txt 0.0.4                       UTF-8                       dh:2019-11-21
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -6,12 +6,17 @@ docs.txt 0.0.3                       UTF-8                       dh:2019-11-20
 
        <https://github.com/orcmid/miser/blob/master/docs/docs.txt>
 
-                     GITHUB-AWARE DOCUMENTATION FOLDER
-                     ---------------------------------
+                    GITHUB-PUBLISHED DOCUMENTATION FOLDER
+                    -------------------------------------
 
-    This docs/ folder is setup as a GitHub aware location for management
-    of GitHub Pages, possible Miser Project blog, and other documentation.
-    A Wiki is also desirable but curation has not been established.
+    The Miser Project docs/ folder provides the managed source-code for
+    authoring GitHub Pages.  The entire docs/ folder is automatically
+    transformed by GitHub to produce the content of a web subdomain at
+    <https://orcmid.github.io/miser/>.
+
+    Further information about the purpose, construction, and care-and-feeding
+    of this web authoring arrangement are found on the about/ page and its
+    subordinate construction/ material.
 
 
 MANIFEST
@@ -23,7 +28,8 @@ MANIFEST
            markdown of the <https://orcmid.github.io/miser/> home page.
 
      about/
-           subfolder for the about page and any of its subordinates
+           subfolder for the about page and subordinate material on
+           the purpose and management of the web pages.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -47,8 +53,19 @@ TODO
 
   * Fill in about/ and about/construction/ index.htm pages.
 
+  * Make this the home-page level and update index.md to form the front porch
+    of this documentation hypertext.
+
+  * What about folio structure?  Is that something to maintain here also?
+
+  * Remove demo and link to the .io/miser/about/construction/current/ page.
+
+  * What about construction structure.  Do we have a non-HTML counterpart of
+    that with these folder-named text files?
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2019-11-21-08:32 Provide synopsis and manage TODOs.
  0.0.3 2019-11-20-14:17 Split out about/ to account for the .io/miser web site
        and its authoring/construction.
  0.0.2 2019-11-20-09:11 More TODOs, experimentation
