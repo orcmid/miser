@@ -60,7 +60,8 @@ to simply appear as text characters:
 
    \\ \` \* \_ \# \+ \- \. \! \( \[ \{ \} \] \)
 
-There are also emoji, defined at the [emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/),
+For Markdown pages in the repository (but not GitHub pages) emoji,
+there are emoji defined at the [emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/),
 including :smile: :boom: :heart: :kiss: :floppy_disk: :mouse:
 
 ```text
@@ -73,13 +74,16 @@ to simply appear as text characters:
 
    \\ \` \* \_ \# \+ \- \. \! \( \[ \{ \} \] \)
 
-There are also emoji, defined at the [emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/),
+For Markdown pages in the repository (but not GitHub pages) emoji,
+there are emoji defined at the [emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/),
 including :smile: :boom: :heart: :kiss: :floppy_disk: :mouse:
 ```
 
 
 
-<!-- 0.0.2 2019-11-20-17:19 Add Special Text Features
+
+
+<!-- 0.0.2 2019-11-20-17:28 Add Special Text Features, including :emoji:
      0.0.1 2019-11-20-16:45 Add Text Emphasis
      0.0.0 2019-11-20-16:12 Start with Text Flow Demonstration
      -->
