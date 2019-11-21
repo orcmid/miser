@@ -6,7 +6,9 @@
 This page demonstrates the layout and Markdown effects supported by the
 current (default), template's rendering of <https://orcmid.github.io/miser/>
 pages.  This page is rendered at
-<https://orcmid.github.io/miser/about/construction/current/>.
+<https://orcmid.github.io/miser/about/construction/current/>.  It is authored
+at
+<https://github.com/orcmid/miser/blob/master/docs/about/construction/current/index.md>.
 
 ## TEXT TREATMENT
 
@@ -35,21 +37,21 @@ If the browser view is widened or narrowed, the text flow
 should change to keep all of the text in view.
 ```
 
-## Text Emphasis
+### Text Emphasis
 
 Text can be **bold**, *italic*, and <strike>struckthrough</strike>.
 
 There are ***comb**inations* and _altermatives_.
 
 ```text
-## Text Emphasis
+### Text Emphasis
 
 Text can be **bold**, *italic*, and <strike>struckthrough</strike>.
 
 There are ***comb**inations* and _altermatives_.
 ```
 
-<!-- 0.0.1 2019-11-20-16:38 Add Text Emphasis
+<!-- 0.0.1 2019-11-20-16:45 Add Text Emphasis
      0.0.0 2019-11-20-16:12 Start with Text Flow Demonstration
      -->
 <!--       *** end of docs/about/construction/current/index.md ***         -->
