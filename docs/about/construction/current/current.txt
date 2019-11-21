@@ -1,0 +1,70 @@
+current.txt 0.0.0                    UTF-8                       dh:2019-11-20
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+<https://github.com/orcmid/miser/blob/master/docs/about/construction/construction.txt>
+
+                     MARKDOWN FEATURE CONFIRMATION PAGE
+                     ----------------------------------
+
+    Page <https://orcmid.github.io/miser/about/construction/current/> shows
+    the rendering of Markdown features using the current theme.  The page
+    is based on the theme demonstrations provided by GitHub and also the
+    feature tests I adapted when using Hexo as a blog authoring/generation
+    mechanism.
+
+    This folder provides the authoring for that page.
+
+MANIFEST
+
+       current.txt
+               this manifest and job-jar file
+
+         index.md
+               <https://orcmid.github.io/miser/about/construction/current/>
+               authoring material
+
+       current/
+               page that renders with the current theme, demonstrating
+               its markup provisions.
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2019 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ TODO
+
+  * Use the available theme demonstrations with code blocks revealing how
+    each is produced.
+
+  * If a theme is customized, determine where and how that works.
+
+  * I am trusting that this material is current as of 2019-11-20:
+    <https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages>
+
+  * Provide default rendering with no explicit template as the first case.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2019-11-20-16:14 Create placeholder and initial job jar for the
+       page demonstrating Markdown features using the current (or default)
+       page template.
+
+                        *** end of current.txt ***
