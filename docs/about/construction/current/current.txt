@@ -1,21 +1,24 @@
-current.txt 0.0.0                    UTF-8                       dh:2019-11-20
+current.txt 0.0.1                    UTF-8                       dh:2019-11-21
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-<https://github.com/orcmid/miser/blob/master/docs/about/construction/construction.txt>
+<https://github.com/orcmid/miser/blob/master/docs/about/construction/current/current.txt>
 
                      MARKDOWN FEATURE CONFIRMATION PAGE
                      ----------------------------------
 
     Page <https://orcmid.github.io/miser/about/construction/current/> shows
     the rendering of Markdown features using the current theme.  The page
-    is based on the theme demonstrations provided by GitHub and also the
-    feature tests I adapted when using Hexo as a blog authoring/generation
-    mechanism.
+    content is based on theme demonstrations provided by GitHub and also the
+    feature tests adapted from Hexo blog authoring/generation template tests.
 
-    This folder provides the authoring for that page.
+    Additional features for examination and demonstration/confirmation have
+    been obtained by digital forensics of generated pages.
+
+    This folder provides the authoring for that page as well as the confirmed
+    experiences from one template to the next.
 
 MANIFEST
 
@@ -61,8 +64,32 @@ MANIFEST
 
   * Provide default rendering with no explicit template as the first case.
 
+  * Explain that examining the source via GitHub will show a formatted
+    version and the Raw view must be chosen to see the actual "source."
+
+  * Introduce the comment markers at this level.  Not clear if provenance
+    of template matters.  If so, it should apply here.
+
+  * See what can be made of view source also.  Also the developer view.  This
+    is a little document forensics.
+
+  * The headers automatically get anchors it appears, so we can do
+    permalinks.  They also show up with link symbols on a heading mouse-over.
+    We want to be able to use these when cross-referencing within a page.  We
+    want this to be available on any themes we use.  Demonstrate along with
+    headers or immediately afterwards.
+
+  * The page-top title identifies the mini-web and links to its "root."
+
+  * Use "mini-web" to avoid confusion with sub-domain?
+
+  * The difference with rendering in publishing a mini-web, versus rendering
+    of markdown in-place in a repository view is simply the source location?
+    This should be verifiable with cross-references and local linking.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-11-21-09:31 Touch-ups and TODO management.
  0.0.0 2019-11-20-16:14 Create placeholder and initial job jar for the
        page demonstrating Markdown features using the current (or default)
        page template.
