@@ -1,4 +1,4 @@
-construction.txt 0.0.0               UTF-8                       dh:2019-11-20
+construction.txt 0.0.2               UTF-8                       dh:2019-11-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -17,6 +17,10 @@ MANIFEST
          index.md
                <https://orcmid.github.io/miser/about/construction/>
                authoring material
+
+       current/
+               page that renders with the current theme, demonstrating
+               its markup provisions.
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -67,6 +71,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2019-11-20-17:46 Add current/
  0.0.1 2019-11-20-15:19 Manage TODOs
  0.0.0 2019-11-20-14:01 Create placeholder and initial job jar for Miser
        Project documentation authoring "about/construction/"
