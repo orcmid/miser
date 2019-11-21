@@ -1,4 +1,4 @@
-about.txt 0.0.0                      UTF-8                       dh:2019-11-20
+about.txt 0.0.1                      UTF-8                       dh:2019-11-21
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -8,6 +8,13 @@ about.txt 0.0.0                      UTF-8                       dh:2019-11-20
 
                   ABOUT THE GITHUB-HOSTED DOCUMENTATION
                   -------------------------------------
+
+    The about/ page and its subordinates address the documentation
+    hypertext and not the Miser Project itself.
+
+    Other portions of <https://orcmid.github.io/miser/> introduce subject-
+    matter of the project, including tie-in to the code under GitHub.
+
 
 MANIFEST
 
@@ -19,7 +26,8 @@ MANIFEST
 
   construction/
                folder on the construction and organization of the docs/
-               site authoring content and related material
+               hypertext authoring, the structure, plumbing, and related
+                material
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -53,8 +61,13 @@ MANIFEST
   * The construction subsection documents the authoring arrangement and
     also provides confirmation checks, any template modification, etc.
 
+  * Identify adaptation of the infrastructure technique used on sites such
+    as miser-theory or the nfoCentrale sites in general.  Find appropriate
+    links.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-11-21-08:10 Add synopsis and manage TODOs
  0.0.0 2019-11-20-14:10 Create placeholder and initial job jar for Miser
        Project documentation web site "About" section.
 
