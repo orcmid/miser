@@ -1,0 +1,82 @@
+plain.txt 0.0.0                      UTF-8                       dh:2019-11-21
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+<https://github.com/orcmid/miser/blob/master/docs/about/construction/current/current.txt>
+
+                    CONFIRMED PLAIN TEMPLATE EXPERIENCE
+                    -----------------------------------
+
+    Page <https://orcmid.github.io/miser/about/construction/current/> shows
+    the rendering of Markdown features using the current theme.  When that
+    theme changes in any manner, current/ and all other pages will be
+    automaticlaly adjusted.
+
+    This page provides confirmation, via text and screen captures, of the
+    experience when no action is taken to specify a Google Pages template.
+    This is taken to be the plain template.  This creates a comparison with
+    how the same features are (or are not) handled with a different template.
+
+    It is not known what the stability of the plain template happens to be.
+    The presentation at this folder is based on behavior observed on 2019-
+    11-20 and continuing until further notice.
+
+    Although the page authored here provides confirmation of experience with
+    the (2019-11-20) plain template, any change of that default GitHub Pages
+    template used will also impact the rendering of plain/index.md into HTML.
+    It will not impact the narrative and the images captured before a change.
+
+    There are some hyperlinks from plain/ to sections of current/.  To the
+    degree that the same document headings and the generation of their perma-
+    links are preserved, these links provide a kind of blink-comparison
+    between the results with the plain template and any other template's
+    rendering of the current/ page.
+
+MANIFEST
+
+         plain.txt
+               this manifest and job-jar file
+
+         index.md
+               <https://orcmid.github.io/miser/about/construction/current/>
+               account of the Markdown feature authoring and formatting
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2019 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ TODO
+
+  * Capture the title under linking and the treatment of heading anchors.
+
+  * Capture the footer and account for how not-useful it is.
+
+  * Capture the permalink and account for it (as in current/ as well).
+
+  * Explain about confirmable experience enough.  It would be nice to treat
+    this somewhere where it can be described generally.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2019-11-21-13.34 Create placeholder and initial job jar for the
+       page demonstrating Markdown features using the current (or default)
+       page template.
+
+                        *** end of plain.txt ***
