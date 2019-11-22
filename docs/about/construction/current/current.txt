@@ -87,6 +87,9 @@ MANIFEST
     of markdown in-place in a repository view is simply the source location?
     This should be verifiable with cross-references and local linking.
 
+  * demonstrate image squeezing along with text-flow adjustment.  This will
+    have to be captured under plain also.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
  0.0.1 2019-11-21-09:31 Touch-ups and TODO management.
