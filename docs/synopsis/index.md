@@ -7,15 +7,15 @@
 
 --------
 
-. **Latest version:** The latest Miser Synopsis presentation is at
+* **Latest version:** The latest Miser Synopsis presentation is at
   <http://miser-theory.info/notes/2001/11/n011101b.htm>.
-. **This page: 0.02 Initial Synopsis**
+* **This page: 0.02 Initial Synopsis**
   <http://miser-theory-info/notes>.  This is the synopsis that has been
   stable for several years and is preserved here as the basis for further
   elaboration.
-. **PDF Preservation:**
+* **PDF Preservation:**
   <https://orcmid.github.io/miser/synopsis/Miser-0.02-synopsis.pdf>
-. **Miser Project Replication**: <https://orcmid.github.io/miser/synopsis/>
+* **Miser Project Replication**: <https://orcmid.github.io/miser/synopsis/>
 
  --------
 
