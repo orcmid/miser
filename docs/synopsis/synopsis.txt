@@ -1,0 +1,72 @@
+synopsis.txt 0.0.0                   UTF-8                       dh:2019-11-22
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+       <https://github.com/orcmid/miser/blob/master/docs/docs.txt>
+
+                    GITHUB-PUBLISHED DOCUMENTATION FOLDER
+                    -------------------------------------
+
+    The Miser Project docs/ folder provides the managed source-code for
+    authoring GitHub Pages.  The entire docs/ folder is automatically
+    transformed by GitHub to produce the content of a web subdomain at
+    <https://orcmid.github.io/miser/>.
+
+    Further information about the purpose, construction, and care-and-feeding
+    of this web authoring arrangement are found on the about/ page and its
+    subordinate construction/ material.
+
+
+MANIFEST
+
+      synopsis.txt
+               this manifest and job-jar file
+
+         index.md
+               markdown of page <https://orcmid.github.io/miser/synopsis>
+
+    Miser-0.02-synopsis-BottomMatter.png
+               capture of the history and footer of the original blog post
+    Miser-0.02-synopsis.pdf
+               PDF capture of the original 0.02 blog post, via OneNote
+    Miser-0.02-synopsis-TitleBlock
+               capture of the title block of the 0.02 blog post
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2019 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+TODO
+
+  * Test rendering of the title block by the page markdown.
+
+  * Test rendering of the bottom matter by the page markdown.
+
+  * Provide an equivalent history block using MarkDown
+
+  * Use definition lists to replicate the listing in the original text.
+
+  * Preserve the original text.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2019-11-22-12:26 Create placeholder and initial job jar for replicating
+       and preserving the Miser Project synopsis.
+
+                         *** end of synopsis.txt ***
