@@ -111,7 +111,7 @@ as a header.
 
 ---
 
-```md
+```text
 ---
 
 # H1 Header
@@ -143,7 +143,7 @@ as a header.
 
 
 
-<!-- 0.0.3 2019-11-21-17:06 Introduce Headers and Links
+<!-- 0.0.3 2019-11-21-17:12 Introduce Headers and Links
      0.0.2 2019-11-20-17:42 Add Special Text Features, including :emoji:
      0.0.1 2019-11-20-16:45 Add Text Emphasis
      0.0.0 2019-11-20-16:12 Start with Text Flow Demonstration
