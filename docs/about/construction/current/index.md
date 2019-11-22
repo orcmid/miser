@@ -120,7 +120,7 @@ The largests header is generally used for the overall title.
 
 ## H2 Header
 
-Decreasing size and strength reflect a nesting the hierarcy.
+Decreasing size and strength reflect hierarchical nesting as desired.
 
 ### H3 Header
 
@@ -143,7 +143,7 @@ as a header.
 
 
 
-<!-- 0.0.3 2019-11-21-17:25 Introduce Headers and Links
+<!-- 0.0.3 2019-11-21-17:30 Introduce Headers and Links
      0.0.2 2019-11-20-17:42 Add Special Text Features, including :emoji:
      0.0.1 2019-11-20-16:45 Add Text Emphasis
      0.0.0 2019-11-20-16:12 Start with Text Flow Demonstration
