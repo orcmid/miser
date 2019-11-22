@@ -1,4 +1,4 @@
-<!-- index.md 0.0.9                UTF-8                     dh:2019-11-22 -->
+<!-- index.md 0.0.10               UTF-8                     dh:2019-11-22 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/docs/synopsis/index.md>
      manifest: <https://github.com/orcmid/miser/blob/master/docs/synopsis/synopsis.txt>
@@ -45,28 +45,29 @@ Miser is not Lisp.
 This choice of initial elements supports seven project themes:
 
 <dl>
-<dt>**1. Universality**</dt>
+<dt>1. Universality</dt>
 <dd>having from the very beginning an elementary structure that is completely
 sufficient as a basis for (representing) all computations of any kind</dd>
-<dt>**2. Completeness**</dt>
+<dt>2. Completeness</dt>
 <dd>providing direct access to and demonstration of the notion of
 computational completeness</dd>
-<dt>**3. Interpretation**</dt>
+<dt>3. Interpretation</dt>
 <dd>contrasting with familiar computational entities (and their
 representations) so that we can see more clearly what is essential and
 what is inessential in the implementation and interpretation of
 computational entities</dd>
-<dt>**4. Representation**</dt>
+<dt>4. Representation</dt>
 <dd>strengthening our grasp on what it means to represent something in a
 computer system</dd>
-<dt>**5. Extensibility**</dt>
+<dt>5. Extensibility</dt>
 <dd>demonstrating a computational system's capacity for integrating extensions
 to its internal representations while preserving amenability of the system to
 theoretical analysis</dd>
-<dt>**6. Fidelity**</dt>
+<dt>6. Fidelity</dt>
 <dd>confirming an implementation's fidelity to a
-[theoretical model](http://miser-theory.info/notes/n001000.htm)</dd>
-<dt>**7. Realization**</dt>
+[theoretical model](http://miser-theory.info/notes/n001000.htm)
+</dd>
+<dt>7. Realization</dt>
 <dd>mechanizing the mechanism's theoretical model in the computational system
 itself</dd>
 </dl>
@@ -102,9 +103,8 @@ inquiry into computer science that emerged with that magnificent instrument.
 I am indebted to conversations with Alan Camhi for my return to this work.
 Alan, this is the beginning that I promised to make.
 
-<right>-- Dennis E. Hamilton\
-Livorno, Italy\
-2000 May 7</right>
+<p align="right">-- Dennis E. Hamilton<br />Livorno, Italy<br />2000 May 7
+</p>
 
 --------
 
