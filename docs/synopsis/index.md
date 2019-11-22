@@ -1,4 +1,4 @@
-<!-- index.md 0.0.11               UTF-8                     dh:2019-11-22 -->
+<!-- index.md 1.0.0                UTF-8                     dh:2019-11-22 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/docs/synopsis/index.md>
      manifest: <https://github.com/orcmid/miser/blob/master/docs/synopsis/synopsis.txt>
@@ -65,7 +65,7 @@ to its internal representations while preserving amenability of the system to
 theoretical analysis</dd>
 <dt>6. Fidelity</dt>
 <dd>confirming an implementation's fidelity to a
-theoretical model,<http://miser-theory.info/notes/n001000.htm>
+<a href="http://miser-theory.info/notes/n001000.htm"> theoretical model</a>
 </dd>
 <dt>7. Realization</dt>
 <dd>mechanizing the mechanism's theoretical model in the computational system
@@ -103,8 +103,8 @@ inquiry into computer science that emerged with that magnificent instrument.
 I am indebted to conversations with Alan Camhi for my return to this work.
 Alan, this is the beginning that I promised to make.
 
-<p align="right">-- *Dennis E. Hamilton<br />Livorno, Italy<br />2000 May 7*
-</p>
+<p align="right">-- <i>Dennis E. Hamilton<br />Livorno, Italy<br />2000 May 7
+</i></p>
 
 --------
 
