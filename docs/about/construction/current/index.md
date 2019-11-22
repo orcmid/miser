@@ -1,6 +1,8 @@
-<!-- index.md  0.0.2              UTF-8                      dh:2019-11-20 -->
-<!-- https://github.com/orcmid/miser/blob/master/
-     docs/about/construction/current/index.md -->
+<!-- index.md  0.0.3              UTF-8                      dh:2019-11-21 -->
+<!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
+<!-- source: <https://github.com/orcmid/miser/blob/master/
+              docs/about/construction/current/index.md>
+     -->
 # MISER PROJECT DOCS: CURRENT MARKDOWN TREATMENT
 
 This page demonstrates the layout and Markdown effects supported by the
@@ -79,7 +81,70 @@ at the [emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/),
 including :smile: :boom: :heart: :kiss: :floppy_disk: :mouse:
 ```
 
-<!-- 0.0.2 2019-11-20-17:42 Add Special Text Features, including :emoji:
+## HEADERS AND LINKS
+
+There are six levels of headers supported in Markdown (and HTML)
+
+---
+
+# H1 Header
+
+The largests header is generally used for the overall title.
+
+## H2 Header
+
+Decreasing size and strength reflect a nesting the hierarcy.
+
+### H3 Header
+
+#### H4 Header
+
+Generally, H4 is the same size as normal text, but still distinguished
+as a header.
+
+##### H5 Header
+
+###### H6 Header
+
+<small><small>The smallest header levels could use some smaller text.
+</small></small>
+
+---
+
+```md
+---
+
+# H1 Header
+
+The largests header is generally used for the overall title.
+
+## H2 Header
+
+Decreasing size and strength reflect a nesting the hierarcy.
+
+### H3 Header
+
+#### H4 Header
+
+Generally, H4 is the same size as normal text, but still distinguished
+as a header.
+
+##### H5 Header
+
+###### H6 Header
+
+<small><small>The smallest header levels could use some smaller text.
+</small></small>
+
+---
+```
+
+
+
+
+
+<!-- 0.0.3 2019-11-21-17:06 Introduce Headers and Links
+     0.0.2 2019-11-20-17:42 Add Special Text Features, including :emoji:
      0.0.1 2019-11-20-16:45 Add Text Emphasis
      0.0.0 2019-11-20-16:12 Start with Text Flow Demonstration
      -->
