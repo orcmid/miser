@@ -1,4 +1,4 @@
-synopsis.txt 0.0.0                   UTF-8                       dh:2019-11-22
+synopsis.txt 0.0.1                   UTF-8                       dh:2019-11-22
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -6,17 +6,15 @@ synopsis.txt 0.0.0                   UTF-8                       dh:2019-11-22
 
        <https://github.com/orcmid/miser/blob/master/docs/docs.txt>
 
-                    GITHUB-PUBLISHED DOCUMENTATION FOLDER
+                    MISER PROJECT SYNOPSIS PAGE AUTHORING
                     -------------------------------------
 
-    The Miser Project docs/ folder provides the managed source-code for
-    authoring GitHub Pages.  The entire docs/ folder is automatically
-    transformed by GitHub to produce the content of a web subdomain at
-    <https://orcmid.github.io/miser/>.
+    The Miser Project docs/synopsis/ folder provides the managed source-code
+    replication of <http://miser-project.info/synopsis.htm>.
 
-    Further information about the purpose, construction, and care-and-feeding
-    of this web authoring arrangement are found on the about/ page and its
-    subordinate construction/ material.
+    To provide some fidelity to the miser-theory.info version, a couple of
+    screen-captured elements are used for the title block and the bottom
+    material.
 
 
 MANIFEST
@@ -54,18 +52,14 @@ MANIFEST
 
 TODO
 
-  * Test rendering of the title block by the page markdown.
+ * ALways check the formatting on changes of themes here.
 
-  * Test rendering of the bottom matter by the page markdown.
-
-  * Provide an equivalent history block using MarkDown
-
-  * Use definition lists to replicate the listing in the original text.
-
-  * Preserve the original text.
+ * Note some limitations on content of material wrapped in HTML tags.  This
+   should be under construction/current/ and plain/ somewhere.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-11-22-15:34 Complete production of a checked synopsis version.
  0.0.0 2019-11-22-12:26 Create placeholder and initial job jar for replicating
        and preserving the Miser Project synopsis.
 
