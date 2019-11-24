@@ -1,4 +1,4 @@
-docs.txt 0.0.7                       UTF-8                       dh:2019-11-24
+docs.txt 0.0.8                       UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -75,6 +75,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.8 2019-11-24-15:06 Link to synopsis/ from the home page
  0.0.7 2019-11-24-10:22 Reflect restructuring with elevation of construction/
        here, with construction topics and TODOs managed there.
  0.0.6 2019-11-24-09:46 Manage TODOs and propose restructuring of construction

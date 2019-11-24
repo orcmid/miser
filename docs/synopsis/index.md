@@ -1,4 +1,4 @@
-<!-- index.md 1.0.1                UTF-8                     dh:2019-11-24 -->
+<!-- index.md 1.0.2                UTF-8                     dh:2019-11-24 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/docs/synopsis/index.md>
      manifest: <https://github.com/orcmid/miser/blob/master/docs/synopsis/synopsis.txt>
@@ -90,7 +90,5 @@ Alan, this is the beginning that I promised to make.
 
 <p align="right">-- <i>Dennis E. Hamilton<br />Livorno, Italy<br />2000 May 7
 </i></p>
-
---------
 
 ![Original synopsis page bottom matter](Miser-0.0.3-synopsis-BottomMatter.png)
