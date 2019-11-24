@@ -1,10 +1,10 @@
-plain.txt 0.0.0                      UTF-8                       dh:2019-11-21
+plain.txt 0.0.1                      UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-<https://github.com/orcmid/miser/blob/master/docs/about/construction/current/current.txt>
+<https://github.com/orcmid/miser/blob/master/docs/construction/current/current.txt>
 
                     CONFIRMED PLAIN TEMPLATE EXPERIENCE
                     -----------------------------------
@@ -12,7 +12,7 @@ plain.txt 0.0.0                      UTF-8                       dh:2019-11-21
     Page <https://orcmid.github.io/miser/about/construction/current/> shows
     the rendering of Markdown features using the current theme.  When that
     theme changes in any manner, current/ and all other pages will be
-    automaticlaly adjusted.
+    automatically adjusted.
 
     This page provides confirmation, via text and screen captures, of the
     experience when no action is taken to specify a Google Pages template.
@@ -40,8 +40,9 @@ MANIFEST
                this manifest and job-jar file
 
          index.md
-               <https://orcmid.github.io/miser/about/construction/current/>
+               <https://orcmid.github.io/miser/construction/current/>
                account of the Markdown feature authoring and formatting
+               default without explicit setting of a template.
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -75,6 +76,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2019-11-24-11:28 Refactor for the new docs/construction/ location.
  0.0.0 2019-11-21-13.34 Create placeholder and initial job jar for the
        page demonstrating Markdown features using the current (or default)
        page template.
