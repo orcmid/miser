@@ -1,13 +1,13 @@
-construction.txt 0.0.4               UTF-8                       dh:2019-11-24
+construction.txt 0.0.5               UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-<https://github.com/orcmid/miser/blob/master/docs/about/construction/construction.txt>
+<https://github.com/orcmid/miser/blob/master/docs/construction/construction.txt>
 
-                   ABOUT DOCS WEB AUTHORING CONSTRUCTION
-                   -------------------------------------
+              GITHUB MISER PROJECT DOCS CONSTRUCTION MATERIAL
+              -----------------------------------------------
 
 MANIFEST
 
@@ -15,12 +15,17 @@ MANIFEST
                this manifest and job-jar file
 
          index.md
-               <https://orcmid.github.io/miser/about/construction/>
+               <https://orcmid.github.io/miser/construction/>
                markdown source
 
        current/
                page that renders with the current theme, demonstrating
                its markup provisions.
+
+         plain/
+               documentation of how current rendered when the default docs/
+               publication was employed with no explicit introduction of a
+               template.
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -43,8 +48,13 @@ MANIFEST
 
  TODO
 
-  * Move docs/about/construction to docs/construction/ and see how GitHub
-    manages that.
+   * Find a clean way to talk about the *authored" documentation and the
+    *authoring" source that is published to be the documentation.  Need some
+    nomenclature that I don't keep tripping over.
+
+  * Identify adaptation of the infrastructure technique used on sites such
+    as miser-theory or the nfoCentrale sites in general.  Find appropriate
+    links.
 
   * Find a theme that supports reflow.  The Pages templates do not seem to
     provide for that.
@@ -80,9 +90,6 @@ MANIFEST
 
    * Also, "Document Engineering"
 
-   * Add a "plain" folder and include forensic-information screen captures
-     also.
-
    * Add a forensics folder on web-site and authoring, plus trouble-shooting,
      reverse-engineering, etc.
 
@@ -90,28 +97,32 @@ MANIFEST
 
    * Confirm preservation with pre-HTML5 browsers, such as Internet Explorer.
 
-   * Use edit/master to show unrendered markdown pages :).  Need to explain
-     that down in current, it seems.  It is another "plain" thing.
-
    * The "improve this page" and edit/master link requires being logged-in to
      GitHub.  We need a way to suppress that.  Document this in "plain."
 
   * The folio system is a bit different here.  There can be a counterpart in
     how pages and their assets are in folders.  The idea of version sequences
     does not quite work unless we take it to a lower level.  The use of insert
-    pages might have no counterpart here.  I could still do it but it would
-    take copying.
+    pages might have no counterpart here.  Having the effect would take
+    copying.
 
   * GitHub, and use of Git, provides a valuable history and provenance system.
     It requires access to such "document forensic" tools and doesn't support
     removed prints of pages the way I have desired.
 
   * The missing here is construction zones and also the job jar xyymmnna.htm
-    pages.
+    pages.  At the moment, construction structure is in the <folder>.txt files
+    like this one.  The Construction Material folder is now equivalent to the
+    Construction Zone scheme on nfoCentrale.
 
+  * Repair the substructure and content of construction/ to reside directly at
+    docs/construction/ and https://orcmid.github.io/miser/construction.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2019-11-24-10:38 More consolidation and management of TODOs
+ 0.0.5 2019-11-24-09:36 Manage TODOs and adjustment of content to location at
+       docs/construction.
  0.0.4 2019-11-24-09:20 Manage TODOs and preparation for movement to docs/
        level
  0.0.3 2019-11-21-10:29 Touch-up and manage TODOs
