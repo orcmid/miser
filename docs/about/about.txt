@@ -10,7 +10,7 @@ about.txt 0.0.2                      UTF-8                       dh:2019-11-24
                   -------------------------------------
 
     The about/ page and its subordinates address the Miser Project and
-    its web-presence connections.
+    connections with its investigator and
 
 MANIFEST
 
@@ -43,14 +43,6 @@ MANIFEST
 
  TODO
 
-  * Find a clean way to talk about the *authored" documentation and the
-    *authoring" source that is published to be the documentation.  Need some
-    nomenclature that I don't keep tripping over.
-
-  * Identify adaptation of the infrastructure technique used on sites such
-    as miser-theory or the nfoCentrale sites in general.  Find appropriate
-    links.
-
   * This becomes a conventional About page focused on the Miser Project and
     what it is about, how things work here.  The Synopsis is featured, of
     course.
@@ -61,8 +53,8 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.2 2019-11-24-09:43 Remove construction/, elevating it to a separate
-       companion at docs/construction/.
+ 0.0.2 2019-11-24-11:00 Remove construction/, elevating it to a separate
+       companion at docs/construction/.  Simplify TODOs
  0.0.1 2019-11-21-08:10 Add synopsis and manage TODOs
  0.0.0 2019-11-20-14:10 Create placeholder and initial job jar for Miser
        Project documentation web site "About" section.
