@@ -1,16 +1,22 @@
-<!-- index.md  0.0.3              UTF-8                      dh:2019-11-21 -->
+<!-- index.md  0.0.4              UTF-8                      dh:2019-11-24 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/
-              docs/about/construction/current/index.md>
+              docs/construction/current/index.md>
+     construction structure, manifest, and job jar at
+     <https://orcmid.github.io/miser/construction/current/current.txt>
      -->
 # MISER PROJECT DOCS: CURRENT MARKDOWN TREATMENT
 
 This page demonstrates the layout and Markdown effects supported by the
 current (default), template's rendering of <https://orcmid.github.io/miser/>
 pages.  This page is rendered at
-<https://orcmid.github.io/miser/about/construction/current/>.  It is authored
+<https://orcmid.github.io/miser/construction/current/>.  It is authored
 at
-<https://github.com/orcmid/miser/blob/master/docs/about/construction/current/index.md>.
+<https://github.com/orcmid/miser/blob/master/docs/construction/current/index.md>.
+
+For details of how the default, no-template presentation was experienced and
+minimum expectations for other templates, see the
+[plain rendering confirmation](../plain/).
 
 ## TEXT TREATMENT
 
@@ -140,12 +146,4 @@ as a header.
 ```
 
 
-
-
-
-<!-- 0.0.3 2019-11-21-17:30 Introduce Headers and Links
-     0.0.2 2019-11-20-17:42 Add Special Text Features, including :emoji:
-     0.0.1 2019-11-20-16:45 Add Text Emphasis
-     0.0.0 2019-11-20-16:12 Start with Text Flow Demonstration
-     -->
 <!--       *** end of docs/about/construction/current/index.md ***         -->
