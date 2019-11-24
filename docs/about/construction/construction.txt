@@ -1,4 +1,4 @@
-construction.txt 0.0.3               UTF-8                       dh:2019-11-21
+construction.txt 0.0.4               UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -42,6 +42,9 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
  TODO
+
+  * Move docs/about/construction to docs/construction/ and see how GitHub
+    manages that.
 
   * Find a theme that supports reflow.  The Pages templates do not seem to
     provide for that.
@@ -93,8 +96,24 @@ MANIFEST
    * The "improve this page" and edit/master link requires being logged-in to
      GitHub.  We need a way to suppress that.  Document this in "plain."
 
+  * The folio system is a bit different here.  There can be a counterpart in
+    how pages and their assets are in folders.  The idea of version sequences
+    does not quite work unless we take it to a lower level.  The use of insert
+    pages might have no counterpart here.  I could still do it but it would
+    take copying.
+
+  * GitHub, and use of Git, provides a valuable history and provenance system.
+    It requires access to such "document forensic" tools and doesn't support
+    removed prints of pages the way I have desired.
+
+  * The missing here is construction zones and also the job jar xyymmnna.htm
+    pages.
+
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2019-11-24-09:20 Manage TODOs and preparation for movement to docs/
+       level
  0.0.3 2019-11-21-10:29 Touch-up and manage TODOs
  0.0.2 2019-11-20-17:46 Add current/
  0.0.1 2019-11-20-15:19 Manage TODOs
