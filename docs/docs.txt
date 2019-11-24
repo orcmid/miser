@@ -1,4 +1,4 @@
-docs.txt 0.0.6                       UTF-8                       dh:2019-11-23
+docs.txt 0.0.7                       UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -15,8 +15,8 @@ docs.txt 0.0.6                       UTF-8                       dh:2019-11-23
     <https://orcmid.github.io/miser/>.
 
     Further information about the purpose, construction, and care-and-feeding
-    of this web authoring arrangement are found on the about/ page and its
-    subordinate construction/ material.
+    of this web authoring arrangement are found on the construction/ page and
+    its subordinate material.
 
 
 MANIFEST
@@ -33,8 +33,13 @@ MANIFEST
            along with the authored Visio editable form.
 
      about/
-           subfolder for the about page and subordinate material on
-           the purpose and management of the web pages.
+           subfolder for the about page and subordinate material on the
+           the purpose and management of the project and connection with
+           the "principal investigator."
+
+     construction/
+           construction materials and documentation of the structure and
+           authoring of the <https://orcmid.github.io/miser/> materials.
 
      synopsis/
            preserving the original Miser Project synopsis
@@ -59,22 +64,10 @@ MANIFEST
 
 TODO
 
-  * Fill in about/ and about/construction/ index.htm pages.
+  * Fill in about/ and construction/ index.htm pages.
 
   * Make this the home-page level and update index.md to form the front porch
     of this documentation hypertext.
-
-  * What about folio structure?  Is that something to maintain here also?
-
-  * What about construction structure.  Do we have a non-HTML counterpart of
-    that with these folder-named text files?  The nfoCentral construction
-    structure and construction zones do have counterparts.
-
-  * Move construction/ to the top level and accomplish counterparts of the
-    scheme on nfoCentrale sites.
-
-  * Move construction notes at other levels to the construct.txt page for
-    now.
 
   * Add license and NOTICE pages as was done with Hexo authoring.  In this
     case, they are part of the source and may as well be in Markdown (as well
@@ -82,6 +75,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.7 2019-11-24-10:22 Reflect restructuring with elevation of construction/
+       here, with construction topics and TODOs managed there.
  0.0.6 2019-11-24-09:46 Manage TODOs and propose restructuring of construction
        material
  0.0.5 2019-11-22-12:11 Add synopsis/ and manage TODOs.
