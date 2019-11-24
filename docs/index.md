@@ -8,7 +8,7 @@
 
 ![The Miser Project oMiser logo](n170601d2.png)
 
-    [**Demonstrating Computation Theory Made Practical**](synopsis/)
+> [**Demonstrating Computation Theory Made Practical**](synopsis/)
 
 This space is under construction.  This page will become the home page for
 The Miser Project documentation on GitHub.
