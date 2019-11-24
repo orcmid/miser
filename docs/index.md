@@ -1,8 +1,12 @@
-<!-- index.md 0.0.3                UTF-8                     dh:2019-11-20 -->
+<!-- index.md 0.0.4                UTF-8                     dh:2019-11-20 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source <https://github.com/orcmid/miser/blob/master/docs/index.md>
+     construction structure, manifest, and job jar at
+     <https://orcmid.github.io/miser/docs.txt>
      -->
 # The Miser Project
+
+![The Miser Project oMiser logo](n170601d2.png)
 
 This space is under construction.  This page will become the home page for
 The Miser Project documentation on GitHub.
@@ -18,26 +22,22 @@ Notes on the plumbing within the structure are found at pages such as
 form.
 
 The footer, offering page improvement (and presumably requiring a push
-request) is maybe not what I had in mind.
+request) is maybe not what I had in mind.  It requires logging into GitHub.
 
 An important feature of the default (i.e., none-specified) theme is that
 reflow on change of browser view width is automatic and as desired.
 
 I do have some concerns about explicit versioning and having content that
-is skipped.  I can specify HTML comments though.
-
-<!-- This is an HTML comment -->
+is skipped.  I can specify HTML comments for that, and I am doing so.
 
 We will run through all of the Markdown options to see how they are
 rendered here.  Theme demos provide a nice comparison.
 
 Demonstration of the current theme, including the markdown elements, is
-at [current](about/construction/current/) here.
+at [current](construction/current/) here.
 
 Placeholder initiated 2019-11-20T08:37
-<!-- 0.0.3 2019-11-21-08:30 Touch-ups and location of current.
-     0.0.2 2019-11-20-09:51 First-level of success
-     0.0.1 2019-11-20-09:43 Fussing with formatting
-     0.0.0 2019-11-20-08:37 Initial placeholder
+Construction structure at <https://orcmid.github.io/miser/docs.txt>
+<!--
      -->
-<!--                   *** end of index.md ***                             -->
+<!--                *** end of docs/index.md ***                           -->

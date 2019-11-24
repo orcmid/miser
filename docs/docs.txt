@@ -1,4 +1,4 @@
-docs.txt 0.0.5                       UTF-8                       dh:2019-11-22
+docs.txt 0.0.6                       UTF-8                       dh:2019-11-23
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -26,6 +26,11 @@ MANIFEST
 
      index.md
            markdown of the <https://orcmid.github.io/miser/> home page.
+
+     n170601d2.vsdx
+     n170601d2.png
+           images of the oMiser logo for employment on the home page,
+           along with the authored Visio editable form.
 
      about/
            subfolder for the about page and subordinate material on
@@ -62,7 +67,14 @@ TODO
   * What about folio structure?  Is that something to maintain here also?
 
   * What about construction structure.  Do we have a non-HTML counterpart of
-    that with these folder-named text files?
+    that with these folder-named text files?  The nfoCentral construction
+    structure and construction zones do have counterparts.
+
+  * Move construction/ to the top level and accomplish counterparts of the
+    scheme on nfoCentrale sites.
+
+  * Move construction notes at other levels to the construct.txt page for
+    now.
 
   * Add license and NOTICE pages as was done with Hexo authoring.  In this
     case, they are part of the source and may as well be in Markdown (as well
@@ -70,6 +82,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2019-11-24-09:46 Manage TODOs and propose restructuring of construction
+       material
  0.0.5 2019-11-22-12:11 Add synopsis/ and manage TODOs.
  0.0.4 2019-11-21-08:32 Provide synopsis and manage TODOs.
  0.0.3 2019-11-20-14:17 Split out about/ to account for the .io/miser web site
