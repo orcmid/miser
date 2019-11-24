@@ -1,4 +1,4 @@
-synopsis.txt 0.0.2                   UTF-8                       dh:2019-11-23
+synopsis.txt 0.0.3                   UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -25,11 +25,11 @@ MANIFEST
          index.md
                markdown of page <https://orcmid.github.io/miser/synopsis>
 
-    Miser-0.02-synopsis-BottomMatter.png
+    Miser-0.0.3-synopsis-BottomMatter.png
                capture of the history and footer of the original blog post
-    Miser-0.02-synopsis.pdf
+    Miser-0.0.3-synopsis.pdf
                PDF capture of the original 0.02 blog post, via OneNote
-    Miser-0.02-synopsis-TitleBlock
+    Miser-0.0.3-synopsis-TitleBlock
                capture of the title block of the 0.02 blog post
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -57,14 +57,9 @@ TODO
  * Note some limitations on content of material wrapped in HTML tags.  This
    should be under construction/current/ and plain/ somewhere.
 
- * Repair the 0.02 document to have correct links in the version history.
-
- * Add cross-linking back to here for the PDF and any continued development.
-
- * Replace the PDF with one matching the corrections.
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2019-11-24-14:55 Update to use the repaired 0.0.3 of the original
  0.0.2 2019-11-23-09:02 More TODOs
  0.0.1 2019-11-22-15:34 Complete production of a checked synopsis version.
  0.0.0 2019-11-22-12:26 Create placeholder and initial job jar for replicating

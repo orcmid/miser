@@ -1,24 +1,9 @@
-<!-- index.md 1.0.0                UTF-8                     dh:2019-11-22 -->
+<!-- index.md 1.0.1                UTF-8                     dh:2019-11-24 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/docs/synopsis/index.md>
      manifest: <https://github.com/orcmid/miser/blob/master/docs/synopsis/synopsis.txt>
      -->
-![Original synopsis page title block](Miser-0.02-synopsis-TitleBlock.png)
-
---------
-
-* <small>**Latest version:** The latest Miser Synopsis presentation is at
-  <http://miser-theory.info/notes/2001/11/n011101b.htm>.</small>
-* <small>**This page: 0.02 Initial Synopsis**
-  <http://miser-theory-info/notes>.  This is the synopsis that has been
-  stable for several years and is preserved here as the basis for further
-  elaboration.</small>
-* <small>**PDF Preservation:**
-  <https://orcmid.github.io/miser/synopsis/Miser-0.02-synopsis.pdf></small>
-* <small>**Miser Project Replication**:
-  <https://orcmid.github.io/miser/synopsis/></small>
-
- --------
+![Original synopsis page title block](Miser-0.0.3-synopsis-TitleBlock.png)
 
 
 The Miser Project is a practical exploration of key concepts at the foundation
@@ -108,4 +93,4 @@ Alan, this is the beginning that I promised to make.
 
 --------
 
-![Original synopsis page bottom matter](Miser-0.02-synopsis-BottomMatter.png)
+![Original synopsis page bottom matter](Miser-0.0.3-synopsis-BottomMatter.png)
