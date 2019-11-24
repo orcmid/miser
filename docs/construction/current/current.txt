@@ -1,15 +1,15 @@
-current.txt 0.0.1                    UTF-8                       dh:2019-11-21
+current.txt 0.0.2                    UTF-8                       dh:2019-11-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-<https://github.com/orcmid/miser/blob/master/docs/about/construction/current/current.txt>
+<https://github.com/orcmid/miser/blob/master/docs/construction/current/current.txt>
 
                      MARKDOWN FEATURE CONFIRMATION PAGE
                      ----------------------------------
 
-    Page <https://orcmid.github.io/miser/about/construction/current/> shows
+    Page <https://orcmid.github.io/miser/construction/current/> shows
     the rendering of Markdown features using the current theme.  The page
     content is based on theme demonstrations provided by GitHub and also the
     feature tests adapted from Hexo blog authoring/generation template tests.
@@ -17,8 +17,10 @@ current.txt 0.0.1                    UTF-8                       dh:2019-11-21
     Additional features for examination and demonstration/confirmation have
     been obtained by digital forensics of generated pages.
 
-    This folder provides the authoring for that page as well as the confirmed
-    experiences from one template to the next.
+    This folder provides the authoring for that page used to confirm the
+    experience of features from one template to the next.  The first, default
+    theme is accounted for in the companion page at
+    <https://orcmid.github.io/miser/construction/plain/>.
 
 MANIFEST
 
@@ -26,13 +28,8 @@ MANIFEST
                this manifest and job-jar file
 
          index.md
-               <https://orcmid.github.io/miser/about/construction/current/>
+               <https://orcmid.github.io/miser/construction/current/>
                authoring material
-
-       current/
-               page that renders with the current theme, demonstrating
-               its markup provisions.
-
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -92,6 +89,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2019-11-24-10:46 Refactor to reflect changed location
  0.0.1 2019-11-21-09:31 Touch-ups and TODO management.
  0.0.0 2019-11-20-16:14 Create placeholder and initial job jar for the
        page demonstrating Markdown features using the current (or default)
