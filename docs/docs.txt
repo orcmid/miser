@@ -1,4 +1,4 @@
-docs.txt 0.0.7                       UTF-8                       dh:2019-11-24
+docs.txt 0.0.8                       UTF-8                       dh:2019-11-**
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -6,12 +6,12 @@ docs.txt 0.0.7                       UTF-8                       dh:2019-11-24
 
        <https://github.com/orcmid/miser/blob/master/docs/docs.txt>
 
-                    GITHUB-PUBLISHED DOCUMENTATION FOLDER
-                    -------------------------------------
+                    GITHUB-AUTHORED DOCUMENTATION FOLDER
+                    ------------------------------------
 
     The Miser Project docs/ folder provides the managed source-code for
     authoring GitHub Pages.  The entire docs/ folder is automatically
-    transformed by GitHub to produce the content of a web subdomain at
+    transformed by GitHub to produce the content of the web subdomain at
     <https://orcmid.github.io/miser/>.
 
     Further information about the purpose, construction, and care-and-feeding
