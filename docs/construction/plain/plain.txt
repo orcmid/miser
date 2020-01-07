@@ -1,4 +1,4 @@
-plain.txt 0.0.1                      UTF-8                       dh:2019-11-24
+plain.txt 0.0.2                      UTF-8                       dh:2020-01-07
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -40,14 +40,15 @@ MANIFEST
                this manifest and job-jar file
 
          index.md
+               account of the "Current Markdown Treatment" page at
                <https://orcmid.github.io/miser/construction/current/>
-               account of the Markdown feature authoring and formatting
-               default without explicit setting of a template.
+               when the Markdown feature layout and formatting was the
+               "plain" default without explicit setting of any template.
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                      Copyright 2019 Dennis E. Hamilton
+                    Copyright 2019-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -74,8 +75,14 @@ MANIFEST
   * Explain about confirmable experience enough.  It would be nice to treat
     this somewhere where it can be described generally.
 
+  * Tie to the construction approach and correspond with the construction
+    structure of web sites such as <http://miser-theory.info>.
+
+  * Capture the automatic page top and page bottom that occur with plain.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2020-01-07-09:52 Touch-up and Manage TODOs
  0.0.1 2019-11-24-11:28 Refactor for the new docs/construction/ location.
  0.0.0 2019-11-21-13.34 Create placeholder and initial job jar for the
        page demonstrating Markdown features using the current (or default)
