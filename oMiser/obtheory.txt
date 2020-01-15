@@ -1,4 +1,4 @@
-obtheory.txt 1.0.9                 UTF-8                        dh:2019-1107
+obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -255,10 +255,13 @@ obtheory.txt 1.0.9                 UTF-8                        dh:2019-1107
    definitions will be provided along with the introduction of such
    extensions.
 
+     * Miser Project documentation is being consolidated under GitHub and
+       accessible in viewable form at <https://orcmid.github.io/miser/>.
+
      * "Golden Geek" is a Facebook Page that covers topics related to the
        Miser Project, including some narration of computational models and
        also how computer simulations of the ob model of computation are
-       established.  The blog posts, below, may be more current.
+       established.  The blog posts, below, are more current.
        <https://www.facebook.com/MiserProject>
 
    An account of this foundational theory for the abstract data type
@@ -274,7 +277,7 @@ obtheory.txt 1.0.9                 UTF-8                        dh:2019-1107
        including introduction of Ob1-Ob7 here.
 
      * Miser Project: Narrowing ‹ob› for Computational Interpretation
-       <https://orcmid.wordpress.com/2018/09/05/miser-project-narrowing-ob-for-computational-interpretation/>
+       <https://orcmid.blogspot.com/2018/09/miser-project-narrowing-ob-for.html>
        including introduction of Ob8-Ob10 here.
 
      * Miser Project: Representing Data as Obs
@@ -335,7 +338,7 @@ obtheory.txt 1.0.9                 UTF-8                        dh:2019-1107
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2017-2019 Dennis E. Hamilton
+                   Copyright 2017-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -354,7 +357,7 @@ obtheory.txt 1.0.9                 UTF-8                        dh:2019-1107
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.0.0 dated 2019-11-07, available on the
+   text file obtheory.txt version 1.0.1 dated 2020-01-15, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -383,6 +386,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.1 2020-01-15-08:29 Correct file top-line typos and a change of links
+       from Wordpress to Blogger. Mention https://orcmid.github.io/miser/
  1.0.0 2019-11-07-12:49 Replace Wordpress Miser Project links with ones to
        Orcmid's Lair on Blogger, declaring version 1.0.0.
  0.2.11 2019-10-31-13:43 Wordsmithing and beginning adjustment of blog post
