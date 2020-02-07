@@ -1,4 +1,4 @@
-ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
+ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
                            The Miser Project Code
                            ======================
@@ -117,10 +117,10 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
 
       * ob.e(x) is expressed as ‵ x, with ‵ a (unary) prefix operator.
         ‵ is the reversed-prime Unicode character, U+2035.  It can be
-        significed at keyboards by using the grave accent, U+0060 `, although
+        signified at keyboards by using the grave accent, U+0060 `, although
         the preferred substitute is the apostrophe, U+0027.  Keep in mind
         that this is an expression operator and not the same as syntactical
-        "quotation" (although there is a similarity of function in scripts).
+        "quotation" (although there is a kinship interpretation in scripts).
 
       * ob.c(x, y) is expressed x :: y
 
@@ -139,6 +139,8 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
         ".NIL".  Similarly, obap.ARG and obap.EV primitives are signified
         by .ARG and .EV, respectively.  Primitive individuals have specific
         interpretation in obs that are taken to be scripts of procedures.
+        They are not constrained to those interpretations; it is valuable to
+        reserve their usage to cased where the applicative use is intended.
 
       * There are literal individuals (lindies) that can be introduced and
         used for any purpose.  A lindy is specified with an alphanumeric
@@ -164,9 +166,13 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
     on them.  There are simplifications (4.2) that allow writing in a
     a form akin to
 
-             .b .a .b .b ^z = ja
+             def ob ^z
+                 = (English::en)::(Русский::ru)::(日本語::ja):(Français::fr)
+                   ::‵default;
+    so       .b .a .b .b ^z ;;
+    yields   ja
 
-    when expressing computations on obs.
+    when expressing computations on obs to the oFrugal interpreter.
 
  2.3 Publication Notation
 
@@ -180,12 +186,11 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
     The notation can be "pretty-printed", using indentation, to facilitate
     comprehension.  The addition of comments, blank lines, indentations, and
     other typographical layout and font features do not alter the
-    interpretation of the plaintexts that are the basis for such presentation.
+    interpretation of the plaintexts that are the basis for such prettying.
 
     In presentation on graphical interfaces and in exemplary "code blocks"
     there may also be use of emphasis, italic, and coloration to enhance
-    readability.  These typically retain reference format, except perhaps in
-    a publication context.
+    readability.
 
  3. FRUGALESE EXPRESSIONS
 
@@ -262,20 +267,25 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
     applicative-expression style, similar to mathematical and programming-
     language functional notation.
 
-       cS(x,y) z = x(z) y(z)                                               (5)
+       cS(f,g) x = f(x) g(x)                                               (5)
 
     or equivalent forms, including
 
-       ((cs x) y) z = (x z)(y z)
-       cS(x,y,z) = x(z,y(z))                                               (6)
-       (cs(x) y) z = x(z)(y(z))
+       ((cs f) g) x = (f x)(g x)
+       cS(f,g,x) = f(x,g(x))                                               (6)
+       (cs(f) g) x = f(x)(g(x))
 
     The application of obs as procedures to other obs as operands is signified
     in Frugalese by the appearance of parameter lists and also by application
-    of the result of one ob-yielding application, here x(z), to the result of
-    another ob-yielding expression, such as y(z), as in (5).  All of the
+    of the result of one ob-yielding application, here f(x), to the result of
+    another ob-yielding expression, such as g(x), as in (5).  All of the
     examples in (5-6) are formulas for the same applicative operations, namely
     those that deliver the same result as (4) with cS eliminated.
+
+    Although the symbols f and g are used, above, to signify the intention
+    that they be (function) scripts, within oMiser/oFrugal, there are always
+    just obs and the symbolic indications are meaningful to us, not the
+    computer and the enacted computational interpretation.
 
 4.2 Applicative Expressions in oFrugal
 
@@ -288,6 +298,7 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
     .A .A .B .B [English::en, Русский::ru,
                  日本語::ja, Français::fr,                                (7)
                  ‵default:]
+    ;;
 
     on input will yield the ob that is the lindie designated by 日本語.
 
@@ -306,14 +317,15 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
     for use in subsequent statements.  The following statement will accomplish
     that for the ob referred to as cS in (3).
 
-    ob ^cS = .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG))     (8)
-                              :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) ) ;
+    def ob ^cS
+        = .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG)     (8)
+                          :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) ) ;
 
     The ^cS can be used in subsequent oFrugal input expressions as a compact
-    way of introducing that ob.   Similarly,
+    way of introducing that ob.   Similarly, with
 
-    ob ^langNames = [English::en, Русский::ru, 日本語::ja, Français::fr,
-                     ‵default:] ;
+    def ob ^langNames = [English::en, Русский::ru, 日本語::ja, Français::fr,
+                         ‵default:] ;
 
     The previous examples can be written now as
 
@@ -321,24 +333,34 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
 
     and
 
-    ^cS(X, Y) Z ;
+    ^cS(F, G) X ;
 
- This informal introduction to the ways of expressing obs, with and without
- applicative operations, has precise specification.  See
- <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+    which yields ob (F :: X) :: G :: X
 
- The key point is that at the foundation there are only obs in the
- computational model.  There is oFrugal and Frugalese for providing
- convenient expression of obs and computations using them via oMiser, and it
- all involves just obs.
+    this last demonstrates how applications of lindies can't go farther so
+    the attempted application is defined, in obaptheory.txt, to leave a trace
+    of the unsuccessful application in the resulting ob, read as a script.
+    This supports script testing by a kind of "symbolic evaluation,"
+    exploiting where deeper evaluation will not continue.  When surprising,
+    it also reflects where there may be a defect to track down in a script.
 
- Given some means to express manipulation of strings of character codes
- and of input-output streams, we could define oFrugal processing itself in
- Frugalese.
+    This informal introduction to the ways of expressing obs, with and without
+    applicative operations, has precise specification.  See
+    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+
+    The key point is that at the foundation there are only obs in the
+    computational model.  There is oFrugal and Frugalese for providing
+    convenient expression of obs and computations using them via oMiser.  It
+    all involves just obs.
+
+    Given some means to express manipulation of strings of character codes
+    and of input-output streams, we could define oFrugal processing itself in
+    Frugalese.  Having text strings and ways of entering them and producing
+    then in results is an important step to making Frugal more useful.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018-2019 Dennis E. Hamilton
+                   Copyright 2018-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -356,8 +378,8 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.7 dated
-   2019-05-11, available on the Internet as a version of
+   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.8 dated
+   2020-02-07, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
  TODO
@@ -366,14 +388,14 @@ ob.txt 0.1.7                    UTF-8                            dh:2019-05-11
 
   * Add Notes and Reference section.
 
-  * Explain more about traces and the ^cS application in the final example.
-
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.1.7 2019-05-11-09:46 Correct issue #19 typo spotted by William L. Anderson,      fix a howler at (7) and provide more clarification on the value of
-       ob.a and ob.b in navigating representations of list structures (#20).
-       Add table of content.
+ 0.1.8 2020-02-07-13:14 Cleanups and elaboration, including a bit more of
+       oFrugalese as REPL input-outputs.
+ 0.1.7 2019-05-11-09:46 Correct issue #19 typo spotted by William L.
+       Anderson, fix a howler at (7) and provide more clarification on the
+       value of ob.a and ob.b in navigating representations of list
+       structures (#20).  Add table of content.
  0.1.6 2019-05-10-07:49 Correct issue #16 typo spotted by William L. Anderson.
        Be more careful about enclosure per issue #20 by William L. Anderson.
        Provide further editorial improvements throughout the text.
