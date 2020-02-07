@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.8                     UTF-8                       dh:2019-04-29
+ob-exp.txt 0.0.9                     UTF-8                       dh:2020-02-07
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -207,7 +207,7 @@ ob-exp.txt 0.0.8                     UTF-8                       dh:2019-04-29
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018 Dennis E. Hamilton
+                 Copyright 2018-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -225,12 +225,27 @@ ob-exp.txt 0.0.8                     UTF-8                       dh:2019-04-29
 
 TODO
 
+ * Revealing examples are needed here.  Grace Hopper favored that and I
+   should heed it for that reason alone.
+
  * Find reference to the BNF specification used, captured here somewhere
    and also where formally published.
 
  * Connect the interpretation schemata to Knuth's attribute grammars to the
    degree that matters here.  There might be a better reference for the
    rather simple oFrugal case.
+
+ * Connect to Ershov techniques in the grammar for the Alpha language, and
+   also the (Fraser Duncan?) suggestion in the ALGOL Bulletin.
+
+ * Move up-level from ob-exp to the oFrugal command operation where the
+   semantics of 〈binding-name〉 establishment, reference, and reference-
+   failure are accounted for.  The interpretation of REPL commands will be sequential and context-free!
+
+ * We require a command separator ";" and a sequence terminator, ";;"
+   so that parsing of command names is distinguishable without crazy backup.
+   Having "ob ^mumble = ... " be disambiguated by the "=" might be troubling.
+   The definition command doesn't remove that, for "def ob ^mumble = ...".
 
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
@@ -239,10 +254,15 @@ TODO
    digits, and the restricted allowance of other characters in ob-exp terms.
    Provide a reference.
 
- * Use the SML/NJ use of \<white-space>\ as null.
+ * Adopt the SML/NJ use of \<white-space>\ as null?
 
  * Do we require white-space anywhere or is it optional everywhere
    except between two terms that must remain separated?
+
+ * I think we do not want anything between a 〈function-form〉 and a parameter
+   in the 〈function-form〉 pattern, at least not a comment.  Yet I can envision
+   cases where careful layout can be indifferent to white space.  It might
+   eventually be a lint-check on readability but not a formal condition.
 
  * Likewise, at the concrete term level, there is the matter of IRI
    encoding for characters having no available font glyph.  How does
@@ -262,13 +282,12 @@ TODO
    different from there being an explicit fail in oMiser.  We might
    call it an event, but need to be careful.
 
- * Incorporate the interpretation of sequences of REPL commands with respect
-   to the sequential (and context-free!) interpretation of bindings.
-
  * Add attribution statement.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.9 2020-02-07-12:17 Expand and manage TODOs, reflecting going all the
+       way up to the oFrugal REPL command input forms.
  0.0.8 2019-04-29-11:10 Touch-ups, TODO management, connection to ob.txt
        along with more detailing of the summary grammar and concrete usage.
  0.0.7 2019-02-10-09:29 More touch-ups.  Adjust for bindings semantics in
