@@ -312,7 +312,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.34 2020-05-12-17: Reidentify and Reflow cases to provide for fine-
+ 0.0.34 2020-05-12-17:17:22 Reidentify and Reflow cases to provide for fine-
         grained citation in proofs/derivations.  Annotation cases further.
  0.0.33 2019-02-24-13:42 Touch ups with the obap.ap(p,x) pure-lindy cases
         completed.  Re-organize a little and make all private function and
