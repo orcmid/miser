@@ -1,4 +1,4 @@
-ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
+ob.txt 0.1.9                    UTF-8                            dh:2020-07-10
 
                            The Miser Project Code
                            ======================
@@ -140,7 +140,7 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
         by .ARG and .EV, respectively.  Primitive individuals have specific
         interpretation in obs that are taken to be scripts of procedures.
         They are not constrained to those interpretations; it is valuable to
-        reserve their usage to cased where the applicative use is intended.
+        reserve their usage to cases where the applicative use is intended.
 
       * There are literal individuals (lindies) that can be introduced and
         used for any purpose.  A lindy is specified with an alphanumeric
@@ -180,6 +180,9 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
     can be useful embellishments.  Primitives can be presented in boldface
     and even lower-case, with the leading "." omitted, since the special
     typography reflects their "reserved" and distinct status as primitives.
+
+    The name parts of primitives are also case-insensitive.  We can write
+    .A or .a as well, without ambiguity.
 
  2.4 Additional Forms
 
@@ -231,7 +234,7 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
  4. APPLICATIVE POWER
 
-    That everything ends up being at the canonical form level one way or
+    That everything ends up being at the canonical-form level one way or
     another is fundamental to the oMiser computational model.  oFrugal
     expressions yield canonical forms by application of scripted procedures
     to given obs.  Every ob has interpretation as a script, p, for a
@@ -242,7 +245,7 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
 
     The example (3) just-above is called cS, having the useful property that,
-    for scripts x and y and data ob z, with ap the obap.ap function,
+    for scripts x and y and (likely) data ob z, with ap the obap.ap function,
 
       ap(ap(ap(cS,x),y),z) = ap(ap(x,z),ap(y,z))                           (4)
 
@@ -271,9 +274,9 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
     or equivalent forms, including
 
-       ((cs f) g) x = (f x)(g x)
+       ((cS f) g) x = (f x)(g x)
        cS(f,g,x) = f(x,g(x))                                               (6)
-       (cs(f) g) x = f(x)(g(x))
+       (csS(f) g) x = f(x)(g(x))
 
     The application of obs as procedures to other obs as operands is signified
     in Frugalese by the appearance of parameter lists and also by application
@@ -285,7 +288,9 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
     Although the symbols f and g are used, above, to signify the intention
     that they be (function) scripts, within oMiser/oFrugal, there are always
     just obs and the symbolic indications are meaningful to us, not the
-    computer and the enacted computational interpretation.
+    computer and the enacted computational interpretation.  (There might be
+    ways that a Frugal-processing implementation exploits such "hints"
+    though.)
 
 4.2 Applicative Expressions in oFrugal
 
@@ -306,10 +311,10 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
     arrive at the ob (1).  But the leading terms in (7), by their spacing,
     signify applicative operation, leading to interpretation as
 
-       obap.ap(.A, obap.ap(.B, obap.ap(.B, x)))
-          = ob.a(ob.b(ob.b(x))),
+       obap.ap(.A, obap.ap(.A, obap.ap(.B, obap.ap(.B, x))))
+          = ob.a(ob.a(ob.b(ob.b(x)))),
 
-       where x is the result of (2) evaluation.
+       where x is the result of (2) evaluation as shown in (7).
 
 4.3 Named Obs in oFrugal
 
@@ -329,7 +334,7 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
     The previous examples can be written now as
 
-    .A .B .B ^langNames ;
+    .A .A .B .B ^langNames ;
 
     and
 
@@ -378,8 +383,8 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.8 dated
-   2020-02-07, available on the Internet as a version of
+   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.9 dated
+   2020-07-10, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
  TODO
@@ -388,8 +393,15 @@ ob.txt 0.1.8                    UTF-8                            dh:2020-02-07
 
   * Add Notes and Reference section.
 
+  * Come to grips on how commands are recognized in oFrugal.  I am inclined
+    to use
+       !def ob ^jaJA = .A ^finder(ja, ^LangNames)
+    with ^finder as defined in Miser Project GitHub issue #23, using !def as
+    an oFrugal reserved word (in homage to early Smalltalk use of ! also).
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.9 2020-07-10-09:39 Touch up, correct an example, and manage TODOs.
  0.1.8 2020-02-07-13:14 Cleanups and elaboration, including a bit more of
        oFrugalese as REPL input-outputs.
  0.1.7 2019-05-11-09:46 Correct issue #19 typo spotted by William L.
