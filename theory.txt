@@ -1,4 +1,4 @@
-theory.txt 0.0.2                     UTF-8                       dh:2020-07-06
+theory.txt 0.0.3                     UTF-8                       dh:2020-07-10
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -52,9 +52,9 @@ REFERENCES AND BIBLIOGRAPHY
    this treatment provides thoughtful context on Alan Turing, himself, and
    the world in which computation theory was introduced.  Fundamental sources
    are identified and accounted for in the narrative, which addresses the
-   Church-Turing thesis and the differentiation of the computable along with
-   recounting the puzzles concerning the situation of computation in the
-   workings of the universe and the plight of humans knowing themselves.
+   Church-Turing thesis and the differentiation of the computable.  Recounts
+   puzzles concerning the situation of computation in the workings of the
+   universe and the plight of humans knowing themselves.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -73,6 +73,12 @@ REFERENCES AND BIBLIOGRAPHY
     limitations under the License.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computatin. Miser Theoretical Conception text file theory.txt version 0.0.3 dated
+   2020-07-20, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
 
@@ -96,11 +102,6 @@ TODO
    require some explanation as well.
 
  * Address the apparent distinction around flavors of interpretation.
-
- * Add Attribution entry
-
- * Determine whether logic.txt is needed for the reliance on mathematical
-   logic and perhaps higher-order systems as well.
 
  * The common reliance on encoding and operating to within number theory
    (i.e., denumerable domains) is a matter for the reverse case.  That is,
@@ -130,8 +131,22 @@ TODO
    ourselves up the ladder, but maybe not compute ourselved along the same
    route.  The treatment of classes tied to predicates might be revealing.
 
+ * Explain the transitivity of computational interpretation and then how
+   we need to work to establish (1) universality and equivalence of the
+   offered ‹ob› computational model.
+
+ * Separate this specific arrangement from mathlogic.txt (tbd) where we
+   have applied logical theories (using FOL= typically) and then switch to
+   mechanizing logic and in particular computational logic on ‹ob› itself.
+
+ * The mathlogic.txt may be needed to comprehend exactly how there are
+   higher-level computational representations (i.e., with respect to
+   functional type) while still confined to representability in the Ob domain.
+   The denumerability matters come into play here.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2020-07-10-10:12 More TODOs Pondering, touch-ups
  0.0.2 2020-07-06-12:34 Add [Petzold2008] along with musings/notes on the
        topic here.
  0.0.1 2018-08-09-11:48 Add Chaitin material.  This is not primary, but an
