@@ -1,4 +1,4 @@
-ob.txt 0.1.9                    UTF-8                            dh:2020-07-10
+ob.txt 0.1.10                   UTF-8                            dh:2020-07-10
 
                            The Miser Project Code
                            ======================
@@ -139,8 +139,9 @@ ob.txt 0.1.9                    UTF-8                            dh:2020-07-10
         ".NIL".  Similarly, obap.ARG and obap.EV primitives are signified
         by .ARG and .EV, respectively.  Primitive individuals have specific
         interpretation in obs that are taken to be scripts of procedures.
-        They are not constrained to those interpretations; it is valuable to
-        reserve their usage to cases where the applicative use is intended.
+        They are not constrained to those interpretations; it is a valuable
+        practice to reserve their usage to cases where the applicative use is
+        intended.
 
       * There are literal individuals (lindies) that can be introduced and
         used for any purpose.  A lindy is specified with an alphanumeric
@@ -166,9 +167,9 @@ ob.txt 0.1.9                    UTF-8                            dh:2020-07-10
     on them.  There are simplifications (4.2) that allow writing in a
     a form akin to
 
-             def ob ^z
-                 = (English::en)::(Русский::ru)::(日本語::ja):(Français::fr)
-                   ::‵default;
+             !def ob ^z
+                  = (English::en)::(Русский::ru)::(日本語::ja):(Français::fr)
+                    ::‵default;
     so       .b .a .b .b ^z ;;
     yields   ja
 
@@ -322,15 +323,15 @@ ob.txt 0.1.9                    UTF-8                            dh:2020-07-10
     for use in subsequent statements.  The following statement will accomplish
     that for the ob referred to as cS in (3).
 
-    def ob ^cS
-        = .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG)     (8)
-                          :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) ) ;
+    !def ob ^cS
+         = .C :: ‵.C :: (.C :: (.E :: (.C :: (.E :: .ARG) :: ‵.ARG)     (8)
+                           :: ‵(.C :: (.E :: .ARG) :: ‵.ARG) ) ;
 
     The ^cS can be used in subsequent oFrugal input expressions as a compact
     way of introducing that ob.   Similarly, with
 
-    def ob ^langNames = [English::en, Русский::ru, 日本語::ja, Français::fr,
-                         ‵default:] ;
+    !def ob ^langNames = [English::en, Русский::ru, 日本語::ja, Français::fr,
+                          ‵default:] ;
 
     The previous examples can be written now as
 
@@ -393,14 +394,9 @@ ob.txt 0.1.9                    UTF-8                            dh:2020-07-10
 
   * Add Notes and Reference section.
 
-  * Come to grips on how commands are recognized in oFrugal.  I am inclined
-    to use
-       !def ob ^jaJA = .A ^finder(ja, ^LangNames)
-    with ^finder as defined in Miser Project GitHub issue #23, using !def as
-    an oFrugal reserved word (in homage to early Smalltalk use of ! also).
-
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.10 2020-07-10-19:29 Touch up, introduce !def to simplify oFrugal forms.
  0.1.9 2020-07-10-09:39 Touch up, correct an example, and manage TODOs.
  0.1.8 2020-02-07-13:14 Cleanups and elaboration, including a bit more of
        oFrugalese as REPL input-outputs.
