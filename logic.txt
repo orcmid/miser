@@ -1,0 +1,71 @@
+logic.txt 0.0.0                      UTF-8                       dh:2020-07-12
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+                        LOGIC FOR MISER TO LOGIC IN MISER
+                        ---------------------------------
+
+             <https://github.com/orcmid/miser/blob/master/logic.txt>
+
+  There are two ways that logical deductions are employed in the Miser Project
+
+    * Application of deductive logics in the formulation of Miser levels,
+      starting with oMiser
+
+    * As mechanized deductive arrangements in Miser itself that are applicable
+      to Miser itself and potentially other systems, at least those having
+      computational interpretations in Miser.
+
+[SYNOPSIS: TBD]
+
+[CONTENT: TBD]
+
+NOTES AND BIBLIOGRAPHY
+
+[ACL2pedia]
+   Wikipedia.  ACL2 article.  Current version available on the Internet at
+   <https://en.wikipedia.org/wiki/ACL2>.
+
+[BoyerMoore1979]
+   Boyer, Robert S., Moore, J. Strother.  A Computational Logic.  Academic
+   Press (New York: 1979).  ISBN 0-12-122950-5.  Public domain PDF available
+   on the Internet at <http://www.cs.utexas.edu/users/boyer/acl.pdf>.
+
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                        Copyright 2020 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. LOgic for Miser to Logic in Miser. Miser Theoretical Conception text file theory.txt version 0.0.0 dated
+   2020-07-12, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/theory.txt>
+
+TODO
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+ 0.0.0 2020-07-12-21:41 Create placeholder on the basic idea.
+
+
+                        *** end of logic.txt ***
