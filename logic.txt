@@ -1,4 +1,4 @@
-logic.txt 0.0.0                      UTF-8                       dh:2020-07-12
+logic.txt 0.0.1                      UTF-8                       dh:2020-07-15
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -26,12 +26,34 @@ NOTES AND BIBLIOGRAPHY
 
 [ACL2pedia]
    Wikipedia.  ACL2 article.  Current version available on the Internet at
-   <https://en.wikipedia.org/wiki/ACL2>.
+   <https://en.wikipedia.org/wiki/ACL2>.  There is a natural affinity of
+   Miser to the ACL[2] treatment of immutable functional computational
+   interpretations and development of computational logic.  For oMiser, this
+   level cannot be approached, although an underlying computational interpre-
+   tation is achievable, short of an interface level appropriate to use in
+   theorem proving about Miser programs and other cases of interest.
 
 [BoyerMoore1979]
    Boyer, Robert S., Moore, J. Strother.  A Computational Logic.  Academic
    Press (New York: 1979).  ISBN 0-12-122950-5.  Public domain PDF available
    on the Internet at <http://www.cs.utexas.edu/users/boyer/acl.pdf>.
+
+[Lemmon1978]
+   Lemmon, E.J.  Beginning Logic.   Hacket (Indianapolis: 1978), ISBN
+   0-915144-50-6 pbk. Version of the 1965 original modestly updated by George
+   W. D. Berry. "[I]ntended primarily for students who have no previous
+   knowledge of the subject, [forming] a working basis for more advanced
+   reading and ... presented in such a way as to be intelligible to the
+   layman.  The nature of logic is examined, with the gradual introduction of
+   worked examples."  The notation employed differs from that used in The
+   Miser Project, although it is not difficult to translate.  Although this
+   book is not easy to find, there are affordable (under $10) used versions.
+   The recommendation of this book, out of a large variety of alternatives,
+   is for its development of logic as being about sound derivation of logical
+   consequences. For the Miser Project we are content to go directly to
+   "truth value" semantics for their direct applicability to considerations
+   of computation.  Lemmon's more-leisurely development before introduction
+   of truth-value semantics may be helpful in understanding formal logic's roots in natural language and rational conduct of human affairs.
 
 
 
@@ -55,16 +77,21 @@ NOTES AND BIBLIOGRAPHY
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. LOgic for Miser to Logic in Miser. Miser Theoretical Conception text file theory.txt version 0.0.0 dated
-   2020-07-12, available on the Internet as a version of
+   Hamilton, Dennis E. LOgic for Miser to Logic in Miser. Miser Theoretical Conception text file theory.txt version 0.0.1 dated
+   2020-07-15, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
 
+ * Find a more-accessible modern treatment of logic for beginners.
+
+ * Check for other sources that are closer to contemporary treatments and
+   avoid the Principia Mathematica notation.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
+ 0.0.1 2020-07-15-16:11 Start expanding the annotated bibliography and begin
+       managing TODO items.
  0.0.0 2020-07-12-21:41 Create placeholder on the basic idea.
 
 
