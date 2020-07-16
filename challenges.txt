@@ -1,4 +1,4 @@
-challenges.txt 0.0.3                 UTF-8                       dh:2020-07-16
+challenges.txt 0.0.4                 UTF-8                       dh:2020-07-16
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -14,6 +14,10 @@ challenges.txt 0.0.3                 UTF-8                       dh:2020-07-16
 [CONTENT: TBD]
 
 REFERENCES AND BIBLIOGRAPHY
+
+ * Some of the challenges are aspects of the computation theory development,
+   addressed specifically in other materials.
+    - <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 [Okasaki1998]
    Okasaki, Chris.  Purely Functional Data Structures.  Cambridge University
@@ -44,6 +48,12 @@ REFERENCES AND BIBLIOGRAPHY
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ATTRIBUTION
+
+   Hamilton, Dennis E. Challenges in Miser System Development.  Miser Theoretical Conception text file challenges.txt version 0.0.4 dated
+   2020-07-16, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/challenges.txt>
+
 TODO
 
  * 1. The first challenge is the demonstration of universality
@@ -56,6 +66,10 @@ TODO
        operations in expressing computable functions on obs is demonstrable
  * 1.4 then it is asserted that the computable Of are all available as
        computations using obap.ap(f,x).
+ * 1.5 This needs to be stated better.  Determination that the oMiser
+       computational model is Church-Turing complete takes a little more and
+       will be addressed further at theory.txt,
+       <https://github.com/orcmid/miser/blob/master/theory.txt>.
 
  * 2. The additional establishment is the use of oMiser and oFrugal
       operations to demonstrate
@@ -68,7 +82,8 @@ TODO
  * 2.6 Accounting for Backus FP/FFP and the primitives
 
  * 3. Another challenge is with regard to acceleration including native
-      operations behind scripts, and other forms of acceleration.
+      operations behind scripts, and other forms of acceleration.  See Issue
+      #26, <https://github.com/orcmid/miser/issues/26>.
 
  * 4. The first kind of reasoning to consider is propositions on ob
       itself and what sort of deduction is available.
@@ -82,7 +97,10 @@ TODO
 
  * 7. Security challenges including threat models to oMiser implementations
       and also on the provenance and integrity of shared scripts and
-      acceleration schemes.
+      acceleration schemes.  The certification and signing of distributed
+      materials is an acute consideration.  There may be need to deal with
+      packaging/name-spaces and identity of artifacts.  The Crev project
+      may be helpful with respect to TROSTing.
 
  * 8. Data-type representation via capsules and semblances.  This might get
       to denotational semantics and other matters.
@@ -101,6 +119,12 @@ TODO
 
  * There is a challenge of obap extension (obapx) principles.  These
    remain functional in oMiser.
+
+ * There needs to be a different way of handling compute expressions and
+   the prospect of assignment and interactions.  The goal is to introduce
+   interactive cases without reverting to assignment and side-effects
+   everywhere.  It is unclear how to accomplish this.  See Issue #30,
+   <https://github.com/orcmid/miser/issues/30>.
 
  * There needs to be distinction of types, implementations, classes,
    encapsulated interpretation, and semblance.
@@ -175,6 +199,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2020-07-16-08:13 More TODOs and touch-ups, connections with other
+       materials.
  0.0.3 2020-07-16-07:42 Revisit and manage TODOs.
  0.0.2 2018-08-09-11:40 Add [Okasaki1998], ...
  0.0.1 2018-04-17-10:26 Additional challenge TODOs
