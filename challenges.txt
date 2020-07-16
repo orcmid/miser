@@ -1,4 +1,4 @@
-challenges.txt 0.0.2                 UTF-8                       dh:2018-08-09
+challenges.txt 0.0.3                 UTF-8                       dh:2020-07-16
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -144,6 +144,10 @@ TODO
  * Move some of these to engineering, since they seem to be beyond
    the association of theory and representation/interpretation.
 
+ * The crev project may be relevant to trosting with respect to Miser
+   deliverables and also Miser application.  The idea of TROSTing might
+   need to be revived here. <https://github.com/crev-dev>.
+
  * Moving from reasoning about ‹ob› to reasoning about code and the
    compiling of the script interpretation of an ob is going to be a
    major challenge.  There may be something in the work of McCarthy
@@ -164,8 +168,14 @@ TODO
    until well-formedness and binding values are confirmed) as a guide
    to where optimization is not wasted.
 
+ * Tie this to theory.txt also.
+
+ * This is worthy of much more work.  There are some matters that I have let
+   go invisible and need to revive/incorporate in other materials.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2020-07-16-07:42 Revisit and manage TODOs.
  0.0.2 2018-08-09-11:40 Add [Okasaki1998], ...
  0.0.1 2018-04-17-10:26 Additional challenge TODOs
  0.0.0 2018-04-12-12:12 Create placeholder, with starter TODOs.
