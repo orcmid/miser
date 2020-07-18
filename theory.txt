@@ -1,4 +1,4 @@
-theory.txt 0.0.3                     UTF-8                       dh:2020-07-10
+theory.txt 0.0.4                     UTF-8                       dh:2020-07-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -18,11 +18,68 @@ theory.txt 0.0.3                     UTF-8                       dh:2020-07-10
              just proofs.
                                  -- Gregory Chaitin [Chaitin2005, p.25]
 
-[SYNOPSIS: TBD]
+SYNOPSIS
+
+A critical objective of the Miser Project is demonstration of a universal
+model of computation (one among many), that reveals how the stored-program
+principle and some elementary arrangements are so amenable to providing so
+many levels of computational facility.
+
+The first Miser Project employment of theoretical models arises in the
+<https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt> introduction
+of the ‹ob› mathematical structure.
+
+With regard to computational interpretation of theories, there is reliance on
+transitivity of computational interpretation: If mathematical structure ‹A›
+has interpretation in structure ‹B›, and structure ‹B› has a computational
+interpretation, then that is a sufficient for computational interpretaton of
+‹A›.
+
+Taking ‹ob› for ‹B›, this principle has been applied taking Boolean Algebras
+in position of ‹A› (and among each other) in the manner described in boole.txt
+<https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>.
+
+The ‹ob› model of computation is itself characterized in obaptheory.txt,
+<https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.  The
+formulation is offered as a demonstration of a universal function, it being
+claimed that all computable functions on Ob are represented by obs taken as
+scripts, p, each taken as a (non-unique) procedure for a computation of a
+function, f, such that obap.ap(p, x) = f(x) is determined.
+
+For obap.ap(p, x) and the closely-related obap.eval(e) to be taken as
+models of universal computation, there are two matters to be established.
+First, short of defining the computible functions in Of, all of the functions
+on obs, as simply those representable by obap.ap(p, x), we need some way to
+establish that there are no computable functions in Of that are left out. Next
+we require that ‹ob›-computability, as it were, is equivalent in power to all
+recognized universal computational schemes.
+
+The question of being universal-enough is addressed by demonstrating that the
+‹ob› model of computation is sufficient for simulation of other accepted
+universal models.  That establishes the ‹ob› model to be no weaker, in this
+absolute sense, than the others already regarded as equivalent.  That it is
+no stronger in that same sense can be presumed by conducting one or more
+simulations in the other direction.  We shall wave at some particular aspects
+as evidence of equivalence, including the enactment of the computational
+model in a digital computer.
+
+[to be continued]
 
 [CONTENT: TBD]
 
 REFERENCES AND BIBLIOGRAPHY
+
+ * challenges.txt addresses some topics that will be explicated more here.
+   <https://github.com/orcmid/miser/blob/master/challenges.txt>.
+
+ * Some challenges and issues appear to be beyond the requirements for
+   establishing the Church-Turing computability capabilities of oMiser.  The
+   challenge is dealing with non-functional situations in a manner that allows
+   significant functional determinations and derivations to be preserved.
+   The essential question is how to isolate side-effects and dependencies of
+   various kinds for maximal preservation of our ability to reason about the
+   procedures that are situated in that kind of environment.  This may depend
+   on logic.txt, <https://github.com/orcmid/miser/blob/master/logic.txt>.
 
 [Chaitin1998]
    Chaitin, Gregory J.  The Limits of Mathematics: A Course on Information
@@ -44,6 +101,28 @@ REFERENCES AND BIBLIOGRAPHY
    computation, and scientific understanding.  We make no metaphysical
    commitments in our application of Chaitin's ideas and algorithmic
    information theory.
+
+[Kleene1950]
+   Kleene, Stephen Cole.  Introduction to Meta-Mathematics.  1950 edition
+   with Michael Beeson foreword.  ISHI Press International (Bronx: 2009).
+   ISBN 0-923891-57-9.  Kleene's bridging of model theory, recursive function
+   theory, the λ-calculus, and Turing computability is the establishment of
+   what is taken as Church-Turing computability, although Kleene did not
+   confuse Turing computability and Church's Thesis.  It is rather the
+   recognition of equivalences, not identities and those connections among
+   Church, Gödel, and Turing.  Kleene's reformulation of the Turing Machine
+   is the one relied upon in later development.  This textbook is presented as
+   suitable for graduate-school treatment.  Kleene was admirably positioned
+   for this undertaking, being a student of Church and having met Gödel at
+   that time (and having taken renouned notes of Gödel's Princeton lectures).
+
+[Kleene1967]
+   Kleene, Stephen Cole.  Mathematical Logic. Dover unabridged edition,
+   (Mineola, New York: 2002). ISBN 0-486-42533-9. This more-accessible
+   treatment beyond [Kleene1950] introduces his use of "Church-Turing thesis"
+   (§41).  Kleene does not treat the λ-calculus and λ-definability here,
+   choosing to simply use Turing Machines for his treatment of computability
+   and decidability in this shorter and less demanding textbook.
 
 [Petzold2008]
    Petzold, Charles.  The Annotated Turing: A Guided Tour through Alan
@@ -76,8 +155,8 @@ REFERENCES AND BIBLIOGRAPHY
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computatin. Miser Theoretical Conception text file theory.txt version 0.0.3 dated
-   2020-07-20, available on the Internet as a version of
+   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation. Miser Theoretical Conception text file theory.txt version 0.0.4 dated
+   2020-07-18, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
@@ -146,6 +225,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2020-07-18-13:56 Continuing touch-ups, references, and connections, and
+       starting the Synopsis.
  0.0.3 2020-07-10-10:12 More TODOs Pondering, touch-ups
  0.0.2 2020-07-06-12:34 Add [Petzold2008] along with musings/notes on the
        topic here.
