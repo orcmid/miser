@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.9                     UTF-8                       dh:2020-02-07
+ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -7,8 +7,8 @@ ob-exp.txt 0.0.9                     UTF-8                       dh:2020-02-07
 
       <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
-      FRUGALESE GRAMMAR FOR EXPRESSING THE OMISER COMPUTATION OF OBS
-      --------------------------------------------------------------
+         FORMAL GRAMMAR FOR EXPRESSING OFRUGAL CONSTRUCTION OF OBS
+         ---------------------------------------------------------
 
     Ob-exp texts are used as a means of specifying obs and computations
     with them to derive an ob result.  Ob-exp is an expression language
@@ -23,7 +23,9 @@ ob-exp.txt 0.0.9                     UTF-8                       dh:2020-02-07
 
     In addition to the grammatical structure for composing ob-exp
     expressions, there is also a formal definition of the computation by
-    which an ob-exp is evaluated.
+    which an ob-exp is evaluated as computation of a canonical ob, the
+    formal semantics of ob-exps.  It is this fact that has ob-exp be defined
+    under oMiser, even though it is oFrugal that will enact that semantics.
 
     For an informal introduction to the use of Frugalese in the computational
     model defined on the mathematical structure ‹ob› = 〈Ob,Of,Ot〉, see
@@ -69,6 +71,8 @@ ob-exp.txt 0.0.9                     UTF-8                       dh:2020-02-07
 
     〈lindy〉 is an alphanumeric name not beginning with a digit and without
            spaces, corresponding to an XML NCName without "."
+
+    〈primitive〉s are not case-sensitive, although 〈lindy〉s are.
 
 
     〈list-terms〉 ::= 〈ob-exp〉 | 〈list-terms〉, 〈ob-exp〉
@@ -223,6 +227,13 @@ ob-exp.txt 0.0.9                     UTF-8                       dh:2020-02-07
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  ATTRIBUTION
+
+   Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
+   Theory Conception text file ob-exp.txt version 0.0.10 dated 2020-07-20,
+   available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
+
 TODO
 
  * Revealing examples are needed here.  Grace Hopper favored that and I
@@ -233,7 +244,7 @@ TODO
 
  * Connect the interpretation schemata to Knuth's attribute grammars to the
    degree that matters here.  There might be a better reference for the
-   rather simple oFrugal case.
+   rather simple oFrugal context-free case.
 
  * Connect to Ershov techniques in the grammar for the Alpha language, and
    also the (Fraser Duncan?) suggestion in the ALGOL Bulletin.
@@ -245,7 +256,7 @@ TODO
  * We require a command separator ";" and a sequence terminator, ";;"
    so that parsing of command names is distinguishable without crazy backup.
    Having "ob ^mumble = ... " be disambiguated by the "=" might be troubling.
-   The definition command doesn't remove that, for "def ob ^mumble = ...".
+   The definition command removes that with "!def ob ^mumble = ...".
 
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
@@ -282,10 +293,12 @@ TODO
    different from there being an explicit fail in oMiser.  We might
    call it an event, but need to be careful.
 
- * Add attribution statement.
+ * Because of binding names, include the additional parameter that takes us
+   to resolution of the binding.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.10 2020-07-20-11:22 Change title, manage TODOs, small touch-ups.
  0.0.9 2020-02-07-12:17 Expand and manage TODOs, reflecting going all the
        way up to the oFrugal REPL command input forms.
  0.0.8 2019-04-29-11:10 Touch-ups, TODO management, connection to ob.txt
