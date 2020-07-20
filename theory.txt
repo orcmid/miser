@@ -1,4 +1,4 @@
-theory.txt 0.0.5                     UTF-8                       dh:2020-07-19
+theory.txt 0.0.6                     UTF-8                       dh:2020-07-20
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -21,7 +21,7 @@ theory.txt 0.0.5                     UTF-8                       dh:2020-07-19
 SYNOPSIS
 
 A critical objective of the Miser Project is demonstration of a universal
-model of computation (one among many), that reveals how the stored-program
+model of computation -- one among many -- that reveals how the stored-program
 principle and some elementary arrangements are so amenable to providing many
 levels of computational facility.
 
@@ -31,7 +31,8 @@ is demonstrated to be universal in the Church-Turing sense.  The system is
 also implemented in conventional computer software as an enactment of the
 Miser Project applicative computational model.
 
-Development of the theoretical underpinnings and confirmation of universality is accomplished in a staged progression, leading up to consideration of
+Development of the theoretical underpinnings and confirmation of universality
+is accomplished in a staged progression, leading up to consideration of
 practical application.
 
 APPROACH
@@ -43,8 +44,8 @@ of the ‹ob› mathematical structure.
 With regard to computational interpretation of theories, there is reliance on
 transitivity of computational interpretation: If mathematical structure ‹A›
 has interpretation in structure ‹B›, and structure ‹B› has a computational
-interpretation, then that is a sufficient for computational interpretaton of
-‹A›.
+interpretation, then that is sufficient computational interpretaton of ‹A›.
+
 
 Taking ‹ob› for ‹B›, this principle has been applied taking Boolean Algebras
 in position of ‹A› (and among each other) in the manner described in boole.txt
@@ -53,19 +54,20 @@ in position of ‹A› (and among each other) in the manner described in boole.t
 The ‹ob› model of computation is itself characterized in obaptheory.txt,
 <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.  The
 computable functions f(x) on Ob are defined to be those for which there is
-a script, p, such that obap.ap(p, x) = f(x) is determined.
+a script, p, such that obap.ap(p, x) = f(x) is determined, given a definite
+ob for x.
 
-We claim that obap.ap(p, x) and the closely-related obap.eval(e) are
-equivalent to other universal models of computation.
+Claimed: obap.ap(p, x) and the closely-related obap.eval(e) are equivalent to
+other universal models of computation.
 
 The question of being universal-enough is addressed by demonstrating that the
-‹ob› model of computation is sufficient for simulation of other accepted
-universal models.
+‹ob› model of computation affords simulation of other accepted universal
+models.
 
  * Church's λ-calculus is given a computational interpretation using the
    already-equivalent system of combinators, ‹ca›, as in combinators.txt
    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>,
-   also achieving an emergent notion of types.
+   also supporting an emergent notion of types.
 
  * A complete representation of Turing machines establishes achievement of a
    Universal TM simulated in Miser.
@@ -75,23 +77,28 @@ universal models.
    representation of general recursive functions on the naturals.
 
  * We might examine Algorithmic Information Theory to see if light can be
-   shed on the that means of addressing the limitations of computation using
-   the Miser computational model instead of one tied more directly to LISP.
+   shed on the limitations of computation using the Miser computational model
+   instead of one tied more directly to LISP.
 
-That establishes the ‹ob› model to be no weaker, in this absolute sense, than
-those others already regarded as equivalent under the Church-Turing thesis.
+The ‹ob› model is thereby no weaker, in this absolute sense, than those
+others already regarded as equivalent under the Church-Turing thesis.
 
-That it is no stronger in that same sense can be presumed by conducting one
-or more simulations in the other direction.  We shall wave at some particular
-cases as evidence of being no more powerful, including the enactment of the
-model in a digital computer.
+That the ‹ob› model of computation is no stronger than any of the others can
+be presumed by conducting one or more simulations in the other direction.  We
+shall wave at some particular as evidence of being no more powerful,
+including operational enactment of the model in a digital computer.
+
+CLOSING THE LOOP
 
  * The ability to deal formally with obs as expressions is also demonstrated
    by defining λ-abstraction and recursion labeling (ρ-abstraction), since
    this makes things much handier although not particularly reversible. This
-   is a start on having more-expressive representations.
+   is a start on having more-expressive representations.  It is accomplished
+   entirely within the ‹ob› model of computation and the economical
+   expression that oFrugal supports, as defined at ob-exp.txt,
+   <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
-[to be continued]
+ * [to be continued]
 
 
 
@@ -183,8 +190,8 @@ REFERENCES AND BIBLIOGRAPHY
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation. Miser Theoretical Conception text file theory.txt version 0.0.5 dated
-   2020-07-19, available on the Internet as a version of
+   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation. Miser Theoretical Conception text file theory.txt version 0.0.6 dated
+   2020-07-20, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
@@ -200,10 +207,8 @@ TODO
    with respect to ob.c, ob.a, ob.b, and ob.e.  Make the bridge to the
    completeness with respect to effectively computable obs.
 
- * Identify the stages for establishment of universality.
-
  * Identify the confirmations, including lambda-calculus, Turing Machine,
-   and other simulations.
+   and other simulations.  These need to be linked maerials.
 
  * It might not be here, but the relationship to the Backus FP and FFP may
    require some explanation as well.
@@ -224,7 +229,7 @@ TODO
 
  * Find a characterization of Recursive Function Theory to allude to here.
 
- * Address emulation and the ability to emulate members of sets whose
+ * Address simulation and the ability to simulate members of sets whose
    totalities are inaccessible, including those of greater cardinality than
    the denumerables.  We have fewer and fewer computable cases, yet these seem
    to be plentiful enough.
@@ -238,21 +243,18 @@ TODO
    ourselves up the ladder, but maybe not compute ourselved along the same
    route.  The treatment of classes tied to predicates might be revealing.
 
- * Explain the transitivity of computational interpretation and then how
-   we need to work to establish (1) universality and equivalence of the
-   offered ‹ob› computational model.
+ * Separate this specific arrangement from logic.txt where we have applied
+   logical theories (using FOL= typically) and then switch to mechanizing
+   logic and in particular computational logic on ‹ob› itself.
 
- * Separate this specific arrangement from mathlogic.txt (tbd) where we
-   have applied logical theories (using FOL= typically) and then switch to
-   mechanizing logic and in particular computational logic on ‹ob› itself.
-
- * The mathlogic.txt may be needed to comprehend exactly how there are
-   higher-level computational representations (i.e., with respect to
-   functional type) while still confined to representability in the Ob domain.
-   The denumerability matters come into play here.
+ * The logic.txt may be needed to comprehend exactly how there are higher-
+   level computational representations (i.e., with respect to functional
+   type) while still confined to representability in the Ob domain.  Matters
+   of denumerability come into play here.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6 2020-07-20-10:49 Wordsmithing, some additions, management of TODOs
  0.0.5 2020-07-19-12:22 Extensive drafting of Synopsis and Approach.
  0.0.4 2020-07-18-13:56 Continuing touch-ups, references, and connections, and
        starting the Synopsis.
