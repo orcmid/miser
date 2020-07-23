@@ -1,4 +1,4 @@
-theory.txt 0.0.6                     UTF-8                       dh:2020-07-20
+theory.txt 0.0.7                     UTF-8                       dh:2020-07-23
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -98,7 +98,25 @@ CLOSING THE LOOP
    expression that oFrugal supports, as defined at ob-exp.txt,
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
- * [to be continued]
+ * There is also to be consideration of "de-compiling" obs to more expressive
+   constructions, such as ob-exps with identified combinators and lambda
+   abstractions.  It is the limitations on this that are to be understood,
+   and how that might best work as an assistance, being able to re-abstract
+   to expressions in a desired context.  (Note that lambda-abstraction will
+   not choose descriptive lindies for the introduced free occurences unless
+   there is an assistance mechanism.)
+
+ * Given cross-overs of interface boundaries as part of simulating types, it
+   is valuable to identify mechanical simplifications that are essentially a
+   form of "in-lining" that coalesces in place of boundaries where it makes
+   no difference <https://github.com/orcmid/miser/issues/26>
+
+ * Computational complexity is also introducible with regard to applicative
+   and construction operations.  Accelerators tend to provide polynomial
+   speed-ups although most improvement is with regard to constants, not the
+   order of operations (unless there is a code-behind that does better).
+
+[to be continued]
 
 
 
@@ -190,8 +208,8 @@ REFERENCES AND BIBLIOGRAPHY
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation. Miser Theoretical Conception text file theory.txt version 0.0.6 dated
-   2020-07-20, available on the Internet as a version of
+   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation. Miser Theoretical Conception text file theory.txt version 0.0.7 dated
+   2020-07-23, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
@@ -254,6 +272,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.7 2020-07-23-09:49 Touch-ups, additional considerations
  0.0.6 2020-07-20-10:49 Wordsmithing, some additions, management of TODOs
  0.0.5 2020-07-19-12:22 Extensive drafting of Synopsis and Approach.
  0.0.4 2020-07-18-13:56 Continuing touch-ups, references, and connections, and
