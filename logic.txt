@@ -1,4 +1,4 @@
-logic.txt 0.0.1                      UTF-8                       dh:2020-07-15
+logic.txt 0.0.2                      UTF-8                       dh:2020-07-24
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -23,6 +23,15 @@ logic.txt 0.0.1                      UTF-8                       dh:2020-07-15
 [CONTENT: TBD]
 
 NOTES AND BIBLIOGRAPHY
+
+ * David A. Wheeler recommended Metamath to my attention.  This might be
+   helpful along with understanding of ACL2. <http://us.metamath.org/>.
+
+ * There is cross-over between this treatment and confirming the ‹ob› model
+   of computation and Church-Turing computability in theory.txt,
+   <https://github.com/orcmid/miser/blob/master/theory.txt>
+
+
 
 [ACL2pedia]
    Wikipedia.  ACL2 article.  Current version available on the Internet at
@@ -55,6 +64,12 @@ NOTES AND BIBLIOGRAPHY
    of computation.  Lemmon's more-leisurely development before introduction
    of truth-value semantics may be helpful in understanding formal logic's roots in natural language and rational conduct of human affairs.
 
+[Metamath2019]
+   Megill, Norman., Wheeler, David A.  Metamath: A Computer Language for
+   Mathematical Proofs.  Lulu Press (Morrisville, NC: 2019-06-06), ISBN
+   978-0-3597-0223-7, PDF available on the Internet at
+   <http://us.metamath.org/downloads/metamath.pdf>.
+
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -77,7 +92,7 @@ NOTES AND BIBLIOGRAPHY
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. LOgic for Miser to Logic in Miser. Miser Theoretical Conception text file theory.txt version 0.0.1 dated
+   Hamilton, Dennis E. Logic for Miser to Logic in Miser. Miser Theoretical Conception text file theory.txt version 0.0.1 dated
    2020-07-15, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
@@ -88,8 +103,12 @@ TODO
  * Check for other sources that are closer to contemporary treatments and
    avoid the Principia Mathematica notation.
 
+ * Dig deeper into Metamath once I have an oFrugal REPL and can see how to
+   apply this, perhaps also in conjunction with Chaitin's AIS LISP codes.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2020-07-24-09:29 Add [Metamath2019], related notes and TODOs.
  0.0.1 2020-07-15-16:11 Start expanding the annotated bibliography and begin
        managing TODO items.
  0.0.0 2020-07-12-21:41 Create placeholder on the basic idea.
