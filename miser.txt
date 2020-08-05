@@ -1,4 +1,4 @@
-miser.txt 0.0.10                     UTF-8                       dh:2019-11-20
+miser.txt 0.0.11                     UTF-8                       dh:2020-08-05
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
@@ -29,6 +29,10 @@ MANIFEST
     models/
         subtree for model-related exposition and comparisons
 
+    oFrugal/
+        subtree for working out oFrugal processors including reference
+        implementations and also companions to oMiser mockups
+
     oMiser/
         subtree for working out and confirming oMiser conceptalization and
         proof-of-concept demonstrations
@@ -45,6 +49,11 @@ MANIFEST
     engineering.txt
         on the engineering approach to the Miser project and the
         development of reliable implementations of oMiser and oFrugal
+
+    logic.txt
+        on the use of logics in support of theories.txt, the specific
+        oMiser theories, and also provers as they might be developed and
+        applied to Miser itself
 
     principles.txt
         description of the strong principles by which the connection
@@ -84,7 +93,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                    Copyright 2017-2019 Dennis E. Hamilton
+                    Copyright 2017-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -145,8 +154,16 @@ TODO
     subdivision.  Documentation might address this better.  Those files/topics
     might move accordingly.
 
+  * Add attribution statement.
+
+  * Account for the use of .md as well as .txt files in this project.
+
+  * Do we need engineering of the GitHub project (and document engineering)
+    as distinct from the engineering of implementations?
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2020-08-05-11:29 Bring manifest current and manage TODOs.
  0.0.10 2019-11-20-08:19 Touch-ups and Managing TODOs
  0.0.9 2019-11-20-07:14 Add docs/ subfolder for employment as GitHub pages
        and/or any blogging, substitution for a Wiki, etc.
