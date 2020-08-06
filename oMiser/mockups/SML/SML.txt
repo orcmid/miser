@@ -1,4 +1,4 @@
-SML.txt 0.0.16                       UTF-8                       dh:2020-08-06
+SML.txt 0.0.17                       UTF-8                       dh:2020-08-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -33,9 +33,9 @@ SML.txt 0.0.16                       UTF-8                       dh:2020-08-06
 
 SETUP
 
-    The implementation of SML/NJ used in these mockups is located at
+    The implementations of SML/NJ used in these mockups are located via
     <http://smlnj.org/>.  Their installs are being created and verified
-    using the latest Microsoft Windows MSI installer.
+    using their latest Microsoft Windows MSI installer.
 
 
 RELATED INFORMATION
@@ -112,7 +112,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                      Copyright 2017 Dennis E. Hamilton
+                    Copyright 2017-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -127,6 +127,14 @@ MANIFEST
     limitations under the License.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. SML Mockup Proof-of-Concept Demonstrations. Miser
+   Project Code text file SML.txt version 0.1.17 dated 2020-08-06, available
+   on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML.txt>
+
 
 TODO
 
@@ -169,8 +177,6 @@ TODO
     model.  There are issues related to these considerations, in particular
     #23-#24, #36, and #30-#32.
 
-  * Add attribution statement.
-
   * Figure out how to use MarkDown for SML-setup and keeping them consistent
     (or not).
 
@@ -179,8 +185,14 @@ TODO
     level, and finally, packaging and use of packages.  Some of this is more
     generic than just for the Miser Project, but it is here for now.
 
+  * Working with the GitHub code base and the SML mockups in particular is
+    also a component of setup treatment.  Need to blend that in also.  And
+    how nfoTools might intersect with that, keeping in mind that we want
+    working with mockups to be lightweight.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.17 2020-08-06-10:17 More touch-up and TODOing
  0.0.16 2020-08-06-09:49 Small touch-ups and manage TODOs
  0.0.15 2019-11-20-18:15 Manage TODOs
  0.0.14 2019-04-18-10:07 Add images that accompany SML-setup.txt 0.0.1.
