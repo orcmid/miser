@@ -1,4 +1,4 @@
-SML.txt 0.0.15                       UTF-8                       dh:2019-11-20
+SML.txt 0.0.16                       UTF-8                       dh:2020-08-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -34,7 +34,7 @@ SML.txt 0.0.15                       UTF-8                       dh:2019-11-20
 SETUP
 
     The implementation of SML/NJ used in these mockups is located at
-    <http://smlnj.org/>.  These mockups are being created and verified
+    <http://smlnj.org/>.  Their installs are being created and verified
     using the latest Microsoft Windows MSI installer.
 
 
@@ -42,7 +42,9 @@ RELATED INFORMATION
 
     For more information about oMiser and the connection between mockup
     code and Miser conception, consult the files at
-    <https://github.com/orcmid/miser/tree/master/oMiser>.  There are also
+    <https://github.com/orcmid/miser/> (master),
+    <https://github.com/orcmid/miser/tree/master/oMiser>, and
+    <https://github.com/orcmid/miser/tree/master/oFrugal>.  There are also
     useful comments and discussions on the project Issues Questions at
     <https://github.com/orcmid/miser/issues>.
 
@@ -131,7 +133,11 @@ TODO
   * Some of these TODOs are about issues that maybe belong somewhere else.
 
   * Encapsulate the datatype and primitive-function definitions in an
-    SML library.
+    SML library.  We need the library to make inclusion in the SML-based
+    oFrugal implementations convenient across sections of the project.
+
+  * Reflect some application of nfoTools here, even though mockups are maybe
+    not so meticulous.
 
   * Make certain the test files include an account of the expected outputs.
 
@@ -158,8 +164,24 @@ TODO
     output remain problematic in the monad sense of carrying the stream in
     either direction and handling the carrying of state.
 
+  * The carrying of state and other side-effects has many complications,
+    including with insistence on extensional equality in the computational
+    model.  There are issues related to these considerations, in particular
+    #23-#24, #36, and #30-#32.
+
+  * Add attribution statement.
+
+  * Figure out how to use MarkDown for SML-setup and keeping them consistent
+    (or not).
+
+  * Break up setup treatment to distinguish download and installation (with
+    confirmation) and then provisions for editing and operation at the script
+    level, and finally, packaging and use of packages.  Some of this is more
+    generic than just for the Miser Project, but it is here for now.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.16 2020-08-06-09:49 Small touch-ups and manage TODOs
  0.0.15 2019-11-20-18:15 Manage TODOs
  0.0.14 2019-04-18-10:07 Add images that accompany SML-setup.txt 0.0.1.
  0.0.13 2018-04-19-12:58 Simplify to Ydemo.sml name and fix columnar
