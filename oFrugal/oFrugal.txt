@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.0                    UTF-8                       dh:2020-08-05
+oFrugal.txt 0.0.1                    UTF-8                       dh:2020-08-10
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -9,7 +9,7 @@ oFrugal.txt 0.0.0                    UTF-8                       dh:2020-08-05
                    OFRUGAL REPL DEVELOPMENT AND OPERATION
                    --------------------------------------
 
-    oFrugal is the the REPL (Read, Eval, Print, Loop) component of the pair
+    oFrugal is the REPL (Read, Eval, Print, Loop) component of the pair
 
      - oMiser representation and use of the abstract structure, ‹ob› as an
        encapsulated data-structure and universal machine implementation via
@@ -19,12 +19,11 @@ oFrugal.txt 0.0.0                    UTF-8                       dh:2020-08-05
        exercise of oMiser functions in a more-practical form for personal
        exploration and operation of oMiser programs.
 
-    oFrugal implementations provide input-output and other functions
-    that oMiser necessarily lacks.  oFrugal is essentially a kind
-    of assembler of oMiser obs and a means to exercise programs
-    written as obs that compute other obs from given ones.  In particular,
-    it presents the results of computations in the same notation(s) employed
-    for the inputs.
+    oFrugal implementations provide input-output and other functions that
+    oMiser necessarily lacks.  oFrugal is essentially an assembler/calculator
+    of oMiser obs, a means to exercise scripts written as obs that compute
+    other obs by applicative interpretation.  In particular, oFrugla presents
+    the results of computations in the same notation(s) employed for inputs.
 
 
 MANIFEST
@@ -33,7 +32,9 @@ MANIFEST
         this synopsis, manifest and TODOs for this portion of the
         working Miser-Project working folders preserved on GitHub
 
-
+    mockups/
+        subtree for experimental mock-ups that demonstrate oFrugal
+        features; some can serve as provisional reference implementations
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -53,19 +54,26 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
+   Code tex file oFrugal.txt version 0.0.1 available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
+
 TODO
 
   * Create these, with attention to the division of labor and the reliance
     on the common ob-exp txt.
 
-  * Add attribution statement.
-
   * Explain the oMiser mockup case because of file-system location of
     SML scripts.  There needs to be some principle applied on this.
+
+  * Maybe need notes and references?
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.1 2020-08-10-13:22 Add mockups/ and Attribution, manage TODOs
  0.0.0 2020-08-05-10:23 Create placeholder and initial job jar for the
        oFrugal code development.
 

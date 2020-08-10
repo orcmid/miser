@@ -1,0 +1,78 @@
+SML.txt 0.0.0                       UTF-8                        dh:2020-08-10
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+   <https://github.com/orcmid/miser/blob/master/oFrugal/mockups/SML/SML.txt>
+
+               OFRUGAL PROOF-OF-CONCEPT DEMONSTRATIONS IN SML
+               ----------------------------------------------
+
+    Standard SML of New Jersey (SML/NJ) is used for demonstration
+    of the essential characteristics of Miser obs and the universal
+    computational functions on obs, obap.ap(p,x) and obap.eval(exp).
+
+    The objective is demonstration of an oFrugal REPL with standard
+    parsing and pretty-printed output presentation.  REPL operation
+    will be limited to ASCII code points in input-output texts although
+    Unicode is required of complete implementations.
+
+    As a mockup, there is little diagnostic support and one will simply
+    have to be meticulous about confirming the implementation of code via
+    obs used as procedure scripts.
+
+SETUP
+
+    The constructions of SML oFrugal mockups rely on corresponding
+    constructions of SML oMiser mockups.  For SML setup and use, consult
+    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML.txt>
+
+
+MANIFEST
+
+       SML.txt
+           this manifest and job-jar file
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                      Copyright 2020 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oFrugal Proof-of-Concept Demonstrations in SML. Miser
+   Project Code text file SML.txt version 0.0.0 dated 2020-08-10, available
+   on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oFrugal/mockups/SML/SML.txt>
+
+
+TODO
+
+  * Use the SML oMiser mockup development to determine how to integrate the
+    oMiser ob structures and signatures for access by oFrugal structures,
+    signatures, and the REPL code.
+
+  * Give consideraton to nfoTools here, even though mockups with SML are maybe
+    not so meticulous.
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ 0.0.0 2020-08-10-13:59 Create placeholder and initial job jar for oFrugal
+       SML mockup development.
+
+                         *** end of SML.txt ***
