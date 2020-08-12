@@ -1,4 +1,4 @@
-SML-setup.txt 0.0.2                  UTF-8                       dh:2019-11-09
+SML-setup.txt 0.0.3                  UTF-8                       dh:2020-08-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -146,7 +146,7 @@ SML-setup.txt 0.0.2                  UTF-8                       dh:2019-11-09
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                  Copyright 2018-2019 Dennis E. Hamilton
+                  Copyright 2018-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -165,7 +165,8 @@ SML-setup.txt 0.0.2                  UTF-8                       dh:2019-11-09
  ATTRIBUTION
 
    Hamilton, Dennis E. Installation of SML/NJ under Windows.  Miser Theory
-   Conception text file SML-setup.txt version 0.0.2 dated 2019-11-09, available on the Internet as a version of
+   Conception text file SML-setup.txt version 0.0.2 dated 2019-11-09,
+    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML-setup.txt>
 
 TODO
@@ -174,6 +175,8 @@ TODO
     to it as an alternative.
 
   * Oh wait, use Markdown for that purpose and have it right here also :).
+    Experiment with that.  It is limited to viewing from the GitHub pages
+    though.
 
   * The use of Visual Studio Code (VSCode) applies to all development here
     so there might need to be a higher-level treatment of it.  Or enough
@@ -184,9 +187,17 @@ TODO
 
   * There is now, also, the Windows Terminal to consider.
 
+  * There is also common need for SML/NJ installation and setup as a generic
+    case, and as applied to oMiser and oFrugal mockups.  This suggests that
+    a more generic location is desired for much of this, with it linked from
+    here.  nfoTools seems like a better place, and there is still a need to
+    have it be viewable outside of the GitHub repository, whether Wiki or
+    a docs/ folder.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.3 2020-08-11-10:38 Manage TODOs, preparing for testing a Markdown flavor
  0.0.2 2019-11-09-11:08 Complete the material, proofing that the image links
        all work.
  0.0.1 2019-04-18-09:57 Add section on downloading and installing SML/NJ on
