@@ -1,4 +1,4 @@
-SML-setup.txt 0.0.3                  UTF-8                       dh:2020-08-11
+SML-setup.txt 0.0.4                  UTF-8                       dh:2020-08-12
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -165,7 +165,7 @@ SML-setup.txt 0.0.3                  UTF-8                       dh:2020-08-11
  ATTRIBUTION
 
    Hamilton, Dennis E. Installation of SML/NJ under Windows.  Miser Theory
-   Conception text file SML-setup.txt version 0.0.2 dated 2019-11-09,
+   Conception text file SML-setup.txt version 0.0.4 dated 2020-08-12,
     available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML-setup.txt>
 
@@ -174,16 +174,12 @@ TODO
   * Create a blog-post version of this material and the images, then link
     to it as an alternative.
 
-  * Oh wait, use Markdown for that purpose and have it right here also :).
-    Experiment with that.  It is limited to viewing from the GitHub pages
-    though.
-
   * The use of Visual Studio Code (VSCode) applies to all development here
     so there might need to be a higher-level treatment of it.  Or enough
     here to establish it in the load, edit-save-REPL, preserve cycles.
 
   * Similar ideas apply to use of the SML/NJ REPL in a Windows Console
-    session.
+    session.  CMD.exe should be good enough.
 
   * There is now, also, the Windows Terminal to consider.
 
@@ -192,11 +188,20 @@ TODO
     a more generic location is desired for much of this, with it linked from
     here.  nfoTools seems like a better place, and there is still a need to
     have it be viewable outside of the GitHub repository, whether Wiki or
-    a docs/ folder.
+    a docs/ folder.  Issue #33, Need On Ramp and Guard Rails, reflects the
+    direction here.
+
+  * Replicate the detailed level of SML-setup.txt in a web format at the
+    nfoTools project.  Work through the construction and scaffolding issues
+    there.  Maybe borrow from what little has been done for docs here at
+    <https://orcmid.github.io/omiser>.
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.4 2020-08-12-16:13 Retract SML-setup.md and lean towards issue #31 on
+       Need for On Ramp and Guard Rails.
  0.0.3 2020-08-11-10:38 Manage TODOs, preparing for testing a Markdown flavor
  0.0.2 2019-11-09-11:08 Complete the material, proofing that the image links
        all work.
