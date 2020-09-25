@@ -1,4 +1,4 @@
-miser.txt 0.0.11                     UTF-8                       dh:2020-08-05
+miser.txt 0.0.12                     UTF-8                       dh:2020-09-25
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
@@ -159,10 +159,29 @@ TODO
   * Account for the use of .md as well as .txt files in this project.
 
   * Do we need engineering of the GitHub project (and document engineering)
-    as distinct from the engineering of implementations?
+    as distinct from the engineering of implementations
+
+  * Make the global change of orcmid repositories to have main as the default
+    branch name, deprecating master (which will presumably redirect to main).
+
+  * When deep links to https://github.com/orcmid/miser/blob/main/ work,
+    replace the permalink on this page and in any attribution statement
+    to employ that absolute path.
+
+  * systematically apply this change to all .txt and .md files in the current
+    level.
+
+  * systematically extend the changes into all subfolders of this project,
+    expanding breadth first.
+
+  * Review for changes needed in blog, wiki, and documentation pages.
+
+  * For new text, use main as soon as it is workable.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2020-09-25-08:07 Reflect Issue #34 on the GitHub default repo renaming
+        from master to main.
  0.0.11 2020-08-05-11:29 Bring manifest current and manage TODOs.
  0.0.10 2019-11-20-08:19 Touch-ups and Managing TODOs
  0.0.9 2019-11-20-07:14 Add docs/ subfolder for employment as GitHub pages
