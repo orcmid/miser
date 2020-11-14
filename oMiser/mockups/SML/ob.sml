@@ -1,4 +1,4 @@
-(* ob.sml 0.0.15                     UTF-8                       dh:2018-10-17
+(* ob.sml 0.1.0                      UTF-8                       dh:2020-11-14
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                        OMISER ‹ob› INTERPRETATION IN SML
@@ -14,9 +14,9 @@
    see <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
    For the structure/interface requirements and connection with the primitive
    notions of the mathematical formulation, see
-   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/OB.sig.sml>.
+  <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/OB.sig.sml>.
    For consideration of the validity of this interpretation, see
-   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>.
+ <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>.
    *)
 
 use "OB.sig.sml";
@@ -47,22 +47,42 @@ structure ob :> OB
           = is_singleton x andalso not (is_individual x)
 
       fun ` x = e(x)
-         (* stick with ASCII codes but provide the ` x notation *)
+         (* stick with ASCII codes but provide the ` x notation.
+            This is a function, not a syntactical prefix, so it is often
+            necessary to parenthesize more than is needed in the case of
+            oFrugal syntax *)
 
       infixr 5 ##
       fun (x ## y) = c(x, y)
          (* to use this infix, either open structure ob or define
                val ## = ob.##
             and then declare
-               infix 5 ##
+               infixr 5 ##
             *)
 
    end
 
+(* EMPIRICAL INSPECTION
+   Because SML/NJ is harmonius with the kind of computational interpretations
+   intended for ob, the SML notation for a computational structure is concise.
+   SML supports definition by cases, where "| _ ..." is for anything else.
+
+   These definitions match directly with the definitions of primitive
+   notions in obtheory.txt.  This is confirmed by inspection, direct
+   comparison, adjusting for the fact that f x y is (f x) y in SML and f(x y)
+   in oFrugal <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+
+   The obcheck.sml script provides a kind of confirmation that nothing has
+   been broken in the OB.sig.sml and ob.sml scripts.  That the cases can be
+   generalized is based on being satisfied that the struct declaration, above,
+   is as dependable as the SML/NJ implementation intself in that regard. See
+  <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>
+   For the necessary setup and expected confirmation results.
+   *)
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                Copyright 2017, 2018 Dennis E. Hamilton
+                Copyright 2017-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -88,6 +108,9 @@ structure ob :> OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+   0.1.0 2020-11-14-11:03 Clean up the narrative with more explanatory
+         information, linking to details, and not so much on the mathematical-
+         logic bits.  This is very close to baked.
   0.0.15 2018-10-17-09:54 Replaced "soundness" with "validity"
   0.0.14 2018-10-15-15:31 Clarify the introduction of unary ` and ensure that
          we speak of validity, not soundness.
@@ -112,4 +135,4 @@ structure ob :> OB
          is the only data structure available at the oMiser level.
          *)
 
-(*                         *** end of ob.sml ***                             *)
+(*                         *** end of ob.sml ***                            *)

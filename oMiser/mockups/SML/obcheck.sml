@@ -1,4 +1,4 @@
-(* obcheck.sml 0.0.20              UTF-8                         dh:2018-10-24
+(* obcheck.sml 0.1.0               UTF-8                         dh:2020-11-14
 
                         OMISER ‹ob› INTERPRETATION IN SML
                         =================================
@@ -14,9 +14,16 @@
    See <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt> for
    the mathematical formulation of the abstract theory.
 
+   To execute this strip, have SML/NJ installed in a manner comparable to
+   the arrangement recommended at
+<https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/SML-setup.txt>
+   and have the files OB.sig.sml, ob.sml, and this obcheck.sml together in a
+   computer folder.  GitHub cloning of <https://github.com/orcmid/miser> will
+   deliver those files at folder mockups/SML/ for use there.
+
    Here, "valid interpretation" and "validity" are specialized beyond
    the mathematical-logic usage.  When we speak of truth in a physically-
-   realizable interpretation, we mean true or false as as a matter of fact.
+   realizable interpretation, we mean true or false as a matter of fact.
    Deductions in the mathematical theory will have empirically-confirmable
    particular facts in the computational interpretation.
 
@@ -50,7 +57,8 @@
 
 use "ob.sml";
 open ob;
-(* MODIFY THESE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE
+
+(* MODIFY THOSE TWO LINES TO CHECK OTHER IMPLEMENTATION STRUCTURES.  THE
    CHECKS SHOULD WORK DIRECTLY.
    *)
 
@@ -59,8 +67,8 @@ infixr 5 ## ;
 (* DEMONSTRATE PRIMITIVES
    These are simple confirming demonstrations.  They are not proofs.
    Checking simple cases confirms that nothing blatant has gone
-   amiss.  These results are predictable from the declarations in
-   ob.sml.
+   amiss.  Extensions of these results to more cases are predictable
+   from the declarations in ob.sml.
    *)
 
 val ob_logo = c(NIL, e NIL)
@@ -157,7 +165,7 @@ val ckOb5 =         is_ob_proper ob_logo
 
 (* Ob6-Ob7. Identity
    The SML/NJ default identity is such that obs with different constructions
-   are distinct and for results of constructors taking tuples, identity is
+   are distinct.  For results of constructors taking tuples, identity is
    determined by identity of the corresponding tuple parts.  Named individuals
    are distinct constructors and automatically differentiated from each other
    and from results of the constructors ob_c and ob_e.
@@ -230,7 +238,7 @@ val ckOb5 =         is_ob_proper ob_logo
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                     Copyright 2017-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -249,16 +257,15 @@ val ckOb5 =         is_ob_proper ob_logo
 
     TODO:
 
-      * Move the lengthy material at the beginning, and the other prose
-        except when part of interpretation demonstration.
-
-      * Link to instructions for the operation of this check, explained
-        in the SML/NJ setup instructions.
+     * Work through the downloading, installing, and repository setup
+       to verify that the expected results still obtain.
 
     *)
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    0.1.0 2020-11-14-12:04 Tidy up and freeze as a companion to OB.sig.sml
+          and ob.sml.
    0.0.20 2018-10-24-15:54 Adjust TODOs.  Add License Notice.  Replace sound-
           ness with validity and speak of verification, consistent with the
           obtheory.txt 0.1.1.  Adjust layout for the Visual Code margins.

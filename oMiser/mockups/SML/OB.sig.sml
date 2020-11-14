@@ -1,4 +1,4 @@
-(* OB.sig.sml 0.1.1                 UTF-8                       dh:2018-10-30
+(* OB.sig.sml 0.1.2                 UTF-8                       dh:2020-11-14
 
                        OMISER ‹ob› INTERPRETATION IN SML
                        =================================
@@ -16,20 +16,22 @@
    implementations will be demonstrated.  SML is convenient because its
    provisions are harmonious with the characteristics that ‹ob› interpretation
    must preserve, making for easy prototyping and verification of alternative
-   implementations against this already-confirmed-to-be-valid one.
+   implementations against an already-confirmed-to-be-valid one.
 
-   For oMiser, the SML/NJ interpretations of ‹ob› support the common shared
-   signature, OB, by convention.  For the mathematical requirements see
+   SML/NJ interpretations of ‹ob› employ the common shared signature, OB, by
+   convention.  For the mathematical requirements see
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.  SML/NJ
    structures that expose this signature shall provide valid computational
-   interpretations of the theory.
+   interpretations of that applied-logic theory.
 
    For an exemplary computational interpretation see the implementation at
    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/ob.sml>.
+   This is taken as a proof-of-concept and reference implementation.
 
-   Script obcheck.sml has confirmation checks for SML/NJ structures asserted
-   to manifest <ob> via signature OB.  See
- <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>
+   Script obcheck.sml provides confirmation of the reference implementation.
+ <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/obcheck.sml>.
+   Appropriate setup of SML/NJ for checking and using the reference
+   implementation(s) are linked there as well.
    *)
 
 signature OB
@@ -44,12 +46,20 @@ signature OB
       val is_individual: ob -> bool
       val is_singleton: ob -> bool
       val NIL: ob
-      val ` : ob -> ob (* prefix operator equivalent to e(x) *)
+      val ` : ob -> ob (* function approximating a prefix operator for e(x) *)
       val ## : ob * ob -> ob
           (* requiring infixr 5 ## for use of (x ## y) = c(x, y) *)
    end
 
 (* REQUIREMENTS FOR VALID INTERPRETATION OF ‹ob›
+
+    The miser-theory ‹ob› structure conditions are completely specified at
+    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>. The
+    representation of functions/predicates in ‹ob› logical theory Ot are as at
+<https://orcmid.blogspot.com/2018/12/miser-project-representing-functions-in.html>
+    Valid equation, x = y, in ‹ob› formulation Ot will have computational
+    interpretation of x and y formulas yielding interpretations of identical
+    canonical forms.
 
         miser-theory ‹ob›             OB.sig.sml interpretation
         -----------------             -------------------------
@@ -64,7 +74,8 @@ signature OB
         ob.NIL                        NIL
 
         for obs x,y, whether x = y    (op =)
-        for obs x,y, whether x ¶ y    implicit in SML constructions
+        for obs x,y, whether x ¶ y    implicit in SML type-instance
+                                      constructions
 
         Ot-represented Of function    φr: ob * ... * ob -> ob,
             φ(x1, ..., xn), n > 0         φ effectively computable
@@ -76,8 +87,8 @@ signature OB
         and the xi are definite obs   where the xri are the computational
                                       interpretations of the xi and the
                                       SML definition for the φr procedure
-                                      is suche that evaluation yields
-                                      the computational interpretation
+                                      is such that evaluation yields
+                                      a computational interpretation
                                       of the definite z
 
         truth or falsity of           SML evaluation of the expression
@@ -88,47 +99,33 @@ signature OB
                                       yields the SML bool value corresponding
                                       to the determined ρ truth value
 
-   The OB.sig.sml interpretations are given in the language of SML/NJ.  The
+    The OB.sig.sml interpretations are given in the language of SML/NJ.  The
    correspondence between fixed ‹ob› entities and this computational
    interpretation is not by the convenient correspondence of names but by
    their pairing in the above tabulation and by SML/NJ implementations that
    satisfy the essential characteristics, Ob1-Ob10, of the ‹ob› formulation
    at obtheory.txt.
 
-   The conditions on representation of functions and predicates (φ and ρ)
-   reflect that computational interpretation is not about direct mathematical
-   entities.  It is about operational procedures carried out on definite
-   computational interpretations of abstract entities such that the yielded
-   result is the corresponding computational interpretation of the determined
-   mathematical entity.  Note that computational interpretation is from the
-   abstract to the computational, not vice versa.  Keep in mind that the
-   domains of discourse are different.
+   Right-associative infix ## is the OB counterpart of SML ::.  The different
+   notation compensates for the prohibition of :: overloading in SML.  To use
+   the ## with a structure s :> OB it is necessary to provide
+            val ## = s.##    -- or by opening s, and also
+            infixr 5 ##      -- either way
+   in the using procedure.
 
    In SML/NJ the notation for application of procedures to operands mimics
    the mathematical notation.  The coincidence of notations should not be
    read as one having the same meaning as the other.  It is useful to view
    the evaluation of SML/NJ scripts as having defined computational
-   interpretations and the computational interpretation of ‹ob› relies on
-   this restrained use of the SML language's computational interpretation.
+   interpretations with any computational interpretation of ‹ob› relying on
+   OB.sig-restrained use of the SML language's computational interpretation.
 
-   Extensions of SML/NJ OB datatypes shall be exclusively by adjoining
-   interpretations of further individuals in expanded signatures based on
-   this one.  Functions fundamental to the oMiser computational model will be
-   expressed in Ot, the ‹ob› theory language.  Computational interpretations
-   of those functions will be provided in such extended SML/NJ signatures and
-   corresponding SML/NJ structures.
 
-   Right-associative infix ## is the OB counterpart of SML ::.  The different
-   notation compensates for the prohibition of :: overloading.  To use the ##
-   with a structure s :> OB it is necessary to provide
-            val ## = s.##    -- or by opening s, and also
-            infixr 5 ##      -- either way
-   in the using procedure.
    *)
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+                    Copyright 2017-2020 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -154,6 +151,9 @@ signature OB
 
 (* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.2 2020-11-14-12:10 Improve connections between the theoretical and
+       computational requirements that implementations must satisfy in
+       providing an interpretation of the theoretical ‹ob› structure.
  0.1.1 2018-10-30-14:37 Provide clarity on the relationship between ‹ob›
        computational interpretation and the defined computational interpreta-
        tion of the SML language.
@@ -164,7 +164,8 @@ signature OB
        the computational objects are not confused with the mathematical ones.
  0.0.12 2018-10-29-09:23 Reflect change of the tutorial-style article name
         from "Interpreting Obs as Data" to "Representing Data as Obs", since
-        it is (some) Obs that are the interpretations, rather than Obs having such (computational) interpretations although that becomes a
+        it is (some) Obs that are the interpretations, rather than Obs having
+        such (computational) interpretations although that becomes a
         consequence.
  0.0.11 2018-10-16-09:54 Further adjustment of the commentary to smoothly
         connect with the tutorial-style article, "Representing Data as Obs."
