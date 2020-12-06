@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
+ob-exp.txt 0.0.11                    UTF-8                       dh:2020-12-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -81,8 +81,10 @@ ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
     〈parameters-form〉 ::= ( 〈list-terms〉 ) | 〈list-form〉
 
     〈function-form〉 ::= 〈term〉 | 〈function-form〉 〈parameters-form〉
+                     | 〈function-form〉 . 〈term〉
 
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉 | 〈obap-form〉 〈parameters-form〉
+                  | 〈obap-form〉 . 〈term〉
 
     〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
@@ -111,8 +113,8 @@ ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
        (parameter-list) is an optional list of one-or-more parameters
 
          interpretation is an obaptheory expression schema in which any
-                        parameter and I category (parameter-list) forms are
-                        in reference to appearances in the pattern
+                        parameter and "I category (parameter-list)" forms are
+                        in reference to category appearances in the pattern
 
     For example,
 
@@ -152,9 +154,11 @@ ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
 
     〈function-form〉 ::=  〈term〉 | 〈function-form〉 〈list-form〉
                         | 〈function-form〉 ( 〈arguments〉 )
+                        | 〈function-form〉 . 〈term〉
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉
                         | 〈obap-form〉 〈list-form〉
                         | 〈obap-form〉 ( 〈arguments〉 )
+                        | 〈obap-form〉 . 〈term〉
     〈arguments〉 ::= 〈ob-exp〉 | 〈arguments〉, 〈ob-exp〉
 
     I〈function-form〉⎾〈term〉⏋=: I〈term〉
@@ -162,11 +166,15 @@ ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
                     =: obap.ap(I〈function-form〉, I〈list-form〉 )
     I〈function-form〉⎾〈function-form〉 ( 〈arguments〉 )⏋
                     =: I〈arguments〉( I〈function-form〉 )
+    I〈function-form〉⎾〈function-form> . 〈term〉 ⏋
+                    =: obap.ap(I〈function-form〉, I〈term〉 )
 
     I〈obap-form〉⎾( 〈ob-exp〉 )⏋=: I〈ob-exp〉
     I〈obap-form〉⎾ 〈list-form〉 ⏋=: I〈list-form〉
     I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋
                     =: obap.ap(I〈obap-form〉, I〈list-form〉 )
+    I〈obap-form〉⎾〈obap-form> . 〈term〉 ⏋
+                    =: obap.ap(I〈obap-form〉, I〈list-term〉 )
     I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋
                     =: I〈arguments〉( I〈obap-form〉 )
 
@@ -230,7 +238,7 @@ ob-exp.txt 0.0.10                    UTF-8                       dh:2020-07-20
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.0.10 dated 2020-07-20,
+   Theory Conception text file ob-exp.txt version 0.0.11 dated 2020-12-06,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
@@ -298,6 +306,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2020-12-06-09:36 Add infix "." modeled on method-selection notations
+        from C++ and Java, per Issue #24
  0.0.10 2020-07-20-11:22 Change title, manage TODOs, small touch-ups.
  0.0.9 2020-02-07-12:17 Expand and manage TODOs, reflecting going all the
        way up to the oFrugal REPL command input forms.
