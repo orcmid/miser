@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.11                    UTF-8                       dh:2020-12-06
+ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -64,16 +64,28 @@ ob-exp.txt 0.0.11                    UTF-8                       dh:2020-12-06
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
 
-    〈binding-name〉 ::= ^〈lindy〉
+    〈binding-name〉 ::= ^〈lindy〉 | ?〈lindy〉 | ?.〈lindy〉
+            the ?-prefixed conditional binding names are treated as
+            bindings when there is a definition and as lindies themselves
+            otherwise.  This is part of having oFrugal bindings never fail as
+            part of the context-free oFrugal grammar and fully-defined
+            semantics.  When there is no binding for ^〈lindy〉, the result is
+            ?〈lindy〉.  Likewise for .〈lindy〉.  When there is a binding for
+            ^〈lindy〉, ?〈lindy〉 will resolve to that binding.  Likewise for
+            ?.〈lindy〉 when .〈lindy〉 is a defined primitive.  Conditional
+            bindings are not intended for intentional use, although there
+            is no way to prevent it and there does need to be a way to test
+            for and confirm their implementation.  Warning messages are
+            appropriate, there being no impact on the formalized semantics.
 
     〈primitive〉 ::= .〈lindy〉
                         from a fixed predefined list
+                        same as ?..〈lindy〉 when no-such primitive
 
     〈lindy〉 is an alphanumeric name not beginning with a digit and without
            spaces, corresponding to an XML NCName without "."
 
     〈primitive〉s are not case-sensitive, although 〈lindy〉s are.
-
 
     〈list-terms〉 ::= 〈ob-exp〉 | 〈list-terms〉, 〈ob-exp〉
     〈list-form〉 ::= [ ] | [ 〈list-terms〉 ] | [ 〈list-terms〉 :]
@@ -98,7 +110,7 @@ ob-exp.txt 0.0.11                    UTF-8                       dh:2020-12-06
  2. EXPRESSION INTERPRETATION
 
     Interpretation of expressions as obs is accomplished using a special
-    schema notation that specifies the ‹ob› theory language, Ot, expression
+    schema notation that specifies the Ot, ‹ob› theory language, expression
     that is the interpretation of a given ob-exp text.  The interpretation
     schemas have distinct form.
 
@@ -125,8 +137,10 @@ ob-exp.txt 0.0.11                    UTF-8                       dh:2020-12-06
     occurrences is called for to determine the individual ob that is the
     evaluation.
 
-    An example employing parameters is found in the section 6 interpretation
-    of I〈arguments〉.
+    The parameter E employed in almost all interpretations signifies the
+    ob-exp environment, the means by which the current oFrugal set of bindings
+    is used to resolve binding names that occur in the expression and also
+    provide unknown-name forms otherwise.
 
  3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
 
@@ -136,7 +150,13 @@ ob-exp.txt 0.0.11                    UTF-8                       dh:2020-12-06
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
 
-    [DETAILS TBD]
+    I〈term〉 ⎾〈lindy〉⏋(E) =: I〈lindy〉, the lindy of that spelling
+    I〈term〉 ⎾〈primitive〉⏋(E) =: I〈primitive〉(E),
+                               the defined primitive of that spelling or
+                               the unknown-primitive of that spelling
+    I〈term〉 ⎾〈binding-name〉⏋(E) =: I〈binding-name〉(E),
+
+    [FURTHER DETAILS TBD]
 
  5. LIST FORMS
 
@@ -304,8 +324,23 @@ TODO
  * Because of binding names, include the additional parameter that takes us
    to resolution of the binding.
 
+ * Introduce the binding-failure case and update obap-theory.txt accordingly.
+   This is discusssed in issue #24.  There are two levels of this.  In
+   obaptheory.txt, ?<binding-name-form> is treated the same as a lindy. In
+   ob-exp.txt, ?<binding-name-form> is treated exactly the same as
+   ^<binding-name-form>.  That is, if there is (now) a definition it will
+   be used, and if not the undefined-lindy form will be delivered as the
+   result.
+
+ * REFACTOR.  The separation between file stream, lexical structure, and the
+   context-free oFrugal grammar needs to be navigated better.  The grammar for
+   Power-FX has the quality I want to emulate.  See the expression grammar
+   in docs/ of <https://github.com/microsoft/Power-Fx>.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2021-05-25T16:45Z Update to deal with conditional lindies as prep
+        for fully-defined semantics and also prep for refactoring the grammar.
  0.0.11 2020-12-06-09:36 Add infix "." modeled on method-selection notations
         from C++ and Java, per Issue #24
  0.0.10 2020-07-20-11:22 Change title, manage TODOs, small touch-ups.
