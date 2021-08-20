@@ -1,4 +1,4 @@
-ob.txt 0.1.10                   UTF-8                            dh:2020-07-10
+ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
 
                            The Miser Project Code
                            ======================
@@ -366,7 +366,7 @@ ob.txt 0.1.10                   UTF-8                            dh:2020-07-10
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018-2020 Dennis E. Hamilton
+                   Copyright 2018-2021 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -384,8 +384,9 @@ ob.txt 0.1.10                   UTF-8                            dh:2020-07-10
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation, and Expressions. Miser Theory Conception text file ob.txt version 0.1.9 dated
-   2020-07-10, available on the Internet as a version of
+   Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation,
+   and Expressions. Miser Theory Conception text file ob.txt version 0.1.11
+   dated 2021-08-20, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
  TODO
@@ -394,8 +395,11 @@ ob.txt 0.1.10                   UTF-8                            dh:2020-07-10
 
   * Add Notes and Reference section.
 
+  * Explain ?lindy and ?.primitive cases in oFrugal.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.11 2021-08-20T17:39Z Touch up, manage TODOs
  0.1.10 2020-07-10-19:29 Touch up, introduce !def to simplify oFrugal forms.
  0.1.9 2020-07-10-09:39 Touch up, correct an example, and manage TODOs.
  0.1.8 2020-02-07-13:14 Cleanups and elaboration, including a bit more of
