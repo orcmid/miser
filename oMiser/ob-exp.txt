@@ -1,4 +1,4 @@
-ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
+ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -62,9 +62,9 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
     apostrophe, ', are all treated the same.  The reversed-prime is the
     "official" reference character.
 
-    〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+    〈term〉 ::= 〈plane-lindy〉 | 〈primitive〉 | 〈binding-name〉
 
-    〈binding-name〉 ::= ^〈lindy〉 | ?〈lindy〉 | ?.〈lindy〉
+    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
             the ?-prefixed conditional binding names are treated as
             bindings when there is a definition and as lindies themselves
             otherwise.  This is part of having oFrugal bindings never fail as
@@ -78,14 +78,14 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
             for and confirm their implementation.  Warning messages are
             appropriate, there being no impact on the formalized semantics.
 
-    〈primitive〉 ::= .〈lindy〉
+    〈primitive〉 ::= .〈plane-lindy〉
                         from a fixed predefined list
-                        same as ?..〈lindy〉 when no-such primitive
+                        same as ?.〈plane-lindy〉 when no-such primitive
 
-    〈lindy〉 is an alphanumeric name not beginning with a digit and without
-           spaces, corresponding to an XML NCName without "."
+    〈lindy〉 is an alphanumeric name without spaces, corresponding to an XML
+    NCName without "." and with initial digits allowed.
 
-    〈primitive〉s are not case-sensitive, although 〈lindy〉s are.
+    〈primitive〉s are not case-sensitive, although 〈plane-lindy〉s are otherwise.
 
     〈list-terms〉 ::= 〈ob-exp〉 | 〈list-terms〉, 〈ob-exp〉
     〈list-form〉 ::= [ ] | [ 〈list-terms〉 ] | [ 〈list-terms〉 :]
@@ -148,9 +148,9 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
 
  4. TERMS
 
-    〈term〉 ::= 〈lindy〉 | 〈primitive〉 | 〈binding-name〉
+    〈term〉 ::= 〈plane-lindy〉 | 〈primitive〉 | 〈binding-name〉
 
-    I〈term〉 ⎾〈lindy〉⏋(E) =: I〈lindy〉, the lindy of that spelling
+    I〈term〉 ⎾〈plane-lindy〉⏋(E) =: I〈plane-lindy〉, the lindy of that spelling
     I〈term〉 ⎾〈primitive〉⏋(E) =: I〈primitive〉(E),
                                the defined primitive of that spelling or
                                the unknown-primitive of that spelling
@@ -163,12 +163,12 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
     〈list-body〉 ::= 〈ob-exp〉 ] | 〈ob-exp〉 :] | 〈ob-exp〉, 〈list-body〉
     〈list-form〉 ::= [ ] | [ 〈list-body〉
 
-    I〈list-form〉⎾[ ]⏋=: ob.NIL
-    I〈list-form〉⎾[ 〈list-body〉 ⏋=: I〈list-body〉
+    I〈list-form〉⎾[ ]⏋(E)=: ob.NIL
+    I〈list-form〉⎾[ 〈list-body〉 ⏋(E)=: I〈list-body〉(E)
 
-    I〈list-body〉⎾〈ob-exp〉 ]⏋=: ob.c(I〈ob-exp〉, ob.NIL)
-    I〈list-body〉⎾〈ob-exp> :]⏋=: I〈ob-exp〉
-    I〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋=: ob.c(I〈ob-exp〉,I〈list-body〉)
+    I〈list-body〉⎾〈ob-exp〉 ]⏋(E)=: ob.c(I〈ob-exp〉(E), ob.NIL)
+    I〈list-body〉⎾〈ob-exp> :]⏋(E)=: I〈ob-exp〉(E)
+    I〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋=: ob.c(I〈ob-exp〉(E),I〈list-body〉(E))
 
  6. FUNCTIONAL FORMS
 
@@ -181,46 +181,46 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
                         | 〈obap-form〉 . 〈term〉
     〈arguments〉 ::= 〈ob-exp〉 | 〈arguments〉, 〈ob-exp〉
 
-    I〈function-form〉⎾〈term〉⏋=: I〈term〉
-    I〈function-form〉⎾〈function-form> 〈list-form〉 ⏋
-                    =: obap.ap(I〈function-form〉, I〈list-form〉 )
-    I〈function-form〉⎾〈function-form〉 ( 〈arguments〉 )⏋
-                    =: I〈arguments〉( I〈function-form〉 )
-    I〈function-form〉⎾〈function-form> . 〈term〉 ⏋
-                    =: obap.ap(I〈function-form〉, I〈term〉 )
+    I〈function-form〉⎾〈term〉⏋(E)=: I〈term〉(E)
+    I〈function-form〉⎾〈function-form> 〈list-form〉 ⏋(E)
+                    =: obap.ap(I〈function-form〉(E), I〈list-form〉(E) )
+    I〈function-form〉⎾〈function-form〉 ( 〈arguments〉 )⏋(E)
+                    =: I〈arguments〉( I〈function-form〉)(E)
+    I〈function-form〉⎾〈function-form> . 〈term〉 ⏋(E)
+                    =: obap.ap(I〈function-form〉(E), I〈term〉(E))
 
-    I〈obap-form〉⎾( 〈ob-exp〉 )⏋=: I〈ob-exp〉
-    I〈obap-form〉⎾ 〈list-form〉 ⏋=: I〈list-form〉
-    I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋
-                    =: obap.ap(I〈obap-form〉, I〈list-form〉 )
-    I〈obap-form〉⎾〈obap-form> . 〈term〉 ⏋
-                    =: obap.ap(I〈obap-form〉, I〈list-term〉 )
-    I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋
-                    =: I〈arguments〉( I〈obap-form〉 )
+    I〈obap-form〉⎾( 〈ob-exp〉 )⏋(E)=: I〈ob-exp〉(E)
+    I〈obap-form〉⎾ 〈list-form〉 ⏋(E)=: I〈list-form〉(E)
+    I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋(E)
+                    =: obap.ap(I〈obap-form〉(E),(I〈list-form〉(E))
+    I〈obap-form〉⎾〈obap-form> . 〈term〉 ⏋(E)
+                    =: obap.ap(I〈obap-form〉(E), I〈term〉(E))
+    I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋(E)
+                    =: I〈arguments〉(E)( I〈obap-form〉 (E), E)
 
-    I〈arguments〉⎾〈ob-exp〉⏋(p) =: ob.ap(p, I〈ob-exp〉 )
-    I〈arguments〉⎾〈arguments〉, 〈ob-exp〉⏋(p)
-                    =: obap.ap( I〈arguments〉(p), I〈ob-exp〉)
+    I〈arguments〉⎾〈ob-exp〉⏋(p, E) =: ob.ap(p, I〈ob-exp〉 (E))
+    I〈arguments〉⎾〈arguments〉, 〈ob-exp〉⏋(p, E)
+                    =: obap.ap( I〈arguments〉(p, E), I〈ob-exp〉(E))
 
  7. UNARIES
 
     〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
-    I〈unary〉⎾〈function-form〉⏋ =: I〈function-form〉
-    I〈unary〉⎾ ‵ 〈obap-form〉 ⏋ =: ob.e( I〈function-form〉 )
-    I〈unary〉⎾ ‵ 〈unary〉 ⏋ =: ob.e( I〈unary〉 )
+    I〈unary〉⎾〈function-form〉⏋(E) =: I〈function-form〉(E)
+    I〈unary〉⎾ ‵ 〈obap-form〉 ⏋(E) =: ob.e( I〈obap-form〉(E) )
+    I〈unary〉⎾ ‵ 〈unary〉 ⏋(E) =: ob.e( I〈unary〉(E) )
 
  8. APPLICATIVE EXPRESSIONS
 
     〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
     〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 | 〈obap-form〉 〈ae-form〉
 
-    I〈ae-form〉⎾ 〈unary〉 ⏋ =: I〈unary〉
-    I〈ae-form〉⎾ 〈unary〉 〈ae-form〉 ⏋ =: obap.ap(I〈unary〉, I〈ae-form〉)
+    I〈ae-form〉⎾ 〈unary〉 ⏋(E) =: I〈unary〉 (E)
+    I〈ae-form〉⎾ 〈unary〉 〈ae-form〉 ⏋(E) =: obap.ap(I〈unary〉(E), I〈ae-form〉(E))
 
-    I〈ae〉⎾ 〈ae-form〉 ⏋ =: I〈ae-form〉
-    I〈ae〉⎾ 〈obap-form〉 ⏋ =: I〈obap-form〉
-    I〈ae〉⎾ 〈obap-form〉 〈ae-form〉 ⏋=: obap.ap(I〈obap-form〉, I〈ae-form〉)
+    I〈ae〉⎾ 〈ae-form〉 ⏋(E) =: I〈ae-form〉(E)
+    I〈ae〉⎾ 〈obap-form〉 ⏋(E) =: I〈obap-form〉(E)
+    I〈ae〉⎾ 〈obap-form〉 〈ae-form〉 ⏋(E)=: obap.ap(I〈obap-form〉(E), I〈ae-form〉(E))
 
  9. OB-EXP
 
@@ -228,14 +228,13 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
 
     〈ob-exp〉 ::= 〈binary〉
 
-    I〈binary〉⎾ 〈ae〉 ⏋ =: I〈ae〉
-    I〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋ =: ob.c(I〈ae〉, I〈binary〉)
+    I〈binary〉⎾ 〈ae〉 ⏋(E) =: I〈ae〉(E)
+    I〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋(E) =: ob.c(I〈ae〉(E), I〈binary〉(E))
 
-    I〈ob-exp〉⎾ 〈binary〉 ⏋ =: I〈binary〉
+    I〈ob-exp〉⎾ 〈binary〉 ⏋(E) =: I〈binary〉(E)
 
     The 〈ob-exp〉 grammar production is designed to allow for additional
     forms beyond 〈binary〉.  None are anticipated at this time.
-
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -258,7 +257,7 @@ ob-exp.txt 0.0.12                    UTF-8                       dh:2021-05-25
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.0.11 dated 2020-12-06,
+   Theory Conception text file ob-exp.txt version 0.1.0 dated 2022-01-06,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
@@ -279,7 +278,8 @@ TODO
 
  * Move up-level from ob-exp to the oFrugal command operation where the
    semantics of 〈binding-name〉 establishment, reference, and reference-
-   failure are accounted for.  The interpretation of REPL commands will be sequential and context-free!
+   failure are accounted for.  The interpretation of REPL commands will be
+   sequential and context-free!
 
  * We require a command separator ";" and a sequence terminator, ";;"
    so that parsing of command names is distinguishable without crazy backup.
@@ -309,28 +309,18 @@ TODO
    IRI case and provide reference to the (latest?) IETF specification on
    the matter.  Masinter, where are you when I need you? :)
 
- * Complete the production of 〈term〉s and their interpretations.
+ * Complete the production of 〈term〉s and their interpretations.  Binding
+   has to be at oFrugal grammar level.
 
- * explain the resolution of binding names by the presumption of an
-   (oFrugal) environment in which the binding can be resolved.  Complete
-   this specification by including the oFrugal REPL statement sequencing.
+ * COMPLET IN oFrugal Grammar: Complete this specification by including the
+   oFrugal REPL statement sequencing and how the environment, E, is updated
+   with definitions.
 
- * The function for resolving binding names can be expressed in
-   oFrugal, but it requires a way to fail when the encountered
+ * MOVE TO oFrugal Grammar: The function for resolving binding names can be
+   expressed in oFrugal, but it requires a way to fail when the encountered
    binding name is not bound.  So we need to have a *fail* interpretation
    different from there being an explicit fail in oMiser.  We might
    call it an event, but need to be careful.
-
- * Because of binding names, include the additional parameter that takes us
-   to resolution of the binding.
-
- * Introduce the binding-failure case and update obap-theory.txt accordingly.
-   This is discusssed in issue #24.  There are two levels of this.  In
-   obaptheory.txt, ?<binding-name-form> is treated the same as a lindy. In
-   ob-exp.txt, ?<binding-name-form> is treated exactly the same as
-   ^<binding-name-form>.  That is, if there is (now) a definition it will
-   be used, and if not the undefined-lindy form will be delivered as the
-   result.
 
  * REFACTOR.  The separation between file stream, lexical structure, and the
    context-free oFrugal grammar needs to be navigated better.  The grammar for
@@ -339,6 +329,9 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.0  2022-01-06-01:08Z Propogate (E), accomodating conditional bindings
+        and properly unwrapping argument lists and application to their
+        elements.
  0.0.12 2021-05-25T16:45Z Update to deal with conditional lindies as prep
         for fully-defined semantics and also prep for refactoring the grammar.
  0.0.11 2020-12-06-09:36 Add infix "." modeled on method-selection notations
