@@ -1,4 +1,4 @@
-ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
+ob-exp.txt 0.2.0                    UTF-8                       dh:2022-01-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -44,7 +44,7 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
     ob computations.
 
     The SML form of (* ... *) multi-line comments is allowed and defined
-    as white-space.
+    as white-space.  Nesting is permitted.
 
     The concrete reference syntax consists of Unicode, usually in UTF8
     encoding, and a %-escape mechanism is used when a character is not
@@ -60,43 +60,42 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
 
     For simplicity of keyboarding, the reversed-prime, ‵, left-tick, `, and
     apostrophe, ', are all treated the same.  The reversed-prime is the
-    "official" reference character.
+    "official" reference character.  (See 〈unary〉 definition, below.)
 
     〈term〉 ::= 〈plane-lindy〉 | 〈primitive〉 | 〈binding-name〉
 
-    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
-            the ?-prefixed conditional binding names are treated as
-            bindings when there is a definition and as lindies themselves
-            otherwise.  This is part of having oFrugal bindings never fail as
-            part of the context-free oFrugal grammar and fully-defined
-            semantics.  When there is no binding for ^〈lindy〉, the result is
-            ?〈lindy〉.  Likewise for .〈lindy〉.  When there is a binding for
-            ^〈lindy〉, ?〈lindy〉 will resolve to that binding.  Likewise for
-            ?.〈lindy〉 when .〈lindy〉 is a defined primitive.  Conditional
-            bindings are not intended for intentional use, although there
-            is no way to prevent it and there does need to be a way to test
-            for and confirm their implementation.  Warning messages are
-            appropriate, there being no impact on the formalized semantics.
+    〈plane-lindy〉
+           is an alphanumeric name without spaces (see section 4)
 
     〈primitive〉 ::= .〈plane-lindy〉
-                        from a fixed predefined list
-                        same as ?.〈plane-lindy〉 when no-such primitive
+           〈primitive〉s are not case-sensitive, although 〈plane-lindy〉s are
+           otherwise.  〈primitive〉 interpretations in ‹ob› are established in
+           particular obaptheory versions.  (See section 4, below.)
 
-    〈lindy〉 is an alphanumeric name without spaces, corresponding to an XML
-    NCName without "." and with initial digits allowed.
+    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?〈primitive〉
+           〈binding-name〉 occurrences are references to previously-defined
+           obs and one of the ?-forms is the interpretation when there is
+           no such definition, an interaction with oFrugal that accounts for
+           how ?-prefixed lindy forms arise in canonical ob forms to indicate
+           errors.
 
-    〈primitive〉s are not case-sensitive, although 〈plane-lindy〉s are otherwise.
+    〈list-terms〉 ::= 〈ob-exp〉 | 〈ob-exp〉 , 〈list-terms〉
 
-    〈list-terms〉 ::= 〈ob-exp〉 | 〈list-terms〉, 〈ob-exp〉
     〈list-form〉 ::= [ ] | [ 〈list-terms〉 ] | [ 〈list-terms〉 :]
 
     〈parameters-form〉 ::= ( 〈list-terms〉 ) | 〈list-form〉
 
     〈function-form〉 ::= 〈term〉 | 〈function-form〉 〈parameters-form〉
-                     | 〈function-form〉 . 〈term〉
+                     | 〈function-form〉 . 〈plain-lindy〉
+           〈function-form〉s always begin with a 〈term〉
 
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉 | 〈obap-form〉 〈parameters-form〉
-                  | 〈obap-form〉 . 〈term〉
+                  | 〈obap-form〉 . 〈plain-lindy〉
+           〈obap-form〉s all begin with a bracket ("(" or "[")
+
+           In 〈function-form〉 and 〈obap-form〉 patterns, the "." must have
+           white space before the 〈plain-lindy〉 unless there is no white
+           space before the ".".
 
     〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
@@ -110,11 +109,11 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
  2. EXPRESSION INTERPRETATION
 
     Interpretation of expressions as obs is accomplished using a special
-    schema notation that specifies the Ot, ‹ob› theory language, expression
-    that is the interpretation of a given ob-exp text.  The interpretation
-    schemas have distinct form.
+    schema notation that specifies the Ot (‹ob› theory-language) expression
+    interpretation of a given ob-exp text.  The interpretation schemas have
+    distinct form.
 
-        I category ⎾pattern⏋(parameter-list) =: interpretation
+       ‼ category ⎾pattern⏋{parameter-list} =: interpretation
 
     where      category is one of the syntactic categories, such as
                         〈ob-exp〉, 〈ae〉, and 〈term〉
@@ -122,25 +121,29 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
                 pattern is one of the patterns for the particular category,
                         such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
 
-       (parameter-list) is an optional list of one-or-more parameters
+       {parameter-list} is an optional form consisting of a list of
+                        one-or-more parameters
 
          interpretation is an obaptheory expression schema in which any
-                        parameter and "I category (parameter-list)" forms are
-                        in reference to category appearances in the pattern
+                        parameter and "‼ category {parameter-list}" forms are
+                        in reference to category appearances in the pattern;
+                        parameters of the pattern {parameter-list} may
+                        occur as variables in the interpretation, including
+                        in further {parameter-list} forms.
 
     For example,
 
-        I〈ae〉⎾〈obap-form〉 〈ae-form〉⏋=: obap.ap(I〈obap-form〉,I〈ae-form〉)
+        ‼〈ae〉⎾〈obap-form〉 〈ae-form〉⏋=: obap.ap(‼〈obap-form〉,‼〈ae-form〉)
 
     On the right-hand side of the "=:" the category names refer to those
     in the pattern on the left-hand side, and the interpretations of those
     occurrences is called for to determine the individual ob that is the
     evaluation.
 
-    The parameter E employed in almost all interpretations signifies the
-    ob-exp environment, the means by which the current oFrugal set of bindings
-    is used to resolve binding names that occur in the expression and also
-    provide unknown-name forms otherwise.
+    The parameter ℰ employed in many interpretations signifies the ob-exp
+    environment, the means by which the current oFrugal set of bindings
+    is used to resolve binding names and provide unknown-name forms otherwise.
+    This is tied to interpretation of oFrugal statement-level syntax.
 
  3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
 
@@ -150,77 +153,122 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
 
     〈term〉 ::= 〈plane-lindy〉 | 〈primitive〉 | 〈binding-name〉
 
-    I〈term〉 ⎾〈plane-lindy〉⏋(E) =: I〈plane-lindy〉, the lindy of that spelling
-    I〈term〉 ⎾〈primitive〉⏋(E) =: I〈primitive〉(E),
-                               the defined primitive of that spelling or
-                               the unknown-primitive of that spelling
-    I〈term〉 ⎾〈binding-name〉⏋(E) =: I〈binding-name〉(E),
+    〈plane-lindy〉 is an alphanumeric name without spaces, corresponding to an
+                 XML Name without ":", ".", and middle-dot ("·") but allowing
+                 0-9 as start characters.
 
-    [FURTHER DETAILS TBD]
+    ‼〈term〉⎾〈plane-lindy〉⏋{ℰ} =: ‼〈plane-lindy〉, the lindy of that spelling,
+                                 essentially Ʃ'〈plane-lindy〉' as used in
+                                 obaptheory.txt
+
+    〈primitive〉 ::= .〈plane-lindy〉
+
+    ‼〈term〉⎾〈primitive〉⏋{ℰ} =: ‼〈primitive〉{ℰ},
+                               the defined primitive lindy of that case-
+                               insensitive spelling, or the same as binding-
+                               name ?.〈plane-lindy〉 when there is no primitive
+
+    ‼〈primitive〉⎾.A⏋{ℰ} =: obap.A,
+    ‼〈primitive〉⎾.B⏋{ℰ} =: obap.B,
+    ‼〈primitive〉⎾.C⏋{ℰ} =: obap.C,
+    ‼〈primitive〉⎾.D⏋{ℰ} =: obap.D,
+    ‼〈primitive〉⎾.E⏋{ℰ} =: obap.E,
+    ‼〈primitive〉⎾.ARG⏋{ℰ} =: obap.ARG,
+    ‼〈primitive〉⎾.SELF⏋{ℰ} =: obap.SELF,
+    ‼〈primitive〉⎾.EV⏋{ℰ} =: obap.EV
+
+
+    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
+
+    ‼〈term〉⎾〈binding-name〉⏋‼{ℰ} =: ‼〈binding-name〉{ℰ}
+                                  defined in oFrugal-exp.txt
+
+    〈primitive〉s are not case-sensitive, although 〈plane-lindy〉s are otherwise.
+
+    In oFrugal scripts, it is possible to bind an ob to a ^〈plane-lindy〉 form
+    and then have that ob be the interpretation of that binding-name in
+    〈ob-exp〉 forms for which there has been no intervening change of binding.
+
+    When there is a binding for ^〈plane-lindy〉, interpretation is the most-
+    recently bound value.  Otherwise, the interpretation is as ?〈plain-lindy〉.
+
+    The ?〈plane-lindy〉 is treated the same as ^〈plane-lindy〉 when there is a
+    binding for the 〈plane-lindy〉; otherwise the interpretation is as a lindy
+    with spelling of the form Ʃ'?〈plane-lindy〉'.
+
+    The ?.〈plane-lindy〉 is treated the same as  〈primitive〉 form .〈plane-lindy〉
+    when .〈plane-lindy〉 is interpreted as the primitive with that case-
+    insensitive spelling.  Otherwise, the interpretation is a lindy with
+    spelling of form Ʃ'?〈plane-lindy〉'.
+
 
  5. LIST FORMS
 
     〈list-body〉 ::= 〈ob-exp〉 ] | 〈ob-exp〉 :] | 〈ob-exp〉, 〈list-body〉
     〈list-form〉 ::= [ ] | [ 〈list-body〉
 
-    I〈list-form〉⎾[ ]⏋(E)=: ob.NIL
-    I〈list-form〉⎾[ 〈list-body〉 ⏋(E)=: I〈list-body〉(E)
+    ‼〈list-form〉⎾[ ]⏋{ℰ} =: ob.NIL
+    ‼〈list-form〉⎾[ 〈list-body〉 ⏋{ℰ} =: ‼〈list-body〉{ℰ}
 
-    I〈list-body〉⎾〈ob-exp〉 ]⏋(E)=: ob.c(I〈ob-exp〉(E), ob.NIL)
-    I〈list-body〉⎾〈ob-exp> :]⏋(E)=: I〈ob-exp〉(E)
-    I〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋=: ob.c(I〈ob-exp〉(E),I〈list-body〉(E))
+    ‼〈list-body〉⎾〈ob-exp〉 ]⏋{ℰ} =: ob.c( ‼〈ob-exp〉{ℰ}, ob.NIL)
+    ‼〈list-body〉⎾〈ob-exp〉 :]⏋{ℰ} =: ‼〈ob-exp〉{ℰ}
+    ‼〈list-body〉⎾〈ob-exp〉, 〈list-body〉⏋{ℰ} =: ob.c( ‼〈ob-exp〉{ℰ},
+                                                   ‼〈list-body〉{ℰ} )
 
  6. FUNCTIONAL FORMS
 
     〈function-form〉 ::=  〈term〉 | 〈function-form〉 〈list-form〉
-                        | 〈function-form〉 ( 〈arguments〉 )
-                        | 〈function-form〉 . 〈term〉
+                        | 〈function-form〉 ( 〈parameters〉 )
+                        | 〈function-form〉 . 〈plain-lindy〉
+
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉
                         | 〈obap-form〉 〈list-form〉
-                        | 〈obap-form〉 ( 〈arguments〉 )
-                        | 〈obap-form〉 . 〈term〉
-    〈arguments〉 ::= 〈ob-exp〉 | 〈arguments〉, 〈ob-exp〉
+                        | 〈obap-form〉 ( 〈parameters〉 )
+                        | 〈obap-form〉 . 〈plain-lindy〉
 
-    I〈function-form〉⎾〈term〉⏋(E)=: I〈term〉(E)
-    I〈function-form〉⎾〈function-form> 〈list-form〉 ⏋(E)
-                    =: obap.ap(I〈function-form〉(E), I〈list-form〉(E) )
-    I〈function-form〉⎾〈function-form〉 ( 〈arguments〉 )⏋(E)
-                    =: I〈arguments〉( I〈function-form〉)(E)
-    I〈function-form〉⎾〈function-form> . 〈term〉 ⏋(E)
-                    =: obap.ap(I〈function-form〉(E), I〈term〉(E))
+    〈parameters〉 ::= 〈ob-exp〉 | 〈ob-exp〉, 〈parameters〉
 
-    I〈obap-form〉⎾( 〈ob-exp〉 )⏋(E)=: I〈ob-exp〉(E)
-    I〈obap-form〉⎾ 〈list-form〉 ⏋(E)=: I〈list-form〉(E)
-    I〈obap-form〉⎾〈obap-form> 〈list-form〉 ⏋(E)
-                    =: obap.ap(I〈obap-form〉(E),(I〈list-form〉(E))
-    I〈obap-form〉⎾〈obap-form> . 〈term〉 ⏋(E)
-                    =: obap.ap(I〈obap-form〉(E), I〈term〉(E))
-    I〈obap-form〉⎾〈obap-form〉 ( 〈arguments〉 )⏋(E)
-                    =: I〈arguments〉(E)( I〈obap-form〉 (E), E)
+    ‼〈function-form〉⎾〈term〉⏋{ℰ} =: ‼〈term〉{ℰ}
+    ‼〈function-form〉⎾〈function-form〉 〈list-form〉 ⏋{ℰ}
+                    =: obap.ap( ‼〈function-form〉{ℰ}, ‼〈list-form〉{ℰ} )
+    ‼〈function-form〉⎾〈function-form〉 ( 〈parameters〉 )⏋{ℰ}
+                    =: ‼〈parameters〉{ ‼〈function-form〉{ℰ}, ℰ}
+    ‼〈function-form〉⎾〈function-form〉 . 〈plain-lindy〉 ⏋{ℰ}
+                    =: obap.ap( ‼〈function-form〉{ℰ}, ‼〈plain-lindy〉 )
 
-    I〈arguments〉⎾〈ob-exp〉⏋(p, E) =: ob.ap(p, I〈ob-exp〉 (E))
-    I〈arguments〉⎾〈arguments〉, 〈ob-exp〉⏋(p, E)
-                    =: obap.ap( I〈arguments〉(p, E), I〈ob-exp〉(E))
+    ‼〈obap-form〉⎾( 〈ob-exp〉 )⏋{ℰ} =: ‼〈ob-exp〉{ℰ}
+    ‼〈obap-form〉⎾ 〈list-form〉 ⏋{ℰ} =: ‼〈list-form〉{ℰ}
+    ‼〈obap-form〉⎾〈obap-form〉 〈list-form〉 ⏋{ℰ}
+                    =: obap.ap( ‼〈obap-form〉{ℰ}, ‼〈list-form〉{ℰ} )
+    ‼〈obap-form〉⎾〈obap-form〉 . 〈plain-lindy〉 ⏋{ℰ}
+                    =: obap.ap(‼〈obap-form〉{ℰ}, ‼〈plain-lindy〉)
+    ‼〈obap-form〉⎾〈obap-form〉 ( 〈parameters〉 )⏋‼{ℰ}
+                    =: ‼〈parameters〉{ ‼〈obap-form〉{ℰ}, ℰ}
+
+    ‼〈parameters〉⎾〈ob-exp〉, 〈parameters〉 ⏋{p, ℰ}
+                    =: ‼〈parameters〉{ obap.ap( p, ‼〈ob-exp〉{ℰ} ), ℰ}
+    ‼〈parameters〉⎾〈ob-exp〉⏋{p, ℰ} =: ob.ap( p, ‼〈ob-exp〉{ℰ} )
 
  7. UNARIES
 
     〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
-    I〈unary〉⎾〈function-form〉⏋(E) =: I〈function-form〉(E)
-    I〈unary〉⎾ ‵ 〈obap-form〉 ⏋(E) =: ob.e( I〈obap-form〉(E) )
-    I〈unary〉⎾ ‵ 〈unary〉 ⏋(E) =: ob.e( I〈unary〉(E) )
+    ‼〈unary〉⎾〈function-form〉⏋{ℰ} =: ‼〈function-form〉{ℰ}
+    ‼〈unary〉⎾ ‵ 〈obap-form〉 ⏋{ℰ} =: ob.e( ‼〈obap-form〉{ℰ} )
+    ‼〈unary〉⎾ ‵ 〈unary〉 ⏋{ℰ} =: ob.e( ‼〈unary〉{ℰ} )
 
  8. APPLICATIVE EXPRESSIONS
 
     〈ae-form〉 ::= 〈unary〉 | 〈unary〉 〈ae-form〉
     〈ae〉 ::= 〈ae-form〉 | 〈obap-form〉 | 〈obap-form〉 〈ae-form〉
 
-    I〈ae-form〉⎾ 〈unary〉 ⏋(E) =: I〈unary〉 (E)
-    I〈ae-form〉⎾ 〈unary〉 〈ae-form〉 ⏋(E) =: obap.ap(I〈unary〉(E), I〈ae-form〉(E))
+    ‼〈ae-form〉⎾ 〈unary〉 ⏋{ℰ} =: ‼〈unary〉{ℰ}
+    ‼〈ae-form〉⎾ 〈unary〉 〈ae-form〉 ⏋{ℰ} =: obap.ap( ‼〈unary〉{ℰ}, ‼〈ae-form〉{ℰ} )
 
-    I〈ae〉⎾ 〈ae-form〉 ⏋(E) =: I〈ae-form〉(E)
-    I〈ae〉⎾ 〈obap-form〉 ⏋(E) =: I〈obap-form〉(E)
-    I〈ae〉⎾ 〈obap-form〉 〈ae-form〉 ⏋(E)=: obap.ap(I〈obap-form〉(E), I〈ae-form〉(E))
+    ‼〈ae〉⎾ 〈ae-form〉 ⏋{ℰ} =: ‼〈ae-form〉{ℰ}
+    ‼〈ae〉⎾ 〈obap-form〉 ⏋{ℰ} =: ‼〈obap-form〉{ℰ}
+    ‼〈ae〉⎾ 〈obap-form〉 〈ae-form〉 ⏋{ℰ} =: obap.ap( ‼〈obap-form〉{ℰ},
+                                                 ‼〈ae-form〉{ℰ} )
 
  9. OB-EXP
 
@@ -228,10 +276,10 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
 
     〈ob-exp〉 ::= 〈binary〉
 
-    I〈binary〉⎾ 〈ae〉 ⏋(E) =: I〈ae〉(E)
-    I〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋(E) =: ob.c(I〈ae〉(E), I〈binary〉(E))
+    ‼〈binary〉⎾ 〈ae〉 ⏋{ℰ} =: ‼〈ae〉{ℰ}
+    ‼〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋{ℰ} =: ob.c( {ℰ}〈ae〉{ℰ}, ‼〈binary〉{ℰ} )
 
-    I〈ob-exp〉⎾ 〈binary〉 ⏋(E) =: I〈binary〉(E)
+    ‼〈ob-exp〉⎾ 〈binary〉 ⏋{ℰ} =: ‼〈binary〉{ℰ}
 
     The 〈ob-exp〉 grammar production is designed to allow for additional
     forms beyond 〈binary〉.  None are anticipated at this time.
@@ -257,7 +305,7 @@ ob-exp.txt 0.1.0                    UTF-8                       dh:2022-01-05
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.1.0 dated 2022-01-06,
+   Theory Conception text file ob-exp.txt version 0.2.0 dated 2022-01-11,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
@@ -329,7 +377,9 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.1.0  2022-01-06-01:08Z Propogate (E), accomodating conditional bindings
+ 0.2.0  2022-01-11T00:18Z Update the Interpretation notation around ‼ { ℰ }
+        and improve the commentary
+ 0.1.0  2022-01-06T01:08Z Propogate (E), accomodating conditional bindings
         and properly unwrapping argument lists and application to their
         elements.
  0.0.12 2021-05-25T16:45Z Update to deal with conditional lindies as prep
