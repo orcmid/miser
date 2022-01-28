@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.2                   UTF-8                       dh:2021-11-03
+oFrugal.txt 0.0.3                   UTF-8                       dh:2022-01-28
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -22,8 +22,12 @@ oFrugal.txt 0.0.2                   UTF-8                       dh:2021-11-03
     oFrugal implementations provide input-output and other functions that
     oMiser necessarily lacks.  oFrugal is essentially an assembler/calculator
     of oMiser obs, a means to exercise scripts written as obs that compute
-    other obs by applicative interpretation.  In particular, oFrugla presents
+    other obs by applicative operation.  In particular, oFrugal presents
     the results of computations in the same notation(s) employed for inputs.
+
+    It is characteristics of the ob-calculator approach that if an output is
+    presented as an input, the result for that input will be equivalent to
+    the original output, rather than some further calculation.
 
 
 MANIFEST
@@ -57,7 +61,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.2 dated 2021-11-03 available on the
+   Code tex file oFrugal.txt version 0.0.3 dated 2022-01-28 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
@@ -72,12 +76,34 @@ TODO
   * Maybe need notes and references?
 
   * In processing and handling of Unicode, bidirectionality has to be
-    constrained and not allowed outside of lindies.  We need to ensure that
-    this does not serve for obfuscation of any kind of exploit.
+    constrained in a manner where the key lexical structure is not disturbed
+    and there is no ambiguity with regard to parsing.
+
+  * Create reference specifications for lexical structure of input texts from
+    keyboards, streams, and persistent data.  The reference character set is
+    Unicode and the reference encoding is UTF-8.
+
+  * lexical.txt will provide the lexical-level of processing.  There will be
+    a basic character-stream case and that will be supplemented by two levels:
+    recognition of specific tokens and then the regular elements.
+
+  * mindelay.txt is the REPL parser structure.  It is related to the Alan
+    Perlis "mindelay-scan-doer" scheme for a mostly one-pass process where
+    an operation can be carried out as soon as its operands are determined.
+    For oFrugal that one-pass process calculates obs and provides for the
+    binding of obs and the access to those bound obs in subsequent
+    expressions.  This is a moderately-extended precedence parser.  Behavior
+    of this parser procedure can be verified against the context-free grammar
+    for the same oFrugal texts.  The handling of error cases is beyond what
+    the grammar determines.
+
+  * syntax.txt is the interpreted grammar for oFrugal text files/streams/
+    terminal sources.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+ 0.0.3 2022-01-28T19:47Z Add TODOs on the parser
  0.0.2 2021-11-03T17:52Z Add TODO on bidirectional spoofing
  0.0.1 2020-08-10-13:22 Add mockups/ and Attribution, manage TODOs
  0.0.0 2020-08-05-10:23 Create placeholder and initial job jar for the
