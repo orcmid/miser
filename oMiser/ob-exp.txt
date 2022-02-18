@@ -1,4 +1,4 @@
-ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
+ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -16,8 +16,8 @@ ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
     also used to submit expressions for oMiser computation via oFrugal.
 
     ob-exp has a context-free grammar, here specified using the original
-    Backus-Naur Form (BNF) employed in the Revised Report on the
-    Algorithmic Language ALGOL 60.  The grammar specifies exactly those
+    Backus-Naur Form (BNF) as employed in the Revised Report on
+    the Algorithmic Language ALGOL 60.  The grammar specifies exactly those
     expressions that can be evaluated to (at most) a single ob when submitted
     to a processor such as an oFrugal implememtation.
 
@@ -32,21 +32,34 @@ ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
     <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt> and other
     material cited there.
 
+
+ CONTENT
+
+        1. Summary Grammar
+        2. Expression Interpretation
+        3. Text, Characters, Spacing, and Concrete Layout Considerations
+        4. Terms
+        5. List Forms
+        6. Functional Forms
+        7. Unaries
+        8. Applicative Expressions
+        9. Ob-Exp
+        10. References
+
  1. SUMMARY GRAMMAR
 
     The following summary form of the grammar is useful for reference.
     It does not address the grammatical differences that are called for
     to align with the interpretation rules by which an ob-exp is evaluated.
+    The notation is the same used for the ALGOL 60 Report [Naur1963], as
+    adapted from a John Backus demonstration for ALGOL 58 [Backus1958].
 
     All ob-exps satisfy the summary grammar.  The "official" grammar
     rules detailed in subsequent sections employ syntactically-equivalent
-    structures in order to provide rigorous interpretation as expressions of
+    structures in order to provide a rigorous interpretation as expressions of
     ob computations.
 
-    The SML form of (* ... *) multi-line comments is allowed and defined
-    as white-space.  Nesting is permitted.
-
-    The concrete reference syntax consists of Unicode, usually in UTF8
+     The concrete reference syntax consists of Unicode, usually in UTF8
     encoding, and a %-escape mechanism is used when a character is not
     printable.  It is recommended that characters that are not easily typed
     be avoided by authors of ob expressions, recognizing that a recipient
@@ -55,12 +68,14 @@ ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
 
     Basically, white-space is allowed wherever it does not change the
     grammar of a 〈term〉 and required where consecutive 〈term〉 occurrences
-    would not be disambiguated. Using a (* ... *) comment alone for this
-    purpose is discouraged but not prohibited.
+    would not be disambiguated.
+
+    The "//" form of comments to the end of lines are allowed.  It counts
+    as a whitespace line-end.
 
     For simplicity of keyboarding, the reversed-prime, ‵, left-tick, `, and
     apostrophe, ', are all treated the same.  The reversed-prime is the
-    "official" reference character.  (See 〈unary〉 definition, below.)
+    "official" reference character.  (See 〈unary〉, section 7 below.)
 
     〈term〉 ::= 〈plane-lindy〉 | 〈primitive〉 | 〈binding-name〉
 
@@ -90,7 +105,7 @@ ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
            〈function-form〉s always begin with a 〈term〉
 
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉 | 〈obap-form〉 〈parameters-form〉
-                  | 〈obap-form〉 . 〈plain-lindy〉
+                 | 〈obap-form〉 . 〈plain-lindy〉
            〈obap-form〉s all begin with a bracket ("(" or "[")
 
            In 〈function-form〉 and 〈obap-form〉 patterns, the "." must have
@@ -131,19 +146,55 @@ ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
                         occur as variables in the interpretation, including
                         in further {parameter-list} forms.
 
+    The obaptheory formulation in Ot, the theory language of structure
+    ‹ob› = 〈Ob,Of,Ot〉, is available at
+    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
+
     For example,
 
-        ‼〈ae〉⎾〈obap-form〉 〈ae-form〉⏋=: obap.ap(‼〈obap-form〉,‼〈ae-form〉)
+        ‼〈ae〉⎾〈obap-form〉 〈ae-form〉⏋{ℰ} =: obap.ap(‼〈obap-form〉{ℰ},‼〈ae-form〉{ℰ})
 
     On the right-hand side of the "=:" the category names refer to those
     in the pattern on the left-hand side, and the interpretations of those
-    occurrences is called for to determine the individual ob that is the
+    occurrences is called for to determine the individual ob that is their
     evaluation.
 
     The parameter ℰ employed in many interpretations signifies the ob-exp
     environment, the means by which the current oFrugal set of bindings
     is used to resolve binding names and provide unknown-name forms otherwise.
     This is tied to interpretation of oFrugal statement-level syntax.
+
+    Although the rules are tied directly to the forms of the grammar, the
+    notation is relaxed to also describe interpretation of parsing stages.
+    For example (cf. section 9),
+
+      ‼〈ob-exp〉⎾ f g x ⏋{ℰ}
+          =: ‼〈binary〉⎾ f g x ⏋{ℰ}
+          =: ‼〈ae-form〉⎾ f g x ⏋{ℰ}
+          =: obap.ap( ‼〈unary〉⎾ f ⏋{ℰ}, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
+          =: obap.ap( ‼〈function-form〉⎾ f ⏋{ℰ}, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
+          =: obap.ap( ‼〈term〉⎾ f ⏋{ℰ}, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
+          =: obap.ap( f, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
+          =: obap.ap( f, obap.ap(‼〈unary〉⎾ g ⏋{ℰ}, ‼〈ae-form〉⎾ x ⏋{ℰ} ) )
+          =: obap.ap( f, obap.ap( g, x) )
+
+    where lindies such as Ʃ'f', Ʃ'g', and Ʃ'x' are written as f, g, and x
+          without ambiguity in these cases.
+
+    We can also work out that
+
+      ‼〈ob-exp〉⎾ f g x ⏋{ℰ} :=: ‼〈ob-exp〉⎾ f (g x) ⏋{ℰ}
+
+    signifying that the interpretations are the same (i.e., equivalent),
+    keeping in mind that the f, g, and x here are literals and not variables.
+    While the equivalence doesn't hold under arbitrary substitutions for f,
+    g, and x, the following can be established.
+
+      ‼〈ob-exp〉⎾ 〈unary〉₁ 〈unary〉₂ 〈unary〉₃ ⏋{ℰ}
+          :=: ‼〈ob-exp〉⎾ 〈unary〉₁ (g〈unary〉₂ 〈unary〉₃) ⏋{ℰ}
+
+    with the subscripts used to distinguish 〈unary〉 occurrences.
+
 
  3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
 
@@ -284,6 +335,33 @@ ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
     The 〈ob-exp〉 grammar production is designed to allow for additional
     forms beyond 〈binary〉.  None are anticipated at this time.
 
+ 10. REFERENCES
+
+[Backus1958]  Backus, J. W. The syntax and semantics of the proposed
+    International Algebraic Language of the Zurich ACM-GAMM Conference.
+    Proc. International Conference on Information Processing.  UNESCO, Paris,
+    June 1959. pp. 125-132.
+
+[Ershov1963]  Ershov, A.P., Kozhukhin, G.I., Voloshin, Yu.M.  The Input
+    Language for a System of Automatic Programming.  Computation Center,
+    Academy of Sciences of the USSR (Moscow, 1961, Russian); Academic Press
+    (London, New York: 1963).  This provided a type of generic context-free
+    production that inspired some of this work, although not relied upon
+    in the ob-exp grammar.
+
+[Knuth1968]  Knuth, Donald E. Semantics of Context-Free Languages.
+    Mathematical Systems Theory 2 (1968), 127-145.  Errata Mathematical
+    Systems Theory 5 (1971), 95-96.  The semantic interpretations here are
+    similar to use of attribute grammars except that the arrangement remains
+    context-free and cycles are generally not possible.  In the oFrugal
+    application, all well-formed inputs have semantics and there are no
+    forward references.  In particular, binding names are always references
+    to the nearest preceding bindings, if any, and the absence of a preceding
+    binding is semantically precise.
+
+[Naur1963]  Naur, P. (Ed.)  Revised report on the algorithmic language
+    ALGOL 60.  Commm. ACM 6, 1 (Jan. 1963), 1-17.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
                  Copyright 2018-2022 Dennis E. Hamilton
@@ -313,16 +391,6 @@ TODO
 
  * Revealing examples are needed here.  Grace Hopper favored that and I
    should heed it for that reason alone.
-
- * Find reference to the BNF specification used, captured here somewhere
-   and also where formally published.
-
- * Connect the interpretation schemata to Knuth's attribute grammars to the
-   degree that matters here.  There might be a better reference for the
-   rather simple oFrugal context-free case.
-
- * Connect to Ershov techniques in the grammar for the Alpha language, and
-   also the (Fraser Duncan?) suggestion in the ALGOL Bulletin.
 
  * Move up-level from ob-exp to the oFrugal command operation where the
    semantics of 〈binding-name〉 establishment, reference, and reference-
@@ -386,6 +454,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.2  2022-02-18T23:49Z Add references, content list, and smooth for
+        addition of examples.
  0.2.1  2022-02-18T16:34Z Correct two typos in interpretations, TODOs
  0.2.0  2022-01-11T00:18Z Update the Interpretation notation around ‼ { ℰ }
         and improve the commentary
