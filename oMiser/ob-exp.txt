@@ -1,4 +1,4 @@
-ob-exp.txt 0.2.0                    UTF-8                       dh:2022-01-11
+ob-exp.txt 0.2.1                   UTF-8                        dh:2022-02-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -180,7 +180,7 @@ ob-exp.txt 0.2.0                    UTF-8                       dh:2022-01-11
 
     〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
 
-    ‼〈term〉⎾〈binding-name〉⏋‼{ℰ} =: ‼〈binding-name〉{ℰ}
+    ‼〈term〉⎾〈binding-name〉⏋{ℰ} =: ‼〈binding-name〉{ℰ}
                                   defined in oFrugal-exp.txt
 
     〈primitive〉s are not case-sensitive, although 〈plane-lindy〉s are otherwise.
@@ -199,7 +199,7 @@ ob-exp.txt 0.2.0                    UTF-8                       dh:2022-01-11
     The ?.〈plane-lindy〉 is treated the same as  〈primitive〉 form .〈plane-lindy〉
     when .〈plane-lindy〉 is interpreted as the primitive with that case-
     insensitive spelling.  Otherwise, the interpretation is a lindy with
-    spelling of form Ʃ'?〈plane-lindy〉'.
+    spelling of form Ʃ'?.〈plane-lindy〉'.
 
 
  5. LIST FORMS
@@ -286,7 +286,7 @@ ob-exp.txt 0.2.0                    UTF-8                       dh:2022-01-11
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                 Copyright 2018-2020 Dennis E. Hamilton
+                 Copyright 2018-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -305,7 +305,7 @@ ob-exp.txt 0.2.0                    UTF-8                       dh:2022-01-11
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.2.0 dated 2022-01-11,
+   Theory Conception text file ob-exp.txt version 0.2.1 dated 2022-02-18,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
@@ -334,6 +334,11 @@ TODO
    Having "ob ^mumble = ... " be disambiguated by the "=" might be troubling.
    The definition command removes that with "!def ob ^mumble = ...".
 
+ * I am undecided about using ! or # as the command initiator in oFrugal.
+   There is a certain harmony with # as the C Language preprocessor command
+   initiator.  I might do that for harmony alone.  Need to think about the
+   different uses of ! and # in various existing arrangements.
+
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
 
@@ -342,6 +347,10 @@ TODO
    Provide a reference.
 
  * Adopt the SML/NJ use of \<white-space>\ as null?
+
+ * I am thinking that "//" comments are better than block comments of various
+   forms and I should do that.  It also gets around the problem of comments
+   that create white space in odd places.
 
  * Do we require white-space anywhere or is it optional everywhere
    except between two terms that must remain separated?
@@ -377,6 +386,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.1  2022-02-18T16:34Z Correct two typos in interpretations, TODOs
  0.2.0  2022-01-11T00:18Z Update the Interpretation notation around ‼ { ℰ }
         and improve the commentary
  0.1.0  2022-01-06T01:08Z Propogate (E), accomodating conditional bindings
