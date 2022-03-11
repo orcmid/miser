@@ -1,4 +1,4 @@
-ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
+ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -191,9 +191,10 @@ ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
     g, and x, the following can be established.
 
       ‼〈ob-exp〉⎾ 〈unary〉₁ 〈unary〉₂ 〈unary〉₃ ⏋{ℰ}
-          :=: ‼〈ob-exp〉⎾ 〈unary〉₁ (g〈unary〉₂ 〈unary〉₃) ⏋{ℰ}
+          :=: ‼〈ob-exp〉⎾ 〈unary〉₁ ( 〈unary〉₂ 〈unary〉₃ ) ⏋{ℰ}
 
-    with the subscripts used to distinguish 〈unary〉 occurrences.
+    with the subscripts used to distinguish among 〈unary〉 occurrences,
+    following [Knuth1968].
 
 
  3. TEXT, CHARACTERS, SPACING, AND CONCRETE LAYOUT CONSIDERATIONS
@@ -205,7 +206,7 @@ ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
     〈term〉 ::= 〈plane-lindy〉 | 〈primitive〉 | 〈binding-name〉
 
     〈plane-lindy〉 is an alphanumeric name without spaces, corresponding to an
-                 XML Name without ":", ".", and middle-dot ("·") but allowing
+                 XML Name without ":", ".", and middle-dot ("·") and allowing
                  0-9 as start characters.
 
     ‼〈term〉⎾〈plane-lindy〉⏋{ℰ} =: ‼〈plane-lindy〉, the lindy of that spelling,
@@ -328,7 +329,7 @@ ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
     〈ob-exp〉 ::= 〈binary〉
 
     ‼〈binary〉⎾ 〈ae〉 ⏋{ℰ} =: ‼〈ae〉{ℰ}
-    ‼〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋{ℰ} =: ob.c( {ℰ}〈ae〉{ℰ}, ‼〈binary〉{ℰ} )
+    ‼〈binary〉⎾ 〈ae〉 :: 〈binary〉 ⏋{ℰ} =: ob.c( ‼〈ae〉{ℰ}, ‼〈binary〉{ℰ} )
 
     ‼〈ob-exp〉⎾ 〈binary〉 ⏋{ℰ} =: ‼〈binary〉{ℰ}
 
@@ -341,6 +342,17 @@ ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
     International Algebraic Language of the Zurich ACM-GAMM Conference.
     Proc. International Conference on Information Processing.  UNESCO, Paris,
     June 1959. pp. 125-132.
+
+[Duncan1967]  Duncan, Fraser G.  Notational abbreviatios applied to the syntax
+    of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967), pp.28-32.
+    Available on the Internet at
+    <http://archive.computerhistory.org/resources/text/algol/algol_bulletin/A26/P35.HTM>.
+    This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired me
+    to use it to use productions to generate naming of productions,
+    providing a vocabulary grammar and generic arrangements, including moving
+    between concrete cases such as 〈integer〉 and 〈〈integer〉-length=string〉.
+    This is not needed here.  I just want this reference set to be complete
+    wherever I use it.
 
 [Ershov1963]  Ershov, A.P., Kozhukhin, G.I., Voloshin, Yu.M.  The Input
     Language for a System of Automatic Programming.  Computation Center,
@@ -383,7 +395,7 @@ ob-exp.txt 0.2.2                   UTF-8                        dh:2022-02-18
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.2.1 dated 2022-02-18,
+   Theory Conception text file ob-exp.txt version 0.2.3 dated 2022-03-11,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
@@ -437,7 +449,7 @@ TODO
  * Complete the production of 〈term〉s and their interpretations.  Binding
    has to be at oFrugal grammar level.
 
- * COMPLET IN oFrugal Grammar: Complete this specification by including the
+ * COMPLETE IN oFrugal Grammar: Complete this specification by including the
    oFrugal REPL statement sequencing and how the environment, E, is updated
    with definitions.
 
@@ -445,7 +457,12 @@ TODO
    expressed in oFrugal, but it requires a way to fail when the encountered
    binding name is not bound.  So we need to have a *fail* interpretation
    different from there being an explicit fail in oMiser.  We might
-   call it an event, but need to be careful.
+   call it an event, but need to be careful.  [update 2022-03-11 The making
+   of all binding names well-defined, and the use of ?-prefixed lindies as
+   placeholders for undefined binding names and primitives resolves this
+   problem.  The oFrugal REPL will certainly remark on the occurrence of
+   ^ and ?-forms that lack available bindings and the parser could balk at
+   some level of murkiness.]
 
  * REFACTOR.  The separation between file stream, lexical structure, and the
    context-free oFrugal grammar needs to be navigated better.  The grammar for
@@ -454,6 +471,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.3  2022-03-11T01:26Z Correct some blunders in the interpretations and
+        also manage TODOs
  0.2.2  2022-02-18T23:49Z Add references, content list, and smooth for
         addition of examples.
  0.2.1  2022-02-18T16:34Z Correct two typos in interpretations, TODOs
