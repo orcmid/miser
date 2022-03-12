@@ -1,4 +1,4 @@
-combinators.txt 0.1.0               UTF-8                       dh:2020-02-01
+combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -719,13 +719,15 @@ combinators.txt 0.1.0               UTF-8                       dh:2020-02-01
 
     accounting for the appeal of UobAB.
 
-    Many arrangements of this kind are at hand, with preferences among them based on intended representations.
+    Many arrangements of this kind are at hand, with preferences among them
+    based on intended representations.
 
     4.3 Truth Indifference
 
     Combinator (Uβ b) is inspired by the form | ⊃ b x y of [Scott1993],
     also written (b → x, y), where the type of b has two distinct values,
-    signified ⊤ and ⊥.  (U⊤⊥ could designate Scott's strict type ⊤⊥, a.k.a o from [Church1940].)
+    signified ⊤ and ⊥.  (U⊤⊥ could designate Scott's strict type ⊤⊥, a.k.a
+    type o from [Church1940].)
 
     There is a similar treatment to | ⊃ b x y with the form | D x y b in
     [Feferman1977: 2.1.2], where | D x y 0 = x and | D x y 1 = y, with
@@ -962,10 +964,13 @@ combinators.txt 0.1.0               UTF-8                       dh:2020-02-01
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.1.0 dated 2020-02-01, available on the Internet as a version of
+   0.1.1 dated 2022-03-12, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
 
  TODO
+
+  * This is just too gnarly.  Need to figure out a way to break it down,
+    do progressive disclosure, *something,"
 
   * Link to other materials of the Miser Project that explore some of these
     matters in greater detail.  Connect to combdemo.sml, and also work in
@@ -994,6 +999,7 @@ combinators.txt 0.1.0               UTF-8                       dh:2020-02-01
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.1 2022-03-12T19:15Z Touch-ups after review
  0.1.0 2020-02-01-16:03 Smooth use of interpretation and representation, with
        editorial tidying enough to promote to 0.1.0.
  0.0.22 2019-10-08-10:05 Introduce and acknowledge [Church1940] as the
