@@ -1,4 +1,5 @@
-ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
+ob.txt 0.2.0                     UTF-8                          dh:2022-03-12
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
@@ -67,6 +68,7 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
 
       * For all obs, there are convenience functions, predicates, that
         determine when obs are the same or different based on structure alone,
+
            - ob.is-individual(z) true whenever ob.a(z) = z
            - ob.is-singleton(z) true whenever ob.b(z) = z
            - ob.is-pair(z) true whenever ob.is-singleton(z) is false
@@ -145,8 +147,8 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
 
       * There are literal individuals (lindies) that can be introduced and
         used for any purpose.  A lindy is specified with an alphanumeric
-        sequence that always begins with a (Unicode) letter.  E.g., X, alpha,
-        β, デニス, and ℵ.  Lindies can serve as symbols for any purpose.
+        sequence.  E.g., X, alpha, 123, β, デニス, and ℵ.  Lindies can serve
+        as symbols for any purpose.
 
     Here is reference notation of a canonical form that might be used as a
     small dictionary.
@@ -173,7 +175,9 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
     so       .b .a .b .b ^z ;;
     yields   ja
 
-    when expressing computations on obs to the oFrugal interpreter.
+    when expressing computations on obs to the oFrugal interpreter.  Here,
+    ^z is a "binding-name," the identification of of an ob defined earlier,
+    in this case at the "!def ob ^z = ..." command.
 
  2.3 Publication Notation
 
@@ -202,7 +206,7 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
     software supports a constrained form of this notation on all platforms.
 
     The CFob canonical form is an oFrugalese expression, as defined above
-    (section 2.1).
+    (section 2.2).
 
     oFrugalese also provides for expressing all possible computations on
     obs, not just direct expression of canonical forms.
@@ -261,9 +265,9 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
     demonstrates a critical characteristic of stored-program computation.
     This capability is at the heart of how software is used to build higher-
     level tools and their programming languages, although the mechanisms of
-    general-purpose procedures do not "rewrite" scripts to make other scripts,
-    there being alternative mechanisms at hand in well-designed general-
-    purpose computers.
+    general-purpose procedures do not (usually) "rewrite" scripts to make
+    other scripts, there being alternative mechanisms at hand in well-designed
+    general-purpose computers.
 
 4.1 Applicative-Expression Style
 
@@ -275,9 +279,14 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
 
     or equivalent forms, including
 
+       cS(f,g) x = f(x) g x
        ((cS f) g) x = (f x)(g x)
        cS(f,g,x) = f(x,g(x))                                               (6)
-       (csS(f) g) x = f(x)(g(x))
+       (cS(f) g) x = f(x)(g(x))
+
+    The accomodation of so much variety provides for choice of simple but
+    expressive alternatives in practice; the styles in (5) are often favored
+    in this documentation.
 
     The application of obs as procedures to other obs as operands is signified
     in Frugalese by the appearance of parameter lists and also by application
@@ -350,6 +359,22 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
     exploiting where deeper evaluation will not continue.  When surprising,
     it also reflects where there may be a defect to track down in a script.
 
+    For technical reasons, all gramatical expressions have a semantics, and
+    there is a device for giving meaning to the situation where a binding-name
+    has not been previously defined.  The result of an undefined ^xyz is the
+    "conditional" lindy ?xyz.  Likewise, an undefined primitive, such as .pa
+    will be interpreted as the lindy ?.pa.  Using these on purpose is not
+    recommended (except for testing purposes).  If written in oFrugal,
+    ?xyz will yield the same result as ^xyz if ^xyz is bound, and will remain
+    lindy ?xyz otherwise.  One can expect error messages any time a
+    conditional form is introduced into an oFrugal evaluation.
+
+        !def ^xyz = ?xyz;
+
+    though well-defined, is simply naughty, having no useful effect.  It does
+    confirm that the creation of a (new) binding does not occur until after
+    the right-hand side of the "=" is evaluated.
+
     This informal introduction to the ways of expressing obs, with and without
     applicative operations, has precise specification.  See
     <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
@@ -362,11 +387,13 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
     Given some means to express manipulation of strings of character codes
     and of input-output streams, we could define oFrugal processing itself in
     Frugalese.  Having text strings and ways of entering them and producing
-    then in results is an important step to making Frugal more useful.
+    then in results is an important step to making Frugal more useful, even
+    if only as an opeational demonstration of the essence of digital
+    computing.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018-2021 Dennis E. Hamilton
+                   Copyright 2018-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -380,25 +407,23 @@ ob.txt 0.1.11                   UTF-8                           dh:2021-08-20
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation,
-   and Expressions. Miser Theory Conception text file ob.txt version 0.1.11
-   dated 2021-08-20, available on the Internet as a version of
+   and Expressions. Miser Theory Conception text file ob.txt version 0.2.0
+   dated 2022-03-12, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
  TODO
 
-  * Continue review.
-
   * Add Notes and Reference section.
 
-  * Explain ?lindy and ?.primitive cases in oFrugal.
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+ 0.2.0  2022-03-12T18:38Z Bring in line with the latest op-exp and obtheory,
+        tidying up a little.
  0.1.11 2021-08-20T17:39Z Touch up, manage TODOs
  0.1.10 2020-07-10-19:29 Touch up, introduce !def to simplify oFrugal forms.
  0.1.9 2020-07-10-09:39 Touch up, correct an example, and manage TODOs.
