@@ -1,18 +1,19 @@
-docs.txt 0.0.8                       UTF-8                       dh:2019-11-24
+docs.txt 0.0.9                       UTF-8                      dh:2022-03-17
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
        <https://github.com/orcmid/miser/blob/master/docs/docs.txt>
+             putlished at <https://orcmid.github.io/miser/>
 
                     GITHUB-PUBLISHED DOCUMENTATION FOLDER
                     -------------------------------------
 
     The Miser Project docs/ folder provides the managed source-code for
-    authoring GitHub Pages.  The entire docs/ folder is automatically
-    transformed by GitHub to produce the content of a web subdomain at
-    <https://orcmid.github.io/miser/>.
+    authoring GitHub Pages for the Miser Project Code web site.  The entire
+    docs/ folder is automatically transformed by GitHub to produce the content
+    of a web subdomain at <https://orcmid.github.io/miser/>.
 
     Further information about the purpose, construction, and care-and-feeding
     of this web authoring arrangement are found on the construction/ page and
@@ -27,10 +28,10 @@ MANIFEST
      index.md
            markdown of the <https://orcmid.github.io/miser/> home page.
 
-     n170601d2.vsdx
      n170601d2.png
+     n170601d2.vsdx
            images of the oMiser logo for employment on the home page,
-           along with the authored Visio editable form.
+           along with the Visio editable form.
 
      about/
            subfolder for the about page and subordinate material on the
@@ -44,9 +45,9 @@ MANIFEST
      synopsis/
            preserving the original Miser Project synopsis
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                      Copyright 2019 Dennis E. Hamilton
+                Copyright 2019, 2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -60,7 +61,7 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 TODO
 
@@ -73,8 +74,30 @@ TODO
     case, they are part of the source and may as well be in Markdown (as well
     as plaintext?).
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * Prepare to bring miser-theory.info and especially the Miser Development
+    blog pages into a folio structure here.  This will borrow "tutorial"
+    materials and also have some application-development folder structure.
 
+  * Eventually move the synopsis into a folio and have synopsis/index.md
+    lead to it.
+
+  * Determine whether and how much astraendo/ to transpose and preserve.
+    Models and theory can be handled here, and the applied mathematical
+    logic employed with the Miser Project
+
+  * Determine whether and how much dev/ to preserve here.  This will tie-in
+    the repository sections on oMiser and oFrugal for starters.
+
+  * Likewise, determine what to do with notes/ and readings/, where the last
+    might just be resources/ or maybe bib/, depending on breadth.
+
+  * I will have to get some materials off of the VSS or directly in the IIS
+    that I use for web-site development.
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.9 2022-03-17Z01:05Z Prepare to switch to a folio-based web site modeled
+       on miser-theory.info
  0.0.8 2019-11-24-15:06 Link to synopsis/ from the home page
  0.0.7 2019-11-24-10:22 Reflect restructuring with elevation of construction/
        here, with construction topics and TODOs managed there.
