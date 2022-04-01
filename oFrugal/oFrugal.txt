@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.3                   UTF-8                       dh:2022-01-28
+oFrugal.txt 0.0.4                   UTF-8                       dh:2022-04-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -40,7 +40,7 @@ MANIFEST
         subtree for experimental mock-ups that demonstrate oFrugal
         features; some can serve as provisional reference implementations
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                        Copyright 2020 Dennis E. Hamilton
 
@@ -56,12 +56,12 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.3 dated 2022-01-28 available on the
+   Code tex file oFrugal.txt version 0.0.4 dated 2022-04-01 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
@@ -100,9 +100,16 @@ TODO
   * syntax.txt is the interpreted grammar for oFrugal text files/streams/
     terminal sources.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * Find the Perlis paper where "mindelay-scan-doer" is introduced and also
+    attributed.
+
+  * Also reference Knuth and the cellar principle folk, along with the paper
+    on Precedence languages by Bob Floyd.
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.4 2022-04-01T18:22Z Touch ups and some TODO management
  0.0.3 2022-01-28T19:47Z Add TODOs on the parser
  0.0.2 2021-11-03T17:52Z Add TODO on bidirectional spoofing
  0.0.1 2020-08-10-13:22 Add mockups/ and Attribution, manage TODOs
