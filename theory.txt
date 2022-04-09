@@ -1,4 +1,4 @@
-theory.txt 0.0.7                     UTF-8                       dh:2020-07-23
+theory.txt 0.0.8                     UTF-8                      dh:2022-04-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -33,29 +33,39 @@ Miser Project applicative computational model.
 
 Development of the theoretical underpinnings and confirmation of universality
 is accomplished in a staged progression, leading up to consideration of
-practical application.
+practical application.  There is reliance on established theory enough to
+explain how universality is demonstrated and what are some well-known
+consequences and their amelioration.
 
 APPROACH
+
+An introductory sketch of the oMiser/oFrugal software and computational
+language is at <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
 
 The first Miser Project employment of theoretical models arises in the
 <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt> introduction
 of the ‹ob› mathematical structure.
-
-With regard to computational interpretation of theories, there is reliance on
-transitivity of computational interpretation: If mathematical structure ‹A›
-has interpretation in structure ‹B›, and structure ‹B› has a computational
-interpretation, then that is sufficient computational interpretaton of ‹A›.
-
-
-Taking ‹ob› for ‹B›, this principle has been applied taking Boolean Algebras
-in position of ‹A› (and among each other) in the manner described in boole.txt
-<https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>.
 
 The ‹ob› model of computation is itself characterized in obaptheory.txt,
 <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.  The
 computable functions f(x) on Ob are defined to be those for which there is
 a script, p, such that obap.ap(p, x) = f(x) is determined, given a definite
 ob for x.
+
+The ability to extend to other computational entities is accomplished by
+representation of one system in another, something that universality will
+assure and that will be demonstrated in practice.  This is the ultimate power
+of general-purpose digital computation.
+
+With regard to computational interpretation of various theoretical entities
+there is reliance on transitivity of computational interpretation: If the
+mathematical structure ‹A› has interpretation in structure ‹B›, and structure
+‹B› has a computational interpretation, then that is a sufficient assurance of
+a computational interpretaton of ‹A›.
+
+Taking ‹ob› for ‹B›, this principle has been applied taking Boolean Algebras
+in position of ‹A› (and among each other) in the manner described in boole.txt
+<https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>.
 
 Claimed: obap.ap(p, x) and the closely-related obap.eval(e) are equivalent to
 other universal models of computation.
@@ -85,7 +95,7 @@ others already regarded as equivalent under the Church-Turing thesis.
 
 That the ‹ob› model of computation is no stronger than any of the others can
 be presumed by conducting one or more simulations in the other direction.  We
-shall wave at some particular as evidence of being no more powerful,
+shall wave at some particular evidence of being no more powerful,
 including operational enactment of the model in a digital computer.
 
 CLOSING THE LOOP
@@ -101,10 +111,8 @@ CLOSING THE LOOP
  * There is also to be consideration of "de-compiling" obs to more expressive
    constructions, such as ob-exps with identified combinators and lambda
    abstractions.  It is the limitations on this that are to be understood,
-   and how that might best work as an assistance, being able to re-abstract
-   to expressions in a desired context.  (Note that lambda-abstraction will
-   not choose descriptive lindies for the introduced free occurences unless
-   there is an assistance mechanism.)
+   and how that might best work using an assistant for re-abstracting to
+   expression forms with re-introduction of lindies to signify variables.
 
  * Given cross-overs of interface boundaries as part of simulating types, it
    is valuable to identify mechanical simplifications that are essentially a
@@ -133,6 +141,17 @@ REFERENCES AND BIBLIOGRAPHY
    various kinds for maximal preservation of our ability to reason about the
    procedures that are situated in that kind of environment.  This may depend
    on logic.txt, <https://github.com/orcmid/miser/blob/master/logic.txt>.
+
+ * <https://cacm.acm.org/blogs/blog-cacm/258576-rd-or-rd-whats-the-difference/fulltext>
+   provides an useful context for how this is an r&d project or maybe even an
+   r&D project.  In some sense oMiser is r, especially with regard to capture
+   of a theoretical foundation, although it does not create any particularly
+   important result with respect to computation models.  It might provide some
+   insight into interpretations and computational models in model theory. The
+   raw oFrugal formulation is d, but the demonstration of accelerators and
+   handling of operational semantics (including state) might be close to D.
+   Preservation of the theoretical model in these cases are are interesting
+   in the ability to verify that and how oFrugal could be applied to that end.
 
 [Chaitin1998]
    Chaitin, Gregory J.  The Limits of Mathematics: A Course on Information
@@ -188,9 +207,9 @@ REFERENCES AND BIBLIOGRAPHY
    puzzles concerning the situation of computation in the workings of the
    universe and the plight of humans knowing themselves.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                     Copyright 2018, 2020 Dennis E. Hamilton
+                Copyright 2018, 2020, 2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -204,12 +223,13 @@ REFERENCES AND BIBLIOGRAPHY
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation. Miser Theoretical Conception text file theory.txt version 0.0.7 dated
-   2020-07-23, available on the Internet as a version of
+   Hamilton, Dennis E. Miser Standing in Theoretical Models of Computation.
+   Miser Theoretical Conception text file theory.txt version 0.0.8 dated
+   2020-04-09, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
@@ -270,8 +290,9 @@ TODO
    type) while still confined to representability in the Ob domain.  Matters
    of denumerability come into play here.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.8 2022-04-09-15:32Z Text smoothing
  0.0.7 2020-07-23-09:49 Touch-ups, additional considerations
  0.0.6 2020-07-20-10:49 Wordsmithing, some additions, management of TODOs
  0.0.5 2020-07-19-12:22 Extensive drafting of Synopsis and Approach.
