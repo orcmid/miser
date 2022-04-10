@@ -1,4 +1,4 @@
-logic.txt 0.0.2                      UTF-8                       dh:2020-07-24
+logic.txt 0.0.3                      UTF-8                      dh:2022-04-10
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -31,21 +31,57 @@ NOTES AND BIBLIOGRAPHY
    of computation and Church-Turing computability in theory.txt,
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
+ * Treatment of logic here relies on the view that "Logic's
+   main concern is with the soundness and unsndness of arguments, and it
+   attempts to make as precise as possible the conditions under which an
+   argument--from whatever field of study--is acceptable [Lemon1978:p.1]."
+   In this respect, the dismissive "that's not logical" is often itself not
+   logical.
 
+ * We rely on denumerability of obs and applicability of structural induction
+   in the fundamental logical structures considered in the Miser Project.  The
+   definition of structures is contrived to allow the treatment and discussion
+   of related but distinct mathematical structures and their formulations.
+   This will continue into distinguishing computational interpretations used
+   in representation of such structures, one in another.
 
 [ACL2pedia]
    Wikipedia.  ACL2 article.  Current version available on the Internet at
    <https://en.wikipedia.org/wiki/ACL2>.  There is a natural affinity of
    Miser to the ACL[2] treatment of immutable functional computational
    interpretations and development of computational logic.  For oMiser, this
-   level cannot be approached, although an underlying computational interpre-
-   tation is achievable, short of an interface level appropriate to use in
-   theorem proving about Miser programs and other cases of interest.
+   level does not seem approachable, although an underlying computational
+   interpretation is, short of an interface level appropriate to use in
+   theorem proving about Miser programs and other cases of interest.  oFrugal
+   might not be suitable to that task, although perhaps useful in a bootstrap
+   of some procedural deduction.
+
+[Barwise1977a]
+   Barwise, John., Keisler, H.J. (eds).  Handbook of Mathematical Logic.
+   Elsevier (Amsterdam: 1977).  ISBN 0-444-86388-5 pbk.  An extensive work on
+   which there is superficial reliance for the Miser Project.  The Guides are
+   helpful in choosing where to look further in parts A (Model Theory),
+   B (Set Theory), C (Recursion Theory), and D (Proof Theory and Constructive
+   Mathematics).
+
+[Barwise1977b]
+   Barwise, John.  An Introduction to First-Order Logic.  Chapter A.1 in
+   [Barwise 1977a], pp. 5-46.  In the use of formal logic here, a similar
+   notation is employed for the logical connectives although most definitions
+   and deductions do not make use of explicit quantifiers, being mainly
+   equational.  With that said, "there are good reasons for considering
+   first-order logic to be the basic language of mathematics (p.7)."
 
 [BoyerMoore1979]
    Boyer, Robert S., Moore, J. Strother.  A Computational Logic.  Academic
    Press (New York: 1979).  ISBN 0-12-122950-5.  Public domain PDF available
    on the Internet at <http://www.cs.utexas.edu/users/boyer/acl.pdf>.
+
+[Crossley1972]
+   Crossley, J.N., Ash, C.J., Brickhill, C.J., Stillwell, J.C., Williams, N.H.
+   What Is Mathematical Logic?  Dover Publications (New York:1990) ISBN-10
+   0-486-26404-1 pbk.  Republication of Oxford University Press (New York:
+   1972) edition.
 
 [Lemmon1978]
    Lemmon, E.J.  Beginning Logic.   Hacket (Indianapolis: 1978), ISBN
@@ -59,10 +95,13 @@ NOTES AND BIBLIOGRAPHY
    book is not easy to find, there are affordable (under $10) used versions.
    The recommendation of this book, out of a large variety of alternatives,
    is for its development of logic as being about sound derivation of logical
-   consequences. For the Miser Project we are content to go directly to
-   "truth value" semantics for their direct applicability to considerations
-   of computation.  Lemmon's more-leisurely development before introduction
-   of truth-value semantics may be helpful in understanding formal logic's roots in natural language and rational conduct of human affairs.
+   consequences.
+      For the Miser Project we are content to go directly to "truth value"
+   semantics for their direct applicability to considerations of computation.
+   Lemmon's more-leisurely development before introduction of truth-value
+   semantics may be helpful in understanding formal logic's roots in natural
+   language and rational conduct of human affairs.
+      Recommended in [Crossley1972].
 
 [Metamath2019]
    Megill, Norman., Wheeler, David A.  Metamath: A Computer Language for
@@ -72,9 +111,9 @@ NOTES AND BIBLIOGRAPHY
 
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                        Copyright 2020 Dennis E. Hamilton
+                    Copyright 2020, 2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -88,12 +127,13 @@ NOTES AND BIBLIOGRAPHY
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 ATTRIBUTION
 
-   Hamilton, Dennis E. Logic for Miser to Logic in Miser. Miser Theoretical Conception text file theory.txt version 0.0.1 dated
-   2020-07-15, available on the Internet as a version of
+   Hamilton, Dennis E. Logic for Miser to Logic in Miser. Miser Theoretical
+   Conception text file theory.txt version 0.0.3 dated 2020-07-15, available
+   on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
 TODO
@@ -106,8 +146,13 @@ TODO
  * Dig deeper into Metamath once I have an oFrugal REPL and can see how to
    apply this, perhaps also in conjunction with Chaitin's AIS LISP codes.
 
+ * See if Eugenia Chang's "The Joy of Abstraction" is applicable to ways of
+   viewing how computational as well as other interpretations are handled
+   here.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2022-04-10T15:55Z Expand notes and references
  0.0.2 2020-07-24-09:29 Add [Metamath2019], related notes and TODOs.
  0.0.1 2020-07-15-16:11 Start expanding the annotated bibliography and begin
        managing TODO items.
