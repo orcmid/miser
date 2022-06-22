@@ -1,4 +1,4 @@
-combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
+combinators.txt 0.1.2               UTF-8                       dh:2022-06-22
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -132,7 +132,7 @@ combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
     Although "≈" is tantamount to an equality in ‹ca›, that inference is
     avoided here.  It is unclear that there are distinguishable, unique
     mathematical entities for combinators.  Skirt the question by using
-    using "≈", since, like functions, combinators have no canonical forms
+    "≈", since, like functions, combinators have no canonical forms
     of expression. ‹ca› lacks definiteness and identifiability as
     tacitly assumed in Miser Project reliance on FOL= for ‹ob›.
 
@@ -278,7 +278,7 @@ combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
        x: α
        f: α → β
 
-    expresses that x is an entity of type α and f is a function that when
+    express that x is an entity of type α and f is a function that when
     applied to an operand of type α determines a result of type β.  The type
     of f is (α → β).  Types can be composed further by substitutions in that
     pattern.
@@ -856,6 +856,16 @@ combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
     progression through several stages, described further in companion
     materials.
 
+    There is also something valuable to recognize about combinators,
+    λ-abstraction, and functional types in the ‹ob› = 〈Ob,Of,Ot〉 structure.
+    There is a tendency to speak of higher-order functions.  Yet in the case
+    of this structure, there is nothing "new" in Of.  The computational
+    interpretation of the universal function is still confined to the
+    computable functions in Of, from Ob -> Ob.  There are no "more" functions
+    or types in this sense.  What is accomplished is greater expressibility
+    and convenient reuse of defined scripts that compose scripts to
+    evoke types under given restrictions of representation.  The "extension"
+    is conservative in this sense.  That's quite marvelous.  Just not magical.
 
  6. NOTES AND REFERENCES
 
@@ -944,7 +954,7 @@ combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                 Copyright 2018-2020 Dennis E. Hamilton
+                 Copyright 2018-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -964,7 +974,7 @@ combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.1.1 dated 2022-03-12, available on the Internet as a version of
+   0.1.2 dated 2022-06-22, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
 
  TODO
@@ -999,6 +1009,9 @@ combinators.txt 0.1.1               UTF-8                       dh:2022-03-12
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.2 2022-06-22T17:00Z Touch-ups and section 5 addition about how the
+       support for types does not expand the repetoire of computable functions
+       in ‹ob› = 〈Ob,Of,Ot〉.
  0.1.1 2022-03-12T19:15Z Touch-ups after review
  0.1.0 2020-02-01-16:03 Smooth use of interpretation and representation, with
        editorial tidying enough to promote to 0.1.0.
