@@ -1,4 +1,4 @@
-ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
+ob-exp.txt 0.2.4                   UTF-8                        dh:2022-07-29
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -207,7 +207,7 @@ ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
 
     〈plane-lindy〉 is an alphanumeric name without spaces, corresponding to an
                  XML Name without ":", ".", and middle-dot ("·") and allowing
-                 0-9 as start characters.
+                 0-9 as additional start characters.
 
     ‼〈term〉⎾〈plane-lindy〉⏋{ℰ} =: ‼〈plane-lindy〉, the lindy of that spelling,
                                  essentially Ʃ'〈plane-lindy〉' as used in
@@ -233,7 +233,7 @@ ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
     〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
 
     ‼〈term〉⎾〈binding-name〉⏋{ℰ} =: ‼〈binding-name〉{ℰ}
-                                  defined in oFrugal-exp.txt
+                                  defined in the oFrugal file syntax.txt
 
     〈primitive〉s are not case-sensitive, although 〈plane-lindy〉s are otherwise.
 
@@ -343,14 +343,14 @@ ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
     Proc. International Conference on Information Processing.  UNESCO, Paris,
     June 1959. pp. 125-132.
 
-[Duncan1967]  Duncan, Fraser G.  Notational abbreviatios applied to the syntax
-    of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967), pp.28-32.
-    Available on the Internet at
+[Duncan1967]  Duncan, Fraser G.  Notational abbreviations applied to the
+    syntax of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967),
+    pp.28-32.  Available on the Internet at
     <http://archive.computerhistory.org/resources/text/algol/algol_bulletin/A26/P35.HTM>.
     This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired me
     to use it to use productions to generate naming of productions,
     providing a vocabulary grammar and generic arrangements, including moving
-    between concrete cases such as 〈integer〉 and 〈〈integer〉-length=string〉.
+    between concrete cases such as 〈integer〉 and 〈〈integer〉-length-string〉.
     This is not needed here.  I just want this reference set to be complete
     wherever I use it.
 
@@ -369,7 +369,7 @@ ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
     application, all well-formed inputs have semantics and there are no
     forward references.  In particular, binding names are always references
     to the nearest preceding bindings, if any, and the absence of a preceding
-    binding is semantically precise.
+    binding is semantically acceptable.
 
 [Naur1963]  Naur, P. (Ed.)  Revised report on the algorithmic language
     ALGOL 60.  Commm. ACM 6, 1 (Jan. 1963), 1-17.
@@ -395,7 +395,7 @@ ob-exp.txt 0.2.3                   UTF-8                        dh:2022-03-11
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.2.3 dated 2022-03-11,
+   Theory Conception text file ob-exp.txt version 0.2.4 dated 2022-07-29,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
@@ -471,6 +471,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.4  2022-07-29T23:29Z Touch-ups
  0.2.3  2022-03-11T01:26Z Correct some blunders in the interpretations and
         also manage TODOs
  0.2.2  2022-02-18T23:49Z Add references, content list, and smooth for
