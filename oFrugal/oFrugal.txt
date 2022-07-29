@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.4                   UTF-8                       dh:2022-04-01
+oFrugal.txt 0.0.5                   UTF-8                          2022-07-29
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -29,6 +29,11 @@ oFrugal.txt 0.0.4                   UTF-8                       dh:2022-04-01
     presented as an input, the result for that input will be equivalent to
     the original output, rather than some further calculation.
 
+    For the oFrugal calculator as a REPL (Read, Evaluate, Print, Loop),
+    the file syntax.txt specifies the grammar and its interpretation for
+    the input as a continuous stream.  Other files are for aspects of the
+    concrete implementation and the interchange of files among them.
+
 
 MANIFEST
 
@@ -36,13 +41,17 @@ MANIFEST
         this synopsis, manifest and TODOs for this portion of the
         working Miser-Project working folders preserved on GitHub
 
+    syntax.txt
+        the interpreted grammar for oFrugal text files/streams/terminal
+        sources.
+
     mockups/
         subtree for experimental mock-ups that demonstrate oFrugal
         features; some can serve as provisional reference implementations
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                       Copyright 2020 Dennis E. Hamilton
+                    Copyright 2020-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -61,7 +70,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.4 dated 2022-04-01 available on the
+   Code tex file oFrugal.txt version 0.0.5 dated 2022-07-29 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
@@ -97,18 +106,17 @@ TODO
     for the same oFrugal texts.  The handling of error cases is beyond what
     the grammar determines.
 
-  * syntax.txt is the interpreted grammar for oFrugal text files/streams/
-    terminal sources.
-
   * Find the Perlis paper where "mindelay-scan-doer" is introduced and also
     attributed.
 
   * Also reference Knuth and the cellar principle folk, along with the paper
     on Precedence languages by Bob Floyd.
 
+
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.5 2022-07-29T22:15Z Manifest syntax.txt
  0.0.4 2022-04-01T18:22Z Touch ups and some TODO management
  0.0.3 2022-01-28T19:47Z Add TODOs on the parser
  0.0.2 2021-11-03T17:52Z Add TODO on bidirectional spoofing

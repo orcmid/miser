@@ -1,0 +1,77 @@
+syntax.txt 0.0.0                   UTF-8                          2022-07-29
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+      <https://github.com/orcmid/miser/blob/master/oFrugal/syntax.txt>
+
+                       OFRUGAL REPL LANGUAGE SYNTAX
+                       ----------------------------
+
+    The oFrugal REPL (Read, Evaluate, Print, Loop) console application
+    processes lines of input as a continuous stream of material.  That
+    stream is required to conform to the REPL language syntax for oFrugal.
+
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2022 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oFrugal REPL Language Syntax.  Miser Project Code
+   text file syntax.txt version 0.0.0 dated 2022-07-29 available on the
+   Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oFrugal/syntax.txt>
+
+TODO
+
+ * Incorporate shared references from ob-exp.txt with regard to the grammar
+   and the use of 〈ob-exp〉.
+
+ * Provide the interpretation of ‼〈binding-name〉{ℰ} where
+   〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
+
+ * Provide a look-up function that works on that returns matches for
+   certain lookups and returns the ? form when it is not there is no
+   established binding.
+
+ * Establish that all grammatically-correct streams have interpretations,
+   though an attempted computation may fail by resource exhaustion.
+
+ * Produce the input-statements grammar to first just have binding commands
+   and expressions.
+
+ * Add #include and see how that works.
+
+ * Start a table of contents
+
+ * Address the overall structure
+
+ * Address error-reporting/-handling.
+
+ * Provide the environment that is used to add accumulate binding and supply
+   them to ob-exp interpretations.
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.0 2022-07-29T23:18Z Create placeholder and initial job jar for the
+       oFrugal REPL syntax.
+
+                         *** end of oFrugal.txt ***
