@@ -1,11 +1,11 @@
-ob-exp.txt 0.2.4                   UTF-8                        dh:2022-07-29
+ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
                            ======================
 
-      <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
+      <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
          FORMAL GRAMMAR FOR EXPRESSING OFRUGAL CONSTRUCTION OF OBS
          ---------------------------------------------------------
@@ -395,9 +395,9 @@ ob-exp.txt 0.2.4                   UTF-8                        dh:2022-07-29
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 0.2.4 dated 2022-07-29,
+   Theory Conception text file ob-exp.txt version 1.0.0 dated 2022-07-31,
    available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
+   <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
 TODO
 
@@ -471,6 +471,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.0  2022-07-31T00:16Z Transpose from oMiser\ob-exp.txt to oFrugal\,
+        changing location links and nothing else yet.
  0.2.4  2022-07-29T23:29Z Touch-ups
  0.2.3  2022-03-11T01:26Z Correct some blunders in the interpretations and
         also manage TODOs
@@ -505,4 +507,4 @@ TODO
  0.0.1 2018-01-28-15:26 Provide initial summary grammar for ob-exp.
 
 
-                     *** end of ob-exp.txt ***
+                   *** end of oFrugal\ob-exp.txt ***
