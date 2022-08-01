@@ -1,4 +1,4 @@
-combinators.txt 0.1.2               UTF-8                       dh:2022-06-22
+combinators.txt 0.1.3               UTF-8                       dh:2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -199,7 +199,7 @@ combinators.txt 0.1.2               UTF-8                       dh:2022-06-22
     between typical λ-calculus notations having left-to-right association of
     application operation and the unparenthesized right-to-left association
     of Frugalese.  See
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt> for the
+    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt> for the
     oFrugal notation, its computational-interpretation semantics, and the
     grammar of such expressions employed beginning in section 2.3, below.
 
@@ -974,7 +974,7 @@ combinators.txt 0.1.2               UTF-8                       dh:2022-06-22
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.1.2 dated 2022-06-22, available on the Internet as a version of
+   0.1.3 dated 2022-08-01, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
 
  TODO
@@ -1009,6 +1009,7 @@ combinators.txt 0.1.2               UTF-8                       dh:2022-06-22
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.3 2022-08-01TT20.32Z Refer to the oFrugal/ob-exp.txt
  0.1.2 2022-06-22T17:00Z Touch-ups and section 5 addition about how the
        support for types does not expand the repetoire of computable functions
        in ‹ob› = 〈Ob,Of,Ot〉.
