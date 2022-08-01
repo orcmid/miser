@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.6                   UTF-8                          2022-08-01
+mindelay.txt 0.0.0                  UTF-8                          2022-07-31
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,16 +41,13 @@ MANIFEST
         this synopsis, manifest and TODOs for this portion of the
         working Miser-Project working folders preserved on GitHub
 
-    mindelay.txt
-        the development of the precedence parser for ob-exp and the
-        full oFrugal REPL input syntax.
-
-    ob-exp.txt
-        the grammar for applicative expressions of ob ob computations
-
     syntax.txt
         the interpreted grammar for oFrugal text files/streams/terminal
         sources.
+
+    mindelay.txt
+        the development of a mindelayscandoer parser for the syntax of the
+        oFrugal REPL text stream.
 
     mockups/
         subtree for experimental mock-ups that demonstrate oFrugal
@@ -141,7 +138,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.6 2022-08-01T23:48Z Add mindelay.txt and ob-exp.txt
+
  0.0.5 2022-07-29T22:15Z Manifest syntax.txt
  0.0.4 2022-04-01T18:22Z Touch ups and some TODO management
  0.0.3 2022-01-28T19:47Z Add TODOs on the parser
