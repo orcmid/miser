@@ -1,4 +1,4 @@
-boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
+boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -36,7 +36,7 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
 
               2. ‹bp› REPRESENTATIONS
 
-                 2.1 Standard Representation
+                 2.1 Prototypical (Standard) Representation
                  2.2 Notable Qualities
                  2.3 ‹bp› Interpretation in ‹ob›
                  2.4 Domain-Restriction Consequences
@@ -72,7 +72,7 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
     distinct members, two of which are distinguished as ⊤ and ⊥, respectively.
 
     The ‹bp› domain of discourse, Bp, consists of only the two distinguished
-    entities.
+    entities and is taken as the prototypical (standard) Boolean Algebra.
 
        ⊤ (nickname "top")
        ⊥ (nickname "bot")
@@ -270,7 +270,7 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
     representations of ‹bp› functions to corresponding representations in
     ‹ob› leads to partial functions in Of, ones undefined/ill-defined when an
     operand is neither an interpretation of ⊥ nor of ⊤.  That is no such
-    difficulty as long as operands are confined to interpretations.
+    difficulty as long as operands are confined to the interpretations.
 
     The undefined cases confound computational interpretations where direct
     lack of definition interferes with reasoning about computations. Lack of
@@ -804,7 +804,7 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                 Copyright 2018-2019 Dennis E. Hamilton
+                 Copyright 2018-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -823,8 +823,8 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
  ATTRIBUTION
 
    Hamilton, Dennis E. Interpretation of Boolean Algebras in the ‹ob› Model
-   of Computation. Miser Theory Conception text file boole.txt version 0.5.2
-   dated 2019-03-06, available on the Internet as a version of
+   of Computation. Miser Theory Conception text file boole.txt version 0.5.3
+   dated 2022-08-01, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -836,7 +836,8 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
     for consistent usage and links to related resources of the project and
     and elsewhere, especially ones of reference/historical value.
 
-  * Find an accessible reference to the conclusion of representation of non-    concrete ‹ba›s via isomorphisms to concrete ‹ba›s.  Stone's theorem may
+  * Find an accessible reference to the conclusion of representation of non-
+    concrete ‹ba›s via isomorphisms to concrete ‹ba›s.  Stone's theorem may
     be too much of a stretch.
 
   * Add attribution statement.
@@ -850,6 +851,7 @@ boole.txt 0.5.2                     UTF-8                        dh:2019-03-06
     presence of the idea of templates and certain ideas of classes and types.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.5.3 2022-08-01T20:17Z Touch-Ups
  0.5.2 2019-03-06-11:31 Raise the prospect of primeval representation
        compositions.  Manage TODOs.  Some touch-ups
  0.5.1 2019-01-10-10:48 Touch-ups
