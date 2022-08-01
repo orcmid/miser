@@ -1,4 +1,4 @@
-ob.txt 0.2.0                     UTF-8                          dh:2022-03-12
+ob.txt 0.2.1                     UTF-8                          dh:2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -25,7 +25,7 @@ ob.txt 0.2.0                     UTF-8                          dh:2022-03-12
 
              2. Data Representation Text Notation
                 2.1 Canonical forms
-                2.2 DFob reference notation for canonical forms
+                2.2 CFob reference notation for canonical forms
                 2.3 Publication notation
                 2.4 Additional forms
 
@@ -295,18 +295,11 @@ ob.txt 0.2.0                     UTF-8                          dh:2022-03-12
     examples in (5-6) are formulas for the same applicative operations, namely
     those that deliver the same result as (4) with cS eliminated.
 
-    Although the symbols f and g are used, above, to signify the intention
-    that they be (function) scripts, within oMiser/oFrugal, there are always
-    just obs and the symbolic indications are meaningful to us, not the
-    computer and the enacted computational interpretation.  (There might be
-    ways that a Frugal-processing implementation exploits such "hints"
-    though.)
-
 4.2 Applicative Expressions in oFrugal
 
     oFrugal accepts applicative-expression forms in its input.  Evaluation of
     the applicative expressions yield the obs to be made use of any further
-    until an intended canonical form is yielded as the result.
+    until an intended canonical form derived.
 
     For example,
 
@@ -377,7 +370,7 @@ ob.txt 0.2.0                     UTF-8                          dh:2022-03-12
 
     This informal introduction to the ways of expressing obs, with and without
     applicative operations, has precise specification.  See
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
 
     The key point is that at the foundation there are only obs in the
     computational model.  There is oFrugal and Frugalese for providing
@@ -412,16 +405,26 @@ ob.txt 0.2.0                     UTF-8                          dh:2022-03-12
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation,
-   and Expressions. Miser Theory Conception text file ob.txt version 0.2.0
-   dated 2022-03-12, available on the Internet as a version of
+   and Expressions. Miser Theory Conception text file ob.txt version 0.2.1
+   dated 2022-08-01, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
  TODO
 
   * Add Notes and Reference section.
 
+  * This is pretty awful.  It lacks any kind of friendly anchoring and
+    and provision of anything that might considered an useful tutorial or
+    sketch of what this is all about.
+
+  * The CFob syntax might reflect the special status of lindies by using
+    spaces instead of "::" in pure lindy forms.  This will have to be
+    investigated. It works because both application and "::" are right-
+    associative.
+
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.2.1  2022-08-01T17:54Z Touch-ups and linking to oFrugal/ob-exp.txt
  0.2.0  2022-03-12T18:38Z Bring in line with the latest op-exp and obtheory,
         tidying up a little.
  0.1.11 2021-08-20T17:39Z Touch up, manage TODOs
