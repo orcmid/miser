@@ -1,4 +1,4 @@
-obaptheory.txt 0.1.0                UTF-8                       dh:2022-01-06
+obaptheory.txt 0.1.1                UTF-8                       dh:2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -108,7 +108,7 @@ obaptheory.txt 0.1.0                UTF-8                       dh:2022-01-06
           significance as lindies, their utilitarian presence being related to
           questionable cases in syntactically-valid oFrugal statements. See
           the treatment of binding names in
-          <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+          <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
 
           IMPLEMENTATION NOTE: In computer representations, the alphanumeric
           characters permitted in lindies are Unicode glyphs, encoded in
@@ -273,7 +273,7 @@ obaptheory.txt 0.1.0                UTF-8                       dh:2022-01-06
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 0.1.0 dated 2022-01-05,
+   Conception text file obaptheory.txt version 0.1.1 dated 2022-08-01,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
 
@@ -315,6 +315,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.1  2022-08-01T20:49Z Refer now to oFrugal/ob-exp.txt
  0.1.0  2022-01-04T01:10Z Introduce the conditional lindies to satisfy the
         context-free completeness of oFrugal pragmatic interpretations.
  0.0.34 2020-05-12-17:17:22 Reidentify and Reflow cases to provide for fine-
