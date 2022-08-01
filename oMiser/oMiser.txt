@@ -1,4 +1,4 @@
-oMiser.txt 0.0.10                   UTF-8                         2022-08-01
+oMiser.txt 0.0.11                   UTF-8                         2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -77,9 +77,9 @@ MANIFEST
         as data.  This material is now at
         <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
 
-    obstring.txt
+    CFob.txt
         description of the grammar for Canonical Obs and a procedure for
-        expressiong them in ob-exp strings that minimize use of "( ... )".
+        expressiong them in strings that minimize use of "( ... )".
 
     mockups/
         subtree for experimental mock-ups that demonstrate oMiser
@@ -150,8 +150,11 @@ TODO
     that are best moved to an alternative place, such as engineering.txt
     for the overall project.
 
+  * Add attribution.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.11 2022-08-01T23:38Z Reflect obstring.txt renaming to CFob.txt
  0.0.10 2022-08-01T17:27Z Reflect tombstoning of ob-exp.txt
  0.0.9 2018-11-28-08:14 Add boole.txt and arrange manifest in a recommended
        reading order.

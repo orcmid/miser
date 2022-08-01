@@ -1,4 +1,4 @@
-obstring.txt 0.0.5                  UTF-8                          2022-08-01
+CFob.txt 0.0.6                      UTF-8                          2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -10,22 +10,21 @@ obstring.txt 0.0.5                  UTF-8                          2022-08-01
        FRUGALESE GRAMMAR FOR DISPLAYING CANONICAL OBS IN OB-EXP FORM
        -------------------------------------------------------------
 
-    obstring is the string expression of obs that exploits the right-
+    CFob is a string expression of obs that exploits the right-
     associativity of "::" to eliminate unnecessary parentheses.  This
-    is, apart from the presence of white space, a unique ob-exp for
-    every Canonical Ob.
-
-    The grammar satisfied by the string is essentially ob-exp without
-    anything that involves an application in its interpretation.
+    is, apart from the presence of white space, a unique string for
+    an ob canonical form.  The form satisfies the oFrugal ob-exp grammar
+    and oFrugal, if given such a string to evaluate, will produce a
+    result that is canonical for the very same ob.
 
     See also
     <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
  1. SUMMARY GRAMMAR
 
-    Here is the reduced summary grammar for the Canonical Obs.  Any
-    of these forms are suitable.  Reducing the use of parentheses is
-    handled in the procedure for expressing such obs.
+    Here is a grammar for the Canonical Obs.  Any of these forms are suitable.
+    Reducing the use of parentheses is handled in the procedure for expressing
+    these forms.
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉
 
@@ -104,14 +103,14 @@ TODO
 
   * Add Attribution
 
-  * Do we make this CFob?
-
   * Do we do something else about the pure-lindy cases?
 
   * Update this to reflect the conditional lindies, or is that a case that
     is tied to oFrugal?
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.6 2022-08-01T23:35Z Renamed from obstring.txt and adjusted to for naming
+       CFob.txt in the adjusted narrative.
  0.0.5 2022-08-01T21:00Z Now refer to oFrugal/ob-exp.txt and manage TODOs
  0.0.4 2019-04-18-10:24 Manage TODOs and reconcile with latest refinement
        of applicable concepts.  Touch-ups
