@@ -1,4 +1,4 @@
-obstring.txt 0.0.4                  UTF-8                        dh:2018-04-18
+obstring.txt 0.0.5                  UTF-8                          2022-08-01
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -19,7 +19,7 @@ obstring.txt 0.0.4                  UTF-8                        dh:2018-04-18
     anything that involves an application in its interpretation.
 
     See also
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
+    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
  1. SUMMARY GRAMMAR
 
@@ -72,7 +72,7 @@ obstring.txt 0.0.4                  UTF-8                        dh:2018-04-18
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                   Copyright 2018 Dennis E. Hamilton
+                Copyright 2018-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -102,8 +102,17 @@ TODO
     extension primitives and they support maintenance of extensional
     identity among all obs.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * Add Attribution
 
+  * Do we make this CFob?
+
+  * Do we do something else about the pure-lindy cases?
+
+  * Update this to reflect the conditional lindies, or is that a case that
+    is tied to oFrugal?
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.5 2022-08-01T21:00Z Now refer to oFrugal/ob-exp.txt and manage TODOs
  0.0.4 2019-04-18-10:24 Manage TODOs and reconcile with latest refinement
        of applicable concepts.  Touch-ups
  0.0.3 2018-02-09-11:16 Rename to obstring.txt to reflect the expected
@@ -112,4 +121,4 @@ TODO
        the test results for the implementation in obap.sml 0.0.9.
  0.0.1 2018-02-04-11:58 Provide direct basic expression.
 
-                     *** end of show-ob.txt ***
+                     *** end of obstring.txt ***
