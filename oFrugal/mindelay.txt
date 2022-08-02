@@ -1,57 +1,43 @@
-mindelay.txt 0.0.0                  UTF-8                          2022-07-31
+mindelay.txt 0.0.1                  UTF-8                          2022-08-02
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-      <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
+      <https://github.com/orcmid/miser/blob/master/oFrugal/mindelay.txt>
 
-                   OFRUGAL REPL DEVELOPMENT AND OPERATION
-                   --------------------------------------
+                   OFRUGAL REPL MINDELAY PARSER DESIGN
+                   -----------------------------------
 
-    oFrugal is the REPL (Read, Eval, Print, Loop) component of the pair
+SYNOPSIS TBD
 
-     - oMiser representation and use of the abstract structure, ‹ob› as an
-       encapsulated data-structure and universal machine implementation via
-       reusable program library.
+ - Define what we mean
 
-     - oFrugal front-end processor offering an interface for external
-       exercise of oMiser functions in a more-practical form for personal
-       exploration and operation of oMiser programs.
+ - Talk about the effective translation to reverse polish but with the
+   evaluation of every operation whose individual operands have been
+   determined
 
-    oFrugal implementations provide input-output and other functions that
-    oMiser necessarily lacks.  oFrugal is essentially an assembler/calculator
-    of oMiser obs, a means to exercise scripts written as obs that compute
-    other obs by applicative operation.  In particular, oFrugal presents
-    the results of computations in the same notation(s) employed for inputs.
+ - talk about how the same could be used for building an expression that
+   would not be evaluated until it has been completely parsed successfully
 
-    It is characteristics of the ob-calculator approach that if an output is
-    presented as an input, the result for that input will be equivalent to
-    the original output, rather than some further calculation.
+ - talk about the difficulties of error handling
 
-    For the oFrugal calculator as a REPL (Read, Evaluate, Print, Loop),
-    the file syntax.txt specifies the grammar and its interpretation for
-    the input as a continuous stream.  Other files are for aspects of the
-    concrete implementation and the interchange of files among them.
+ - Set up the precedence rules for the variant cases.
+
+ - Identify the format for error messages
 
 
-MANIFEST
+NOTES AND REFERENCES
 
-    oFrugal.txt
-        this synopsis, manifest and TODOs for this portion of the
-        working Miser-Project working folders preserved on GitHub
+    [Evans1961]
+        Evans, A., Perlis, A.J., Van Zoeren, H. The Use of Threaded Lists in
+        Construction of a Combined ALGOL and Machine-Like Assembly Processor.
+        Comm. ACM 4, 1 (Jan. 1961), 36-41.
+        DOR <https://dl.acm.org/doi/10.1145/366062.366081>.
+        Footnote 2 on p.37 describes "mindelayscandoer" as "scan and do
+        translation to final code as quickly as possible"
 
-    syntax.txt
-        the interpreted grammar for oFrugal text files/streams/terminal
-        sources.
 
-    mindelay.txt
-        the development of a mindelayscandoer parser for the syntax of the
-        oFrugal REPL text stream.
-
-    mockups/
-        subtree for experimental mock-ups that demonstrate oFrugal
-        features; some can serve as provisional reference implementations
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -73,32 +59,12 @@ MANIFEST
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.5 dated 2022-07-29 available on the
+   Hamilton, Dennis E. oFrugal REPL Mindelay Parser Design.  Miser Project
+   Code tex file oFrugal.txt version 0.0.1 dated 2022-08-02 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
 TODO
-
-  * Create these, with attention to the division of labor and the reliance
-    on the common ob-exp txt.
-
-  * Explain the oMiser mockup case because of file-system location of
-    SML scripts.  There needs to be some principle applied on this.
-
-  * Maybe need notes and references?
-
-  * In processing and handling of Unicode, bidirectionality has to be
-    constrained in a manner where the key lexical structure is not disturbed
-    and there is no ambiguity with regard to parsing.
-
-  * Create reference specifications for lexical structure of input texts from
-    keyboards, streams, and persistent data.  The reference character set is
-    Unicode and the reference encoding is UTF-8.
-
-  * lexical.txt will provide the lexical-level of processing.  There will be
-    a basic character-stream case and that will be supplemented by two levels:
-    recognition of specific tokens and then the regular elements.
 
   * mindelay.txt is the REPL parser structure.  It is related to the Alan
     Perlis "mindelay-scan-doer" scheme for a mostly one-pass process where
@@ -126,25 +92,10 @@ TODO
     turns the input into a reverse polish form where every operation can be
     performed when an operator is added to the stream.
 
-  * Find the block diagram for how oFrugal and oMiser representations are
-    incorporated on a platform.  Introduce it here or at a higher level.
-    Certainly in docs.
-
-  * Point out the odd similarity with John Backus use of a system process
-    above the functional layer.  But in my case, dealing with the absence of
-    any stateful entities in oMiser and obaptheory.txt.  And this provides,
-    in some manner, a form that might be simulated in oMiser.
-
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.1 2022-08-02T00:16Z Customize the boilerplate
+ 0.0.0 2022-08-01T01:56Z Clone oFrugal.txt as placeholder and boilerplate.
 
- 0.0.5 2022-07-29T22:15Z Manifest syntax.txt
- 0.0.4 2022-04-01T18:22Z Touch ups and some TODO management
- 0.0.3 2022-01-28T19:47Z Add TODOs on the parser
- 0.0.2 2021-11-03T17:52Z Add TODO on bidirectional spoofing
- 0.0.1 2020-08-10-13:22 Add mockups/ and Attribution, manage TODOs
- 0.0.0 2020-08-05-10:23 Create placeholder and initial job jar for the
-       oFrugal code development.
-
-                         *** end of oFrugal.txt ***
+                        *** end of mindelay.txt ***
