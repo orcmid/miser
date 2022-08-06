@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.6                   UTF-8                          2022-08-01
+oFrugal.txt 0.0.7                   UTF-8                          2022-08-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -9,7 +9,8 @@ oFrugal.txt 0.0.6                   UTF-8                          2022-08-01
                    OFRUGAL REPL DEVELOPMENT AND OPERATION
                    --------------------------------------
 
-    oFrugal is the REPL (Read, Eval, Print, Loop) component of the pair
+    oFrugal REPL (Read, Eval, Print, Loop) is the oFrugalese component of the
+    pair
 
      - oMiser representation and use of the abstract structure, ‹ob› as an
        encapsulated data-structure and universal machine implementation via
@@ -30,7 +31,7 @@ oFrugal.txt 0.0.6                   UTF-8                          2022-08-01
     the original output, rather than some further calculation.
 
     For the oFrugal calculator as a REPL (Read, Evaluate, Print, Loop),
-    the file syntax.txt specifies the grammar and its interpretation for
+    the file oFrugalese.txt specifies the grammar and its interpretation for
     the input as a continuous stream.  Other files are for aspects of the
     concrete implementation and the interchange of files among them.
 
@@ -48,9 +49,9 @@ MANIFEST
     ob-exp.txt
         the grammar for applicative expressions of ob ob computations
 
-    syntax.txt
-        the interpreted grammar for oFrugal text files/streams/terminal
-        sources.
+    oFrugalese.txt
+        the interpreted language for oFrugal text files/streams/terminal
+        sources submitted to the oFrugal REPL.
 
     mockups/
         subtree for experimental mock-ups that demonstrate oFrugal
@@ -77,7 +78,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.5 dated 2022-07-29 available on the
+   Code tex file oFrugal.txt version 0.0.7 dated 2022-08-06 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
@@ -113,22 +114,6 @@ TODO
     for the same oFrugal texts.  The handling of error cases is beyond what
     the grammar determines.
 
-  * "mindelayscandoer" is described as "scan and do translation to final code
-    as quickly as possible" in footnote 2 on p.37 of A. Evans Jr., A. J.
-    Perlis, and H. Van Zoeren.  The Use of Threaded Lists in Construction of a
-    Combined ALGOL and Machine-Like Assembly Processor.  Comm. ACM 4, 1 (Jan.
-    1961), 36-41.  DOR <https://dl.acm.org/doi/10.1145/366062.366081>.  I feel
-    that I had seen an earlier use of the term in something earlier.  For
-    oFrugal mindelay is even shorter, since the REPL is essentially a
-    calculator and it derives interpretations as quickly as all dependencies
-    are in hand.  mindelay.txt will account for the downside of that approach.
-
-  * Also reference Knuth and the cellar principle folk, along with the paper
-    on Precedence languages by Bob Floyd.  The use of a precedence-based
-    parser is also aligned with the mindelay concept, since it basically
-    turns the input into a reverse polish form where every operation can be
-    performed when an operator is added to the stream.
-
   * Find the block diagram for how oFrugal and oMiser representations are
     incorporated on a platform.  Introduce it here or at a higher level.
     Certainly in docs.
@@ -141,6 +126,8 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.7 2022-08-06T17:22Z Reflect name change to oFrugalese.txt and closing of
+       some TODOs with treatment in mendelay.txt.
  0.0.6 2022-08-01T23:48Z Add mindelay.txt and ob-exp.txt
  0.0.5 2022-07-29T22:15Z Manifest syntax.txt
  0.0.4 2022-04-01T18:22Z Touch ups and some TODO management
