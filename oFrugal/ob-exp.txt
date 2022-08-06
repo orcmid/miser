@@ -1,4 +1,4 @@
-ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
+ob-exp.txt 1.0.1                    UTF-8                         2022-08-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -7,8 +7,8 @@ ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
 
       <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
-         FORMAL GRAMMAR FOR EXPRESSING OFRUGAL CONSTRUCTION OF OBS
-         ---------------------------------------------------------
+         FORMAL GRAMMAR FOR EXPRESSING OFRUGAL COMPUTATION OF OBS
+         --------------------------------------------------------
 
     Ob-exp texts are used as a means of specifying obs and computations
     with them to derive an ob result.  Ob-exp is an expression language
@@ -220,6 +220,7 @@ ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
                                insensitive spelling, or the same as binding-
                                name ?.〈plane-lindy〉 when there is no primitive
 
+    ‼〈primitive〉⎾.NIL⏋{ℰ} =: ob.NIL,
     ‼〈primitive〉⎾.A⏋{ℰ} =: obap.A,
     ‼〈primitive〉⎾.B⏋{ℰ} =: obap.B,
     ‼〈primitive〉⎾.C⏋{ℰ} =: obap.C,
@@ -228,6 +229,7 @@ ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
     ‼〈primitive〉⎾.ARG⏋{ℰ} =: obap.ARG,
     ‼〈primitive〉⎾.SELF⏋{ℰ} =: obap.SELF,
     ‼〈primitive〉⎾.EV⏋{ℰ} =: obap.EV
+
 
 
     〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
@@ -340,15 +342,15 @@ ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
 
 [Backus1958]  Backus, J. W. The syntax and semantics of the proposed
     International Algebraic Language of the Zurich ACM-GAMM Conference.
-    Proc. International Conference on Information Processing.  UNESCO, Paris,
-    June 1959. pp. 125-132.
+    Proc. International Conference on Information Processing.  UNESCO (Paris:
+    June 1959) pp. 125-132.
 
 [Duncan1967]  Duncan, Fraser G.  Notational abbreviations applied to the
     syntax of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967),
     pp.28-32.  Available on the Internet at
     <http://archive.computerhistory.org/resources/text/algol/algol_bulletin/A26/P35.HTM>.
-    This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired me
-    to use it to use productions to generate naming of productions,
+       This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired
+    me to use it to use productions to generate naming of productions,
     providing a vocabulary grammar and generic arrangements, including moving
     between concrete cases such as 〈integer〉 and 〈〈integer〉-length-string〉.
     This is not needed here.  I just want this reference set to be complete
@@ -357,19 +359,19 @@ ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
 [Ershov1963]  Ershov, A.P., Kozhukhin, G.I., Voloshin, Yu.M.  The Input
     Language for a System of Automatic Programming.  Computation Center,
     Academy of Sciences of the USSR (Moscow, 1961, Russian); Academic Press
-    (London, New York: 1963).  This provided a type of generic context-free
-    production that inspired some of this work, although not relied upon
-    in the ob-exp grammar.
+    (London, New York: 1963).
+       This provided a type of generic context-free production that inspired
+    some of this work, although not relied upon in the ob-exp grammar.
 
 [Knuth1968]  Knuth, Donald E. Semantics of Context-Free Languages.
     Mathematical Systems Theory 2 (1968), 127-145.  Errata Mathematical
-    Systems Theory 5 (1971), 95-96.  The semantic interpretations here are
-    similar to use of attribute grammars except that the arrangement remains
-    context-free and cycles are generally not possible.  In the oFrugal
-    application, all well-formed inputs have semantics and there are no
-    forward references.  In particular, binding names are always references
-    to the nearest preceding bindings, if any, and the absence of a preceding
-    binding is semantically acceptable.
+    Systems Theory 5 (1971), 95-96.
+       The semantic interpretations here are similar to use of attribute
+    grammars except that the arrangement remains context-free and cycles are
+    generally not possible.  In the oFrugal application, all well-formed
+    inputs have semantics and there are no forward references.  In particular,
+    binding names are always references to the nearest preceding bindings,
+    if any, and the absence of a preceding binding is semantically acceptable.
 
 [Naur1963]  Naur, P. (Ed.)  Revised report on the algorithmic language
     ALGOL 60.  Commm. ACM 6, 1 (Jan. 1963), 1-17.
@@ -395,7 +397,7 @@ ob-exp.txt 1.0.0                    UTF-8                         2022-07-31
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 1.0.0 dated 2022-07-31,
+   Theory Conception text file ob-exp.txt version 1.0.1 dated 2022-08-06,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
@@ -417,7 +419,10 @@ TODO
  * I am undecided about using ! or # as the command initiator in oFrugal.
    There is a certain harmony with # as the C Language preprocessor command
    initiator.  I might do that for harmony alone.  Need to think about the
-   different uses of ! and # in various existing arrangements.
+   different uses of ! and # in various existing arrangements.  [2022-08-02
+   The use of # will conflict with the use of # on numeric forms.  There is
+   also an use of ! around imperatives, or something like that.  Need to
+   be careful with that one.]
 
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
@@ -469,8 +474,12 @@ TODO
    Power-FX has the quality I want to emulate.  See the expression grammar
    in docs/ of <https://github.com/microsoft/Power-Fx>.
 
+ * It is necessary to make clear that these are geneative grammars and there
+   should be some links about those.  The Saul Gorn clarity would be useful.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.1  2022-08-06T17:36Z Touch-ups, add missing .NIL primitive (?)
  1.0.0  2022-07-31T00:16Z Transpose from oMiser\ob-exp.txt to oFrugal\,
         changing location links and nothing else yet.
  0.2.4  2022-07-29T23:29Z Touch-ups
