@@ -1,4 +1,4 @@
-syntax.txt 0.0.0                   UTF-8                          2022-07-29
+oFrugalese.txt 0.0.1                   UTF-8                      2022-08-06
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -6,12 +6,12 @@ syntax.txt 0.0.0                   UTF-8                          2022-07-29
 
       <https://github.com/orcmid/miser/blob/master/oFrugal/syntax.txt>
 
-                       OFRUGAL REPL LANGUAGE SYNTAX
-                       ----------------------------
+                     OFRUGALESE LANGUAGE SPECIFICATION
+                     ---------------------------------
 
     The oFrugal REPL (Read, Evaluate, Print, Loop) console application
     processes lines of input as a continuous stream of material.  That
-    stream is required to conform to the REPL language syntax for oFrugal.
+    stream is required to conform to the oFrugalese language specification.
 
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -34,10 +34,10 @@ syntax.txt 0.0.0                   UTF-8                          2022-07-29
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oFrugal REPL Language Syntax.  Miser Project Code
-   text file syntax.txt version 0.0.0 dated 2022-07-29 available on the
+   Hamilton, Dennis E. oFrugalese Language Specification.  Miser Project Code
+   text file oFrugalese.txt version 0.0.1 dated 2022-08-06 available on the
    Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oFrugal/syntax.txt>
+   <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugalese.txt>
 
 TODO
 
@@ -68,10 +68,18 @@ TODO
  * Provide the environment that is used to add accumulate binding and supply
    them to ob-exp interpretations.
 
+ * Include file and line identification in the handling of REPL sessions and
+   provide for error identification/location messages that are useful in
+   locating problem points in the input source.
+
+ * Consider line-numbering in the entry of input or maybe only in a CUA editor
+   or maybe even in Visual Studio Code.
+
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.1 2022-08-06T17:13Z Rename from syntax to oFrugalese and add TODOs
  0.0.0 2022-07-29T23:18Z Create placeholder and initial job jar for the
        oFrugal REPL syntax.
 
-                         *** end of oFrugal.txt ***
+                       *** end of oFrugalese.txt ***
