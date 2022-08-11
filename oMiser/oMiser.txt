@@ -1,4 +1,4 @@
-oMiser.txt 0.0.11                   UTF-8                         2022-08-01
+oMiser.txt 0.0.12                   UTF-8                         2022-08-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -104,6 +104,15 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
+   Miser Project text file oMiser.txt version 0.0.12 dated 2022-08-11,
+   available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 TODO
 
   * Connect to internet-accessible resources and availability of stable
@@ -150,10 +159,26 @@ TODO
     that are best moved to an alternative place, such as engineering.txt
     for the overall project.
 
-  * Add attribution.
+  * The fundamental reference that is a historical inspiration for obs and
+    oMiser is [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
+    expressions and their computation by machine, Part 1.  Comm. ACM 3, 4
+    (April 1960), 184-195, https://doi.org/10.1145/367177.367199
+
+  * A related article of possible interest in accelerators or possibly other
+    situations is [Perlis1960] Perlis, A.J., Thornton, Charles.  Symbol
+    manipulation by threaded lists.  Comm. ACM 3, 4 (April 1960), 195-204,
+    https://doi.org/10.1145/367177.367202
+
+  * The Strachey General-Purpose Macro Processor (McG) is also inspirational,
+    as is the Burge and Landin work on applicative systems and ISWIM.
+
+  * How did the Mapping of ALGOL 60 to the lambda calculus deal with
+    assignment operations and storage state?
+
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.12 2022-08-11T20:48Z Touch-ups and attribution, manage TODOs
  0.0.11 2022-08-01T23:38Z Reflect obstring.txt renaming to CFob.txt
  0.0.10 2022-08-01T17:27Z Reflect tombstoning of ob-exp.txt
  0.0.9 2018-11-28-08:14 Add boole.txt and arrange manifest in a recommended
