@@ -1,4 +1,4 @@
-obaptheory.txt 0.1.1                UTF-8                       dh:2022-08-01
+obaptheory.txt 0.1.2                UTF-8                       dh:2022-08-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -41,7 +41,8 @@ obaptheory.txt 0.1.1                UTF-8                       dh:2022-08-01
 
    First, the structure ‹ob› is employed in its entirety, as defined at
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
-   The CFob notation for expession of ob canonical forms is employed.  Viz.,
+   The CFob notation for expession of ob canonical forms is employed (cf.
+   <https://github.com/orcmid/miser/blob/master/oMiser/CFob.txt>).  Viz.,
 
    a. The right-associative infix pair operator, ::, is introduced, with
 
@@ -99,12 +100,12 @@ obaptheory.txt 0.1.1                UTF-8                       dh:2022-08-01
 
    Obap2. Literal Individuals
 
-          obap.is-lindy(x) ⇔ (x = Ʃ's' ∨ x = Ʃ'?s'∨ x = Ʃ'?.s'
+          obap.is-lindy(x) ⇔ (x = Ʃ's' ∨ x = Ʃ'?s'∨ x = Ʃ'?.s')
              where s is a finite-length character string consisting of one or
                      more alphanumeric characters
 
           In the CFob notation, lindy Ʃ's' is simply expressed by the string
-          s text. The forms with prefixed '?' and '?.' have no distinct
+          "s" text. The forms with prefixed '?' and '?.' have no distinct
           significance as lindies, their utilitarian presence being related to
           questionable cases in syntactically-valid oFrugal statements. See
           the treatment of binding names in
@@ -273,7 +274,7 @@ obaptheory.txt 0.1.1                UTF-8                       dh:2022-08-01
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 0.1.1 dated 2022-08-01,
+   Conception text file obaptheory.txt version 0.1.2 dated 2022-08-11,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
 
@@ -281,7 +282,7 @@ obaptheory.txt 0.1.1                UTF-8                       dh:2022-08-01
 TODO
 
  * Provide a stable location for obaptheory version progressions on
-   <http://miser-theory.info>.
+   <https://orcmid.github.io/miser>.
 
  * Items related to the ob-exp concrete syntax should be resolved there, and
    under oFrugal.  Link to the detailed cases.
@@ -313,8 +314,14 @@ TODO
    and it is common for an operation to simply return an unmodified object
    as a trace instead of any further result evaluation.
 
+ * In Obap4(c) determine whether such a result should be viewed as a pure-
+   lindy in any chain and whether there is any benefit of chaining/stacking
+   or whatever the use of space-separated lindies will be called.  This has
+   to be worked out in CFob.txt also.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.2  2022-08-11T20:27Z Touch-ups and review of pure-lindy case
  0.1.1  2022-08-01T20:49Z Refer now to oFrugal/ob-exp.txt
  0.1.0  2022-01-04T01:10Z Introduce the conditional lindies to satisfy the
         context-free completeness of oFrugal pragmatic interpretations.
