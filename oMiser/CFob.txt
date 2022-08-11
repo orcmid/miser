@@ -1,4 +1,4 @@
-CFob.txt 0.0.6                      UTF-8                          2022-08-01
+CFob.txt 0.0.7                      UTF-8                          2022-08-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -7,8 +7,8 @@ CFob.txt 0.0.6                      UTF-8                          2022-08-01
 
       <https://github.com/orcmid/miser/blob/master/oMiser/obstring.txt>
 
-       FRUGALESE GRAMMAR FOR DISPLAYING CANONICAL OBS IN OB-EXP FORM
-       -------------------------------------------------------------
+         FRUGALESE GRAMMAR FOR CANONICAL-FORM OB EXPRESSIONS
+         ---------------------------------------------------
 
     CFob is a string expression of obs that exploits the right-
     associativity of "::" to eliminate unnecessary parentheses.  This
@@ -18,13 +18,14 @@ CFob.txt 0.0.6                      UTF-8                          2022-08-01
     result that is canonical for the very same ob.
 
     See also
-    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
+    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt> and
+    <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
 
  1. SUMMARY GRAMMAR
 
-    Here is a grammar for the Canonical Obs.  Any of these forms are suitable.
-    Reducing the use of parentheses is handled in the procedure for expressing
-    these forms.
+    Here is a BNF grammar for the Canonical Obs.  Any of these forms are
+    suitable.  Reducing the use of parentheses is handled in the procedure for
+    expressing these forms.
 
     〈term〉 ::= 〈lindy〉 | 〈primitive〉
 
@@ -65,7 +66,6 @@ CFob.txt 0.0.6                      UTF-8                          2022-08-01
             else unary(x)
         end;
 
-
     To avoid console Unicode limitations/difficulties, the back-tick (grave
     accent) is used in this procedure.
 
@@ -87,6 +87,15 @@ CFob.txt 0.0.6                      UTF-8                          2022-08-01
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ ATTRIBUTION
+
+   Hamilton, Dennis E. Frugalese Grammar for Canonical Form Ob Expressions.
+   Miser Theory Conception text file CFob.txt version 0.0.7 dated 2022-08-11,
+   available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oMiser/CFob.txt>
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 TODO
 
   * In practice, we don't want to insert more than one space at
@@ -101,14 +110,15 @@ TODO
     extension primitives and they support maintenance of extensional
     identity among all obs.
 
-  * Add Attribution
-
-  * Do we do something else about the pure-lindy cases?
+  * For the pure lindy cases, consider a flattening that does not use "::"
+    but uses a space instead and relies on the obap case producing the same
+    thing because of pure-lindy treatment in obap.ev.
 
   * Update this to reflect the conditional lindies, or is that a case that
     is tied to oFrugal?
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.7 2022-08-11T20:39Z Add attribution, manage TODOs, touch-up
  0.0.6 2022-08-01T23:35Z Renamed from obstring.txt and adjusted to for naming
        CFob.txt in the adjusted narrative.
  0.0.5 2022-08-01T21:00Z Now refer to oFrugal/ob-exp.txt and manage TODOs
