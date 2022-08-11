@@ -1,4 +1,4 @@
-ob-exp.txt 1.0.1                    UTF-8                         2022-08-06
+ob-exp.txt 1.0.2                    UTF-8                         2022-08-11
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -340,41 +340,6 @@ ob-exp.txt 1.0.1                    UTF-8                         2022-08-06
 
  10. REFERENCES
 
-[Backus1958]  Backus, J. W. The syntax and semantics of the proposed
-    International Algebraic Language of the Zurich ACM-GAMM Conference.
-    Proc. International Conference on Information Processing.  UNESCO (Paris:
-    June 1959) pp. 125-132.
-
-[Duncan1967]  Duncan, Fraser G.  Notational abbreviations applied to the
-    syntax of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967),
-    pp.28-32.  Available on the Internet at
-    <http://archive.computerhistory.org/resources/text/algol/algol_bulletin/A26/P35.HTM>.
-       This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired
-    me to use it to use productions to generate naming of productions,
-    providing a vocabulary grammar and generic arrangements, including moving
-    between concrete cases such as 〈integer〉 and 〈〈integer〉-length-string〉.
-    This is not needed here.  I just want this reference set to be complete
-    wherever I use it.
-
-[Ershov1963]  Ershov, A.P., Kozhukhin, G.I., Voloshin, Yu.M.  The Input
-    Language for a System of Automatic Programming.  Computation Center,
-    Academy of Sciences of the USSR (Moscow, 1961, Russian); Academic Press
-    (London, New York: 1963).
-       This provided a type of generic context-free production that inspired
-    some of this work, although not relied upon in the ob-exp grammar.
-
-[Knuth1968]  Knuth, Donald E. Semantics of Context-Free Languages.
-    Mathematical Systems Theory 2 (1968), 127-145.  Errata Mathematical
-    Systems Theory 5 (1971), 95-96.
-       The semantic interpretations here are similar to use of attribute
-    grammars except that the arrangement remains context-free and cycles are
-    generally not possible.  In the oFrugal application, all well-formed
-    inputs have semantics and there are no forward references.  In particular,
-    binding names are always references to the nearest preceding bindings,
-    if any, and the absence of a preceding binding is semantically acceptable.
-
-[Naur1963]  Naur, P. (Ed.)  Revised report on the algorithmic language
-    ALGOL 60.  Commm. ACM 6, 1 (Jan. 1963), 1-17.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -479,6 +444,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.2  2022-08-11T14:32Z Move grammar theory references to grammars.txt
  1.0.1  2022-08-06T17:36Z Touch-ups, add missing .NIL primitive (?)
  1.0.0  2022-07-31T00:16Z Transpose from oMiser\ob-exp.txt to oFrugal\,
         changing location links and nothing else yet.
