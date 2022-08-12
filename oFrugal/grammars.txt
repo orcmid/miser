@@ -1,4 +1,4 @@
-grammars.txt 0.0.0                  UTF-8                         2022-08-11
+grammars.txt 0.0.1                  UTF-8                         2022-08-12
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -142,29 +142,44 @@ grammars.txt 0.0.0                  UTF-8                         2022-08-11
     June 1959) pp. 125-132.  Available on the Internet at
     <https://www.softwarepreservation.org/projects/ALGOL/paper/Backus-Syntax_and_Semantics_of_Proposed_IAL.pdf/view>
 
-    [Chomsky1956]
-        Chomsky, Noam.  Three models for the description of languages.  IRE
-        Transactions on Information Theory 2, 3, 113-124.
-        <https://doi.org/10.1109/TIT.1956.1056813>.  Available on the Internet
-        at <https://chomsky.info/wp-content/uploads/195609-.pdf>.
-           Seeking a model applicable to natural languages, Chomsky identifies
-        finite-state languages (now type 3: regular expressions), phrase-
-        structure languages (now type 2: context free), and transformational
-        languages, the last having his focus.
+[Cheatham1964]
+    Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
+    Proceedings of the April 21-23 1964 Spring Joint Computer Conference
+    (AFIPS: April 1964), 31-57.  A general parser (syntax analyzer) for
+    context-free languages is described.  What we now refer to as a
+    lexical analyser is identified as a recognizer layer.  The analyzer
+    method is most easily recognized as a top-down parser with back-
+    tracking.  It could even be used to produce all analyses available for
+    an ambiguous input.  Refinements of this method that I have explored
+    include pruning alternatives when they cannot be possible if the
+    input will be valid.  This allows early analysis to be forwarded to
+    a generation layer.  There also needs to be some assistance in the
+    case of left-recursive generations, usually expedited by transforma-
+    tion into tail-iterative forms.
 
-    [Chomsky1959]
-        Chomsky, Noam.  On certain formal properties of grammars.  Information
-        and Control 2, 2 (1959), 137-167.
-        <https://doi.org/10.1016/S0019-9958(59)90362-6>.
-           Here Chomsky's models are formalized more fully, establishing a
-        hierarchy from recursively-enumerable (type 0, uninteresting for
-        linguistics) and descending into strictly-tighter subsets with
-        context-sensitive (type 1), context-free type 2), and finite state
-        (type 3).  There is a layer (recursive languages) within type 0 and
-        containing type 1, so all of types 1-3 are recursive and hence
-        decidable.  These are generative grammars: production of grammatical
-        strings is described, not to be confused with notation-borrowing
-        schemes for the parsing of such text strings.
+[Chomsky1956]
+    Chomsky, Noam.  Three models for the description of languages.  IRE
+    Transactions on Information Theory 2, 3, 113-124.
+    <https://doi.org/10.1109/TIT.1956.1056813>.  Available on the Internet
+    at <https://chomsky.info/wp-content/uploads/195609-.pdf>.
+       Seeking a model applicable to natural languages, Chomsky identifies
+    finite-state languages (now type 3: regular expressions), phrase-
+    structure languages (now type 2: context free), and transformational
+    languages, the last having his focus.
+
+[Chomsky1959]
+    Chomsky, Noam.  On certain formal properties of grammars.  Information
+    and Control 2, 2 (1959), 137-167.
+    <https://doi.org/10.1016/S0019-9958(59)90362-6>.
+       Here Chomsky's models are formalized more fully, establishing a
+    hierarchy from recursively-enumerable (type 0, uninteresting for
+    linguistics) and descending into strictly-tighter subsets with
+    context-sensitive (type 1), context-free type 2), and finite state
+    (type 3).  There is a layer (recursive languages) within type 0 and
+    containing type 1, so all of types 1-3 are recursive and hence
+    decidable.  These are generative grammars: production of grammatical
+    strings is described, not to be confused with notation-borrowing
+    schemes for the parsing of such text strings.
 
 [Duncan1967]  Duncan, Fraser G.  Notational abbreviations applied to the
     syntax of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967),
@@ -184,16 +199,16 @@ grammars.txt 0.0.0                  UTF-8                         2022-08-11
        This provided a type of generic context-free production that inspired
     some of this work, although not relied upon in the ob-exp grammar.
 
-    [Gorn1963]
-        Gorn, Saul.  Detection of Generative Ambiguities in Context-Free
-        Mechanical Languages.  J. ACM 10, 2 (April 1963), 196-208.
-        <https://doi.org/10.1145/321160.321168>.
-           Section 1, Introduction, offers a precise definition of context-
-        free (mechanical) languages along with important considerations such
-        as their decidability.  Although it is undecidable, in general,
-        whether a given context-free grammar is ambiguous, it is possible to
-        determine when a particular statement is by relying on a parser such
-        as that of [Cheatham1964].
+[Gorn1963]
+    Gorn, Saul.  Detection of Generative Ambiguities in Context-Free
+    Mechanical Languages.  J. ACM 10, 2 (April 1963), 196-208.
+    <https://doi.org/10.1145/321160.321168>.
+       Section 1, Introduction, offers a precise definition of context-
+    free (mechanical) languages along with important considerations such
+    as their decidability.  Although it is undecidable, in general,
+    whether a given context-free grammar is ambiguous, it is possible to
+    determine when a particular statement is by relying on a parser such
+    as that of [Cheatham1964].
 
 [Knuth1968]  Knuth, Donald E. Semantics of Context-Free Languages.
     Mathematical Systems Theory 2 (1968), 127-145.  Errata Mathematical
@@ -205,18 +220,15 @@ grammars.txt 0.0.0                  UTF-8                         2022-08-11
     binding names are always references to the nearest preceding bindings,
     if any, and the absence of a preceding binding is semantically acceptable.
 
-[Naur1963]  Naur, P. (Ed.)  Revised report on the algorithmic language
-    ALGOL 60.  Commm. ACM 6, 1 (Jan. 1963), 1-17.
-
-    [Naur1963]
-        Naur, Peter (ed.)., Backus, J.W., Bauer, F.L., Green, J., Katz, C.,
-        McCarthy, J., Perlis, A.J., Rutishauser, H., Samelson, K., Vauquois,
-        B., Wegstein, J.H., Van Winjgaarden, A., Woodger, M.  Revised Report
-        on the Algorithmic Language ALGOL 60.  Comm. ACM 6, 1 (January 1963),
-        1-17. DOI <https://doi.org/10.1145/366193.366201>.
-           Although the 1960 publication is often cited, corrections were
-        called for, leading the the 1963 Revised Report.  Some ambiguities
-        in the grammar were repaired.
+[Naur1963]
+    Naur, Peter (ed.)., Backus, J.W., Bauer, F.L., Green, J., Katz, C.,
+    McCarthy, J., Perlis, A.J., Rutishauser, H., Samelson, K., Vauquois,
+    B., Wegstein, J.H., Van Winjgaarden, A., Woodger, M.  Revised Report
+    on the Algorithmic Language ALGOL 60.  Comm. ACM 6, 1 (January 1963),
+    1-17. DOI <https://doi.org/10.1145/366193.366201>.
+       Although the 1960 publication is often cited, corrections were
+    called for, leading the the 1963 Revised Report.  Some ambiguities
+    in the grammar were repaired.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -239,16 +251,22 @@ grammars.txt 0.0.0                  UTF-8                         2022-08-11
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammars and Interpretations for oMiser.  Miser
-   Theory text file grammars.txt version 0.0.0 dated 2022-08-11,
+   Theory text file grammars.txt version 0.0.1 dated 2022-08-12,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
 
 TODO
 
+ * Prune these TODOs to remove thoe that apply to oFrugalese, ob-exp, or
+   other topics.
+
  * Revealing examples are needed here.  Grace Hopper favored that and I
    should heed it for that reason alone.
 
+ * Cite other forms of BNF, such as the EBNF used at IETF, others.
 
+ * Cite the Ned Irons paper on syntax-directed compiling for its historical
+   importance.
 
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
@@ -257,15 +275,14 @@ TODO
    digits, and the restricted allowance of other characters in ob-exp terms.
    Provide a reference.
 
-
-
  * It is necessary to make clear that these are geneative grammars and there
    should be some links about those.  The Saul Gorn clarity would be useful.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1  2022-08-12T18:42Z Cleanups and TODO management
  0.0.0  2022-08-11T17:36Z Place-holder and boiler-plate extracted from
         ob-exp.txt 1.0.1 and mindelay.txt
 
 
-                 *** end of oFrugal\grammars.txt ***
+                 *** end of oFrugal/grammars.txt ***

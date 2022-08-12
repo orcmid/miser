@@ -1,4 +1,4 @@
-mindelay.txt 0.0.3                  UTF-8                          2022-08-11
+mindelay.txt 0.0.4                  UTF-8                          2022-08-12
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -73,71 +73,56 @@ ERROR HANDLING
 NOTES AND REFERENCES
 
 
-    [Cheatham1964]
-        Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
-        Proceedings of the April 21-23 1964 Spring Joint Computer Conference
-        (AFIPS: April 1964), 31-57.  A general parser (syntax analyzer) for
-        context-free languages is described.  What we now refer to as a
-        lexical analyser is identified as a recognizer layer.  The analyzer
-        method is most easily recognized as a top-down parser with back-
-        tracking.  It could even be used to produce all analyses available for
-        an ambiguous input.  Refinements of this method that I have explored
-        include pruning alternatives when they cannot be possible if the
-        input will be valid.  This allows early analysis to be forwarded to
-        a generation layer.  There also needs to be some assistance in the
-        case of left-recursive generations, usually expedited by transforma-
-        tion into tail-iterative forms.
+[Evans1961]
+    Evans, A., Perlis, A.J., Van Zoeren, H. The Use of Threaded Lists in
+    Construction of a Combined ALGOL and Machine-Like Assembly Processor.
+    Comm. ACM 4, 1 (Jan. 1961), 36-41.
+    DOR <https://dl.acm.org/doi/10.1145/366062.366081>.
+       Footnote 2 on p.37 describes "mindelayscandoer" as "scan and do
+    translation to final code as quickly as possible."  The idea of
+    threaded lists does not apply well to oMiser, though a counterpart
+    might assist in operator-precedence handling.
 
-    [Evans1961]
-        Evans, A., Perlis, A.J., Van Zoeren, H. The Use of Threaded Lists in
-        Construction of a Combined ALGOL and Machine-Like Assembly Processor.
-        Comm. ACM 4, 1 (Jan. 1961), 36-41.
-        DOR <https://dl.acm.org/doi/10.1145/366062.366081>.
-           Footnote 2 on p.37 describes "mindelayscandoer" as "scan and do
-        translation to final code as quickly as possible."  The idea of
-        threaded lists does not apply well to oMiser, though a counterpart
-        might assist in operator-precedence handling.
+[Floyd1963]
+    Floyd, Robert W.  Syntactic Analysis and Operator Precedence.  J. ACM
+    10, 3 (July 1963), 316-333.
+       Floyd provides a mechanical means of producing precedence parsers
+    when grammars are specified in a form for which definite precedence
+    conditions can be derived.  The special case of assigning numerical
+    precedence values to syntactic features and then comparing those,
+    among other enhancements, are found by formal means.  The full
+    analysis technique is particularly valuable in testing that a grammar
+    admits operator-precedence parsing simplicity and automatic production
+    is valuable when modifications of the language are anticipated.
 
-    [Floyd1963]
-        Floyd, Robert W.  Syntactic Analysis and Operator Precedence.  J. ACM
-        10, 3 (July 1963), 316-333.
-           Floyd provides a mechanical means of producing precedence parsers
-        when grammars are specified in a form for which definite precedence
-        conditions can be derived.  The special case of assigning numerical
-        precedence values to syntactic features and then comparing those,
-        among other enhancements, are found by formal means.  The full
-        analysis technique is particularly valuable in testing that a grammar
-        admits operator-precedence parsing simplicity and automatic production
-        is valuable when modifications of the language are anticipated.
+[Knuth1962]
+    Knuth, Donald E.  A History of Writing Compilers.  Computers and
+    Automation 11, 12 (December 1962), 8-18.  Reprinted in Chapter 20,
+    pp. 439-456 in Donald E. Knuth, Selected Papers on Computer Languages.
+    CSLI Publications (Stanford, CA: 2003).  ISBN 1-57586-382-0 pbk.
+       The explanation of operator precedence and its illustration is very
+    close to how the oFrugal REPL parser will parse and interpret ob-exp
+    formulas.
 
-    [Knuth1962]
-        Knuth, Donald E.  A History of Writing Compilers.  Computers and
-        Automation 11, 12 (December 1962), 8-18.  Reprinted in Chapter 20,
-        pp. 439-456 in Donald E. Knuth, Selected Papers on Computer Languages.
-        CSLI Publications (Stanford, CA: 2003).  ISBN 1-57586-382-0 pbk.
-           The explanation of operator precedence and its illustration is very
-        close to how the oFrugal REPL parser will parse and interpret ob-exp
-        formulas.
+[Pratt1973]
+    Pratt, Vaughan R.  Top Down Operator Precedence.  Proc. 1st Annual ACM
+    SIGACT-SIGPLAN Symposium on Priniciples of Programming Languages
+    (October 1973), 41-45.  <https://doi.org/10.1145/512927.512931>.
+       This technique has found considerable favor at varous points in
+    time.  Section 1, Survey of the Problem Domain, and early parts
+    of section 2, Three Syntactic Issues, are valuable for considerations
+    of the desire for operator precedence simplicity. The technique
+    depends on the creation of procedures that apply to various elements
+    in the course of parsing that is not quite how interpretation is
+    specified for the oFrugal grammar.  The considerations do apply.
 
-    [Pratt1973]
-        Pratt, Vaughan R.  Top Down Operator Precedence.  Proc. 1st Annual ACM
-        SIGACT-SIGPLAN Symposium on Priniciples of Programming Languages
-        (October 1973), 41-45.  <https://doi.org/10.1145/512927.512931>.
-           This technique has found considerable favor at varous points in
-        time.  Section 1, Survey of the Problem Domain, and early parts
-        of section 2, Three Syntactic Issues, are valuable for considerations
-        of the desire for operator precedence simplicity. The technique
-        depends on the creation of procedures that apply to various elements
-        in the course of parsing that is not quite how interpretation is
-        specified for the oFrugal grammar.  The considerations do apply.
-
-    [Samelson1960]
-        Samelson, K., Bauer, F.L.  Sequential Formula Translation.
-        Comm. ACM 2, 2 (Feb. 1960), 76-83.
-        DOR <https://dl.acm.org/doi/10.1145/366959.366968>.
-           This paper describes a cellar (ie., stack) principle for
-        translation of algorithmic expressions, treating precedence of infix
-        operators. The stack of (intermediate) operands is kept separate.
+[Samelson1960]
+    Samelson, K., Bauer, F.L.  Sequential Formula Translation.
+    Comm. ACM 2, 2 (Feb. 1960), 76-83.
+    DOR <https://dl.acm.org/doi/10.1145/366959.366968>.
+       This paper describes a cellar (ie., stack) principle for
+    translation of algorithmic expressions, treating precedence of infix
+    operators. The stack of (intermediate) operands is kept separate.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -160,7 +145,7 @@ NOTES AND REFERENCES
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Mindelay Parser Design.  Miser Project
-   Code tex file oFrugal.txt version 0.0.3 dated 2022-08-11 available on the
+   Code tex file oFrugal.txt version 0.0.4 dated 2022-08-12 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
@@ -195,6 +180,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.4 2022-08-12T18:45Z Touch-Ups, Adjust References
  0.0.3 2022-08-11T21:26Z Transpose syntax theory references to grammars.txt
  0.0.2 2022-08-06T17:39Z Intermediate draft back-up
  0.0.1 2022-08-02T00:16Z Customize the boilerplate
