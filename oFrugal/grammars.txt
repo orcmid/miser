@@ -1,4 +1,4 @@
-grammars.txt 0.0.1                  UTF-8                         2022-08-12
+grammars.txt 0.0.2                  UTF-8                         2022-08-15
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -7,8 +7,24 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
 
     <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
 
-            FORMAL GRAMMARS AND INTERPRETATIONS FOR oMISER
-            ----------------------------------------------
+              FORMAL GRAMMARS AND INTERPRETATIONS FOR oFRUGAL
+              -----------------------------------------------
+
+    The oFrugal notations for oMiser computations are defined with BNF
+    (Backus-Naur Form) and given phrase-structure grammars.
+
+    Phrase-structure grammars are commonly used in the specification of
+    programming languages, with additional grammatical requirements usually
+    given as additional conditions and constraints.
+
+    oFrugalese, the language accepted by the oFrugal REPL, is precisely
+    and completely specified in BNF.  Every grammatical text is completely
+    valid: every grammatical text has a definite semantic interpretation,
+    without exception.  This is a counterpart of the definition of the oMiser
+    universal function in which every ob has an applicative interpretation.
+
+     1. MISER BNF NOTATION
+
 
     Ob-exp texts are used as a means of specifying obs and computations
     with them to derive an ob result.  Ob-exp is an expression language
@@ -32,7 +48,11 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
     <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt> and other
     material cited there.
 
-
+    *** We will use phrase categories instead of non-terminals, but the
+    idea is the same.  In particular, when there are no non-terminals in
+    a sequence (i.e., only terminals), that is a terminal phrase.  There is
+    no further expansion available.
+    ***
 
 
     The following summary form of the grammar is useful for reference.
@@ -54,6 +74,13 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
 
 
  2. EXPRESSION INTERPRETATION
+
+   ** Two things about choice of grammar.  First, the desire to have a
+   particular form that does not change the set of valid sentences but is
+   more amenable to derivation of a syntax-oriented parser.  The second is
+   related to expedite the correspondence of phrase structures with the
+   intended interpretations.  These pragmatic and highly-practical maneuvers
+   are unnecessary, in principle, but extremely valuable in practice.
 
     Interpretation of expressions as obs is accomplished using a special
     schema notation that specifies the Ot (‹ob› theory-language) expression
@@ -134,7 +161,7 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
     [DETAILS TBD]
 
 
- 10. REFERENCES
+ 10. NOTES AND REFERENCES
 
 [Backus1958]  Backus, J. W. The syntax and semantics of the proposed
     International Algebraic Language of the Zurich ACM-GAMM Conference.
@@ -145,17 +172,17 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
 [Cheatham1964]
     Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
     Proceedings of the April 21-23 1964 Spring Joint Computer Conference
-    (AFIPS: April 1964), 31-57.  A general parser (syntax analyzer) for
-    context-free languages is described.  What we now refer to as a
-    lexical analyser is identified as a recognizer layer.  The analyzer
-    method is most easily recognized as a top-down parser with back-
-    tracking.  It could even be used to produce all analyses available for
-    an ambiguous input.  Refinements of this method that I have explored
-    include pruning alternatives when they cannot be possible if the
-    input will be valid.  This allows early analysis to be forwarded to
-    a generation layer.  There also needs to be some assistance in the
-    case of left-recursive generations, usually expedited by transforma-
-    tion into tail-iterative forms.
+    (AFIPS: April 1964), 31-57.
+       A general parser (syntax analyzer) for context-free languages is
+    described.  What we now refer to as a lexical analyser is identified as a
+    recognizer layer.  The analyzer method is most easily recognized as a
+    top-down parser with back-tracking.  It could even be used to produce all
+    analyses available for an ambiguous input.  Refinements of this method
+    that I have explored include pruning alternatives when they cannot be
+    possible if the input will be valid.  This allows early analysis to be
+    forwarded to a generation layer.  There also needs to be some assistance
+    in the case of left-recursive generations, usually expedited by
+    transformation into tail-iterative forms.
 
 [Chomsky1956]
     Chomsky, Noam.  Three models for the description of languages.  IRE
@@ -186,7 +213,7 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
     pp.28-32.  Available on the Internet at
     <http://archive.computerhistory.org/resources/text/algol/algol_bulletin/A26/P35.HTM>.
        This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired
-    me to use it to use productions to generate naming of productions,
+    me to use it to use productions to generate naming of phrase categories,
     providing a vocabulary grammar and generic arrangements, including moving
     between concrete cases such as 〈integer〉 and 〈〈integer〉-length-string〉.
     This is not needed here.  I just want this reference set to be complete
@@ -210,15 +237,20 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
     determine when a particular statement is by relying on a parser such
     as that of [Cheatham1964].
 
+[Irons1961]
+    Irons, Edgar T.  A syntax directed compiler for ALGOL 60.  Comm. ACM 4,
+    1 (January 1961), 51-55.
+
 [Knuth1968]  Knuth, Donald E. Semantics of Context-Free Languages.
     Mathematical Systems Theory 2 (1968), 127-145.  Errata Mathematical
     Systems Theory 5 (1971), 95-96.
-       The semantic interpretations here are similar to use of attribute
-    grammars except that the arrangement remains context-free and cycles are
-    generally not possible.  In the oFrugal application, all well-formed
-    inputs have semantics and there are no forward references.  In particular,
-    binding names are always references to the nearest preceding bindings,
-    if any, and the absence of a preceding binding is semantically acceptable.
+       The semantic interpretations for oFrugalese are similar to those of
+    Knuth's attribute grammars except that the arrangement remains context-
+    free and cycles are generally not possible.  In the oFrugal application,
+    all well-formed inputs have semantics and there are no forward references,
+    although there can be semantical context.  In particular, binding names
+    are always references to the nearest preceding bindings, if any, and the
+    absence of a preceding binding is semantically acceptable.
 
 [Naur1963]
     Naur, Peter (ed.)., Backus, J.W., Bauer, F.L., Green, J., Katz, C.,
@@ -227,8 +259,32 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
     on the Algorithmic Language ALGOL 60.  Comm. ACM 6, 1 (January 1963),
     1-17. DOI <https://doi.org/10.1145/366193.366201>.
        Although the 1960 publication is often cited, corrections were
-    called for, leading the the 1963 Revised Report.  Some ambiguities
+    called for, leading to the 1963 Revised Report.  Some ambiguities
     in the grammar were repaired.
+
+[Quine1981]
+    Quine, Willard Van Orman.  Mathematical Logic, Revised Edition.  Harvard
+    University Press (Cambridge, MA: 1940, 1981).  ISBN 0-674-55451-5 pbk.
+       Quasi-quotation is introduced in Section 6. Quine's devotion to the
+    inspiration of [Whitehead1997], itself an outgrowth of Russell's
+    inspiration in Euclid, foretells the further simplification of formal
+    mathematical logic that has left behind the original notations and the
+    hierarchies of types.  In Chapter 7 on Syntax, the formal development of
+    logic itself is undertaken.
+
+[Whitehead1997]
+    Whitehead, Alfred North., Russell, Bertrand.  Principia Mathematica to
+    *56.  Cambridge University Press (Cambridge: 1910, 1927, 1962, 1997).
+    ISBN 0-521-62606-4 pbk.
+       The full three volumes, first published in 1910, was an epochal event.
+    It provided a platform on which questions of decidability and the work
+    of Gödel, Church, Turing, and others would be erected.  The appeal to
+    Newton's 1687 work of similar title reflects the aspiration of the authors
+    to grasp the foundation of mathematics as derivable from logic.
+
+[Wikipedia2022]
+    Wikipedia.  Context-Free Grammar, article version of 2022-06-05T09:33
+    accessed at <https://en.wikipedia.org/wiki/Context-free_grammar>.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -250,9 +306,9 @@ grammars.txt 0.0.1                  UTF-8                         2022-08-12
 
   ATTRIBUTION
 
-   Hamilton, Dennis E. Formal Grammars and Interpretations for oMiser.  Miser
-   Theory text file grammars.txt version 0.0.1 dated 2022-08-12,
-   available on the Internet as a version of
+   Hamilton, Dennis E. Formal Grammars and Interpretations for oFrugal.  Miser
+   Project text file grammars.txt version 0.0.2 dated 2022-08-15, available
+   on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
 
 TODO
@@ -261,12 +317,16 @@ TODO
    other topics.
 
  * Revealing examples are needed here.  Grace Hopper favored that and I
-   should heed it for that reason alone.
+   should heed it for that reason alone.  [This applies more to ob-exp.txt and
+   oFrugalese.txt though.]
 
  * Cite other forms of BNF, such as the EBNF used at IETF, others.
 
  * Cite the Ned Irons paper on syntax-directed compiling for its historical
    importance.
+
+ * Cite Quine for the quasi-quotation marks and also refer to the Wikipedia
+   article, <https://en.wikipedia.org/wiki/Quasi-quotation>.
 
  * Add the handling of concrete cases and the tie-in to a reference
    character code, akin to the counterpart in the XML specification.
@@ -278,8 +338,19 @@ TODO
  * It is necessary to make clear that these are geneative grammars and there
    should be some links about those.  The Saul Gorn clarity would be useful.
 
+ * Organize the historical discussion to follow the specifics for oFrugal.
+
+ * Include Panini and Ingerman's suggestion about that.
+
+ * Identify Pattern Languages, in Alexander's formulation, as similarly
+   linguistical, though conceptually different (i.e., not about texts)
+
+ * Find the material on Post's production system and also its use in the
+   the material referenced by John W. Carr, III.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2  2022-08-15T16:24Z Manage TODOs, touch-up boilerplate still
  0.0.1  2022-08-12T18:42Z Cleanups and TODO management
  0.0.0  2022-08-11T17:36Z Place-holder and boiler-plate extracted from
         ob-exp.txt 1.0.1 and mindelay.txt
