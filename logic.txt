@@ -1,4 +1,4 @@
-logic.txt 0.0.3                      UTF-8                      dh:2022-04-10
+logic.txt 0.0.4                      UTF-8                      dh:2022-11-02
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -132,7 +132,7 @@ NOTES AND BIBLIOGRAPHY
 ATTRIBUTION
 
    Hamilton, Dennis E. Logic for Miser to Logic in Miser. Miser Theoretical
-   Conception text file theory.txt version 0.0.3 dated 2020-07-15, available
+   Conception text file logic.txt version 0.0.4 dated 2022-11-02, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/theory.txt>
 
@@ -150,8 +150,13 @@ TODO
    viewing how computational as well as other interpretations are handled
    here.
 
+ * Put my position paper and slides on Logic for CS Undergraduates somewhere
+   that they can be linked from here.  This should be in a docs/ folio,
+   but perhaps somewhere like nfoTools rather than only here.  Think it over.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2022-11-02T15:52Z Manage TODOs
  0.0.3 2022-04-10T15:55Z Expand notes and references
  0.0.2 2020-07-24-09:29 Add [Metamath2019], related notes and TODOs.
  0.0.1 2020-07-15-16:11 Start expanding the annotated bibliography and begin
