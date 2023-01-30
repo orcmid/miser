@@ -1,4 +1,4 @@
-oMiser.txt 0.0.12                   UTF-8                         2022-08-11
+oMiser.txt 0.0.14                   UTF-8                         2023-01-30
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -63,6 +63,9 @@ MANIFEST
         of additional abstractions in each other and in ‹ob›, arriving
         at idiomatic cases for computational-interpretation in oMiser
 
+    mathZ.txt
+        using the bvx Boolean Vector form, represent integer arithmetic
+
     obaptheory.txt
         specification of the ‹ob› universal function that every oMiser
         implementation manifests.
@@ -79,7 +82,7 @@ MANIFEST
 
     CFob.txt
         description of the grammar for Canonical Obs and a procedure for
-        expressiong them in strings that minimize use of "( ... )".
+        expressing them in strings that minimize use of "( ... )".
 
     mockups/
         subtree for experimental mock-ups that demonstrate oMiser
@@ -88,7 +91,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                    Copyright 2018-2022 Dennis E. Hamilton
+                    Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -107,7 +110,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.12 dated 2022-08-11,
+   Miser Project text file oMiser.txt version 0.0.14 dated 2023-01-30,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
@@ -124,10 +127,14 @@ TODO
 
   * Check out Henry Baker's approach to using stack drag as a way to have
     rapid pair construction with only longer-lived material swept to the
-    heap.
+    heap.  This is something he and I talked about at the first AAAI meeting
+    at Stanford.  I had a skeletal Z80 implementation.  I think the Chicken
+    Scheme one may be very desirable for x64 implementations.
 
   * Deal with experimental speed-up devices, including tail recursion,
-    to determine whether they are effective storage-reduction measures.
+    to determine whether they are effective storage-reduction measures.  There
+    are other accelerator techniques that may cooperate with this.  It remains
+    open to me whether tail recursion is detectable in obap.ap.
 
   * Consider a lab structure alongside the main dev and source-code
     structures.
@@ -173,11 +180,34 @@ TODO
     as is the Burge and Landin work on applicative systems and ISWIM.
 
   * How did the Mapping of ALGOL 60 to the lambda calculus deal with
-    assignment operations and storage state?
+    assignment operations and storage state?  It looks like continuations
+    are fruitful, if the compute expression of F# is informative.  I still
+    haven't got my head around it (2023-01-11).
 
+  * EMERGENCE OF TYPES AND "OBJECTS" is a key matter. It is at the heart of
+    the stored-program model and it serves to illustrate the limits of
+    computable functions to within denumerability. In some sense, the larger
+    the domains of discourse (in cardinality terms), the computable functions
+    are a tinier and tinier subset.
+
+  * INTERPRETATION MATTERS and some constructions are strictly mystery meat
+    in the absence of any expression of intended interpretation.  I suppose
+    at some point one arrives at a perspective on category theory, although I
+    will need to understand Eugenia Chang's portrayal better.
+
+  * Use the ability to create interpretations over a sufficient model of
+    computation to motivate the narrative about oMiser and what works for it.
+    The lindy trace hack and an extended syntax for it get around the need
+    for other data types, synce lyndies give us sufficient literals for
+    atoms in strings (list structures).
+
+  * Add the rulers used on nfoTools
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.14 2023-01-30T23:27Z Add mathZ.txt and manage TODOs
+ 0.0.13 2023-01-11T16:47Z Manage TODOs, emphasizing stored-program
+        interpretations.
  0.0.12 2022-08-11T20:48Z Touch-ups and attribution, manage TODOs
  0.0.11 2022-08-01T23:38Z Reflect obstring.txt renaming to CFob.txt
  0.0.10 2022-08-01T17:27Z Reflect tombstoning of ob-exp.txt
