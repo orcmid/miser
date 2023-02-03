@@ -1,4 +1,4 @@
-mathZ.txt 0.0.0                     UTF-8                          2023-01-30
+mathZ.txt 0.0.1                     UTF-8                          2023-02-03
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -7,8 +7,8 @@ mathZ.txt 0.0.0                     UTF-8                          2023-01-30
         <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
 
 
-              AN INTERPRETATION OF INTEGER ARITHMETIC IN oMISER
-              -------------------------------------------------
+                   MATHZ INTEGER ARITHMETIC IN oMISER
+                   ----------------------------------
 
         The interpretation of Integer Arithmetic is based on the ‹ba›
         simulation of Boolean Algebra using ob.bvx for arbitrary length
@@ -75,33 +75,30 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
                  1.3 Additional Characteristics
                  1.4 Interpretations
 
-              2. ‹bp› REPRESENTATIONS
+              2. MathZ IMPLEMENTATION OF ‹Z›
 
                  2.1 Prototypical (Standard) Representation
                  2.2 Notable Qualities
                  2.3 ‹bp› Interpretation in ‹ob›
-                 2.4 Domain-Restriction Consequences
-                 2.5 Domain-Relaxation Equivalence
 
-              3. ‹ba› REPRESENTATIONS
 
-                 3.1 Concrete Representation, ‹bn›
-                 3.2 Boolean-Vector Structures, ‹bvn›
-                 3.3 Concrete Interpretation: ‹bvn› - ‹bn› isomorphism
+              3. ‹Z› PRIMITIVE OPERATIONS
+
                  3.4 ‹ba› Simulation in ‹ob›: All-‹bvn› Interpretation ob.bvx
                  3.5 Circling back: Distinguishing ob.bvx as ‹ba›
                      interpretation
 
               4. NOTES AND REFERENCES
-                 Sources of further details and theoretical work concerning
-                 Boolean Algebras and computational matters
+                 Sources on N, Z, and 2's complement numeral representations
+                 of finite Z.
 
- 1. MATHEMATICAL STRUCTURES
+ 1. MATHEMATICAL STRUCTURE
 
-    Two mathematical structures are introduced in the same manner as for ‹ob›.
+    The mathematical structure ‹Z› is introduced in the same manner as for
+    ‹ob› and <ba>.
 
-    ‹ba› = 〈Ba,Baf,Bat〉
-    ‹bp› = 〈Bp,Bpf,Bpt〉
+    ‹Z› = 〈Zi,Zf,Zt〉
+
 
     The logical theories Bpt and Bat are applications of First Order Logic
     with = (FOL=) using the notation introduced in Section 1 of obtheory.txt,
@@ -204,339 +201,14 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
  1.4 Interpretations
 
-    The structures, ‹ba› and the special case ‹bp› are highly abstract.
-    The only requirement for representing any ‹ba› is to distinguish the
-    (finitely) enumerable members of the domain of discourse in some manner;
-    then represent basic operations (1.1) satisfying the basic constraints
-    (1.2).
 
-    The straighforward ‹bp› flavor is known to be extremely valuable
-    for work in logic and in computation (section 2).  A related Boolean
-    Algebra structure, ‹bvn›, is one means of interpreting all other Boolean
-    Algebras, ‹ba›, with finite domains of discourse.  ‹bvn›, along with ‹bp›,
-    offers a means of computational interpretation of ‹ba› structures that has
-    widespread computational application (section 3).
-
-    For the Miser Project, one exploitation of the effective computability of
-    ‹ba› structures is by establishing an interpretation in ‹ob› and then
-    relying on the corresponding effective computability of such ‹ob›
-    representations.  That brings us to the vicinity of computational
-    interpretation in the ‹ob› model of computation.
-
-    For representations and interpretations in any domains, we'll use the
-    functional notations (comp(x), meet(x,y), join(x,y), sub, etc.) with a
-    naming practice that distinguishes the structure involved.  Expression
-    operators ~, ∪, ∩, etc., are only used where the intended structure is
-    implicit or unimportant to distinguish.
-
- 2. ‹bp› REPRESENTATIONS
-
- 2.1 Standard Representation
-
-    Given definite Bp = {⊥, ⊤}, in structure ‹bp› = 〈Bp,Bpf,Bpt〉, the
-    axioms for any ‹ba› are fully satisfied by the functions represented here
-    as bp.comp, bp.meet, bp.join, etc.
-
-    bp.comp(⊥) = ⊤
-    bp.comp(⊤) = ⊥
-
-    bp.meet(⊤, x) = x
-    bp.meet(⊥, x) = ⊥
-
-    bp.join(⊤, x) = ⊤
-    bp.join(⊥, x) = x
-
-    bp.sep(⊤, x) = bp.comp(x)
-    bp.sep(⊥, x) = x
-
-    bp.sub(⊤, ⊤)
-    bp.sub(⊥, x)
-
- 2.2 Notable Qualities
-
-     * Verification of a computational interpretation of (1.3) Ba1-Ba11 by
-       exhaustive testing is feasible in the case of ‹bp› = 〈Bp,Bpf,Bpt〉.
-
-     * All effectively-computable functions, bp.f(x1, x2, ..., xn) in Bpf are
-       representable via Bpt using only bp.comp, bp.meet, and bp.join
-       operations along with ‹bp› equality.
-
-     * Propositions of the form bp.f(x1, x2, ..., xn) = ⊤ correspond to
-       propositional logic assertions s(p1, p2, ..., pn) by rewriting the Bt
-       expression of bp.f such that ~ x becomes ¬ p, x ∩ y becomes p ∧ q,
-       x ∪ y becomes p ∨ q, and x ∸ y becomes ¬ (p ⇔ q), the latter also
-       known as exclusive-or.
-
-     * The form bp.f(x1, x2, .., xn) is satisfiable if there is an assignment
-       of {⊥, ⊤} values to individual xi such that bp.f(x1, x2, .., xn) = ⊤.
-       The determination of satisfiability from an expression for bp.f can
-       grow exponentially in the worst case as the number of variables
-       increases.  Whether the worst case cannot be improved figures in an
-       important conjecture (P ≠ NP) concerning computational complexity.
-
- 2.3 ‹bp› Interpretation in ‹ob›
-
-    A straightforward interpretation of ‹bp› in ‹ob› is by choosing any two
-    distinct obs as ⊥ and ⊤ and matching the standard representation of the
-    ‹bp› functions with functions having corresponding representations in
-    ‹ob›.
-
-           ‹bp› notion (in Bpt)          an ‹ob› interpretation (in Ot)
-
-              ⊥                            ob.NE.bp.bot = ob.NIL
-              ⊤                            ob.NE.bp.top = ob.e(ob.NIL)
-              bp.comp(x)                   ob.NE.bp.comp(x)
-              bp.meet(x, y)                ob.NE.bp.meet(x, y)
-              bp.join(x, y)                ob.NE.bp.join(x, y)
-              bp.sep(x, y)                 ob.NE.bp.sep(x, y)
-              bp.sub(x, y)                 ob.NE.bp.is-sub(x, y)
-              x = y                        x = y
-
-    supposing identification of sequence NE = [ob.NIL, ob.e(ob.NIL)] with
-    the corresponding sequence [⊥, ⊤].
-
-    Representation of the given ‹ob› interpretation can be accomplished
-    directly.  Simply rewrite the unique representation (2.1) in Ot such that
-    each occurrence of "bp" in the formulation is written "ob.NE.bp".
-    Validity of the interpretation is direct.
-
-    The elaborate namings, such as ob.NE.comp, reflect interpretation
-    based on the pair NE = [ob.NIL, ob.e(ob.NIL)], distinguishing among
-    the extensive number of distinct interpretations of ‹bp› in ‹ob›.
-
- 2.4 Domain-Restriction Consequences
-
-    Whereas the ‹bp› domain of discourse has exactly two mathematical
-    entities, that is not the case for ‹ob›.  Carrying over the Bpt function
-    representations of ‹bp› functions to corresponding representations in
-    ‹ob› leads to partial functions in Of, ones undefined/ill-defined when an
-    operand is neither an interpretation of ⊥ nor of ⊤.  That is no such
-    difficulty as long as operands are confined to the interpretations.
-
-    The undefined cases confound computational interpretations where direct
-    lack of definition interferes with reasoning about computations. Lack of
-    specification also raises questions about what operational behavior must
-    be introduced in the case of computational-interpretation infractions.
-
- 2.5 Domain-Relaxation Equivalence
-
-    Alternatively, consider ob.p01.bp.comp(x), ..., ob.p01.bp.sub(x, y) with
-    these representations:
-
-         ob.p01.bp.bot = ob.NIL
-         ob.p01.bp.top = ob.e(ob.NIL)
-
-         ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.p01.bp.top
-       ¬ ob.is-individual(x) ⇒ ob.p01.bp.comp(x) = ob.p01.bp.bot
-
-         ob.is-individual(x) ⇒ ob.p01.bp.meet(x, y) = x
-       ¬ ob.is-individual(x) ⇒ ob.p01.bp.meet(x, y) = y
-
-         ob.is-individual(x) ⇒ ob.p01.bp.join(x, y) = y
-       ¬ ob.is-individual(x) ⇒ ob.p01.bp.join(x, y) = x
-
-         ob.is-individual(x) ⇒ ob.p01.bp.sep(x, y) = y
-       ¬ ob.is-individual(x) ⇒ ob.p01.bp.sep(x, y) = ob.p01.bp.comp(y)
-
-         ob.is-individual(x) ⇒ ob.p01.bp.sub(x, y)
-       ¬ ob.is-individual(x)
-            ⇒ ( ob.p01.bp.sub(x, y) ⇔ ¬ ob.is-individual(y) )
-
-    Under restriction of all operands to members of NE, the previous interpre-
-    tation (2.3) is satisfied under domain restriction, just as in (2.4).  The
-    use of p01 is a concession to the practice of designating ‹bp› ⊥ and ⊤
-    with symbols 0 and 1, respectively, although the ob.p01.bp interpretation
-    is rather different.  That will be useful in interpretations of ‹ba›
-    (section 3).
-
-    This relaxed ‹ob› representation has the interesting quality that any
-    individual is an interpretation of ⊥ and any non-individual is an
-    interpretation of ⊤.  In this case we can consider ob.NIL to be the
-    canonical form for interpretation of ⊥ and ob.e(ob.NIL) can serve as the
-    canonical form for interpretation of ⊤.  The canonical form of an ob, x,
-    in this interpretation is uniquelly determined by
-
-         ob.p01.bp.cf(x) = ob.p01.bp.comp(ob.p01.bp.comp( x )).
-
-    We can now remove the domain restriction by simply replacing the ‹ob›
-    interpretation of x = y in (2.3) with ob.p01.bp.is-eq(x, y)
-
-         ob.p01.bp.is-eq(x,y) ⇔ ob.p01.bp.comp(x) = ob.p01.bp.comp(y).
-
-    because ob.p01.bp.comp only yields canonical forms and if the complements
-    are equal so are the canonical forms.
-
-    This alternative effectively partitions the obs into two equivalence
-    classes, one of all individuals and the other of everything else, and
-    it is the classes that are interpreted as ⊥ and ⊤, respectively.
-
-    Generalizations that preserve constraints while simplifying the
-    formulation can be seen as a form of mathematical engineering.  Such
-    approaches arise in the generalization of computational interpretations
-    where the simplicity is important for understanding of validity and may
-    also improve/simplify operational performance.
 
     After [Forster2003], an interpretation where "="s correspond is termed
-    an implementation.  When "="s do not correspond directly, but there is a
-    corresponding representation in the interpretation, the interpretation is
-    known as a simulation, the case of ob.p01.bp here.
+    an implementation.  We will make that the case.
 
- 3. ‹ba› REPRESENTATIONS
+ 2. MathZ IMPLEMENTATION OF ‹Z›
 
-    When the ‹ba› = 〈Ba,Baf,Bat〉 domain of discourse, Ba, consists of more
-    than two distinct members, finding a representation is not immediately
-    obvious, in contrast with the handy representation of ‹bp› (section 2.1).
-    ‹ba› representation depends on identification of the members of domain Ba
-    and representing comp, join, and meet in Bat such that the axioms are
-    consistently satisfied (section 1.2).
-
-    The mathematical theory of Boolean Algebras provides an assurance that
-    every Boolean Algebra is isomorphic to what is known as a concrete
-    Boolean Algebra [Wikipedia2018a].  By isomorphic is meant, here, that
-    interpretation of one in the other works in both directions, without
-    domain restriction.
-
-    Having representations of concrete Boolean Algebras achieves ready
-    availability of computational interpretations for those and also whatever
-    isomorphic ‹ba› representations are identified.
-
- 3.1 Concrete Representation, ‹bn›
-
-    We define ‹bn› = 〈Bn,Bnf,Bnt〉, with natural number n > 0, to be a
-    concrete ‹ba› structure as follows.
-
-    The number of distinguished members in the domain of discourse, Bn, is
-    even and a power of two, symbolized 2^n.
-
-    Choose a set of n distinct entities, An = {a1 ,a2, ..., an}.  Let Bn
-    consist of all of the subsets of the set An, inclusive.  The empty subset
-    corresponds to ⊥; the full (sub)set corresponds to ⊤.
-
-    The operations of comp, meet, and join are then represented by the set-
-    theoretical domain-relative difference, set intersection, and set union,
-    respectively.
-
-    For example, if n = 1, A1 = {a1} then B1 has 2 members: { } (the empty
-    set) and {a1} the entire set.  Taking ⊥ = { } and ⊤ = A1, ‹b1› is
-    isomorphic to ‹bp›.
-
-    When n = 2 and A2 = {a1, a2}, B2 has 4 elements:
-         ⊥ = { }, {a1}, {a2}, {a1, a2} = ⊤
-
-    Corresponding set-theoretic representations apply as n increases.
-
-    For any ‹ba› where Ba has 2^n members, there must be a correspondence
-    between those members and the members of Bn in structure ‹bn› such that
-    however comp, meet, and join are represented in that ‹ba›, those
-    functions corresponding to the comp, meet, and join of ‹bn›.  This is
-    an interpretation in ‹bn› and there will be an appropriate interpretation
-    of the ‹ba› equality as well, providing an implementation or a simulation
-    as the case may be.
-
-    Establishment of isomorphism between a ‹ba› and a ‹bn› constitutes an
-    interpretation of the ‹ba› in ‹bn›, and vice versa.  A computational
-    interpretation of one is, thereby, a computational interpretation of the
-    other.  It is profitable to focus on concrete representations for this
-    purpose.
-
- 3.2 Boolean-Vector Structures, ‹bvn›
-
-    The structure ‹bvn› = 〈Bvn,Bvnf,Bvnt〉, with n a natural number is a
-    Boolean Algebra with representation as follows.
-
-    The domain, Bvn, consists of all sequences [v1, v2, ..., vn], n > 0,
-    known as n-tuples, where each vi is a member of the structure
-    ‹bp› = 〈Bp,Bpf,Bpt〉 domain Bp.  By convention, we record each vi as 0
-    for ⊥ and as 1 for ⊤.
-
-    The Boolean Algebra representation of ‹bvn› is accomplished as follows.
-
-        ⊥ identifies [0, 0, ..., 0], with n places, in Bvn
-        ⊤ identifies [1, 1, ..., 1] similarly
-
-        [x1, x2, ..., xn] = [y1, y2, ..., yn]
-           ⇔ x1=y1 ∧ x2 = y2 ∧ ... ∧ xn = yn
-
-        bvn.comp([x1, x2, ..., xn])
-           = [bp.comp(x1), bp.comp(x2), ..., bp.comp(xn)]
-
-        bvn.join([x1, x2, ..., xn], [y1, y2, ..., yn])
-           = [bp.join(x1, y1), bp.join(x2, y2), ... bp.join(xn,yn)]
-
-        bvn.meet([x1, x2, ..., xn], [y1, y2, ..., yn])
-           = [bp.meet(x1, y1), bp.meet(x2, y2), ... bp.meet(xn,yn)]
-
-        bvn.sep([x1, x2, ..., xn], [y1, y2, ..., yn])
-           = [bp.sep(x1, y1), bp.sep(x2, y2), ... bp.sep(xn,yn)]
-
-        bvn.sub(X, Y) ⇔ X = bvn.meet(X, Y)
-
-    Here, each occurrence of "=" is based on the structure in which the
-    operands are distinguished.  The use of 0 and 1 disambiguates the
-    distinction of ⊥ and ⊤ with respect to the two structures, ‹bvn› and ‹bp›.
-
-    In this representation, we have presumed the ability to pair corresponding
-    elements of ordered sequences (n-tuples) with the same number of elements.
-    For interpretation in ‹ob›, there will be additional rigor in that
-    accomplishment.
-
- 3.3 Concrete Interpretation: ‹bvn› - ‹bn› isomorphism
-
-    ‹bvn›, thus represented (3.2), satisfies the necessary constraints (1.2)
-    for constituting a Boolean Algebra.  It is not a concrete Boolean
-    Algebra insofar as there is no connection with subsets of sets.
-
-    Isomorphism of every ‹bvn› with a concrete Boolean Algebra structure,
-    ‹bn›, is simple and useful.
-
-    For any distinguished set, An = {a1, a2, ..., an}, n > 0, establish the
-    sequence of those distinct elements, [an, ..., a2, a1].  Correspond each
-    entity, Xj = [xjn, ..., xj2, xj1], in the ‹bvn› domain, Bvn, with a
-    subset in the ‹bn› domain Bn as follows.
-
-      * If xji = 1, then element ai is in the Xj-corresponding subset.
-      * If xji = 0, then element ai is not in the Xj-corresponding subset.
-
-    The ‹bvn› representations (3.2) are immediately interpreted in ‹bn› with
-    entities of the same names and with correspondence of the ‹bvn› and ‹bn›
-    "=".
-
-    The situation can be visualized in a tabulation.
-
-         an  a(n-1)  ...  a2  a1   An
-
-          0     0    ...   0   0   X0 = ⊥
-          0     0    ...   0   1   X1
-          0     0    ...   1   0   X2
-          0     0    ...   1   1   X3
-                     ...
-         xjn xj(n-1) ...  xj2 xj1  Xj
-                     ...
-          1     1    ...   0   0   X(2^n-4)
-          1     1    ...   0   1   X(2^n-3)
-          1     1    ...   1   0   X(2^n-2)
-          1     1    ...   1   1   X(2^n-1) = ⊤
-
-    All 2^n Xj are tabulated in the above scheme.  The elements, Xj of
-    domain Bvn are strictly ordered alphabetically assuming 0 before 1.
-    The Xj are enumerated in that sequence, starting from j = 0.
-
-    Each column beneath an ai in the table represents an indicator function
-    for the associated ai, specifying 1 where ai is in that Xj row's
-    corresponding concrete-interpretation subset and specifying 0 when that
-    is not the case.
-
-       * We can signify the indicator functions in form bvn.Iai(Xj).  Note
-         that bvn.Iai(Xj) = 1 for exactly half of the Xj.
-
-       * The assertion bvn.Iai(X) = 1 is equivalent to the set-theoretical
-         form ai ∊ X in the restricted case of An = {a1, a2, ..., an} subsets.
-
-    Writing the xi values in decreasing order left-to-right is convenient for
-    enumerating the Xj by interpreting the Xj sequence as the number j in
-    binary notation.  The result is a strict enumeration of the 2^n unique Xj.
-
- 3.4 ‹ba› Simulation in ‹ob›: Interpretation of any ‹bvn› in ob.bvx
+ 3.4 ‹Z› Implementation in ‹ob›: Treatment of ob.bvx
 
     By virtue of the isomorphism between any ‹ba› and some ‹bn› (section 3.1)
     and thence some ‹bvn› (section 3.2), it is sufficient to interpret the
@@ -728,61 +400,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
 4. NOTES AND REFERENCES
 
-    Do not regard the elaborate formulations, especially for interpretations
-    in ‹ob›, as a liability of mathematical formulations and reliance on
-    logical deductions.  Rather, the elaborate cases are a consequence of
-    having to encode (represent as data) entities in mathematical domains
-    using only the primitive notions of ‹ob›.  In so doing, we retain the
-    opportunity to reason about the representations using mathematical
-    methods such as structural induction.  And, wherever an interpretation is
-    valid, it is often helpful to reason in the structure being interpreted
-    rather than in the structure having the interpretation.
-
-    It should be clear, from this treatment of Boolean Algebra interpretation,
-    that there is no basis for determining what an intended interpretation is
-    simply by inspection of an ob.  One can ascertain whether an ob admits of
-    being a particular interpretation, and sometimes the contrary.  Yet there
-    is no intrinsic means by which any ob is confined to some unique, self-
-    evident interpretation no matter the tacit appeal.
-
-    This fluidity of interpretation and its usage in ob.bvx slides into a
-    computational commonplace that is easy to overlook.  In the formulation
-    of ‹bvn›, there is explicit reliance on ‹bp› which remains abstract in
-    that arrangement.  Interpretation via ob.bvx.bvn (and general ob.bvx) has
-    fixed interpretation of ‹bp›, namely ob.p01.bp.  That is exploited in
-    somewhat-simplified ob.bvx representations that are streamlined based on
-    known features of ob.p01.bp.  This coupling becomes inflexible compared
-    with an approach that, for example, makes ob....bp representations
-    substitutable via some formulation such as ob.bvx(ob...bp), maintaining
-    harmony with reliance on abstract ‹bp› in structure ‹bvn›.  The prospect
-    of interpretation composition modularizes the validation of computational
-    interpretations, a capability worth investigation.  Software developers
-    will recognize this pattern in the use of templates in some object-
-    oriented programming systems.  A primeval counterpart at the level of the
-    ‹ob› computational model will be investigated.
-
-    The extension of an interpretation to representation via equivalence
-    classes is an appealing idiom for computational interpretations.  The
-    specific relaxation in (2.5) is reminiscent of provision in LISP, with
-    atom NIL taken as ⊥, and in C-inspired languages, with 0 taken as ⊥.
-    Anything else is taken as ⊤.  Canonical forms, however, are revealed by
-    the results of relational operators, such as x ≠ y, in those programming
-    systems.
-
-    Limitation of ‹ba› to a finite domain of discourse having at least two
-    members is appropriate for computational interpretations and oMiser.
-    Although there are Boolean Algebras having unbounded domains, that is not
-    considered here, even though formulation of ob.bvx is suggestive of a
-    denumerable, exponentially-growing case including representation of
-    2's-complement binary arithmetic.
-
-    Formulation of ‹ba› is an amalgam of the Boolean Algebra treatments cited
-    below. Symbols ⊤ and ⊥ are chosen to restrain the common use of 1 and 0.
-    Assumption that 0 and 1 signify numbers and also binary bits is avoided
-    here, although 0 and 1 are notationally convenient for ‹bvn› and have
-    historical roots in [Boole1834] and practical application to binary
-    representations in digital computation [Knuth2011].  Explicit interpre-
-    tions of arithmetics in ‹ob› extends beyond Boolean Algebra.
+    **** DECIDE WHAT MATTERS HERE AND REFERENCE boole.txt as needed.
 
     Symbols for Boolean operations are kept distinct from the logical
     connectives used in FOL= notation, hence the use of complement,
@@ -806,46 +424,30 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
         <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
         The mathematical formulation of the essential structure.
 
-    [Boole1854]
-        Boole, George.  An Investigation of the Laws of Thought: on which
-        are founded the mathematical theories of logic and probabilities.
-        Dover (New York: 1958), original 1854 edition reprinted with all
-        corrections made within the text.  ISBN 0-486-60028-9
-
-    [EncycMath2012]
-        Boolean algebra.  2012-04-04 article accessed on the Internet at
-        <https://www.encyclopediaofmath.org/index.php?title=Boolean_algebra&oldid=24193>.
 
     [Forster2003]
         Forster, Thomas.  Reasoning About Theoretical Entities.  World
         Scientific (New Jersey: 2003). ISBN 981-238-567-3
 
-    [Knuth2011]
-        Knuth, Donald E.  Zeros and Ones.  Section 7.1, pp. 47-280 in The Art
-        of Computer Programming, Volume 4A: Combinatorial Algorithms, Part 1.
-        Addison-Wesley (Upper Saddle River, NJ: 2011). ISBN 978-0-201-03804-0
+    [Knuth1998]
+        Knuth, Donald E.  Positional Number Systems.  Section 4.1, pp. 194-280
+        in The Art of Computer Programming, Volume 2: Seminumerical
+        Algorithms, ed.3. Addison-Wesley (Upper Saddle River, NJ: 1998).
+        ISBN 0-201-89684-2.
+           Page 203 introduces 2's complement arithmetic on n-bit numbers,
+        where there is a negative number that has no positive complement.
+        Exercise 4.1(7) considers the equivalent of our extension/bumper case
+        for 10's complement arithmetic and what is sensible about the rule 4a
+        here.
+           Exercise 4.1(31) introduces K. Hensle's 2-adic numbers and the
+        integer cases are precisely those of arithZ here.
 
-    [Rosenbloom1950]
-        Rosenbloom, Paul C. The Logic of Classes.  Chapter 1, pp. 1-27 in The
-        Elements of Mathematical Logic.  Dover (New York: 1950).  ISBN
-        0-486-60227-3 pbk.
-
-    [Stoll1979]
-        Stoll, Robert R.  Boolean Algebra.  Chapter 6, pp. 248-288 in Set
-        Theory and Logic.  Dover (New York: 1979).  ISBN 0-486-63829-4
-
-    [Wikipedia2018a]
-        Boolean algebra.  2018-11-04 article accessed on the Internet at
-        <https://en.wikipedia.org/w/index.php?title=Boolean_algebra&oldid=867188281>.
-
-    [Wikipedia2018b]
-        Boolean algebra (structure).  2018-11-06 article accessed on the
-        Internet at <https://en.wikipedia.org/w/index.php?title=Boolean_algebra_(structure)&oldid=867568743>.
+     Internet at <https://en.wikipedia.org/w/index.php?title=Boolean_algebra_(structure)&oldid=867568743>.
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                 Copyright 2018-2022 Dennis E. Hamilton
+                 Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -863,9 +465,9 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. An Interpretation of Integer Arithmetic in oMiser.
-   Miser Theory Conception text file mathZ.txt version 0.0.0 dated 2023-01-30,
-   available on the Internet as a version of
+   Hamilton, Dennis E. MathZ Integer Arithmetic in oMiser.  Miser Theory
+   Conception text file mathZ.txt version 0.0.1 dated 2023-02-03, available
+   on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -877,17 +479,43 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     for consistent usage and links to related resources of the project and
     and elsewhere, especially ones of reference/historical value.
 
-  * Find an accessible reference to the conclusion of representation of non-
-    concrete ‹ba›s via isomorphisms to concrete ‹ba›s.  Stone's theorem may
-    be too much of a stretch.
-
-  * Add attribution statement.
+  * Find a nice algebraic characterization of Z, maybe even from Peano, and
+    give the attribution and and further considerations.  We are on the edge
+    of recursive function theory here.
 
   * Replace rulers with the preferred form now used that also allows digital-
     signature armor.
 
+  * Replace the references to wordpress pages to the Blogger pages but then
+    to orcmid.github.io/miser pages.
+
+  * There is something wrong with the [Knuth1998] Exercise 4.1(31).  Having
+    1/7 and -1/7 be exactly represented in 2-adic numerals doesn't compute
+    and there is no binary point in the examples.  Track this down.
+    See <https://en.wikipedia.org/wiki/P-adic_number> for related references
+    and explanations.  Also, Wikipedia refers to an older K. Hensel paper.
+
+  * I am trying to square dyadic rational, in this case binary rational
+    <https://en.wikipedia.org/wiki/Dyadic_rational> with this.
+
+  * <https://en.wikipedia.org/wiki/P-adic_number> provides a similar case to
+    what Knuth provides.  I still don't understand how the rationals fall out
+    and I am only using the Z integers representation.  There is still some
+    missing trick here.  I think it has to do with repetitions but the tie-in
+    with many Higher Algebra cases obscures all of this for me.
+
+  * I want to change the name of this to either arithZ or Zarith because we
+    are talking about an arithmetic system and its notation.  This leaves
+    room for Rarith and even Narith and maybe 2-adic works in all of those.
+    That would be fascinated with regard to functional type.  Then Farith or
+    perhaps better, arithF, would be for floating point.  I will decide this
+    quickly.
+
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.1 2023-02-03T16:04Z Ponderings on 2-adic and what that means, with new
+       references and some more scrapping of the boilerplate.
  0.0.0 2023-01-30T23:22Z Draft synopsis over boilerplate of boole.txt version
        0.5.3
 
