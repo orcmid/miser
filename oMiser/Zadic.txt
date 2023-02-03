@@ -1,24 +1,28 @@
-mathZ.txt 0.0.1                     UTF-8                          2023-02-03
+Zadic.txt 0.0.2                     UTF-8                          2023-02-03
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-        <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
+        <https://github.com/orcmid/miser/blob/master/oMiser/Zadic.txt>
 
 
-                   MATHZ INTEGER ARITHMETIC IN oMISER
-                   ----------------------------------
+                       Z INTEGER ARITHMETIC IN oMISER
+                       ------------------------------
 
         The interpretation of Integer Arithmetic is based on the ‹ba›
         simulation of Boolean Algebra using ob.bvx for arbitrary length
         Boolean vectors.  See boole.txt for details.
 
-        For mathZ, ob.bvx structures are interpreted as 2's complement binary
+        For Zadic, ob.bvx structures are interpreted as 2's complement binary
         numerals.  The terminal element is taken as the sign.  It is also
         taken as being an extension of that bit indefinitely.  The notation
         is little-endian.  The first element is the lowest-order bit of the
         numeral.
+
+        The name is a combination of Z (the negative and non-negative integer
+        domain) and 2-adic with respect to the form of numerals and their
+        connection to the more general 2-adic numerals.
 
 
      1. SYNOPSIS: THE FUNDAMENTAL REPRESENTATION
@@ -66,7 +70,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
                               CONTENT
 
-              1. MATHEMATICAL STRUCTURES
+              2. MATHEMATICAL STRUCTURE ‹Z›
                  Abstract theories of Boolean Algebras in the manner of
                  obtheory although at a different level of abstraction
 
@@ -75,22 +79,24 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
                  1.3 Additional Characteristics
                  1.4 Interpretations
 
-              2. MathZ IMPLEMENTATION OF ‹Z›
+              3. Zadic IMPLEMENTATION OF ‹Z›
 
                  2.1 Prototypical (Standard) Representation
                  2.2 Notable Qualities
                  2.3 ‹bp› Interpretation in ‹ob›
 
 
-              3. ‹Z› PRIMITIVE OPERATIONS
+              4. ‹Z› PRIMITIVE OPERATIONS
 
                  3.4 ‹ba› Simulation in ‹ob›: All-‹bvn› Interpretation ob.bvx
                  3.5 Circling back: Distinguishing ob.bvx as ‹ba›
                      interpretation
 
-              4. NOTES AND REFERENCES
+              5. NOTES AND REFERENCES
                  Sources on N, Z, and 2's complement numeral representations
                  of finite Z.
+
+** TRANSFORMATION NEEDED BELOW HERE **
 
  1. MATHEMATICAL STRUCTURE
 
@@ -398,7 +404,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     the same structures.  Investigation of those prospects is left to
     consideration of extensions to the basic ‹ob› model of computation.
 
-4. NOTES AND REFERENCES
+5. NOTES AND REFERENCES
 
     **** DECIDE WHAT MATTERS HERE AND REFERENCE boole.txt as needed.
 
@@ -465,8 +471,8 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. MathZ Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file mathZ.txt version 0.0.1 dated 2023-02-03, available
+   Hamilton, Dennis E. Zadic Integer Arithmetic in oMiser.  Miser Theory
+   Conception text file mathZ.txt version 0.0.2 dated 2023-02-03, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
 
@@ -504,19 +510,15 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     missing trick here.  I think it has to do with repetitions but the tie-in
     with many Higher Algebra cases obscures all of this for me.
 
-  * I want to change the name of this to either arithZ or Zarith because we
-    are talking about an arithmetic system and its notation.  This leaves
-    room for Rarith and even Narith and maybe 2-adic works in all of those.
-    That would be fascinated with regard to functional type.  Then Farith or
-    perhaps better, arithF, would be for floating point.  I will decide this
-    quickly.
-
+  * I have chosen Zadic for the name here.  I need to be able to back that up
+    or switch to an arithmetic, although Nadic, Zadic, and Qadic are more fun.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2023-02-03T16:48Z Rename mathZ to Zadic and touch up accordingly.
  0.0.1 2023-02-03T16:04Z Ponderings on 2-adic and what that means, with new
        references and some more scrapping of the boilerplate.
  0.0.0 2023-01-30T23:22Z Draft synopsis over boilerplate of boole.txt version
        0.5.3
 
-                       *** end of mathZ.txt ***
+                       *** end of Zadic.txt ***
