@@ -1,4 +1,4 @@
-Zadic.txt 0.0.3                     UTF-8                          2023-02-05
+Z2adic.txt 0.0.4                     UTF-8                         2023-02-05
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -7,15 +7,17 @@ Zadic.txt 0.0.3                     UTF-8                          2023-02-05
         <https://github.com/orcmid/miser/blob/master/oMiser/Zadic.txt>
 
 
-                       Z INTEGER ARITHMETIC IN oMISER
-                       ------------------------------
+             Z 2'S COMPLEMENT INTEGER ARITHMETIC IMPLEMENTION
+             ------------------------------------------------
 
         The interpretation of Integer Arithmetic is based on the ‹ba›
         simulation of Boolean Algebra using ob.bvx for arbitrary length
         Boolean vectors.  See boole.txt for details.
 
-        For Zadic, ob.bvx structures are interpreted as 2's complement binary
-        numerals.  The terminal element is taken as the sign.  It is also
+        For Z2adic, ob.bvx structures are interpreted as 2's complement binary
+        numerals.  The terminal element, followed by a ":" is taken as the
+        sign.  It is called a bumper and it stands for an indefinite sequence
+        of the same digit.  The numerals are taken to have
         taken as being an extension of that bit indefinitely.  The notation
         is little-endian.  The first element is the lowest-order bit of the
         numeral.
@@ -28,22 +30,30 @@ Zadic.txt 0.0.3                     UTF-8                          2023-02-05
      1. SYNOPSIS: THE FUNDAMENTAL REPRESENTATION
 
         For the arithmetic interpretation, write 0 and 1 instead of the
-        corresponding bot, ⊥, and top, ⊤.  [1, 0:] represents 1, [0, 1, 0:]
-        represents 2, [1, 1, 0:] represents 3, and [0, 0, 1, 0:] represents 4.
+        corresponding bot, ⊥, and top, ⊤.  1:0 represents 1, 01:0
+        represents 2,  11:0 represents 3, and 001:0 represents 4.  Notice
+        that the left-to-right reading of the bits is from low-order bit to
+        successively higher ones.
 
-        The list [0:] is the representation of the numeral 0.  It also
-        signifies as many 0 digits as are needed.  It is shorthand for, e.g.,
-        [0, 0, 0:].  The canonical form is by removing every 0 to the left
-        up until any 1.  So [0:] for [0, 0, ..., 0:] with any number of 0-s.
+        The form :0 is a "bumper."  It signifies an inexhaustible sequence of
+        0 digits (bits).  It is a shorthand for as many 0 digits as are
+        useful. The unique canonical form of a :0-terminated sequence is
+        achieved by removing every 0 the left of the :0 bumper up until any
+        1 bit.  So :0 is the canonical form for representing integer 0.
 
-        The list [1:] is the representation of the numeral -1.  It also
-        signifies as many 1 digits as neeed.  It is shorthand for, e.g.,
-        [1, 1, 1:].  The canonical form is by removing every 1 to the left
-        up until any 0.  So [1:] for [1, 1, ..., 1:] with any number of 1-s.
+        The form :1 is the bumper for an inexhaustible sequence of 1 bits.
+        The canonical form of of a :1-terminated sequence is achieved by
+        removing ever 0 to the left of the :1 bumper up until any 0.  So
+        :1 for 111...:1 with any number of 1's forming 111... .
 
-        The two's complement representation of negation follows the usual
-        rules of adding 1 (an incoming carry) to the 1-s complement.  This
-        can be done in a single scan, as follows, starting at the little end.
+        The binary numerals are taken as 2's-complement binary numerals
+        in which :1 represents integer -1, 0:1 represents -2, 10:1 for -3,
+        and so on.
+
+        In this scheme the negation of a number is expressed by adding 1 (an
+        incoming carry) to the 1's-complement of the Z2adic expression of the
+        given number.  Ths can be done in a single left-to-right scan of the
+        original numeral, replacing digits as follows.
 
          1. a. If there is a carry in, a 0 remains 0 and there's a carry out.
             b. If there is no carry in, a 0 becomes 1 with no carry out.
@@ -51,16 +61,14 @@ Zadic.txt 0.0.3                     UTF-8                          2023-02-05
          2. a. If there is a carry in, a 1 remains 1 with no carry out.
             b. If there is no carry in, a 1 becomes a 0 with no carry out.
 
-         3. a. If there is a carry in, 0: remains 0: and we're done.
-            b. If there is no carry in, 0: becomes 1: and we're done.
+         3. a. If there is a carry in, :0 remains :0 and we're done.
+            b. If there is no carry in, :0 becomes :1 and we're done.
 
-         4  a. If there is a carry in, 1: becomes 1, 0: and we're done.
-            b. If there is no carry in, 1: becomes 0: and we're done.
+         4  a. If there is a carry in, :1 becomes the pair 1:0 and we're done.
+            b. If there is no carry in, :1 becomes :0 and we're done.
 
-        In this scheme, the 2's complement of [0:] is [0:] as expected.  And
-        the 2's complement of [1:] is [1, 0:] as expected. Accordingly, the
-        2's complement of [1,0:] is [1,1:] which simplifies to [1:].  Note
-        that the 2's complement of [1,1:] is [1,0:], also as required.
+        In this scheme, the 2's complement of :0 is :0 as expected.  And
+        the 2's complement of :1 is 1:0 as expected.
 
         [EDITOR'S NOTE: THE RULE 3a DEPENDS ON A KIND OF JUST-SHORT-OF-
          INFINITARY ARGUMENT.  THAT NEEDS TO BE DEALT WITH SOMEWHERE BELOW.]
@@ -209,7 +217,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     After [Forster2003], an interpretation where "="s correspond is termed
     an implementation.  We will make that the case.
 
- 2. MathZ IMPLEMENTATION OF ‹Z›
+ 2. Z2adic IMPLEMENTATION OF ‹Z›
 
  3.4 ‹Z› Implementation in ‹ob›: Treatment of ob.bvx
 
@@ -469,7 +477,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
  ATTRIBUTION
 
    Hamilton, Dennis E. Zadic Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file mathZ.txt version 0.0.3 dated 2023-02-05, available
+   Conception text file mathZ.txt version 0.0.4 dated 2023-02-05, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
 
@@ -522,6 +530,9 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.4 2023-02-05T05:48Z Adjust to name Z2adic.txt and introduce a short-hand
+       numerical-bumpered notation that is more compact than the list forms
+       employed in the oMiser computational interpretation.
  0.0.3 2023-02-05T02:41Z Small change commited before changing the name again.
  0.0.2 2023-02-03T16:48Z Rename mathZ to Zadic and touch up accordingly.
  0.0.1 2023-02-03T16:04Z Ponderings on 2-adic and what that means, with new
@@ -529,4 +540,4 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
  0.0.0 2023-01-30T23:22Z Draft synopsis over boilerplate of boole.txt version
        0.5.3
 
-                       *** end of Zadic.txt ***
+                       *** end of Z2adic.txt ***
