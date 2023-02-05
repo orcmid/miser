@@ -1,4 +1,4 @@
-Zadic.txt 0.0.2                     UTF-8                          2023-02-03
+Zadic.txt 0.0.3                     UTF-8                          2023-02-05
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -70,9 +70,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
                               CONTENT
 
-              2. MATHEMATICAL STRUCTURE ‹Z›
-                 Abstract theories of Boolean Algebras in the manner of
-                 obtheory although at a different level of abstraction
+              2. MATHEMATICAL STRUCTURES ‹N› AND ‹Z›
 
                  1.1 Notation and Basic Operations
                  1.2 Basic Constraints (Axioms)
@@ -98,19 +96,18 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
 ** TRANSFORMATION NEEDED BELOW HERE **
 
- 1. MATHEMATICAL STRUCTURE
+ 2. MATHEMATICAL STRUCTURE
 
     The mathematical structure ‹Z› is introduced in the same manner as for
-    ‹ob› and <ba>.
+    ‹ob› and <ba>.  We start with the structure ‹N› of Peano Numbers, and then
+    expand that to achieve structure ‹Z› of all integers.
 
+    ‹N› = 〈Ni,Nf,Nt〉
     ‹Z› = 〈Zi,Zf,Zt〉
 
 
-    The logical theories Bpt and Bat are applications of First Order Logic
-    with = (FOL=) using the notation introduced in Section 1 of obtheory.txt,
-    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
 
- 1.1 Notation and Basic Operations
+ 2.1 Notation and Basic Operations
 
     The ‹ba› domain of discourse, Ba, is a finite set having at least two
     distinct members, two of which are distinguished as ⊤ and ⊥, respectively.
@@ -472,7 +469,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
  ATTRIBUTION
 
    Hamilton, Dennis E. Zadic Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file mathZ.txt version 0.0.2 dated 2023-02-03, available
+   Conception text file mathZ.txt version 0.0.3 dated 2023-02-05, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
 
@@ -511,10 +508,21 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     with many Higher Algebra cases obscures all of this for me.
 
   * I have chosen Zadic for the name here.  I need to be able to back that up
-    or switch to an arithmetic, although Nadic, Zadic, and Qadic are more fun.
+    or switch to an arithmetic, although Nadic, Zadic, and Qadic are fun.
+
+  * I am satisfied with the rules given in the synopsis/sketch.  I do need to
+    distinguish the (prime) radix that's understood.  So, should it be Z2adic
+    or Zadic2.  I think it should be first.  Then Q2adic follows.  Also, there
+    can be an N1adic as well as an N2adic, the first being the counting with
+    sticks (or successors of 0).
+
+  * I posted a demonstration of the inexhaustible bumpers and the carry rule
+    in the Z2adic case to FOM.  We'll see how that lands.  I am restating it
+    here, now.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3 2023-02-05T02:41Z Small change commited before changing the name again.
  0.0.2 2023-02-03T16:48Z Rename mathZ to Zadic and touch up accordingly.
  0.0.1 2023-02-03T16:04Z Ponderings on 2-adic and what that means, with new
        references and some more scrapping of the boilerplate.
