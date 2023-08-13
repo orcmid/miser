@@ -1,5 +1,6 @@
-miser.txt 0.0.12                     UTF-8                       dh:2020-09-25
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+miser.txt 0.0.13                    UTF-8                          2023-08-13
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
                              The Miser Project Code
                              ======================
 
@@ -15,7 +16,8 @@ miser.txt 0.0.12                     UTF-8                       dh:2020-09-25
 MANIFEST
 
     README.md
-        GitHub-rendered "home page" for the public source-code repository
+        GitHub-rendered "home page" for the public source-code repository,
+        with introduction to the project.
 
     miser.txt
         this manifest and job-jar file
@@ -34,8 +36,8 @@ MANIFEST
         implementations and also companions to oMiser mockups
 
     oMiser/
-        subtree for working out and confirming oMiser conceptalization and
-        proof-of-concept demonstrations
+        subtree for working out and confirming oMiser conceptualization and
+        proof-of-concept demonstrations, including run-time
 
     background.txt
         description of the inspirational sources and evolution of the ideas
@@ -91,9 +93,9 @@ MANIFEST
          repositories, applying to working files that are not part of the
          managed archive materials
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2017-2020 Dennis E. Hamilton
+                 Copyright 2017-2020, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -107,48 +109,40 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 TODO
+
+  * SCRUB: Move items to docs.txt when to be handled better with web pages.
 
   * Provide a little bit more information about what this is and where to
     find more about it.
 
-  * Add links to other locations of materials and discussions.
-
-  * Introduce oFrugal later when there is enough oMiser to talk about oFrugal.
+  * Add links to other locations of materials and discussions.  Use docs/
 
   * Ensure a hierarchical organization that fits the nfoTools construction
-    sets pattern.
-
-  * Add synopsis.
-
-  * Account for the use of these folder-specific synopsis/manifest text files.
+    sets pattern.  ???
 
   * Explain the reference implementation(s) and notation(s) as the mainline,
     with mockups for proof-of-concept, demonstrations, and exercises.
 
   * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
-    and the web site.
+    and the web site.  SCRUB TO DOCS, MAKE PROVISIONAL
 
   * Use the logo and the block diagram (on Golden Geek) for a summary of this.
     Don't go into the extensive detail.
 
-  * Docs will continue to be at miser-theory.info, as tempting and convenient
-    GitHub might be.  [dh:2018-01-20: Attempting to use docs/ here along
-    with the GitHub support for wikis and documentation pages.]
+  * Docs will be moved here under docs/ in whatever authoring scheme I settle
+    upon.  Miser-theory.info materials will be salvaged.  GitHub appears to be
+    a more secure preservation mechanism.
 
-  * There need to be static places of preservation of this project, including
-    authenticated distributions, just as being worked on for nfoTools.
-
-  * Explore using GitHub for Pages (docs/), maybe blogging.
-
-  * See how to get a Wiki working here too.  I am concerned mainly about
+   * See how to get a Wiki working here too.  I am concerned mainly about
     reflow and getting pages to work properly.  There is frustration between
     using GitHub versus Blogger at the moment.  The GitHub support is more
     desirable if view reflow works.  It seems to in the Wiki theme.
 
   * Upload the Miser diagram as the Social Preview under GitHub Settings.
+    [dh:2023-08-13 I know longer know what this means.]
 
   * Review the efficacy of the various text files.  This may be too much
     subdivision.  Documentation might address this better.  Those files/topics
@@ -159,7 +153,9 @@ TODO
   * Account for the use of .md as well as .txt files in this project.
 
   * Do we need engineering of the GitHub project (and document engineering)
-    as distinct from the engineering of implementations
+    as distinct from the engineering of implementations.  We can handle this
+    with a docs/construction mechanism.  I don't know about the construction
+    structure of the code other than that.
 
   * Make the global change of orcmid repositories to have main as the default
     branch name, deprecating master (which will presumably redirect to main).
@@ -178,8 +174,9 @@ TODO
 
   * For new text, use main as soon as it is workable.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.13 2023-08-13T00:18Z First pass on much-needed TODO cleanup
  0.0.12 2020-09-25-08:07 Reflect Issue #34 on the GitHub default repo renaming
         from master to main.
  0.0.11 2020-08-05-11:29 Bring manifest current and manage TODOs.
