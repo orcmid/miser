@@ -73,7 +73,7 @@
 				<text x="34.96" y="251.92" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Host System</text>			</g>
 			<g id="shape3-11" v:mID="3" v:groupContext="shape" transform="translate(112.5,-46.125)">
 				<title>Square</title>
-				<desc>oMiser (engine)</desc>
+				<desc>oMiser (run-time)</desc>
 				<v:userDefs>
 					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 				</v:userDefs>
@@ -81,8 +81,8 @@
 				<v:textRect cx="40.5" cy="227.287" width="81" height="81"/>
 				<rect x="0" y="186.787" width="81" height="81" class="st6"/>
 				<text x="5.52" y="227.29" class="st7" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>oMiser<v:newlineChar/><tspan
-							x="19.96" dy="1.5em" class="st8">(engine)</tspan></text>			</g>
-			<g id="shape10-15" v:mID="10" v:groupContext="shape" transform="translate(31.5,-46.125)">
+							x="14.9" dy="1.5em" class="st8">(run</tspan><tspan class="st8">-</tspan><tspan class="st8">time)</tspan></text>			</g>
+			<g id="shape10-17" v:mID="10" v:groupContext="shape" transform="translate(31.5,-46.125)">
 				<title>Square.10</title>
 				<desc>oFrugal (application)</desc>
 				<v:userDefs>
@@ -93,7 +93,7 @@
 				<rect x="0" y="186.787" width="81" height="81" class="st9"/>
 				<text x="9.48" y="226.09" class="st10" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>oFrugal<v:newlineChar/><tspan
 							x="8.94" dy="1.4em" class="st11">(application)</tspan></text>			</g>
-			<g id="shape14-19" v:mID="14" v:groupContext="shape" transform="translate(1.15987E-05,-150.75)">
+			<g id="shape14-21" v:mID="14" v:groupContext="shape" transform="translate(1.15987E-05,-150.75)">
 				<title>Rectangle.14</title>
 				<desc>User Interface</desc>
 				<v:userDefs>
@@ -103,7 +103,7 @@
 				<v:textRect cx="96.75" cy="244.724" width="193.51" height="46.125"/>
 				<rect x="0" y="221.662" width="193.5" height="46.125" class="st3"/>
 				<text x="26.22" y="251.92" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>User Interface</text>			</g>
-			<g id="shape15-23" v:mID="15" v:groupContext="shape" transform="translate(1.15987E-05,-73.125)">
+			<g id="shape15-25" v:mID="15" v:groupContext="shape" transform="translate(1.15987E-05,-73.125)">
 				<title>Sheet.15</title>
 				<desc>I / O</desc>
 				<v:textBlock v:margins="rect(4,4,4,4)"/>

@@ -1,4 +1,4 @@
-tutorials.txt 0.0.29                 UTF-8                       dh:2019-11-09
+tutorials.txt 0.0.30                 UTF-8                      dh:2023-08-13
 
                              The Miser Project Code
                              ======================
@@ -177,7 +177,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                       Copyright 2017 Dennis E. Hamilton
+               Copyright 2017-2019, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -200,6 +200,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.30 2023-08-13T23:31Z In omiser-2017-11-08-0820-1stStack files, change
+        "engine" to "run-time"
  0.0.29 2019-11-09-09:53 Tidy up, removing names of some files that have been
         deleted.
  0.0.28 2019-11-07-14:26 Replace Wordpress links with Blogspot ones for
