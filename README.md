@@ -1,31 +1,78 @@
-<!-- README.md 1.1.0               UTF-8                           2022-01-05
-     ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*>
+<!-- README.md 1.2.0               UTF-8                           2023-08-13
+     ---1----|----2----|----3----|----4----|----5----|----6----|----7----|---*
+
                       orcmid/miser Introduction
      -->
 
-# orcmid / miser #
+# The Miser Project (1.2.0 Rough Draft)
 
-The Miser Project for practical demonstration of computation-theoretic aspects of software
+The Miser Project provides operational demonstration of computation-theoretic
+aspects of software.  Emphasis is on the stored-program principle and the
+manner in which computational representation of "higher-order" types emerges.
 
-## ***WORKING DRAFT*** ##
+Achievement of the Miser Project is the career capstone project of the author.
+Miser is the outgrowth of a 60-year inquiry into applicative-programming
+languages and their theoretical foundations.  The operational program is
+intended for the insights it provides and the fundamentals it demonstrates
+rather than practical application.
 
-***PURPOSE:***
+## 1. Overview
 
-***PRINCIPLES:***
+## 2. Background
 
-***PRIORITIES:***
+## 3. Available Materials
 
-***PLAN:***
+## 4. Development
 
-***PEOPLE:***
+### 4.1 Principles
 
-**TODO**:
+* Development is supported by narrative and reference materials, with
+  important attributions to sources, at all times.
 
-* Establish leveling somehow.
+* Proof-of-concept demonstrations and releasable software are developed
+  with freely-available and free-to-use development tools.  The project
+  is conducted entirely with code in the open and the work is free to use and
+  to adapt with appropriate attribution.
 
-* Complete the
-[5P's](https://ceklog.kindel.com/2011/06/14/the-5-ps-achieving-focus-in-any-endeavor/),
-keeping them crisp.
+* Miser is thoroughly defined using mathematical-logic formalisms.  The
+  applicability of logic in computer science and software development is
+  honored and demonstrated throughout.
+
+* Run-time oMiser operation demonstrates computational interpretation of the
+  mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
+  **ap** and companion **eval**.
+
+* The interface language, oFrugal, is defined with a formal grammar having
+  semantics defined in terms of ‹ob› formulations, providing a complete
+  specification.  Connection between formal semantics and the syntactical
+  structure of programming languages is demonstrated.
+
+* The fundamental ability of the stored-program concept to elevate levels of
+  computational abstraction along with emergence of types of data/operation is
+  demonstrated in a tangible manner with careful constructions.
+
+* Important milestones include
+
+  * establishment that Miser provides an effective representation of the
+    computable functions under the Church-Turing thesis
+
+  * demonstration of how such a mechanism is itself amenable to mechanizing
+    logical deductions and theorem proving
+
+  * introduction of accelerators that improve operation entirely within the
+    inherent computational complexity of the approach.
+
+### 4.2 Plan
+
+----
+
+Discussion about the Miser Project is welcome at the
+[Discussion section](https://github.com/orcmid/miser/discussions).
+Improvements and removal of defects in the code and documentation can be
+reported and addressed in the
+[Issues section](https://github.com/orcmid/miser/issues).  There are also
+relevant [projects](https://github.com/orcmid/miser/projects?type=classic)
+from time to time.
 
 ## The Software Project ##
 
@@ -128,10 +175,11 @@ may need to tag along with that.
 
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-1.1.0 2022-01-05T21:49Z Smoothing and Revision of Text, Progression, Current
-      State
-1.0.1 2018-08-26 Added TODOs and 5Ps placeholer
-1.0.0 2018-01-11 Initial Stable README
+     1.2.0 2023-08-13T15:34Z Rough Draft re-arrangement for proofing
+     1.1.0 2022-01-05T21:49Z Smoothing and Revision of Text, Progression,
+           Current State
+     1.0.1 2018-08-26 Added TODOs and 5Ps placeholer
+     1.0.0 2018-01-11 Initial Stable README
 
                            end of miser/README.md
      -->
