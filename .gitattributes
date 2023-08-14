@@ -1,4 +1,4 @@
-# .gitattributes 0.0.2                UTF-8                         2017-07-26
+# .gitattributes 0.0.3                UTF-8                        2023-08-14
 #
 #                GIT ATTRIBUTES FOR THE MISER GIT REPOSITORY
 
@@ -15,15 +15,18 @@
 # Some of these might also be .gitignored.  Better safe than sorry.
 
 *.bmp binary
+*.gif binary
 *.jpg binary
+*.mic binary
 *.png binary
 *.suo binary
+*.vsd binary
+*.vsdx binary
 *.zip binary
 
+# 0.0.3 2023-08-14T16:53Z Add image binaries to prevent corruption on Pages
 # 0.0.2 2017-07-26-13:38 Transpose those for orcmid/miser use on GitHub
 # 0.0.1 2016-10-04-11:23 Create Minimal .gitattributes
 #       The 2015-01-07 version from ShowDefs is captured just to have one
 #       in place.
-#                          *** end of .gitattributes ***
-
-
+#                   *** end of .gitattributes ***

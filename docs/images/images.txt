@@ -1,0 +1,89 @@
+images.txt 0.0.0                    UTF-8                        2023-08-14
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+    <https://github.com/orcmid/miser/blob/master/docs/images/images.txt>
+           published at <https://orcmid.github.io/miser/images/>
+
+                       GITHUB-PUBLISHED IMAGES FOLDER
+                       ------------------------------
+
+    The Miser Project docs/images/ folder provides the images for the GitHub
+    Pages for Miser Project documentation.  It is part of the construction
+    structure of the <https://orcmid.github.io/miser> web site.
+
+    <https://miser-theory.info/images> is the origin of the material placed
+    here on behalf of the preservation of the original Miser Project web site.
+
+    Further information about the purpose, construction, and care-and-feeding
+    of this web authoring arrangement are found on the construction/ page and
+    its subordinate material.
+
+MANIFEST
+
+         images.txt
+                this manifest and job-jar file
+
+          index.htm
+                replica of <https://miser-theory.info/images/index.htm>
+   construction.htm
+                replica of <https://miser-theory.info/images/construction.htm>
+
+ ccSomeRights20.png
+                Small Creative Commons symbol
+
+ hardhat-button.gif
+                17 x 22 button image for footer construction links
+  hardhat-thumb.gif
+                80 x 60 thumbnail for construction-structure pages
+ misertheory-logo.gif
+                  210 x 144 oMiser logo
+ omisertheory-logo.gif
+                   210 x 144 oMiser logo also
+ omisertheory-logo.mic
+                   obsolete alternative image format
+ omisertheory-logo.vsd
+                   obsolete (and blocked) Visio format of the logo,
+                   created 2002-07-12T19:33
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+       Copyright 2002-2004, 2006-2008, 2023 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. GutHub-Published Images Folder.  Miser Project
+   Code text file images.txt version 0.0.0 dated 2023-08-14 available as a
+   version of <https://orcmid.github.io/miser/images/images.txt>
+
+TODO
+
+  * Confirm that the materials publish as-is.
+
+  * Adjust to life on GitHub pages.
+
+  * Figure out how to avoid getting crossed-up between the VSS and FrontPage
+    and the GitHub and GitHub pages.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.0 2023-08-14T16:46Z Placeholder derived from docs.txt 0.0.11 boilerplate
+
+                        *** end of images.txt ***
