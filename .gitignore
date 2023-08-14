@@ -1,4 +1,4 @@
-# .gitignore 0.0.7                    UTF-8                     dh:2017-11-17
+# .gitignore 0.0.8                    UTF-8                     dh:2023-08-14
 #
 #                                  ORCMID/MISER
 #                                  ============
@@ -10,12 +10,20 @@
 #   part of a structure where anyone can do multiple flavors of builds
 #   along-side the source without cluttering the repository iself.
 
+
 ## ELIMINATE AUTHORING ARTIFACTS
 ## -----------------------------
 
 #   jEdit backup and working files
 *~
 *#
+
+#   FrontPage authoring artifacts
+_private/
+_vti_*/
+
+#   Windows authoring artifacts
+desktop.ini
 
 ## ELIMINATION OF VISUAL STUDIO SOLUTIONS
 ## --------------------------------------
@@ -218,6 +226,7 @@ FakesAssemblies/
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 0.0.8 2023-08-14T20:43Z Adjust for Windows and FrontPage artifacts
 # 0.0.7 2017-11-17-13:19 Adjust annotation and confirm *.scc is ignored.
 # 0.0.6 2017-07-26-13:36 Transpose for the orcmid/miser GitHub Project
 # 0.0.5 2016-10-04-12:30 Transpose for the orcmid/Adv10 GitHub Project

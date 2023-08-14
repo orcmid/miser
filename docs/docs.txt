@@ -1,4 +1,4 @@
-docs.txt 0.0.11                       UTF-8                    dh:2023-08-12
+docs.txt 0.0.12                       UTF-8                    dh:2023-08-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -19,6 +19,14 @@ docs.txt 0.0.11                       UTF-8                    dh:2023-08-12
     of this web authoring arrangement are found on the construction/ page and
     its subordinate material.
 
+    NOTE: GitHub Places is set to publish from this folder.  It is the case
+          that Markdown files here will be converted to HTML, and there is
+          support for Jekyll in those files (http://jekyllrb.com/).  However,
+          files can be authored in separate locations and the HTML and other
+          web-ready materials placed here.  GitHub will publish those "as is."
+          This is relevant in the preservation of miser-theory.info content
+          and the potential use of an alternative authoring scheme such as
+          Hugo.
 
 MANIFEST
 
@@ -41,6 +49,12 @@ MANIFEST
      construction/
            construction materials and documentation of the structure and
            authoring of the <https://orcmid.github.io/miser/> materials.
+
+     images/
+           forking/preservation of <https://miser-theory.info/images>
+
+     readings/
+           forking/preservation of <https://miser-theory.info/readings>
 
      synopsis/
            preserving the original Miser Project synopsis
@@ -66,7 +80,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.11 dated 2022-08-12 available on the
+   Code text file docs.txt version 0.0.12 dated 2022-08-14 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs.txt>
 
 TODO
@@ -115,11 +129,29 @@ TODO
   * Remake the home page in the style of nfoTools and D211101 and also relate
     how this is my career capstone project.
 
-  * Use "run-time" instead of "engine" and characterize oMizer and oFrugal
+  * Use "run-time" instead of "engine" and characterize oMiser and oFrugal
     better.
+
+  * I have confirmed that orcmid.github.io will recognize index.htm as the
+    default page of a folder.  I need to see what happens when there is an
+    index.html also.
+
+  * The preservation/forking of https://miser-theory.info material needs to
+    be accounted for in the construction/ account here.
+
+  * I can use FrontPage on my GitHub miser/docs folder after branching a
+    shared folder in the MiserGitHub VSS.  The branch does not consist of
+    shared material.  So I can continue to use FrontPage after .gitignore of
+    the FrontPage artifacts.  This needs to be accounted for in the migration/
+    preservation/forking process under docs/construction.
+
+  * NOTE: Although GitHub/miser/docs is set as the VSS working folder for
+    MiserGitHub, I have only done Get Latest on images/ and readings/ so far,
+    and there is no collision with material that was already there.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.12 2023-08-14T20:55Z TODOs and notes on preservation/forking to here.
  0.0.11 2023-08-12T23:47Z Expand TODOs, preparing to explain oMiser better
  0.0.10 2022-04-29T16:14Z Manage TODOs, anticipating an authoring solution
         from orcmid/docEng.

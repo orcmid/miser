@@ -1,4 +1,4 @@
-<!-- index.md 0.0.4                UTF-8                     dh:2019-11-20 -->
+<!-- index.md 0.0.5                 UTF-8                    dh:2019-11-20 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -41,5 +41,7 @@ at [current](construction/current/) here.
 Placeholder initiated 2019-11-20T08:37
 Construction structure at <https://orcmid.github.io/miser/docs.txt>
 <!--
+
+  0.0.4 2019-11-20 placeholder remarks
      -->
 <!--                *** end of docs/index.md ***                           -->

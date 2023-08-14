@@ -1,4 +1,4 @@
-images.txt 0.0.0                    UTF-8                        2023-08-14
+images.txt 0.0.1                   UTF-8                        2023-08-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -69,21 +69,29 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Images Folder.  Miser Project
-   Code text file images.txt version 0.0.0 dated 2023-08-14 available as a
+   Code text file images.txt version 0.0.1 dated 2023-08-14 available as a
    version of <https://orcmid.github.io/miser/images/images.txt>
 
 TODO
 
-  * Confirm that the materials publish as-is.
+  * The index.htm is recognized as the default page, which is nifty.  I need
+    to adjust its links to locations and images here though.  The preservation
+    of construction structure is useful.
 
-  * Adjust to life on GitHub pages.
+  * Adjust to life on GitHub pages. See whether index.html takes precedence
+    over index.htm or not.
+
+  * Preserve but obsolete the Construction History page here.
 
   * Figure out how to avoid getting crossed-up between the VSS and FrontPage
-    and the GitHub and GitHub pages.
+    and the GitHub and GitHub pages.  See if I can create a shared VSS
+    repository and then break linkages for materials that I have transposed
+    to GitHub.  A non-interference technique if it works.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.1 2023-08-14T17:36Z Reflect initial experiment success
  0.0.0 2023-08-14T16:46Z Placeholder derived from docs.txt 0.0.11 boilerplate
 
                         *** end of images.txt ***
