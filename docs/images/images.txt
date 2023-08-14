@@ -1,4 +1,4 @@
-images.txt 0.0.3                    UTF-8                        2023-08-14
+images.txt 0.0.4                    UTF-8                        2023-08-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -23,30 +23,27 @@ images.txt 0.0.3                    UTF-8                        2023-08-14
 
 MANIFEST
 
-         images.txt
-                this manifest and job-jar file
+            images.txt
+                   this manifest and job-jar file
 
-          index.htm
-                replica of <https://miser-theory.info/images/index.htm>
-   construction.htm
-                replica of <https://miser-theory.info/images/construction.htm>
+             index.html
+                   priority version demonstrated
+             index.htm
+                   <https://miser-theory.info/images/index.htm> replica
+      construction.htm
+                   <https://miser-theory.info/images/construction.htm> replica
 
- ccSomeRights20.png
-                Small Creative Commons symbol
+    ccSomeRights20.png
+                   Small Creative Commons symbol
 
- hardhat-button.gif
-                17 x 22 button image for footer construction links
-  hardhat-thumb.gif
-                80 x 60 thumbnail for construction-structure pages
- misertheory-logo.gif
-                  210 x 144 oMiser logo
+    hardhat-button.gif
+                   17 x 22 button image for footer construction links
+     hardhat-thumb.gif
+                   80 x 60 thumbnail for construction-structure pages
+  misertheory-logo.gif
+                   210 x 199 Miser logo
  omisertheory-logo.gif
-                   210 x 144 oMiser logo also
- omisertheory-logo.mic
-                   obsolete alternative image format
- omisertheory-logo.vsd
-                   obsolete (and blocked) Visio format of the logo,
-                   created 2002-07-12T19:33
+                   210 x 199 Miser logo (no difference)
 
          n170601d2.png
                    large diagrammatic <ob> logo
@@ -74,32 +71,22 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Images Folder.  Miser Project
-   Code text file images.txt version 0.0.3 dated 2023-08-14 available as a
+   Code text file images.txt version 0.0.4 dated 2023-08-14 available as a
    version of <https://orcmid.github.io/miser/images/images.txt>
 
 TODO
 
-  * The index.htm is recognized as the default page, which is nifty.  I need
-    to adjust its links to locations and images here though.  The preservation
-    of construction structure is useful.
+  * The index.htm is recognized and preserved.  The index.md makes index.html
+    and that will have priority when present.  Document this somewhere.
 
-  * Adjust to life on GitHub pages. See whether index.html takes precedence
-    over index.htm or not.
-
-  * Preserve but obsolete the Construction History page here.
-
-  * Figure out how to avoid getting crossed-up between the VSS and FrontPage
+    * Figure out how to avoid getting crossed-up between the VSS and FrontPage
     and the GitHub and GitHub pages.  See if I can create a shared VSS
     repository and then break linkages for materials that I have transposed
     to GitHub.  A non-interference technique if it works.
 
-  * Tombstone the construction.htm page here.  It was long ago supplanted
-    by a refined construction structure.
-
-  * Replace the [o]misertheory*.gif files with versions of the plain ob
-    diagram without any other words.
-
-  * Upgrade the front-porch n170601d2 VSDX and PNG images
+  * Tombstone the construction.htm "Construction History" page here.  It was
+    long ago supplanted by a refined construction structure.  That may be
+    no longer needed.
 
   * Much of this should be somewhere generic such as docEng.  For now, we do
     what we need to concerning preservation/forking of miser-theory.info.
@@ -107,6 +94,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.4 2023-08-14T23:38Z Cleaning up and working the preservation
  0.0.3 2023-08-14T22:29Z big <ob> logo twiddling
  0.0.2 2023-08-14T21:31Z More TODOs on preservation activity
  0.0.1 2023-08-14T17:36Z Reflect initial experiment success
