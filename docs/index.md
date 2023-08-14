@@ -1,4 +1,4 @@
-<!-- index.md 0.0.5                 UTF-8                    dh:2019-11-20 -->
+<!-- index.md 0.0.6                 UTF-8                    dh:2023-08-14 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-![The Miser Project oMiser logo](n170601d2.png)
+![The Miser Project oMiser logo](images/n170601d2.png)
 
 > [**Demonstrating Computation Theory Made Practical**](synopsis/)
 
@@ -32,16 +32,11 @@ reflow on change of browser view width is automatic and as desired.
 I do have some concerns about explicit versioning and having content that
 is skipped.  I can specify HTML comments for that, and I am doing so.
 
-We will run through all of the Markdown options to see how they are
-rendered here.  Theme demos provide a nice comparison.
-
-Demonstration of the current theme, including the markdown elements, is
-at [current](construction/current/) here.
-
 Placeholder initiated 2019-11-20T08:37
 Construction structure at <https://orcmid.github.io/miser/docs.txt>
 <!--
 
+  0.0.5 2023-08-14T22:03Z change location of the image, simplify a bit
   0.0.4 2019-11-20 placeholder remarks
      -->
 <!--                *** end of docs/index.md ***                           -->
