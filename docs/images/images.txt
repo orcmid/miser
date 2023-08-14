@@ -1,4 +1,4 @@
-images.txt 0.0.2                    UTF-8                        2023-08-14
+images.txt 0.0.3                    UTF-8                        2023-08-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -48,6 +48,11 @@ MANIFEST
                    obsolete (and blocked) Visio format of the logo,
                    created 2002-07-12T19:33
 
+         n170601d2.png
+                   large diagrammatic <ob> logo
+         n170601d2.vsdx
+                   Visio vector-graphic original
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
        Copyright 2002-2004, 2006-2008, 2023 Dennis E. Hamilton
@@ -69,7 +74,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Images Folder.  Miser Project
-   Code text file images.txt version 0.0.2 dated 2023-08-14 available as a
+   Code text file images.txt version 0.0.3 dated 2023-08-14 available as a
    version of <https://orcmid.github.io/miser/images/images.txt>
 
 TODO
@@ -94,7 +99,7 @@ TODO
   * Replace the [o]misertheory*.gif files with versions of the plain ob
     diagram without any other words.
 
-  * Move the front-porch images, and the VSDX, here too.
+  * Upgrade the front-porch n170601d2 VSDX and PNG images
 
   * Much of this should be somewhere generic such as docEng.  For now, we do
     what we need to concerning preservation/forking of miser-theory.info.
@@ -102,6 +107,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.3 2023-08-14T22:29Z big <ob> logo twiddling
  0.0.2 2023-08-14T21:31Z More TODOs on preservation activity
  0.0.1 2023-08-14T17:36Z Reflect initial experiment success
  0.0.0 2023-08-14T16:46Z Placeholder derived from docs.txt 0.0.11 boilerplate
