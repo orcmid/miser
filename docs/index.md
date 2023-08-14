@@ -34,9 +34,11 @@ is skipped.  I can specify HTML comments for that, and I am doing so.
 
 Placeholder initiated 2019-11-20T08:37
 Construction structure at <https://orcmid.github.io/miser/docs.txt>
+
 <!--
 
+  0.0.6 2023-08-14T22:56Z twiddling
   0.0.5 2023-08-14T22:03Z change location of the image, simplify a bit
   0.0.4 2019-11-20 placeholder remarks
-     -->
-<!--                *** end of docs/index.md ***                           -->
+
+               *** end of docs/index.md ***                           -->
