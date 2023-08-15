@@ -26,8 +26,6 @@ MANIFEST
             images.txt
                    this manifest and job-jar file
 
-             index.html
-                   priority version demonstrated
              index.htm
                    <https://miser-theory.info/images/index.htm> replica
       construction.htm
@@ -96,6 +94,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.5 2023-08-15T01:39Z More touch-ups
  0.0.4 2023-08-14T23:38Z Cleaning up and working the preservation
  0.0.3 2023-08-14T22:29Z big <ob> logo twiddling
  0.0.2 2023-08-14T21:31Z More TODOs on preservation activity

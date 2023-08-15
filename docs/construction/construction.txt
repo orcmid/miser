@@ -1,10 +1,10 @@
-construction.txt 0.0.5               UTF-8                       dh:2019-11-24
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+construction.txt 0.0.7              UTF-8                          2023-08-15
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-<https://github.com/orcmid/miser/blob/master/docs/construction/construction.txt>
+       <https://orcmid.github.io/miser/construction/construction.txt>
 
               GITHUB MISER PROJECT DOCS CONSTRUCTION MATERIAL
               -----------------------------------------------
@@ -30,7 +30,7 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                      Copyright 2019 Dennis E. Hamilton
+                Copyright 2019, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -47,6 +47,10 @@ MANIFEST
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
  TODO
+
+   * Branch VSS MiserGitHub and clone the construction/ structure here for
+     further use with GitHub and GitHub pags.  There are no collision with
+     material already yere.
 
    * Find a clean way to talk about the *authored" documentation and the
     *authoring" source that is published to be the documentation.  Need some
@@ -120,6 +124,8 @@ MANIFEST
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.7 2023-08-15T01:47Z Staging for preservation/forking of Miser Project
+       Construction Materials section
  0.0.6 2019-11-24-10:38 More consolidation and management of TODOs
  0.0.5 2019-11-24-09:36 Manage TODOs and adjustment of content to location at
        docs/construction.
