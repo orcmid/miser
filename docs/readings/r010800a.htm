@@ -1,0 +1,382 @@
+<html>
+
+<head>
+<title>r010800a: Computation Theory Definitions, Nomenclature, and Elementary 
+Concepts</title>
+<!--$$Header: /miserCompagno/readings/r010800a.htm 17    17-08-29 16:40 Orcmid $-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body stylesrc="../construction/templates/00/c000005e.htm" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<table border="0" width="100%" height="3">
+  <tr>
+    
+    <td width="12%" height="6">
+
+<!--webbot bot="Include"
+      U-Include="../construction/templates/00/c000005b.htm" TAG="BODY" startspan -->
+<a href="http://miser-theory.info" target="_top"><img border="0" src="../images/misertheory-logo.gif" alt="The Miser Project" width="105" height="72"></a>
+<!-- Included from miser /construction/c000005a.htm of 2004-05-30-21:07 -0700 -->
+<!--webbot bot="Include" endspan i-checksum="1547" --></td>
+    
+    <td width="74%" height="6">
+      <p align="center"><strong><font color="#990033">Miser Project Readings<br>
+		<i><font size="5">Computation Theory Definitions, Nomenclature, <br>
+		and Elementary Concepts</font></i></font></strong></p>
+    </td>
+    
+    <td width="13%" height="6">
+      <p align="right"><b><code><a href="../" target="_top">miser</a>&gt;<a href="./" target="_top">readings</a>&gt;</code></b></p>
+      <p align="right"><code><b><a href="r010800a.htm">r010800a</a></b></code><b><code>&gt;</code></b><br>
+      <small><small><a href="#v0.01">0.01</a> 
+		<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M" startspan -->2017-08-29 16:40<!--webbot bot="Timestamp" endspan i-checksum="25258" --></small>
+      </small></p>
+      </td>
+    
+  </tr>
+</table>
+</font>
+
+<hr color="#990033">
+<blockquote>
+  <p align="left">The Introduction (Chapter 0) of [<a href="#[Sipser1997]">Sipser1997</a>] 
+	covers prerequisites to computation theory.&nbsp; These notes work up to the 
+	exercises and problems of the introduction.&nbsp; My attention is on 
+	extracting a consistent nomenclature (Frugalese) and mathematical precepts 
+	for development of Miser and for application of the Miser Project to 
+	demonstration of key elements of computation theory.</p>
+	<p align="left">This 2001 material is deficient, in that it does not rely on 
+	Sipser so much as my notes from [<a href="#[Davis1982]">Davis1982</a>] at
+	<a href="r000800.htm">r000800</a>.&nbsp; The editing from that as 
+	boilerplate with an account of the Sipser coverage is apparently incomplete.&nbsp; 
+	My ideas for Frugalese have probably advanced farther than the indications 
+	here, as well.&nbsp; I do not expect to develop this particular note any 
+	further.&nbsp; This page is preserved for reference and historical purposes.</p>
+  <p align="right"><i>-- Dennis E. Hamilton<br>
+	Seattle, Washington<br>
+  2014-05-03</i></p>
+</blockquote>
+
+<h2 align="left"><a href="#s0.1">0.1 Definitions</a></h2>
+  
+
+<h2 align="left"><a href="#s0.2">0.2 Mathematical Notions and Terminology</a></h2>
+  
+
+<h2 align="left"><a href="#s0.3">0.3 Definitions, Theorems, and Proofs</a></h2>
+  
+
+<h2 align="left"><a href="#s0.4">0.4 Types of Proof</a></h2>
+  
+
+<h2 align="left"><a href="#Exercises+Problems">Exercises and Problems</a></h2>
+  
+
+<blockquote>
+  
+
+<h2 align="left"><a href="#References"><i>References</i></a></h2>
+  
+
+</blockquote>
+  
+
+<hr>
+
+<h1 align="left"><a name="s0.1">0.1 Definitions</a></h1>
+  
+
+<dl>
+  <dt>Algorithm or Effective Computational Procedure</dt>
+      <dd>mechanical procedures by which the answers to any one of a class of 
+		questions can be obtained. [<a href="#[Davis1982]">Davis1982</a>]</dd>
+  <dt><a name="AutomataTheory">Automata Theory</a></dt>
+  <dd>definitions and properties of mathematical models of computation.&nbsp; 
+	Theories of computability and complexity require a precise definition of a <i>
+	computer</i>.&nbsp; Automata theory provides formal definitions of 
+	computation.&nbsp; [<a href="#[Sipser1997]">Sipser1997</a>]</dd>
+  <dt><a name="ComplexityTheory">Complexity Theory</a></dt>
+  <dd>study and theory about what makes some problems computationally hard and 
+	others easy [<a href="#[Sipser1997]">Sipser1997</a>].&nbsp;&nbsp;</dd>
+  <dt><a name="ComputabilityTheory">Computability Theory</a></dt>
+  <dd>classification of problems by those that are solvable by computation and 
+	those that are not.&nbsp; Computability theory introduces several of the 
+	concepts used in <a href="#ComplexityTheory">complexity theory</a> [<a href="#[Sipser1997]">Sipser1997</a>] 
+	.</dd>
+</dl>
+  
+
+<h3 align="left">Nomenclature and Definitions [<a href="#[Davis1982]">Davis1982</a>: 
+Introduction, 1], for reconciliation with Sipser.&nbsp; Incorporation in a 
+broader glossary eventually.</h3>
+  
+
+<blockquote>
+      <dl>
+        <dt><b>Decision problem</b></dt>
+        <dd>determining the existence of an algorithm for deciding the truth or 
+		falsity of a whole class of statements</dd>
+        <dt><b>positive solution to a decision problem</b></dt>
+        <dd>giving an algorithm for solving it</dd>
+        <dt><b>negative solution to a decision problem</b></dt>
+        <dd>showing that no algorithm for solving the problem exists</dd>
+        <dt><b>unsolvable problem</b></dt>
+        <dd>one for which there is a negative solution to the decision problem</dd>
+        <dt><b>that a given formulation is an algorithm</b></dt>
+        <dd>itself unsolvable</dd>
+      </dl>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+  
+
+<h1 align="left"><a name="s0.2">0.2 Mathematical Notions and Terminology</a></h1>
+  
+
+  <h3>Notations [Introduction, 3] - From [Davis1982]</h3>
+
+  <h4>3.1 Tuples</h4>
+
+<blockquote>
+  <p>Tuples are written like (3,2,7), with (1,2) for pairs.&nbsp; I would prefer 
+	[3,2,7] and [1,2] because I don&#39;t want to make any confusion with ordinary 
+	use of parentheses, especially for the arguments of functions.&nbsp; (See 
+	3.3, below.)</p>
+
+  <p>Characteristic of <i>n</i>-tuples is that n-tuple identity is equivalent to 
+	identity of the corresponding elements.</p>
+
+  <p>Notation for general <i>n</i>-tuples is a kind of power notation that seems 
+	to be syntactical, using <b>x</b><sup>(<i>n</i>)</sup> to mean x<sub>1</sub>,x<sub>2</sub>, 
+	..., x<sub><i>n</i></sub>.&nbsp; It is not clear whether this is 
+	metalanguage or something else.&nbsp;&nbsp;There is also a tendency to write a tuple 
+	without the outer parentheses.</p>
+
+  <p>The fonts used for these are peculiar, and the convention seems to be a 
+	formal one.&nbsp; We may end up needing to restate this to deal with 
+	applicative notation and free-standing construction of tuples.</p>
+
+</blockquote>
+
+  <h4>3.2 Sets</h4>
+
+<blockquote>
+
+  <p>Uses membership, sets of <i>n</i>-tuples (for fixed <i>n</i>), and uses a 
+	simple subset symbol but does not mean proper subset.&nbsp; Empty set is 
+	symbolized by a little phi, ø, and the empty set is a subset of every set.</p>
+
+  <p><b>Miser Note</b>: 2000-08-09 (orcmid)&nbsp; We need to do something about 
+	notation and HTML here.&nbsp;&nbsp; The Iverson solution for J does nto seem 
+	acceptable.&nbsp;&nbsp; We want something that can translate well, but not 
+	require mathematical typography.</p>
+
+  <p>Notice that the empty set is simply a constant object, and we can use <span style="font-variant: small-caps">
+	empty</span>
+  if need be.&nbsp; Or <b>empty</b> if that is more appropriate.&nbsp; It is 
+	important to avoid confusion with programming and formal examples.&nbsp; A 
+	sans-serif font might help, if we could count on it being available to 
+	people.&nbsp; Also, we need to avoid the presumption that we are using a 
+	programming notation.</p>
+
+  <p>For membership, we can have <i>m</i> <b>member-of</b> <i>S</i>, and in 
+	Frugal notation (not the language), we will have it be convenient to write <b>
+	is-member</b>(<i>m</i>)
+  <i>S </i>instead, to be read in the same sense.</p>
+
+  <p>For subsets, we can represent <i>R</i> <b>included-in</b> <i>S</i>&nbsp; by 
+	the notation <b>is-included</b>(<i>R</i>) <i>S</i>.</p>
+
+  <p>Similar translations lead to&nbsp; <b>union</b>(<i>R</i>) <i>S</i>, <b>
+	intersection</b>(<i>R</i>)
+  <i>S</i>, and <b>complement</b> <i>R</i>.&nbsp; Note that complement depends 
+	on knowing the universe of sets that we have in our hands.&nbsp; These 
+	functions are all defined on sets of n-tuples and the implicit domain is 
+	omitted.&nbsp; That is, we don&#39;t have to write <b>complement</b><sub><i>n</i></sub>, 
+	but it needs to be understood in many contexts.&nbsp; (And <b>empty</b> is 
+	included in the domain and the range.)</p>
+
+</blockquote>
+
+  <h4>3.3 Functions</h4>
+
+<blockquote>
+  <p>Considers functions on <i>n</i>-tuples of natural numbers.&nbsp; That is 
+	how the <i>n</i>-tuple notation comes into play.&nbsp; Treats sets of <i>n</i>-tuples 
+	as domains, then functions on these domains to integers.&nbsp; So functions 
+	are defined on domains of <i>n</i>-tuples, with fixed <i>n</i>.&nbsp; These 
+	can be the Cartesian product on the Natural numbers, or they can be subsets 
+	of the Cartesians.&nbsp;</p>
+
+  <p>A function is total if its domain is the Cartesian.</p>
+
+  <p>division and subtraction are defined only on the natural numbers, so they 
+	have restricted domains.</p>
+
+  <p>The characteristic function of a set is a total n-ary function one that 
+	produces 0 if the argument n-tuple is a member of some set S, and 1 
+	otherwise.&nbsp; This function is also called C<sub>S</sub> or, for Miser, <b>
+	C</b> <i>S</i>.&nbsp;&nbsp;</p>
+
+  <p>Note the reversal from the usual sense of Boolean values.&nbsp; It doesn&#39;t 
+	matter of course, because one can make the dual of this function as well.</p>
+
+  <p>Does some cute things on <b>C</b>(<b>union</b>(<i>R</i>) <i>S</i>) = <b>C</b>(<i>R</i>) 
+	× <b>C</b>(<i>S</i>)</p>
+
+  <p><b>C</b>(<b>intersection</b>(<i>R</i>) <i>S</i>) = <b>C</b>(<i>R</i>) + <b>
+	C</b>(<i>S</i>) -
+  <b>C</b>(<i>R</i>)×<b>C</b>(<i>S</i>)</p>
+
+  <p><b>C</b>(<b>complement</b> <i>R</i>) = 1 - <b>C</b>(<i>R</i>)</p>
+
+  <p>It will be a matter of interest whether the characteristic function of a 
+	given set is computable.&nbsp; This is a way to formulate unsolvability.</p>
+
+  <p><b>2000-08-16:</b> To be precise, as is our wont for Miser, we will 
+	probably have to make the order of a domain explicit, and so with the 
+	Characteristic Function of a set.&nbsp; This limitation is related to 
+	wanting to be very careful around enumeration and enumerability issues.</p>
+
+</blockquote>
+
+  <h4>3.4 Statements (propositions)</h4>
+
+<blockquote>
+  <p>The propositional logic of statements assumes statements that assert 
+	propositions that must be either <b> true</b> or <b>false</b>.&nbsp; For <i>
+	statements</i>, we have&nbsp;</p>
+
+  <p><i>p</i> <b>and</b> <i>q</i>, <i>p</i> <b>or</b> <i>q</i>, and <b>not</b> <i>
+	p</i>.</p>
+
+  <p><b>2000-08-16: </b>It is important here that the propositions are about 
+	statements.&nbsp; That is, when we say that a statement &quot;is&quot; <i>p</i>
+  <b>and</b> <i>q</i>, this can be taken as a semantic observation about the 
+	form (i.e., the <i>sense</i>) of a statement.&nbsp; It does not mean that 
+	the statement&#39;s literal expression is <i>p</i> <b>and</b> <i>q</i>.&nbsp; 
+	When we deal with formal logic, using propositional logic, we will look at 
+	is as if the sense-form is then all we have.&nbsp; However, there could be 
+	many interpretations of these forms in statements that do not resemble the 
+	sense-forms, but have agreed interpretations as such.&nbsp;&nbsp;</p>
+
+  <p>This is going to be important to us when we look at how language is dealt 
+	with in computational systems, and we look at the limitations that we employ 
+	to create a computational logic.</p>
+
+  <p>For now, it is important to understand that propositions in the form used 
+	in propositional algebra are the consequence of analysis of statements as to 
+	their sense.&nbsp; Then we apply propositional logic to arrive at new 
+	propositional forms that can be reinterpreted in natural language, where we 
+	preserve fixed senses of the constituent statements <i>p</i>, <i>q</i>, ... 
+	throughout.&nbsp; This is the sense in which propositional logic <i>applies</i>
+  to statements.</p>
+
+</blockquote>
+
+  <h4>3.5 Predicates</h4>
+
+<blockquote>
+  <p><b>2000-08-16:</b> Predicates are viewed by Davis as having interpretations 
+	as statements upon substitution of particulars for its free variables.&nbsp; 
+	The predicate then becomes a (propositional) statement.&nbsp; We can examine 
+	whether what we have said, above, about sense-forms holds.&nbsp; In the 
+	example of P(x,y) being the predicate for the statement <i>x</i> = <i>y</i> 
+	+ 3, it would seem to be so.</p>
+
+</blockquote>
+
+  <h4>3.6 Quantifiers</h4>
+
+
+<h1 align="left"><a name="s0.3">0.3 Definitions, Theorems, and Proofs</a></h1>
+  
+
+<h1 align="left"><a name="s0.4">0.4 Types of Proof</a></h1>
+  
+
+<h1 align="left"><a name="Exercises+Problems">Exercises and Problems</a></h1>
+  
+
+<h2 align="left"><a name="Exercise0.1">Exercise 0.1</a></h2>
+  
+
+<blockquote>
+  
+
+<p align="left">&nbsp;</p>
+  
+
+</blockquote>
+  
+
+  <h1><a name="References">References</a></h1>
+
+
+    <dl>
+      <dt><a name="[Davis1982]" href="theory.htm#Davis1982">[Davis1982]</a></dt>
+      <dd> Davis, Martin. <i> Computability and Unsolvability.</i>  <a href="http://www.doverpublications.com" target="_top"> 
+		Dover</a> (New York: 1958, 1973, 1982). ISBN 0-486-61471-9 pbk.</dd>
+    </dl>
+  
+    <dl>
+      <dt>[<a name="[Sipser1997]" href="theory.htm#Sipser1997">Sipser1997</a>]</dt>
+      <dd><a href="http://www-math.mit.edu/~sipser/" target="_top">Sipser, 
+		Michael</a>.&nbsp;
+        <i><a href="http://www-math.mit.edu/~sipser/book.html" target="_top">
+		Introduction to the Theory of Computation</a></i>.&nbsp; PWS Publishing 
+		(Boston, MA: 1997).&nbsp; ISBN 0-534-94728-X.</dd>
+    </dl>
+  
+
+  <h4>&nbsp;</h4>
+
+
+<hr color="#990033">
+
+<small>
+<div>
+<dl>
+  <dt><b><a name="v0.01">0.01</a> 2014-05-03-09:49 Repaved Version</b></dt>
+	<dd>The page is updated to conform to current styles and formats.&nbsp; The 
+	material is preserved as a historical matter and to avoid breaking any links 
+	that may have existed to it.</dd>
+	<dt>
+	<b><a name="v0.00">0.00</a> 2001-09-07-17:19 Develop Initial Notes (orcmid)</b></dt>
+  <dd>Extract notes on how this material is applicable to the Miser Project</dd>
+</small>
+</dl>
+</div>
+
+<table border="0" cellspacing="3" width="100%">
+  <tr>
+    <td width="10%">
+	<a href="index.htm">
+	<img border="0" src="../images/hardhat-thumb.gif" width="80" height="60" alt="Construction Structure (Hard Hat Area)"></a></td>
+    <td width="67%" valign="middle" align="center">
+      <!--webbot bot="Include" U-Include="../construction/templates/00/c000005d.htm" TAG="BODY" startspan -->
+<table border="0" width="100%" id="table1" cellpadding="0" style="border-collapse: collapse">
+	<tr>
+		<td>
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<p align="center"> <small><small>You are navigating the <a href="../" target="_top">
+Miser Project</a>.</small></small></p></font>
+		</td>
+	</tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="62759" -->
+    </td>
+    <td width="21%">
+      <p align="right"><font size="-2">created 2001-09-07-17:19 -0700 (pdt) by 
+		orcmid
+      <em><br>
+      $$Date: 17-08-29 16:40 $<br>
+      $$Revision: 17 $</em></font></p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

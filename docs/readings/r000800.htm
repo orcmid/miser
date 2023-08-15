@@ -1,0 +1,340 @@
+<html>
+
+<head>
+<title>R000800: Computability and Unsolvability</title>
+<!--$$Header: /miserCompagno/readings/r000800.htm 20    17-08-29 16:40 Orcmid $-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body stylesrc="../construction/templates/00/c000005e.htm" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<table border="0" width="100%" height="3">
+  <tr>
+    
+    <td width="12%" height="6">
+
+<!--webbot bot="Include"
+      U-Include="../construction/templates/00/c000005b.htm" TAG="BODY" startspan -->
+<a href="http://miser-theory.info" target="_top"><img border="0" src="../images/misertheory-logo.gif" alt="The Miser Project" width="105" height="72"></a>
+<!-- Included from miser /construction/c000005a.htm of 2004-05-30-21:07 -0700 -->
+<!--webbot bot="Include" endspan i-checksum="1547" --></td>
+    
+    <td width="74%" height="6">
+      <p align="center"><strong><font color="#990033">Miser Project Readings<br>
+		<i><font size="5">Notes on Computability and Unsolvability</font></i></font></strong></p>
+    </td>
+    
+    <td width="13%" height="6">
+      <p align="right"><b><code><a href="../" target="_top">miser</a>&gt;<a href="./" target="_top">readings</a>&gt;</code></b></p>
+      <p align="right"><code><b><a href="r000800.htm">r000800</a></b></code><b><code>&gt;</code></b><br>
+      <small><small><a href="#v0.01">0.01</a> 
+		<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M" startspan -->2017-08-29 16:40<!--webbot bot="Timestamp" endspan i-checksum="25258" --></small>
+      </small></p>
+      </td>
+    
+  </tr>
+</table>
+</font>
+
+<hr color="#990033">
+
+<blockquote>
+	<p align="left"><b>These are notes based on consideration of Davis, Martin.
+	<i><a href="theory.htm#Davis1982">Computability and Unsolvability</a>.</i> 
+	Dover (New York: 1958, 1973, 1982). ISBN 0-486-61471-9 pbk.</b></p>
+	<p align="left">Over the intervening time, I have recreated some of these 
+	considerations in various forms.&nbsp; There is much here that deepens the 
+	problem of demonstrating that all of the computable functions are covered by 
+	the set of all procedures processable by a given computational mechanism.&nbsp;&nbsp; 
+	I need to incorporate that in the appropriate material.&nbsp; This page will 
+	remain for reference purposes.&nbsp; I don&#39;t foresee developing it further 
+	in this form.</p>
+</blockquote>
+<p align="right">-- Dennis E. Hamilton<br>Seattle, Washington<br>2014-05-03</p>
+<h2 align="left">2000-08-09: Initial Notes - At the Boundaries of Computability 
+and Unsolvability</h2>
+  
+
+<h2 align="left">2000-08-09: Gleanings&nbsp;</h2>
+  
+
+<h3 align="left">Nomenclature and Definitions [Introduction, 1]</h3>
+  
+
+<blockquote>
+      <dl>
+      <dt><b>Algorithm or Effective Computational Procedure</b></dt>
+        <dd>mechanical procedures by which the answers to any one of a class of 
+		questions can be obtained.</dd>
+        <dt><b>Decision problem</b></dt>
+        <dd>determining the existence of an algorithm for deciding the truth or 
+		falsity of a whole class of statements</dd>
+        <dt><b>positive solution to a decision problem</b></dt>
+        <dd>giving an algorithm for solving it</dd>
+        <dt><b>negative solution to a decision problem</b></dt>
+        <dd>showing that no algorithm for solving the problem exists</dd>
+        <dt><b>unsolvable problem</b></dt>
+        <dd>one for which there is a negative solution to the decision problem</dd>
+        <dt><b>that a given formulation is an algorithm</b></dt>
+        <dd>itself unsolvable</dd>
+      </dl>
+</blockquote>
+
+<h3>Demonstration of the Diagonal Argument for non-computable functions 
+[Introduction, 1, p.xvii]</h3>
+<blockquote>
+<p>Suppose we generate all procedures in order of increasing length, and let E[i] 
+be the ith procedure.</p>
+
+  <p>We will say that&nbsp;f[i](x) is the function that E[i] computes.</p>
+
+  <p>Now let g(x) = f[x](x)+1</p>
+
+  <p>For no value of i is it the case that g(x) = f[i](x).</p>
+
+  <p>Suppose that it was,&nbsp; then</p>
+
+  <p>there is some i0 such that g(x) = f[i0](x).</p>
+
+  <p>So f[i0](x) = f[x](x)+1 by definition of g(x)</p>
+
+  <p>and so it must also be true for x = i0,</p>
+
+  <p>f[i0](i0) = f[i0](i0)+1, which is a contradiction.</p>
+
+  <p>So no procedure in the E[i] has as its function, g(x).&nbsp; But all of the 
+	effective procedures are in E[i].&nbsp; So g(x) is not effectively 
+	computable.</p>
+
+  <p>This establishes the existence of functions that are not effectively 
+	calculable.&nbsp; g(x) is not computable.</p>
+
+  <p>In the discussion of this result, Davis digs into how the the contradiction 
+	arises.&nbsp; The suspect is the supposition that one can create an 
+	enumeration of the effective procedures in the first place!&nbsp; (Sort of 
+	the Chinese Room flaw.)&nbsp; That is, the defect is in the hypothesized E[i].</p>
+
+  <p><b>Miser Note:</b></p>
+
+<p><b>2000-08-09 (orcmid)</b>.&nbsp; It is also important to differentiate, 
+here, the difference between the computable functions and the effective 
+procedures.&nbsp; Notice that there may be many effective procedures for the 
+same function.&nbsp; That is, there is no requirement that the correspondence be 
+one-to-one.&nbsp; The other thing to notice is that the E[i], if they could be 
+created, would be countable (the [i] assures that).&nbsp; So even if we made the 
+P[i] be the set of procedures in some language (not necessarily ones 
+corresponding to computable functions), the E are a subset of the P.&nbsp; It 
+should be no surprise that there are far more functions than can be fit into 
+that set, so there must be functions that are not computable by an argument on 
+cardinality alone.</p>
+
+<p>In coming up with a universal machine, there is something to pay attention to 
+here.&nbsp; We want the P[i] that we arrive at to have all the E[i] that there 
+can be (in the system of the given universal machine), and have them correspond 
+to all the computable functions there are, with none missing.&nbsp;&nbsp;</p>
+
+</blockquote>
+
+  <h3>Notations [Introduction, 3]</h3>
+
+  <h4>3.1 Tuples</h4>
+
+<blockquote>
+  <p>Tuples are written like (3,2,7), with (1,2) for pairs.&nbsp; I would prefer 
+	[3,2,7] and [1,2] because I don&#39;t want to make any confusion with ordinary 
+	use of parentheses, especially for the arguments of functions.&nbsp; (See 
+	3.3, below.)</p>
+
+  <p>Characteristic of <i>n</i>-tuples is that n-tuple identity is equivalent to 
+	identity of the corresponding elements.</p>
+
+  <p>Notation for general <i>n</i>-tuples is a kind of power notation that seems 
+	to be syntactical, using <b>x</b><sup>(<i>n</i>)</sup> to mean x<sub>1</sub>,x<sub>2</sub>, 
+	..., x<sub><i>n</i></sub>.&nbsp; It is not clear whether this is 
+	metalanguage or something else.&nbsp;&nbsp;There is also a tendency to write a tuple 
+	without the outer parentheses.</p>
+
+  <p>The fonts used for these are peculiar, and the convention seems to be a 
+	formal one.&nbsp; We may end up needing to restate this to deal with 
+	applicative notation and free-standing construction of tuples.</p>
+
+</blockquote>
+
+  <h4>3.2 Sets</h4>
+
+<blockquote>
+
+  <p>Uses membership, sets of <i>n</i>-tuples (for fixed <i>n</i>), and uses a 
+	simple subset symbol but does not mean proper subset.&nbsp; Empty set is 
+	symbolized by a little phi, ø, and the empty set is a subset of every set.</p>
+
+  <p><b>Miser Note</b>: 2000-08-09 (orcmid)&nbsp; We need to do something about 
+	notation and HTML here.&nbsp;&nbsp; The Iverson solution for J does not seem 
+	acceptable.&nbsp;&nbsp; We want something that can translate well, but not 
+	require mathematical typography.</p>
+
+  <p>Notice that the empty set is simply a constant object, and we can use <span style="font-variant: small-caps">
+	empty</span>
+  if need be.&nbsp; Or <b>empty</b> if that is more appropriate.&nbsp; It is 
+	important to avoid confusion with programming and formal examples.&nbsp; A 
+	sans-serif font might help, if we could count on it being available to 
+	people.&nbsp; Also, we need to avoid the presumption that we are using a 
+	programming notation.</p>
+
+  <p>For membership, we can have <i>m</i> <b>member-of</b> <i>S</i>, and in 
+	Frugal notation (not the language), we will have it be convenient to write <b>
+	is-member</b>(<i>m</i>)
+  <i>S </i>instead, to be read in the same sense.</p>
+
+  <p>For subsets, we can represent <i>R</i> <b>included-in</b> <i>S</i>&nbsp; by 
+	the notation <b>is-included</b>(<i>R</i>) <i>S</i>.</p>
+
+  <p>Similar translations lead to&nbsp; <b>union</b>(<i>R</i>) <i>S</i>, <b>
+	intersection</b>(<i>R</i>)
+  <i>S</i>, and <b>complement</b> <i>R</i>.&nbsp; Note that complement depends 
+	on knowing the universe of sets that we have in our hands.&nbsp; These 
+	functions are all defined on sets of n-tuples and the implicit domain is 
+	omitted.&nbsp; That is, we don&#39;t have to write <b>complement</b><sub><i>n</i></sub>, 
+	but it needs to be understood in many contexts.&nbsp; (And <b>empty</b> is 
+	included in the domain and the range.)</p>
+
+</blockquote>
+
+  <h4>3.3 Functions</h4>
+
+<blockquote>
+  <p>Considers functions on <i>n</i>-tuples of natural numbers.&nbsp; That is 
+	how the <i>n</i>-tuple notation comes into play.&nbsp; Treats sets of <i>n</i>-tuples 
+	as domains, then functions on these domains to integers.&nbsp; So functions 
+	are defined on domains of <i>n</i>-tuples, with fixed <i>n</i>.&nbsp; These 
+	can be the Cartesian product on the Natural numbers, or they can be subsets 
+	of the Cartesians.&nbsp;</p>
+
+  <p>A function is total if its domain is the Cartesian.</p>
+
+  <p>division and subtraction are defined only on the natural numbers, so they 
+	have restricted domains.</p>
+
+  <p>The characteristic function of a set is a total n-ary function one that 
+	produces 0 if the argument n-tuple is a member of some set S, and 1 
+	otherwise.&nbsp; This function is also called C<sub>S</sub> or, for Miser, <b>
+	C</b> <i>S</i>.&nbsp;&nbsp;</p>
+
+  <p>Note the reversal from the usual sense of Boolean values.&nbsp; It doesn&#39;t 
+	matter of course, because one can make the dual of this function as well.</p>
+
+  <p>Does some cute things on <b>C</b>(<b>union</b>(<i>R</i>) <i>S</i>) = <b>C</b>(<i>R</i>) 
+	× <b>C</b>(<i>S</i>)</p>
+
+  <p><b>C</b>(<b>intersection</b>(<i>R</i>) <i>S</i>) = <b>C</b>(<i>R</i>) + <b>
+	C</b>(<i>S</i>) -
+  <b>C</b>(<i>R</i>)×<b>C</b>(<i>S</i>)</p>
+
+  <p><b>C</b>(<b>complement</b> <i>R</i>) = 1 - <b>C</b>(<i>R</i>)</p>
+
+  <p>It will be a matter of interest whether the characteristic function of a 
+	given set is computable.&nbsp; This is a way to formulate unsolvability.</p>
+
+  <p><b>2000-08-16:</b> To be precise, as is our wont for Miser, we will 
+	probably have to make the order of a domain explicit, and so with the 
+	Characteristic Function of a set.&nbsp; This limitation is related to 
+	wanting to be very careful around enumeration and enumerability issues.</p>
+
+</blockquote>
+
+  <h4>3.4 Statements (propositions)</h4>
+
+<blockquote>
+  <p>The propositional logic of statements assumes statements that assert 
+	propositions that must be either <b> true</b> or <b>false</b>.&nbsp; For <i>
+	statements</i>, we have&nbsp;</p>
+
+  <p><i>p</i> <b>and</b> <i>q</i>, <i>p</i> <b>or</b> <i>q</i>, and <b>not</b> <i>
+	p</i>.</p>
+
+  <p><b>2000-08-16: </b>It is important here that the propositions are about 
+	statements.&nbsp; That is, when we say that a statement &quot;is&quot; <i>p</i>
+  <b>and</b> <i>q</i>, this can be taken as a semantic observation about the 
+	form (i.e., the <i>sense</i>) of a statement.&nbsp; It does not mean that 
+	the statement&#39;s literal expression is <i>p</i> <b>and</b> <i>q</i>.&nbsp; 
+	When we deal with formal logic, using propositional logic, we will look at 
+	is as if the sense-form is then all we have.&nbsp; However, there could be 
+	many interpretations of these forms in statements that do not resemble the 
+	sense-forms, but have agreed interpretations as such.&nbsp;&nbsp;</p>
+
+  <p>This is going to be important to us when we look at how language is dealt 
+	with in computational systems, and we look at the limitations that we employ 
+	to create a computational logic.</p>
+
+  <p>For now, it is important to understand that propositions in the form used 
+	in propositional algebra are the consequence of analysis of statements as to 
+	their sense.&nbsp; Then we apply propositional logic to arrive at new 
+	propositional forms that can be reinterpreted in natural language, where we 
+	preserve fixed senses of the constituent statements <i>p</i>, <i>q</i>, ... 
+	throughout.&nbsp; This is the sense in which propositional logic <i>applies</i>
+  to statements.</p>
+
+</blockquote>
+
+  <h4>3.5 Predicates</h4>
+
+<blockquote>
+  <p><b>2000-08-16:</b> Predicates are viewed by Davis as having interpretations 
+	as statements upon substitution of particulars for its free variables.&nbsp; 
+	The predicate then becomes a (propositional) statement.&nbsp; We can examine 
+	whether what we have said, above, about sense-forms holds.&nbsp; In the 
+	example of P(x,y) being the predicate for the statement <i>x</i> = <i>y</i> 
+	+ 3, it would seem to be so.</p>
+
+</blockquote>
+
+  <h4>3.6 Quantifiers</h4>
+
+
+<hr color="#990033">
+
+<small>
+<div>
+<dl>
+  <dt><b><a name="v0.01">0.01</a> 2014-05-03-08:42 Repaved Version</b></dt>
+	<dd>The page is updated to conform to current styles and formats.&nbsp; The 
+	material is preserved as a historical matter and to avoid breaking any links 
+	that may have existed to it.</dd>
+	<dt>
+	<b><a name="v0.00">0.00</a> 2000-08-09-08:00 Develop Initial Notes (orcmid)</b></dt>
+  <dd>Extract notes on how this material is applicable to the Miser Project</dd>
+</small>
+</dl>
+</div>
+
+<table border="0" cellspacing="3" width="100%">
+  <tr>
+    <td width="10%">
+	<a href="index.htm">
+	<img border="0" src="../images/hardhat-thumb.gif" width="80" height="60" alt="Construction Structure (Hard Hat Area)"></a></td>
+    <td width="67%" valign="middle" align="center">
+      <!--webbot bot="Include" U-Include="../construction/templates/00/c000005d.htm" TAG="BODY" startspan -->
+<table border="0" width="100%" id="table1" cellpadding="0" style="border-collapse: collapse">
+	<tr>
+		<td>
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<p align="center"> <small><small>You are navigating the <a href="../" target="_top">
+Miser Project</a>.</small></small></p></font>
+		</td>
+	</tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="62759" -->
+    </td>
+    <td width="21%">
+      <p align="right"><font size="-2">created 2000-08-09-08:00 -0700 (pdt) by 
+		orcmid
+      <em><br>
+      $$Date: 17-08-29 16:40 $<br>
+      $$Revision: 20 $</em></font></p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

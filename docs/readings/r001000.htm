@@ -1,0 +1,188 @@
+<html>
+
+<head>
+<title>r001000: Introduction to Mathematical Logic</title>
+<!--$$Header: /miserCompagno/readings/r001000.htm 14    17-08-29 16:40 Orcmid $-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body stylesrc="../construction/templates/00/c000005e.htm" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<table border="0" width="100%" height="3">
+  <tr>
+    
+    <td width="12%" height="6">
+
+<!--webbot bot="Include"
+      U-Include="../construction/templates/00/c000005b.htm" TAG="BODY" startspan -->
+<a href="http://miser-theory.info" target="_top"><img border="0" src="../images/misertheory-logo.gif" alt="The Miser Project" width="105" height="72"></a>
+<!-- Included from miser /construction/c000005a.htm of 2004-05-30-21:07 -0700 -->
+<!--webbot bot="Include" endspan i-checksum="1547" --></td>
+    
+    <td width="74%" height="6">
+      <p align="center"><strong><font color="#990033">Miser Project Readings<br>
+		<i><font size="5">Notes on Introduction to Mathematical Logic</font></i></font></strong></p>
+    </td>
+    
+    <td width="13%" height="6">
+      <p align="right"><b><code><a href="../" target="_top">miser</a>&gt;<a href="./" target="_top">readings</a>&gt;</code></b></p>
+      <p align="right"><code><b><a href="r001000.htm">r001000</a></b></code><b><code>&gt;</code></b><br>
+      <small><small><a href="#v0.01">0.01</a> 
+		<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M" startspan -->2017-08-29 16:40<!--webbot bot="Timestamp" endspan i-checksum="25258" --></small>
+      </small></p>
+      </td>
+    
+  </tr>
+</table>
+
+<hr color="#990033">
+
+</font>
+
+<blockquote>
+	<p align="left"><b>These are notes based on consideration of Church, Alonzo.&nbsp;
+	<i><a href="http://orcmid.com/readings/logic.htm#Church1956">Introduction to 
+	Mathematical Logic</a></i>.&nbsp;&nbsp;</b>Princeton University Press (Princeton, NJ: 
+	1944, 1956).&nbsp; ISBN 0-691-02906-7 pbk.&nbsp;&nbsp;With 1958 errata.<b>.</b></p>
+	<p align="left">Alonzo Church (1903 - 1995) was a longtime member of the 
+	Princeton University department of mathematics.&nbsp; Thereafter he was a 
+	professor of philosophy and mathematics at UCLA.&nbsp; Alan Turing was one 
+	of his graduate students, as were several other now well-known logicians and 
+	philosophers.</p>
+	<p align="left">There is much here to consider with regard to models.&nbsp; 
+	I think I didn&#39;t quite have it in 2000.&nbsp; I need to re-assess it with 
+	regard to the formulation of the structure, <b>
+		‹ob›</b>.&nbsp;&nbsp; This page will 
+	remain for reference purposes.&nbsp; I don&#39;t foresee developing it further 
+	in this form.</p>
+</blockquote>
+<p align="right">-- Dennis E. Hamilton<br>Seattle, Washington<br>2014-05-03</p>
+
+<h1 align="left"><a name="ChurchOnModels">2000-10-03: Church on Models</a></h1>
+  
+
+<blockquote>
+
+<p align="left">I have been saying that Miser is a model, and I now need to be 
+rigorous about it.&nbsp; And I would like to keep as much harmony with the use 
+of the term in mathematical logic and also in science.</p>
+  
+
+<p align="left">Using the index, we have a mention in footnote 451 on p.287 (in 
+§48.22).&nbsp; This relates to a system, G, having enumerably infinite models, 
+and those having enumerably infinite extensions.</p>
+  
+
+<p align="left">In §55, on postulate theory, Church takes this apart.</p>
+  
+
+  <ol>
+    <li>
+      <p align="left">When a system of postulates is used as basis for the 
+		formal treatment of some mathematical theory, the postulates have to be 
+		thought of as added to an underlying logic.<br>
+      Viz., for Miser as a theory, there is an underlying logic to which the 
+		particular postulates and definitions are added.</li>
+    <li>
+      <p align="left">For the precise syntactical definition of the particular 
+		theory, it is necessary to state not only the specific mathematical 
+		postulates but also a formalization of the underlying logic.</li>
+    <li>
+      <p align="left">The class of theorems belonging to the theory in question 
+		is determined by both the postulates and the underlying logic.</li>
+  </ol>
+  <p align="left">Church looks at the interplay of these.&nbsp; He is careful in 
+	forming theories to not use constants but to have <b><i>uninterpreted</i></b>
+  postulates.&nbsp; He will then speak of interpretations of the theory (e.g., 
+	for arithmetic and for a number theory (<i>n</i>-th order arithmetic).</p>
+  <p align="left">Church considers that there is a representing form of 
+	postulates in which it is expressed as a universal closure (that is, with no 
+	free variables, or at least no free variables of a certain kind), and it is 
+	added to a <b>functional calculus </b>(defined earlier) of the least order 
+	in which all of the representing forms are well-formed.</p>
+  <p align="left">A model of the postulates, in this case, is a non-empty domain 
+	of individuals together with a system of values of the free variables of the 
+	representing form which satisfy the postulates simultaneously in the domain 
+	of individuals.</p>
+  <p align="left">We now get to a very interesting place.&nbsp; Consider a 
+	propositional form in the system.&nbsp; This form is a consequence of the 
+	postulates if it is true in every model of the postulates.</p>
+  <p align="left">The mathematical theory can be considered to be all of the 
+	propositions (within the system) that are consequences of the postulates.&nbsp; 
+	[This inherently includes the postulates themselves.]</p>
+  <p align="left">Two models of a system of postulates are said to be isomorphic 
+	if there is a one-to-one correspondence between the two domains of 
+	individuals of the models, such that the assignments of free variables 
+	always correspond between the two models.</p>
+  <p align="left">A system of postulates is considered categorical if all of its 
+	models are isomorphic.</p>
+</blockquote>
+<h1 align="left"><a name="SystemTheoryModelInterpretation">2000-10-03: System, 
+Theory, Model, and Interpretation</a></h1>
+<blockquote>
+  <p align="left">It looks like what I have to deal with here is a confluence of 
+	system, theory, model, and interpretation.&nbsp;&nbsp;</p>
+  <p align="left">Church&#39;s sense of interpretation is that used now in 
+	mathematical logic.&nbsp; It would appear that his sense of model also 
+	agrees.&nbsp; I need to now look at other sources to determine how to 
+	reconcile my sense of theories as modeling something versus theories having 
+	models.</p>
+</blockquote>
+  
+
+  <h4>&nbsp;</h4>
+
+
+<hr color="#990033">
+
+<small>
+<div>
+<dl>
+  <dt><b><a name="v0.01">0.01</a> 2014-05-03-09:04 Repaved Version</b></dt>
+	<dd>The page is updated to conform to current styles and formats.&nbsp; The 
+	material is preserved as a historical matter and to avoid breaking any links 
+	that may have existed to it.</dd>
+	<dt>
+	<b><a name="v0.00">0.00</a> 2000-10-03-10:31 Develop Initial Notes (orcmid)</b></dt>
+  <dd>Extract notes on how I could apply some of this to the Miser Project.</dd>
+</small>
+</dl>
+</div>
+
+<table border="0" cellspacing="3" width="100%">
+  <tr>
+    <td width="10%">
+	<a href="index.htm">
+	<img border="0" src="../images/hardhat-thumb.gif" width="80" height="60" alt="Construction Structure (Hard Hat Area)"></a></td>
+    <td width="67%" valign="middle" align="center">
+      <!--webbot bot="Include" U-Include="../construction/templates/00/c000005d.htm" TAG="BODY" startspan -->
+<table border="0" width="100%" id="table1" cellpadding="0" style="border-collapse: collapse">
+	<tr>
+		<td>
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<p align="center"> <small><small>You are navigating the <a href="../" target="_top">
+Miser Project</a>.</small></small></p></font>
+		</td>
+	</tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="62759" -->
+    </td>
+    <td width="21%">
+      <p align="right"><font size="-2">created 2000-10-03-10:31 -0700 (pdt) by 
+		orcmid
+      <em><br>
+      $$Date: 17-08-29 16:40 $<br>
+      $$Revision: 14 $</em></font></p>
+    </td>
+  </tr>
+</table>
+
+<p align="right"><font size="-2">created 2000-10-03-10:31 -0700 (pdt) by <a href="../construction/orcmid.htm"> 
+orcmid</a><br>
+<em>$$Author: Orcmid $<br>
+$$Date: 17-08-29 16:40 $<br>
+$$Revision: 14 $</em></font></p>
+
+</body>
+</html>

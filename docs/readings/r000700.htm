@@ -1,0 +1,167 @@
+<html>
+
+<head>
+<title>r000700:Notes on Lambda Calculus and Combinatory Algebra</title>
+<!--$$Header: /miserCompagno/readings/r000700.htm 20    17-08-29 16:40 Orcmid $-->
+</head>
+
+<body stylesrc="../construction/templates/00/c000005e.htm" bgcolor="#FFFFFF" text="#000080" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<table border="0" width="100%" height="3">
+  <tr>
+    
+    <td width="12%" height="6">
+
+<!--webbot bot="Include"
+      U-Include="../construction/templates/00/c000005b.htm" TAG="BODY" startspan -->
+<a href="http://miser-theory.info" target="_top"><img border="0" src="../images/misertheory-logo.gif" alt="The Miser Project" width="105" height="72"></a>
+<!-- Included from miser /construction/c000005a.htm of 2004-05-30-21:07 -0700 -->
+<!--webbot bot="Include" endspan i-checksum="1547" --></td>
+    
+    <td width="74%" height="6">
+      <p align="center"><strong><font color="#990033">Miser Project Readings<br>
+		<i><font size="5">Notes on Lambda Calculus and Combinatory Logic</font></i></font></strong></p>
+    </td>
+    
+    <td width="13%" height="6">
+      <p align="right"><b><code><a href="../" target="_top">miser</a>&gt;<a href="./" target="_top">readings</a>&gt;</code></b></p>
+      <p align="right"><code><b><a href="r000700.htm">r000700</a></b></code><b><code>&gt;</code></b><br>
+      <small><small><a href="#v0.01">0.01</a> 
+		<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M" startspan -->2017-08-29 16:40<!--webbot bot="Timestamp" endspan i-checksum="25258" --></small>
+      </small></p>
+      </td>
+    
+  </tr>
+</table>
+</font>
+
+<hr color="#990033">
+
+<blockquote>
+
+<p align="left"><b>These are notes based on consideration of Barendregt, Hendrik Pieter. <i>
+<a href="theory.htm#Barendregt1981">The Lambda Calculus: Its Syntax and
+        Semantics</a></i>. North-Holland (Amsterdam, 1981). ISBN
+        0-444-85490-8.&nbsp;</b></p>
+<p align="left">Over the intervening time, I have recreated these considerations 
+several times in various forms.&nbsp; My intention is to consolidate them in 
+line with my later thinking and leave this page simply for reference and a form 
+of check-list.</p>
+<p align="right">-- Dennis E. Hamilton<br>
+Seattle, Washington<br>
+2014-05-01</p>
+
+</blockquote>
+
+<h2 align="left">2000-07-18: Initial Notes - How Lambda-Calculus and Combinatory
+Algebra Figure in Miser</h2>
+  
+
+<blockquote>
+  <p align="left"><b>2000-07-18 (orcmid)</b>: 
+	<a href="theory.htm#Barendregt1981">This</a>
+  was the only serious
+        lambda-calculus book that I kept in preparing to move to Italy in
+        September, 1999. So I am mining it here for combinatory logic
+  (CL).&nbsp;</p>
+</blockquote>
+<h3 align="left">Miser Representation of Combinatory Logic</h3>
+<blockquote>
+  <p align="left">I will demonstrate that programs for
+        the Miser Engine represent combinatory logic, so combinatory algebra is
+        useable for discussion of an exploration of computational completeness.
+        The CL is equivalent to the closed-form lambda calculus (no free
+        variables) which is equivalent to the set of recursive functions which
+        is equivalent to what is computable. What's cool about Miser is it
+        provides a pretty direct access to CL without presuming CL as primitive.
+        That is, CL is represented, and this raises some interesting things
+        about that and about representing mathematical structures by computer, generally.</p>
+</blockquote>
+<h3 align="left">Establishing Valid Interpretation of Combinatory Logic in Miser</h3>
+<blockquote>
+  <p align="left">My concern is as follows. If the Miser Engine
+        evaluation mechanism provides a <i>valid</i> interpretation of CL, then
+        all of the results of CL apply and can be used to simplify formulae,
+        etc., to reduce and find equivalences, etc. Likewise, the lambda
+        calculus can also be used, since by having CL as a model, the Miser
+        Engine also has the computable part of the lambda calculus as a model.
+        So all theorems and results about CL and the computable lambda calculus
+        are results about the Miser Engine.&nbsp;</p>
+  <p align="left">If I find that there are exceptions, I need to
+        figure out how to repair the interpretation or else I may have to build
+        a derivative of CL that accounts for them. I would much rather find that
+        the interpretation is sound and valid. So I need to do some theory work
+        to satisfy myself about that.</p>
+  <p align="left">My readings have involved mining in here enough
+        to put sticky notes on pages where there is relevant material.</p>
+  <p align="left">The idea is not that people should have to
+        master this stuff. I need to master enough of it so that I can rely on
+        the results of this theoretical work in an informal development that is
+        still supported by the heavier theory. I want to just appeal to it,
+        discuss it informally, and point people to the main bodies of work.</p>
+</blockquote>
+<h3 align="left">Dancing on the Edge of Computability</h3>
+<blockquote>
+  <p align="left">Something I have to work out is the problem of
+        undefined (or non-reducible forms) that come up. These are equivalent to
+        programs that don't terminate. It is fine to have them, of course -- you
+        can't have a universal computer without termination problems -- but I
+        need to make sure that the representation of CL squares with the theory
+        of CL in this area. In particular, I am going to be very rigorous around
+        not allowing program simplifications that will eliminate undefined
+        parts. (This is like avoiding the classic mistakes that come up if you
+        simplify formulae involving divisions and neglect the problem of there
+        being a potentially-0-valued denominator in the original form that was
+        inadvertently simplified out.)</p>
+</blockquote>
+  
+
+<hr color="#990033">
+
+<small>
+<div>
+<dl>
+  <dt><b><a name="v0.01">0.01</a> 2014-05-01-10:18 Repaved Version</b></dt>
+	<dd>The page is updated to conform to current styles and formats.&nbsp; The 
+	material is preserved as a historical matter and to avoid breaking any links 
+	that may have existed to it.</dd>
+	<dt><br>
+	<b><a name="v0.00">0.00</a> 2000-08-09-07:48 Develop Initial Notes (orcmid)</b></dt>
+</small>
+  <dd><small>Extract notes on how this material is applicable to the Miser 
+	Project</dd>
+</dl>
+</div>
+</small>
+
+<table border="0" cellspacing="3" width="100%">
+  <tr>
+    <td width="10%">
+	<a href="index.htm">
+	<img border="0" src="../images/hardhat-thumb.gif" width="80" height="60" alt="Construction Structure (Hard Hat Area)"></a></td>
+    <td width="67%" valign="middle" align="center">
+      <!--webbot bot="Include" U-Include="../construction/templates/00/c000005d.htm" TAG="BODY" startspan -->
+<table border="0" width="100%" id="table1" cellpadding="0" style="border-collapse: collapse">
+	<tr>
+		<td>
+<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
+<p align="center"> <small><small>You are navigating the <a href="../" target="_top">
+Miser Project</a>.</small></small></p></font>
+		</td>
+	</tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="62759" -->
+    </td>
+    <td width="21%">
+      <p align="right"><font size="-2">created 2000-08-09-07:48 -0700 (pdt) by 
+		orcmid
+      <em><br>
+      $$Date: 17-08-29 16:40 $<br>
+      $$Revision: 20 $</em></font></p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
