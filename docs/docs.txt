@@ -1,4 +1,4 @@
-docs.txt 0.0.12                       UTF-8                    dh:2023-08-14
+docs.txt 0.0.13                     UTF-8                         2023-08-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -36,11 +36,6 @@ MANIFEST
      index.md
            markdown of the <https://orcmid.github.io/miser/> home page.
 
-     n170601d2.png
-     n170601d2.vsdx
-           images of the oMiser logo for employment on the home page,
-           along with the Visio editable form.
-
      about/
            subfolder for the about page and subordinate material on the
            the purpose and management of the project and connection with
@@ -48,7 +43,9 @@ MANIFEST
 
      construction/
            construction materials and documentation of the structure and
-           authoring of the <https://orcmid.github.io/miser/> materials.
+           authoring of the <https://orcmid.github.io/miser/> materials,
+           including forking/preservation of
+           <https://miser-theory.info/construction>
 
      images/
            forking/preservation of <https://miser-theory.info/images>
@@ -80,7 +77,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.12 dated 2022-08-14 available on the
+   Code text file docs.txt version 0.0.13 dated 2022-08-15 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs.txt>
 
 TODO
@@ -89,6 +86,8 @@ TODO
 
   * Make this the home-page level and update index.md to form the front porch
     of this documentation hypertext.
+
+  * Fix index.md to be more accurate.  Also refer to the README.md for now.
 
   * Add license and NOTICE pages as was done with Hexo authoring.  In this
     case, they are part of the source and may as well be in Markdown (as well
@@ -108,11 +107,10 @@ TODO
   * Determine whether and how much dev/ to preserve here.  This will tie-in
     the repository sections on oMiser and oFrugal for starters.
 
-  * Likewise, determine what to do with notes/ and readings/, where the last
-    might just be resources/ or maybe bib/, depending on breadth.
+  * Likewise, determine what to do with notes/.
 
-  * I will have to get some materials off of the VSS or directly in the IIS
-    that I use for web-site development.
+  * Document how forking/preservation of the miser-theory.info web pages
+    are brought here and editable via FrontPage running in a VirtualBox.
 
   * I can rescue HTML directly or I can use an authoring system, to be
     confirmed via orcmid/docEng and accomplish this indirectly.  It does
@@ -121,20 +119,26 @@ TODO
     reverse-engineered to the authoring place and published back to here when
     that becomes the approach.
 
+  * It is also possible to co-mingle between authored HTML and HTML staged
+    from an authoring folder.  This can be managed as either a migration
+    mechanism or simply a different way to make newer material.
+
   * There may be a serious change to folio structure and organization of
     topical pages (e.g., how index.md is used inside title folders) depending
     on the chosen framework.  I think this has to be figured out in docEng
     before I get too far in docs/ on orcmid.github.io documentation efforts.
 
   * Remake the home page in the style of nfoTools and D211101 and also relate
-    how this is my career capstone project.
+    how this is my career capstone project.  This is currently in the README
+    and maybe it could be here also.
 
   * Use "run-time" instead of "engine" and characterize oMiser and oFrugal
     better.
 
   * I have confirmed that orcmid.github.io will recognize index.htm as the
-    default page of a folder.  I need to see what happens when there is an
-    index.html also.
+    default page of a folder.  If there is also index.html, that will take
+    precedence.  This means the nfoCentrale structures can be retained until
+    no longer of interest, depending on how the site matures.
 
   * The preservation/forking of https://miser-theory.info material needs to
     be accounted for in the construction/ account here.
@@ -146,11 +150,16 @@ TODO
     preservation/forking process under docs/construction.
 
   * NOTE: Although GitHub/miser/docs is set as the VSS working folder for
-    MiserGitHub, I have only done Get Latest on images/ and readings/ so far,
-    and there is no collision with material that was already there.
+    MiserGitHub, I have only done Get Latest on images/, readings/, and
+    construction/ so far.  There is no collision with material that was
+    already there. The extra folders that FrontPage creates are included in
+    .gitignore to prevent check-in at GitHub.  Other pages have dependencies
+    (relative, fortunately) on the construction materials so there needs to
+    be preservation for now.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.13 2023-08-15T19:57Z More TODOs and notes on forking/preservation
  0.0.12 2023-08-14T20:55Z TODOs and notes on preservation/forking to here.
  0.0.11 2023-08-12T23:47Z Expand TODOs, preparing to explain oMiser better
  0.0.10 2022-04-29T16:14Z Manage TODOs, anticipating an authoring solution
