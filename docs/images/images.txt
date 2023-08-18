@@ -1,4 +1,4 @@
-images.txt 0.0.5                    UTF-8                        2023-08-15
+images.txt 0.0.6                    UTF-8                        2023-08-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -39,14 +39,16 @@ MANIFEST
      hardhat-thumb.gif
                    80 x 60 thumbnail for construction-structure pages
   misertheory-logo.gif
-                   210 x 199 Miser logo
+                   310 x 199 Miser logo
  omisertheory-logo.gif
-                   210 x 199 Miser logo (no difference)
+                   310 x 199 Miser logo (no difference)
 
          n170601d2.png
-                   large diagrammatic <ob> logo
+                   464 x 298 Miser logo <ob> logo
          n170601d2.vsdx
                    Visio vector-graphic original
+   n170601d2-large.vsdx
+                   Enlarged to 464 x 298
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -69,7 +71,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Images Folder.  Miser Project
-   Code text file images.txt version 0.0.5 dated 2023-08-15 available as a
+   Code text file images.txt version 0.0.6 dated 2023-08-18 available as a
    version of <https://orcmid.github.io/miser/images/images.txt>
 
 TODO
@@ -77,7 +79,7 @@ TODO
   * The index.htm is recognized and preserved.  The index.md makes index.html
     and that will have priority when present.  Document this somewhere.
 
-    * Figure out how to avoid getting crossed-up between the VSS and FrontPage
+  * Figure out how to avoid getting crossed-up between the VSS and FrontPage
     and the GitHub and GitHub pages.  See if I can create a shared VSS
     repository and then break linkages for materials that I have transposed
     to GitHub.  A non-interference technique if it works.
@@ -89,11 +91,10 @@ TODO
   * Much of this should be somewhere generic such as docEng.  For now, we do
     what we need to concerning preservation/forking of miser-theory.info.
 
-  * Make the box lines on the logo image heavier.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-
+ 0.0.6 2023-08-18T23:56Z Improve images
  0.0.5 2023-08-15T01:39Z More touch-ups
  0.0.4 2023-08-14T23:38Z Cleaning up and working the preservation
  0.0.3 2023-08-14T22:29Z big <ob> logo twiddling
