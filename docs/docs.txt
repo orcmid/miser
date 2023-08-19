@@ -1,4 +1,4 @@
-docs.txt 0.0.13                     UTF-8                         2023-08-15
+docs.txt 0.0.14                     UTF-8                         2023-08-19
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -77,7 +77,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.13 dated 2022-08-15 available on the
+   Code text file docs.txt version 0.0.14 dated 2022-08-19 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs.txt>
 
 TODO
@@ -86,8 +86,6 @@ TODO
 
   * Make this the home-page level and update index.md to form the front porch
     of this documentation hypertext.
-
-  * Fix index.md to be more accurate.  Also refer to the README.md for now.
 
   * Add license and NOTICE pages as was done with Hexo authoring.  In this
     case, they are part of the source and may as well be in Markdown (as well
@@ -111,6 +109,7 @@ TODO
 
   * Document how forking/preservation of the miser-theory.info web pages
     are brought here and editable via FrontPage running in a VirtualBox.
+    This is going to be in docEng and not specific to miser.
 
   * I can rescue HTML directly or I can use an authoring system, to be
     confirmed via orcmid/docEng and accomplish this indirectly.  It does
@@ -119,21 +118,15 @@ TODO
     reverse-engineered to the authoring place and published back to here when
     that becomes the approach.
 
-  * It is also possible to co-mingle between authored HTML and HTML staged
-    from an authoring folder.  This can be managed as either a migration
-    mechanism or simply a different way to make newer material.
+  * It is also possible to co-mingle between authored HTML from Markdown and
+    HTML published to here from an authoring folder.  This can be managed as
+    either a migration mechanism or simply a different way to make newer
+    material.
 
   * There may be a serious change to folio structure and organization of
     topical pages (e.g., how index.md is used inside title folders) depending
     on the chosen framework.  I think this has to be figured out in docEng
     before I get too far in docs/ on orcmid.github.io documentation efforts.
-
-  * Remake the home page in the style of nfoTools and D211101 and also relate
-    how this is my career capstone project.  This is currently in the README
-    and maybe it could be here also.
-
-  * Use "run-time" instead of "engine" and characterize oMiser and oFrugal
-    better.
 
   * I have confirmed that orcmid.github.io will recognize index.htm as the
     default page of a folder.  If there is also index.html, that will take
@@ -159,6 +152,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.14 2023-08-19T19:17Z Clean up TODOs
  0.0.13 2023-08-15T19:57Z More TODOs and notes on forking/preservation
  0.0.12 2023-08-14T20:55Z TODOs and notes on preservation/forking to here.
  0.0.11 2023-08-12T23:47Z Expand TODOs, preparing to explain oMiser better
