@@ -1,4 +1,4 @@
-images.txt 0.0.6                    UTF-8                        2023-08-18
+images.txt 0.0.7                    UTF-8                        2023-08-19
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -71,7 +71,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Images Folder.  Miser Project
-   Code text file images.txt version 0.0.6 dated 2023-08-18 available as a
+   Code text file images.txt version 0.0.7 dated 2023-08-18 available as a
    version of <https://orcmid.github.io/miser/images/images.txt>
 
 TODO
@@ -91,9 +91,16 @@ TODO
   * Much of this should be somewhere generic such as docEng.  For now, we do
     what we need to concerning preservation/forking of miser-theory.info.
 
+  * Fix the image employed in construction.htm.  This may need FrontPage to
+    get the Include Pages working.
+
+  * Fix the logos one more time, this time adding the a and b labels in the
+    top pair.  This can then be explained a little on the home page.
+
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.7 2023-08-19T16:17Z More TODOs
  0.0.6 2023-08-18T23:56Z Improve images
  0.0.5 2023-08-15T01:39Z More touch-ups
  0.0.4 2023-08-14T23:38Z Cleaning up and working the preservation
