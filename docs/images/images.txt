@@ -38,16 +38,19 @@ MANIFEST
                    17 x 22 button image for footer construction links
      hardhat-thumb.gif
                    80 x 60 thumbnail for construction-structure pages
+
+  misertheory-logo.vsdx
+                   Visio vector-graphic original
+  misertheory-logo.png
+                   211 x 135 title-strip logo
   misertheory-logo.gif
-                   310 x 199 Miser logo
+                   211 x 135 Miser logo
  omisertheory-logo.gif
-                   310 x 199 Miser logo (no difference)
+                   211 x 135 Miser logo (no difference)
 
          n170601d2.png
-                   464 x 298 Miser logo <ob> logo
+                   464 x 298 Miser full-size <ob> logo
          n170601d2.vsdx
-                   Visio vector-graphic original
-   n170601d2-large.vsdx
                    Enlarged to 464 x 298
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -103,7 +106,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.8 2023-08-19T16:36Z Fuss with images through FrontPage if working at all
+ 0.0.8 2023-08-19T18:25Z Fuss with images through FrontPage if working at all
  0.0.7 2023-08-19T16:17Z More TODOs
  0.0.6 2023-08-18T23:56Z Improve images
  0.0.5 2023-08-15T01:39Z More touch-ups
