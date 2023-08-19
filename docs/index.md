@@ -1,4 +1,4 @@
-<!-- index.md 0.1.0                 UTF-8                      dh:2023-08-19
+<!-- index.md 0.1.1                 UTF-8                      dh:2023-08-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](index.html)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.0 [index.html](index.html) 2023-08-19*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.1 [index.html](index.html) 2023-08-19*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -61,7 +61,7 @@ an applicative-function interpretation of data taken as scripts.  In
 software-engineering terms, this is the model side of an interactive computer
 application.
 
-![Hosting oFrugal/oMiser](https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/tutorials/omiser-2017-11-08-0920-1stStack.png).
+![Hosting oFrugal/oMiser](images/oFrugal-2023-08-18-1839-1stStack.png).
 
 The accompanying *oFrugal* software embeds an *oMiser* run-time and delivers
 access to *oMiser* via the host-platform user interface.  *oFrugal* provides
@@ -168,6 +168,7 @@ from time to time.
 
 <!--
 
+  0.1.1 2023-08-19T01:45Z Correct (larger) image location
   0.1.0 2023-08-19T00:43Z Transpose the README here as a better exposition
   0.0.8 2023-08-18T19:13Z Expand, focusing on status and forthcoming refactor.
   0.0.7 2023-08-15T20:27Z Simplification, linking to README and .txt files.
