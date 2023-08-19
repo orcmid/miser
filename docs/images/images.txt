@@ -1,4 +1,4 @@
-images.txt 0.0.7                    UTF-8                        2023-08-19
+images.txt 0.0.8                    UTF-8                        2023-08-19
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -97,9 +97,13 @@ TODO
   * Fix the logos one more time, this time adding the a and b labels in the
     top pair.  This can then be explained a little on the home page.
 
+  * The GIF logos should be scaled to 210 x 134 or close enough, and also with
+    transparency.  I am assuming that Visio downscaling from vectors will work
+    better than FrontPage down-sampling.  We will see.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.8 2023-08-19T16:36Z Fuss with images through FrontPage if working at all
  0.0.7 2023-08-19T16:17Z More TODOs
  0.0.6 2023-08-18T23:56Z Improve images
  0.0.5 2023-08-15T01:39Z More touch-ups
