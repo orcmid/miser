@@ -1,4 +1,4 @@
-<!-- index.md 0.1.2                 UTF-8                         2023-08-19
+<!-- index.md 0.1.3                 UTF-8                         2023-08-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,11 +6,26 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.1 [index.html](index.html) 2023-08-19*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.3 [index.html](index.html) 2023-08-19*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
-> [**Computation Theory Made Operational**](https://github.com/orcmid/miser)
+> [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
+
+The diagram presents the fundamental entities in the domain of ‹ob›.  All of
+the entities are *pairs*, having an *a*-part and a *b*-part.  The two parts of
+a pair can be other obs and often are.  An ob may be part of many other
+obs.  An *individual* ob is a pair that has both the *a*-part and *b*-part
+be the pair itself.  An *enclosure* is a pair that has only the *b*-part
+be itself.  There's an abundance of all varieties.
+
+Obs can be regarded entirely as abstract mathematical entities and that will
+be done in the mathematical-logic presentation of ‹ob› and other structures.
+
+The Miser Project is about computational interpretation of abstract entities
+and the diagram is suggestive of that as well.  The intended computational
+interpretation is as simple data structures where the *a*-parts and *b*-parts
+are addresses of ob representations in computer memory.
 
 ## 1. Synopsis
 
@@ -168,6 +183,7 @@ from time to time.
 
 <!--
 
+  0.1.3 2023-08-19T20:28Z Top-up with explanation of the diagram
   0.1.2 2023-08-19T03:03Z Correct image location once more
   0.1.1 2023-08-19T01:45Z Correct (larger) image location
   0.1.0 2023-08-19T00:43Z Transpose the README here as a better exposition
