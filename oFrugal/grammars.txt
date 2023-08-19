@@ -1,5 +1,5 @@
-grammars.txt 0.0.2                  UTF-8                         2022-08-15
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+grammars.txt 0.0.3                  UTF-8                         2023-08-19
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
@@ -10,43 +10,117 @@ grammars.txt 0.0.2                  UTF-8                         2022-08-15
               FORMAL GRAMMARS AND INTERPRETATIONS FOR oFRUGAL
               -----------------------------------------------
 
-    The oFrugal notations for oMiser computations are defined with BNF
-    (Backus-Naur Form) and given phrase-structure grammars.
+    Formalizations are employed to bridge from the structures of theoretical
+    entities, particularly ‹ob›, to a corresponding formalization of the
+    oFrugalese language to be processed and computationally-interpreted by
+    oFrugal software.
+
+ 1. FORMAL APPROACH
+
+    For Miser, formal structures are used to express and reason about
+    theoretical entities of different types,
+
+         ‹ob› = 〈Ob,Of,Ot〉       at ..\oMiser\obtheory.txt and obaptheory.txt
+         ‹ba› = 〈Ba,Baf,Bat〉     at ..\oMiser\boole.txt
+         ‹bp› = 〈Bp,Bpf,Bpt〉        also
+         ‹ca› = 〈CA,{apply},CAt〉 at ..\combinators.txt
+
+    along with additional structures that serve mathematical purposes and
+    have computational interpretations via representation in structure ‹ob›.
+
+    oFrugal provides a computational mechanism by which computational
+    interpretations of ‹ob› formulations can be carried out using textual
+    inputs, producing textual expressions of derived Obs.
+
+    oFrugal text forms, oFrugalese scripts, are defined with a formal grammar.
+    Formal rules for interpretation of oFrugalese are given as companions to
+    the grammar rules, establishing oFrugalese semantics.  The semantic are
+    all in terms of ‹ob› constructions and application of the obaptheory.txt
+    universal functions.
+
+    Any canonical Ob determined in such interpretion is then presented as a
+    textual result in CFob format, a subset of oFrugalese.
+    (See ..\oMiser\CFob.txt)
+
+    In effect, oFrugal is an Ob calculator that evaluates applicative
+    expressions written in oFrugalese and delivers simple expressions for
+    any Obs that are determined as results.
+
+    The oFrugalese grammar and interpretation of single applicative
+    expressions is provided in file ob-exp.txt.  The oFrugalese extensions
+    for using the applicative expressions in computational scripts are
+    defined in oFrugalese.txt.
+
+    In this approach, the formal grammar and formal semantics (intepretation)
+    do not specify any implementation in computer software.  That is achieved
+    for oFrugal by employing the approach defined in mindelay.txt.
+
+ 2. BNF NOTATION FOR THE MISER PROJECT
+
+
+ 3. MISER INTERPRETATION RULES FOR BNF GRAMMERS
+  .
+   **** CONTINUE REPURPOSING THE MATERIAL BELOW HERE ****
+
+    Formal-grammar systems provide for precise specification of (usually-text)
+    languages in terms of their syntactic structure.  These can be used along
+    with a formal semantics for all grammatically-valid statements, providing
+    precise and rigorous determination of the intended meaning.  This is part
+    of nailing down computational models for precise realization in
+    operational computer software.  The derivation of a processor is specified
+    in the file mindelay.txt.
+
+    This note provides background and definitions that are exploited in
+    establishing the formal grammar and interpretation of oFrugal texts.
+    The specific grammar and interpretations are found in files ob-exp.txt and
+    oFrugalese.txt in this folder.  The scheme used by the parser is specifed
+    in the file mindelay.txt.  Together, taken along with the structure
+    ‹ob› = 〈Ob,Of,Ot〉and the universal applicative functions, they provide a
+    precise specification for an oFrugal reference implementation.
+
+ 1. GRAMMARS AND PARSERS
+
+    Here, grammars are taken as descriptions of the structure of texts in a
+    language, and how those structures are interpreted -- the semantics of
+    the texts.  The grammar establishes the acceptable syntax of texts and
+    their interpretation.
+
+    A parser and a parsing system are related to grammars and their semantics,
+    but grammars do not directly specify parsers.  Grammars do constrain what
+    any parser shall accept and how it conforms to an intended semantics.
+
+    Although it is commonplace in computer science to blur grammars and
+    parsers together, for oFrugal parsing will be distinct, though aligned
+    with the grammar and specified semantics.
+
+ 2. PHRASE-STRUCTURE GRAMMARS IN BACKUS-NAUR FORM (BNF)
+
+    Phrase-structure grammars were introduced by Nohm Chomsky as part of
+    a hiearchy of grammar formalizations below what one might require in
+    formalizing the grammar of a natural language [Chomsky1956].  In later
+    treatment[Chomsky1959], phrase-structure grammars are identified as
+    type 2, context-free, grammars; the terms are interchangeable.  The term
+    "context-free" has a precise and very narrow meaning.  To avoid confusion
+    with any informal idea of context, "phrase-structure" is preferred.
+
+    Use of BNF notation for expressing phrase-structure grammars exploded in
+    the 1960s after inspiration by [Backus1958] and adaptation for ALGOL 60
+    [Naur1963].  The idea that one could specify a programming language in a
+    formal manner and derive a parser in a mechanical way was compelling.
 
     Phrase-structure grammars are commonly used in the specification of
-    programming languages, with additional grammatical requirements usually
-    given as additional conditions and constraints.
+    programming languages, with any additional grammatical constraints usually
+    given as side-conditions and constraints.
 
     oFrugalese, the language accepted by the oFrugal REPL, is precisely
-    and completely specified in BNF.  Every grammatical text is completely
-    valid: every grammatical text has a definite semantic interpretation,
-    without exception.  This is a counterpart of the definition of the oMiser
-    universal function in which every ob has an applicative interpretation.
+    and completely specified in BNF.  There are no side conditions.  Every
+    grammatical text is completely valid: every grammatical text has definite
+    semantic interpretation, without exception.  This is a counterpart of the
+    definition of the oMiser universal function in which every ob has an
+    applicative interpretation.
 
-     1. MISER BNF NOTATION
+ 3. BNF NOTATION FOR THE MISER PROJECT
 
-
-    Ob-exp texts are used as a means of specifying obs and computations
-    with them to derive an ob result.  Ob-exp is an expression language
-    that is used in digital communication of computations with obs and
-    also used to submit expressions for oMiser computation via oFrugal.
-
-    ob-exp has a context-free grammar, here specified using the original
-    Backus-Naur Form (BNF) as employed in the Revised Report on
-    the Algorithmic Language ALGOL 60.  The grammar specifies exactly those
-    expressions that can be evaluated to (at most) a single ob when submitted
-    to a processor such as an oFrugal implememtation.
-
-    In addition to the grammatical structure for composing ob-exp
-    expressions, there is also a formal definition of the computation by
-    which an ob-exp is evaluated as computation of a canonical ob, the
-    formal semantics of ob-exps.  It is this fact that has ob-exp be defined
-    under oMiser, even though it is oFrugal that will enact that semantics.
-
-    For an informal introduction to the use of Frugalese in the computational
-    model defined on the mathematical structure ‹ob› = 〈Ob,Of,Ot〉, see
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt> and other
-    material cited there.
 
     *** We will use phrase categories instead of non-terminals, but the
     idea is the same.  In particular, when there are no non-terminals in
@@ -54,26 +128,20 @@ grammars.txt 0.0.2                  UTF-8                         2022-08-15
     no further expansion available.
     ***
 
-
-    The following summary form of the grammar is useful for reference.
-    It does not address the grammatical differences that are called for
-    to align with the interpretation rules by which an ob-exp is evaluated.
-    The notation is the same used for the ALGOL 60 Report [Naur1963], as
-    adapted from a John Backus demonstration for ALGOL 58 [Backus1958].
-
         The concrete reference syntax consists of Unicode, usually in UTF8
     encoding, and a %-escape mechanism is used when a character is not
     printable.  It is recommended that characters that are not easily typed
     be avoided by authors of ob expressions, recognizing that a recipient
     may encounter %-encoding instead.  If you don't know what this is about,
-    you are probably on safe ground.
+    you are probably on safe ground. [SEE HOW INTERNATIONALIZATION OF C
+    LANGUAGE IDENTIFIERS IS HANDLED]
 
     Basically, white-space is allowed wherever it does not change the
     grammar of a 〈term〉 and required where consecutive 〈term〉 occurrences
     would not be disambiguated.
 
 
- 2. EXPRESSION INTERPRETATION
+ 4. EXPRESSION INTERPRETATION
 
    ** Two things about choice of grammar.  First, the desire to have a
    particular form that does not change the set of valid sentences but is
@@ -250,7 +318,8 @@ grammars.txt 0.0.2                  UTF-8                         2022-08-15
     all well-formed inputs have semantics and there are no forward references,
     although there can be semantical context.  In particular, binding names
     are always references to the nearest preceding bindings, if any, and the
-    absence of a preceding binding is semantically acceptable.
+    absence of a preceding binding is semantically acceptable.  Pragmatically,
+    there may be warning messages or even aborts of processing as an option.
 
 [Naur1963]
     Naur, Peter (ed.)., Backus, J.W., Bauer, F.L., Green, J., Katz, C.,
@@ -282,13 +351,17 @@ grammars.txt 0.0.2                  UTF-8                         2022-08-15
     Newton's 1687 work of similar title reflects the aspiration of the authors
     to grasp the foundation of mathematics as derivable from logic.
 
-[Wikipedia2022]
+[Wikipedia2022a]
     Wikipedia.  Context-Free Grammar, article version of 2022-06-05T09:33
     accessed at <https://en.wikipedia.org/wiki/Context-free_grammar>.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[Wikipedia2022b]
+    Wikipedia.  Pāṇini, article version of 2022-07-14 accessed at
+    <https://en.wikipedia.org/wiki/P%C4%81%E1%B9%87ini>.
 
-                 Copyright 2018-2022 Dennis E. Hamilton
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                 Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -302,18 +375,18 @@ grammars.txt 0.0.2                  UTF-8                         2022-08-15
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammars and Interpretations for oFrugal.  Miser
-   Project text file grammars.txt version 0.0.2 dated 2022-08-15, available
+   Project text file grammars.txt version 0.0.3 dated 2023-08-19, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
 
 TODO
 
- * Prune these TODOs to remove thoe that apply to oFrugalese, ob-exp, or
+ * Prune these TODOs to remove those that apply to oFrugalese, ob-exp, or
    other topics.
 
  * Revealing examples are needed here.  Grace Hopper favored that and I
@@ -335,12 +408,10 @@ TODO
    digits, and the restricted allowance of other characters in ob-exp terms.
    Provide a reference.
 
- * It is necessary to make clear that these are geneative grammars and there
+ * It is necessary to make clear that these are generative grammars and there
    should be some links about those.  The Saul Gorn clarity would be useful.
 
  * Organize the historical discussion to follow the specifics for oFrugal.
-
- * Include Panini and Ingerman's suggestion about that.
 
  * Identify Pattern Languages, in Alexander's formulation, as similarly
    linguistical, though conceptually different (i.e., not about texts)
@@ -348,8 +419,16 @@ TODO
  * Find the material on Post's production system and also its use in the
    the material referenced by John W. Carr, III.
 
+ * https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form may be useful.  I
+   notice I am skimping and not dealing with white space and optional white
+   space.  I can't ignore that in the lexical rules.
+
+ * There can be pragmatics about some things.  I just had a thought about that
+   and now I have lost the case that inspired this remark.
+
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.3  2023-08-19T01:31Z Backup before refactoring/cleaning up
  0.0.2  2022-08-15T16:24Z Manage TODOs, touch-up boilerplate still
  0.0.1  2022-08-12T18:42Z Cleanups and TODO management
  0.0.0  2022-08-11T17:36Z Place-holder and boiler-plate extracted from

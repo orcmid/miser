@@ -1,4 +1,4 @@
-mindelay.txt 0.0.4                  UTF-8                          2022-08-12
+mindelay.txt 0.0.5                  UTF-8                          2023-08-19
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -12,7 +12,7 @@ mindelay.txt 0.0.4                  UTF-8                          2022-08-12
 MINDELAYSCANDOER
 
     A mindelayscandoer refers to programming-language compiling techniques
-    in which the the scanning of the text leads provides translation to final
+    in which the the scanning of the text provides translation to final
     computer code as quickly as possible [Evans1961:n.2].  This tends to be
     associated with translation that occurs in a single pass over the text.
 
@@ -69,6 +69,15 @@ ERROR HANDLING
 
  - Identify the idea about association of interpretations to the patterns
 
+ TESTING AND VERIFICATION
+
+ - The small matter of verifying that the parser accepts oFrugalese correctly
+   and the correct interpretation is produced.
+
+ - Also determining that invalid texts fail parsing.
+
+ - It would be good to have something systematic for these parts.
+
 
 NOTES AND REFERENCES
 
@@ -124,6 +133,11 @@ NOTES AND REFERENCES
     translation of algorithmic expressions, treating precedence of infix
     operators. The stack of (intermediate) operands is kept separate.
 
+[Wikipedia2022]
+    Wikipedia Article: Section "Computer Languages" in article "Parsers"
+    version dated 2022-06-28 and accessed on the Internet at
+    <https://en.wikipedia.org/wiki/Parsing#Computer_languages>.
+
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                     Copyright 2020-2022 Dennis E. Hamilton
@@ -145,7 +159,7 @@ NOTES AND REFERENCES
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Mindelay Parser Design.  Miser Project
-   Code tex file oFrugal.txt version 0.0.4 dated 2022-08-12 available on the
+   Code tex file oFrugal.txt version 0.0.5 dated 2023-08-19 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
@@ -166,7 +180,7 @@ TODO
     Perlis, and H. Van Zoeren.  The Use of Threaded Lists in Construction of a
     Combined ALGOL and Machine-Like Assembly Processor.  Comm. ACM 4, 1 (Jan.
     1961), 36-41.  DOR <https://dl.acm.org/doi/10.1145/366062.366081>.  I feel
-    that I had seen an earlier use of the term in something earlier.  For
+    that I had seen an use of the term in something earlier.  For
     oFrugal mindelay is even shorter, since the REPL is essentially a
     calculator and it derives interpretations as quickly as all dependencies
     are in hand.  mindelay.txt will account for the downside of that approach.
@@ -180,6 +194,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5 2023-08-19T01:25Z Touch-ups, back it up before refactoring
  0.0.4 2022-08-12T18:45Z Touch-Ups, Adjust References
  0.0.3 2022-08-11T21:26Z Transpose syntax theory references to grammars.txt
  0.0.2 2022-08-06T17:39Z Intermediate draft back-up
