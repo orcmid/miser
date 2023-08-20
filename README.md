@@ -1,4 +1,4 @@
-<!-- README.md 1.3.1               UTF-8                           2023-08-19
+<!-- README.md 1.3.2               UTF-8                           2023-08-20
      ---1----|----2----|----3----|----4----|----5----|----6----|----7----|---*
 
                       orcmid/miser Introduction
@@ -26,11 +26,11 @@ files is for explaining the effort to myself, leading up to polished
 explanations, experiments, and running code later on.
 
 The organization of folders is here in the
-[Orcmid Miser repository](https://github.com/orcmid/miser).  Each
-folder has a text file of the same name (e.g., `miser.txt`).  These provide
-some technical information and also a manifest for their content, including
-subfolders (having their own-named `.txt` files, etc.). Most materials
-are in text files spread around the repository in this manner.
+[Orcmid GitHub repository](https://github.com/orcmid) `miser` repository.
+Each folder has a text file of the same name (e.g., `miser.txt`).  These
+provide some technical information and also a manifest for their content,
+including sub-folders (having their own-named `.txt` files, etc.). Most
+materials are in text files spread around the repository in this manner.
 
 Additional text files in various folders provide the technical (rather than
 organizational) content.  Some remain aspirational place-holders, others are
@@ -76,6 +76,7 @@ from time to time.
 
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+     1.3.2 2023-08-20T01:38Z Fix a link that would replace this page.
      1.3.1 2023-08-19T16:01Z Tidying up, smoothing the information
      1.3.0 2023-08-19T01:10Z Refactored in conjunction with doc/index.md.
      1.2.2 2023-08-13T21:28Z Mostly-stable draft
@@ -83,7 +84,7 @@ from time to time.
      1.2.0 2023-08-13T15:34Z Rough Draft re-arrangement for proofing
      1.1.0 2022-01-05T21:49Z Smoothing and Revision of Text, Progression,
            Current State
-     1.0.1 2018-08-26 Added TODOs and 5Ps placeholer
+     1.0.1 2018-08-26 Added TODOs and 5Ps placeholder
      1.0.0 2018-01-11 Initial Stable README
 
                            end of miser/README.md
