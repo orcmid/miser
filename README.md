@@ -1,4 +1,4 @@
-<!-- README.md 1.3.2               UTF-8                           2023-08-20
+<!-- README.md 1.3.3               UTF-8                           2023-08-22
      ---1----|----2----|----3----|----4----|----5----|----6----|----7----|---*
 
                       orcmid/miser Introduction
@@ -56,7 +56,7 @@ become handy, depending on interest in the project.
 
 Some reorganization is necessary in order to continue smoothly.
 
-Meanwhile, there is some information at
+Meanwhile, there is other information at
 [Miser Theory](https://miser-theory.info) until useful/historical content is
 transposed to this GitHub site.
 
@@ -76,6 +76,7 @@ from time to time.
 
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+     1.3.3 2023-08-22T21:02Z Small tweak
      1.3.2 2023-08-20T01:38Z Fix a link that would replace this page.
      1.3.1 2023-08-19T16:01Z Tidying up, smoothing the information
      1.3.0 2023-08-19T01:10Z Refactored in conjunction with doc/index.md.
