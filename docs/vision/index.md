@@ -1,7 +1,7 @@
-<!-- index.md 1.0.2                UTF-8                     dh:2019-11-24 -->
+<!-- index.md 1.0.3                UTF-8                     dh:2023-08-23 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
-<!-- source: <https://github.com/orcmid/miser/blob/master/docs/synopsis/index.md>
-     manifest: <https://github.com/orcmid/miser/blob/master/docs/synopsis/synopsis.txt>
+<!-- source: <https://github.com/orcmid/miser/blob/master/docs/vision/index.md>
+     manifest: <https://github.com/orcmid/miser/blob/master/docs/vision/vision.txt>
      -->
 ![Original synopsis page title block](Miser-0.0.3-synopsis-TitleBlock.png)
 

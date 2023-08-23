@@ -1,4 +1,4 @@
-synopsis.txt 0.0.4                  UTF-8                         2023-08-18
+vision.txt 0.0.5                    UTF-8                         2023-08-23
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -9,8 +9,9 @@ synopsis.txt 0.0.4                  UTF-8                         2023-08-18
                     MISER PROJECT SYNOPSIS PAGE AUTHORING
                     -------------------------------------
 
-    The Miser Project docs/synopsis/ folder provides the managed source-code
-    replication of <http://miser-project.info/synopsis.htm>.
+    The Miser Project docs/vision/ folder provides the managed source-code
+    replication of <http://miser-project.info/synopsis.htm> and subsequent
+    considerations.
 
     To provide some fidelity to the miser-theory.info version, a couple of
     screen-captured elements are used for the title block and the bottom
@@ -19,11 +20,12 @@ synopsis.txt 0.0.4                  UTF-8                         2023-08-18
 
 MANIFEST
 
-      synopsis.txt
+        vision.txt
                this manifest and job-jar file
 
          index.md
-               markdown of page <https://orcmid.github.io/miser/synopsis>
+               markdown of page <https://orcmid.github.io/miser/vision>
+               replica of the miser-theory.info synopsis.
 
     Miser-0.0.3-synopsis-BottomMatter.png
                capture of the history and footer of the original blog post
@@ -58,11 +60,12 @@ TODO
    should be under construction/current/ and plain/ somewhere.
 
  * Refactor this folder to treat the "original" synopsis properly and also
-   allow for a better one, such as that on the current (2023-08-18) README.md
-   for the project.
+   allow for a better one, such as that on the current orcmid.github.io/miser/
+   page.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5 2023-08-23T16:49Z Change from synopsis/ to vision/
  0.0.4 2023-08-18T16:58Z Introduce refactoring TODO
  0.0.3 2019-11-24-14:55 Update to use the repaired 0.0.3 of the original
  0.0.2 2019-11-23-09:02 More TODOs
@@ -70,4 +73,4 @@ TODO
  0.0.0 2019-11-22-12:26 Create placeholder and initial job jar for replicating
        and preserving the Miser Project synopsis.
 
-                         *** end of synopsis.txt ***
+                     *** end of vision.txt ***
