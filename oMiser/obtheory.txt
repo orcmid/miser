@@ -1,5 +1,5 @@
-obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
-
+obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
 
@@ -134,6 +134,7 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
                    ⇒ u ≠ z                                     (d)
 
    Ob7. Identity Among Primitive Individuals
+
         ob.is-individual(ob.NIL)
 
         There are a limited number of fixed-name primitive individuals.
@@ -145,9 +146,38 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
         individuals are also distinct from individuals of any other
         kind that may arise.
 
+   Ob8. Uninterpreted Literal Individuals
+
+        ob.is-lindy(x) ⇔ x = Ʃ's'
+           where s is a finite-length character string consisting of one or
+                   more alphanumeric characters
+
+        In the CFob notation for expressing Obs, lindy Ʃ's' is simply
+        expressed by the string "s" text.  See Ob10, below, and the companion
+        file CFob.txt.
+
+        IMPLEMENTATION NOTE: In computer representations, the alphanumeric
+        characters permitted in strings "s" are Unicode glyphs, encoded in
+        UTF-8, in the form of XML Names without any "." and ":" characters
+        [XML10:2.3 Common Syntactic Constructs, Names and Tokens].  It is
+        also permissible for "s" to begin with a numeral and to be entirely
+        numerical.  The only feature of lindies is their differentiation.
+
+        Ʃ's' = Ʃ't' ⇔ s Ʃ= t
+           where s Ʃ= t signifies identity of the string texts
+
+        obap.is-lindy(x) ⇒ ob.is-individual(x)
+
+        obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
+
+        Lindies are distinct conveniently-named individuals that have
+        no intrinsic significance.  They are available to applications of
+        obs for any purpose as distinct literals, such as
+        Ʃ'alpha', Ʃ'ABCs', Ʃ'letterQ', Ʃ'foo', Ʃ'4', Ʃ'005', etc.
+
 3. DENUMERABILITY AND EFFECTIVENESS
 
-   Ob8. The ¶ Precedence Condition
+   Ob9. The ¶ Precedence Condition
 
         ¬ (x ¶ x)                               (a), irreflexive
         (x ¶ y) ⇒ ¬ (y ¶ x)                     (b), asymmetrical
@@ -163,11 +193,11 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
         ob.is-individual(x) ⇒ x ¶ ob.c(x,y)
         ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
 
-   Ob9. Denumerable Canonical Form
+   Ob10. Denumerable Canonical Form
 
         Ob consists of all distinct, finitely-expressible obs satisfying
-        conditions Ob1-Ob8 and expressed without use of variables and
-        without any functions other than ob.c and ob.e, and without any
+        conditions Ob1-Ob9 and expressed (1) without use of variables,
+        (2) without any functions other than ob.c and ob.e, and (3) without
         extraneous parentheses.  Such expressions are canonical forms in
         that each form is unique to a particular ob and every ob is
         determined via a canonical form.
@@ -189,7 +219,7 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
         Certain extensions to ‹ob› will augment the variety of canonical forms
         without ever altering the denumerability of them, preserving Ob7-Ob9.
 
-   Ob10. Effectively-Computable Functions in Of
+   Ob11. Effectively-Computable Functions in Of
 
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
@@ -198,7 +228,7 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
         number of mathematical statements.  It can be the case that there is
         no definite result for some definite arguments.
 
-        Predicates in Ot are effectively-computable as true or false
+        Predicates in Ot are effectively-computable as satisfied or not
         in a similar manner and termed effectively-decidable.
 
         Observe that ob.a(x), ob.b(x), ob.c(x,y), ob.e(x), the four ob.is-...
@@ -209,10 +239,11 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
         determined, it need not be deducible which of x ¶ y or y ¶ x holds.
         This is the case among definite individuals that are distinguished
-        by literal identifiers and no other condition on comparability.  The
-        strength of Ob8 is that ¬(x ¶ x) be preserved.  The mathematical
-        benefit of the strict partial-ordering x ¶ y is the availability of
-        structural induction for deductions about functions in Of.
+        by literal identifiers (i.e., lindies) and no other condition on
+        comparability.  The strength of Ob9 is that ¬(x ¶ x) be preserved.
+        The mathematical benefit of the strict partial-ordering x ¶ y is the
+        availability of structural induction for deductions about functions in
+        Of.
 
         Later, when we make computational interpretations of ‹ob›, there'll
         be no need for an explicit counterpart of x ¶ y.  It is sufficient
@@ -336,9 +367,9 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
    [Wikipedia2019] First-order logic. 2019-01-07 article available on the
        Internet at <https://en.wikipedia.org/w/index.php?title=First-order_logic&oldid=877262034>
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                   Copyright 2017-2020 Dennis E. Hamilton
+                Copyright 2017-2020, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -352,22 +383,22 @@ obtheory.txt 1.0.1                 UTF-8                        dh:2020-01-15
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.0.1 dated 2020-01-15, available on the
+   text file obtheory.txt version 1.1.0 dated 2023-08-24, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
 TODO
 
  * Provide a stable location for obtheory version progressions on
-   <http://miser-theory.info>.
+   <https://orcmid.github.io/miser>.
 
- * Figure out what to do about well-definedness.  Is this an Ob10 or Ob11
-   condition?  I claim it is implicit in Ob10 and it can be made explicit
+ * Figure out what to do about well-definedness.  Is this an Ob11 or Ob12
+   condition?  I claim it is implicit in Ob11 and it can be made explicit
    in one of the companion text files such as miser/theory.txt.
 
  * Find places to locate this material that are perhaps easier to reach
@@ -379,13 +410,15 @@ TODO
    it belongs in obaptheory.txt, not here.
 
  * Consider Markdown versions that GitHub will render in a more-presentable
-   form.  Keep in mind that the .txt version is always definitive.
+   form.  Keep in mind that the .txt version had been intended to be always
+   definitive.
 
  * Provide a little more about FOL= as used for ‹ob› structure, especially
    with regard to universal quantification and similarity to familiar algebra.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.1.0 2023-08-24T20:31Z Transpose the introduction of Lindies to here.
  1.0.1 2020-01-15-08:29 Correct file top-line typos and a change of links
        from Wordpress to Blogger. Mention https://orcmid.github.io/miser/
  1.0.0 2019-11-07-12:49 Replace Wordpress Miser Project links with ones to

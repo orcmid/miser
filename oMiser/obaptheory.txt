@@ -1,5 +1,5 @@
-obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+obaptheory.txt 0.2.0                UTF-8                          2023-08-24
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -16,6 +16,15 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
    The use of prefix ob.ap (obap for short) reflects the reliance on ‹ob›
    with identification of additional primitive individuals on which the
    obap.ap and obap.eval function representations depend.
+
+     Obap1.  Universal Apply Function
+
+             obap.ap(p,x) determines the application of ob p, taken as
+                          expression of an operator procedure, to ob x,
+                          taken as the operand
+
+           obap.eval(exp) determines the evaluation of ob exp taken as an
+                          applicative expression
 
    Universality of obap.ap(p,x) is taken to mean that for every function,
    F, on obs that is effectively-computable, there is an ob p that expresses
@@ -36,6 +45,8 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
             3. The Apply Function
             4. The Evaluation Functions
             5. Notes and References
+
+
 
 1. PRELIMINARIES
 
@@ -65,7 +76,7 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
     to be available separately and do not dictate the form (or means) of
     valid computational interpretation.
 
-   Obap1. Primitive Individuals
+   Obap2. Primitive Individuals
 
           Nine named individuals are distinguished as primitives,
           including ob.NIL:
@@ -98,61 +109,56 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
 
 2. ADDITIONAL NOTIONS
 
-   Obap2. Literal Individuals
+   Obap3. Literal Individuals
+
+          The supply of lindies (Ob8) is augmented as follows
 
           obap.is-lindy(x) ⇔ (x = Ʃ's' ∨ x = Ʃ'?s'∨ x = Ʃ'?.s')
              where s is a finite-length character string consisting of one or
                      more alphanumeric characters
 
-          In the CFob notation, lindy Ʃ's' is simply expressed by the string
-          "s" text. The forms with prefixed '?' and '?.' have no distinct
-          significance as lindies, their utilitarian presence being related to
-          questionable cases in syntactically-valid oFrugal statements. See
+          The additional forms with prefixed '?' and '?.' are here independent
+          of those without such prefixes.  They are also distinguished from
+          other lindies in the same manner as the undecorated lindies.
+          Their utilitarian presence is related to questionable occurrences of
+          binding names and undefined primitives in oFrugal processing.  See
           the treatment of binding names in
           <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
+          As a pragmatic matter, the prefix forms should not be used
+          intentionally.  They need not survive input to oFrugal and may be
+          treated as erroneous.
 
-          IMPLEMENTATION NOTE: In computer representations, the alphanumeric
-          characters permitted in lindies are Unicode glyphs, encoded in
-          UTF-8, in the form of XML Names without any "." and ":" characters
-          [XML10:2.3 Common Syntactic Constructs, Names and Tokens].  It is
-          also permissible for "s" to begin with a numeral and to be entirely
-          numerical.  The only feature of lindies is their differentiation.
+          Here, we introduce a way in which lindies have useful absence of
+          applicative interpretation.
 
-          Ʃ's' = Ʃ't' ⇔ s Ʃ= t
-             where s Ʃ= t signifies identity of the string texts
+          obap.is-lindy(x) => is-pure-lindy-trace(x)                 (a)
 
-          obap.is-lindy(x) ⇒ ob.is-individual(x)
-
-          obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y            (a)
-
-          Plain lindies are distinct conveniently-named individuals that have
-          no intrinsic significance.  They are available to applications of
-          obs for any purpose as distinct literals, written in Ot forms
-          Ʃ'alpha', Ʃ'ABCs', Ʃ'letterQ', Ʃ'foo', Ʃ'4', Ʃ'005', etc.
-
-          obap.is-lindy(x) => is-pure-lindy-trace(x)                 (b)
-
-          is-pure-lindy-trace(x :: y)                                (c)
+          is-pure-lindy-trace(x :: y)                                (b)
              ⇔ is-pure-lindy-trace(x) ∧ is-pure-lindy-trace(y)
 
-          ¬ is-pure-lindy-trace(ob.e(x))                             (d)
+          ¬ is-pure-lindy-trace(ob.e(x))                             (c)
 
-          is-pure-lindy-trace(x :: ob.NIL)                           (e)
+          is-pure-lindy-trace(x :: .ob.NIL)                          (d)
              ⇔ is-pure-lindy-trace(x)
 
-          Applications of lindies to operands in scripts cannot proceed
-          further; there is no intrinsic interpretation for application.
-          Instead, application is defined to yield a trace form, an
-          evaluation that is not taken farther (Obap4(c)).
+          Apply of a lindy to operands in scripts cannot proceed
+          further; there is no intrinsic applicative interpretation.
+          Instead, it is convenient to have (perhaps-intended) apply
+          yield a trace form, an evaluation that is not taken farther
+          (Obap4(c)).  Preservation of pure-lindy traces is a
+          pragmatic arrangement of no particular theoretical importance.
+          Pure-lindy traces can be helpful in identifying defects and also
+          in preserving intentional symbolic forms as themselves.
 
-  Obap3.  Universal Apply Function
+          The claim: Apart from Obap3(d), excessive creation of enclosures
+          is simply avoided compared with is-pure-lindy-trace being replaced
+          by obap.is-lindy in Obap4(c). With is-pure-lindy-trace, there is
+          tidier preservation of applicative structure, despite there
+          being no applicative interpretation beyond the form itself.
 
-             obap.ap(p,x) determines the application of ob p, taken as
-                          expression of an operator procedure, to ob x,
-                          taken as the operand
-
-           obap.eval(exp) determines the evaluation of ob exp taken as an
-                          applicative expression
+          Note that pure-lindy forms are still parsed and subject to being
+          marched through Obap6(d) and Obap6(i).  The result is a pragmatic
+          simplification.
 
 3. THE APPLY FUNCTION
 
@@ -181,7 +187,7 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
         is-pure-lindy-trace(p) ∧ ¬ is-pure-lindy-trace(x)
                 ⇒ obap.ap(p,x) = p :: ob.e(x)
           Pure lindy forms are resolved to trace forms in this manner to
-          be more informative on inspection when the occurence is unintended.
+          be more informative on inspection when an occurrence is unintended.
           There is also an intended usage of pure lindy traces as a form of
           text expression.
 
@@ -203,7 +209,7 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
 
         obap.eval(e) = ev(obap.SELF, obap.ARG, e)
              effectively forcing an Obap4(b) trace in the event of top-level
-             occurences of obap.SELF and obap.ARG in operand e.
+             occurrences of obap.SELF and obap.ARG in operand e.
 
    Obap6. ev(p,x,e) evaluation of script e as part of determining the
           application of procedure script ob p to operand ob x.
@@ -260,7 +266,7 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
        <https://www.w3.org/TR/2008/REC-xml-20081126/>.
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                   Copyright 2017-2023 Dennis E. Hamilton
 
@@ -276,16 +282,16 @@ obaptheory.txt 0.1.3                UTF-8                       dh:2023-07-13
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 0.1.3 dated 2023-07-13,
+   Conception text file obaptheory.txt version 0.2.0 dated 2023-08-24,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 TODO
 
  * Provide a stable location for obaptheory version progressions on
@@ -330,6 +336,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.0  2023-08-24T21:51Z Major rework around pure-lindy forms
  0.1.3  2023-07-13T19:41Z Tidy up around pure lindy trace forms to enable
         output variation and interpretation as text structures.
  0.1.2  2022-08-11T20:27Z Touch-ups and review of pure-lindy case
