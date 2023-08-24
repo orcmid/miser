@@ -1,4 +1,4 @@
-<!-- index.md 0.1.4                 UTF-8                         2023-08-22
+<!-- index.md 0.1.5                 UTF-8                         2023-08-24
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -12,23 +12,31 @@
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
 
-The diagram demonstrates the fundamental entities in the simple abstraction,
-‹ob›, in the Miser Project model of computation.  All of
-the entities are *pairs*, having an *a*-part and a *b*-part.  The two parts of
-a pair, called an *ob*, can be other obs and often are.  An ob may be part of
-many other obs.  An *individual* ob is a pair that has both the *a*-part and
-*b*-part be the ob itself.  An *enclosure* is a pair that has only the
-*b*-part be itself.  There's an abundance of all varieties.
+## 1. Taking a Look
 
-Obs can be regarded entirely as abstract mathematical entities and that will
-be done in the mathematical-logic presentation of ‹ob› and related structures.
+The diagram demonstrates a fundamental entity of the abstract structure,
+‹ob›, of the Miser Project model of computation.  The entities are called
+*obs* and they consist of *pairs*, each having an *a*-part and a *b*-part.
+The two parts of of a pair are themselves obs.  Any ob may be a composition of
+obs in this manner.  An *individual* ob consists of a pair with both the
+*a*-part and *b*-part being the ob itself.  An *enclosure* consists of a pair
+that has only the *b*-part be itself.  There is no limit on such compositions
+of obs except that no ob is part of its own composition in any other manner,
+every composition is finite, and obs are distinguishable by their composition
+and the differentiation of individuals.
+
+Obs can be regarded entirely as abstract mathematical entities and that is the
+case for mathematical-logic characterization of ‹ob› and related structures.
 
 The Miser Project is about computational interpretation of abstract entities
 and the diagram is suggestive of that as well.  The intended computational
 interpretation is as simple data structures where the *a*-parts and *b*-parts
-are addresses of ob representations in computer memory.
+are addresses of ob representations in computer memory.  The computational obs
+are immutable and without any cycles via separate parts, all in accordance
+with the mathematical formulation.  Here, the represented obs are the
+building blocks of computational data structures.
 
-## 1. Synopsis
+## 2. Synopsis
 
 The Miser Project provides operational demonstration of computation-theoretic
 aspects of software.  Emphasis is on the stored-program principle and the
@@ -57,7 +65,7 @@ rather than practical application.
   computational abstraction along with emergence of types of data/operation is
   demonstrated in a tangible manner with careful constructions.
 
-### 2. The Software
+### 3. The Software
 
 The production/reference *oMiser* run-time is intended for use by other
 software.  It will have portable implementations that operate on
@@ -87,7 +95,7 @@ It is appropriate to regard *oFrugal* as an ‹ob› calculator.
 persistent form, known as **Frugalese**.  *oFrugal* reference formats
 are usable in portable interchange of programs and data.
 
-## 3. Background
+## 4. Background
 
 (some ideas, including Rosenbloom)
 
@@ -106,11 +114,11 @@ Backus.  The operational "system" layer, *oFrugal*, provides storage and
 utility functions.  The *oMiser* layer provides a computational model
 of the ‹ob› mathematical structure.
 
-## 4. Available Materials
+## 5. Available Materials
 
 (various resources and links to them - probably a bibliography here)
 
-## 5. Development
+## 6. Development
 
 * Important milestones include
 
@@ -123,7 +131,7 @@ of the ‹ob› mathematical structure.
   * introduction of accelerators that improve operation entirely within the
     inherent computational complexity of the approach.
 
-### 5.1 Principles
+### 6.1 Principles
 
 * Development is supported by narrative and reference materials, with
   important attributions to sources, at all times.
@@ -136,7 +144,7 @@ of the ‹ob› mathematical structure.
 * The *oFrugal* REPL shall be provided as a simple standalone command-line
   program fully usable in conjunction with a text editor for creating scripts.
 
-### 5.2 Future Prospects
+### 6.2 Future Prospects
 
 The refinement of oMiser and oFrugal mockups toward conventional-computer
 production code is a kind of bootstrapping spiral. Once there is a stable
@@ -181,6 +189,7 @@ from time to time.
 
 <!--
 
+  0.1.5 2023-08-24T03:35Z Expand the first topic and update section numbers
   0.1.4 2023-08-22T21:18Z Tidy up the initial paragraphs
   0.1.3 2023-08-19T20:28Z Top-up with explanation of the diagram
   0.1.2 2023-08-19T03:03Z Correct image location once more
