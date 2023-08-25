@@ -1,4 +1,4 @@
-obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
+obtheory.txt 1.2.0                 UTF-8                        dh:2023-08-24
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -166,9 +166,9 @@ obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
         Ʃ's' = Ʃ't' ⇔ s Ʃ= t
            where s Ʃ= t signifies identity of the string texts
 
-        obap.is-lindy(x) ⇒ ob.is-individual(x)
+        ob.is-lindy(x) ⇒ ob.is-individual(x)
 
-        obap.is-lindy(x) ∧ ¬ obap.is-lindy(y) ⇒ x ≠ y
+        ob.is-lindy(x) ∧ ¬ ob.is-lindy(y) ⇒ x ≠ y
 
         Lindies are distinct conveniently-named individuals that have
         no intrinsic significance.  They are available to applications of
@@ -217,7 +217,7 @@ obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
         decimal numerals are typical canonical forms for (natural) numbers.
 
         Certain extensions to ‹ob› will augment the variety of canonical forms
-        without ever altering the denumerability of them, preserving Ob7-Ob9.
+        without altering the denumerability of them, preserving Ob1-Ob9.
 
    Ob11. Effectively-Computable Functions in Of
 
@@ -231,7 +231,7 @@ obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
         Predicates in Ot are effectively-computable as satisfied or not
         in a similar manner and termed effectively-decidable.
 
-        Observe that ob.a(x), ob.b(x), ob.c(x,y), ob.e(x), the four ob.is-...
+        Observe that ob.a(x), ob.b(x), ob.c(x,y), ob.e(x), the six ob.is-...
         predicates, and the "=" relation are all effectively-computable in
         this sense.  They are also total in the sense that a result is
         determined whenever there are definite arguments.
@@ -239,7 +239,7 @@ obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
         determined, it need not be deducible which of x ¶ y or y ¶ x holds.
         This is the case among definite individuals that are distinguished
-        by literal identifiers (i.e., lindies) and no other condition on
+        by literal identifiers (e.g., lindies) and no other condition on
         comparability.  The strength of Ob9 is that ¬(x ¶ x) be preserved.
         The mathematical benefit of the strict partial-ordering x ¶ y is the
         availability of structural induction for deductions about functions in
@@ -264,7 +264,7 @@ obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
    colleagues in the AED-0 system. The computational model founded on ‹ob›
    for oMiser is a fully-applicative scheme inspired through my association
    with Peter Landin and William H. Burge in the mid-1960s, with operation
-   now via a list-processing adaptation of [Strachey1965].
+   now via a list-processing abstraction of [Strachey1965].
 
    "Effectively computable" and "effective computability" are used in the
    manner of the title of [Rogers1987].  Identification, for now, with a kind
@@ -388,7 +388,7 @@ obtheory.txt 1.1.0                 UTF-8                        dh:2023-08-24
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.1.0 dated 2023-08-24, available on the
+   text file obtheory.txt version 1.2.0 dated 2023-08-24, available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
 
@@ -418,6 +418,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.2.0 2023-08-24T23:52Z Proofed and aligned with obaptheory,text version
  1.1.0 2023-08-24T20:31Z Transpose the introduction of Lindies to here.
  1.0.1 2020-01-15-08:29 Correct file top-line typos and a change of links
        from Wordpress to Blogger. Mention https://orcmid.github.io/miser/
