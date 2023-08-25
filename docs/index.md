@@ -1,4 +1,4 @@
-<!-- index.md 0.1.5                 UTF-8                         2023-08-24
+<!-- index.md 0.1.6                 UTF-8                         2023-08-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.4 2023-08-22*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.6 2023-08-25*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -14,8 +14,8 @@
 
 ## 1. Taking a Look
 
-The diagram demonstrates a fundamental entity of the abstract structure,
-‹ob›, of the Miser Project model of computation.  The entities are called
+The diagram demonstrates a fundamental entity of the Miser Project model of
+computation: the abstract structure, ‹ob›.  The entities are called
 *obs* and they consist of *pairs*, each having an *a*-part and a *b*-part.
 The two parts of of a pair are themselves obs.  Any ob may be a composition of
 obs in this manner.  An *individual* ob consists of a pair with both the
@@ -23,18 +23,25 @@ obs in this manner.  An *individual* ob consists of a pair with both the
 that has only the *b*-part be itself.  There is no limit on such compositions
 of obs except that no ob is part of its own composition in any other manner,
 every composition is finite, and obs are distinguishable by their composition
-and the differentiation of individuals.
+and the differentiation of individuals.  This will be laid out more leisurely
+on pages where the details are unfolded.
 
 Obs can be regarded entirely as abstract mathematical entities and that is the
-case for mathematical-logic characterization of ‹ob› and related structures.
+case for mathematical-logic characterization of ‹ob› and related structures. A
+universal computation function will be arrived at in that manner.
 
 The Miser Project is about computational interpretation of abstract entities
 and the diagram is suggestive of that as well.  The intended computational
 interpretation is as simple data structures where the *a*-parts and *b*-parts
 are addresses of ob representations in computer memory.  The computational obs
 are immutable and without any cycles via separate parts, all in accordance
-with the mathematical formulation.  Here, the represented obs are the
-building blocks of computational data structures.
+with the mathematical formulation.  In this perspective, the represented obs
+are building blocks of computational data structures.
+
+For practical computations, a greater variety of data forms is desirable. In
+the case of ‹ob› alone, that convenience is deferred, with focus instead on
+how the stored-program model and conventional computers afford elevation of
+abstraction already.
 
 ## 2. Synopsis
 
@@ -54,16 +61,17 @@ rather than practical application.
 
 * Run-time *oMiser* operation demonstrates computational interpretation of the
   mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
-  **ap** and companion **eval**.
+  **ap** and companion **eval**.  The *o-name* form emphasizes the limitation
+  to ‹ob› and only obs.
 
 * The interface language, *oFrugal*, is defined with a formal grammar having
-  semantics defined in terms of ‹ob› formulations, providing a complete
+  semantics defined in terms of ‹ob› functions, providing a complete
   specification.  Connection between formal semantics and the syntactical
-  structure of programming languages is demonstrated.
+  structure of programming languages is demonstrated in this direct case.
 
 * The fundamental ability of the stored-program concept to elevate levels of
   computational abstraction along with emergence of types of data/operation is
-  demonstrated in a tangible manner with careful constructions.
+  demonstrated in a tangible manner with careful reusable constructions.
 
 ### 3. The Software
 
@@ -97,7 +105,7 @@ are usable in portable interchange of programs and data.
 
 ## 4. Background
 
-(some ideas, including Rosenbloom)
+(TBD: some ideas, including Rosenbloom. A specific bibliography will be used.)
 
 *oMiser* represents procedures and data in the same data format, demonstrating
 the essence of the stored-program concept.  Inspiration is from formulation of
@@ -116,7 +124,7 @@ of the ‹ob› mathematical structure.
 
 ## 5. Available Materials
 
-(various resources and links to them - probably a bibliography here)
+(TBD: various resources and links to them, including the bibliography)
 
 ## 6. Development
 
@@ -189,6 +197,7 @@ from time to time.
 
 <!--
 
+  0.1.6 2023-08-25T15:04Z Smoothing and aligning the version number
   0.1.5 2023-08-24T03:35Z Expand the first topic and update section numbers
   0.1.4 2023-08-22T21:18Z Tidy up the initial paragraphs
   0.1.3 2023-08-19T20:28Z Top-up with explanation of the diagram
