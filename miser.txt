@@ -1,4 +1,4 @@
-miser.txt 0.0.13                    UTF-8                          2023-08-13
+miser.txt 0.0.14                    UTF-8                          2023-08-25
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -113,6 +113,13 @@ MANIFEST
 
 TODO
 
+  * MAJOR REFACTOR.  I still want text files such as omiser/obtheory.txt
+    to be the ground truth.  But maintaining that in conjunction with web
+    (docs/) materials is difficult.  The proposal is to move those text files
+    to the folders where the particular aspect is covered.  Do this once the
+    transpositions from miser-theory.info to orcmid.github.io/miser are
+    completed.
+
   * SCRUB: Move items to docs.txt when to be handled better with web pages.
 
   * Provide a little bit more information about what this is and where to
@@ -129,9 +136,6 @@ TODO
   * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
     and the web site.  SCRUB TO DOCS, MAKE PROVISIONAL
 
-  * Use the logo and the block diagram (on Golden Geek) for a summary of this.
-    Don't go into the extensive detail.
-
   * Docs will be moved here under docs/ in whatever authoring scheme I settle
     upon.  Miser-theory.info materials will be salvaged.  GitHub appears to be
     a more secure preservation mechanism.
@@ -140,9 +144,6 @@ TODO
     reflow and getting pages to work properly.  There is frustration between
     using GitHub versus Blogger at the moment.  The GitHub support is more
     desirable if view reflow works.  It seems to in the Wiki theme.
-
-  * Upload the Miser diagram as the Social Preview under GitHub Settings.
-    [dh:2023-08-13 I know longer know what this means.]
 
   * Review the efficacy of the various text files.  This may be too much
     subdivision.  Documentation might address this better.  Those files/topics
@@ -176,6 +177,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.14 2023-08-25T15:15Z More TODO scrubbing, anticipating web transpositions
  0.0.13 2023-08-13T00:18Z First pass on much-needed TODO cleanup
  0.0.12 2020-09-25-08:07 Reflect Issue #34 on the GitHub default repo renaming
         from master to main.
