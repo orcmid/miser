@@ -1,4 +1,4 @@
-construction.txt 0.0.7              UTF-8                          2023-08-15
+construction.txt 0.0.8              UTF-8                          2023-08-26
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -9,26 +9,53 @@ construction.txt 0.0.7              UTF-8                          2023-08-15
               GITHUB MISER PROJECT DOCS CONSTRUCTION MATERIAL
               -----------------------------------------------
 
+    This material is forked and transposed from the construction structure
+    approach employed on miser-theory.info.  Check-out of the forked branch
+    has not conflicted with materials and techniques already here.
+
+    This methodology is adapted for here without much explanation.  That
+    document engineering practice, applied to a web site, will be detailed
+    in some common place applicable to more of orcmid.github.io.
+
 MANIFEST
 
   construction.txt
                this manifest and job-jar file
 
          index.md
-               <https://orcmid.github.io/miser/construction/>
-               markdown source
+               <https://orcmid.github.io/miser/construction/> markdown
+               source for the Construction Material entrance index.html
+
+       c000000.htm
+               job jar and task notes transposed from miser-theory.info
+
+       c000001.htm
+               list of materials here, transposed from miser-theory.info
+
+  construction.htm
+               Construction Zone scaffolding for these Construction Materials,
+               transposed from miser-theory.info
 
        current/
-               page that renders with the current theme, demonstrating
-               its markup provisions.
+               folio on pages as they render with the current theme,
+               demonstrating its markup/framework provisions.
 
          plain/
-               documentation of how current rendered when the default docs/
-               publication was employed with no explicit introduction of a
-               template.
+               documentation of how content rendered when the default docs/
+               publication us employed with no explicit introduction of a
+               template or use of a framework.
+
+     templates/
+               templates for construction patterns transformed from
+               miser-theory.info to orcmid.github.io/miser and The Miser
+               Project on GitHub
+
+          2007/
+               folios of particular construction topics and practices create
+               in 2007
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                 Copyright 2019, 2023 Dennis E. Hamilton
 
@@ -44,21 +71,13 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  TODO
-
-   * Branch VSS MiserGitHub and clone the construction/ structure here for
-     further use with GitHub and GitHub pags.  There are no collision with
-     material already yere.
 
    * Find a clean way to talk about the *authored" documentation and the
     *authoring" source that is published to be the documentation.  Need some
     nomenclature that I don't keep tripping over.
-
-  * Identify adaptation of the infrastructure technique used on sites such
-    as miser-theory or the nfoCentrale sites in general.  Find appropriate
-    links.
 
   * Find a theme that supports reflow.  The Pages templates do not seem to
     provide for that.
@@ -72,9 +91,9 @@ MANIFEST
     required for Miser Project documentation.  How to ensure that with any
     of the provided themes remains to be understood.
 
-   * Determine how I can have some kind of versioning on my .md pages and
-     have that part be private (not rendered).  It depends on the GitHub
-     Markdown and maybe some YAML control.  Must find out about that.
+   * I have been employing in-line HTML comments to account for versioning
+     of markdown pages here.  I don't know if there is something better, using
+     YAML or something.
 
    * Work through all of the feature cases of GitHub Markdown to see what
      works with the default template.  Use construction/test/ or example/
@@ -90,14 +109,8 @@ MANIFEST
 
    * Make a template for the index.md source pages.
 
-   * Maybe it is harmonious to call this the Construction Zone ?
-
-   * Also, "Document Engineering"
-
    * Add a forensics folder on web-site and authoring, plus trouble-shooting,
-     reverse-engineering, etc.
-
-   * Could also introduce document-engineering in a sub-folder also.
+     reverse-engineering, etc.  Maybe this belongs on docEng.
 
    * Confirm preservation with pre-HTML5 browsers, such as Internet Explorer.
 
@@ -114,16 +127,17 @@ MANIFEST
     It requires access to such "document forensic" tools and doesn't support
     removed prints of pages the way I have desired.
 
-  * The missing here is construction zones and also the job jar xyymmnna.htm
-    pages.  At the moment, construction structure is in the <folder>.txt files
-    like this one.  The Construction Material folder is now equivalent to the
-    Construction Zone scheme on nfoCentrale.
-
   * Repair the substructure and content of construction/ to reside directly at
     docs/construction/ and https://orcmid.github.io/miser/construction.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * Use the c071101/ Repaving folio to extend to tracking and accounting for
+    the transposition of miser-theory.info materials and perhaps others to
+    orcmid.github.io/miser.
 
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.8 2023-08-26T04:27Z Bring current with transposition of Construction
+       Mateials from misher-theory.info for application here.
  0.0.7 2023-08-15T01:47Z Staging for preservation/forking of Miser Project
        Construction Materials section
  0.0.6 2019-11-24-10:38 More consolidation and management of TODOs
