@@ -1,4 +1,4 @@
-construction.txt 0.0.8              UTF-8                          2023-08-26
+construction.txt 0.0.9              UTF-8                          2023-08-26
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -125,7 +125,9 @@ MANIFEST
 
   * GitHub, and use of Git, provides a valuable history and provenance system.
     It requires access to such "document forensic" tools and doesn't support
-    removed prints of pages the way I have desired.
+    removed (? what phrase did I intend here) prints of pages the way I have
+    desired.  I think this is about wanting to always have material be
+    printable and having its provenance/origin be explicit in it.
 
   * Repair the substructure and content of construction/ to reside directly at
     docs/construction/ and https://orcmid.github.io/miser/construction.
@@ -134,10 +136,16 @@ MANIFEST
     the transposition of miser-theory.info materials and perhaps others to
     orcmid.github.io/miser.
 
+  * That I can use FrontPage, even at this point, to edit HTML here, is wild.
+    I may need to continue that.  I will also need to provide an account of
+    frameworks and different models (sort of perpetually reinvented in new
+    clothes) on docEng.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.9 2023-08-26T15:57Z Touch-up
  0.0.8 2023-08-26T04:27Z Bring current with transposition of Construction
-       Mateials from misher-theory.info for application here.
+       Materials from miser-theory.info for application here.
  0.0.7 2023-08-15T01:47Z Staging for preservation/forking of Miser Project
        Construction Materials section
  0.0.6 2019-11-24-10:38 More consolidation and management of TODOs
