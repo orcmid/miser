@@ -1,4 +1,4 @@
-<!-- index.md 0.1.6                 UTF-8                         2023-08-25
+<!-- index.md 0.1.7                 UTF-8                         2023-08-30
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.6 2023-08-25*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.7 2023-08-30*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -15,28 +15,42 @@
 ## 1. Taking a Look
 
 The diagram demonstrates a fundamental entity of the Miser Project model of
-computation: the abstract structure, ‹ob›.  The entities are called
-*obs* and they consist of *pairs*, each having an *a*-part and a *b*-part.
-The two parts of of a pair are themselves obs.  Any ob may be a composition of
-obs in this manner.  An *individual* ob consists of a pair with both the
-*a*-part and *b*-part being the ob itself.  An *enclosure* consists of a pair
-that has only the *b*-part be itself.  There is no limit on such compositions
-of obs except that no ob is part of its own composition in any other manner,
-every composition is finite, and obs are distinguishable by their composition
-and the differentiation of individuals.  This will be laid out more leisurely
-on pages where the details are unfolded.
+computation: the abstract structure, ‹ob›.
+
+- The entities are called *obs* and they consist of *pairs*, each having a
+  *a*-part and a *b*-part. The two parts of of a pair are themselves obs.
+  Any ob may be a pairing of obs in this manner.
+
+- An *individual* ob consists of a pair with both the *a*-part and *b*-part
+  being the ob itself.
+
+- An *enclosure* consists of a pair that has only the *b*-part be itself.
+
+- There is no limit on such compositions of obs except that
+  - no ob is part of its own composition in any other manner,
+  - every composition is finite, and
+
+- obs are distinguishable by their composition and the differentiation of
+  individuals.
+
+This will be laid out more leisurely on pages where the details are unfolded.
 
 Obs can be regarded entirely as abstract mathematical entities and that is the
 case for mathematical-logic characterization of ‹ob› and related structures. A
 universal computation function will be arrived at in that manner.
 
 The Miser Project is about computational interpretation of abstract entities
-and the diagram is suggestive of that as well.  The intended computational
-interpretation is as simple data structures where the *a*-parts and *b*-parts
-are addresses of ob representations in computer memory.  The computational obs
-are immutable and without any cycles via separate parts, all in accordance
-with the mathematical formulation.  In this perspective, the represented obs
-are building blocks of computational data structures.
+and the diagram is suggestive of that as well.
+
+- The intended computational interpretation can simply be a computer data
+  structures where the *a*-parts and *b*-parts are addresses of ob
+  representations in computer memory.
+
+- The computational obs are immutable and without any cycles via separate
+  parts, all in accordance with the mathematical formulation.
+
+- In this perspective, the represented obs are building blocks of
+  computational data structures.
 
 For practical computations, a greater variety of data forms is desirable. In
 the case of ‹ob› alone, that convenience is deferred, with focus instead on
@@ -55,21 +69,21 @@ languages and their theoretical foundations.  The operational program is
 intended for the insights it provides and the fundamentals it demonstrates
 rather than practical application.
 
-* Miser is thoroughly defined using mathematical-logic formalisms.  The
+- Miser is thoroughly defined using mathematical-logic formalisms.  The
   applicability of logic in computer science and software development is
   honored and demonstrated throughout.
 
-* Run-time *oMiser* operation demonstrates computational interpretation of the
+- Run-time *oMiser* operation demonstrates computational interpretation of the
   mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
   **ap** and companion **eval**.  The *o-name* form emphasizes the limitation
   to ‹ob› and only obs.
 
-* The interface language, *oFrugal*, is defined with a formal grammar having
+- The interface language, *oFrugal*, is defined with a formal grammar having
   semantics defined in terms of ‹ob› functions, providing a complete
   specification.  Connection between formal semantics and the syntactical
   structure of programming languages is demonstrated in this direct case.
 
-* The fundamental ability of the stored-program concept to elevate levels of
+- The fundamental ability of the stored-program concept to elevate levels of
   computational abstraction along with emergence of types of data/operation is
   demonstrated in a tangible manner with careful reusable constructions.
 
@@ -128,28 +142,28 @@ of the ‹ob› mathematical structure.
 
 ## 6. Development
 
-* Important milestones include
+- Important milestones include
 
-  * establishment that Miser provides an effective representation of the
+  - establishment that Miser provides an effective representation of the
     computable functions under the Church-Turing thesis
 
-  * demonstration of how such a mechanism is itself amenable to mechanizing
+  - demonstration of how such a mechanism is itself amenable to mechanizing
     logical deductions and theorem proving
 
-  * introduction of accelerators that improve operation entirely within the
+  - introduction of accelerators that improve operation entirely within the
     inherent computational complexity of the approach.
 
 ### 6.1 Principles
 
-* Development is supported by narrative and reference materials, with
+- Development is supported by narrative and reference materials, with
   important attributions to sources, at all times.
 
-* Proof-of-concept demonstrations and releasable software are developed
+- Proof-of-concept demonstrations and releasable software are developed
   with freely-available and free-to-use development tools.  The project
   is conducted entirely with code in the open and the work is free to use and
   to adapt with appropriate attribution.
 
-* The *oFrugal* REPL shall be provided as a simple standalone command-line
+- The *oFrugal* REPL shall be provided as a simple standalone command-line
   program fully usable in conjunction with a text editor for creating scripts.
 
 ### 6.2 Future Prospects
@@ -159,20 +173,20 @@ production code is a kind of bootstrapping spiral. Once there is a stable
 *oFrugal* REPL, more-ambitious extensions are aspired to.  There are no
 concrete provisions at this time.
 
-* Expanding to additional levels of Miser engines that extend to operation
+- Expanding to additional levels of Miser engines that extend to operation
   over multiple forms of data, representation of mutable state, and
   input-output including interaction and distributed operation.
 
-* Expansion to additional levels of Frugal front-ends to provide higher-level
+- Expansion to additional levels of Frugal front-ends to provide higher-level
   programming-language support and compilation of programs into distributable,
   directly-usable forms on general-purpose computers such as Windows PCs.
 
-* Enrichment of Miser to the point where the  engine is capable of having
+- Enrichment of Miser to the point where the  engine is capable of having
   Frugal as a Miser application, rather than as a
   surrounding host-system application.  The appearance to users can be the
   same, whether or not the performance is as responsive.
 
-* In the other
+- In the other
   direction, the bonus challenge is having Miser able to compile Miser
   applications down to direct operations on the host platform in a dependable
   and disciplined manner.
@@ -197,6 +211,7 @@ from time to time.
 
 <!--
 
+  0.1.7 2023-08-30T00:09Z Smoothing, opening the layout with lists
   0.1.6 2023-08-25T15:04Z Smoothing and aligning the version number
   0.1.5 2023-08-24T03:35Z Expand the first topic and update section numbers
   0.1.4 2023-08-22T21:18Z Tidy up the initial paragraphs
