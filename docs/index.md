@@ -1,4 +1,4 @@
-<!-- index.md 0.1.8                 UTF-8                         2023-09-01
+<!-- index.md 0.1.9                 UTF-8                         2023-09-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.8 2023-09-01*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.9 2023-09-01*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -45,8 +45,7 @@ computation: a member of the abstract structure, ‹ob›.
   taken together.
 
 - Similarly, the top component of the figure is a plain pairing.  As an ob,
-  it consists of the pairing and the *a*-part and *b*-part taken together as
-  a single entity.
+  it consists of the pairing and the *a*-part and *b*-part taken together.
 
 - There is no limit on such compositions of obs except that
   - no ob is part of its own composition in any other manner,
@@ -80,7 +79,7 @@ guide to the acceptability of a realized computational interpretation.
 The diagram is also suggestive of a possible implementation of the ‹ob›
 computational model.
 
-- Computational interpretation is realizable using computer data
+- Computational representation can involve computer data
   structures where the *a*-parts and *b*-parts are addresses of ob
   representations in computer memory.
 
@@ -98,7 +97,7 @@ abstraction already.
 It will also be the case that the management of a computational representation
 will become more elaborate than the simple structure suggested in the diagram.
 Although there will be significantly more detail in practice, the diagram
-remains indicative.
+remains descriptive as a visualization.
 
 ## 2. The Project
 
@@ -255,6 +254,7 @@ from time to time.
 
 <!--
 
+  0.1.9 2023-09-01T18:54Z Corrections touch-ups
   0.1.8 2023-09-01T17:39Z Added TOC, more narrative for stage-setting
   0.1.7 2023-08-30T00:09Z Smoothing, opening the layout with lists
   0.1.6 2023-08-25T15:04Z Smoothing and aligning the version number
