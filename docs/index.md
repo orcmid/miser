@@ -1,4 +1,4 @@
-<!-- index.md 0.1.9                 UTF-8                         2023-09-01
+<!-- index.md 0.1.10                UTF-8                         2023-09-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.9 2023-09-01*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.10 2023-09-01*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -18,7 +18,7 @@
     - [1.2 Theory](#12-theory)
     - [1.3 Computational View](#13-computational-view)
   - [2. The Project](#2-the-project)
-    - [3. The Software](#3-the-software)
+  - [3. The Software](#3-the-software)
   - [4. Background](#4-background)
   - [5. Available Materials](#5-available-materials)
   - [6. Development](#6-development)
@@ -130,7 +130,7 @@ rather than practical application.
   computational abstraction along with emergence of types of data/operation is
   demonstrated in a tangible manner with careful reusable constructions.
 
-### 3. The Software
+## 3. The Software
 
 The production/reference *oMiser* run-time is intended for use by other
 software.  It has portable implementations that operate on
@@ -254,6 +254,7 @@ from time to time.
 
 <!--
 
+  0.1.10 2023-09-01T19:41Z Fix pesky indentation/title-level problem
   0.1.9 2023-09-01T18:54Z Corrections touch-ups
   0.1.8 2023-09-01T17:39Z Added TOC, more narrative for stage-setting
   0.1.7 2023-08-30T00:09Z Smoothing, opening the layout with lists
