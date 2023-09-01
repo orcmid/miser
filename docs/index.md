@@ -1,4 +1,4 @@
-<!-- index.md 0.1.7                 UTF-8                         2023-08-30
+<!-- index.md 0.1.8                 UTF-8                         2023-09-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,25 +6,47 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.7 2023-08-30*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.8 2023-09-01*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
 
+- [The Miser Project on GitHub](#the-miser-project-on-github)
+  - [1. Taking a Look](#1-taking-a-look)
+    - [1.1 Abstraction](#11-abstraction)
+    - [1.2 Theory](#12-theory)
+    - [1.3 Computational View](#13-computational-view)
+  - [2. The Project](#2-the-project)
+    - [3. The Software](#3-the-software)
+  - [4. Background](#4-background)
+  - [5. Available Materials](#5-available-materials)
+  - [6. Development](#6-development)
+    - [6.1 Principles](#61-principles)
+    - [6.2 Future Prospects](#62-future-prospects)
+
 ## 1. Taking a Look
 
-The diagram demonstrates a fundamental entity of the Miser Project model of
-computation: the abstract structure, ‹ob›.
+### 1.1 Abstraction
 
-- The entities are called *obs* and they consist of *pairs*, each having a
-  *a*-part and a *b*-part. The two parts of of a pair are themselves obs.
-  Any ob may be a pairing of obs in this manner.
+The diagram depicts a fundamental entity of the Miser Project model of
+computation: a member of the abstract structure, ‹ob›.
 
-- An *individual* ob consists of a pair with both the *a*-part and *b*-part
-  being the ob itself.
+- The entities are called *obs* and they can be visualized as *pairs*, each
+  having an *a*-part and a *b*-part. The two parts of of a pair are themselves
+  obs. Any ob may be a pairing of obs in this manner.
 
-- An *enclosure* consists of a pair that has only the *b*-part be itself.
+- An *individual* has both the *a*-part and *b*-part be the ob itself.  The
+  lowest component in the figure is an individual.  It is complete unto itself
+  and there are any number of distinct individuals.
+
+- An *enclosure* has only the *b*-part be itself.  The middle component in the
+  figure is an enclosure.  As an ob, it consists of itself and the *a*-part
+  taken together.
+
+- Similarly, the top component of the figure is a plain pairing.  As an ob,
+  it consists of the pairing and the *a*-part and *b*-part taken together as
+  a single entity.
 
 - There is no limit on such compositions of obs except that
   - no ob is part of its own composition in any other manner,
@@ -33,16 +55,32 @@ computation: the abstract structure, ‹ob›.
 - obs are distinguishable by their composition and the differentiation of
   individuals.
 
-This will be laid out more leisurely on pages where the details are unfolded.
+### 1.2 Theory
 
-Obs can be regarded entirely as abstract mathematical entities and that is the
-case for mathematical-logic characterization of ‹ob› and related structures. A
-universal computation function will be arrived at in that manner.
+The structure, ‹ob› is unfolded in a mathematical theory.  In that approach,
+the diagrams are a prop for visualization, in the same manner as rulers,
+compasses and pencils on paper are useful in the understanding of Euclidean
+Geometry and numerals and arithmetic are helpful in the understanding of
+algebra (or vice versa).  In our time, computer programs can serve similar
+purposes, so long as the programs are not confused with the abstractions.
 
-The Miser Project is about computational interpretation of abstract entities
-and the diagram is suggestive of that as well.
+In the theoretical treatment obs are regarded entirely as abstract
+mathematical entities.  In this approach, obs arise only in language and there
+is no understood concrete existence.  A computational interpretation is
+intended and a universal computational function will be introduced in support
+of that objective.  The fact that there is a computational interpretation
+and it is realizable is fundamental to The Miser Project.
 
-- The intended computational interpretation can simply be a computer data
+The Miser Project is very much about computational interpretation of abstract
+entities, with an eye to how the mathematical machinery of the theory is a
+guide to the acceptability of a realized computational interpretation.
+
+### 1.3 Computational View
+
+The diagram is also suggestive of a possible implementation of the ‹ob›
+computational model.
+
+- Computational interpretation is realizable using computer data
   structures where the *a*-parts and *b*-parts are addresses of ob
   representations in computer memory.
 
@@ -57,11 +95,17 @@ the case of ‹ob› alone, that convenience is deferred, with focus instead on
 how the stored-program model and conventional computers afford elevation of
 abstraction already.
 
-## 2. Synopsis
+It will also be the case that the management of a computational representation
+will become more elaborate than the simple structure suggested in the diagram.
+Although there will be significantly more detail in practice, the diagram
+remains indicative.
+
+## 2. The Project
 
 The Miser Project provides operational demonstration of computation-theoretic
 aspects of software.  Emphasis is on the stored-program principle and the
-manner in which computational representation of "higher-order" types emerges.
+manner in which computational representation of "higher-order" types emerge
+from the ‹ob› foundation.
 
 Achievement of the Miser Project is the career capstone project of the author.
 Miser is the outgrowth of a 60-year inquiry into applicative-programming
@@ -90,7 +134,7 @@ rather than practical application.
 ### 3. The Software
 
 The production/reference *oMiser* run-time is intended for use by other
-software.  It will have portable implementations that operate on
+software.  It has portable implementations that operate on
 general-purpose computer platforms as a library to other programs on the
 platform.
 
@@ -211,6 +255,7 @@ from time to time.
 
 <!--
 
+  0.1.8 2023-09-01T17:39Z Added TOC, more narrative for stage-setting
   0.1.7 2023-08-30T00:09Z Smoothing, opening the layout with lists
   0.1.6 2023-08-25T15:04Z Smoothing and aligning the version number
   0.1.5 2023-08-24T03:35Z Expand the first topic and update section numbers
