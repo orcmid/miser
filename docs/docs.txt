@@ -1,4 +1,4 @@
-docs.txt 0.0.15                     UTF-8                         2023-08-23
+docs.txt 0.0.16                     UTF-8                         2023-08-**
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -151,6 +151,11 @@ TODO
     .gitignore to prevent check-in at GitHub.  Other pages have dependencies
     (relative, fortunately) on the construction materials so there needs to
     be preservation for now.
+
+  * The advantage of unfamiliarity.  Incorporate this in the value of Obs.
+
+  * Figure out what to do with the historical notebooks and information from
+    those.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
