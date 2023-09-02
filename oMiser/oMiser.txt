@@ -1,5 +1,5 @@
-oMiser.txt 0.0.14                   UTF-8                         2023-01-30
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+oMiser.txt 0.0.15                   UTF-8                         2023-09-02
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
@@ -89,7 +89,7 @@ MANIFEST
         features
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                     Copyright 2018-2023 Dennis E. Hamilton
 
@@ -105,16 +105,16 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.14 dated 2023-01-30,
+   Miser Project text file oMiser.txt version 0.0.15 dated 2023-09-02,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 TODO
 
@@ -198,13 +198,16 @@ TODO
   * Use the ability to create interpretations over a sufficient model of
     computation to motivate the narrative about oMiser and what works for it.
     The lindy trace hack and an extended syntax for it get around the need
-    for other data types, synce lyndies give us sufficient literals for
+    for other data types, since lyndies give us sufficient literals for
     atoms in strings (list structures).
 
-  * Add the rulers used on nfoTools
+  * Transpose this material to docs/ where it will remain authoritative.
+    Provide tombstones here because of various external and internal
+    references.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.15 2023-09-02T20:55Z Manage TODOs, Anticipate Transposition to docs/
  0.0.14 2023-01-30T23:27Z Add mathZ.txt and manage TODOs
  0.0.13 2023-01-11T16:47Z Manage TODOs, emphasizing stored-program
         interpretations.
