@@ -1,4 +1,4 @@
-<!-- index.md 0.1.11                UTF-8                         2023-09-04
+<!-- index.md 0.1.12                UTF-8                         2023-09-05
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.10 2023-09-01*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.12 2023-09-05*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -14,16 +14,15 @@
 
 The Miser Project computational model has two important qualities:
 
-- simplicity, using a small number of concepts that take the covers off of
+- simplicity, using a small number of concepts that take the covers off
   the power of digital abstraction in exchange for more effort in operational
   usage, akin to working in machine language to accomplish anything
 
 - novelty and unfamiliarity, interrupting what might be already-known or
-  assumed about computers and programming for them
+  assumed about computers, programming and programming languages
 
-Comfort with theoretical approaches will need to be developed if not already
-at hand.  There is a different kind of math, one based on symbolic logic, to
-contend with.
+If not already, become comfortable with theoretical approaches.  There is a
+different kind of math, one based on symbolic logic, to embrace.
 
 - [The Miser Project on GitHub](#the-miser-project-on-github)
   - [1. Taking a Look](#1-taking-a-look)
@@ -70,11 +69,11 @@ computation: a member of the abstract structure, ‹ob›.
 ### 1.2 Theory
 
 The Miser Project is very much about computational interpretation of abstract
-entities, with mathematical machinery of theory as guidance in toward a
-dependable realized computational interpretation.
+entities, with mathematical-theory as guidance toward
+dependable computational interpretations.
 
-The structure, ‹ob› is founded on a mathematical theory.  The diagrams are
-visualization props in the same manner as rulers,
+The structure, ‹ob› is founded on a mathematical theory.  Ob diagrams are
+props in the same manner as rulers,
 compasses and pencils on paper are useful in the understanding of Euclidean
 Geometry and numerals and arithmetic are helpful in the understanding of
 algebra (or vice versa).  In our time, computer programs can serve similar
@@ -82,10 +81,9 @@ purposes, so long as the programs are not confused with the abstractions.
 
 Theoretically, obs are entirely abstract
 mathematical entities.  In this sense, obs arise only in language and there
-is no understood concrete existence, no interpretation in reality.
-Computational interpretation is intended and a universal computational
-function establishes the (theoretical) computational model in satisfaction
-of that intention.
+is no direct concrete existence, no existence in reality.
+The Miser computational model is achieved with introduction of a universal
+computational function -- an abstraction still.
 
 ### 1.3 Computational View
 
@@ -103,7 +101,7 @@ computational model.
   computational data structures.
 
 For practical computations, a greater variety of data forms is desirable. In
-the case of ‹ob› alone, that convenience is deferred, with focus instead on
+the case of ‹ob› alone, that convenience is deferred.  Focus is on
 how the stored-program model and conventional computers afford elevation of
 abstraction already.
 
@@ -267,6 +265,7 @@ from time to time.
 
 <!--
 
+  0.1.12 2023-09-05T21:07Z More smoothing of the early parts
   0.1.11 2023-09-04T22:15Z Smooth the narrative, topped by brief synopsis
   0.1.10 2023-09-01T19:41Z Fix pesky indentation/title-level problem
   0.1.9 2023-09-01T18:54Z Corrections touch-ups
