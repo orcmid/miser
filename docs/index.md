@@ -1,4 +1,4 @@
-<!-- index.md 0.1.12                UTF-8                         2023-09-05
+<!-- index.md 0.1.13                UTF-8                         2023-09-07
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.12 2023-09-05*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.13<br />2023-09-07*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -21,8 +21,8 @@ The Miser Project computational model has two important qualities:
 - novelty and unfamiliarity, interrupting what might be already-known or
   assumed about computers, programming and programming languages
 
-If not already, become comfortable with theoretical approaches.  There is a
-different kind of math, one based on symbolic logic, to embrace.
+If not already, become comfortable with theoretical approaches.  Embrace a
+different kind of math, one based on symbolic logic.
 
 - [The Miser Project on GitHub](#the-miser-project-on-github)
   - [1. Taking a Look](#1-taking-a-look)
@@ -49,8 +49,8 @@ computation: a member of the abstract structure, ‹ob›.
   obs. Any ob may be a pairing of obs in this manner.
 
 - An *individual* has both the *a*-part and *b*-part be the ob itself.  The
-  lowest component in the figure is an individual.  It is complete unto itself
-  and there are any number of distinct individuals.
+  lowest component in the figure is an individual.  It is complete unto
+  itself.  There are any number of distinct individuals.
 
 - An *enclosure* has only the *b*-part be itself.  The middle component in the
   figure is an enclosure.  As an ob, it consists of itself and the *a*-part
@@ -60,20 +60,20 @@ computation: a member of the abstract structure, ‹ob›.
   it consists of the pairing and the *a*-part and *b*-part taken together.
 
 - There is no limit on such compositions of obs except that
-  - no ob is part of its own composition in any other manner,
-  - every composition is finite, and
+  - no ob is part of its own composition in any other manner, and
+  - every composition is finite
 
-- obs are distinguishable by their composition and the differentiation of
+- Obs are distinguishable by their composition and the differentiation of
   individuals.
 
 ### 1.2 Theory
 
 The Miser Project is very much about computational interpretation of abstract
 entities, with mathematical-theory as guidance toward
-dependable computational interpretations.
+dependable computational interpretations.  The importance of logic to
+computer sciences is demonstrated.
 
-The structure, ‹ob› is founded on a mathematical theory.  Ob diagrams are
-props in the same manner as rulers,
+Ob diagrams are props in the same manner as rulers,
 compasses and pencils on paper are useful in the understanding of Euclidean
 Geometry and numerals and arithmetic are helpful in the understanding of
 algebra (or vice versa).  In our time, computer programs can serve similar
@@ -90,11 +90,11 @@ computational function -- an abstraction still.
 The diagram is also suggestive of a possible implementation of the ‹ob›
 computational model.
 
-- Computational representation can involve computer data
+- Computer implementations can employ computer data
   structures where the *a*-parts and *b*-parts are addresses of ob
   representations in computer memory.
 
-- The computational obs are immutable and without any cycles via separate
+- Computational forms are immutable and without any cycles via separate
   parts, all in accordance with the mathematical formulation.
 
 - In this perspective, the represented obs are building blocks of
@@ -105,10 +105,9 @@ the case of ‹ob› alone, that convenience is deferred.  Focus is on
 how the stored-program model and conventional computers afford elevation of
 abstraction already.
 
-It will also be the case that the management of a computational representation
+Management of a computer implementations
 will become more elaborate than the simple structure suggested in the diagram.
-Although there will be significantly more detail in practice, the diagram
-remains descriptive as a visualization.
+The diagram remains descriptive as a visualization.
 
 ## 2. The Project
 
@@ -137,9 +136,10 @@ rather than practical application.
   specification.  Connection between formal semantics and the syntactical
   structure of programming languages is demonstrated in this direct case.
 
-- The fundamental ability of the stored-program concept to elevate levels of
-  computational abstraction along with emergence of types of data/operation is
-  demonstrated in a tangible manner with careful reusable constructions.
+- Ability of the stored-program concept to elevate levels of
+  computational abstraction along with emergence of other types of
+  data/operation is demonstrated in a tangible manner with careful reusable
+  constructions.
 
 ## 3. The Software
 
@@ -265,6 +265,7 @@ from time to time.
 
 <!--
 
+  0.1.13 2023-09-07T19:11Z Still more wordsmithing
   0.1.12 2023-09-05T21:07Z More smoothing of the early parts
   0.1.11 2023-09-04T22:15Z Smooth the narrative, topped by brief synopsis
   0.1.10 2023-09-01T19:41Z Fix pesky indentation/title-level problem
