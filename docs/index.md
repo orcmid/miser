@@ -1,4 +1,4 @@
-<!-- index.md 0.1.13                UTF-8                         2023-09-07
+<!-- index.md 0.1.14                UTF-8                         2023-09-08
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.13<br />2023-09-07*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.14<br />2023-09-08*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -22,7 +22,8 @@ The Miser Project computational model has two important qualities:
   assumed about computers, programming and programming languages
 
 If not already, become comfortable with theoretical approaches.  Embrace a
-different kind of math, one based on symbolic logic.
+different kind of math, one based on symbolic logic.  Tolerate the degree of
+rigor; it is informally formal and doesn't have to be swallowed whole.
 
 - [The Miser Project on GitHub](#the-miser-project-on-github)
   - [1. Taking a Look](#1-taking-a-look)
@@ -54,7 +55,7 @@ computation: a member of the abstract structure, ‹ob›.
 
 - An *enclosure* has only the *b*-part be itself.  The middle component in the
   figure is an enclosure.  As an ob, it consists of itself and the *a*-part
-  taken together.
+  taken together as a whole.
 
 - Similarly, the top component of the figure is a plain pairing.  As an ob,
   it consists of the pairing and the *a*-part and *b*-part taken together.
@@ -69,7 +70,7 @@ computation: a member of the abstract structure, ‹ob›.
 ### 1.2 Theory
 
 The Miser Project is very much about computational interpretation of abstract
-entities, with mathematical-theory as guidance toward
+entities, with mathematical-logic theory as guidance toward
 dependable computational interpretations.  The importance of logic to
 computer sciences is demonstrated.
 
@@ -113,8 +114,8 @@ The diagram remains descriptive as a visualization.
 
 The Miser Project provides operational demonstration of computation-theoretic
 aspects of software.  Emphasis is on the stored-program principle and the
-manner in which computational representation of "higher-order" types emerge
-from the ‹ob› foundation.
+manner in which computational representation of "higher-order" structures
+and types of entities emerge from the ‹ob› foundation.
 
 Achievement of the Miser Project is the career capstone project of the author.
 Miser is the outgrowth of a 60-year inquiry into applicative-programming
@@ -265,6 +266,7 @@ from time to time.
 
 <!--
 
+  0.1.14 2023-09-08T16:23Z More smoothing of the front parts
   0.1.13 2023-09-07T19:11Z Still more wordsmithing
   0.1.12 2023-09-05T21:07Z More smoothing of the early parts
   0.1.11 2023-09-04T22:15Z Smooth the narrative, topped by brief synopsis
