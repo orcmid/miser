@@ -1,4 +1,4 @@
-docs.txt 0.0.16                     UTF-8                         2023-08-**
+docs.txt 0.0.16                     UTF-8                         2023-09-10
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -78,16 +78,19 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.15 dated 2023-08-23 available on the
-   Internet as a version of <https://orcmid.github.io/miser/docs.txt>
+   Code text file docs.txt version 0.0.16 dated 2023-09-10 available on the
+   Internet as a version of <https://orcmid.github.io/miser/docs/docs.txt>
 
 TODO
 
   * Fill in about/ and construction/ index.htm pages.  I am unsure that about/
     is necessary.
 
-  * Make this the home-page level and update index.md to form the front porch
-    of this documentation hypertext.
+  * Remove readings/ when the repurposing and transposition at
+    orcmid.github.io/bib/ is completed.  Then ditch the folder here.
+
+  * Create more folio structure for the migration of the text folders to
+    here.  I will need to place tombstones at the previous locations.
 
   * Add license and NOTICE pages as was done with Hexo authoring.  In this
     case, they are part of the source and may as well be in Markdown (as well
@@ -96,9 +99,6 @@ TODO
   * Prepare to bring miser-theory.info and especially the Miser Development
     blog pages into a folio structure here.  This will borrow "tutorial"
     materials and also have some application-development folder structure.
-
-  * Eventually move the synopsis into a folio and have synopsis/index.md
-    lead to it.
 
   * Determine whether and how much astraendo/ to transpose and preserve.
     Models and theory can be handled here, and the applied mathematical
@@ -113,27 +113,16 @@ TODO
     are brought here and editable via FrontPage running in a VirtualBox.
     This is going to be in docEng and not specific to miser.
 
-  * I can rescue HTML directly or I can use an authoring system, to be
-    confirmed via orcmid/docEng and accomplish this indirectly.  It does
-    mean that the authored form is held elsewhere and published to a working
-    folder of this miser/docs material.  This current docs/ content can be
-    reverse-engineered to the authoring place and published back to here when
-    that becomes the approach.
+  * I can rescue HTML directly or I can use an authoring system.  I have
+    discovered that I can use Microsoft FrontPage to repurpose materials
+    as part of transposition from nfoCentrale-housed projects to Orcmid on
+    GitHub.  This is much more satisfying and I am going to reorganize the
+    Miser Project docs/ to become the primary source, not unlike how nfoTools
+    is working out.
 
-  * It is also possible to co-mingle between authored HTML from Markdown and
-    HTML published to here from an authoring folder.  This can be managed as
-    either a migration mechanism or simply a different way to make newer
-    material.
-
-  * There may be a serious change to folio structure and organization of
-    topical pages (e.g., how index.md is used inside title folders) depending
-    on the chosen framework.  I think this has to be figured out in docEng
-    before I get too far in docs/ on orcmid.github.io documentation efforts.
-
-  * I have confirmed that orcmid.github.io will recognize index.htm as the
-    default page of a folder.  If there is also index.html, that will take
-    precedence.  This means the nfoCentrale structures can be retained until
-    no longer of interest, depending on how the site matures.
+  * If a framework is to be adopted at some future time, especially to be able
+    to use LaTex formulas, we'll just have to see.  The mingled FrontPage may
+    endure except where I do require a modern form.
 
   * The preservation/forking of https://miser-theory.info material needs to
     be accounted for in the construction/ account here.
@@ -152,13 +141,12 @@ TODO
     (relative, fortunately) on the construction materials so there needs to
     be preservation for now.
 
-  * The advantage of unfamiliarity.  Incorporate this in the value of Obs.
-
   * Figure out what to do with the historical notebooks and information from
     those.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.16 2023-09-10T19:52Z Manage TODOs, anticipate consolidation on docs/
  0.0.15 2023-08-23T16:29Z Rename synopsis/ to vision/
  0.0.14 2023-08-19T19:17Z Clean up TODOs
  0.0.13 2023-08-15T19:57Z More TODOs and notes on forking/preservation
