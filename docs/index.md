@@ -1,4 +1,4 @@
-<!-- index.md 0.1.14                UTF-8                         2023-09-08
+<!-- index.md 0.1.15                UTF-8                         2023-09-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -86,6 +86,11 @@ is no direct concrete existence, no existence in reality.
 The Miser computational model is achieved with introduction of a universal
 computational function -- an abstraction still.
 
+The challenge becomes finding a dependable alignment between theory and
+practice, contending with a bridge that cannot be crossed. The dependable
+achievement of engineered implementations of theoretical wonders is a marvel
+of our time.  Look carefully.
+
 ### 1.3 Computational View
 
 The diagram is also suggestive of a possible implementation of the ‹ob›
@@ -109,6 +114,10 @@ abstraction already.
 Management of a computer implementations
 will become more elaborate than the simple structure suggested in the diagram.
 The diagram remains descriptive as a visualization.
+
+In this endeavor, confirming that conditions established in theory are honored
+successfully in contingent reality demands thorough empirical inspection and
+demonstration.
 
 ## 2. The Project
 
@@ -266,6 +275,7 @@ from time to time.
 
 <!--
 
+  0.1.15 2023-09-12T17:13Z Tie in challenge of theory vs. practice
   0.1.14 2023-09-08T16:23Z More smoothing of the front parts
   0.1.13 2023-09-07T19:11Z Still more wordsmithing
   0.1.12 2023-09-05T21:07Z More smoothing of the early parts
