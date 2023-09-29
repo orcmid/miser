@@ -1,4 +1,4 @@
-CFob.txt 0.0.7                      UTF-8                          2022-08-11
+CFob.txt 0.0.8                      UTF-8                          2023-09-29
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -71,7 +71,7 @@ CFob.txt 0.0.7                      UTF-8                          2022-08-11
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                Copyright 2018-2022 Dennis E. Hamilton
+                Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -90,7 +90,7 @@ CFob.txt 0.0.7                      UTF-8                          2022-08-11
  ATTRIBUTION
 
    Hamilton, Dennis E. Frugalese Grammar for Canonical Form Ob Expressions.
-   Miser Theory Conception text file CFob.txt version 0.0.7 dated 2022-08-11,
+   Miser Theory Conception text file CFob.txt version 0.0.8 dated 2023-09-29,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/CFob.txt>
 
@@ -98,12 +98,20 @@ CFob.txt 0.0.7                      UTF-8                          2022-08-11
 
 TODO
 
+  * We need to have a simple CFob that does not include individuals from
+    obaptheory (i.e., the primitives plus the extensions when they appear).
+    We need the simpler form for argument that the the obs are denumerable.
+    We don't need additional primitives for that demonstration.
+
   * In practice, we don't want to insert more than one space at
     any point in the ob-exp.  This simple expression avoids that but it
     is more involved when there are more forms.
 
   * A pretty-print form that uses indentation is a bit trickier.  That
     needs to be done.  Line wraps should be used to honor margins also.
+    Lawrence Paulsen has an ML version of the D. C. Oppen "Pretty Printing"
+    algorithm.  I thought I saw this in a different publication, and I wonder
+    about that.  I had done one that formatted FORTRAN code.
 
   * When there are extensions, we need applicative expressions for their
     canonical expression.  These are for the application of specific
@@ -115,9 +123,10 @@ TODO
     thing because of pure-lindy treatment in obap.ev.
 
   * Update this to reflect the conditional lindies, or is that a case that
-    is tied to oFrugal?
+    is tied to oFrugal?  Yes, tie that to oFrugal pragmatics.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 0.0.8 2023-09-29T21:51Z Rethinking CFob for initial denumerability
  0.0.7 2022-08-11T20:39Z Add attribution, manage TODOs, touch-up
  0.0.6 2022-08-01T23:35Z Renamed from obstring.txt and adjusted to for naming
        CFob.txt in the adjusted narrative.
