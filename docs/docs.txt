@@ -1,4 +1,4 @@
-docs.txt 0.0.16                     UTF-8                         2023-09-10
+docs.txt 0.0.17                     UTF-8                         2023-10-26
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -19,22 +19,39 @@ docs.txt 0.0.16                     UTF-8                         2023-09-10
     of this web authoring arrangement are found on the construction/ page and
     its subordinate material.
 
-    NOTE: GitHub Places is set to publish from this folder.  It is the case
+    WARNING:
+          miser/docs/ is being refactored and repurposed to consolidate
+          all Miser Project material, including that from miser-theory.info.
+          Some other materials of the GitHub project are also consolidating
+          under these GitHub Pages for affinity of definitive materials with
+          the associated web documentation.  That proximity is to support
+          consistent maintenance.
+
+    NOTE: GitHub Pages is set to publish from this folder.  It is the case
           that Markdown files here will be converted to HTML, and there is
           support for Jekyll in those files (http://jekyllrb.com/).  However,
           files can be authored in separate locations and the HTML and other
           web-ready materials placed here.  GitHub will publish those "as is."
           This is relevant in the preservation of miser-theory.info content
           and the potential use of an alternative authoring scheme such as
-          Hugo.
+          Hugo. It is also the case that FrontPage can be used for direct
+          authoring of the HTML.
 
 MANIFEST
 
       docs.txt
            this manifest and job-jar file
 
+     index.htm Construction structure page
+           Consult this page for guidance into the docs/ organization as
+           the web site, <https://orcmid.github.io/miser/>.
+
      index.md
-           markdown of the <https://orcmid.github.io/miser/> home page.
+           markdown of the <https://orcmid.github.io/miser/index.html>
+           home page.
+
+     c000000.htm Job Jar and Diary for the preserved/repurposed road ahead
+     construction.htm  Construction Zone for this web-material front porch.
 
      about/
            subfolder for the about page and subordinate material on the
@@ -78,7 +95,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.16 dated 2023-09-10 available on the
+   Code text file docs.txt version 0.0.17 dated 2023-10-26 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs/docs.txt>
 
 TODO
@@ -146,6 +163,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.17 2023-10-26T03:50Z Initiate refactoring/repurposing/preservation
  0.0.16 2023-09-10T19:52Z Manage TODOs, anticipate consolidation on docs/
  0.0.15 2023-08-23T16:29Z Rename synopsis/ to vision/
  0.0.14 2023-08-19T19:17Z Clean up TODOs
