@@ -1,4 +1,4 @@
-construction.txt 0.0.10             UTF-8                          2023-08-27
+construction.txt 0.0.11             UTF-8                          2023-10-27
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -25,6 +25,10 @@ MANIFEST
          index.md
                <https://orcmid.github.io/miser/construction/> markdown
                source for the Construction Material entrance index.html
+               
+         index.htm 
+               Construction Structure scaffolding for the web document
+               engineering
 
        c000000.htm
                job jar and task notes transposed from miser-theory.info
@@ -74,8 +78,14 @@ MANIFEST
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  TODO
+ 
+  * Complete the refactoring/integration of the Construction Materials from
+    miser-theory.info.  
+    
+  * Move these issues to c000000.htm to fit into the site-server document
+    engineering scheme.
 
-   * Find a clean way to talk about the *authored" documentation and the
+  * Find a clean way to talk about the *authored" documentation and the
     *authoring" source that is published to be the documentation.  Need some
     nomenclature that I don't keep tripping over.
 
@@ -141,12 +151,12 @@ MANIFEST
     frameworks and different models (sort of perpetually reinvented in new
     clothes) on docEng.
 
-  * Find a better place to have "What's an Orcmid" and have that resolved
-    for the preservation activity.  I must get that done first.  It is going
-    to apply to all preservation materials.
+  * The better place to find "What's an Orcmid" is at orcmid.github.io/orcmid
+    and links will be corrected to there.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.11 2023-10-27T0:37Z Integrate with miser-theory.info refactoring
  0.0.10 2023-08-27T17:03Z Raise problem of links to "orcmid"
  0.0.9 2023-08-26T15:57Z Touch-up
  0.0.8 2023-08-26T04:27Z Bring current with transposition of Construction
