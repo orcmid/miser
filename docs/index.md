@@ -1,4 +1,4 @@
-<!-- index.md 0.1.15                UTF-8                         2023-09-12
+<!-- index.md 0.1.16                UTF-8                         2023-10-27
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -6,7 +6,7 @@
      -->
 # The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.14<br />2023-09-08*** |
+| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.16<br />2023-10-27*** |
 | :--                |       :-:          | --: |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
@@ -197,8 +197,8 @@ to combinatory logic and the λ-calculus.
 artifacts, whether data or applicative-expression scripts.  In this respect,
 there are similarities to the formulation of Functional Programming by John
 Backus.  The operational "system" layer, *oFrugal*, provides storage and
-utility functions.  The *oMiser* layer provides a computational model
-of the ‹ob› mathematical structure.
+utility functions.  The *oMiser* layer provides a computational
+*manifestation* of the ‹ob› mathematical structure.
 
 ## 5. Available Materials
 
@@ -275,6 +275,7 @@ from time to time.
 
 <!--
 
+  0.1.16 2023-10-27T17:37Z computational *manifestation*
   0.1.15 2023-09-12T17:13Z Tie in challenge of theory vs. practice
   0.1.14 2023-09-08T16:23Z More smoothing of the front parts
   0.1.13 2023-09-07T19:11Z Still more wordsmithing
