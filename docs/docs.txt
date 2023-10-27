@@ -1,4 +1,4 @@
-docs.txt 0.0.17                     UTF-8                         2023-10-26
+docs.txt 0.0.18                     UTF-8                         2023-10-27
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -33,46 +33,38 @@ docs.txt 0.0.17                     UTF-8                         2023-10-26
           files can be authored in separate locations and the HTML and other
           web-ready materials placed here.  GitHub will publish those "as is."
           This is relevant in the preservation of miser-theory.info content
-          and the potential use of an alternative authoring scheme such as
-          Hugo. It is also the case that FrontPage can be used for direct
-          authoring of the HTML.
+          and the continuing use of FrontPage.  There remains potential use of
+          an alternative authoring scheme such as Hugo along with the use of
+          LaTex formulas.
 
 MANIFEST
 
-      docs.txt
-           this manifest and job-jar file
+             docs.txt  this manifest and job-jar file
 
-     index.htm Construction structure page
-           Consult this page for guidance into the docs/ organization as
-           the web site, <https://orcmid.github.io/miser/>.
+            index.htm  Construction structure page.  Consult this page for
+                       guidance into the docs/ organization as the web site
+                       <https://orcmid.github.io/miser/>.
 
-     index.md
-           markdown of the <https://orcmid.github.io/miser/index.html>
-           home page.
+            index.md   markdown of the home page
+                       <https://orcmid.github.io/miser/index.html>
 
-     c000000.htm Job Jar and Diary for the preserved/repurposed road ahead
+          c000000.htm  Job Jar and Diary for the preserved/repurposed road
+                       ahead
+
      construction.htm  Construction Zone for this web-material front porch.
 
-     about/
-           subfolder for the about page and subordinate material on the
-           the purpose and management of the project and connection with
-           the "principal investigator."
+            about/     (provisional) subfolder for the about page and
+                       subordinate material the purpose and management of the
+                       project and connection with the "golden geek."
 
-     construction/
-           construction materials and documentation of the structure and
-           authoring of the <https://orcmid.github.io/miser/> materials,
-           including forking/preservation of
-           <https://miser-theory.info/construction>
+     construction/     Construction Materials and assets of the document
+                       engineering of <https://orcmid.github.io/miser/>.
 
-     images/
-           forking/preservation of <https://miser-theory.info/images>
+           images/      preservation and expansion of
+                       <https://miser-theory.info/images>
 
-     readings/
-           forking/preservation of <https://miser-theory.info/readings>
-
-     vision/
-           preserving the original Miser Project synopsis and any adjustments
-           or commentary
+           vision/      preserving the original Miser Project synopsis and any
+                       adjustments or commentary
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -95,16 +87,12 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.17 dated 2023-10-26 available on the
+   Code text file docs.txt version 0.0.18 dated 2023-10-27 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs/docs.txt>
 
 TODO
 
-  * Fill in about/ and construction/ index.htm pages.  I am unsure that about/
-    is necessary.
-
-  * Remove readings/ when the repurposing and transposition at
-    orcmid.github.io/bib/ is completed.  Then ditch the folder here.
+  * I am unsure that about/ is necessary.
 
   * Create more folio structure for the migration of the text folders to
     here.  I will need to place tombstones at the previous locations.
@@ -163,6 +151,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.18 2023-10-27T20:03Z Reflect the refactoring initiation
  0.0.17 2023-10-26T03:50Z Initiate refactoring/repurposing/preservation
  0.0.16 2023-09-10T19:52Z Manage TODOs, anticipate consolidation on docs/
  0.0.15 2023-08-23T16:29Z Rename synopsis/ to vision/
