@@ -1,4 +1,4 @@
-<!-- README.md 1.3.3               UTF-8                           2023-08-22
+<!-- README.md 1.3.4               UTF-8                           2023-10-27
      ---1----|----2----|----3----|----4----|----5----|----6----|----7----|---*
 
                       orcmid/miser Introduction
@@ -12,6 +12,20 @@ powerful for practical purposes.  The overall approach and its application of
 mathematical-logic are described at the
 [Miser Project](https://orcmid.github.io/miser) web site, published as GitHub
 Pages from the [docs/](docs/) folder here.
+
+## Refactoring in Progress (2023-10-27)
+
+The original effort involved organizations of text files with all of the
+narratives and formal descriptions. Now that I want to use web documentation
+for continuation, the text materials are going to be moved into web folders
+on docs/ and continued as authoritative versions there, in proximity with
+web presentations.
+
+There will be tombstones left in the current text-folder arrangement as the
+refactoring/repurposing/refinement continues within that framework, one that
+has been developed over the years for efforts of this kind, such as that under
+[nfoTools](https://orcmid.github.io/nfoTools). This README will be updated
+accordingly.
 
 ## Current Technical Materials (2023-08-19)
 
@@ -76,6 +90,7 @@ from time to time.
 
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+     1.3.4 2023-10-27T19:45Z Refactoring announced
      1.3.3 2023-08-22T21:02Z Small tweak
      1.3.2 2023-08-20T01:38Z Fix a link that would replace this page.
      1.3.1 2023-08-19T16:01Z Tidying up, smoothing the information

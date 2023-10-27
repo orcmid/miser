@@ -1,17 +1,25 @@
-miser.txt 0.0.14                    UTF-8                          2023-08-25
+miser.txt 0.0.15                    UTF-8                         2023-10-27
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                             The Miser Project Code
-                             ======================
+                               The Miser Project
+                               =================
 
                         <https://github.com/orcmid/miser>
 
-           SOFTWARE AND TESTS FOR DEVELOPMENT OF MISER IMPLEMENTATIONS
-
-                     SOURCE CODE VERSION CONTROL REPOSITORY
-                     --------------------------------------
+                   GITHUB DEVELOPMENT OF MISER IMPLEMENTATIONS
+                   -------------------------------------------
 
              <https://github.com/orcmid/miser/blob/master/miser.txt>
+
+    The Miser Project is being moved to GitHub in its entirety.  It is also
+    being made web-centric, so that these authoritative text files of the
+    project are housed in web folders from which orcmid.github.io/miser is
+    published.
+
+    The main introduction and sketch is the page now  presented at the link
+    <https://orcmid.github.io/miser>.  The current repository organization,
+    described in the MANIFEST here, is going to be refactored around the web
+    pages published from GitHub orcmid/miser/docs.
 
 MANIFEST
 
@@ -111,7 +119,19 @@ MANIFEST
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ ATTRIBUTION
+
+   Hamilton, Dennis E. GitHub Development of Miser Implementations.  Miser
+   Project text file miser.txt version 0.0.15 dated 2023-10-27, available
+   available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/miser.txt>
+
 TODO
+
+  * Provide tombstones as materials are moved under the docs/ structure.
+
+  * Announce the refactoring here and in README.md.  Reflect the repurposing
+    in titles, synopsis, and manifest.
 
   * MAJOR REFACTOR.  I still want text files such as omiser/obtheory.txt
     to be the ground truth.  But maintaining that in conjunction with web
@@ -149,8 +169,6 @@ TODO
     subdivision.  Documentation might address this better.  Those files/topics
     might move accordingly.
 
-  * Add attribution statement.
-
   * Account for the use of .md as well as .txt files in this project.
 
   * Do we need engineering of the GitHub project (and document engineering)
@@ -177,6 +195,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.15 2023-10-27T19:37Z Announce refactoring, setting the stage.
  0.0.14 2023-08-25T15:15Z More TODO scrubbing, anticipating web transpositions
  0.0.13 2023-08-13T00:18Z First pass on much-needed TODO cleanup
  0.0.12 2020-09-25-08:07 Reflect Issue #34 on the GitHub default repo renaming
