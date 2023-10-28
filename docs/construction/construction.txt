@@ -1,4 +1,4 @@
-construction.txt 0.0.12             UTF-8                          2023-10-28
+construction.txt 0.0.13             UTF-8                          2023-10-28
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -27,8 +27,8 @@ MANIFEST
                source for the Construction Material entrance index.html
 
          index.htm
-               Construction Structure scaffolding for the web document
-               engineering
+               Construction Structure scaffolding for the Miser Project
+               document engineering
 
        c000000.htm
                job jar and task notes transposed from miser-theory.info
@@ -92,63 +92,8 @@ MANIFEST
   * Move these issues to c000000.htm to fit into the site-server document
     engineering scheme.
 
-  * Find a clean way to talk about the *authored" documentation and the
-    *authoring" source that is published to be the documentation.  Need some
-    nomenclature that I don't keep tripping over.  [move this to docEng]
-
-  * Find a theme that supports reflow.  The Pages templates do not seem to
-    provide for that. [move this to docEng]
-
-  * If a theme is customized, determine where and how that works. [mve this
-    to docEng]
-
   * I am trusting that this material is current as of 2019-11-20:
     <https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages>
-
-  * The default rendering, with no template, provides reflow in the manner
-    required for Miser Project documentation.  How to ensure that with any
-    of the provided themes remains to be understood. [move this to docEng]
-
-   * I have been employing in-line HTML comments to account for versioning
-     of markdown pages here.  I don't know if there is something better, using
-     YAML or something. [move this to docEng]
-
-   * Work through all of the feature cases of GitHub Markdown to see what
-     works with the default template.  Use construction/test/ or example/
-     for that.  [move this to docEng]
-
-   * Create a test document (set) that demonstrates the main Markup
-     provisions. [move this to docEng]
-
-   * Create a folder (i.e., plain/ that carries captured images of the
-     current test/demo document under the default template).  [move this to
-     docEng]
-
-   * Make a template for the index.md source pages. [move to docEng]
-
-   * Add a forensics folder on web-site and authoring, plus trouble-shooting,
-     reverse-engineering, etc.  Maybe this belongs on docEng. [docEng]
-
-   * Confirm preservation with pre-HTML5 browsers, such as Internet Explorer.
-     [docEng]
-
-   * The "improve this page" and edit/master link requires being logged-in to
-     GitHub.  We need a way to suppress that.  Document this on docEng
-
-  * The folio system is a bit different here.  There can be a counterpart in
-    how pages and their assets are in folders.  The idea of version sequences
-    does not quite work unless we take it to a lower level.  The use of insert
-    pages might have no counterpart here.  Having the effect would take
-    copying. [now that FrongPage is being used, the design-time actions are
-    now available.  The dealing with folio depth and URL-shortening is
-    illustrated in nfoTools/tools.  Account for in docEng.]
-
-  * GitHub, and use of Git, provides a valuable history and provenance system.
-    It requires access to such "document forensic" tools and doesn't support
-    removed (? what phrase did I intend here) prints of pages the way I have
-    desired.  I think this is about wanting to always have material be
-    printable and having its provenance/origin be explicit in it. [also good
-    for docEng]
 
   * Repair the substructure and content of construction/ to reside directly at
     docs/construction/ and https://orcmid.github.io/miser/construction.
@@ -167,6 +112,7 @@ MANIFEST
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.13 2023-10-28T17:05Z Matters for docEng refactored to that project
  0.0.12 2023-10-28T16:29Z Prepare for additional refactoring with docEng.
  0.0.11 2023-10-27T00:37Z Integrate with miser-theory.info refactoring
  0.0.10 2023-08-27T17:03Z Raise problem of links to "orcmid"
