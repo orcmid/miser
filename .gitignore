@@ -1,4 +1,4 @@
-# .gitignore 0.0.8                    UTF-8                     dh:2023-08-14
+# .gitignore 0.0.9                    UTF-8                     dh:2023-10-28
 #
 #                                  ORCMID/MISER
 #                                  ============
@@ -21,9 +21,11 @@
 #   FrontPage authoring artifacts
 _private/
 _vti_*/
+*.scc
 
 #   Windows authoring artifacts
 desktop.ini
+Thumbs.db
 
 ## ELIMINATION OF VISUAL STUDIO SOLUTIONS
 ## --------------------------------------
@@ -226,6 +228,7 @@ FakesAssemblies/
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 0.0.9 2023-10-28T17:32Z More Windows and FrontPage artifacts
 # 0.0.8 2023-08-14T20:43Z Adjust for Windows and FrontPage artifacts
 # 0.0.7 2017-11-17-13:19 Adjust annotation and confirm *.scc is ignored.
 # 0.0.6 2017-07-26-13:36 Transpose for the orcmid/miser GitHub Project
