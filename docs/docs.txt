@@ -1,4 +1,4 @@
-docs.txt 0.0.18                     UTF-8                         2023-10-27
+docs.txt 0.0.19                     UTF-8                         2023-10-28
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,7 +41,7 @@ MANIFEST
 
              docs.txt  this manifest and job-jar file
 
-            index.htm  Construction structure page.  Consult this page for
+            index.htm  Construction Structure page.  Consult this page for
                        guidance into the docs/ organization as the web site
                        <https://orcmid.github.io/miser/>.
 
@@ -86,8 +86,8 @@ MANIFEST
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. GutHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.18 dated 2023-10-27 available on the
+   Hamilton, Dennis E. GitHub-Published Documentation Folder.  Miser Project
+   Code text file docs.txt version 0.0.19 dated 2023-10-28 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs/docs.txt>
 
 TODO
@@ -127,16 +127,14 @@ TODO
 
   * If a framework is to be adopted at some future time, especially to be able
     to use LaTex formulas, we'll just have to see.  The mingled FrontPage may
-    endure except where I do require a modern form.
-
-  * The preservation/forking of https://miser-theory.info material needs to
-    be accounted for in the construction/ account here.
+    endure except where I do require a modern form, such as some sort of
+    JavaScript reliance.
 
   * I can use FrontPage on my GitHub miser/docs folder after branching a
     shared folder in the MiserGitHub VSS.  The branch does not consist of
     shared material.  So I can continue to use FrontPage after .gitignore of
     the FrontPage artifacts.  This needs to be accounted for in the migration/
-    preservation/forking process under docs/construction.
+    preservation/forking process under docs/construction.  [also DocEng]
 
   * NOTE: Although GitHub/miser/docs is set as the VSS working folder for
     MiserGitHub, I have only done Get Latest on images/, readings/, and
@@ -144,13 +142,14 @@ TODO
     already there. The extra folders that FrontPage creates are included in
     .gitignore to prevent check-in at GitHub.  Other pages have dependencies
     (relative, fortunately) on the construction materials so there needs to
-    be preservation for now.
+    be preservation for now. [also DocEng]
 
   * Figure out what to do with the historical notebooks and information from
     those.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.19 2023-10-28T16:35Z More refactoring considerations, docEng possibly
  0.0.18 2023-10-27T20:03Z Reflect the refactoring initiation
  0.0.17 2023-10-26T03:50Z Initiate refactoring/repurposing/preservation
  0.0.16 2023-09-10T19:52Z Manage TODOs, anticipate consolidation on docs/
