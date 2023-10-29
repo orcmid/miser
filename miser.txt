@@ -1,4 +1,4 @@
-miser.txt 0.0.15                    UTF-8                         2023-10-27
+miser.txt 0.0.16                    UTF-8                         2023-10-29
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -122,13 +122,21 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GitHub Development of Miser Implementations.  Miser
-   Project text file miser.txt version 0.0.15 dated 2023-10-27, available
+   Project text file miser.txt version 0.0.16 dated 2023-10-29, available
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/miser.txt>
 
 TODO
 
-  * Provide tombstones as materials are moved under the docs/ structure.
+  * I completely dropped the valuable use of "manifestation" here.  That's an
+    invaluable notion, along with interpretation, and I need to put it back
+    into the account, including on the current docs/ front page.  Thanks to
+    an exchange with Edgar Daylight that had me notice my neglect of that
+    valuable term.
+
+  * Provide tombstones as materials are moved under the docs/ structure.  Move
+    this material under the Construction/Development structure, once I figure
+    out that aspect.
 
   * Announce the refactoring here and in README.md.  Reflect the repurposing
     in titles, synopsis, and manifest.
@@ -195,6 +203,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.16 2023-10-29T16:01Z The return of "manifestation."
  0.0.15 2023-10-27T19:37Z Announce refactoring, setting the stage.
  0.0.14 2023-08-25T15:15Z More TODO scrubbing, anticipating web transpositions
  0.0.13 2023-08-13T00:18Z First pass on much-needed TODO cleanup
