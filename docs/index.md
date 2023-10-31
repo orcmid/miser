@@ -1,4 +1,4 @@
-<!-- index.md 0.1.16                UTF-8                         2023-10-27
+<!-- index.md 0.1.17                UTF-8                         2023-10-31
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -88,13 +88,13 @@ computational function -- an abstraction still.
 
 The challenge becomes finding a dependable alignment between theory and
 practice, contending with a bridge that cannot be crossed. The dependable
-achievement of engineered implementations of theoretical wonders is a marvel
+achievement of engineered manifestations of theoretical wonders is a marvel
 of our time.  Look carefully.
 
 ### 1.3 Computational View
 
-The diagram is also suggestive of a possible implementation of the ‹ob›
-computational model.
+The diagram is also suggestive of a possible computer representation of the
+‹ob› computational model.
 
 - Computer implementations can employ computer data
   structures where the *a*-parts and *b*-parts are addresses of ob
@@ -103,7 +103,7 @@ computational model.
 - Computational forms are immutable and without any cycles via separate
   parts, all in accordance with the mathematical formulation.
 
-- In this perspective, the represented obs are building blocks of
+- In this perspective, the ob representations are building blocks of
   computational data structures.
 
 For practical computations, a greater variety of data forms is desirable. In
@@ -111,7 +111,7 @@ the case of ‹ob› alone, that convenience is deferred.  Focus is on
 how the stored-program model and conventional computers afford elevation of
 abstraction already.
 
-Management of a computer implementations
+Management of computer implementations
 will become more elaborate than the simple structure suggested in the diagram.
 The diagram remains descriptive as a visualization.
 
@@ -136,7 +136,7 @@ rather than practical application.
   applicability of logic in computer science and software development is
   honored and demonstrated throughout.
 
-- Run-time *oMiser* operation demonstrates computational interpretation of the
+- Run-time *oMiser* operation demonstrates computational manifestation of the
   mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
   **ap** and companion **eval**.  The *o-name* form emphasizes the limitation
   to ‹ob› and only obs.
@@ -275,6 +275,7 @@ from time to time.
 
 <!--
 
+  0.1.17 2023-10-31T20:27Z more manifestation/representation smoothing
   0.1.16 2023-10-27T17:37Z computational *manifestation*
   0.1.15 2023-09-12T17:13Z Tie in challenge of theory vs. practice
   0.1.14 2023-09-08T16:23Z More smoothing of the front parts
