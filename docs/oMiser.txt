@@ -1,99 +1,21 @@
-oMiser.txt 0.0.16                   UTF-8                         2023-11-01
+oMiser.txt 0.1.0                    UTF-8                         2023-11-01
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-        <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
+                <https://orcmid.github.io/Miser/oMiser.txt>
 
-              OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
-              -------------------------------------------------
+         OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION NOTES
+         -------------------------------------------------------
 
     IMPORTANT NOTICE: The oMiser and oFrugal text-file materials are
         being refactored under docs/ where they are organized in
-        conjunction with web materials.  This specific file will be
-        whittled down until only a tombstone remains.  The omiser/
-        folder will likely disappear. 
-
-    oMiser is the foundation theory/software of The Miser Project.
-    oMiser is the fundamental part of a software pair.
-
-     - oMiser implements the representation and use of the
-       abstract structure, ‹ob› as an encapsulated data-structure and
-       universal machine implementation via reusable program library.
-
-     - oFrugal is a front-end processor that offers an interface for
-       external exercise of oMiser functions in a more-practical
-       form for personal exploration and operation of oMiser programs.
-
-    It is useful to view oMiser as a machine having obs as the form
-    of its data and its programs.  The obs used as programs or
-    scripts are akin to the machine-/assembly-language of conventional
-    digital computers.
-
-    oFrugal implementations provide input-output and other functions
-    that oMiser necessarily lacks.  oFrugal is essentially a kind
-    of assembler of oMiser obs and a means to exercise programs
-    written as obs that compute other obs from given ones.  In particular,
-    it presents the results of computations in the same notation(s) employed
-    for the inputs.
-
-    Development spirals, working through many iterations of implementation
-    until stable operation, full functionality, and portability of
-    oMiser and oFrugal are achieved.  Interoperation is via recording
-    of oMiser dumps, oFrugal scripts, and distributed connections
-    developed and extended over time.
-
-    Stages beyond oMiser are envisioned.  In those cases, oMiser
-    remains as a subordinate available for reliance when its simplicity
-    is sufficient for fragments of larger, more-interactive arrangements
-    of computational operations.
-
-MANIFEST
-
-    oMiser.txt
-        this synopsis, manifest and TODOs for this portion of the
-        working Miser-Project working folders preserved on GitHub
-
-    ob.txt
-        summary of how the ‹ob› structure and its computational
-        manifestations are useful as flexible, general-purpose data
-        structures given suitable encodings and decodings
-
-    obtheory.txt
-        specification of the ‹ob› abstract mathematical structure
-        any computationally-implemented manifestation must satisfy.
-
-    boole.txt
-        Using abstract Boolean Algebra, demonstrating interpretations
-        of additional abstractions in each other and in ‹ob›, arriving
-        at idiomatic cases for computational-interpretation in oMiser
-
-    mathZ.txt
-        using the bvx Boolean Vector form, represent integer arithmetic
-
-    obaptheory.txt
-        specification of the ‹ob› universal function that every oMiser
-        implementation manifests.
-
-    conbinators.txt
-        description of the nature of combinators and how they are represented
-        in oMiser scripts for applicative interpretation.
-
-    ob-exp.txt
-        tombstone for specification of the grammar for oFrugal expressions
-        that determine obs by computations using obs as procedure scripts and
-        as data.  This material is now at
-        <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
-
-    CFob.txt
-        description of the grammar for Canonical Obs and a procedure for
-        expressing them in strings that minimize use of "( ... )".
-
-    mockups/
-        subtree for experimental mock-ups that demonstrate oMiser
-        features
-
+        conjunction with web materials.  This version is a place-holder
+        and job jar on the docs/ side of this effort.  Construction
+        Structure under docs/ provides the necessary manifest.  There
+        will also be web-based Job Jars and Diaries. This page will be
+        whittled down as the refactoring progresses. 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -115,18 +37,21 @@ MANIFEST
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.16 dated 2023-11-01,
+   Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
+   Notes.  Miser Project text file oMiser.txt version 0.1.0 dated 2023-11-01,
    available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
+   <https://oMiser.github.io/Miser/oMiser.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 TODO
 
-  * Transpose this file to docs/ and anchor it to orcmid/github.io/miser 
-    as the authoritative version.  This version will become a tombstone (or
-    repurposed here) once the elements of the manifest are migrated.
+  * The Tombstone under the oMiser/ folder should point to the docs/ front porch,
+    with possible mention of a dev/ structure as well.  
+
+  * Many of the TODOs here are about implementation of the oMiser run-time and
+    its integration.  Strip these out to a development area, akin to the nfoTools
+    structure.
 
   * Connect to internet-accessible resources and availability of stable
     materials when available.  TODOs and related work can be separated then.
@@ -217,29 +142,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.16 2023-11-01T18:22Z Introduce Refactoring of oMiser/ with docs, other
-        folder structures
- 0.0.15 2023-09-02T20:55Z Manage TODOs, Anticipate Transposition to docs/
- 0.0.14 2023-01-30T23:27Z Add mathZ.txt and manage TODOs
- 0.0.13 2023-01-11T16:47Z Manage TODOs, emphasizing stored-program
-        interpretations.
- 0.0.12 2022-08-11T20:48Z Touch-ups and attribution, manage TODOs
- 0.0.11 2022-08-01T23:38Z Reflect obstring.txt renaming to CFob.txt
- 0.0.10 2022-08-01T17:27Z Reflect tombstoning of ob-exp.txt
- 0.0.9 2018-11-28-08:14 Add boole.txt and arrange manifest in a recommended
-       reading order.
- 0.0.8 2018-02-10-13:37 Introduce combinators.txt in the manifest.
- 0.0.7 2018-02-09-12:10 Reflect change of show-ob.txt to obstring.txt
- 0.0.6 2018-02-04-11:52 Add show-ob.txt to the manifest
- 0.0.5 2018-01-30-18:28 Reflect addition of ob-exp.txt in the manifest.
- 0.0.4 2017-12-27-09:43 Touch-ups and some simplification.  Manage TODOs.
-       Correct the GitHub location of this page.
- 0.0.3 2017-11-12-09:09 Manage TODOs.  Touch up text.
- 0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
-       next steps.  Touch up the text.
- 0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,
-       ‹ob›, that all oMiser implementations must manifest correctly.
- 0.0.0 2017-08-04-12:05 Create placeholder and initial job jar for the
-       oMiser code development.
+ 0.1.0  2023-11-01T18:55Z Transposition from oMiser/oMiser.txt to 
+        docs/oMiser.txt as part of refactoring Miser Project materials.
 
                          *** end of oMiser.txt ***
