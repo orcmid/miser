@@ -1,4 +1,4 @@
-docs.txt 0.0.19                     UTF-8                         2023-10-28
+docs.txt 0.0.20                     UTF-8                         2023-11-01
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -10,10 +10,10 @@ docs.txt 0.0.19                     UTF-8                         2023-10-28
                     GITHUB-PUBLISHED DOCUMENTATION FOLDER
                     -------------------------------------
 
-    The Miser Project docs/ folder provides the managed source-code for
-    authoring GitHub Pages for the Miser Project Code web site.  The entire
-    docs/ folder is automatically transformed by GitHub to produce the content
-    of a web subdomain at <https://orcmid.github.io/miser/>.
+    The Miser Project docs/ folder provides the managed web-page sources for
+    the Miser Project on GitHub.  Publication is via GitHub Pages. The entire
+    docs/ folder is automatically transformed to web pages published at the
+     web subdomain <https://orcmid.github.io/miser/>.
 
     Further information about the purpose, construction, and care-and-feeding
     of this web authoring arrangement are found on the construction/ page and
@@ -22,20 +22,19 @@ docs.txt 0.0.19                     UTF-8                         2023-10-28
     WARNING:
           miser/docs/ is being refactored and repurposed to consolidate
           all Miser Project material, including that from miser-theory.info.
-          Some other materials of the GitHub project are also consolidating
-          under these GitHub Pages for affinity of definitive materials with
-          the associated web documentation.  That proximity is to support
+          Some other materials of the GitHub Miser repository  are refactored          under these GitHub Pages for affinity of original text materials under
+          into this web documentation organization.  That proximity supports
           consistent maintenance.
 
     NOTE: GitHub Pages is set to publish from this folder.  It is the case
           that Markdown files here will be converted to HTML, and there is
           support for Jekyll in those files (http://jekyllrb.com/).  However,
           files can be authored in separate locations and the HTML and other
-          web-ready materials placed here.  GitHub will publish those "as is."
-          This is relevant in the preservation of miser-theory.info content
-          and the continuing use of FrontPage.  There remains potential use of
-          an alternative authoring scheme such as Hugo along with the use of
-          LaTex formulas.
+          web-ready materials placed here.  HTML files and assets can also be
+          introduced here directly, as with FrontPage.  GitHub will publish
+          those "as is. 
+             There remains potential use of an alternative authoring scheme
+          such as Hugo along with the use of LaTex formulas.
 
 MANIFEST
 
@@ -52,6 +51,9 @@ MANIFEST
                        ahead
 
      construction.htm  Construction Zone for this web-material front porch.
+
+           oMiser.txt  Repository refactoring material for the oMIser aspect
+                       of the project.
 
             about/     (provisional) subfolder for the about page and
                        subordinate material the purpose and management of the
@@ -87,7 +89,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GitHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.19 dated 2023-10-28 available on the
+   Code text file docs.txt version 0.0.20 dated 2023-11-01 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs/docs.txt>
 
 TODO
@@ -109,8 +111,10 @@ TODO
     Models and theory can be handled here, and the applied mathematical
     logic employed with the Miser Project
 
-  * Determine whether and how much dev/ to preserve here.  This will tie-in
-    the repository sections on oMiser and oFrugal for starters.
+  * Provide a dev/ folder here for the release of oMiser and oFrugal code.
+
+  * Have ob for the theory structure.  There can be the subfolders as
+    needed.  Or maybe there is theory and then components.  We could also
 
   * Likewise, determine what to do with notes/.
 
@@ -149,6 +153,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.20 2023-11-01T20:55Z First steps of oMiser refactoring
  0.0.19 2023-10-28T16:35Z More refactoring considerations, docEng possibly
  0.0.18 2023-10-27T20:03Z Reflect the refactoring initiation
  0.0.17 2023-10-26T03:50Z Initiate refactoring/repurposing/preservation
