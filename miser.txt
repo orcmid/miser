@@ -1,4 +1,4 @@
-miser.txt 0.0.16                    UTF-8                         2023-10-29
+miser.txt 0.0.17                    UTF-8                         2023-11-02
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -6,15 +6,21 @@ miser.txt 0.0.16                    UTF-8                         2023-10-29
 
                         <https://github.com/orcmid/miser>
 
-                   GITHUB DEVELOPMENT OF MISER IMPLEMENTATIONS
-                   -------------------------------------------
+                         THE MISER PROJECT ON GITHUB
+                         ---------------------------
 
              <https://github.com/orcmid/miser/blob/master/miser.txt>
 
+    MAJOR REFACTORING UNDERWAY.  Matters are a bit up-in-the-air while that
+    is underway.  There will be cross-connects and accounting for this, with
+    substitution of tombstones where material has been vacated.  There will
+    also be advancement of minor versions as indicative.
+
     The Miser Project is being moved to GitHub in its entirety.  It is also
-    being made web-centric, so that these authoritative text files of the
+    being made web-centric, so that the authoritative text files of the
     project are housed in web folders from which orcmid.github.io/miser is
-    published.
+    published.  This proximity improves the likelihood that there is not
+    maintenance drift between web presentations and authoritative text files.
 
     The main introduction and sketch is the page now  presented at the link
     <https://orcmid.github.io/miser>.  The current repository organization,
@@ -94,7 +100,7 @@ MANIFEST
 
     .gitattributes
          A declaration of file attributes for use in Git repositories of
-         the miser source code.
+         the Miser Project.
 
     .gitignore
          A declaration of artifacts to be ignored and excluded from Git
@@ -121,12 +127,20 @@ MANIFEST
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. GitHub Development of Miser Implementations.  Miser
-   Project text file miser.txt version 0.0.16 dated 2023-10-29, available
-   available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/miser.txt>
+   Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
+   miser.txt version 0.0.17 dated 2023-11-02, available on the Internet as a
+   version of <https://github.com/orcmid/miser/blob/master/miser.txt>
 
 TODO
+
+  * In the refactoring, there needs to be a distinction between construction
+    and management of the web materials versus job jar and diary regarding the
+    subject matter, not the site construction.  There are clearly editorial
+    cross-overs, but they are not so much construction as content, such as
+    the observation about "manifestation" just below.  That's not unlike
+    talking about material changes in code, even if it is about clarity or
+    formatting.  This separation of concerns should be addressed in docEng
+    also, even though that sort of goes meta there.
 
   * I completely dropped the valuable use of "manifestation" here.  That's an
     invaluable notion, along with interpretation, and I need to put it back
@@ -138,10 +152,7 @@ TODO
     this material under the Construction/Development structure, once I figure
     out that aspect.
 
-  * Announce the refactoring here and in README.md.  Reflect the repurposing
-    in titles, synopsis, and manifest.
-
-  * MAJOR REFACTOR.  I still want text files such as omiser/obtheory.txt
+   * MAJOR REFACTOR.  I still want text files such as omiser/obtheory.txt
     to be the ground truth.  But maintaining that in conjunction with web
     (docs/) materials is difficult.  The proposal is to move those text files
     to the folders where the particular aspect is covered.  Do this once the
@@ -203,6 +214,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.17 2023-11-02T15:43Z More on refactoring and separation of concerns
  0.0.16 2023-10-29T16:01Z The return of "manifestation."
  0.0.15 2023-10-27T19:37Z Announce refactoring, setting the stage.
  0.0.14 2023-08-25T15:15Z More TODO scrubbing, anticipating web transpositions
