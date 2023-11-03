@@ -1,13 +1,12 @@
-<!-- index.md 0.1.17                UTF-8                         2023-10-31
+<!-- index.md 0.1.18                UTF-8                         2023-11-03
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
      <https://orcmid.github.io/miser/docs.txt>
      -->
-# The Miser Project on GitHub
 
-| ***[miser](.)*** | ***[Work-in-Progress](docs.txt)*** | ***0.1.16<br />2023-10-27*** |
 | :--                |       :-:          | --: |
+| | # The Miser Project on GitHub | ***0.1.18<br />2023-11-03*** |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
@@ -25,18 +24,17 @@ If not already, become comfortable with theoretical approaches.  Embrace a
 different kind of math, one based on symbolic logic.  Tolerate the degree of
 rigor; it is informally formal and doesn't have to be swallowed whole.
 
-- [The Miser Project on GitHub](#the-miser-project-on-github)
-  - [1. Taking a Look](#1-taking-a-look)
-    - [1.1 Abstraction](#11-abstraction)
-    - [1.2 Theory](#12-theory)
-    - [1.3 Computational View](#13-computational-view)
-  - [2. The Project](#2-the-project)
-  - [3. The Software](#3-the-software)
-  - [4. Background](#4-background)
-  - [5. Available Materials](#5-available-materials)
-  - [6. Development](#6-development)
-    - [6.1 Principles](#61-principles)
-    - [6.2 Future Prospects](#62-future-prospects)
+- [1. Taking a Look](#1-taking-a-look)
+  - [1.1 Abstraction](#11-abstraction)
+  - [1.2 Theory](#12-theory)
+  - [1.3 Computational View](#13-computational-view)
+- [2. The Project](#2-the-project)
+- [3. The Software](#3-the-software)
+- [4. Background](#4-background)
+- [5. Available Materials](#5-available-materials)
+- [6. Development](#6-development)
+  - [6.1 Principles](#61-principles)
+  - [6.2 Future Prospects](#62-future-prospects)
 
 ## 1. Taking a Look
 
@@ -273,8 +271,25 @@ reported and addressed in the
 relevant [projects](https://github.com/orcmid/miser/projects?type=classic)
 from time to time.
 
+<table border="0" cellspacing="3" width="100%">
+  <tr>
+    <td width="14%">
+	<a href="index.htm" target="_top">
+       <img border="0" src="images/hardhat-thumb.gif" alt="Hard Hat Area"
+            align="left" width="80" height="57">
+       </a>
+    </td>
+    <td width="54%" valign="middle" align="center">
+      You are navigating the <a href="/">Miser Project on Github</a></td>
+    <td width="30%">
+      <p align="right"><font size="-2">created 2019-11-20 by
+         <a target="_top" href="../orcmid">orcmid</a> </font></p>
+    </td>
+  </tr>
+</table>
 <!--
 
+  0.1.18 2023-11-03T20:00Z Experiment with in-line HTML folio blocks
   0.1.17 2023-10-31T20:27Z more manifestation/representation smoothing
   0.1.16 2023-10-27T17:37Z computational *manifestation*
   0.1.15 2023-09-12T17:13Z Tie in challenge of theory vs. practice
