@@ -6,24 +6,7 @@
      -->
 
 | :--                |       :-:          | --: |
-| | <p align="center"><font color="#990033"><strong><i><big><big>The Miser Project on GitHub</big></big></i></strong></font></p> | <p align="right"><b><code><a href="../">orcmid.github.io</a>&gt;<br />
-           <a href="./" target="_top">miser</a>&gt;</code></b>
-           </p>
-        <p align="center">
-           <small>
-           <font color="#707070">
-           <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
-              <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
-            </a>
-            </font></small><br />
-            </p>
-         <p align="right"><b><code><a href="index.html" target="_top">
-           index.html</a>&gt;</code></b><br />
-           <small><small>
-           0.1.20 2023-11-04
-           <!-- MAINTAIN THIS MANUALLY -->
-           </small></small>
-           </p> |
+| | <p align="center"><font color="#990033"><strong><i><big><big>The Miser Project on GitHub</big></big></i></strong></font></p> | <p align="right"><b><code><a href="../">orcmid.github.io</a>&gt;<br /><a href="./" target="_top">miser</a>&gt;</code></b></p><p align="center"><small><font color="#707070"><a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" /></a></font></small><br /></p><p align="right"><b><code><a href="index.html" target="_top">index.html</a>&gt;</code></b><br /><small><small>0.1.21 2023-11-04<!-- MAINTAIN THIS MANUALLY --></small></small></p> |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
@@ -306,6 +289,7 @@ from time to time.
 </table>
 <!--
 
+  0.1.21 2023-11-04T19:59Z And experimenting still
   0.1.20 2023-11-04T19:35Z Still experimenting
   0.1.19 2023-11-04T17:54Z Experiment with top strip formatting
   0.1.18 2023-11-03T20:00Z Experiment with in-line HTML folio blocks
