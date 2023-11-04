@@ -1,12 +1,13 @@
-<!-- index.md 0.1.22                UTF-8                         2023-11-04
+<!-- index.md 0.1.23                UTF-8                         2023-11-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
      <https://orcmid.github.io/miser/docs.txt>
      -->
+# The Miser Project on GitHub
 
 | :--                |       :-:          | --: |
-|<a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" /></a> | ![The Miser Project logo](images/n170601d2.png) |  <a href="../">orcmid.github.io</a>&gt;<br /><a href="./" target="_top">miser</a>&gt;<br /><br /><a href="index.html" target="_top">index.html</a>&gt;<br /><small><small>0.1.22 2023-11-04<!-- MAINTAIN THIS MANUALLY --></small></small> |
+| | ![The Miser Project logo](images/n170601d2.png) |  <a href="../">orcmid.github.io</a>&gt;<br /><a href="./" target="_top">miser</a>&gt;<br /><a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" /></a><br /><a href="index.html" target="_top">index.html</a>&gt;<br /><small><small>0.1.23 2023-11-04<!-- MAINTAIN THIS MANUALLY --></small></small> |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
 
@@ -23,17 +24,18 @@ If not already, become comfortable with theoretical approaches.  Embrace a
 different kind of math, one based on symbolic logic.  Tolerate the degree of
 rigor; it is informally formal and doesn't have to be swallowed whole.
 
-- [1. Taking a Look](#1-taking-a-look)
-  - [1.1 Abstraction](#11-abstraction)
-  - [1.2 Theory](#12-theory)
-  - [1.3 Computational View](#13-computational-view)
-- [2. The Project](#2-the-project)
-- [3. The Software](#3-the-software)
-- [4. Background](#4-background)
-- [5. Available Materials](#5-available-materials)
-- [6. Development](#6-development)
-  - [6.1 Principles](#61-principles)
-  - [6.2 Future Prospects](#62-future-prospects)
+- [The Miser Project on GitHub](#the-miser-project-on-github)
+  - [1. Taking a Look](#1-taking-a-look)
+    - [1.1 Abstraction](#11-abstraction)
+    - [1.2 Theory](#12-theory)
+    - [1.3 Computational View](#13-computational-view)
+  - [2. The Project](#2-the-project)
+  - [3. The Software](#3-the-software)
+  - [4. Background](#4-background)
+  - [5. Available Materials](#5-available-materials)
+  - [6. Development](#6-development)
+    - [6.1 Principles](#61-principles)
+    - [6.2 Future Prospects](#62-future-prospects)
 
 ## 1. Taking a Look
 
@@ -288,6 +290,7 @@ from time to time.
 </table>
 <!--
 
+  0.1.23 2023-11-04T22:54Z by Jove, I think I got it
   0.1.22 2023-11-04T21:57Z ... and still
   0.1.21 2023-11-04T19:59Z And experimenting still
   0.1.20 2023-11-04T19:35Z Still experimenting
