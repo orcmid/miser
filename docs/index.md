@@ -1,48 +1,29 @@
-<!-- index.md 0.1.19                UTF-8                         2023-11-04
+<!-- index.md 0.1.20                UTF-8                         2023-11-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
      <https://orcmid.github.io/miser/docs.txt>
      -->
 
-<font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
-<table border="0" width="100%" height="3">
-  <tr>
-
-    <td width="20%" height="6">
-        &nbsp; &nbsp;
-        </td>
-
-    <td width="52%" height="6">
-       <p align="center"><font color="#990033"><strong><i><big><big>
-       The Miser Project on GitHub</big></big></i></strong></font></p>
-       </td>
-
-    <td width="28%" height="6">
-        <p align="right"><b><code><a href="../">orcmid.github.io</a>&gt;<br />
-		   <a href="./" target="_top">miser</a>&gt;</code></b>
+| :--                |       :-:          | --: |
+| | <p align="center"><font color="#990033"><strong><i><big><big>The Miser Project on GitHub</big></big></i></strong></font></p> | <p align="right"><b><code><a href="../">orcmid.github.io</a>&gt;<br />
+           <a href="./" target="_top">miser</a>&gt;</code></b>
            </p>
         <p align="center">
-		   <small>
-			<font color="#707070">
-			<a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff">
+           <small>
+           <font color="#707070">
+           <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
+              <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
             </a>
-			</font></small><br />
+            </font></small><br />
             </p>
          <p align="right"><b><code><a href="index.html" target="_top">
            index.html</a>&gt;</code></b><br />
            <small><small>
-	       0.1.19 2023-11-04
+           0.1.20 2023-11-04
            <!-- MAINTAIN THIS MANUALLY -->
            </small></small>
-           </p>
-        </td>
-
-   </tr>
-</table>
-</font>
-
-| :--                |       :-:          | --: |
+           </p> |
 | | ![The Miser Project logo](images/n170601d2.png) | |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
@@ -325,6 +306,7 @@ from time to time.
 </table>
 <!--
 
+  0.1.20 2023-11-04T19:35Z Still experimenting
   0.1.19 2023-11-04T17:54Z Experiment with top strip formatting
   0.1.18 2023-11-03T20:00Z Experiment with in-line HTML folio blocks
   0.1.17 2023-10-31T20:27Z more manifestation/representation smoothing
