@@ -1,4 +1,4 @@
-<!-- index.md 0.1.25                UTF-8                         2023-11-04
+<!-- index.md 0.1.26                UTF-8                         2023-11-05
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -7,7 +7,7 @@
 # The Miser Project on GitHub
 
 | :--                |       :-:          | --: |
-| ![The Miser Project logo](images/n170601d2.png) | | <p align="right"><a href="../">orcmid.github.io</a>&gt;<a href="./" target="_top">miser</a>&gt;<br /><br /><a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" /></a><br /><br /><a href="index.html" target="_top">index.html</a>&gt;<br /><small><small>0.1.25 2023-11-05T02:00Z<!-- MAINTAIN THIS MANUALLY --></small></small></p> |
+| ![The Miser Project logo](images/n170601d2.png) | | <a href="../">orcmid.github.io</a>&gt;<a href="./" target="_top">miser</a>&gt;<br /><br /><a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" /></a><br /><br /><a href="index.html" target="_top">index.html</a>&gt;<br /><small><small>0.1.26 2023-11-05T02:11Z<!-- MAINTAIN THIS MANUALLY --></small></small> |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
 
@@ -290,7 +290,8 @@ from time to time.
 </table>
 <!--
 
-  0.1.25 2023-11-05R02:00Z Just one more thing to try
+  0.1.26 2023-11-05T02:11Z Never mind, back to what works
+  0.1.25 2023-11-05T02:00Z Just one more thing to try
   0.1.24 2023-11-04T23:43Z tidying up
   0.1.23 2023-11-04T22:54Z by Jove, I think I got it
   0.1.22 2023-11-04T21:57Z ... and still
