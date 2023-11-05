@@ -1,4 +1,4 @@
-oMiser.txt 0.1.0                    UTF-8                         2023-11-01
+oMiser.txt 0.1.1                    UTF-8                         2023-11-05
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -15,7 +15,7 @@ oMiser.txt 0.1.0                    UTF-8                         2023-11-01
         and job jar on the docs/ side of this effort.  Construction
         Structure under docs/ provides the necessary manifest.  There
         will also be web-based Job Jars and Diaries. This page will be
-        whittled down as the refactoring progresses. 
+        whittled down as the refactoring progresses.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -38,7 +38,7 @@ oMiser.txt 0.1.0                    UTF-8                         2023-11-01
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.0 dated 2023-11-01,
+   Notes.  Miser Project text file oMiser.txt version 0.1.1 dated 2023-11-05,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser.txt>.
 
@@ -46,8 +46,14 @@ oMiser.txt 0.1.0                    UTF-8                         2023-11-01
 
 TODO
 
+  * 2023-11-05 There needs to be a way to save the complete state of oFrugal.
+    That means the symbol table, not just a single entity.  It basically saves
+    every ob that is reachable in oFrugal at the point of save/suspension.
+    This might not be a 1.0 or 1.1 thingy.  Another way would be to export the
+    def obs in some manner and also economize on shared obs in the reload.
+
   * The Tombstone under the oMiser/ folder should point to the docs/ front porch,
-    with possible mention of a dev/ structure as well.  
+    with possible mention of a dev/ structure as well.
 
   * Many of the TODOs here are about implementation of the oMiser run-time and
     its integration.  Strip these out to a development area, akin to the nfoTools
@@ -142,7 +148,8 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.1.0  2023-11-01T18:55Z Transposition from oMiser/oMiser.txt to 
+ 0.1.1  2023-11-05T21:32Z Additional TODO about save/suspension in oFrugal.
+ 0.1.0  2023-11-01T18:55Z Transposition from oMiser/oMiser.txt to
         docs/oMiser.txt as part of refactoring Miser Project materials.
 
                          *** end of oMiser.txt ***

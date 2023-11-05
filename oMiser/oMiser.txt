@@ -1,4 +1,4 @@
-oMiser.txt 0.0.16                   UTF-8                         2023-11-01
+oMiser.txt 0.0.17                   UTF-8                         2023-11-05
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -13,7 +13,16 @@ oMiser.txt 0.0.16                   UTF-8                         2023-11-01
         being refactored under docs/ where they are organized in
         conjunction with web materials.  This specific file will be
         whittled down until only a tombstone remains.  The omiser/
-        folder will likely disappear. 
+        folder will likely disappear.
+
+        Meanwhile, this file is a zombie that is here only until the
+        manifest files can be refactored to other locations, probably
+        under docs/ as waypoints.
+
+        Note that the TODOs are moved but the manifest and the
+        summaries below are retained until additional refactoring
+        is accomplished.
+        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     oMiser is the foundation theory/software of The Miser Project.
     oMiser is the fundamental part of a software pair.
@@ -116,7 +125,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.16 dated 2023-11-01,
+   Miser Project text file oMiser.txt version 0.0.17 dated 2023-11-05,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
@@ -124,122 +133,16 @@ MANIFEST
 
 TODO
 
-  * Transpose this file to docs/ and anchor it to orcmid/github.io/miser 
-    as the authoritative version.  This version will become a tombstone (or
-    repurposed here) once the elements of the manifest are migrated.
+ * Complete movement of the other text files.
 
-  * Connect to internet-accessible resources and availability of stable
-    materials when available.  TODOs and related work can be separated then.
-
-  * Work up a COM-based interface protected implementation and see whether
-    reference-counting is a workable avoidance of garbage collection by
-    other means.
-
-  * Check out Henry Baker's approach to using stack drag as a way to have
-    rapid pair construction with only longer-lived material swept to the
-    heap.  This is something he and I talked about at the first AAAI meeting
-    at Stanford.  I had a skeletal Z80 implementation.  I think the Chicken
-    Scheme one may be very desirable for x64 implementations.
-
-  * Deal with experimental speed-up devices, including tail recursion,
-    to determine whether they are effective storage-reduction measures.  There
-    are other accelerator techniques that may cooperate with this.  It remains
-    open to me whether tail recursion is detectable in obap.ap.
-
-  * Consider a lab structure alongside the main dev and source-code
-    structures.
-
-  * Address platform variety (e.g., C/C++ versus .NET, Java, etc.) and
-    also using oMiser at a binary level beneath systems such as Python.
-
-  * Emphasize that this is a machine, machine data structure, and machine-
-    language in the conventional sense.  And, at the oMiser/oFrugal level,
-    we are basically seeing an assembler (reader) and a disassembler (printer)
-    of the oMiser machine code.  Where oFrugal becomes more interesting may
-    be with Proc and maybe something about data structures.
-
-  * The Golden Geek treatment of the connection between these could perhaps
-    be handled with an oMiser.md page here.  That could also address the
-    programming notions.  It ties in the development of the "reference
-    notation" for obs and the two sugared forms: lists, and expressions.
-    See <https://www.facebook.com/MiserProject/> for now.
-
-  * The grammar for reference notation is also needed, along with the
-    oFrugal REPL additions (saving and substitution, etc.).
-
-  * When representation, interpretation, manifestation, implementation,
-    and simulation are worked out more clearly, review these materials
-    for consistent usage and links to related resources of the project and
-    and elsewhere, especially ones of reference/historical value.
-
-  * There are a number engineering and programming matters in these TODOs
-    that are best moved to an alternative place, such as engineering.txt
-    for the overall project.
-
-  * The fundamental reference that is a historical inspiration for obs and
-    oMiser is [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
-    expressions and their computation by machine, Part 1.  Comm. ACM 3, 4
-    (April 1960), 184-195, https://doi.org/10.1145/367177.367199
-
-  * A related article of possible interest in accelerators or possibly other
-    situations is [Perlis1960] Perlis, A.J., Thornton, Charles.  Symbol
-    manipulation by threaded lists.  Comm. ACM 3, 4 (April 1960), 195-204,
-    https://doi.org/10.1145/367177.367202
-
-  * The Strachey General-Purpose Macro Processor (McG) is also inspirational,
-    as is the Burge and Landin work on applicative systems and ISWIM.
-
-  * How did the Mapping of ALGOL 60 to the lambda calculus deal with
-    assignment operations and storage state?  It looks like continuations
-    are fruitful, if the compute expression of F# is informative.  I still
-    haven't got my head around it (2023-01-11).
-
-  * EMERGENCE OF TYPES AND "OBJECTS" is a key matter. It is at the heart of
-    the stored-program model and it serves to illustrate the limits of
-    computable functions to within denumerability. In some sense, the larger
-    the domains of discourse (in cardinality terms), the computable functions
-    are a tinier and tinier subset.
-
-  * INTERPRETATION MATTERS and some constructions are strictly mystery meat
-    in the absence of any expression of intended interpretation.  I suppose
-    at some point one arrives at a perspective on category theory, although I
-    will need to understand Eugenia Chang's portrayal better.
-
-  * Use the ability to create interpretations over a sufficient model of
-    computation to motivate the narrative about oMiser and what works for it.
-    The lindy trace hack and an extended syntax for it get around the need
-    for other data types, since lyndies give us sufficient literals for
-    atoms in strings (list structures).
-
-  * Transpose this material to docs/ where it will remain authoritative.
-    Provide tombstones here because of various external and internal
-    references.
+ * Do something different with mockups, maybe under dev/.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.17 2023-11-05T21:44Z Reduce to zombie state for this file.
  0.0.16 2023-11-01T18:22Z Introduce Refactoring of oMiser/ with docs, other
-        folder structures
- 0.0.15 2023-09-02T20:55Z Manage TODOs, Anticipate Transposition to docs/
- 0.0.14 2023-01-30T23:27Z Add mathZ.txt and manage TODOs
- 0.0.13 2023-01-11T16:47Z Manage TODOs, emphasizing stored-program
-        interpretations.
- 0.0.12 2022-08-11T20:48Z Touch-ups and attribution, manage TODOs
- 0.0.11 2022-08-01T23:38Z Reflect obstring.txt renaming to CFob.txt
- 0.0.10 2022-08-01T17:27Z Reflect tombstoning of ob-exp.txt
- 0.0.9 2018-11-28-08:14 Add boole.txt and arrange manifest in a recommended
-       reading order.
- 0.0.8 2018-02-10-13:37 Introduce combinators.txt in the manifest.
- 0.0.7 2018-02-09-12:10 Reflect change of show-ob.txt to obstring.txt
- 0.0.6 2018-02-04-11:52 Add show-ob.txt to the manifest
- 0.0.5 2018-01-30-18:28 Reflect addition of ob-exp.txt in the manifest.
- 0.0.4 2017-12-27-09:43 Touch-ups and some simplification.  Manage TODOs.
-       Correct the GitHub location of this page.
- 0.0.3 2017-11-12-09:09 Manage TODOs.  Touch up text.
- 0.0.2 2017-09-13-10:45 Add ob.txt and obaptheory.txt in motivating the
-       next steps.  Touch up the text.
- 0.0.1 2017-08-24-10:08 Add obtheory.txt for the fundamental data structure,
-       ‹ob›, that all oMiser implementations must manifest correctly.
- 0.0.0 2017-08-04-12:05 Create placeholder and initial job jar for the
-       oMiser code development.
+        folder structures.  Earlier history has moved to docs/oMiser.txt or
+        whatever destination is used for preservation purposes.
+
 
                          *** end of oMiser.txt ***
