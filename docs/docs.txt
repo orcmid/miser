@@ -1,4 +1,4 @@
-docs.txt 0.0.20                     UTF-8                         2023-11-01
+docs.txt 0.0.21                     UTF-8                         2023-11-05
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -16,25 +16,13 @@ docs.txt 0.0.20                     UTF-8                         2023-11-01
      web subdomain <https://orcmid.github.io/miser/>.
 
     Further information about the purpose, construction, and care-and-feeding
-    of this web authoring arrangement are found on the construction/ page and
-    its subordinate material.
+    of this web authoring arrangement are found on the index.htm page and
+    the materials linked from there.
 
-    WARNING:
-          miser/docs/ is being refactored and repurposed to consolidate
-          all Miser Project material, including that from miser-theory.info.
-          Some other materials of the GitHub Miser repository  are refactored          under these GitHub Pages for affinity of original text materials under
-          into this web documentation organization.  That proximity supports
-          consistent maintenance.
-
-    NOTE: GitHub Pages is set to publish from this folder.  It is the case
-          that Markdown files here will be converted to HTML, and there is
-          support for Jekyll in those files (http://jekyllrb.com/).  However,
-          files can be authored in separate locations and the HTML and other
-          web-ready materials placed here.  HTML files and assets can also be
-          introduced here directly, as with FrontPage.  GitHub will publish
-          those "as is. 
-             There remains potential use of an alternative authoring scheme
-          such as Hugo along with the use of LaTex formulas.
+    NOTICE: This page is obsolete.  The TODOS that remained here have been
+        migrated to c000000.htm.  For construction structure, view index.htm,
+        construction.htm, and c000000.htm.  This file remains as a tombstone
+        and revision history up to this date.
 
 MANIFEST
 
@@ -44,29 +32,11 @@ MANIFEST
                        guidance into the docs/ organization as the web site
                        <https://orcmid.github.io/miser/>.
 
-            index.md   markdown of the home page
-                       <https://orcmid.github.io/miser/index.html>
+            The construction structure and content is now managed via HTML
+            pages.  Visit <https://orcmid.github.io/miser/index.htm> for the
+            latest information.
 
-          c000000.htm  Job Jar and Diary for the preserved/repurposed road
-                       ahead
 
-     construction.htm  Construction Zone for this web-material front porch.
-
-           oMiser.txt  Repository refactoring material for the oMIser aspect
-                       of the project.
-
-            about/     (provisional) subfolder for the about page and
-                       subordinate material the purpose and management of the
-                       project and connection with the "golden geek."
-
-     construction/     Construction Materials and assets of the document
-                       engineering of <https://orcmid.github.io/miser/>.
-
-           images/      preservation and expansion of
-                       <https://miser-theory.info/images>
-
-           vision/      preserving the original Miser Project synopsis and any
-                       adjustments or commentary
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -89,70 +59,13 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GitHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.20 dated 2023-11-01 available on the
+   Code text file docs.txt version 0.0.21 dated 2023-11-05 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs/docs.txt>
-
-TODO
-
-  * I am unsure that about/ is necessary.
-
-  * Create more folio structure for the migration of the text folders to
-    here.  I will need to place tombstones at the previous locations.
-
-  * Add license and NOTICE pages as was done with Hexo authoring.  In this
-    case, they are part of the source and may as well be in Markdown (as well
-    as plaintext?).
-
-  * Prepare to bring miser-theory.info and especially the Miser Development
-    blog pages into a folio structure here.  This will borrow "tutorial"
-    materials and also have some application-development folder structure.
-
-  * Determine whether and how much astraendo/ to transpose and preserve.
-    Models and theory can be handled here, and the applied mathematical
-    logic employed with the Miser Project
-
-  * Provide a dev/ folder here for the release of oMiser and oFrugal code.
-
-  * Have ob for the theory structure.  There can be the subfolders as
-    needed.  Or maybe there is theory and then components.  We could also
-
-  * Likewise, determine what to do with notes/.
-
-  * Document how forking/preservation of the miser-theory.info web pages
-    are brought here and editable via FrontPage running in a VirtualBox.
-    This is going to be in docEng and not specific to miser.
-
-  * I can rescue HTML directly or I can use an authoring system.  I have
-    discovered that I can use Microsoft FrontPage to repurpose materials
-    as part of transposition from nfoCentrale-housed projects to Orcmid on
-    GitHub.  This is much more satisfying and I am going to reorganize the
-    Miser Project docs/ to become the primary source, not unlike how nfoTools
-    is working out.
-
-  * If a framework is to be adopted at some future time, especially to be able
-    to use LaTex formulas, we'll just have to see.  The mingled FrontPage may
-    endure except where I do require a modern form, such as some sort of
-    JavaScript reliance.
-
-  * I can use FrontPage on my GitHub miser/docs folder after branching a
-    shared folder in the MiserGitHub VSS.  The branch does not consist of
-    shared material.  So I can continue to use FrontPage after .gitignore of
-    the FrontPage artifacts.  This needs to be accounted for in the migration/
-    preservation/forking process under docs/construction.  [also DocEng]
-
-  * NOTE: Although GitHub/miser/docs is set as the VSS working folder for
-    MiserGitHub, I have only done Get Latest on images/, readings/, and
-    construction/ so far.  There is no collision with material that was
-    already there. The extra folders that FrontPage creates are included in
-    .gitignore to prevent check-in at GitHub.  Other pages have dependencies
-    (relative, fortunately) on the construction materials so there needs to
-    be preservation for now. [also DocEng]
-
-  * Figure out what to do with the historical notebooks and information from
-    those.
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.21 2023-11-05T16:07Z Move TODOs to c000000.htm and leave this file as
+        historical tombstone.
  0.0.20 2023-11-01T20:55Z First steps of oMiser refactoring
  0.0.19 2023-10-28T16:35Z More refactoring considerations, docEng possibly
  0.0.18 2023-10-27T20:03Z Reflect the refactoring initiation
