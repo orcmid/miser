@@ -1,10 +1,10 @@
-<!-- index.md 0.1.27                UTF-8                         2023-11-05
+<!-- index.md 0.1.28                UTF-8                         2023-11-05
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
      <https://orcmid.github.io/miser/docs.txt>
      -->
-# Computation Theory Made Demonstrable
+# The Miser Project on GitHub
 
 <font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif">
 <table border="0" width="100%" height="3">
@@ -14,24 +14,28 @@
     </td>
     <td width="52%" height="6">
       <p align="center"><font color="#990033"><strong>
-         <i><big><big>The Miser Project on GitHub</big></big></i>
+         <i><big><big>Computation Theory Made Demonstrable</big></big></i>
 		 </strong></font></p>
     </td>
     <td width="28%" height="6">
       <p align="right"><b><code><a href="../">orcmid.github.io</a>&gt;<br>
 		<a href="./" target="_top">miser</a>&gt;</code></b><br /><br /></p>
       <p align="right">
-         <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" /></a></p>
-      <p align="right"><br /><br /><b><code><a href="index.htm" target="_top">index.htm</a>&gt;</code></b><br />
+         <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
+            <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
+            </a></p>
+      <p align="right"><br /><br /><b><code>
+         <a href="index.html" target="_top">index.html</a>&gt;</code></b><br />
       <small><small>
-        0.1.26 2023-11-05T02:11Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.28 2023-11-05T22:43Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small></p>
       </td>
   </tr>
 </table>
 </font>
-| :--                |       :-:          | --: |
-| | ![The Miser Project logo](images/n170601d2.png) | |
+
+| :-- |                         :-:                     | --: |
+|     | ![The Miser Project logo](images/n170601d2.png) |     |
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
 
@@ -48,7 +52,7 @@ If not already, become comfortable with theoretical approaches.  Embrace a
 different kind of math, one based on symbolic logic.  Tolerate the degree of
 rigor; it is informally formal and doesn't have to be swallowed whole.
 
-- [Computation Theory Made Demonstrable](#computation-theory-made-demonstrable)
+- [The Miser Project on GitHub](#the-miser-project-on-github)
   - [1. Taking a Look](#1-taking-a-look)
     - [1.1 Abstraction](#11-abstraction)
     - [1.2 Theory](#12-theory)
@@ -314,6 +318,7 @@ from time to time.
 </table>
 <!--
 
+  0.1.28 2023-11-05T22:44Z Umm, still working at it
   0.1.27 2023-11-05T22:06Z Let's try something different
   0.1.26 2023-11-05T02:11Z Never mind, back to what works
   0.1.25 2023-11-05T02:00Z Just one more thing to try
