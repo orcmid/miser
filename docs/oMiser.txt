@@ -1,4 +1,4 @@
-oMiser.txt 0.1.1                    UTF-8                         2023-11-05
+oMiser.txt 0.1.2                    UTF-8                         2023-11-06
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -38,13 +38,21 @@ oMiser.txt 0.1.1                    UTF-8                         2023-11-05
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.1 dated 2023-11-05,
+   Notes.  Miser Project text file oMiser.txt version 0.1.2 dated 2023-11-06,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 TODO
+
+  * 2023-11-06 Use "NBG" for von Neumann, Bernays, Goedel set theory and how
+    it is used in model theory, although we will stay in the finitism realm
+    for the domains of structures.
+
+  * There is a note on Goedel vol.1 that points to Goedel accepting Turing
+    Completeness (in a remark by Kleene) with respect to Church's Thesis. I
+    should mention that to Edward.
 
   * 2023-11-05 There needs to be a way to save the complete state of oFrugal.
     That means the symbol table, not just a single entity.  It basically saves
@@ -148,6 +156,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.2  2023-11-06T18:59Z Note about NBG and how it might come up.
  0.1.1  2023-11-05T21:32Z Additional TODO about save/suspension in oFrugal.
  0.1.0  2023-11-01T18:55Z Transposition from oMiser/oMiser.txt to
         docs/oMiser.txt as part of refactoring Miser Project materials.
