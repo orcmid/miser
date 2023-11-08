@@ -1,4 +1,4 @@
-miser.txt 0.0.17                    UTF-8                         2023-11-02
+miser.txt 0.0.18                    UTF-8                         2023-11-**
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -128,10 +128,33 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
-   miser.txt version 0.0.17 dated 2023-11-02, available on the Internet as a
+   miser.txt version 0.0.18 dated 2023-11-**, available on the Internet as a
    version of <https://github.com/orcmid/miser/blob/master/miser.txt>
 
 TODO
+
+  * This file is an example of the kind of (blurry) distinction between the
+    subject matter and the construction here.  These TODOs are examples of
+    the conflation that I want to remedy somewhat.  I wonder if vision/ is
+    a place for this, or there is some other top-level topic in docs/ where
+    these should be refactored.
+
+  * I did not sign up for the Australasian Logic Colloquium just held in
+    Brisbane, November 6-7, 2023.  I did not see a program and the time zone
+    differences were difficult.  However, the focus on logic, computation, and
+    philosophy (philosophical logic?) is intriguing, along with LLC (language,
+    logic, and computation in different venues).  There is also a Journal of
+    Logic and Computation which is worth looking into.  Also, the ALC was
+    sponsored by the Association for Symbolic Logic (ASL).
+
+  * I need to determine what came out of the workshop on Logic for
+    Undergraduate Computer Science.  I must track down the organizer and ask
+    what happened.
+
+  * I need to put the slides and paper on L4UCS on bib/ and let Edgar Daylight
+    know about them and also the use of Manifestation in that paper.  I also
+    need to figure out the AuthorizeIt thing with ACM. I could also put my own
+    vitae here, now that I think about it.
 
   * In the refactoring, there needs to be a distinction between construction
     and management of the web materials versus job jar and diary regarding the
@@ -214,6 +237,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.18 2023-11-**
  0.0.17 2023-11-02T15:43Z More on refactoring and separation of concerns
  0.0.16 2023-10-29T16:01Z The return of "manifestation."
  0.0.15 2023-10-27T19:37Z Announce refactoring, setting the stage.

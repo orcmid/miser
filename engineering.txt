@@ -1,4 +1,4 @@
-engineering.txt 0.0.1                UTF-8                       dh:2019-10-13
+engineering.txt 0.0.2                UTF-8                        2023-11-08
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -15,7 +15,7 @@ engineering.txt 0.0.1                UTF-8                       dh:2019-10-13
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                        Copyright 2018 Dennis E. Hamilton
+                Copyright 2018-2019, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -32,6 +32,12 @@ engineering.txt 0.0.1                UTF-8                       dh:2019-10-13
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 TODO
+
+ * <https://www.engineering.columbia.edu/news/new-tool-automates-formal-verification-systems-software>
+   a COQ-based system that may provide practical verification of C Language
+   programs.  This may be important/useful in verifying oMiser at some point.
+   <https://www.usenix.org/conference/osdi23/presentation/li-xupeng> is the
+   Usenix conference presentation.
 
  * Transform the TODOs into sections of History, Current Challenges, and
    references/bibliography.
@@ -71,6 +77,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.2 2023-11-08T20:08Z Add information on SPOQ
  0.0.1 2019-10-13-13:01 Add notes on storage implementation, comparison
        shortening and applicative interpretation accelerators.
  0.0.0 2018-04-17-10:29 Create placeholder, with starter TODOs.
