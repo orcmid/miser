@@ -1,10 +1,10 @@
-ob.txt 0.2.1                     UTF-8                          dh:2022-08-01
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+sketch.txt 0.2.3                        UTF-8                      2023-11-09
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-         <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
+              <https://orcmid.github.io/miser/ob/sketch.txt>
 
       ‹ob› MATHEMATICAL STRUCTURE, DATA REPRESENTATION, AND EXPRESSIONS
       -----------------------------------------------------------------
@@ -384,9 +384,9 @@ ob.txt 0.2.1                     UTF-8                          dh:2022-08-01
     if only as an opeational demonstration of the essence of digital
     computing.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                   Copyright 2018-2022 Dennis E. Hamilton
+                   Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -400,14 +400,14 @@ ob.txt 0.2.1                     UTF-8                          dh:2022-08-01
     See the License for the specific language governing permissions and
     limitations under the License.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation,
-   and Expressions. Miser Theory Conception text file ob.txt version 0.2.1
-   dated 2022-08-01, available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
+   and Expressions. Miser Theory Conception text file sketch.txt version 0.2.3
+   dated 2023-11-09, available on the Internet as a version of
+   <https://orcmid.github.io/miser/ob/sketch.txt>
 
  TODO
 
@@ -422,8 +422,10 @@ ob.txt 0.2.1                     UTF-8                          dh:2022-08-01
     investigated. It works because both application and "::" are right-
     associative.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.2.3  2023-11-09T22:54Z Renamed sketch.txt as part of refactoring to docs/
+ 0.2.2  2023-11-09T22:38Z Tombstone left behind in refactoring of the project.
  0.2.1  2022-08-01T17:54Z Touch-ups and linking to oFrugal/ob-exp.txt
  0.2.0  2022-03-12T18:38Z Bring in line with the latest op-exp and obtheory,
         tidying up a little.
@@ -467,4 +469,4 @@ ob.txt 0.2.1                     UTF-8                          dh:2022-08-01
        as ‹ob› mathematical structure, computational manifestation, data
        representation, and storage model.
 
-                              *** end of ob.txt ***
+                           *** end of sketch.txt ***

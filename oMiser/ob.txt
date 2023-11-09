@@ -1,0 +1,26 @@
+ob.txt 0.2.2                        UTF-8                         2022-11-09
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                              The Miser Project
+                              =================
+
+         <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
+
+      ‹ob› MATHEMATICAL STRUCTURE, DATA REPRESENTATION, AND EXPRESSIONS
+      -----------------------------------------------------------------
+
+                                 TOMBSTONE
+                                 *********
+
+    As part of The Miser Project on GitHub, this file and its subsequent
+    refactoring continues at <https://orcmid.github.io/miser/ob/sketch.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.2.2  2023-11-09T22:57Z Tombstone left behind in refactoring of the project.
+
+ 0.0.0 2017-09-13-10:44 Placeholder and boiler plate for a note on Obs
+       as ‹ob› mathematical structure, computational manifestation, data
+       representation, and storage model.
+
+                              *** end of ob.txt ***

@@ -1,0 +1,28 @@
+obtheory.txt 1.2.1                  UTF-8                          2023-11-09
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+        <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
+
+                           ‹ob› MATHEMATICAL STRUCTURE
+                           ---------------------------
+
+                                   TOMBSTONE
+                                   *********
+
+    As part of Miser Project on GitHub refactoring, this is now a tombstone
+    for material that is being refactored to the web docs/ and found at
+    <https://orcmid.github.io/miser/ob/obtheory.txt>
+
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 1.2.1 2023-11-09T23:04Z Tombstoned at Orcmid miser/oMiser/obtheory.txt
+
+ 0.0.10 2017-08-24-10:17 Adapted from the SML mockup obtest.sml 0.0.9 for
+        reference in all mockups and the expanded development for oMiser.
+
+
+                          *** end of obtheory.txt ***

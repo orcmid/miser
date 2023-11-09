@@ -1,4 +1,4 @@
-oMiser.txt 0.0.17                   UTF-8                         2023-11-05
+oMiser.txt 0.0.18                   UTF-8                         2023-11-09
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -8,6 +8,9 @@ oMiser.txt 0.0.17                   UTF-8                         2023-11-05
 
               OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
               -------------------------------------------------
+
+                                 ZOMBIE FILE
+                                 ===========
 
     IMPORTANT NOTICE: The oMiser and oFrugal text-file materials are
         being refactored under docs/ where they are organized in
@@ -19,57 +22,27 @@ oMiser.txt 0.0.17                   UTF-8                         2023-11-05
         manifest files can be refactored to other locations, probably
         under docs/ as waypoints.
 
-        Note that the TODOs are moved but the manifest and the
-        summaries below are retained until additional refactoring
-        is accomplished.
+        Note that the TODOs are no longer managed here.  The Manifest is
+        retained until refactoring is completed.  This will become a
+        tombstone at that point.
         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-    oMiser is the foundation theory/software of The Miser Project.
-    oMiser is the fundamental part of a software pair.
-
-     - oMiser implements the representation and use of the
-       abstract structure, ‹ob› as an encapsulated data-structure and
-       universal machine implementation via reusable program library.
-
-     - oFrugal is a front-end processor that offers an interface for
-       external exercise of oMiser functions in a more-practical
-       form for personal exploration and operation of oMiser programs.
-
-    It is useful to view oMiser as a machine having obs as the form
-    of its data and its programs.  The obs used as programs or
-    scripts are akin to the machine-/assembly-language of conventional
-    digital computers.
-
-    oFrugal implementations provide input-output and other functions
-    that oMiser necessarily lacks.  oFrugal is essentially a kind
-    of assembler of oMiser obs and a means to exercise programs
-    written as obs that compute other obs from given ones.  In particular,
-    it presents the results of computations in the same notation(s) employed
-    for the inputs.
-
-    Development spirals, working through many iterations of implementation
-    until stable operation, full functionality, and portability of
-    oMiser and oFrugal are achieved.  Interoperation is via recording
-    of oMiser dumps, oFrugal scripts, and distributed connections
-    developed and extended over time.
-
-    Stages beyond oMiser are envisioned.  In those cases, oMiser
-    remains as a subordinate available for reliance when its simplicity
-    is sufficient for fragments of larger, more-interactive arrangements
-    of computational operations.
+    For the latest summary of The Miser Project on GitHub, go to
+    <https://orcmid.github.io/miser> for that and further web pages
+    on Miser.
 
 MANIFEST
 
-    oMiser.txt
+    oMiser.txt zombie refactoring at
+        <https://orcmid.github.io/miser/oMiser.txt>)
         this synopsis, manifest and TODOs for this portion of the
         working Miser-Project working folders preserved on GitHub
 
-    ob.txt
-        summary of how the ‹ob› structure and its computational
-        manifestations are useful as flexible, general-purpose data
-        structures given suitable encodings and decodings
+    ob.txt (tombstone)
+        summary of the ‹ob› structure and its computational manifestations
+        migrated to <https://orcmid.github.io/miser/ob/ob.txt>
 
-    obtheory.txt
+    obtheory.txt (tombstone)
         specification of the ‹ob› abstract mathematical structure
         any computationally-implemented manifestation must satisfy.
 
@@ -125,8 +98,8 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.17 dated 2023-11-05,
-   available on the Internet as a version of
+   Miser Project text file oMiser.txt version 0.0.18 dated 2023-11-09,
+   zombie file available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -139,6 +112,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.18 2023-11-09T23:14Z Reflect more refactoring from folder oMiser/
  0.0.17 2023-11-05T21:44Z Reduce to zombie state for this file.
  0.0.16 2023-11-01T18:22Z Introduce Refactoring of oMiser/ with docs, other
         folder structures.  Earlier history has moved to docs/oMiser.txt or

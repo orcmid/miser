@@ -1,9 +1,9 @@
-obtheory.txt 1.2.0                 UTF-8                        dh:2023-08-24
+obtheory.txt 1.2.2                  UTF-8                          2023-11-09
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
 
-        <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
+               <https://orcmid.github.io/miser/ob/obtheory.txt>
             The latest version is always available at this location.
 
                            ‹ob› MATHEMATICAL STRUCTURE
@@ -28,7 +28,7 @@ obtheory.txt 1.2.0                 UTF-8                        dh:2023-08-24
    Church-Turing Complete.
 
    An informal overview, with illustrative usage, is found in the file
-   <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>.
+   <https://orcmid.github.io/miser/ob/sketch.txt>.
 
 
                                   CONTENT
@@ -388,22 +388,14 @@ obtheory.txt 1.2.0                 UTF-8                        dh:2023-08-24
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.2.0 dated 2023-08-24, available on the
-   Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>
+   text file obtheory.txt version 1.2.2 dated 2023-11-09, available on the
+   Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
-
- * Provide a stable location for obtheory version progressions on
-   <https://orcmid.github.io/miser>.
 
  * Figure out what to do about well-definedness.  Is this an Ob11 or Ob12
    condition?  I claim it is implicit in Ob11 and it can be made explicit
    in one of the companion text files such as miser/theory.txt.
-
- * Find places to locate this material that are perhaps easier to reach
-   into than GitHub, and perhaps more durable.  This may depend on stability
-   of the material.
 
  * Rely on the Stanford Encyclopedia of Philosophy (SEP) treatment of the
    Church-Turing thesis and how we navigate the CT-computable.  Put this where
@@ -418,6 +410,8 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.2.2 2023-11-09T23:11Z Adjusted to orcmid.github.io/miser/ob/ location
+ 1.2.1 2023-11-09T23:04Z Tombstoned at Orcmid GitHub miser/omiser/obtheory.txt
  1.2.0 2023-08-24T23:52Z Proofed and aligned with obaptheory,text version
  1.1.0 2023-08-24T20:31Z Transpose the introduction of Lindies to here.
  1.0.1 2020-01-15-08:29 Correct file top-line typos and a change of links
