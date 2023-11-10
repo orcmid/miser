@@ -1,0 +1,132 @@
+oFrugalese.txt 0.0.2                   UTF-8                      2023-08-19
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+      <https://github.com/orcmid/miser/blob/master/oFrugal/syntax.txt>
+
+                     OFRUGALESE LANGUAGE SPECIFICATION
+                     ---------------------------------
+
+    The oFrugal REPL (Read, Evaluate, Print, Loop) console application
+    processes lines of input as a continuous stream of material.  That
+    stream is required to conform to the oFrugalese language specification.
+
+CLIPPINGS
+
+[These materials are extracted from a draft version of grammars.txt where
+ they are not used.  Whether adapted for use here is to be determined later.]
+
+    Ob-exp texts are used as a means of specifying obs and computations
+    with them to derive an ob result.  Ob-exp is an expression language
+    that is used in digital communication of computations with obs and
+    also used to submit expressions for oMiser computation via oFrugal.
+
+    ob-exp has a context-free grammar, here specified using the original
+    Backus-Naur Form (BNF) as employed in the Revised Report on
+    the Algorithmic Language ALGOL 60.  The grammar specifies exactly those
+    expressions that can be evaluated to (at most) a single ob when submitted
+    to a processor such as an oFrugal implememtation.
+
+    In addition to the grammatical structure for composing ob-exp
+    expressions, there is also a formal definition of the computation by
+    which an ob-exp is evaluated as computation of a canonical ob, the
+    formal semantics of ob-exps.  It is this fact that has ob-exp be defined
+    under oMiser, even though it is oFrugal that will enact that semantics.
+
+    For an informal introduction to the use of Frugalese in the computational
+    model defined on the mathematical structure ‹ob› = 〈Ob,Of,Ot〉, see
+    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt> and other
+    material cited there.
+
+    The following summary form of the grammar is useful for reference.
+    It does not address the grammatical differences that are called for
+    to align with the interpretation rules by which an ob-exp is evaluated.
+    The notation is the same used for the ALGOL 60 Report [Naur1963], as
+    adapted from a John Backus demonstration for ALGOL 58 [Backus1958].
+
+            The concrete reference syntax consists of Unicode, usually in UTF8
+    encoding, and a %-escape mechanism is used when a character is not
+    printable.  It is recommended that characters that are not easily typed
+    be avoided by authors of ob expressions, recognizing that a recipient
+    may encounter %-encoding instead.  If you don't know what this is about,
+    you are probably on safe ground. [SEE HOW INTERNATIONALIZATION OF C
+    LANGUAGE IDENTIFIERS IS HANDLED]
+
+    Basically, white-space is allowed wherever it does not change the
+    grammar of a 〈term〉 and required where consecutive 〈term〉 occurrences
+    would not be disambiguated.
+
+
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2022-2023 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oFrugalese Language Specification.  Miser Project Code
+   text file oFrugalese.txt version 0.0.2 dated 2023-08-19 available on the
+   Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugalese.txt>
+
+TODO
+
+ * Incorporate shared references from ob-exp.txt with regard to the grammar
+   and the use of 〈ob-exp〉.
+
+ * Provide the interpretation of ‼〈binding-name〉{ℰ} where
+   〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
+
+ * Provide a look-up function that works on that returns matches for
+   certain lookups and returns the ? form when it is not there is no
+   established binding.
+
+ * Establish that all grammatically-correct streams have interpretations,
+   though an attempted computation may fail by resource exhaustion.
+
+ * Produce the input-statements grammar to first just have binding commands
+   and expressions.
+
+ * Add #include and see how that works.
+
+ * Start a table of contents
+
+ * Address the overall structure
+
+ * Address error-reporting/-handling.
+
+ * Provide the environment that is used to add accumulate binding and supply
+   them to ob-exp interpretations.
+
+ * Include file and line identification in the handling of REPL sessions and
+   provide for error identification/location messages that are useful in
+   locating problem points in the input source.
+
+ * Consider line-numbering in the entry of input or maybe only in a CUA editor
+   or maybe even in Visual Studio Code.
+
+----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.2 2023-08-19T01:22Z Capture some scraps
+ 0.0.1 2022-08-06T17:13Z Rename from syntax to oFrugalese and add TODOs
+ 0.0.0 2022-07-29T23:18Z Create placeholder and initial job jar for the
+       oFrugal REPL syntax.
+
+                       *** end of oFrugalese.txt ***

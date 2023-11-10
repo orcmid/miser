@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.9                   UTF-8                          2023-11-10
+oFrugal.txt 0.0.8                   UTF-8                          2022-08-12
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -58,10 +58,13 @@ MANIFEST
         the interpreted language for oFrugal text files/streams/terminal
         sources submitted to the oFrugal REPL.
 
+    mockups/
+        subtree for experimental mock-ups that demonstrate oFrugal
+        features; some can serve as provisional reference implementations
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2020-2023 Dennis E. Hamilton
+                    Copyright 2020-2022 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -80,16 +83,17 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.9 dated 2023-11-10 available on the
+   Code tex file oFrugal.txt version 0.0.8 dated 2022-08-12 available on the
    Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
 
 TODO
 
-  * Refactor to orcmid.github.io/Miser/oFrugal.
-
   * Create these, with attention to the division of labor and the reliance
     on the common ob-exp txt.
+
+  * Explain the oMiser mockup case because of file-system location of
+    SML scripts.  There needs to be some principle applied on this.
 
   * Maybe need notes and references?
 
@@ -127,7 +131,6 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.9 2023-11-10T21:24Z Remove mockups/, prepare for refactoring
  0.0.8 2022-08-12T03:52Z Add grammars.txt, manage TODOs, some touch-ups
  0.0.7 2022-08-06T17:22Z Reflect name change to oFrugalese.txt and closing of
        some TODOs with treatment in mendelay.txt.

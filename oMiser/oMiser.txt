@@ -1,4 +1,4 @@
-oMiser.txt 0.0.20                   UTF-8                         2023-11-10
+oMiser.txt 0.0.21                   UTF-8                         2023-11-10
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -9,23 +9,11 @@ oMiser.txt 0.0.20                   UTF-8                         2023-11-10
               OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION
               -------------------------------------------------
 
-                                 ZOMBIE FILE
-                                 ===========
+                                  MAUSOLEUM
+                                  =========
 
-    IMPORTANT NOTICE: The oMiser and oFrugal text-file materials are
-        being refactored under docs/ where they are organized in
-        conjunction with web materials.  This specific file will be
-        whittled down until only a tombstone remains.  The omiser/
-        folder will likely disappear.
-
-        Meanwhile, this file is a zombie that is here only until the
-        manifest files can be refactored to other locations, probably
-        under docs/ as waypoints.
-
-        Note that the TODOs are no longer managed here.  The Manifest is
-        retained until refactoring is completed.  This will become a
-        crypt at that point.
-        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    This material has been refactored to Orcmid Github miser/docs/, with
+    distribution among ob/, obap/, and obrep/ as specified below.
 
     For the latest summary of The Miser Project on GitHub, go to
     <https://orcmid.github.io/miser> for that and further web pages
@@ -33,10 +21,9 @@ oMiser.txt 0.0.20                   UTF-8                         2023-11-10
 
 MANIFEST
 
-    oMiser.txt zombie refactoring at
-        <https://orcmid.github.io/miser/oMiser.txt>)
-        this synopsis, manifest and TODOs for this portion of the
-        Miser-Project working folders preserved on GitHub
+    oMiser.txt tombstone (this file)
+       TODOs and other narrative are being repurposed as part of refactoring.
+       There is no direct counterpart to this file.
 
     ob.txt (tombstone)
         summary of the ‹ob› structure and its computational manifestations;
@@ -68,11 +55,11 @@ MANIFEST
         in oMiser scripts for applicative interpretation; refactored to
         <https://orcmid.github.io/miser/obrep/combinators.txt>.
 
-    ob-exp.txt
+    ob-exp.txt (tombstone)
         tombstone for specification of the grammar for oFrugal expressions
         that determine obs by computations using obs as procedure scripts and
         as data.  This material is now at
-        <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
+        <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>.
 
     CFob.txt (tombstone)
         description of the grammar for Canonical Obs and a procedure for
@@ -104,8 +91,8 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.20 dated 2023-11-10,
-   zombie file available on the Internet as a version of
+   Miser Project text file oMiser.txt version 0.0.21 dated 2023-11-10,
+   tombstone file available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -114,12 +101,10 @@ TODO
 
  * Figure out where to salvage the refactoring of oMiser.txt
 
- * Repair the existing tombstone of ob-exp.txt to follow the refactoring
-   of ob-exp.text
-
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.21 2023-11-10T21:36Z Completion of refactoring away from oMiser folder.
  0.0.20 2023-11-10T20:46Z All refactored away except for ob-exp.txt
  0.0.19 2023-11-10T04:54Z Reflect refactoring of mockups/, leaving a crypt
  0.0.18 2023-11-09T23:14Z Reflect more refactoring from folder oMiser/
