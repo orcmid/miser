@@ -1,10 +1,10 @@
-Z2adic.txt 0.0.4                     UTF-8                         2023-02-05
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+Z2adic.txt 0.0.6                     UTF-8                         2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                           The Miser Project Code
-                           ======================
+                             The Miser Project
+                             =================
 
-        <https://github.com/orcmid/miser/blob/master/oMiser/Zadic.txt>
+            <https://orcmid.github.io/miser/obrep/Zadic.txt>
 
 
              Z 2'S COMPLEMENT INTEGER ARITHMETIC IMPLEMENTION
@@ -456,7 +456,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
      Internet at <https://en.wikipedia.org/w/index.php?title=Boolean_algebra_(structure)&oldid=867568743>.
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                  Copyright 2018-2023 Dennis E. Hamilton
 
@@ -472,16 +472,16 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. Zadic Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file mathZ.txt version 0.0.4 dated 2023-02-05, available
+   Hamilton, Dennis E. Z2adic Integer Arithmetic in oMiser.  Miser Theory
+   Conception text file Z2adic.txt version 0.0.6 dated 2023-11-10, available
    on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/mathZ.txt>
+   <https://orcmid.github.io/miser/obrep/Z2adic.txt>
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  TODO:
 
@@ -528,8 +528,11 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     in the Z2adic case to FOM.  We'll see how that lands.  I am restating it
     here, now.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.6 2023-11-10T20:38Z Adjust as part of refactoring to orcmid.github.io
+ 0.0.5 2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obrep/Z2adic.txt
+       as part of Miser Project on GitHub refactoring.
  0.0.4 2023-02-05T05:48Z Adjust to name Z2adic.txt and introduce a short-hand
        numerical-bumpered notation that is more compact than the list forms
        employed in the oMiser computational interpretation.

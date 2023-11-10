@@ -1,0 +1,27 @@
+boole.txt 0.5.4                     UTF-8                       dh:2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+        <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>
+
+
+     INTERPRETATION OF BOOLEAN ALGEBRAS IN THE ‹ob› MODEL OF COMPUTATION
+     -------------------------------------------------------------------
+
+                                 TOMBSTONE
+                                 *********
+
+    This material has been refactored to Orcmid Github miser/docs/obrep/ with
+    latest version accessible at
+    <httsp://orcmid.github.io/miser/obrep/boole.txt>.
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.5.4 2023-11-10T19:31Z Creation of tombstone as part of refactoring to docs/
+ 0.0.0 2018-11-13-10:38 Placeholder and boiler plate for bridging between
+       Boolean Algebras and computational interpretations in ‹ob›.
+
+                       *** end of boole.txt ***

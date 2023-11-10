@@ -1,10 +1,10 @@
-boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+boole.txt 0.5.5                     UTF-8                       dh:2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                           The Miser Project Code
-                           ======================
+                             The Miser Project
+                             =================
 
-        <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>
+            <https://orcmid.github.io/miser/obrep/boole.txt>
 
 
      INTERPRETATION OF BOOLEAN ALGEBRAS IN THE ‹ob› MODEL OF COMPUTATION
@@ -64,7 +64,7 @@ boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
 
     The logical theories Bpt and Bat are applications of First Order Logic
     with = (FOL=) using the notation introduced in Section 1 of obtheory.txt,
-    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+    <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
  1.1 Notation and Basic Operations
 
@@ -762,7 +762,7 @@ boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
 
       * Hamilton, Dennis E.  ‹ob› Mathematical Structure.  2018-11-17 article
         obtheory.txt 0.2.1, accessed on the Internet at
-        <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+        <https://orcmid.github.io/miser/ob/obtheory.txt>.
         The mathematical formulation of the essential structure.
 
     [Boole1854]
@@ -802,9 +802,9 @@ boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
         Internet at <https://en.wikipedia.org/w/index.php?title=Boolean_algebra_(structure)&oldid=867568743>.
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2022 Dennis E. Hamilton
+                 Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -818,18 +818,20 @@ boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. Interpretation of Boolean Algebras in the ‹ob› Model
-   of Computation. Miser Theory Conception text file boole.txt version 0.5.3
-   dated 2022-08-01, available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>
+   of Computation. Miser Theory Conception text file boole.txt version 0.5.5
+   dated 2023-11-10, available on the Internet as a version of
+   <https://orcmid.github.io/miser/obrep/boole.txt>
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  TODO:
+
+  * Reflect all of the citations made here in orcmid.github.io/bib/
 
   * When representation, interpretation, manifestation, implementation,
     and simulation are worked out more clearly, review these materials
@@ -840,8 +842,6 @@ boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
     concrete ‹ba›s via isomorphisms to concrete ‹ba›s.  Stone's theorem may
     be too much of a stretch.
 
-  * Add attribution statement.
-
   * Address ob.bvx being an optimization of the composition of of one
     representation in another, exploiting structural characteristics of obs.
     The result is interpretation-preserving.  The route is from an interpre-
@@ -850,7 +850,18 @@ boole.txt 0.5.3                     UTF-8                       dh:2022-08-01
     interpretation.  In computational-system terms, there is primeval
     presence of the idea of templates and certain ideas of classes and types.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * Since we are now sort-of following obap/, there is also the prospect of
+    creating scripts and using an applicative function to shorten the cases
+    that can be handled by a mapa kind of function (in honor of mapcar).
+
+  * The use of all the dots in names here needs to be rethought, since the
+    use of "." in term names doesn't quite work.  There is also an "using"
+    situation here.  I am unclear how that works in oFrugal 1.0, but it is
+    worth pondering.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+ 0.5.5 2023-11-10T19:47Z Refactoring staged to orcmid.github.io/miser/obrep/
+ 0.5.4 2023-11-10T19:31Z Creation of tombstone as part of refactoring to docs/
  0.5.3 2022-08-01T20:17Z Touch-Ups
  0.5.2 2019-03-06-11:31 Raise the prospect of primeval representation
        compositions.  Manage TODOs.  Some touch-ups

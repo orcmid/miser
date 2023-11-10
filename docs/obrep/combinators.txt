@@ -1,13 +1,13 @@
-combinators.txt 0.1.3               UTF-8                       dh:2022-08-01
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+combinators.txt 0.1.5               UTF-8                         2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                           The Miser Project Code
-                           ======================
+                             The Miser Project
+                             =================
 
-    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+         <https://orcmid.github.io/miser/obrep/combinators.txt>
 
-       REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
-       --------------------------------------------------------------
+     REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
+     --------------------------------------------------------------
 
     Combinators are important theoretical objects related to the lambda (λ)
     calculus.  There are ‹ob› computational interpretations of combinators
@@ -101,14 +101,14 @@ combinators.txt 0.1.3               UTF-8                       dh:2022-08-01
         then x ≈ y.
 
     The logical notation is that used in obtheory.txt,
-    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+    <https://orcmid.github.io/miser/ob/obtheory.txt>.
     The structure, ‹ca› = 〈CA,{apply},CAt〉has the single function, apply,
     designated by operator "|" and CAt is FOL without "=".
 
     This is not about ‹ob›.  The combinators are not obs.  Likewise, the
     application, | f x, is an application of combinators that yields
     combinators.  It must not be confused with the obap.ap of obaptheory,
-    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>,
+    <https://orcmid.github.io/miser/obap/obaptheory.txt>,
     where application is of the procedure encoded in one ob, as operator, to
     the other as operand.
 
@@ -952,9 +952,9 @@ combinators.txt 0.1.3               UTF-8                       dh:2022-08-01
       at the ACM Turing Centenary Celebration, San Francisco, June 15-16,
       2012.  Video presentation at <https://doi.org/10.1145/2322176.2322185>.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2022 Dennis E. Hamilton
+                 Copyright 2018-2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -968,16 +968,20 @@ combinators.txt 0.1.3               UTF-8                       dh:2022-08-01
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
   ATTRIBUTION
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.1.3 dated 2022-08-01, available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+   0.1.5 dated 2023-11-10, available on the Internet as a version of
+   <https://orcmid.github.io/miser/obrep/combinators.txt>
 
  TODO
+
+  * Review all references from the text and adjust as necessary.
+
+  * Review the bibliographic references and reconcile with bib/
 
   * This is just too gnarly.  Need to figure out a way to break it down,
     do progressive disclosure, *something,"
@@ -1007,8 +1011,11 @@ combinators.txt 0.1.3               UTF-8                       dh:2022-08-01
   * Rework section 4.2 on Uβ to include the idiomatic case that involves
     conditional evaluation.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.5 2023-11-10T20:22Z Continue refactoring adjustments
+ 0.1.4 2023-11-10T20:10Z Refactor to orcmid.github.io/miser/obrep/,
+       leaving a tombstone in its place.
  0.1.3 2022-08-01TT20.32Z Refer to the oFrugal/ob-exp.txt
  0.1.2 2022-06-22T17:00Z Touch-ups and section 5 addition about how the
        support for types does not expand the repetoire of computable functions

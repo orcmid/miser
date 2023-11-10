@@ -1,0 +1,28 @@
+combinators.txt 0.1.4               UTF-8                         2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                           The Miser Project Code
+                           ======================
+
+    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>
+
+       REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
+       --------------------------------------------------------------
+
+                                 TOMBSTONE
+                                 *********
+
+    This material has been refactored to Orcmid Github miser/docs/obrep/ with
+    latest version accessible at
+    <httsp://orcmid.github.io/miser/obrep/combinators.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.1.4 2023-11-10T20:10Z Refactor to orcmid.github.io/miser/obrep/,
+       leaving a tombstone in its place.
+
+ 0.0.0 2018-02-10-13:28 Placeholder and boiler plate for a description of the
+       nature of combinators, the chosen representations, and the power of
+       interpretation-preserving operation.
+
+                   *** end of combinators.txt ***
