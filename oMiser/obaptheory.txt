@@ -1,0 +1,26 @@
+obaptheory.txt 1.2.1                UTF-8                          2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          MISER THEORETICAL CONCEPTION
+                          ============================
+
+       <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
+
+                       ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS
+                       ------------------------------------
+
+                                 TOMBSTONE
+                                 *********
+
+    As part of The Miser Project on GitHub, this file and its subsequent
+    refactoring continues at
+    <https://orcmid.github.io/miser/obap/obaptheory.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 1.2.1  2023-11-10T05:14Z Tombstone with refactoring continued at
+        <https://orcmid.github.io/miser/obap/obaptheory.txt>.
+ 0.0.1 2017-09-11-19.04 Create the initial draft.
+
+
+                          *** end of obaptheory.txt ***

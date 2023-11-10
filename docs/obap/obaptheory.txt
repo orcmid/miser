@@ -1,13 +1,13 @@
-obaptheory.txt 1.2.0                UTF-8                          2023-08-25
+obaptheory.txt 1.2.2                UTF-8                          2023-11-10
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
                           ============================
 
-       <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
+             <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
-                       ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS
-                       ------------------------------------
+                      ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS
+                      ------------------------------------
 
    For the mathematical structure, ‹ob› = 〈Ob,Of,Ot〉, we represent a
    universal function, obap.ap(p,x) and important companion obap.ev(p,x,e)
@@ -287,15 +287,14 @@ obaptheory.txt 1.2.0                UTF-8                          2023-08-25
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.2.0 dated 2023-08-25,
+   Conception text file obaptheory.txt version 1.2.2 dated 2023-11-10,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 TODO
 
- * Provide a stable location for obaptheory version progressions on
-   <https://orcmid.github.io/miser>.
+ * Review all in-text references for alignment with the refactoring to docs/
 
  * Items related to the ob-exp concrete syntax should be resolved there, and
    under oFrugal.  Link to the detailed cases.
@@ -336,6 +335,9 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.2.2  2023-11-10T05:24Z Adjusted to the chosen refactoring location.
+ 1.2.1  2023-11-10T05:14Z Tombstone with refactoring continued from
+        <https://orcmid.github.io/miser/obap/obaptheory.txt>.
  1.2.0  2023-08-25T00:05Z Proofread and aligned with obtheory.txt
  0.2.0  2023-08-24T21:51Z Major rework around pure-lindy forms
  0.1.3  2023-07-13T19:41Z Tidy up around pure lindy trace forms to enable
