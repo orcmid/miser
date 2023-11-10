@@ -1,4 +1,5 @@
-mockups.txt 0.0.1                    UTF-8                       dh:2019-11-11
+mockups.txt 0.0.3                   UTF-8                         2023-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
@@ -39,9 +40,9 @@ MANIFEST
         for rapid prototyping, testing, and demonstration.
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                       Copyright 2017 Dennis E. Hamilton
+                Copyright 2017, 2019, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -55,14 +56,14 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Mockup Experimental Demonstrations.  Miser
-   Theory Conception text file mockups.txt version 0.0.1 dated 2019-11-11,
+   Theory Conception text file mockups.txt version 0.0.3 dated 2023-11-10,
    available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/mockups/mockups.txt>
+   <https://orcmid.github.io/miser/dev/mockups/mockups.txt>
 
 TODO
 
@@ -72,8 +73,10 @@ TODO
   * Choose among F#, Java, Python, JavaScript and Clean C COM demonstrations
     for further confirmations of the ‹ob› computational model at the oMiser level.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2023-11-10T05:01Z Refactoring initiation under orcmid.github.io/miser
+ 0.0.2 2023-11-10T04:47Z Tombstone locating the refactoring of mockups/ crypt
  0.0.1 2019-11-11-08:55 Adust TODOs and revise the synopsis.
  0.0.0 2017-08-04-12:18 Create placeholder and initial job jar for
        oMiser mockup development.

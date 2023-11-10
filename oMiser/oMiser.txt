@@ -1,4 +1,4 @@
-oMiser.txt 0.0.18                   UTF-8                         2023-11-09
+oMiser.txt 0.0.19                   UTF-8                         2023-11-10
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -24,7 +24,7 @@ oMiser.txt 0.0.18                   UTF-8                         2023-11-09
 
         Note that the TODOs are no longer managed here.  The Manifest is
         retained until refactoring is completed.  This will become a
-        tombstone at that point.
+        crypt at that point.
         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     For the latest summary of The Miser Project on GitHub, go to
@@ -72,10 +72,9 @@ MANIFEST
         description of the grammar for Canonical Obs and a procedure for
         expressing them in strings that minimize use of "( ... )".
 
-    mockups/
-        subtree for experimental mock-ups that demonstrate oMiser
-        features
-
+    mockups/ (crypt)
+        subtree for experimental mock-ups that demonstrate oMiser features now
+        refactored to <https://orcmid.github.io/miser/dev/mockups>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -98,7 +97,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.18 dated 2023-11-09,
+   Miser Project text file oMiser.txt version 0.0.19 dated 2023-11-10,
    zombie file available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
@@ -108,10 +107,10 @@ TODO
 
  * Complete movement of the other text files.
 
- * Do something different with mockups, maybe under dev/.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.19 2023-11-10T04:54Z Reflect refactoring of mockups/, leaving a crypt
  0.0.18 2023-11-09T23:14Z Reflect more refactoring from folder oMiser/
  0.0.17 2023-11-05T21:44Z Reduce to zombie state for this file.
  0.0.16 2023-11-01T18:22Z Introduce Refactoring of oMiser/ with docs, other
