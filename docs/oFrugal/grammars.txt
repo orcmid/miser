@@ -1,11 +1,11 @@
-grammars.txt 0.0.3                  UTF-8                         2023-08-19
+grammars.txt 0.0.5                  UTF-8                         2023-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
-                           The Miser Project Code
-                           ======================
+                             The Miser Project
+                             =================
 
-    <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
+           <https://orcmid.github.io/miser/oFrugal/grammars.txt>
 
               FORMAL GRAMMARS AND INTERPRETATIONS FOR oFRUGAL
               -----------------------------------------------
@@ -380,11 +380,16 @@ grammars.txt 0.0.3                  UTF-8                         2023-08-19
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammars and Interpretations for oFrugal.  Miser
-   Project text file grammars.txt version 0.0.3 dated 2023-08-19, available
+   Project text file grammars.txt version 0.0.5 dated 2023-11-11, available
    on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
+   <https://orcmid.github.io/miser/oFrugal/grammars.txt>
 
 TODO
+
+ * Consider moving this to docs/cs/ where the general idea about phrase-
+   structure grammars and the background can be addressed.  Here, for oFrugal,
+   we only need to deal with what is needed for oFrugal and the technique can
+   be addressed more broadly from docs/cs/.
 
  * Prune these TODOs to remove those that apply to oFrugalese, ob-exp, or
    other topics.
@@ -428,6 +433,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.5  2023-11-11T01:05Z Reflect new location for continued refactoring
+ 0.0.4  2023-11-11T00:58Z Create tombstone at GitHub orcmid/miser/oFrugal
  0.0.3  2023-08-19T01:31Z Backup before refactoring/cleaning up
  0.0.2  2022-08-15T16:24Z Manage TODOs, touch-up boilerplate still
  0.0.1  2022-08-12T18:42Z Cleanups and TODO management
