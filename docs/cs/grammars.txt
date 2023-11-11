@@ -1,14 +1,14 @@
-grammars.txt 0.0.5                  UTF-8                         2023-11-11
+grammars.txt 0.0.6                  UTF-8                         2023-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                              The Miser Project
                              =================
 
-           <https://orcmid.github.io/miser/oFrugal/grammars.txt>
+            <https://orcmid.github.io/miser/cs/grammars.txt>
 
-              FORMAL GRAMMARS AND INTERPRETATIONS FOR oFRUGAL
-              -----------------------------------------------
+             FORMAL GRAMMARS AND INTERPRETATIONS FOR oFRUGAL
+             -----------------------------------------------
 
     Formalizations are employed to bridge from the structures of theoretical
     entities, particularly ‹ob›, to a corresponding formalization of the
@@ -380,9 +380,9 @@ grammars.txt 0.0.5                  UTF-8                         2023-11-11
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammars and Interpretations for oFrugal.  Miser
-   Project text file grammars.txt version 0.0.5 dated 2023-11-11, available
+   Project text file grammars.txt version 0.0.6 dated 2023-11-11, available
    on the Internet as a version of
-   <https://orcmid.github.io/miser/oFrugal/grammars.txt>
+   <https://orcmid.github.io/miser/cs/grammars.txt>
 
 TODO
 
@@ -433,6 +433,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.0.6  2023-11-11T05:41Z Moved from docs/oFrugal to docs/cs
  0.0.5  2023-11-11T01:05Z Reflect new location for continued refactoring
  0.0.4  2023-11-11T00:58Z Create tombstone at GitHub orcmid/miser/oFrugal
  0.0.3  2023-08-19T01:31Z Backup before refactoring/cleaning up
@@ -442,4 +443,4 @@ TODO
         ob-exp.txt 1.0.1 and mindelay.txt
 
 
-                 *** end of oFrugal/grammars.txt ***
+                    *** end of cs/grammars.txt ***

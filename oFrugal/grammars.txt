@@ -1,4 +1,4 @@
-grammars.txt 0.0.4                  UTF-8                         2023-11-11
+grammars.txt 0.0.5                  UTF-8                         2023-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -14,10 +14,11 @@ grammars.txt 0.0.4                  UTF-8                         2023-11-11
                                  *********
 
     This material has been refactored to Orcmid Github miser/docs/oFrugal/
-    for development at <httsp://orcmid.github.io/miser/oFrugal/grammars.txt>.
+    for development at <httsp://orcmid.github.io/miser/cs/grammars.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5  2023-11-11T05:37Z Track change of refectoring to docs/cs/
  0.0.4  2023-11-11T00:58Z Create tombstone at GitHub orcmid/miser/oFrugal
  0.0.3  2023-08-19T01:31Z Backup before refactoring/cleaning up
  0.0.2  2022-08-15T16:24Z Manage TODOs, touch-up boilerplate still
