@@ -1,16 +1,16 @@
-about.txt 0.0.2                      UTF-8                       dh:2019-11-24
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+about.txt 0.0.3                      UTF-8                        2023-11-12
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-     <https://github.com/orcmid/miser/blob/master/docs/about/about.txt>
+             <https://orcmid.github.io/miser/about/about.txt>
 
                   ABOUT THE GITHUB-HOSTED DOCUMENTATION
                   -------------------------------------
 
     The about/ page and its subordinates address the Miser Project and
-    connections with its investigator and
+    connections with its investigator and anything else.
 
 MANIFEST
 
@@ -19,13 +19,18 @@ MANIFEST
 
          index.md
                authoring of the <https://orcmid.github.io/miser/about/> page.
+               
+         index.htm
+         	   Construction Structure page
+  construction.htm
+  			   Construction Zone
+       c000000.htm
+       		   Diary & Job Jar for this zone
 
 
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-                      Copyright 2019 Dennis E. Hamilton
+                      Copyright 2019, 2023 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -39,7 +44,7 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  TODO
 
@@ -51,8 +56,9 @@ MANIFEST
 
   * Link to about/ from the home page.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2023-11-12T17:37Z Incorporated in Construction Structure
  0.0.2 2019-11-24-11:00 Remove construction/, elevating it to a separate
        companion at docs/construction/.  Simplify TODOs
  0.0.1 2019-11-21-08:10 Add synopsis and manage TODOs
