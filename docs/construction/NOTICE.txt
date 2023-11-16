@@ -18,7 +18,7 @@ under the License.
 PLAIN LANGUAGE
 
 There is not much limitation on what you can do with the content of The Miser
-Project on GitHub, accessible via GitHub project/repository orcmid/miser.  For
+Project on GitHub, accessible via <https://orcmid.github.io/miser>.  For
 materials that are reproduced, redistributed, or repurposed, the notice of
 license is required as specified in the License. Note further that copyright
 notices must be preserved, including in derivative works.  You may indicate
@@ -26,7 +26,7 @@ notices must be preserved, including in derivative works.  You may indicate
 authorship.
 
 It is requested that you provide attribution and a means of locating these
-materials that are the basis for your republished or derivative works. There
-are suggested forms of attribution in files here.
+materials that are the basis for your republished or derivative works.
+
 
                        *** end of miser NOTICE.txt ***
