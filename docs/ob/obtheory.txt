@@ -1,4 +1,4 @@
-obtheory.txt 1.2.2                  UTF-8                          2023-11-09
+obtheory.txt 1.2.3                  UTF-8                          2023-11-20
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -212,9 +212,10 @@ obtheory.txt 1.2.2                  UTF-8                          2023-11-09
         This case is important because computation, for oMiser, can be viewed
         as systematic determination of obs from given definite ones.  This
         contrasts with the Ot characterizations of functions via patterned
-        specifications employing variables that assert conditions over ‹ob›
-        entire.  This is comparable to the situation with arithmetic where
-        decimal numerals are typical canonical forms for (natural) numbers.
+        specifications employing variables that assert conditions over any
+        determined obs. This is comparable to the situation with arithmetic
+        where decimal numerals are typical canonical forms for (natural)
+        numbers.
 
         Certain extensions to ‹ob› will augment the variety of canonical forms
         without altering the denumerability of them, preserving Ob1-Ob9.
@@ -338,34 +339,43 @@ obtheory.txt 1.2.2                  UTF-8                          2023-11-09
        on pp.88-115 with supplemental notes in "The Undecidable: Basic Papers
        on Undecidable Propositions, Unsolvable Problems, and Computable
        Functions," Martin Davis (ed.), Raven Press (New York: 1965), ISBN
-       0-911216-01-4.
+       0-911216-01-4. See (../../bib/authors.htm#Church1936).
 
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
        3, 4 (April 1960), 184-195.  doi>10.1145/367177.367199 available at
-       <https://dl.acm.org/citation.cfm?doid=367177.367199>.
+       <https://dl.acm.org/citation.cfm?doid=367177.367199>.  See
+       (../../bib/authors.htm#McCarthy1960).
 
    [More1979] More, Trenchard.  The nested rectangular array as a model
        of data.  pp. 55-73 in "APL '79 Proceedings of the international
        conference on APL: Part 1."  doi>10.1145/390009.804440 available at
-       <https://dl.acm.org/citation.cfm?id=804440>
+       <https://dl.acm.org/citation.cfm?id=804440>.  See
+       (../../bib/authors.htm#More1979).
 
    [Rogers1987] Rogers, Hartley, Jr.  Theory of Recursive Functions and
        Effective Computability.  MIT Press (Cambridge, MA: 1987).  ISBN
-       0-262-68052-1 pbk.
+       0-262-68052-1 pbk.  See (../../bib/authors#Rogers1987).
 
    [Strachey1965] Strachey, Christopher.  A General Purpose Macrogenerator.
        The Computer Journal 8, 3 (January 1965), 225-241.  Available at
-       <https://doi.org/10.1093/comjnl/8.3.225>
+       <https://doi.org/10.1093/comjnl/8.3.225>.  See
+       (../../bib/authors.htm#Strachey1965)
 
    [Wikipedia2018a] Canonical form.  2018-10-10 article available on the
-       Internet at <https://en.wikipedia.org/w/index.php?title=Canonical_form&oldid=863443547>
+       Internet at
+  <https://en.wikipedia.org/w/index.php?title=Canonical_form&oldid=863443547>.
+       See (../../bib/authors.htm#Wikipedia2018a).
 
    [Wikipedia2018b] Structural induction. 2018-09-09 article available on the
-       Internet at <https://en.wikipedia.org/w/index.php?title=Structural_induction&oldid=858748480>
+       Internet at
+<https://en.wikipedia.org/w/index.php?title=Structural_induction&oldid=858748480>.
+       See (../../bib/authors.htm#Wikipedia2018b).
 
    [Wikipedia2019] First-order logic. 2019-01-07 article available on the
-       Internet at <https://en.wikipedia.org/w/index.php?title=First-order_logic&oldid=877262034>
+       Internet at
+<https://en.wikipedia.org/w/index.php?title=First-order_logic&oldid=877262034>.
+       See (../../bib/authors.htm#Wikipedia2019).
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -388,7 +398,7 @@ obtheory.txt 1.2.2                  UTF-8                          2023-11-09
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.2.2 dated 2023-11-09, available on the
+   text file obtheory.txt version 1.2.3 dated 2023-11-20 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -410,6 +420,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.2.3 2023-11-29T21:33Z Establish the references here in ../../bib
  1.2.2 2023-11-09T23:11Z Adjusted to orcmid.github.io/miser/ob/ location
  1.2.1 2023-11-09T23:04Z Tombstoned at Orcmid GitHub miser/omiser/obtheory.txt
  1.2.0 2023-08-24T23:52Z Proofed and aligned with obaptheory,text version
