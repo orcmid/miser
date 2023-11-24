@@ -1,4 +1,4 @@
-obtheory.txt 1.2.3                  UTF-8                          2023-11-20
+obtheory.txt 1.2.4                  UTF-8                          2023-11-24
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -261,26 +261,27 @@ obtheory.txt 1.2.3                  UTF-8                          2023-11-20
    structure of LISP [McCarthy1960].  The importance of enclosure as a
    structural feature of obs was observed in an incompleteness regarding
    nested strings in [Strachey1965].  Representations of strings that have
-   other strings as their beads was also introduced by Doug Ross and
-   colleagues in the AED-0 system. The computational model founded on ‹ob›
-   for oMiser is a fully-applicative scheme inspired through my association
-   with Peter Landin and William H. Burge in the mid-1960s, with operation
-   now via a list-processing abstraction of [Strachey1965].
+   other strings as their beads, a limited feature of ALGOL 60, was introduced
+   by Doug Ross and colleagues in the AED system [Ross1967]. There are notions
+   about storage there that are worth reviewing for Miser.  The computational
+   model founded on ‹ob› for oMiser is a fully-applicative scheme inspired
+   through my association with Peter Landin and William H. Burge in the
+   mid-1960s, with operation now via a list-processing abstraction.
 
    "Effectively computable" and "effective computability" are used in the
    manner of the title of [Rogers1987].  Identification, for now, with a kind
    of deduction separate from computational interpretations (e.g., as
    algorithms) is meant as a case of effective calculability, the term
    employed in [Church1936] before a general-purpose digital computer had
-   ever been seen or described.  For the Miser Project, we do not confine
-   computability to Turing Computability, despite demonstrable equivalence.
+   ever been seen or described.  For the Miser Project, computability is not
+   confined to Turing Computability, despite demonstrable equivalence.
 
    When we speak of all of the effectively-computable functions on obs, as
    obs are characterized here, the claim will be that the totality of them is
    equivalent to the CT-computable (total) functions.  When a universal
    function is also formulated, correspondence to a Universal Turing Machine
    and hence Church-Turing Completeness will be claimed.  These stages will be
-   demonstrated in later progressions of these Miser Project notes.
+   demonstrated as the Miser Project progresses.
 
    Ob7-Ob9 must be augmented in the case of extensions that introduce new
    distinct individuals constructed from other obs.  Supplementary
@@ -398,7 +399,7 @@ obtheory.txt 1.2.3                  UTF-8                          2023-11-20
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.2.3 dated 2023-11-20 available on the
+   text file obtheory.txt version 1.2.4 dated 2023-11-24 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -418,9 +419,14 @@ TODO
  * Provide a little more about FOL= as used for ‹ob› structure, especially
    with regard to universal quantification and similarity to familiar algebra.
 
+ * Ensure that all of the citations and references here are available via
+   orcmid.github.io/bib/ so they can be linked from the web version of
+   obtheory.txt.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 1.2.3 2023-11-29T21:33Z Establish the references here in ../../bib
+ 1.2.4 2023-11-24T19:14Z Improve the note on origins, check citations
+ 1.2.3 2023-11-19T21:33Z Establish the references here in ../../bib
  1.2.2 2023-11-09T23:11Z Adjusted to orcmid.github.io/miser/ob/ location
  1.2.1 2023-11-09T23:04Z Tombstoned at Orcmid GitHub miser/omiser/obtheory.txt
  1.2.0 2023-08-24T23:52Z Proofed and aligned with obaptheory,text version

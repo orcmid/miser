@@ -1,4 +1,5 @@
-<!-- index.md 0.2.0                UTF-8                         2023-11-06     ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+<!-- index.md 0.2.1                UTF-8                         2023-11-24
+     ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
      <https://orcmid.github.io/miser/docs.txt>
@@ -23,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.0 2023-11-06T00:28Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.1 2023-11-06T00:28Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -202,15 +203,27 @@ are usable in portable interchange of programs and data.
 
 ## 4. Background
 
-(TBD: some ideas, including Rosenbloom. A specific bibliography will be used.)
-
 *oMiser* represents procedures and data in the same data format, demonstrating
-the essence of the stored-program concept.  Inspiration is from formulation of
-LISP, although Miser is not LISP.
+the essence of the stored-program concept.
 
-Applicative operation is inspired by work of Peter Landin,
-Christopher Strachey, and other ideas about functional programming connected
-to combinatory logic and the λ-calculus.
+The notions of individual, enclosure, singleton, and pair have their
+inspiration in the nested-array work of
+[More1979](https://orcmid.github.io/bib/compsci.htm#More1979) and the
+foundation structure of LISP
+[McCarthy1960](https://orcmid.github.io/bib/funprog.htm#McCarthy1960).  The
+importance of enclosure as a structural feature of obs was observed in an
+incompleteness regarding nested strings in
+[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965).
+Representations of strings that have other strings as their beads, a limited
+feature of ALGOL 60, was introduced by Doug Ross and colleagues in the AED
+system, along with notions about storage structures that are worth reviewing
+for Miser [Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967).
+
+The computational model founded on ‹ob› for oMiser is a fully-applicative
+scheme inspired through my association with Peter Landin and William H. Burge
+in the mid-1960s, with operation now via a list-processing abstraction.  The
+mechanism of evaluation is based on that for LISP, although Miser is not
+LISP.
 
 *oMiser* lacks input-output and any kind of filing system for reusable
 artifacts, whether data or applicative-expression scripts.  In this respect,
@@ -310,6 +323,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.1  2023-11-24T20:13Z Expanding the background
   0.2.0  2023-11-06T00:28Z Eliminate duplicate image, declare success
   0.1.29 2023-11-05T23:27Z Simplifying the top banner table
   0.1.28 2023-11-05T22:44Z Umm, still working at it
