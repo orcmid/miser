@@ -1,4 +1,4 @@
-<!-- index.md 0.2.1                UTF-8                         2023-11-24
+<!-- index.md 0.2.2                UTF-8                         2023-11-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.1 2023-11-06T00:28Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.2 2023-11-25T19:20Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -208,16 +208,16 @@ the essence of the stored-program concept.
 
 The notions of individual, enclosure, singleton, and pair have their
 inspiration in the nested-array work of
-[More1979](https://orcmid.github.io/bib/compsci.htm#More1979) and the
+\[[More1979](https://orcmid.github.io/bib/compsci.htm#More1979)\] and the
 foundation structure of LISP
-[McCarthy1960](https://orcmid.github.io/bib/funprog.htm#McCarthy1960).  The
+\[[McCarthy1960](https://orcmid.github.io/bib/funprog.htm#McCarthy1960)\].  The
 importance of enclosure as a structural feature of obs was observed in an
 incompleteness regarding nested strings in
-[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965).
+\[[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965)\].
 Representations of strings that have other strings as their beads, a limited
 feature of ALGOL 60, was introduced by Doug Ross and colleagues in the AED
 system, along with notions about storage structures that are worth reviewing
-for Miser [Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967).
+for Miser \[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
 
 The computational model founded on ‹ob› for oMiser is a fully-applicative
 scheme inspired through my association with Peter Landin and William H. Burge
@@ -323,6 +323,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.2  2023-11-25T19:21Z Make visible brackets on citations
   0.2.1  2023-11-24T20:13Z Expanding the background
   0.2.0  2023-11-06T00:28Z Eliminate duplicate image, declare success
   0.1.29 2023-11-05T23:27Z Simplifying the top banner table
