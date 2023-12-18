@@ -1,4 +1,4 @@
-grammars.txt 0.0.6                  UTF-8                         2023-11-11
+grammars.txt 0.1.0                  UTF-8                         2023-12-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -20,13 +20,20 @@ grammars.txt 0.0.6                  UTF-8                         2023-11-11
     For Miser, formal structures are used to express and reason about
     theoretical entities of different types,
 
-         ‹ob› = 〈Ob,Of,Ot〉       at ..\oMiser\obtheory.txt and obaptheory.txt
-         ‹ba› = 〈Ba,Baf,Bat〉     at ..\oMiser\boole.txt
-         ‹bp› = 〈Bp,Bpf,Bpt〉        also
-         ‹ca› = 〈CA,{apply},CAt〉 at ..\combinators.txt
+         ‹ob› = 〈Ob,Of,Ot〉
+                 at  <https://orcmid.github.io/miser/ob/obtheory.txt>
+                 and <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
-    along with additional structures that serve mathematical purposes and
-    have computational interpretations via representation in structure ‹ob›.
+         ‹ba› = 〈Ba,Baf,Bat〉
+         ‹bp› = 〈Bp,Bpf,Bpt〉
+                 at <https://orcmid.github.io/miser/obreps/boole.txt>
+
+         ‹ca› = 〈CA,{apply},CAt〉
+                 at <https://orcmid.github.io/miser/obreps/combinators.txt>
+
+    along with additional structures, such as ‹Z› that serve mathematical
+    purposes and have computational interpretations via representation in
+    structure ‹ob›.
 
     oFrugal provides a computational mechanism by which computational
     interpretations of ‹ob› formulations can be carried out using textual
@@ -40,7 +47,7 @@ grammars.txt 0.0.6                  UTF-8                         2023-11-11
 
     Any canonical Ob determined in such interpretion is then presented as a
     textual result in CFob format, a subset of oFrugalese.
-    (See ..\oMiser\CFob.txt)
+    (See <https://orcmid.github.io/miser/ob/CFob.txt>.)
 
     In effect, oFrugal is an Ob calculator that evaluates applicative
     expressions written in oFrugalese and delivers simple expressions for
@@ -175,7 +182,7 @@ grammars.txt 0.0.6                  UTF-8                         2023-11-11
 
     The obaptheory formulation in Ot, the theory language of structure
     ‹ob› = 〈Ob,Of,Ot〉, is available at
-    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
+    <https://orcmid.github.io/miser/obap/obaptheory.txt>.
 
     For example,
 
@@ -380,16 +387,14 @@ grammars.txt 0.0.6                  UTF-8                         2023-11-11
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammars and Interpretations for oFrugal.  Miser
-   Project text file grammars.txt version 0.0.6 dated 2023-11-11, available
+   Project text file grammars.txt version 0.1.0 dated 2023-12-18, available
    on the Internet as a version of
    <https://orcmid.github.io/miser/cs/grammars.txt>
 
 TODO
 
- * Consider moving this to docs/cs/ where the general idea about phrase-
-   structure grammars and the background can be addressed.  Here, for oFrugal,
-   we only need to deal with what is needed for oFrugal and the technique can
-   be addressed more broadly from docs/cs/.
+ * Note that this is about grammar and the interpretation mechanism.  It is
+   not the grammar specification for oFrugal.  That's a different matter.
 
  * Prune these TODOs to remove those that apply to oFrugalese, ob-exp, or
    other topics.
@@ -433,6 +438,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.0  2023-12-18T20:31Z Clean up links to other material, tidy a little
  0.0.6  2023-11-11T05:41Z Moved from docs/oFrugal to docs/cs
  0.0.5  2023-11-11T01:05Z Reflect new location for continued refactoring
  0.0.4  2023-11-11T00:58Z Create tombstone at GitHub orcmid/miser/oFrugal
