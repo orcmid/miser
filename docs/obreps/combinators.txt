@@ -1,10 +1,10 @@
-combinators.txt 0.1.5               UTF-8                         2023-11-10
+combinators.txt 0.1.6               UTF-8                         2023-12-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
                              =================
 
-         <https://orcmid.github.io/miser/obrep/combinators.txt>
+        <https://orcmid.github.io/miser/obreps/combinators.txt>
 
      REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
      --------------------------------------------------------------
@@ -199,7 +199,7 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
     between typical λ-calculus notations having left-to-right association of
     application operation and the unparenthesized right-to-left association
     of Frugalese.  See
-    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt> for the
+    <https://orcmid.github.io/miser/oFrugal/ob-exp.txt> for the
     oFrugal notation, its computational-interpretation semantics, and the
     grammar of such expressions employed beginning in section 2.3, below.
 
@@ -373,7 +373,7 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
     The ^-notation as part of a constant name is oFrugalese for a binding to
     a constant ob.  The names in the forms such as ^cK are adopted to signify
     (particular) oMiser representations of the corresponding combinator.  See
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>.
+    <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>.
 
     Likewise, supposing there is a script, ^cS, such that, in oFrugalese,
 
@@ -511,14 +511,14 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
          obap.ap(obap.E,x) = ob.e(x),
          obap.ap(ob.e(x),y) = x,
     and  obap.eval(obap.E) = obap.E,
-    by <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
-    definition.
+    by <https://orcmid.github.io/miser/obap/obaptheory.txt> definition.
 
     Although it seems rather wasteful and even risky to evaluate y for no
     apparent purpose (since the attempted evaluation might fail to yield a
     result), it happens that there are valuable idioms where y is fixed
     (e.g., `z) and is so-encapsulated within a script as a payload for
-    some idiomatic purpose.
+    some idiomatic purpose.  We will see that this provides a mechanism for
+    communicating state and conducting transformations on states.
 
     IMPORTANT.  It is part of the strict semantics for oMiser that an
     application (^cK x) y cannot be simplified unless it is assured that
@@ -555,6 +555,7 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
                = (`x :: .ARG) :: `y :: .ARG),
            obap.ap(obap.ap(obap.ap(^cS, x), y), z)
                = obap.ap( obap.ap(x, z), obap.ap(y, z) ),
+
     and in oFrugalese, ^cS(x, y) z = x(z) y z.
 
     3.3 Derived Utility Combinators B, C, D, T, and W
@@ -562,7 +563,7 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
     For the additional useful combinators (1.2), particular operator-script
     ob representations are taken as idioms for them.  The derivations have
     been confirmed using the SML/NJ mockup at
-    <https://github.com/orcmid/miser/blob/master/oMiser/mockups/SML/combdemo.sml>.
+    <https://orcmid.github.io/miser/dev/mockups/SML/combdemo.sml>.
     These tend to be more compact than equivalent combinator representations
     obtained by application of ^cS, ^cK, and other combinator idioms alone.
     Automation of such streamlining and further optimizations are topics for
@@ -740,7 +741,9 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
     "true" and "false", respectively, as in [Barendregt1981:6.2.2,
     Revesz1998:3.1, Scott1993].  This skates over the fact that ^cK and
     (^cK ^cI) are definite distinct obs, a claim that can't be made for
-    representations of K and | K I
+    representations of K and | K I.  The presumption of such a distinguished
+    type has roots all the way back to [Church1940] and is perpetuated by
+    [Scott1993].
 
     With respect to computational interpretations of logical notions it
     is valuable to avoid claiming "truth" as any kind of (computational)
@@ -753,13 +756,14 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
     be employed in one representation of a structure, ‹bp›.  It is not what
     the type obAB "is."  The file boole.txt illustrates some rather different
     representations of Boolean Algebras, and those could be applied here as
-    well. Cf. <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>.
+    well. Cf. <https://orcmid.github.miser/miser/obreps/boole.txt> where the
+    notions of truth and falsity are also finessed.
 
     Akin to the observation of the interpretation-preserving nature of
     combinator functional types, Uβ and type β are taken to be "truth"
     indifferent in the sense of truth-value interpretation-preserving,
     depending on how the alternatives x and y of | Uβ c x y are construed
-    when c is so-interpreted.
+    when c is so-construed.
 
     4.4 The Y Combinator Interpretation
 
@@ -841,10 +845,10 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
     computation at the level of other accepted ones.  That establishes
     obap.ap (and the companion obap.eval) as universal computation functions.
 
-    There a little work on the theoretical side to contend with the particular
-    approach to Y combinator and the dependence on distinguishable conditions
-    for cases.  These seem essential for an operational model, the objective
-    here.
+    There needs to be some work on the theoretical side to contend with the
+    particular approach to Y combinator and the dependence on distinguishable
+    conditions for cases.  These seem essential for an operational model, the
+    objective here.
 
     The computational model behind oMiser operation is simple and provides for
     useful contrast among existing computation models.  The operational
@@ -887,7 +891,7 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
       [Scott1993] and [Paulson2018], this work identifies simple type ο
       (omicron) as the type of propositions and represents a logic thereby.
       That may now be quaint with the type taken to consist of distinguished
-      truth values as in the manner of our discriminator, Uβ.  The notation
+      binary cases as in the manner of our discriminator, Uβ.  The notation
       for functional type has also been refined over the years to the form
       adopted here.
 
@@ -974,12 +978,14 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.1.5 dated 2023-11-10, available on the Internet as a version of
-   <https://orcmid.github.io/miser/obrep/combinators.txt>
+   0.1.6 dated 2023-12-18, available on the Internet as a version of
+   <https://orcmid.github.io/miser/obreps/combinators.txt>
 
  TODO
 
-  * Review all references from the text and adjust as necessary.
+  * In Section 2, establish the associativity of "->".
+
+  * In 2.3, line 236, ensure that ob-exp.txt is the correct reference on ^.
 
   * Review the bibliographic references and reconcile with bib/
 
@@ -1013,6 +1019,7 @@ combinators.txt 0.1.5               UTF-8                         2023-11-10
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.6 2023-12-18T18:12Z Correct URLs in the text
  0.1.5 2023-11-10T20:22Z Continue refactoring adjustments
  0.1.4 2023-11-10T20:10Z Refactor to orcmid.github.io/miser/obrep/,
        leaving a tombstone in its place.

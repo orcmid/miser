@@ -1,4 +1,4 @@
-obaptheory.txt 1.2.2                UTF-8                          2023-11-10
+obaptheory.txt 1.2.3                UTF-8                          2023-12-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -51,9 +51,9 @@ obaptheory.txt 1.2.2                UTF-8                          2023-11-10
 1. PRELIMINARIES
 
    First, the structure ‹ob› is employed in its entirety, as defined at
-   <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
-   The CFob notation for expession of ob canonical forms is employed (cf.
-   <https://github.com/orcmid/miser/blob/master/oMiser/CFob.txt>).  Viz.,
+   <https://orcmid.github.io/miser/ob/obtheory.txt>.  The CFob notation for
+   expession of ob canonical forms is employed (cf.
+   <https://orcmid.github.io/miser/ob/CFob.txt>).  Viz.,
 
    a. The right-associative infix pair operator, ::, is introduced, with
 
@@ -119,17 +119,18 @@ obaptheory.txt 1.2.2                UTF-8                          2023-11-10
 
           The additional forms with prefixed '?' and '?.' are here independent
           of those without such prefixes.  They are also distinguished from
-          other lindies in the same manner as the undecorated lindies.
-          Their utilitarian presence is related to questionable occurrences of
+          other lindies in the same manner as the undecorated lindies.  Their
+          utilitarian presence is related to questionable occurrences of
           binding names and undefined primitives in oFrugal processing.  See
           the treatment of binding names in
-          <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>.
+          <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>.
+
           As a pragmatic matter, the prefix forms should not be used
           intentionally.  They need not survive input to oFrugal and may be
           treated as erroneous.
 
-          Here, we introduce a way in which lindies have useful absence of
-          applicative interpretation.
+          Here, we introduce a way in which lindies have an useful limitation
+          of applicative interpretation.
 
           obap.is-lindy(x) => is-pure-lindy-trace(x)                 (a)
 
@@ -148,7 +149,9 @@ obaptheory.txt 1.2.2                UTF-8                          2023-11-10
           (Obap4(c)).  Preservation of pure-lindy traces is a
           pragmatic arrangement of no particular theoretical importance.
           Pure-lindy traces can be helpful in identifying defects and also
-          in preserving intentional symbolic forms as themselves.
+          in preserving intentional symbolic forms as themselves.  They also
+          provide a semblance of expressive strings in the absence of any
+          other type of entity in ‹ob›.
 
           The claim: Apart from Obap3(d), excessive creation of enclosures
           is simply avoided compared with is-pure-lindy-trace being replaced
@@ -157,8 +160,7 @@ obaptheory.txt 1.2.2                UTF-8                          2023-11-10
           being no applicative interpretation beyond the form itself.
 
           Note that pure-lindy forms are still parsed and subject to being
-          marched through Obap6(d) and Obap6(i).  The result is a pragmatic
-          simplification.
+          marched through Obap6(d) and Obap6(i).
 
 3. THE APPLY FUNCTION
 
@@ -238,7 +240,9 @@ obaptheory.txt 1.2.2                UTF-8                          2023-11-10
             function d(x,y) being exclusive to ev here and providing for
             selection of alternatives based on application of the comparison
             result. This is the basis for conditional processing of
-            deterministic computational-interpretation cases.
+            deterministic computational-interpretation cases.  See 4.2 The Uβ
+            Conditional Selectors in
+            <https://orcmid.github.io/miser/obreps/combinators.txt>.
 
         is-evbinop(e1) ∧ ob.is-singleton(e2)                          (g)
            ⇒ ev(p,x,e1::e2) = obap.ap(e1, ev(p,x,e2))
@@ -287,14 +291,18 @@ obaptheory.txt 1.2.2                UTF-8                          2023-11-10
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.2.2 dated 2023-11-10,
+   Conception text file obaptheory.txt version 1.2.3 dated 2023-12-18,
    available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>
+   <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 TODO
 
- * Review all in-text references for alignment with the refactoring to docs/
+ * Ensure there's a tombstone on the miser/oMiser folder.
+
+ * Ensure that attributions have the refactored locations.
+
+ * Be very clear about the inspiration of this in McCarthy's LISP approach.
 
  * Items related to the ob-exp concrete syntax should be resolved there, and
    under oFrugal.  Link to the detailed cases.
@@ -335,6 +343,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.2.3  2023-12-18T18:46Z Cleanup URLs and smooth some connections
  1.2.2  2023-11-10T05:24Z Adjusted to the chosen refactoring location.
  1.2.1  2023-11-10T05:14Z Tombstone with refactoring continued from
         <https://orcmid.github.io/miser/obap/obaptheory.txt>.
