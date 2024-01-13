@@ -1,5 +1,5 @@
-mindelay.txt 0.0.5                  UTF-8                          2023-08-19
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+mindelay.txt 0.0.6                  UTF-8                          2024-01-13
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
@@ -9,191 +9,16 @@ mindelay.txt 0.0.5                  UTF-8                          2023-08-19
                    OFRUGAL REPL MINDELAY PARSER DESIGN
                    -----------------------------------
 
-MINDELAYSCANDOER
+                                TOMBSTONE
+                                 *********
 
-    A mindelayscandoer refers to programming-language compiling techniques
-    in which the the scanning of the text provides translation to final
-    computer code as quickly as possible [Evans1961:n.2].  This tends to be
-    associated with translation that occurs in a single pass over the text.
-
-    In the case of the oFrugal REPL (Read-Evaluate-Print Loop) there is no
-    production of code.  The oFrugal REPL is more like a calculator, in that
-    it accepts expressions in the oFrugal REPL language and delivers a
-    canonical expression for the calculated ob.
-
-    In the proof-of-concept oFrugal REPL, evaluations happen as soon as the
-    operands of an operation are available in the parsing of the input being
-    read. The idea is to minimize drag, the amount of intermediate results
-    that must be held onto until their consuming operations are determined.
-    In this manner, the parsing of the input and performance of operations
-    occur as the scanning progresses.
-
-    Although the oFrugal REPL operates about as quickly as conceivable, there
-    are difficulties with regard to errors in the input and troubles in the
-    evaluations.  Any of these can cause the scanning to cease.  The remedy
-    is by not performing any evaluations until a complete REPL expression has
-    been scanned, delaying the required operations until the expression is
-    scanned completely and successfully. In effect, the operations are kept
-    in a compiled form that is then "executed" after a successful parse.
-
-    The proof-of-concept oFrugal REPL implementation will not delay any
-    evaluations.  Once the operands of an operation are in-hand, the operation
-    will be performed.  Fortunately, the same parsing technique is applicable,
-    later, by having operations produce an intermediate for their delayed
-    evaluation when the input is parsed completely and successfully.
-
-GRAMMATICAL ACCURACY
-
-    The early operator-precedence techniques tended to be under-specified.
-    In particular, some grammatically-incorrect strings were accepted and
-    would produce results even though the input is malformed [Samelson1969].
-
-    This stemmed partly from the development of operands and intermediates
-    on a different stack than one holding the as-yet-uncompleted syntactic
-    components. It becomes possible for the two stacks to become out of
-    sync, either accepting an ungrammatical input or having an operation fail.
-    This can be a reflection of there being no formal grammar that the input
-    is held to.
-
-    For the oFrugal REPL, every input must be grammatical, and every accepted
-    input will have an applicative interpretation.
-
-ERROR HANDLING
-
-
- - talk about the difficulties of error handling
-
- - Set up the precedence rules for the variant cases.
-
- - Identify the format for error messages
-
- - Identify the idea about association of interpretations to the patterns
-
- TESTING AND VERIFICATION
-
- - The small matter of verifying that the parser accepts oFrugalese correctly
-   and the correct interpretation is produced.
-
- - Also determining that invalid texts fail parsing.
-
- - It would be good to have something systematic for these parts.
-
-
-NOTES AND REFERENCES
-
-
-[Evans1961]
-    Evans, A., Perlis, A.J., Van Zoeren, H. The Use of Threaded Lists in
-    Construction of a Combined ALGOL and Machine-Like Assembly Processor.
-    Comm. ACM 4, 1 (Jan. 1961), 36-41.
-    DOR <https://dl.acm.org/doi/10.1145/366062.366081>.
-       Footnote 2 on p.37 describes "mindelayscandoer" as "scan and do
-    translation to final code as quickly as possible."  The idea of
-    threaded lists does not apply well to oMiser, though a counterpart
-    might assist in operator-precedence handling.
-
-[Floyd1963]
-    Floyd, Robert W.  Syntactic Analysis and Operator Precedence.  J. ACM
-    10, 3 (July 1963), 316-333.
-       Floyd provides a mechanical means of producing precedence parsers
-    when grammars are specified in a form for which definite precedence
-    conditions can be derived.  The special case of assigning numerical
-    precedence values to syntactic features and then comparing those,
-    among other enhancements, are found by formal means.  The full
-    analysis technique is particularly valuable in testing that a grammar
-    admits operator-precedence parsing simplicity and automatic production
-    is valuable when modifications of the language are anticipated.
-
-[Knuth1962]
-    Knuth, Donald E.  A History of Writing Compilers.  Computers and
-    Automation 11, 12 (December 1962), 8-18.  Reprinted in Chapter 20,
-    pp. 439-456 in Donald E. Knuth, Selected Papers on Computer Languages.
-    CSLI Publications (Stanford, CA: 2003).  ISBN 1-57586-382-0 pbk.
-       The explanation of operator precedence and its illustration is very
-    close to how the oFrugal REPL parser will parse and interpret ob-exp
-    formulas.
-
-[Pratt1973]
-    Pratt, Vaughan R.  Top Down Operator Precedence.  Proc. 1st Annual ACM
-    SIGACT-SIGPLAN Symposium on Priniciples of Programming Languages
-    (October 1973), 41-45.  <https://doi.org/10.1145/512927.512931>.
-       This technique has found considerable favor at varous points in
-    time.  Section 1, Survey of the Problem Domain, and early parts
-    of section 2, Three Syntactic Issues, are valuable for considerations
-    of the desire for operator precedence simplicity. The technique
-    depends on the creation of procedures that apply to various elements
-    in the course of parsing that is not quite how interpretation is
-    specified for the oFrugal grammar.  The considerations do apply.
-
-[Samelson1960]
-    Samelson, K., Bauer, F.L.  Sequential Formula Translation.
-    Comm. ACM 2, 2 (Feb. 1960), 76-83.
-    DOR <https://dl.acm.org/doi/10.1145/366959.366968>.
-       This paper describes a cellar (ie., stack) principle for
-    translation of algorithmic expressions, treating precedence of infix
-    operators. The stack of (intermediate) operands is kept separate.
-
-[Wikipedia2022]
-    Wikipedia Article: Section "Computer Languages" in article "Parsers"
-    version dated 2022-06-28 and accessed on the Internet at
-    <https://en.wikipedia.org/wiki/Parsing#Computer_languages>.
-
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-
-                    Copyright 2020-2022 Dennis E. Hamilton
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-
- ATTRIBUTION
-
-   Hamilton, Dennis E. oFrugal REPL Mindelay Parser Design.  Miser Project
-   Code tex file oFrugal.txt version 0.0.5 dated 2023-08-19 available on the
-   Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
-
-TODO
-
-  * mindelay.txt is the REPL parser structure.  It is related to the Alan
-    Perlis "mindelay-scan-doer" scheme for a mostly one-pass process where
-    an operation can be carried out as soon as its operands are determined.
-    For oFrugal that one-pass process calculates obs and provides for the
-    binding of obs and the access to those bound obs in subsequent
-    expressions.  This is a moderately-extended precedence parser.  Behavior
-    of this parser procedure can be verified against the context-free grammar
-    for the same oFrugal texts.  The handling of error cases is beyond what
-    the grammar determines.
-
-  * "mindelayscandoer" is described as "scan and do translation to final code
-    as quickly as possible" in footnote 2 on p.37 of A. Evans Jr., A. J.
-    Perlis, and H. Van Zoeren.  The Use of Threaded Lists in Construction of a
-    Combined ALGOL and Machine-Like Assembly Processor.  Comm. ACM 4, 1 (Jan.
-    1961), 36-41.  DOR <https://dl.acm.org/doi/10.1145/366062.366081>.  I feel
-    that I had seen an use of the term in something earlier.  For
-    oFrugal mindelay is even shorter, since the REPL is essentially a
-    calculator and it derives interpretations as quickly as all dependencies
-    are in hand.  mindelay.txt will account for the downside of that approach.
-
-  * Also reference Knuth and the cellar principle folk, along with the paper
-    on Precedence languages by Bob Floyd.  The use of a precedence-based
-    parser is also aligned with the mindelay concept, since it basically
-    turns the input into a reverse polish form where every operation can be
-    performed when an operator is added to the stream.
+    This material has been refactored to Orcmid Github miser/docs/cs/
+    for development at <https://orcmid.github.io/miser/cs/grammars.txt>.
 
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.6 2024-01-13T19:58Z Establish tombstone
  0.0.5 2023-08-19T01:25Z Touch-ups, back it up before refactoring
  0.0.4 2022-08-12T18:45Z Touch-Ups, Adjust References
  0.0.3 2022-08-11T21:26Z Transpose syntax theory references to grammars.txt
