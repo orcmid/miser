@@ -1,4 +1,4 @@
-<!-- index.md 0.0.2                UTF-8                         2024-01-13
+<!-- index.md 0.0.1                UTF-8                         2024-01-13
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -11,12 +11,12 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
 	<i>The Miser Project</i><br />
-    <i><big><big>Computer Science Topics</big></big></i></strong></font></p>
+    <i><big><big>‹ob› Mathematical Structure</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
 	  <a href="../" target="_top">miser</a>&gt;
-      <a href="./" target="_top">cs</a>&gt;
+      <a href="./" target="_top">ob</a>&gt;
       </code></b>
       <br /><br />
       <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.2 2024-01-13T19:36Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.1 2024-01-13T19:22Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -35,12 +35,11 @@
 
 ## Initial Placeholder
 
-## Catalog (Specimens, draft notes, csYYMMXX Content TBD)
+## Catalog (Specimen, obyymmxx Content TBD)
 
 | **ID** | **Status** | **Started** | **Topic** |
 |   :-:   |   :-:   |  :-:   |  ---  |
-| [grammars](grammars.txt)| 0.1.0 2023-12-18 |2022-08-11 | Formal Grammars and Interpretations for oFrugal (Notes) |
-| [mindelay](mindelay.txt)| 0.0.5 2023-08-19 |2022-08-01 | oFrugal REPL Mindelay Parser Design (Notes) |
+| [obtheory](obtheory.txt)| 1.2.4 2023-11-24 |2017-08-24 | ‹ob› = 〈Ob,Of,Ot〉Mathematical Structure |
 
 ----
 
@@ -69,8 +68,8 @@ from time to time.
   </tr>
 </table>
 <!--
-
-  0.0.0  2024-01-13T19:36Z Morphed from ob/ placeholder as boilerplate
+  0.0.1  2024-01-13T19:22Z Touch-ups for obtheory
+  0.0.0  2024-01-13T17:33Z Placeholder from 0.2.2 index.md Miser as boilerplate
 
 
                *** end of miser/docs/cs/index.md ***                     -->
