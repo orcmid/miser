@@ -1,4 +1,4 @@
-<!-- index.md 0.0.0                UTF-8                         2024-01-13
+<!-- index.md 0.0.1                UTF-8                         2024-01-14
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ct/index.md>
      publication <https://orcmid.github.io/miser/ct/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.0 2024-01-13T22:46Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.1 2024-01-14T17:40Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -35,7 +35,10 @@
 
 ## Initial Placeholder
 
-## Catalog (Specimens, draft notes, csYYMMXX Content TBD)
+## Catalog (Specimens, draft notes, ctYYMMXX Content TBD)
+
+This placeholder links to raw materials and notes, including text files.
+There will be organized folios of content as documentation continues.
 
 | **ID** | **Status** | **Started** | **Topic** |
 |   :-:   |   :-:   |  :-:   |  ---  |
@@ -69,6 +72,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.1  2024-01-14T17:40Z Touch up Catalog entry
   0.0.0  2024-01-13T22:46Z Morphed from cs/ placeholder as boilerplate
 
 
