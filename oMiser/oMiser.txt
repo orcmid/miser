@@ -1,4 +1,4 @@
-oMiser.txt 0.0.21                   UTF-8                         2023-11-10
+oMiser.txt 0.0.22                   UTF-8                         2024-01-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -27,7 +27,7 @@ MANIFEST
 
     ob.txt (tombstone)
         summary of the ‹ob› structure and its computational manifestations;
-        migrated to <https://orcmid.github.io/miser/ob/ob.txt>
+        migrated to <https://orcmid.github.io/miser/ob/sketch.txt>
 
     obtheory.txt (tombstone)
         specification of the ‹ob› abstract mathematical structure
@@ -38,12 +38,12 @@ MANIFEST
         Using abstract Boolean Algebra, demonstrating interpretations
         of additional abstractions in each other and in ‹ob›, arriving
         at idiomatic cases for computational-interpretation in oMiser.
-        Migrated to <https://orcmid.github.io/miser/obrep/boole.txt>.
+        Migrated to <https://orcmid.github.io/miser/obreps/boole.txt>.
 
     Z2adic.txt (tombstone)
         using the bvx Boolean Vector form, represent integer arithmetic
         with 2's complement binary numerals; migrated to
-        <https://orcmid.github.io/miser/obrep/Z2adic.txt>
+        <https://orcmid.github.io/miser/obreps/Z2adic.txt>
 
     obaptheory.txt (tombstone)
         specification of the ‹ob› universal function that every oMiser
@@ -53,7 +53,7 @@ MANIFEST
     conbinators.txt (tombstone)
         description of the nature of combinators and how they are represented
         in oMiser scripts for applicative interpretation; refactored to
-        <https://orcmid.github.io/miser/obrep/combinators.txt>.
+        <https://orcmid.github.io/miser/obreps/combinators.txt>.
 
     ob-exp.txt (tombstone)
         tombstone for specification of the grammar for oFrugal expressions
@@ -72,7 +72,7 @@ MANIFEST
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2018-2023 Dennis E. Hamilton
+                    Copyright 2018-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.21 dated 2023-11-10,
+   Miser Project text file oMiser.txt version 0.0.22 dated 2024-01-14,
    tombstone file available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
@@ -104,6 +104,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.22 2024-01-14T22:09Z Correct the URLs for the refactored content
  0.0.21 2023-11-10T21:36Z Completion of refactoring away from oMiser folder.
  0.0.20 2023-11-10T20:46Z All refactored away except for ob-exp.txt
  0.0.19 2023-11-10T04:54Z Reflect refactoring of mockups/, leaving a crypt
