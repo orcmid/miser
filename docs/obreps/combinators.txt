@@ -1,4 +1,4 @@
-combinators.txt 0.1.6               UTF-8                         2023-12-18
+combinators.txt 0.1.7               UTF-8                         2024-01-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
@@ -6,8 +6,8 @@ combinators.txt 0.1.6               UTF-8                         2023-12-18
 
         <https://orcmid.github.io/miser/obreps/combinators.txt>
 
-     REPRESENTATION OF COMBINATORS IN THE ‹ob› MODEL OF COMPUTATION
-     --------------------------------------------------------------
+               INTERPRETATION OF COMBINATORS IN ‹obap›
+               ---------------------------------------
 
     Combinators are important theoretical objects related to the lambda (λ)
     calculus.  There are ‹ob› computational interpretations of combinators
@@ -756,7 +756,7 @@ combinators.txt 0.1.6               UTF-8                         2023-12-18
     be employed in one representation of a structure, ‹bp›.  It is not what
     the type obAB "is."  The file boole.txt illustrates some rather different
     representations of Boolean Algebras, and those could be applied here as
-    well. Cf. <https://orcmid.github.miser/miser/obreps/boole.txt> where the
+    well. Cf. <https://orcmid.github.io/miser/obreps/boole.txt> where the
     notions of truth and falsity are also finessed.
 
     Akin to the observation of the interpretation-preserving nature of
@@ -958,7 +958,7 @@ combinators.txt 0.1.6               UTF-8                         2023-12-18
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2023 Dennis E. Hamilton
+                 Copyright 2018-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -978,7 +978,7 @@ combinators.txt 0.1.6               UTF-8                         2023-12-18
 
    Hamilton, Dennis E. Representation of Combinators in the ‹ob› Model of
    Computation. Miser Theory Conception text file combinators.txt version
-   0.1.6 dated 2023-12-18, available on the Internet as a version of
+   0.1.7 dated 2024-01-15, available on the Internet as a version of
    <https://orcmid.github.io/miser/obreps/combinators.txt>
 
  TODO
@@ -1019,6 +1019,7 @@ combinators.txt 0.1.6               UTF-8                         2023-12-18
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.7 2024-01-15T21:02Z Minor fix, adjustment of the title
  0.1.6 2023-12-18T18:12Z Correct URLs in the text
  0.1.5 2023-11-10T20:22Z Continue refactoring adjustments
  0.1.4 2023-11-10T20:10Z Refactor to orcmid.github.io/miser/obrep/,

@@ -1,10 +1,10 @@
-Z2adic.txt 0.0.5                     UTF-8                         2023-11-10
+Z2adic.txt 0.0.6                     UTF-8                         2024-01-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-        <https://github.com/orcmid/miser/blob/master/oMiser/Zadic.txt>
+        <https://github.com/orcmid/miser/blob/master/oMiser/Z2adic.txt>
 
 
              Z 2'S COMPLEMENT INTEGER ARITHMETIC IMPLEMENTION
@@ -13,13 +13,15 @@ Z2adic.txt 0.0.5                     UTF-8                         2023-11-10
                                  TOMBSTONE
                                  *********
 
-    This material has been refactored to Orcmid Github miser/docs/ob/ with
-    latest version accessible at <httsp://orcmid.github.io/miser/ob/CFob.txt>.
+    This material has been refactored to Orcmid Github miser/docs/obreps/ with
+    latest version accessible at
+    <https://orcmid.github.io/miser/obreps/Z2adic.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
- 0.0.5 2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obrep/Z2adic.txt
+ 0.0.6 2024-01-15T21:27Z Correct URLs
+ 0.0.5 2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obreps/Z2adic.txt
        as part of Miser Project on GitHub refactoring.
 
  0.0.0 2023-01-30T23:22Z Draft synopsis over boilerplate of boole.txt version

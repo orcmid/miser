@@ -1,14 +1,14 @@
-Z2adic.txt 0.0.6                     UTF-8                         2023-11-10
+Z2adic.txt 0.0.7                     UTF-8                         2024-01-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
                              =================
 
-            <https://orcmid.github.io/miser/obrep/Zadic.txt>
+            <https://orcmid.github.io/miser/obreps/Zadic.txt>
 
 
-             Z 2'S COMPLEMENT INTEGER ARITHMETIC IMPLEMENTION
-             ------------------------------------------------
+                Z 2'S COMPLEMENT ARITHMETIC IMPLEMENTATION
+                ------------------------------------------
 
         The interpretation of Integer Arithmetic is based on the ‹ba›
         simulation of Boolean Algebra using ob.bvx for arbitrary length
@@ -458,7 +458,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2023 Dennis E. Hamilton
+                 Copyright 2018-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -477,9 +477,9 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
  ATTRIBUTION
 
    Hamilton, Dennis E. Z2adic Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file Z2adic.txt version 0.0.6 dated 2023-11-10, available
+   Conception text file Z2adic.txt version 0.0.7 dated 2024-01-15, available
    on the Internet as a version of
-   <https://orcmid.github.io/miser/obrep/Z2adic.txt>
+   <https://orcmid.github.io/miser/obreps/Z2adic.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -530,6 +530,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.7 2024-01-15T20:33Z Touch-ups, simplifying title
  0.0.6 2023-11-10T20:38Z Adjust as part of refactoring to orcmid.github.io
  0.0.5 2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obrep/Z2adic.txt
        as part of Miser Project on GitHub refactoring.

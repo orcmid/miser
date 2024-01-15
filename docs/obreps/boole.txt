@@ -1,17 +1,17 @@
-boole.txt 0.5.5                     UTF-8                       dh:2023-11-10
+boole.txt 0.5.6                     UTF-8                       dh:2024-01-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
                              =================
 
-            <https://orcmid.github.io/miser/obrep/boole.txt>
+            <https://orcmid.github.io/miser/obreps/boole.txt>
 
 
-     INTERPRETATION OF BOOLEAN ALGEBRAS IN THE ‹ob› MODEL OF COMPUTATION
-     -------------------------------------------------------------------
+                 INTERPRETATION OF BOOLEAN ALGEBRAS IN ‹ob›
+                 ------------------------------------------
 
         Boolean Algebras have rich application in connection with digital
-        computation [Knuth2011].  They are a rich source of insights in the
+        computation [Knuth2011].  They are a treasure of insights in the
         organization of data representations and computations concerning them.
 
         For oMiser, enough Boolean Algebra theory is presented to illuminate
@@ -20,7 +20,7 @@ boole.txt 0.5.5                     UTF-8                       dh:2023-11-10
 
         Effectively-computable representations of Boolean Algebra structures
         when interpreted in ‹ob› will lead to representation-preserving
-        computational interpretations in the unfolding ‹ob› model of
+        computational interpretations in the unfolding ‹obap› model of
         computation.
 
                               CONTENT
@@ -804,7 +804,7 @@ boole.txt 0.5.5                     UTF-8                       dh:2023-11-10
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2023 Dennis E. Hamilton
+                 Copyright 2018-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -822,10 +822,10 @@ boole.txt 0.5.5                     UTF-8                       dh:2023-11-10
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. Interpretation of Boolean Algebras in the ‹ob› Model
-   of Computation. Miser Theory Conception text file boole.txt version 0.5.5
-   dated 2023-11-10, available on the Internet as a version of
-   <https://orcmid.github.io/miser/obrep/boole.txt>
+   Hamilton, Dennis E. Interpretation of Boolean Algebras in ‹ob›. Miser
+   Theory Conception text file boole.txt version 0.5.6 dated 2024-01-15,
+   available on the Internet as a version of
+   <https://orcmid.github.io/miser/obreps/boole.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -860,6 +860,8 @@ boole.txt 0.5.5                     UTF-8                       dh:2023-11-10
     worth pondering.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.5.6 2024-01-15T21:15Z Adust title, small touch-ups
  0.5.5 2023-11-10T19:47Z Refactoring staged to orcmid.github.io/miser/obrep/
  0.5.4 2023-11-10T19:31Z Creation of tombstone as part of refactoring to docs/
  0.5.3 2022-08-01T20:17Z Touch-Ups
