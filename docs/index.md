@@ -1,4 +1,4 @@
-<!-- index.md 0.2.2                UTF-8                         2023-11-25
+<!-- index.md 0.2.3                UTF-8                         2024-01-16
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.2 2023-11-25T19:20Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.3 2024-01-16T00:59Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -234,7 +234,19 @@ utility functions.  The *oMiser* layer provides a computational
 
 ## 5. Available Materials
 
-(TBD: various resources and links to them, including the bibliography)
+The Miser Project web is organized in topical sections.
+
+Current authoritative material is in text files.  Explanatory web-page
+narratives are pending.  Preview materials are provided to begin review and
+are .  The early content is an invitation review and discussion.
+
+| **Section**       |  **General Topic** |
+|   --:             |  ---               |
+| [ob](ob/)         | ‹ob› Mathematical Structure (preview) |
+| [obap](obap/)     | ‹ob› Universal Computation Function (preview) |
+| [obreps](obreps/) | Interpretations in ‹ob› (preview) |
+| | |
+| [construction](construction/) | Miser Project Web Construction Materials |
 
 ## 6. Development
 
@@ -323,6 +335,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.3  2024-01-16T00:59Z Link to topic previews
   0.2.2  2023-11-25T19:21Z Make visible brackets on citations
   0.2.1  2023-11-24T20:13Z Expanding the background
   0.2.0  2023-11-06T00:28Z Eliminate duplicate image, declare success
