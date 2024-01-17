@@ -1,4 +1,4 @@
-Z2adic.txt 0.0.7                     UTF-8                         2024-01-15
+Z2adic.txt 0.0.8                     UTF-8                         2024-01-17
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
@@ -477,13 +477,25 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
  ATTRIBUTION
 
    Hamilton, Dennis E. Z2adic Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file Z2adic.txt version 0.0.7 dated 2024-01-15, available
+   Conception text file Z2adic.txt version 0.0.8 dated 2024-01-17, available
    on the Internet as a version of
    <https://orcmid.github.io/miser/obreps/Z2adic.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  TODO:
+
+  * Complete the refactoring and establish tombstones in the previous
+    location.  There are incorrect cross-references in this material.
+
+  * It is terrible to have so much material lying around from boole.txt still.
+    I need to clean this up and also complete the refactoring to obreps/.
+
+  * I don't need to deal with rationals yet.  I think that will be Q2adic
+    and I suspect that the recurring bits will be tricky.  The Z2adic part
+    should be the same.  There is a difficulty on how to work to the "right"
+    of the binary point and how that gets reconciled.  The problem seems to
+    be with addition.
 
   * When representation, interpretation, manifestation, implementation,
     and simulation are worked out more clearly, review these materials
@@ -530,6 +542,7 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.8 2024-01-17T18:26Z More TODOs, much more refactoring required
  0.0.7 2024-01-15T20:33Z Touch-ups, simplifying title
  0.0.6 2023-11-10T20:38Z Adjust as part of refactoring to orcmid.github.io
  0.0.5 2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obrep/Z2adic.txt
