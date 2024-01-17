@@ -11,7 +11,7 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
 	<i>The Miser Project</i><br />
-    <i><big><big>‹ob› Universal Computational Function</big></big></i></strong></font></p>
+    <i><big><big>‹ob› Universal Computation Function</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.0 2024-01-14T23:21Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.0 2024-01-17T21:59Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -79,6 +79,8 @@ from time to time.
   </tr>
 </table>
 <!--
-  0.0.0  2024-01-14T232:21Z PLaceholder from 0.0.2 miser/ob/index.md boilerplate
+
+  0.0.1  2024-01-17T21:59Z Simplified title
+  0.0.0  2024-01-14T23:21Z PLaceholder from 0.0.2 miser/ob/index.md boilerplate
 
                *** end of miser/docs/obapp/index.md ***                  -->
