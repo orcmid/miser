@@ -1,4 +1,4 @@
-<!-- index.md 0.0.3                UTF-8                         2024-01-15
+<!-- index.md 0.0.4                UTF-8                         2024-01-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.3 2024-01-15T19:55Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.4 2024-01-18T18:45Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -37,7 +37,7 @@
 
 The elaboration of the fundamental structure,‹ob› = 〈Ob,Of,Ot〉, is
 provided here.  The essential characteristics of obs and reasoning (in Ot)
-about functions (thereby in Of) on obs is explained and expanded upon here.
+about functions (thereby in Of) on obs is explained and expanded upon.
 
 There is also the introduction of uninterpreted symbols, the literal
 individuals (lindies) that have no intrinsic significance while being
@@ -54,7 +54,7 @@ on the web progresses.
 |   :-:   |   :-:   |  :-:   |  ---  |
 | [obtheory](obtheory.txt)| 1.3.0 2024-01-15 | 2017-08-24 | ‹ob› = 〈Ob,Of,Ot〉Mathematical Structure |
 | [CFob](CFob.txt)        | 0.1.0 2023-11-10 | 2018-02-04 | Canonical Form of obs |
-| [sketch](sketch.txt)    | 0.2.4 2024-01-14 | 2017-09-13 | Brief description (belongs under oFrugal) |
+|                         |                  |            |              |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
 
 ----
@@ -84,6 +84,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.4  2024-01-18T18:45Z Touch-ups, move sketch.txt to oFrugal
   0.0.3  2024-01-15T19:55Z 1.3.0 obtheory
   0.0.2  2024-01-14T22:12Z Make stable for now
   0.0.1  2024-01-13T19:22Z Touch-ups for obtheory

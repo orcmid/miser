@@ -1,10 +1,10 @@
-sketch.txt 0.2.4                        UTF-8                      2024-01-14
+sketch.txt 0.2.5                        UTF-8                      2024-01-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-              <https://orcmid.github.io/miser/ob/sketch.txt>
+              <https://orcmid.github.io/miser/oFrugal/sketch.txt>
 
       ‹ob› MATHEMATICAL STRUCTURE, DATA REPRESENTATION, AND EXPRESSIONS
       -----------------------------------------------------------------
@@ -46,7 +46,7 @@ sketch.txt 0.2.4                        UTF-8                      2024-01-14
 
     Elementary data consist of arbitrary obs having no intrinsic significance
     beyond satisfaction of the conditions specified in the file obtheory.txt,
-    <https://github.com/orcmid/miser/blob/master/oMiser/obtheory.txt>.
+    <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
       * There are two selector functions, ob.a(z) and ob.b(z) that given
         any ob determine an ob as their result.
@@ -246,7 +246,7 @@ sketch.txt 0.2.4                        UTF-8                      2024-01-14
     procedure to be carried out on an ob given as the operand, x.  Determined
     results, obap.ap(p,x), are in accordance with the mathematical
     definition of obap.ap specified in the file obaptheory.txt,
-    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
+    <https://orcmid.github.io/miser/obap/obaptheory.txt>.
 
 
     The example (3) just-above is called cS, having the useful property that,
@@ -258,7 +258,7 @@ sketch.txt 0.2.4                        UTF-8                      2024-01-14
     to combine obs x and y, also as scripts, into a procedure that involves
     even further applications to achieve the intended result.  Powerful
     systematic treatment of these applicative operations is expanded on at
-    <https://github.com/orcmid/miser/blob/master/oMiser/combinators.txt>.
+    <https://orcmid.github.io/miser/obreps/combinators.txt>.
 
     Many obs are useful in composing scripts by combining others in this
     manner.  Using procedures to compute other scripts from given ones
@@ -405,9 +405,9 @@ sketch.txt 0.2.4                        UTF-8                      2024-01-14
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation,
-   and Expressions. Miser Theory Conception text file sketch.txt version 0.2.4
-   dated 2024-01-14, available on the Internet as a version of
-   <https://orcmid.github.io/miser/ob/sketch.txt>
+   and Expressions. Miser Theory Conception text file sketch.txt version 0.2.5
+   dated 2024-01-18, available on the Internet as a version of
+   <https://orcmid.github.io/miser/oFrugal/sketch.txt>
 
  TODO
 
@@ -429,6 +429,7 @@ sketch.txt 0.2.4                        UTF-8                      2024-01-14
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.2.5  2024-01-18T18:55Z Move to wev miser/oFrugal and fix URL references
  0.2.4  2024-01-14T20:14Z Fix missing ")" in (8).  Manage TODOs
  0.2.3  2023-11-09T22:54Z Renamed oMiser/ob.txt to sketch.txt as part of
         refactoring to docs/
