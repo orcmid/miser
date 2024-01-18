@@ -1,4 +1,4 @@
-<!-- index.md 0.2.3                UTF-8                         2024-01-16
+<!-- index.md 0.2.4                UTF-8                         2024-01-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -23,8 +23,8 @@
       <b><code>
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
-      <small><small>
-        0.2.3 2024-01-16T00:59Z<!-- MAINTAIN THIS MANUALLY -->
+      <small><smal32
+        0.2.4 2024-01-18T21:33Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -158,8 +158,8 @@ rather than practical application.
 
 - Run-time *oMiser* operation demonstrates computational manifestation of the
   mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
-  **ap** and companion **eval**.  The *o-name* form emphasizes the limitation
-  to ‹ob› and only obs.
+  **ap** and companion **eval**.  The *oMiser* form emphasizes the limitation
+  to ‹ob› and only obs, reserving the possibility of going beyond.
 
 - The interface language, *oFrugal*, is defined with a formal grammar having
   semantics defined in terms of ‹ob› functions, providing a complete
@@ -188,6 +188,9 @@ an applicative-function interpretation of data taken as scripts.  In
 software-engineering terms, this is the model side of an interactive computer
 application.
 
+The Application Programming Interface (API) serves to ensure a computational
+manifestation of ob›, its navigation and universal functions.
+
 ![Hosting oFrugal/oMiser](images/ofrugal-2023-08-18-1839-1stStack.png).
 
 The accompanying *oFrugal* software embeds an *oMiser* run-time and delivers
@@ -204,7 +207,7 @@ are usable in portable interchange of programs and data.
 ## 4. Background
 
 *oMiser* represents procedures and data in the same data format, demonstrating
-the essence of the stored-program concept.
+the essence and power of the stored-program concept.
 
 The notions of individual, enclosure, singleton, and pair have their
 inspiration in the nested-array work of
@@ -245,6 +248,8 @@ are .  The early content is an invitation review and discussion.
 | [ob](ob/)         | ‹ob› Mathematical Structure (preview) |
 | [obap](obap/)     | ‹ob› Universal Computation Function (preview) |
 | [obreps](obreps/) | Interpretations in ‹ob› (preview) |
+| | |
+| [oFrugal](oFrugal/) | oFrugal REPL Principles of Operation (preview) |
 | | |
 | [construction](construction/) | Miser Project Web Construction Materials |
 
@@ -335,6 +340,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.4  2024-01-18T21:33Z Touch-ups, add oFrugal
   0.2.3  2024-01-16T00:59Z Link to topic previews
   0.2.2  2023-11-25T19:21Z Make visible brackets on citations
   0.2.1  2023-11-24T20:13Z Expanding the background
