@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.9                   UTF-8                          2024-01-17
+oFrugal.txt 0.0.10                  UTF-8                          2024-01-22
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -37,7 +37,7 @@ oFrugal.txt 0.0.9                   UTF-8                          2024-01-17
     concrete implementation and the interchange of files among them.
 
 
-MANIFEST
+MANIFEST (text files only)
 
     oFrugal.txt
         this synopsis and TODOs
@@ -48,6 +48,9 @@ MANIFEST
     oFrugalese.txt
         the interpreted language for oFrugal text files/streams/terminal
         sources submitted to the oFrugal REPL.
+
+    sketch.txt
+        A sketch of oFrugal with a bit about the ob mathematical structure
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -70,7 +73,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code tex file oFrugal.txt version 0.0.9 dated 2024-01-17 available on the
+   Code text file oFrugal.txt version 0.0.10 dated 2024-01-22 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
@@ -106,10 +109,6 @@ TODO
     for the same oFrugal texts.  The handling of error cases is beyond what
     the grammar determines.
 
-  * Find the block diagram for how oFrugal and oMiser representations are
-    incorporated on a platform.  Introduce it here or at a higher level.
-    Certainly in docs.
-
   * Point out the odd similarity with John Backus use of a system process
     above the functional layer.  But in my case, dealing with the absence of
     any stateful entities in oMiser and obaptheory.txt.  And this provides,
@@ -118,6 +117,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.10 2024-01-22T22:39Z Touch-ups on the repurposing
  0.0.9 2024-01-17T00:40Z Refactored to orcmid.github.io/miser/oFrugal/ with
        reduced number of tombstoned components carried over.
  0.0.8 2022-08-12T03:52Z Add grammars.txt, manage TODOs, some touch-ups

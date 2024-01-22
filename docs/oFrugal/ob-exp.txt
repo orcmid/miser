@@ -1,11 +1,13 @@
-ob-exp.txt 1.0.2                    UTF-8                         2022-08-11
+ob-exp.txt 1.0.3                    UTF-8                         2024-01-22
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
                            ======================
 
-      <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
+           <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>
+                     repurposed from and tombstoned at
+      <https://github.com/orcmid/miser/blob/master/oMiser/ob-exp.txt>
 
          FORMAL GRAMMAR FOR EXPRESSING OFRUGAL COMPUTATION OF OBS
          --------------------------------------------------------
@@ -343,7 +345,7 @@ ob-exp.txt 1.0.2                    UTF-8                         2022-08-11
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                 Copyright 2018-2022 Dennis E. Hamilton
+                 Copyright 2018-2022, 2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -362,7 +364,7 @@ ob-exp.txt 1.0.2                    UTF-8                         2022-08-11
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 1.0.1 dated 2022-08-06,
+   Theory Conception text file ob-exp.txt version 1.0.3 dated 2024-01-22,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
 
@@ -444,6 +446,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.3  2024-01-22T22:28Z Adjust to repurposing and the tombstoned origin
  1.0.2  2022-08-11T14:32Z Move grammar theory references to grammars.txt
  1.0.1  2022-08-06T17:36Z Touch-ups, add missing .NIL primitive (?)
  1.0.0  2022-07-31T00:16Z Transpose from oMiser\ob-exp.txt to oFrugal\,

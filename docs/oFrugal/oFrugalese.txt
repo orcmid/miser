@@ -1,9 +1,12 @@
-oFrugalese.txt 0.0.2                   UTF-8                      2023-08-19
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+oFrugalese.txt 0.0.3                   UTF-8                      2024-01-22
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
+         <https://orcmid.github.io/miser/oFrugal/Frugalese.txt>
+
+                              repurposing of
       <https://github.com/orcmid/miser/blob/master/oFrugal/syntax.txt>
 
                      OFRUGALESE LANGUAGE SPECIFICATION
@@ -60,9 +63,9 @@ CLIPPINGS
 
 
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                     Copyright 2022-2023 Dennis E. Hamilton
+                     Copyright 2022-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -76,14 +79,14 @@ CLIPPINGS
     See the License for the specific language governing permissions and
     limitations under the License.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugalese Language Specification.  Miser Project Code
-   text file oFrugalese.txt version 0.0.2 dated 2023-08-19 available on the
+   text file oFrugalese.txt version 0.0.3 dated 2024-01-22 available on the
    Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugalese.txt>
+   <https://orcmid.github.io/miser/oFrugal/oFrugalese.txt>
 
 TODO
 
@@ -124,6 +127,7 @@ TODO
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.3 2024-01-22T23:00Z Repurposing version
  0.0.2 2023-08-19T01:22Z Capture some scraps
  0.0.1 2022-08-06T17:13Z Rename from syntax to oFrugalese and add TODOs
  0.0.0 2022-07-29T23:18Z Create placeholder and initial job jar for the

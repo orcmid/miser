@@ -1,10 +1,12 @@
-sketch.txt 0.2.5                        UTF-8                      2024-01-18
+sketch.txt 0.2.6                        UTF-8                      2024-01-22
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
               <https://orcmid.github.io/miser/oFrugal/sketch.txt>
+                 repurposed from the now-tombstoned location
+          <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt>
 
       ‹ob› MATHEMATICAL STRUCTURE, DATA REPRESENTATION, AND EXPRESSIONS
       -----------------------------------------------------------------
@@ -405,8 +407,8 @@ sketch.txt 0.2.5                        UTF-8                      2024-01-18
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure, Data Representation,
-   and Expressions. Miser Theory Conception text file sketch.txt version 0.2.5
-   dated 2024-01-18, available on the Internet as a version of
+   and Expressions. Miser Theory Conception text file sketch.txt version 0.2.6
+   dated 2024-01-22, available on the Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/sketch.txt>
 
  TODO
@@ -414,22 +416,23 @@ sketch.txt 0.2.5                        UTF-8                      2024-01-18
   * Add Notes and Reference section.
 
   * This is pretty awful.  It lacks any kind of friendly anchoring and
-    and provision of anything that might considered an useful tutorial or
-    sketch of what this is all about.
+    provision of anything that might considered an useful tutorial or
+    sketch of what this is all about.  Adjust that here on docs/oFrugal
 
   * The CFob syntax might reflect the special status of lindies by using
     spaces instead of "::" in pure lindy forms.  This will have to be
     investigated. It works because both application and "::" are right-
-    associative.
+    associative.  I don't know when and where I want to introduce that.
 
   * I am uncertain where to place this.  I also need to determine if the
-    applicative form will be used in canonical forms as a simple sugaring.
-    This leads to a way to sneak in strings but without dealing with character
-    encodings, just lindies.
+    applicative form of lindies will be used in canonical forms as a simple
+    sugaring.  This leads to a way to sneak in strings but without dealing
+    with character encodings.  In effect, lindies form an alphabet.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.2.5  2024-01-18T18:55Z Move to wev miser/oFrugal and fix URL references
+ 0.2.6  2024-01-22T21:58Z Tidy up, with connection back to the tombstone
+ 0.2.5  2024-01-18T18:55Z Move to web miser/oFrugal and fix URL references
  0.2.4  2024-01-14T20:14Z Fix missing ")" in (8).  Manage TODOs
  0.2.3  2023-11-09T22:54Z Renamed oMiser/ob.txt to sketch.txt as part of
         refactoring to docs/

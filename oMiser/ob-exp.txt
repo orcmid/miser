@@ -1,4 +1,4 @@
-ob-exp.txt 0.3.1                    UTF-8                          2023-11-10
+ob-exp.txt 0.3.2                    UTF-8                          2024-01-22
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -26,8 +26,9 @@ ob-exp.txt 0.3.1                    UTF-8                          2023-11-10
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.3.2  2024-01-22T22:33Z Touch-up for correct tombstoning
  0.3.1  2023-11-10T21:16Z Adjusted to the Miser Project on GitHub refactoring
- 0.3.0  2022-07-30T23:58Z Tombstone in place of ob-exp.txt 0.2.4 to be
+ 0.3.0  2022-07-30T23:58Z Tombstone in place of ob-exp.txt 1.0.2 to be
         continued in the oFrugal\ folder.
 
                  *** end of omiser/ob-exp.txt ***
