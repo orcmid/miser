@@ -1,4 +1,4 @@
-<!-- index.md 0.0.0                 UTF-8                         2024-01-20
+<!-- index.md 0.0.1                 UTF-8                         2024-01-22
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.0 2024-01-20T20:47Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.1 2024-01-22T17.36Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -47,7 +47,7 @@ on the web progresses.
 
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
-| [notes](oMiser.txt)    | 0.1.2 2023-11-06 | 2017-07-26  | ‹ob› Universal Applicative Functions |
+| [oMiser.txt](oMiser.txt) | 0.1.2 2023-11-06 | 2017-07-26  | Conception, Definition, and Implementation Notes |
 | [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-20  | More notes and work items |
 
 ----
@@ -78,6 +78,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.1  2024-01-22T17:36Z Touch-up oMiser.txt entry
   0.0.0  2024-01-20T20:47Z Initial Placeholder
 
                *** end of miser/docs/oMiser/index.md ***                  -->
