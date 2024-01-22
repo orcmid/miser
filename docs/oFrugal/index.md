@@ -1,4 +1,4 @@
-<!-- index.md 0.0.1                UTF-8                         2024-01-18
+<!-- index.md 0.0.2                UTF-8                         2024-01-22
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/oFrugal/index.md>
      publication <https://orcmid.github.io/miser/oFrugal/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.1 2024-01-18T19:03Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.2 2024-01-22T21:43Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -47,8 +47,8 @@ on the web progresses.
 | [oFrugal Expressions](ob-exp.txt)| 1.02 2022-08-11 | 2018-01-28 | Expression Syntax & Semantics |
 | [oFrugalese](oFrugalese.txt) | 0.0.2 2023-08-19 | 2022-07-29 | oFrugalese Language Specification |
 |                      |                  |          |                   |
-| [notes](oFrugal.txt)    | 0.0.9 2024-01-17 | 2020-08-05 | oFrugal Development & Operation |
-| [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
+| [oFrugal.txt](oFrugal.txt)    | 0.0.9 2024-01-17 | 2020-08-05 | oFrugal Development & Operation Notes |
+| [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Work Items and Thoughts |
 
 ----
 
@@ -78,6 +78,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.2  2024-01-22T21:43Z Touch ups on Catalog
   0.0.1  2024-01-18T19:03Z Bring over sketch
   0.0.0  2024-01-18T01:39Z Placeholder
 
