@@ -1,4 +1,4 @@
-<!-- index.md 0.0.1                 UTF-8                         2024-01-22
+<!-- index.md 0.0.2                 UTF-8                         2024-01-22
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -27,17 +27,61 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.1 2024-01-22T17.36Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.2 2024-01-22T18:55Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
-## Initial Placeholder
+oMiser is constructed as a software library for use on desktop computers. The
+library employs object-oriented techniques for manifesting ‹ob› = 〈Ob,Of,Ot〉
+in a navigational computation interpretation.  The [obap](../obap) Universal
+Computation functions are implemented as oMiser operations.
 
-The refactoring now underway will document the staging toward oMiser
-demonstrations and achievement of releases.
+This topic includes definition of the software-library interfaces (the oMiser
+API) and the derivation of supporting algorithms.  The software itself is
+developed separately and made available under the [dev](../dev) topic.
 
+There are a number of challenges in having oMiser operate with excellent
+performance.  The primitive operations defined for ‹ob› are not ideal, being
+very low-level relative to the power available on today's computers. There are
+several techniques for acceleration of operation safely behind the API, with
+no detraction from ‹ob› manifestation stability.  There are three important
+topics that figure into this.
+
+### Immutability
+
+The API exposes ‹ob› as immutable entities which are always "at hand", even
+though there are alterations and accelerations behind the API that improve
+operation without ever violating immutability of the abstraction.  Because
+the API does not permit alteration of obs, the implementation is permitted
+to exploit that in API-unseen ways.  Accelerators and their confirmed
+performance will be explored here.
+
+### Idealism
+
+When oMiser operates in multiple instances, even when coordinated by local
+or remote connections, there is semblance of there being only one ‹ob› domain
+that is navigated by all of the instances.  Flavors of distributed operation,
+even on the same computer, will be looked into.
+
+### Reflection
+
+Abstraction of alternative implementations of oMiser applicative procedures
+is acoomplished using logical analysis implemented in oMiser itself.  The
+important conundrum is having these improvements achieved in a manner that
+supports successful mechanical performance of the logical analysis. This
+pursuit is a computational logic aspiration beyond the Church-Turing
+demonstration.
+
+### Type Abstraction
+
+Related to reflection, this hinges on the fact that every ob has an
+applicative interpretation, but those interpretations can be transformed
+behind the scene as a form of "reprogramming", compiling, and
+reverse-engineering of computational types.  The question is whether that
+can be successfully done from the low level of oMiser operation or whether
+some explicit treatment of types is required, and why as well as how.
 
 ## Catalog (Specimen, mYYMMNN Content TBD)
 
@@ -78,6 +122,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.2  2024-01-22T18:55Z Add synopsis of key topics
   0.0.1  2024-01-22T17:36Z Touch-up oMiser.txt entry
   0.0.0  2024-01-20T20:47Z Initial Placeholder
 
