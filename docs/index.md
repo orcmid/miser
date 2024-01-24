@@ -1,4 +1,4 @@
-<!-- index.md 0.2.4                UTF-8                         2024-01-18
+<!-- index.md 0.2.5                UTF-8                         2024-01-24
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -23,8 +23,8 @@
       <b><code>
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
-      <small><smal32
-        0.2.4 2024-01-18T21:33Z<!-- MAINTAIN THIS MANUALLY -->
+      <small><small>
+        0.2.5 2024-01-24T00:27Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -218,9 +218,10 @@ importance of enclosure as a structural feature of obs was observed in an
 incompleteness regarding nested strings in
 \[[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965)\].
 Representations of strings that have other strings as their beads, a limited
-feature of ALGOL 60, was introduced by Doug Ross and colleagues in the AED
-system, along with notions about storage structures that are worth reviewing
-for Miser \[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
+feature of ALGOL 60, was developed further by Doug Ross and colleagues in the
+AED system, along with notions about storage structures that are reviewed
+for potential Miser application
+\[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
 
 The computational model founded on ‹ob› for oMiser is a fully-applicative
 scheme inspired through my association with Peter Landin and William H. Burge
@@ -240,8 +241,8 @@ utility functions.  The *oMiser* layer provides a computational
 The Miser Project web is organized in topical sections.
 
 Current authoritative material is in text files.  Explanatory web-page
-narratives are pending.  Preview materials are provided to begin review and
-are .  The early content is an invitation review and discussion.
+narratives are pending.  Early review and discussion of preview topics is
+invited.
 
 | **Section**       |  **General Topic** |
 |   --:             |  ---               |
@@ -250,7 +251,9 @@ are .  The early content is an invitation review and discussion.
 | [obreps](obreps/) | Interpretations in ‹ob› (preview) |
 | | |
 | [oFrugal](oFrugal/) | oFrugal REPL Principles of Operation (preview) |
+| [oMiser](/oMiser)   | oMiser Conception, Principles, and Engineering (preview) |
 | | |
+| [miser.txt](miser.txt) | Miser Project on GitHub (repurposing in progress) |
 | [construction](construction/) | Miser Project Web Construction Materials |
 
 ## 6. Development
@@ -340,6 +343,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.5  2024-01-24T00:27Z Touch-ups, add oMiser
   0.2.4  2024-01-18T21:33Z Touch-ups, add oFrugal
   0.2.3  2024-01-16T00:59Z Link to topic previews
   0.2.2  2023-11-25T19:21Z Make visible brackets on citations
