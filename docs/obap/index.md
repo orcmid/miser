@@ -1,4 +1,4 @@
-<!-- index.md 0.0.0                UTF-8                         2024-01-14
+<!-- index.md 0.0.2                UTF-8                         2024-01-24
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.0 2024-01-17T21:59Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.2 2024-01-24T16:42Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -80,7 +80,8 @@ from time to time.
 </table>
 <!--
 
+  0.0.2  2024-01-24T16:42Z Touch-ups
   0.0.1  2024-01-17T21:59Z Simplified title
   0.0.0  2024-01-14T23:21Z PLaceholder from 0.0.2 miser/ob/index.md boilerplate
 
-               *** end of miser/docs/obapp/index.md ***                  -->
+               *** end of miser/docs/obap/index.md ***                  -->
