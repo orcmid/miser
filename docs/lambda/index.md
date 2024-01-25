@@ -1,7 +1,7 @@
-<!-- index.md 0.0.2                UTF-8                         2024-01-24
+<!-- index.md 0.0.0                UTF-8                         2024-01-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
-     publication <https://orcmid.github.io/miser/obap/>
+     source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
+     publication <https://orcmid.github.io/miser/lambda/>
      -->
 <table border="0" width="100%">
   <tr>
@@ -11,7 +11,7 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
 	<i>The Miser Project</i><br />
-    <i><big><big>‹ob› Universal Computation Function</big></big></i></strong></font></p>
+    <i><big><big>λ Applicative Function Abstraction</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.2 2024-01-24T16:42Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.0 2024-01-25T17:26Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -35,22 +35,25 @@
 
 ## Initial Placeholder
 
-The elaboration of a universal computational function on ‹ob› = 〈Ob,Of,Ot〉
-is provided here.  The essential characteristics of obs and reasoning (in Ot)
-about functions (thereby in Of) on obs is explained and expanded upon here.
+The abstraction of functions from oMiser applicative procedures is developed
+as an oMiser applicative procedure itself.  oMiser is sufficiently low-level,
+and the ob.ap function sufficiently universal, that lambda abstraction is
+implementable as an oMiser applicative procedure.
+
+The derivation of `^lambda` and of the companion, `^rec`, is carried out and
+carefully demonstrated because of its importance in useful formulations of
+oFrugal procedures.
 
 
-## Catalog (Specimen, apYYMMNN Content TBD)
+## Catalog (Specimen, LYYMMNN Content TBD)
 
 This placeholder links to raw materials and notes, including text files.
 There will be organized folios of content as consolidation of documentation
-on the web progresses.  The file [obaptheory](obaptheory.txt) will remain the
-authoritative definition.
+on the web progresses.
 
-| **ID**                          | **Status**       | **Started** | **Topic** |
-|   :-:                           |   :-:            |  :-:        |  ---  |
-| [obaptheory](obaptheory.txt)    | 1.2.3 2023-12-18 | 2017-09-11  | ‹ob› Universal Applicative Functions |
-| [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-08  | Notes until there is better narrative material |
+| **ID**                  | **Status** | **Started** | **Topic** |
+|   :-:                   |   :-:      |  :-:        |  ---      |
+| [c000000](c000000.htm)  | undated    | 2024-01-25  | Construction Diary & Job Jar |
 
 ----
 
@@ -73,15 +76,13 @@ from time to time.
     <td width="54%" valign="middle" align="center">
       You are navigating the <a href="../">Miser Project on Github</a></td>
     <td width="30%">
-      <p align="right"><font size="-2">created 2024-01-14 by
+      <p align="right"><font size="-2">created 2024-01-25 by
          <a target="_top" href="../../orcmid">orcmid</a> </font></p>
     </td>
   </tr>
 </table>
 <!--
 
-  0.0.2  2024-01-24T16:42Z Touch-ups
-  0.0.1  2024-01-17T21:59Z Simplified title
-  0.0.0  2024-01-14T23:21Z PLaceholder from 0.0.2 miser/ob/index.md boilerplate
+  0.0.0  2024-01-25T17:26Z Placeholder from 0.0.2 obap/index.md boilerplate
 
-               *** end of miser/docs/obap/index.md ***                  -->
+               *** end of miser/docs/lambda/index.md ***                  -->
