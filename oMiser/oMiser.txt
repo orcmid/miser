@@ -1,4 +1,4 @@
-oMiser.txt 0.0.22                   UTF-8                         2024-01-14
+oMiser.txt 0.0.23                   UTF-8                         2024-01-27
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -23,11 +23,12 @@ MANIFEST
 
     oMiser.txt tombstone (this file)
        TODOs and other narrative are being repurposed as part of refactoring.
-       There is no direct counterpart to this file.
+       Repurposing at <https://orcmid.github.io/miser/oMiser/oMiser.txt> may
+       involve further refactoring for web topics.
 
     ob.txt (tombstone)
         summary of the ‹ob› structure and its computational manifestations;
-        migrated to <https://orcmid.github.io/miser/ob/sketch.txt>
+        migrated to <https://orcmid.github.io/miser/oFrugal/sketch.txt>
 
     obtheory.txt (tombstone)
         specification of the ‹ob› abstract mathematical structure
@@ -91,19 +92,13 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation.
-   Miser Project text file oMiser.txt version 0.0.22 dated 2024-01-14,
+   Miser Project text file oMiser.txt version 0.0.23 dated 2024-01-27,
    tombstone file available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-TODO
-
- * Figure out where to salvage the refactoring of oMiser.txt
-
-
-*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-
+ 0.0.23 2024-01-27T19:17Z Adjust to current refactored locations
  0.0.22 2024-01-14T22:09Z Correct the URLs for the refactored content
  0.0.21 2023-11-10T21:36Z Completion of refactoring away from oMiser folder.
  0.0.20 2023-11-10T20:46Z All refactored away except for ob-exp.txt

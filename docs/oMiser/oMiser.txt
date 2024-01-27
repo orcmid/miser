@@ -1,10 +1,10 @@
-oMiser.txt 0.1.2                    UTF-8                         2023-11-06
+oMiser.txt 0.1.3                    UTF-8                         2024-01-27
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-                <https://orcmid.github.io/Miser/oMiser.txt>
+             <https://orcmid.github.io/Miser/oMiser/oMiser.txt>
 
          OMISER CONCEPTION, DEFINITION, AND IMPLEMENTATION NOTES
          -------------------------------------------------------
@@ -17,9 +17,12 @@ oMiser.txt 0.1.2                    UTF-8                         2023-11-06
         will also be web-based Job Jars and Diaries. This page will be
         whittled down as the refactoring progresses.
 
+        The original version of this file is tombstoned at
+        <https://github.com/orcmid/miser/blob/master/oMiser/oMiser.txt>.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2018-2023 Dennis E. Hamilton
+                    Copyright 2018-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -38,9 +41,9 @@ oMiser.txt 0.1.2                    UTF-8                         2023-11-06
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.2 dated 2023-11-06,
+   Notes.  Miser Project text file oMiser.txt version 0.1.3 dated 2024-01-27,
    available on the Internet as a version of
-   <https://oMiser.github.io/Miser/oMiser.txt>.
+   <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -60,12 +63,10 @@ TODO
     This might not be a 1.0 or 1.1 thingy.  Another way would be to export the
     def obs in some manner and also economize on shared obs in the reload.
 
-  * The Tombstone under the oMiser/ folder should point to the docs/ front porch,
-    with possible mention of a dev/ structure as well.
-
-  * Many of the TODOs here are about implementation of the oMiser run-time and
-    its integration.  Strip these out to a development area, akin to the nfoTools
-    structure.
+  * 2024-01-27 Many of the TODOs here are about implementation of the oMiser
+    run-time and its integration.  Development of the algorithms and their
+    profiling is here, with releases and various code provided under the
+    GitHub Miser dev/ and the docs/dev/ locations.  Reflect on index.htm.
 
   * Connect to internet-accessible resources and availability of stable
     materials when available.  TODOs and related work can be separated then.
@@ -150,12 +151,9 @@ TODO
     for other data types, since lyndies give us sufficient literals for
     atoms in strings (list structures).
 
-  * Transpose this material to docs/ where it will remain authoritative.
-    Provide tombstones here because of various external and internal
-    references.
-
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.3  2024-01-27T19:30Z Clean up TODOs and connection with tombstone.
  0.1.2  2023-11-06T18:59Z Note about NBG and how it might come up.
  0.1.1  2023-11-05T21:32Z Additional TODO about save/suspension in oFrugal.
  0.1.0  2023-11-01T18:55Z Transposition from oMiser/oMiser.txt to
