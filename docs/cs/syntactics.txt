@@ -1,4 +1,4 @@
-syntactics.txt 0.2.0                  UTF-8                        2024-01-29
+syntactics.txt 0.2.1                  UTF-8                        2024-01-29
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -78,9 +78,6 @@ syntactics.txt 0.2.0                  UTF-8                        2024-01-29
     grammar of a 〈term〉 and required where consecutive 〈term〉 occurrences
     would not be disambiguated.
 
-
-
-
  4. REFERENCES
 
 [Backus1958]  Backus, J. W. The syntax and semantics of the proposed
@@ -88,21 +85,6 @@ syntactics.txt 0.2.0                  UTF-8                        2024-01-29
     Proc. International Conference on Information Processing.  UNESCO (Paris:
     June 1959) pp. 125-132.  Available on the Internet at
     <https://www.softwarepreservation.org/projects/ALGOL/paper/Backus-Syntax_and_Semantics_of_Proposed_IAL.pdf/view>
-
-[Cheatham1964]
-    Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
-    Proceedings of the April 21-23 1964 Spring Joint Computer Conference
-    (AFIPS: April 1964), 31-57.
-       A general parser (syntax analyzer) for context-free languages is
-    described.  What we now refer to as a lexical analyser is identified as a
-    recognizer layer.  The analyzer method is most easily recognized as a
-    top-down parser with back-tracking.  It could even be used to produce all
-    analyses available for an ambiguous input.  Refinements of this method
-    that I have explored include pruning alternatives when they cannot be
-    possible if the input will be valid.  This allows early analysis to be
-    forwarded to a generation layer.  There also needs to be some assistance
-    in the case of left-recursive generations, usually expedited by
-    transformation into tail-iterative forms.
 
 [Chomsky1956]
     Chomsky, Noam.  Three models for the description of languages.  IRE
@@ -157,10 +139,6 @@ syntactics.txt 0.2.0                  UTF-8                        2024-01-29
     determine when a particular statement is by relying on a parser such
     as that of [Cheatham1964].
 
-[Irons1961]
-    Irons, Edgar T.  A syntax directed compiler for ALGOL 60.  Comm. ACM 4,
-    1 (January 1961), 51-55.
-
 [Naur1963]
     Naur, Peter (ed.)., Backus, J.W., Bauer, F.L., Green, J., Katz, C.,
     McCarthy, J., Perlis, A.J., Rutishauser, H., Samelson, K., Vauquois,
@@ -200,7 +178,7 @@ syntactics.txt 0.2.0                  UTF-8                        2024-01-29
   ATTRIBUTION
 
    Hamilton, Dennis E. Phrase-Structure Grammars and BNF Notation.  Miser
-   Project text file syntactics.txt version 0.2.0 dated 2024-01-29, available
+   Project text file syntactics.txt version 0.2.01dated 2024-01-29, available
    on the Internet as a version of
    <https://orcmid.github.io/miser/cs/syntactics.txt>
 
@@ -240,6 +218,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.2.1  2024-01-29T20:24Z Move unused references on compiler compiling to
+        mindelay.txt
  0.2.0  2024-01-29T17:24Z Repurpose from 0.1.0 grammars.txt.
  0.0.0  2022-08-11T17:36Z Place-holder and boiler-plate extracted from
         ob-exp.txt 1.0.1 and mindelay.txt

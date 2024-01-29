@@ -1,10 +1,10 @@
-mindelay.txt 0.0.5                  UTF-8                          2023-08-19
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+mindelay.txt 0.0.6                  UTF-8                          2023-01-29
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
 
-      <https://github.com/orcmid/miser/blob/master/oFrugal/mindelay.txt>
+             <https://orcmid.github.io/miser/cs/mindelay.txt>
 
                    OFRUGAL REPL MINDELAY PARSER DESIGN
                    -----------------------------------
@@ -81,6 +81,20 @@ ERROR HANDLING
 
 NOTES AND REFERENCES
 
+[Cheatham1964]
+    Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
+    Proceedings of the April 21-23 1964 Spring Joint Computer Conference
+    (AFIPS: April 1964), 31-57.
+       A general parser (syntax analyzer) for context-free languages is
+    described.  What we now refer to as a lexical analyser is identified as a
+    recognizer layer.  The analyzer method is most easily recognized as a
+    top-down parser with back-tracking.  It could even be used to produce all
+    analyses available for an ambiguous input.  Refinements of this method
+    that I have explored include pruning alternatives when they cannot be
+    possible if the input will be valid.  This allows early analysis to be
+    forwarded to a generation layer.  There also needs to be some assistance
+    in the case of left-recursive generations, usually expedited by
+    transformation into tail-iterative forms.
 
 [Evans1961]
     Evans, A., Perlis, A.J., Van Zoeren, H. The Use of Threaded Lists in
@@ -113,6 +127,10 @@ NOTES AND REFERENCES
     close to how the oFrugal REPL parser will parse and interpret ob-exp
     formulas.
 
+[Irons1961]
+    Irons, Edgar T.  A syntax directed compiler for ALGOL 60.  Comm. ACM 4,
+    1 (January 1961), 51-55.
+
 [Pratt1973]
     Pratt, Vaughan R.  Top Down Operator Precedence.  Proc. 1st Annual ACM
     SIGACT-SIGPLAN Symposium on Priniciples of Programming Languages
@@ -138,9 +156,9 @@ NOTES AND REFERENCES
     version dated 2022-06-28 and accessed on the Internet at
     <https://en.wikipedia.org/wiki/Parsing#Computer_languages>.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2020-2022 Dennis E. Hamilton
+                Copyright 2020-2022, 2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -154,14 +172,13 @@ NOTES AND REFERENCES
     See the License for the specific language governing permissions and
     limitations under the License.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Mindelay Parser Design.  Miser Project
-   Code tex file oFrugal.txt version 0.0.5 dated 2023-08-19 available on the
-   Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oFrugal/oFrugal.txt>
+   Code tex file oFrugal.txt version 0.0.6 dated 2024-01-29 available on the
+   Internet as a version of <https://orcmid.github.io/miser/cs/mindelay.txt>.
 
 TODO
 
@@ -191,9 +208,16 @@ TODO
     turns the input into a reverse polish form where every operation can be
     performed when an operator is added to the stream.
 
+  * Provide more background on top-down, left-to-right, and precedence.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+  * Fix the title.
 
+  * Point to where this is repurposed from.
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.6 2024-01-29T20:31Z Complete repurposing to cs/, with refactored notes
  0.0.5 2023-08-19T01:25Z Touch-ups, back it up before refactoring
  0.0.4 2022-08-12T18:45Z Touch-Ups, Adjust References
  0.0.3 2022-08-11T21:26Z Transpose syntax theory references to grammars.txt
