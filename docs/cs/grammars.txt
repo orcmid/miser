@@ -1,4 +1,4 @@
-grammars.txt 0.1.1                  UTF-8                         2024-01-29
+grammars.txt 0.1.2                  UTF-8                         2024-01-30
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -10,238 +10,21 @@ grammars.txt 0.1.1                  UTF-8                         2024-01-29
              FORMAL GRAMMARS AND INTERPRETATIONS FOR oFRUGAL
              -----------------------------------------------
 
-    Formalizations are employed to bridge from the structures of theoretical
-    entities, particularly ‹ob›, to a corresponding formalization of the
-    oFrugalese language to be processed and computationally-interpreted by
-    oFrugal software.
+******************************************************************************
+*                                                                            *
+*                                  TOMBSTONE                                 *
+*                                  *********                                 *
+*                                                                            *
+******************************************************************************
 
- 1. FORMAL APPROACH
-
-    For Miser, formal structures are used to express and reason about
-    theoretical entities of different types,
-
-         ‹ob› = 〈Ob,Of,Ot〉
-                 at  <https://orcmid.github.io/miser/ob/obtheory.txt>
-                 and <https://orcmid.github.io/miser/obap/obaptheory.txt>
-
-         ‹ba› = 〈Ba,Baf,Bat〉
-         ‹bp› = 〈Bp,Bpf,Bpt〉
-                 at <https://orcmid.github.io/miser/obreps/boole.txt>
-
-         ‹ca› = 〈CA,{apply},CAt〉
-                 at <https://orcmid.github.io/miser/obreps/combinators.txt>
-
-    along with additional structures, such as ‹Z› that serve mathematical
-    purposes and have computational interpretations via representation in
-    structure ‹ob›.
-
-    oFrugal provides a computational mechanism by which computational
-    interpretations of ‹ob› formulations can be carried out using textual
-    inputs, producing textual expressions of derived Obs.
-
-    oFrugal text forms, oFrugalese scripts, are defined with a formal grammar.
-    Formal rules for interpretation of oFrugalese are given as companions to
-    the grammar rules, establishing oFrugalese semantics.  The semantic are
-    all in terms of ‹ob› constructions and application of the obaptheory.txt
-    universal functions.
-
-    Any canonical Ob determined in such interpretion is then presented as a
-    textual result in CFob format, a subset of oFrugalese.
-    (See <https://orcmid.github.io/miser/ob/CFob.txt>.)
-
-    In effect, oFrugal is an Ob calculator that evaluates applicative
-    expressions written in oFrugalese and delivers simple expressions for
-    any Obs that are determined as results.
-
-    The oFrugalese grammar and interpretation of single applicative
-    expressions is provided in file ob-exp.txt.  The oFrugalese extensions
-    for using the applicative expressions in computational scripts are
-    defined in oFrugalese.txt.
-
-    In this approach, the formal grammar and formal semantics (intepretation)
-    do not specify any implementation in computer software.  That is achieved
-    for oFrugal by employing the approach defined in mindelay.txt.
-
-
-
-    oFrugalese, the language accepted by the oFrugal REPL, is precisely
-    and completely specified in BNF.  There are no side conditions.  Every
-    grammatical text is completely valid: every grammatical text has definite
-    semantic interpretation, without exception.  This is a counterpart of the
-    definition of the oMiser universal function in which every ob has an
-    applicative interpretation.
-
-
- 4. EXPRESSION INTERPRETATION
-
-   ** Two things about choice of grammar.  First, the desire to have a
-   particular form that does not change the set of valid sentences but is
-   more amenable to derivation of a syntax-oriented parser.  The second is
-   related to expedite the correspondence of phrase structures with the
-   intended interpretations.  These pragmatic and highly-practical maneuvers
-   are unnecessary, in principle, but extremely valuable in practice.
-
-    Interpretation of expressions as obs is accomplished using a special
-    schema notation that specifies the Ot (‹ob› theory-language) expression
-    interpretation of a given ob-exp text.  The interpretation schemas have
-    distinct form.
-
-       ‼ category ⎾pattern⏋{parameter-list} =: interpretation
-
-    where      category is one of the syntactic categories, such as
-                        〈ob-exp〉, 〈ae〉, and 〈term〉
-
-                pattern is one of the patterns for the particular category,
-                        such as 〈binary〉, 〈obap-form〉 〈ae-form〉, and 〈lindy〉
-
-       {parameter-list} is an optional form consisting of a list of
-                        one-or-more parameters
-
-         interpretation is an obaptheory expression schema in which any
-                        parameter and "‼ category {parameter-list}" forms are
-                        in reference to category appearances in the pattern;
-                        parameters of the pattern {parameter-list} may
-                        occur as variables in the interpretation, including
-                        in further {parameter-list} forms.
-
-    The obaptheory formulation in Ot, the theory language of structure
-    ‹ob› = 〈Ob,Of,Ot〉, is available at
-    <https://orcmid.github.io/miser/obap/obaptheory.txt>.
-
-    For example,
-
-        ‼〈ae〉⎾〈obap-form〉 〈ae-form〉⏋{ℰ} =: obap.ap(‼〈obap-form〉{ℰ},‼〈ae-form〉{ℰ})
-
-    On the right-hand side of the "=:" the category names refer to those
-    in the pattern on the left-hand side, and the interpretations of those
-    occurrences is called for to determine the individual ob that is their
-    evaluation.
-
-    The parameter ℰ employed in many interpretations signifies the ob-exp
-    environment, the means by which the current oFrugal set of bindings
-    is used to resolve binding names and provide unknown-name forms otherwise.
-    This is tied to interpretation of oFrugal statement-level syntax.
-
-    Although the rules are tied directly to the forms of the grammar, the
-    notation is relaxed to also describe interpretation of parsing stages.
-    For example (cf. section 9),
-
-      ‼〈ob-exp〉⎾ f g x ⏋{ℰ}
-          =: ‼〈binary〉⎾ f g x ⏋{ℰ}
-          =: ‼〈ae-form〉⎾ f g x ⏋{ℰ}
-          =: obap.ap( ‼〈unary〉⎾ f ⏋{ℰ}, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
-          =: obap.ap( ‼〈function-form〉⎾ f ⏋{ℰ}, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
-          =: obap.ap( ‼〈term〉⎾ f ⏋{ℰ}, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
-          =: obap.ap( f, ‼〈ae-form〉⎾ g x ⏋{ℰ} )
-          =: obap.ap( f, obap.ap(‼〈unary〉⎾ g ⏋{ℰ}, ‼〈ae-form〉⎾ x ⏋{ℰ} ) )
-          =: obap.ap( f, obap.ap( g, x) )
-
-    where lindies such as Ʃ'f', Ʃ'g', and Ʃ'x' are written as f, g, and x
-          without ambiguity in these cases.
-
-    We can also work out that
-
-      ‼〈ob-exp〉⎾ f g x ⏋{ℰ} :=: ‼〈ob-exp〉⎾ f (g x) ⏋{ℰ}
-
-    signifying that the interpretations are the same (i.e., equivalent),
-    keeping in mind that the f, g, and x here are literals and not variables.
-    While the equivalence doesn't hold under arbitrary substitutions for f,
-    g, and x, the following can be established.
-
-      ‼〈ob-exp〉⎾ 〈unary〉₁ 〈unary〉₂ 〈unary〉₃ ⏋{ℰ}
-          :=: ‼〈ob-exp〉⎾ 〈unary〉₁ ( 〈unary〉₂ 〈unary〉₃ ) ⏋{ℰ}
-
-    with the subscripts used to distinguish among 〈unary〉 occurrences,
-    following [Knuth1968].
-
-
-  10. NOTES AND REFERENCES
-
-
-[Cheatham1964]
-    Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
-    Proceedings of the April 21-23 1964 Spring Joint Computer Conference
-    (AFIPS: April 1964), 31-57.
-       A general parser (syntax analyzer) for context-free languages is
-    described.  What we now refer to as a lexical analyser is identified as a
-    recognizer layer.  The analyzer method is most easily recognized as a
-    top-down parser with back-tracking.  It could even be used to produce all
-    analyses available for an ambiguous input.  Refinements of this method
-    that I have explored include pruning alternatives when they cannot be
-    possible if the input will be valid.  This allows early analysis to be
-    forwarded to a generation layer.  There also needs to be some assistance
-    in the case of left-recursive generations, usually expedited by
-    transformation into tail-iterative forms.
-
-[Duncan1967]  Duncan, Fraser G.  Notational abbreviations applied to the
-    syntax of ALGOL.  Section AB26.3.5 of ALGOL Bulletin 26 (August 1967),
-    pp.28-32.  Available on the Internet at
-    <http://archive.computerhistory.org/resources/text/algol/algol_bulletin/A26/P35.HTM>.
-       This paper made use of nested 〈 ... 〉 in a peculiar way, but it inspired
-    me to use it to use productions to generate naming of phrase categories,
-    providing a vocabulary grammar and generic arrangements, including moving
-    between concrete cases such as 〈integer〉 and 〈〈integer〉-length-string〉.
-    This is not needed here.  I just want this reference set to be complete
-    wherever I use it.
-
-[Ershov1963]  Ershov, A.P., Kozhukhin, G.I., Voloshin, Yu.M.  The Input
-    Language for a System of Automatic Programming.  Computation Center,
-    Academy of Sciences of the USSR (Moscow, 1961, Russian); Academic Press
-    (London, New York: 1963).
-       This provided a type of generic context-free production that inspired
-    some of this work, although not relied upon in the ob-exp grammar.
-
-[Gorn1963]
-    Gorn, Saul.  Detection of Generative Ambiguities in Context-Free
-    Mechanical Languages.  J. ACM 10, 2 (April 1963), 196-208.
-    <https://doi.org/10.1145/321160.321168>.
-       Section 1, Introduction, offers a precise definition of context-
-    free (mechanical) languages along with important considerations such
-    as their decidability.  Although it is undecidable, in general,
-    whether a given context-free grammar is ambiguous, it is possible to
-    determine when a particular statement is by relying on a parser such
-    as that of [Cheatham1964].
-
-[Irons1961]
-    Irons, Edgar T.  A syntax directed compiler for ALGOL 60.  Comm. ACM 4,
-    1 (January 1961), 51-55.
-
-[Knuth1968]  Knuth, Donald E. Semantics of Context-Free Languages.
-    Mathematical Systems Theory 2 (1968), 127-145.  Errata Mathematical
-    Systems Theory 5 (1971), 95-96.
-       The semantic interpretations for oFrugalese are similar to those of
-    Knuth's attribute grammars except that the arrangement remains context-
-    free and cycles are generally not possible.  In the oFrugal application,
-    all well-formed inputs have semantics and there are no forward references,
-    although there can be semantical context.  In particular, binding names
-    are always references to the nearest preceding bindings, if any, and the
-    absence of a preceding binding is semantically acceptable.  Pragmatically,
-    there may be warning messages or even aborts of processing as an option.
-
-[Quine1981]
-    Quine, Willard Van Orman.  Mathematical Logic, Revised Edition.  Harvard
-    University Press (Cambridge, MA: 1940, 1981).  ISBN 0-674-55451-5 pbk.
-       Quasi-quotation is introduced in Section 6. Quine's devotion to the
-    inspiration of [Whitehead1997], itself an outgrowth of Russell's
-    inspiration in Euclid, foretells the further simplification of formal
-    mathematical logic that has left behind the original notations and the
-    hierarchies of types.  In Chapter 7 on Syntax, the formal development of
-    logic itself is undertaken.
-
-[Whitehead1997]
-    Whitehead, Alfred North., Russell, Bertrand.  Principia Mathematica to
-    *56.  Cambridge University Press (Cambridge: 1910, 1927, 1962, 1997).
-    ISBN 0-521-62606-4 pbk.
-       The full three volumes, first published in 1910, was an epochal event.
-    It provided a platform on which questions of decidability and the work
-    of Gödel, Church, Turing, and others would be erected.  The appeal to
-    Newton's 1687 work of similar title reflects the aspiration of the authors
-    to grasp the foundation of mathematics as derivable from logic.
-
+    THIS IS A TOMBSTONE.  THE MATERIAL ORIGINALLY HERE WAS REPURPOSED FROM
+    FILE <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>.
+    THIS MATERIAL HAS SINCE BEEN REFACTORED TO THE FILES syntax.txt,
+    semantics.txt, and mindelay.txt of <https://orcmid.github.io/miser/cs/>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2023 Dennis E. Hamilton
+                 Copyright 2018-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -260,26 +43,13 @@ grammars.txt 0.1.1                  UTF-8                         2024-01-29
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammars and Interpretations for oFrugal.  Miser
-   Project text file grammars.txt version 0.1.1 dated 2024-01-29, available
-   on the Internet as a version of
+   Project tombstone file grammars.txt version 0.1.2 dated 2024-01-30,
+   available on the Internet as a version of
    <https://orcmid.github.io/miser/cs/grammars.txt>
-
-TODO
-
- * Note that this is about grammar and the interpretation mechanism.  It is
-   not the grammar specification for oFrugal.  That's a different matter.
-
- * Revealing examples are needed here.  Grace Hopper favored that and I
-   should heed it for that reason alone.  [This applies more to ob-exp.txt and
-   oFrugalese.txt though.]
-
-
-
- * Cite Quine for the quasi-quotation marks and also refer to the Wikipedia
-   article, <https://en.wikipedia.org/wiki/Quasi-quotation>.
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 0.1.2  2024-01-30T00:17Z Replace with Tombstone notification.
  0.1.1  2024-01-29T17:34Z Strip out the syntactic materials to syntactics.txt
  0.1.0  2023-12-18T20:31Z Clean up links to other material, tidy a little
  0.0.6  2023-11-11T05:41Z Moved from docs/oFrugal to docs/cs
