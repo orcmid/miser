@@ -1,4 +1,4 @@
-<!-- index.md 0.2.6                UTF-8                         2024-01-25
+<!-- index.md 0.2.7                UTF-8                         2024-01-30
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.6 2024-01-25T17:40Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.7 2024-01-30T17:09Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -255,7 +255,8 @@ invited.
 | | |
 | [lambda](lambda/) | λ Functional Procedure Abstraction |
 | | |
-| [miser.txt](miser.txt) | Miser Project on GitHub (repurposing in progress) |
+| [docs.txt](docs.txt) | Text Synopsis and Job Jar for orcmid.github.io/miser
+| [miser.txt](miser.txt) | Miser Project on GitHub (shadow) |
 | [construction](construction/) | Miser Project Web Construction Materials |
 
 ## 6. Development
@@ -345,6 +346,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.7  2024-01-30T17:09Z Add docs.txt
   0.2.6  2024-01-25T17:40Z Add lambda
   0.2.5  2024-01-24T00:27Z Touch-ups, add oMiser
   0.2.4  2024-01-18T21:33Z Touch-ups, add oFrugal

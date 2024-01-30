@@ -1,10 +1,12 @@
-docs.txt 0.0.22                     UTF-8                         2023-11-11
+docs.txt 0.0.23                     UTF-8                         2024-01-30
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                               The Miser Project
                               =================
 
-                  <https://orcmid.github.io/miser/docs.txt>
+ repository: <https://github.com/orcmid/miser/tree/master/docs/docs.txt>
+
+           publication:  <https://orcmid.github.io/miser/docs.txt>
 
                     GITHUB-PUBLISHED DOCUMENTATION FOLDER
                     -------------------------------------
@@ -28,11 +30,11 @@ MANIFEST
 
      docs.txt  this manifest and job-jar file
 
-    index.htm  Construction Structure page.  Consult this page for
-               guidance into the docs/ organization as the web site
+    index.md   Markdown for the index.html home-page entry of
                <https://orcmid.github.io/miser/>.
 
-    index.md   Markdown for the index.html home-page entry of
+    index.htm  Construction Structure page.  Consult this page for
+               guidance into the docs/ organization for the web site
                <https://orcmid.github.io/miser/>.
 
     The construction structure and content is now managed via HTML
@@ -41,7 +43,7 @@ MANIFEST
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-              Copyright 2019, 2022-2023 Dennis E. Hamilton
+              Copyright 2019, 2022-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -60,11 +62,12 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GitHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.22 dated 2023-11-11 available on the
+   Code text file docs.txt version 0.0.23 dated 2024-01-30 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs.txt>
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.23 2024-01-30T17:18Z Review and Adjust for current status
  0.0.22 2023-11-11T17:41Z Tidying up
  0.0.21 2023-11-05T16:07Z Move TODOs to c000000.htm and leave this file as
         historical tombstone.
