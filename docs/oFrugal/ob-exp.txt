@@ -1,4 +1,4 @@
-ob-exp.txt 1.0.3                    UTF-8                         2024-01-22
+ob-exp.txt 1.0.4                    UTF-8                         2024-01-31
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -31,7 +31,7 @@ ob-exp.txt 1.0.3                    UTF-8                         2024-01-22
 
     For an informal introduction to the use of Frugalese in the computational
     model defined on the mathematical structure ‹ob› = 〈Ob,Of,Ot〉, see
-    <https://github.com/orcmid/miser/blob/master/oMiser/ob.txt> and other
+    <https://orcmid.github.io/miser/oFrugal/sketch.txt> and other
     material cited there.
 
 
@@ -364,9 +364,9 @@ ob-exp.txt 1.0.3                    UTF-8                         2024-01-22
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 1.0.3 dated 2024-01-22,
+   Theory Conception text file ob-exp.txt version 1.0.4 dated 2024-01-31,
    available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt>
+   <https://orcmid.github.io/oFrugal/ob-exp.txt>
 
 TODO
 
@@ -446,6 +446,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.0.4  2024-01-31T23:31Z Correct links and location of this file.
  1.0.3  2024-01-22T22:28Z Adjust to repurposing and the tombstoned origin
  1.0.2  2022-08-11T14:32Z Move grammar theory references to grammars.txt
  1.0.1  2022-08-06T17:36Z Touch-ups, add missing .NIL primitive (?)
