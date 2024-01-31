@@ -1,4 +1,4 @@
-docs.txt 0.0.23                     UTF-8                         2024-01-30
+docs.txt 0.0.24                     UTF-8                         2024-01-31
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                               The Miser Project
@@ -14,9 +14,12 @@ docs.txt 0.0.23                     UTF-8                         2024-01-30
                                  TOMBSTONE
                                  *********
 
-    This material has been obsoleted as part of introducing Orcmid Github
-    Microsoft FrontPage and a web-site Construction Structure as part of the
-    GitHub Pages that are published at <https://orcmid.github.io/miser>.
+    This text-file has been obsoleted as part of introducing the use of
+    Microsoft FrontPage with a web-site Construction Structure of the GitHub
+    Pages that are published from docs/ to <https://orcmid.github.io/miser>.
+    Use of a "*.txt+ file as a synopsis, manifest, and job jar for folder "*/"
+    still applies for git folders other than docs/.  For content now moved
+    to folders under docs/, tombstones will be left in those original places.
 
     Further information about the purpose, construction, and care-and-feeding
     of this web authoring arrangement are found on the index.htm page and
@@ -28,14 +31,25 @@ docs.txt 0.0.23                     UTF-8                         2024-01-30
 
 MANIFEST
 
-     docs.txt  this manifest and job-jar file
+            docs.txt  this obsolete manifest and job-jar file
 
-    index.md   Markdown for the index.html home-page entry of
-               <https://orcmid.github.io/miser/>.
+           miser.txt  shadow of the manifest file from the GitHub miser/
+                      folder to capture work items now being addressed with
+                      web-site materials.
 
-    index.htm  Construction Structure page.  Consult this page for
-               guidance into the docs/ organization for the web site
-               <https://orcmid.github.io/miser/>.
+           index.md   Markdown for the index.html home-page entry of
+                      <https://orcmid.github.io/miser/>.
+
+           index.htm  Construction Structure page.  Consult this page for
+                      the plumbing/infrastructure/scaffolding on which the
+                      published <https://orcmid.github.io/miser/> is
+                      constructed and maintained.
+
+    construction.htm  Construction Zone for this level of the docs/ web-site
+                      structure.
+
+         c000000.htm  Job Jar & Diary for the top/overall level of the site
+
 
     The construction structure and content is now managed via HTML
     pages.  Visit <https://orcmid.github.io/miser/index.htm> for the
@@ -62,11 +76,13 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. GitHub-Published Documentation Folder.  Miser Project
-   Code text file docs.txt version 0.0.23 dated 2024-01-30 available on the
+   Code text file docs.txt version 0.0.24 dated 2024-01-31 available on the
    Internet as a version of <https://orcmid.github.io/miser/docs.txt>
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.24 2024-01-31T19:27Z Touch-ups, attempting to explain the transition
+        to web-page authoring underway here.
  0.0.23 2024-01-30T17:18Z Review and Adjust for current status
  0.0.22 2023-11-11T17:41Z Tidying up
  0.0.21 2023-11-05T16:07Z Move TODOs to c000000.htm and leave this file as
