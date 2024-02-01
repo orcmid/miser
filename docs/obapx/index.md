@@ -1,4 +1,4 @@
-<!-- index.md 0.0.0                 UTF-8                         2024-01-31
+<!-- index.md 0.0.1                 UTF-8                         2024-02-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obapx/index.md>
      publication <https://orcmid.github.io/miser/obapx/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.0 2024-01-31T21:44Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.1 2024-02-01T04:38Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -48,7 +48,6 @@ extensions is on the determination of canonical forms.  There are dramatic
 alterations required for [CFob](../ob/CFob.txt).
 
 
-
 ## Catalog (Specimen, xYYMMNN Content TBD)
 
 This placeholder links to raw materials and notes, including text files.
@@ -59,6 +58,8 @@ on the web and development of the oMiser/oFrugal software progresses.
 |   :-:                           |   :-:            |  :-:        |  ---  |
 
 | [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-31  | Notes |
+|                                 |                  |             |       |
+| [Discussions](https://github.com/orcmid/miser/discussions) |  |  | Various |
 
 ----
 
@@ -88,6 +89,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.1  2024-02-01T04:38Z Expland, add Discussion link
   0.0.0  2024-01-31T21:44Z Initial placeholder from oMiser 0.0.4 boilerplate
 
 
