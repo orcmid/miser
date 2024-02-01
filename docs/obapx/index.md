@@ -1,4 +1,4 @@
-<!-- index.md 0.0.1                 UTF-8                         2024-02-01
+<!-- index.md 0.0.3                 UTF-8                         2024-02-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obapx/index.md>
      publication <https://orcmid.github.io/miser/obapx/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.1 2024-02-01T04:38Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.3 2024-02-01T18:49Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -47,6 +47,47 @@ manifestation is addressed as part of [oMiser](../oMiser) and
 extensions is on the determination of canonical forms.  There are dramatic
 alterations required for [CFob](../ob/CFob.txt).
 
+## An Illustrative Extension
+
+An extension
+[under consideration](https://github.com/orcmid/miser/discussions/47) consists
+of functions that introduce individuals having scripted applicative
+interpretations scripts.
+
+In the case of the **proc** extension, the idea is that **proc**(_p_) will be
+an individual such that obapx.ap(**proc**(_p_), _x_) is the same as
+obap.ap(_p_, _x_).  There are two consequences.
+
+First, **proc**(_p_) is an individual and the script is generally not exposed.
+Llambda-abstraction does not penetrate into _p_ although it is possible to
+abstract **proc**(_p_) itself, just as for any individual.
+
+Pragmatically, _p_ is not entirely hidden, since
+
+**proc**(_p_) = **proc**(_q_) ⇔ _p_ = _q_
+
+and the inverse of **proc**, **dev**, is also introduced:
+
+**dev**(**proc(_p_)) = _p_
+
+If _s_ is _not_ **proc**(_p_) for some _p_, then
+
+**dev**(_s_) = _s_
+
+This provides a means for procedurally determining whether an individual is
+a **proc** or not.  It is also the case, for oMiser, that comparison of
+individuals is near-instantaneous and so is any **dev**(_s_) = _s_ check.
+
+Pragmatically, again, the occurrence of **proc**(_s_) is also a hint for the
+acceleration of the applicative interpretation of _s_ in oMiser.  It will be
+pragmatically unwise to over-use the facility, however.
+
+The **proc**/**dev** pattern may be adaptable to other situations that may
+arise in expanding the computational utility of oMiser operations.  These will
+all be pragmatic (and mathematically engineered) features.
+
+Of particular benefit will be such extensions that support stateful operation,
+including the ability to alter a state and carry it forward.
 
 ## Catalog (Specimen, xYYMMNN Content TBD)
 
@@ -56,7 +97,7 @@ on the web and development of the oMiser/oFrugal software progresses.
 
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
-
+|                                 |                  |             |       |
 | [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-31  | Notes |
 |                                 |                  |             |       |
 | [Discussions](https://github.com/orcmid/miser/discussions) |  |  | Various |
@@ -89,6 +130,8 @@ from time to time.
 </table>
 <!--
 
+  0.0.3  2024-02-01T18:49Z Correct table layout
+  0.0.2  2024-02-01T18:02Z Add proc/dev illustration
   0.0.1  2024-02-01T04:38Z Expland, add Discussion link
   0.0.0  2024-01-31T21:44Z Initial placeholder from oMiser 0.0.4 boilerplate
 
