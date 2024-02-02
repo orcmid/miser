@@ -1,4 +1,4 @@
-<!-- index.md 0.0.3                 UTF-8                         2024-02-01
+<!-- index.md 0.0.4                 UTF-8                         2024-02-02
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obapx/index.md>
      publication <https://orcmid.github.io/miser/obapx/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.3 2024-02-01T18:49Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.4 2024-02-02T03:44Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -68,7 +68,7 @@ Pragmatically, _p_ is not entirely hidden, since
 
 and the inverse of **proc**, **dev**, is also introduced:
 
-**dev**(**proc(_p_)) = _p_
+**dev**(**proc**(_p_)) = _p_
 
 If _s_ is _not_ **proc**(_p_) for some _p_, then
 
@@ -130,6 +130,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.4  2024-02-02T03:44Z Fix typo
   0.0.3  2024-02-01T18:49Z Correct table layout
   0.0.2  2024-02-01T18:02Z Add proc/dev illustration
   0.0.1  2024-02-01T04:38Z Expland, add Discussion link
