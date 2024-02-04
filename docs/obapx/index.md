@@ -1,4 +1,4 @@
-<!-- index.md 0.1.1                 UTF-8                         2024-02-03
+<!-- index.md 0.1.2                 UTF-8                         2024-02-03
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obapx/index.md>
      publication <https://orcmid.github.io/miser/obapx/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.1 2024-02-03T20:58Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.2 2024-02-04T21:48Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -42,8 +42,8 @@ alterations required for [CFob](../ob/CFob.txt).
 
 ## The Extension Principle
 
-The approach to extensions involves establishment of individuals that have
-specified applicative interpretations.  They remain distinguishable while
+The approach to extensions involves establishment of ***individuals*** having
+special applicative interpretations.  They remain distinguishable while
 having specific interpretations, as if they are new/derived primitives.
 
 Extensions are intended to provide the means by which oMiser can operate in
@@ -68,7 +68,7 @@ Such an extension
 of functions that introduce individuals having specified scripts as their
 applicative interpretations.
 
-### The proc/dev extension
+### The proc/def extension
 
 In the case of the **proc** extension, the idea is that **proc**(_p_) will be
 an individual such that obapx.ap(**proc**(_p_), _x_) is the same as
@@ -91,12 +91,23 @@ If _s_ is _not_ **proc**(_p_) for some _p_, then
 
 **dev**(_s_) = _s_
 
+The specific individuals whose applicative interpretations correspond to
+**proc** and **def** are `obapx.proc` and `obapx.def`.  That is,
+
+- obapx.ap(`obapx.proc`, _p_) = **proc**(_p_)
+- obapx.ap(`obapx.def`, _s_) = **def**(_s_)
+
+To signify the presence of a **proc** individual in a CFob (and hence in
+oFrugalese), a specific notation is required to signify the defined **proc**.
+It's proposed to write the CFob of **proc**(_p_) in a special form such as
+`proc!`(CFob of _p_).
+
 ### Practical considerations
 
-The **proc**/**dev** arrangement provides a means, in oMiser, for procedurally
+The **proc**/**def** arrangement provides a means, in oMiser, for procedurally
 determining whether an individual is a **proc** or not.  It is also the case,
 for oMiser, that comparison of individuals is near-instantaneous and so is
-any **dev**(_s_) = _s_ determination.
+any **def**(_s_) = _s_ determination.
 
 It may also be the case that occurrence of **proc**(_s_) is also a hint for
 acceleration of the applicative interpretation of _s_ in oMiser.  It may be
@@ -123,7 +134,7 @@ challenges will be expanded upon as specific extensions are devised.
 
 There may be features considered to be extensions that defy characterization
 as mathematically-determined.  They may be contingent on unknown reality and
-will probably be disqualified from oMiser.  To the degree that such entitites
+will perhaps be disqualified from oMiser.  To the degree that such entitites
 are tolerated as a practical requirement, it is of interest to find ways to
 quarantine such impurities, isolating their scope and impact from the
 applicability of mathematical reasoning (or, sadly, vice versa).
@@ -170,6 +181,7 @@ from time to time.
 <!--
 
 
+  0.1.2  2024-02-04T17:48Z Distinguish proc/def from obapx.proc/obapx.def
   0.1.1  2024-02-03T20:58Z Introduce the problem of reality-contingency.
   0.1.0  2024-02-03T19:25Z Explain concervative/quasi-conservative extension
   0.0.4  2024-02-02T03:44Z Fix typo
