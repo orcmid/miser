@@ -47,7 +47,7 @@
 		<a target="_top" href="c000000.htm">c000000</a>&gt;</code></b><br>
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
-      S-Format="%Y-%m-%d" startspan -->2024-02-05<!--webbot bot="Timestamp" i-checksum="12132" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->08:10 -0800<!--webbot bot="Timestamp" i-checksum="11944" endspan -->
+      S-Format="%Y-%m-%d" startspan -->2024-02-06<!--webbot bot="Timestamp" i-checksum="12134" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->09:02 -0800<!--webbot bot="Timestamp" i-checksum="11970" endspan -->
       </small></small></p>
       </td>
     
@@ -126,25 +126,50 @@
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
       <td width="11%" align="center" valign="top">
-   &nbsp;</td>
+   <font size="2">2024-02-06</font></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">I think struct! is getting close to what we would want 
+		for environments, but not completely yet.&nbsp; It does seem to be the 
+		case that one could do a <b>with!</b> that inserts a kind of monad pair.&nbsp; 
+		This is pretty foggy here.&nbsp; I need to be tip-toe around this.</font></td>
     </tr>
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
       <td width="11%" align="center" valign="top">
-   &nbsp;</td>
+   <font size="2">2024-02-06</font></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">I am also musing about creation of structures of various 
+		kinds.&nbsp; So, in addition to <b>struct!</b>(<i>s</i>) where <i>s</i> 
+		is taken as a shape/form, and <b>form!</b>(<b>struct!</b>(<i>s</i>)) is 
+		a (normalized) <i>s.&nbsp; </i>The idea is to have a <b>with</b> 
+		operation such that the infix <b>struct!</b>(<i>s</i>) <b>with!</b>(<i>t</i>) 
+		yields a new <b>struct!</b> consisting of <i>t</i> merged into <i>s</i> 
+		by matching the forms, adding new elements where there is not already 
+		one in <i>s</i> and replacing other elements whose identifiers match.&nbsp; 
+		If one wants to make deletions without knowing what others might be, <b>
+		without!</b> seems appropriate.&nbsp; For CFob, we only need to display
+		<b>struct!</b>(s) with the CFob of <i>s</i>.&nbsp; <i><b>These remain 
+		conservative extensions</b></i>, yet provide a means to sugar things 
+		like <b>let</b>, <b>where</b>, and also a limited multiple assignment.&nbsp; 
+		I don&#39;t think this gets at compute expression, but it comes close.&nbsp; 
+		What we haven&#39;t said is what is the applicative interpretation of <b>
+		struct!</b>(<i>s</i>).&nbsp; I think the form labels its constituents 
+		(with lindies generally), and struct!(s).label is the value-side of such 
+		a component in the form, the components being <i>label</i> :: <i>value</i> 
+		pairings.&nbsp; </font></td>
     </tr>
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
       <td width="11%" align="center" valign="top">
-   &nbsp;</td>
+   <font size="2">2024-02-06</font></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">index.md and elsewhere: If I am going to use <b>proc!</b>(<i>p</i>) 
+		in oFrugal, I should use the form elsewhere, perhaps.&nbsp; The <b>!</b> 
+		is special in Ot, but I think the singular use has to with expressions 
+		in CFob that determine (anonymous but distinct) individuals from larger 
+		forms.</font></td>
     </tr>
     
     <tr>
@@ -152,11 +177,12 @@
       <td width="11%" align="center" valign="top">
    <font size="2">2024-02-05</font></td>
       <td width="78%" align="left" valign="top">
-        <font size="2">index.md and <b>proc</b>: It appears that <b>proc</b>(<b>proc</b>(p)) 
-		should be no different than <b>proc</b>(p).&nbsp; So a fixed-point and 
-		so another way to determine that a <b>proc</b> is in hand.&nbsp; The 
+        <font size="2">index.md and <b>proc!</b>: It appears that <b>proc!</b>(<b>proc!</b>(p)) 
+		should be no different than <b>proc!</b>(p).&nbsp; So a fixed-point and 
+		so another way to determine that a <b>proc!</b> is in hand.&nbsp; The 
 		question becomes whether we break something by exploiting that 
-		(extensional?) case.</font></td>
+		(extensional?) case. [dh:2024-02-06 taking my own advice about <b>proc!</b> 
+		usage.]</font></td>
     </tr>
     
     <tr>
@@ -195,10 +221,17 @@
       <td width="11%" align="center" valign="top">
    <font size="2">2024-01-31</font></td>
       <td width="78%" align="left" valign="top">
-        <font size="2">index.md Might want to explain how the<b> proc/def</b> 
+        <font size="2">index.md Might want to explain how the<b> proc!/def!</b> 
 		technique is only similar to QueryInterface and there remains the notion 
 		of somehow providing a kind of reflection this way, nonetheless.&nbsp;&nbsp; 
-		This may follow into the run-time in interesting ways as well.</font></td>
+		This may follow into the run-time in interesting ways as well. 
+		[dh:2024-02-06 changing to use ! generally.&nbsp; Technically, <b>def!</b> 
+		does not need a special form, since it will not appear in a CFob.&nbsp; 
+		We are doing this to make the pairing of the functions explicit, and 
+		perhaps distinct in oFrugal although they are just as easily handled 
+		with the corresponding primitives.&nbsp; So this may just be sugar for 
+		pointing out the extension condition and the involvement of extended 
+		individuals.]</font></td>
     </tr>
     
     <tr>
