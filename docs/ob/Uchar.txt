@@ -1,0 +1,45 @@
+Uchar.txt 0.0.0                  UTF-8                          dh:2024-02-10
+
+            C11 UNIVERSAL CHARACTER NAMES FOR IDENTIFIERS
+            ---------------------------------------------
+
+Annex D
+(normative)
+Universal character names for identifiers
+1 This clause lists the hexadecimal code values that are valid in universal
+  character names in identifiers.
+
+D.1 Ranges of characters allowed
+
+  1 00A8, 00AA, 00AD, 00AF, 00B2−00B5, 00B7−00BA, 00BC−00BE, 00C0−00D6,
+    00D8−00F6, 00F8−00FF
+
+  2 0100−167F, 1681−180D, 180F−1FFF
+
+  3 200B−200D, 202A−202E, 203F−2040, 2054, 2060−206F
+
+  4 2070−218F, 2460−24FF, 2776−2793, 2C00−2DFF, 2E80−2FFF
+
+  5 3004−3007, 3021−302F, 3031−303F
+
+  6 3040−D7FF
+
+  7 F900−FD3D, FD40−FDCF, FDF0−FE44, FE47−FFFD
+
+  8 10000−1FFFD, 20000−2FFFD, 30000−3FFFD, 40000−4FFFD, 50000−5FFFD,
+    60000−6FFFD, 70000−7FFFD, 80000−8FFFD, 90000−9FFFD, A0000−AFFFD,
+    B0000−BFFFD, C0000−CFFFD, D0000−DFFFD, E0000−EFFFD
+
+D.2 Ranges of characters disallowed initially
+
+  1 0300−036F, 1DC0−1DFF, 20D0−20FF, FE20−FE2F
+
+I need to determine, from this, what code points are EXCLUDED, which might be
+the easier case.
+
+I also need to compare with the XML allowance of letters and digits and other
+characters in names.
+
+0.0.0 2024-02-10T17:500Z Initial capture from C11 standard.
+
+                      *** end of Uchar.txt ***

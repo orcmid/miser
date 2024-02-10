@@ -67,7 +67,7 @@
       <p align="right"><code><a href="r000000.htm"><b>ob</b></a></code><b><code><a href="r000000.htm" target="_top">000000</a>&gt;</code></b><br>
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
-      S-Format="%Y-%m-%d" startspan -->2024-02-09<!--webbot bot="Timestamp" i-checksum="12140" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->16:00 -0800<!--webbot bot="Timestamp" i-checksum="11933" endspan -->
+      S-Format="%Y-%m-%d" startspan -->2024-02-10<!--webbot bot="Timestamp" i-checksum="12123" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->11:04 -0800<!--webbot bot="Timestamp" i-checksum="11987" endspan -->
       </small></small></p>
       </td>
     
@@ -148,9 +148,109 @@
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">I do need to know if Windows Terminal VT arrangement does 
+		admit of bidirectional encoding and then there is the question of IME 
+		handling too.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">I am over-thinking this business about lindy encoding.&nbsp; 
+		This needs to be formalized with oFrugal lexical structures.&nbsp; Move 
+		over later when I have article structure there.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">There are locale-dependent uses of dead keys and 
+		over-striking that may be considered different expressions of the same 
+		single code point.&nbsp; I don&#39;t know how to cope with that, at this 
+		point, and I wonder how I can delimit things with relaxations later.&nbsp; 
+		I still want to support portability of oFrugal scripts and that may be 
+		the controlling factor.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">It seems that it might be easier to determine what code 
+		points are excluded in C11 Annex D, not included.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">The whole matter of encoding CFob and hence lindies is a 
+		big deal.&nbsp; It becomes a lexical structure matter and we intend for 
+		it to be encoded and transported with great fidelity.&nbsp; This extends 
+		to oFrugal, of course, but there can be more accomodations there than in 
+		the idea of comparability of CFob texts.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">I am hoping that the C Language provision for Universal 
+		Character Names would help me.&nbsp; I don&#39;t have the identifier rule 
+		about non-digit initial characters.&nbsp; I don&#39;t quite understand the 
+		C11 6.4.3 limitation about $, @, and `, but it has me think I don&#39;t want 
+		to give those characters any significance in oFrugal.&nbsp; The C 
+		Language restriction (6.4.2.1) refers to a range D.1, with the initial 
+		characters that are excluded are in ranges specified in D.2.&nbsp; It is 
+		not clear what these are in reference to, unless it is in ISO/IEC 10646.&nbsp; 
+		In the C99 rationale, there seems to be an Annex I that limits extended 
+		characters and extended digits.&nbsp; There is reference to ISO/IEC TR 
+		10176.&nbsp; I did find D.1 and D.2 in Annex D of C11 finally.&nbsp; It 
+		contradicts the statement about allowance of $, @, and `.&nbsp; This may 
+		have something to do with external identifiers and perhaps not a concern 
+		for Miser.&nbsp; I need to compare with the XML list of alphanumerics as 
+		well.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">lindies: In allowing characters beyond the C printables, 
+		I need to determine how matters such as composed characters, directional 
+		reading, etc., are handled.&nbsp; I intend to rely on the XML 
+		alphanumerics and I need to know exactly what that entails and what the 
+		entering/rendering considerations are.&nbsp; I also need to cope with 
+		escaping in order to introduce and convey large categories of Unicode 
+		code points, ones for which there may be no font or other presentation 
+		provisions.&nbsp; In early releases of oMiser and oFrugal, I might need 
+		to confine things to the ISO/IEC 646 C Language locale set of printables.&nbsp; 
+		I think I may have to punt and stick with the C locale until I am 
+		prepared to cope with writing direction, etc.&nbsp; However, I have used 
+		more-extensive character glyphs in the sketch.&nbsp; </font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2024-02-10</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">lindies: I am musing about the introduction of lindies at
+		</font><strong style="font-weight: 400">
+		<font color="#990033" face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif" size="2">
+		<a href="c000001.htm" style="text-decoration: none">
+		‹ob›</a> </font>
+		<font size="2" face="Times New Roman">rather than with obap.<font color="#990033"> </font>&nbsp;It 
+		is a pragmatic (and significant) provision, and I suppose I need to be 
+		emphatic about them being uninterpreted symbols in which any 
+		significance is not to be found in </font>
+		<font color="#990033" face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif" size="2">
+		<a href="c000001.htm" style="text-decoration: none">
+		‹ob›</a></font><font face="Arial, Microsoft Sans Serif, Helvetica, Geneva, Swiss, Sans Serif" size="2"> 
+		itself.</font></strong></td>
     </tr>
     
     <tr>
