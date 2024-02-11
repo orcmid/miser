@@ -1,0 +1,70 @@
+hybridForm.txt 0.0.0                UTF-8                         2024-02-11
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                        The Miser Project on GitHub
+                        ===========================
+
+           <https://orcmid.github.io/miser/hybridForm/hybridForm.txt>
+
+                    HYBRID DOCUMENT-FORMATTING TEMPLATE
+                    -----------------------------------
+
+    This is a structure of nested web pages that provides boilerplate
+    for topics under a particular project.  It is assumed that the
+    construction material folder, construction/, and any over-all images
+    folder, images/, are at the same level as the hybridForm/ folder.
+
+    This is separated from construction/ templates in order for relative
+    addressing into construction and elsewhere is already correct.
+
+    Technically, it would be ideal to have this as a topic on docEng, with
+    ability to populate other projects rather directly because of their
+    compatible construction structures and Construction Material templaces.
+
+    This is an "actual" topic that serves as its own boilerplate.  It is
+    generally listed only in the construction structure.
+
+MANIFEST
+
+    hybridForm.txt  This synopsis and manifest file/boilerplate
+
+         index.htm  Construction Structure page/boilerplate
+  construction.htm  Construction Zone page/boilerplate
+       c000000.htm  Construction Zone Diary and Job Jar
+
+         index.md   hybrid topic page / boilerplate
+       h000000.htm  hybrid technical Diary and Job Jar
+       h000001.htm  hybrid article catalog / boilerplate
+
+          yyyy/      Articles initiated in year yyyy (boilerplate)
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2024 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. Hybrid Document-Formatting Template.  Miser Project
+   text file hybridForm.txt version 0.0.0 dated 2024-02-11 availabe on the
+   Internet as a version of
+   <https://orcmid.github.io/miser/hybridForm/hybridForm.txt>
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0  2024-02-11T18:57Z Initial boilerplate of itself
+
+                       *** end of hybridForm.txt ***
