@@ -1,4 +1,4 @@
-obtheory.txt 1.3.0                  UTF-8                          2024-01-15
+obtheory.txt 1.3.1                  UTF-8                          2024-02-13
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -38,11 +38,11 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
         Notation for First Order Logic with Equality (FOL=) employed in
         mathematical characterization of ‹ob› as well as of other structures.
 
-     2. PRIMITIVE NOTIONS
+     2. AXIOMATIC NOTIONS
         Four functions, together with "=" that are sufficient for expressing
-        all Obs, given a set of initial individuals.  All computable
-        functions in Of (and decidable predicates) can be expressed in Ot in
-        terms of the primitives.
+        all Obs, given a set of initial individuals.  Every computable
+        function in Of (and decidable predicates) can be expressed in Ot in
+        terms of the axiomatic provisions.
 
      3. DENUMERABILITY AND EFFECTIVENESS
         Constraints on the composition of obs in relationship to other obs
@@ -175,7 +175,7 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
         Lindies are distinct conveniently-named individuals that have
         no intrinsic significance.  They are available to applications of
         obs for any purpose as distinct literals, such as
-        Ʃ'alpha', Ʃ'ABCs', Ʃ'letterQ', Ʃ'foo', Ʃ'4', Ʃ'005', etc.
+        Ʃ'日本語', Ʃ'ABCs', Ʃ'letterQ', Ʃ'foo', Ʃ'4', Ʃ'فارسی', etc.
 
 3. DENUMERABILITY AND EFFECTIVENESS
 
@@ -214,8 +214,8 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
         This case is important because computation, for oMiser, can be viewed
         as systematic determination of obs from given definite ones.  This
         contrasts with the Ot characterizations of functions via patterned
-        specifications employing variables that assert conditions over any
-        determined obs. This is comparable to the situation with arithmetic
+        specifications employing variables that assert conditions given any
+        definite obs. This is comparable to the situation with arithmetic
         where decimal numerals are typical canonical forms for (natural)
         numbers.
 
@@ -226,18 +226,18 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
 
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
-        definite obs as arguments, any definite result is determined by
-        deduction based entirely on an Ot characterization of F in a finite
-        number of mathematical statements.  It can be the case that there is
-        no definite result for some definite arguments.
+        any definite obs as arguments, any definite result is determined by a
+        finite deduction based entirely on an Ot characterization of F in a
+        finite number of mathematical-deduction steps.  It can be the case
+        that there is no definite result for some definite arguments.
 
-        Predicates in Ot are effectively-computable as satisfied or not
+        Predicates of Ot are effectively-computable as satisfied or not
         in a similar manner and termed effectively-decidable.
 
         Observe that ob.a(x), ob.b(x), ob.c(x,y), ob.e(x), the six ob.is-...
         predicates, and the "=" relation are all effectively-computable in
-        this sense.  They are also total in the sense that a result is
-        determined whenever there are definite arguments.
+        this sense.  They are also total in the sense that a definite result
+        is determined whenever there are definite arguments.
 
         In contrast, x ¶ y is only partially-determined.  When x ≠ y is
         determined, it need not be deducible which of x ¶ y or y ¶ x holds.
@@ -245,7 +245,7 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
         by literal identifiers (e.g., lindies) and no other condition on
         comparability.  The strength of Ob9 is that ¬(x ¶ x) be preserved.
         The mathematical benefit of the strict partial-ordering x ¶ y is the
-        availability of structural induction for deductions about functions in
+        availability of structural induction for reasoning about functions in
         Of.
 
         Later, when we make computational interpretations of ‹ob›, there'll
@@ -279,25 +279,22 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
    directly aligned with Turing Computability, despite demonstrable
    equivalence in the Church-Turing sense.
 
-   When we speak of the effectively-computable functions on obs, as
-   obs are characterized here, the claim will be that they are sufficient for
-   the CT-computable functions.  When a universal function is also formulated,
-   correspondence to a Universal Turing Machine and hence Church-Turing
-   Completeness will be claimed.  These stages will be demonstrated as the
-   Miser Project progresses.
+   When we speak of the effectively-computable functions on obs, as obs are
+   characterized here, the claim will be that ‹ob› has equivalent power to all
+   systems for the CT-computable functions.  When a universal function is also
+   formulated, its correspondence to a Universal Turing Machine will be one
+   of the confirming demonstrations and Church-Turing Completeness will be
+   claimed.
 
    Ob7-Ob9 must be augmented in the case of extensions that introduce new
    distinct individuals constructed from other obs.  Supplementary
    definitions will be provided along with the introduction of such
    extensions.
 
-     * Miser Project documentation is being consolidated under GitHub and
-       accessible in viewable form at <https://orcmid.github.io/miser/>.
-
    An account of this foundational theory for the abstract data type
    that underlies all oMiser implementations is narrated in a progression
    of blog posts.  This material will be supplanted by material to be
-   established at <https://orcmid.github;.io/miser>.
+   established at <https://orcmid.github..io/miser>.
 
      * Miser Project: Hark! Is That a Theory I See Before Me?
        <https://orcmid.blogspot.com/2018/07/miser-project-hark-is-that-theory-i-see.html>
@@ -397,7 +394,7 @@ obtheory.txt 1.3.0                  UTF-8                          2024-01-15
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.3.0 dated 2024-01-15 available on the
+   text file obtheory.txt version 1.3.1 dated 2024-02-13 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -423,6 +420,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.3.1 2024-02-13T20:16Z More touch-ups to stay within finitism.
  1.3.0 2024-01-15T18:22Z Clarify sense of ∀x and way of speaking about ‹ob›.
  1.2.4 2023-11-24T19:14Z Improve the note on origins, check citations
  1.2.3 2023-11-19T21:33Z Establish the references here in ../../bib
