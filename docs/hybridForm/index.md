@@ -1,4 +1,4 @@
-<!-- index.md 0.0.2                 UTF-8                         2024-02-13
+<!-- index.md 0.0.3                 UTF-8                         2024-02-14
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -11,7 +11,7 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
 	<i>The Miser Project</i><br /><!-- CUSTOMIZE FOR PROJECT -->
-    <i><big><big>Hybrid Document-Format Template</big></big></i></strong></font></p>
+    <i><big><big>Hybrid Document-Format Exemplar</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.2 2024-02-13T17:23Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.3 2024-02-14T21:07Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -35,8 +35,8 @@
 
 ## Hybrid Format
 
-The hybridForm topic is designed as a topic-level template at the level of
-GitHub Pages whether in a `project/docs`, the typical case, or in an overall
+The hybridForm topic is designed as a topic-level topic exemplar at the level
+of GitHub Pages whether in a `project/docs`, or in an overall
 `project/` as the case for `orcmid.github.io/` authoring.  The key nature of
 the hybrid format is that mixed HTML and Markdown are employed and the topic
 level is at the same level as a `construction/` Construction Material folder.
@@ -60,11 +60,12 @@ consistent availability of `images/` and `construction/`.
 
 ### Special Construction-Structure Topic
 
-This page on the web is in the hybrid document format employed for content
-topics of [Orcmid on GitHub](https://orcmid.github.io) projects.  It is an
-annotated exemplar of the format it provides templating for.  It is viewed
-as documentation [construction structure](index.htm).  As construction
-material, it is not catalogued as a [technical content](../) topic (except in
+This page on the web is itself exemplary of the hybrid document format
+employed for content topics of [Orcmid on GitHub](https://orcmid.github.io)
+projects.  It is an annotated exemplar of the format it provides templating
+for.  It is viewed as documentation [Construction Structure](index.htm).
+As construction material, it is not catalogued with the
+[technical content](../) topic (except in
 [docEng](https://orcmid.github.io/docEng) where it is subject matter).
 
 [hybridForm](./) has to be a peer of technical content topics in order to
@@ -86,15 +87,15 @@ customized in any other topic where hybridForm is cloned as boilerplate.
 There is HTML editing employed in the hybrid formatting, so it is generally
 not possible to operate exclusively in Markdown format. For `*.md` pages, the
 embedded HTML is easily customized when adhering to this Construction
-Structure.
+Structure organization.
 
  There are also some `*.htm` completely-HTML portions in the hybrid format.
  These generally don't require editing by contributors to the technical
  content, including areas of the repository used for the creation of software.
 
 There will be more information under the
-[docEng](https://orcmid.github.io/docEng) project where this usage of
-hybridFormat is as a model for use in other projects.
+[docEng](https://orcmid.github.io/docEng) project where the hybridFormat topic
+there is exemplary for use in other projects.
 
 ## Catalog (Specimen, hYYMMNN Content)
 
@@ -145,6 +146,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.3  2024-02-14T21:07Z Emphasis on "examplar" and touch-ups
   0.0.2  2024-02-13T17:23Z More text on hybridForm principles
   0.0.1  2024-02-11T20:40Z Customize for Miser Project
   0.0.0  2024-02-11T19:35Z Create boilerplate from 0.0.4 ob/index.md
