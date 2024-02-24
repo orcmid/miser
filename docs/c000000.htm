@@ -42,7 +42,7 @@
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
       S-Format="%Y-%m-%d" startspan -->2024-02-24<!--webbot bot="Timestamp" i-checksum="12132" endspan -->
-      -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->09:09 -0800<!--webbot bot="Timestamp" i-checksum="12082" endspan -->
+      -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->12:28 -0800<!--webbot bot="Timestamp" i-checksum="12069" endspan -->
       </small></small></p>
       </td>
     
@@ -134,16 +134,55 @@
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><font size="2">2024-02-24</font></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">The original idea was that individuals always preceded 
+		any constructions.&nbsp; So the idea of an individual pinning something 
+		that needs to be forwardable does require that such individuals be 
+		managed elsewhere, but they do have to pin any ob(s) that they have 
+		incorporated.&nbsp; But we do really want to know forwarding of the 
+		individual, because that will also run a forwarding on the pinned obs.&nbsp; 
+		Oh my.&nbsp; <b>proc</b> and <b>struct</b> are the likely serious 
+		perpetrators here.</font></td>
     </tr>
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><font size="2">2024-02-24</font></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">In any interchange formats for oMiser/oFrugal, there must 
+		be a normalization required for lindies conveyed in persistent forms, 
+		such as XML, whether or not in packages or compressed in other manners.&nbsp; 
+		The platform-independent (?) hashing must work properly, and the hashing 
+		of lindy UTF-8 expression must be included.&nbsp; This is also the 
+		reason that the UTF-8 expression must be retained with the lindy in some 
+		manner, one that allows lindies to be garbage-collected.&nbsp; This can 
+		work.&nbsp; lindies, as literals, have no applicative interpretation 
+		(except as pure lindy forms) and the link could be to something that has 
+		the UTF-8 lindy identfier.&nbsp; This does raise some considerations 
+		about garbage-collection though.&nbsp; The generational scheme would 
+		usually not do anything but sweep away unreachable lindies in the 
+		discarded generation.&nbsp; The only way out of that is to have lindies 
+		somewhere else.&nbsp; This may be a problem with non-primitive 
+		individuals generally.&nbsp; We need to know when an individual is 
+		caught in a Cheney copy operation and copied to another generation.&nbsp; 
+		Unfortunately, that tells us nothing about ones that are not swept out 
+		of the to-be deleted generation.&nbsp; So the definition, wherever it is 
+		kept, must be re-forwarded to the literal, or else the lindies are all 
+		managed in a different space.&nbsp; Having to reference count them is no 
+		help because we won't ever know when they become unreachable if we do 
+		generational collection.&nbsp; This is the case for all non-primitive 
+		individuals and we need a generic solution.&nbsp; We need to be watchful 
+		of precedence also.&nbsp; We'd like that to be implicitly preserved.&nbsp; 
+		If a non-primitive individual is forwarded, we do know that.&nbsp; If it 
+		is not forwarded but in the scrubbed generation, we know to remove it 
+		from wherever we are pinning from.&nbsp; If it is forwarded into a new 
+		generation, we can know that.&nbsp; The problem, now, is that we may 
+		need to somehow know what generation an individual was established in 
+		and when that generation is scrubbed without forwarding the individual 
+		into an older generation.&nbsp; This gets messy.&nbsp; At the same time, 
+		the generation collection scheme for getting rid of short-lived obs is 
+		very important.&nbsp; </font></td>
     </tr>
     
     <tr>
