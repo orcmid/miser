@@ -41,8 +41,8 @@
       <p align="right"><b><code><a href="c000000.htm" target="_top">c000000</a>&gt;</code></b><br>
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
-      S-Format="%Y-%m-%d" startspan -->2024-02-11<!--webbot bot="Timestamp" i-checksum="12125" endspan -->
-      -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->10:24 -0800<!--webbot bot="Timestamp" i-checksum="12001" endspan -->
+      S-Format="%Y-%m-%d" startspan -->2024-02-24<!--webbot bot="Timestamp" i-checksum="12132" endspan -->
+      -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->09:09 -0800<!--webbot bot="Timestamp" i-checksum="12082" endspan -->
       </small></small></p>
       </td>
     
@@ -148,9 +148,43 @@
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><font size="2">2024-02-24</font></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">I need a folio on lindies and how the spellings are 
+		normalized for beyond-ASCII characters.&nbsp; The problem is going to be 
+		with arabic scripts and other RTL caligraphies.&nbsp; There are also 
+		matters of glyph compositions that need to be normalized, ideally to the 
+		correct single Unicode code point.&nbsp; I need to stage this.&nbsp; 
+		Part of this is a Frugal matter, since it is responsible for feeding the 
+		desired form to oMiser and also extracting the printable form.&nbsp; 
+		This is an oFrugal/oMiser straddling situation, as is the pinning of <b>
+		<font face="Courier New">^<i>lindy</i></font><font face="Times New Roman"><i>
+		</i></font></b>forms<i><b>.</b></i>&nbsp; Well, not exactly.&nbsp; I do 
+		have the need to normalize there, just as I need to do so for lindies 
+		generally.&nbsp; So the same normalization holds, although the <b>
+		<font face="Courier New">^<i>lindy</i></font></b> has nothing to do with 
+		the <b><font face="Courier New"><i>lindy</i></font></b> as an 
+		individual. They also must not be confused at the oMiser level, since <b>
+		<font face="Courier New">^<i>lindy</i></font></b> can be redefined in 
+		the oFrugal input stream and there is no such thing for the oMiser <b>
+		<font face="Courier New"><i>lindy</i></font></b>.&nbsp; At the oMiser 
+		run-time interface, there must be defensive normalization in the 
+		handling of a UTF-8 string though, since we can't count on the 
+		view-controller being oFrugal.&nbsp; Until we can get the Unicode rules 
+		down pat, we will limit lindies to the C Language locale alphanumerics, 
+		plus &quot;-&quot; and &quot;_&quot;.&nbsp; It would be nice if the filtering of UTF8 were 
+		straightforward, such as that defined for \uxxxx and \Uxxxxxxxx.&nbsp; 
+		We will also allow these, so we need to be cautious in filtering in 
+		either direction.&nbsp; That is definitely a future provision and not 
+		something we'll entertain at first.&nbsp; The hard part is going to have 
+		to do with font capabilities with oFrugal output of lindies.&nbsp; So 
+		the introduction of \u-forms is going to be messy.&nbsp; We have to 
+		manage that along with the allowance of UTF8 beyond the ISO-648 
+		alphanumerics.&nbsp; IMPORTANT: This also matters for how enclosures are 
+		presented in CFob.&nbsp; OK, this is already an ob/ topic because of 
+		CFob.&nbsp; We need to address this in conjunction with CFob and the 
+		ability to near-literal ability of CFob to distinguish obs in a precise 
+		manner.</font></td>
     </tr>
     
     <tr>
