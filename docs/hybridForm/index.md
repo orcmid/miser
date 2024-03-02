@@ -1,4 +1,4 @@
-<!-- index.md 0.0.4                 UTF-8                         2024-02-26
+<!-- index.md 0.0.5                 UTF-8                         2024-03-02
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.4 2024-02-26T21:28Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.5 2024-03-02T16:36Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -36,6 +36,13 @@
 ## Topic Synopsis or Overview <!-- CUSTOMIZE FOR THE INTENDED TOPIC -->
 
 <!-- REPLACE THIS CONTENT WITH TOPIC-SPECIFIC STATEMENTS -->
+> NOTICE: This is a work in progress.  The hybridForm technique is developed
+*in situ* under the Miser Project on GitHub.  On completion for this initial
+case, the material will be put in polished form under the
+[docEng](../../docEng/) project.  There is some urgency to applying this
+technique to the Miser Project first, so that continuing documentat and
+development can proceed using this technique. dh:2024-03-02
+
 This topic-level folder is an exemplar, a kind of self-describing template,
 for topics and topical articles documenting the Miser Project on Github.  This
 is Construction Material, but in the form of the exemplified topical content.
@@ -54,7 +61,7 @@ Additional material and consideration of alternatives is found in the
 
 > **IMPORTANT:** The customization instructions for this page are incorporated
   in the authored `index.md` form, not the published `index.html` form that
-  is published via GitHub Pages.
+  is published via GitHub Pages.  The instructions are in HTML comments.
 
 ## Related Material
 
@@ -107,6 +114,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.5  2024-03-02T16:36Z Notice about work in progress
   0.0.4  2024-02-26T21:28Z Improvement about the templating
   0.0.3  2024-02-14T21:07Z Emphasis on "examplar" and touch-ups
   0.0.2  2024-02-13T17:23Z More text on hybridForm principles
