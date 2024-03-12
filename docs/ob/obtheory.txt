@@ -1,4 +1,4 @@
-obtheory.txt 1.3.1                  UTF-8                          2024-02-13
+obtheory.txt 1.3.2                  UTF-8                          2024-03-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -294,7 +294,7 @@ obtheory.txt 1.3.1                  UTF-8                          2024-02-13
    An account of this foundational theory for the abstract data type
    that underlies all oMiser implementations is narrated in a progression
    of blog posts.  This material will be supplanted by material to be
-   established at <https://orcmid.github..io/miser>.
+   established at <https://orcmid.github.io/miser>.
 
      * Miser Project: Hark! Is That a Theory I See Before Me?
        <https://orcmid.blogspot.com/2018/07/miser-project-hark-is-that-theory-i-see.html>
@@ -330,12 +330,18 @@ obtheory.txt 1.3.1                  UTF-8                          2024-02-13
        expanding on some specialized notions applied throughout development
        of the Miser Project.
 
+   [Burge1975] Burge, William H.  Recursive Programming Techniques.
+       Addison-Wesley (Reading, MA: 1975).  ISBN 0-201-14450-6.  See
+       (../../bib/authors.htm#Burge1975).
+
    [Church1936] Church, Alonzo.  An Unsolvable Problem of Elementary Number
        Theory.  American Journal of Mathematics 58 (1936), 345-363. Reprinted
-       on pp.88-115 with supplemental notes in "The Undecidable: Basic Papers
-       on Undecidable Propositions, Unsolvable Problems, and Computable
-       Functions," Martin Davis (ed.), Raven Press (New York: 1965), ISBN
-       0-911216-01-4. See (../../bib/authors.htm#Church1936).
+       on pp.88-115 with supplemental notes in [Davis1965].  See
+       (../../bib/authors.htm#Church1936).
+
+    [Davis1965] Davis, Martin (ed.).  The Undecidable: Basic Papers on
+       Undecidable Propositions, Unsolvable Problems and Computable Functions.
+       Rave Press (New York: 1965).  ISBN 0-911216-01-4.
 
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
@@ -352,6 +358,9 @@ obtheory.txt 1.3.1                  UTF-8                          2024-02-13
    [Rogers1987] Rogers, Hartley, Jr.  Theory of Recursive Functions and
        Effective Computability.  MIT Press (Cambridge, MA: 1987).  ISBN
        0-262-68052-1 pbk.  See (../../bib/authors#Rogers1987).
+
+   [Ross1967] Ross, Douglas T. The AED Free Storage Package.  Comm. ACM 10, 8
+       (August 1967), 482-492.  See (../../bib/authors#Ross1967).
 
    [Strachey1965] Strachey, Christopher.  A General Purpose Macrogenerator.
        The Computer Journal 8, 3 (January 1965), 225-241.  Available at
@@ -394,7 +403,7 @@ obtheory.txt 1.3.1                  UTF-8                          2024-02-13
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.3.1 dated 2024-02-13 available on the
+   text file obtheory.txt version 1.3.2 dated 2024-03-11 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -420,6 +429,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.3.2 2024-03-11T17:07Z Bibliography touch-ups
  1.3.1 2024-02-13T20:16Z More touch-ups to stay within finitism.
  1.3.0 2024-01-15T18:22Z Clarify sense of ∀x and way of speaking about ‹ob›.
  1.2.4 2023-11-24T19:14Z Improve the note on origins, check citations
