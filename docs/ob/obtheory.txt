@@ -1,4 +1,4 @@
-obtheory.txt 1.3.2                  UTF-8                          2024-03-11
+obtheory.txt 1.3.3                  UTF-8                          2024-03-26
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -341,7 +341,8 @@ obtheory.txt 1.3.2                  UTF-8                          2024-03-11
 
     [Davis1965] Davis, Martin (ed.).  The Undecidable: Basic Papers on
        Undecidable Propositions, Unsolvable Problems and Computable Functions.
-       Rave Press (New York: 1965).  ISBN 0-911216-01-4.
+       Rave Press (New York: 1965).  ISBN 0-911216-01-4.  See
+       (../../bib/authors.htm#Davis1965).
 
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
@@ -403,7 +404,7 @@ obtheory.txt 1.3.2                  UTF-8                          2024-03-11
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.3.2 dated 2024-03-11 available on the
+   text file obtheory.txt version 1.3.3 dated 2024-03-26 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -429,6 +430,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.3.3 2024-03-26T17:09Z Add link for Davis1965
  1.3.2 2024-03-11T17:07Z Bibliography touch-ups
  1.3.1 2024-02-13T20:16Z More touch-ups to stay within finitism.
  1.3.0 2024-01-15T18:22Z Clarify sense of ∀x and way of speaking about ‹ob›.
