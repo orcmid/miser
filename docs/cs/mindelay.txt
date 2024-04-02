@@ -84,27 +84,13 @@ NOTES AND REFERENCES
 [Cheatham1964]
     Cheatham, T.E.Jr., Sattley, Kirk.  Syntax-Directed Compiling.
     Proceedings of the April 21-23 1964 Spring Joint Computer Conference
-    (AFIPS: April 1964), 31-57.
-       A general parser (syntax analyzer) for context-free languages is
-    described.  What we now refer to as a lexical analyser is identified as a
-    recognizer layer.  The analyzer method is most easily recognized as a
-    top-down parser with back-tracking.  It could even be used to produce all
-    analyses available for an ambiguous input.  Refinements of this method
-    that I have explored include pruning alternatives when they cannot be
-    possible if the input will be valid.  This allows early analysis to be
-    forwarded to a generation layer.  There also needs to be some assistance
-    in the case of left-recursive generations, usually expedited by
-    transformation into tail-iterative forms.
+    (AFIPS: April 1964), 31-57.  See <../../../bib/authors.htm#Cheatham1964>.
 
 [Evans1961]
     Evans, A., Perlis, A.J., Van Zoeren, H. The Use of Threaded Lists in
     Construction of a Combined ALGOL and Machine-Like Assembly Processor.
     Comm. ACM 4, 1 (Jan. 1961), 36-41.
-    DOR <https://dl.acm.org/doi/10.1145/366062.366081>.
-       Footnote 2 on p.37 describes "mindelayscandoer" as "scan and do
-    translation to final code as quickly as possible."  The idea of
-    threaded lists does not apply well to oMiser, though a counterpart
-    might assist in operator-precedence handling.
+    See <../../../bib/authors.htm#Evans1961>.
 
 [Floyd1963]
     Floyd, Robert W.  Syntactic Analysis and Operator Precedence.  J. ACM
