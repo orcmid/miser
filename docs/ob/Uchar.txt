@@ -1,7 +1,17 @@
-Uchar.txt 0.0.0                  UTF-8                          dh:2024-02-10
+Uchar.txt 0.0.1                  UTF-8                          dh:2024-04-10
 
             C11 UNIVERSAL CHARACTER NAMES FOR IDENTIFIERS
             ---------------------------------------------
+
+Note that these are specifically the characters that can be expressed with
+'\uxxxx` and `\Uxxxxxxxx` escapes.  The ASCII characters that are part of the
+"C locale" are never introduced in this manner, and the use of triples for
+non-alphanumeric code points in that locale is a separate matter that will
+not be supported by oFrugal.
+
+So the additional allowed characters in lindy names are
+
+  002D (-), 0030-00039 (0-9), 0041-005A (A-Z), 005F (_), 001-007A (a-z).
 
 Annex D
 (normative)
@@ -33,6 +43,10 @@ D.1 Ranges of characters allowed
 D.2 Ranges of characters disallowed initially
 
   1 0300−036F, 1DC0−1DFF, 20D0−20FF, FE20−FE2F
+  0300-036F are diacritical marks and don't precede what they modify.
+  1DC0-1DFF are not identified in Unicode 4.0., 20D0-20FF are again dicritical
+  marks (for symbols), FE20-FE2F are combining half marks.  I am uncertain
+  about this.  I definitely need to look at the XML choices for alhpanumerics.
 
 I need to determine, from this, what code points are EXCLUDED, which might be
 the easier case.
@@ -40,6 +54,7 @@ the easier case.
 I also need to compare with the XML allowance of letters and digits and other
 characters in names.
 
-0.0.0 2024-02-10T17:500Z Initial capture from C11 standard.
+0.0.1 2024-04-10T19:55Z More puzzling about C11 allowed code points
+0.0.0 2024-02-10T17:50Z Initial capture from C11 standard.
 
                       *** end of Uchar.txt ***
