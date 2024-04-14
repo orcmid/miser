@@ -1,4 +1,4 @@
-obtheory.txt 1.4.0                  UTF-8                          2024-04-14
+obtheory.txt 1.4.1                  UTF-8                          2024-04-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -79,7 +79,7 @@ obtheory.txt 1.4.0                  UTF-8                          2024-04-14
 
       x = y is the identity relationship, with ≠ its negation
 
-      x ¶ y read as x precedes y, an ordering relationship that applies
+       read as x precedes y, an ordering relationship that applies
             over Ob
 
    Although these can be seen as rules for computation, Ot is a deductive
@@ -197,8 +197,10 @@ obtheory.txt 1.4.0                  UTF-8                          2024-04-14
         ob.is-individual(x) ⇒ x ¶ ob.c(x,y)
         ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
 
-        ob.is-lindy(x) ⇒ ¬ꓱy[y ¶ x]              (g), grounding
-        ob.is-primitive(x) ⇒ ¬ꓱy[y ¶ x]
+        ob-is-elemental(x)                        (g), grounding
+           ⇔ ob.is-lindy(x) ∨ ob-is-primitive(x)
+        ob.is-elemental(x) ⇒ ¬ꓱy[y ¶ x]
+        ¬ob.is-elemental(x) ⇒ ꓱy[y ¶ x]
 
    Ob10. Denumerable Canonical Form
 
@@ -229,9 +231,9 @@ obtheory.txt 1.4.0                  UTF-8                          2024-04-14
         Without addressing fine technicalities here, a function F over Ob (and
         in Of by definition) is claimed to be effectively-computable if, given
         any definite obs as arguments, any definite result is determined by a
-        finite deduction based entirely on an Ot characterization of F in a
-        finite number of mathematical-deduction steps.  It can be the case
-        that there is no definite result for some definite arguments.
+        finite deduction based entirely on the Ot characterization of F.  It
+        can be the case that there is no definite result for some definite
+        arguments.
 
         Predicates of Ot are effectively-computable as satisfied or not
         in a similar manner and termed effectively-decidable.
@@ -254,9 +256,9 @@ obtheory.txt 1.4.0                  UTF-8                          2024-04-14
         be no need for an explicit counterpart of x ¶ y.  It is sufficient
         that no ob interpretation can appear as a component within its own
         composition, however deeply, and supporting operations cannot violate
-        that constraint.  In valid computational interpretations, counter-
-        parts of obs are immutable and have no cycles, the special case of
-        singletons notwithstanding.
+        that constraint in the computational interpretation.  In valid
+        computational interpretations, counterparts of obs are immutable and
+        have no cycles, the special case of singletons notwithstanding.
 
 4. NOTES AND REFERENCES
 
@@ -406,7 +408,7 @@ obtheory.txt 1.4.0                  UTF-8                          2024-04-14
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.4.0 dated 2024-04-14 available on the
+   text file obtheory.txt version 1.4.1 dated 2024-04-14 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -425,7 +427,7 @@ TODO
 
  * Provide a little more about FOL= as used for ‹ob› structure, especially
    with regard to universal quantification and similarity to familiar algebra.
-   Account for the use of ¬ꓱy in Ob9.
+   Account for the use of ¬y in Ob9.
 
  * Ensure that all of the citations and references here are available via
    orcmid.github.io/bib/ so they can be linked from the web version of
@@ -433,6 +435,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.4.1 2024-04-14T20:15Z Introduce ob-is-elemental on Ob9 and tighten x ¶ y
  1.4.0 2024-04-14T17:20Z Expand Ob9 to establish that primitives and lindies
        have no predecessors.
  1.3.3 2024-03-26T17:09Z Add link for Davis1965
