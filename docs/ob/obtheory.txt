@@ -1,4 +1,4 @@
-obtheory.txt 1.3.3                  UTF-8                          2024-03-26
+obtheory.txt 1.4.0                  UTF-8                          2024-04-14
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -137,10 +137,12 @@ obtheory.txt 1.3.3                  UTF-8                          2024-03-26
 
    Ob7. Identity Among Primitive Individuals
 
-        ob.is-individual(ob.NIL)
+        ob.is-individual(ob.NIL)                                (a)
+
+        ob-is-primitive(ob.NIL)                                 (b)
 
         There are a limited number of fixed-name primitive individuals.
-        They can be taken as given.  They are not definable in terms of
+        They can be taken as given.  These are not definable in terms of
         others.
 
         Individuals identified by upper-case namings, such as ob.NIL,
@@ -195,6 +197,9 @@ obtheory.txt 1.3.3                  UTF-8                          2024-03-26
         ob.is-individual(x) ⇒ x ¶ ob.c(x,y)
         ob.is-individual(x) ⇒ x ¶ ob.c(y,x)
 
+        ob.is-lindy(x) ⇒ ¬ꓱy[y ¶ x]              (g), grounding
+        ob.is-primitive(x) ⇒ ¬ꓱy[y ¶ x]
+
    Ob10. Denumerable Canonical Form
 
         Ob consists of those distinct, finitely-expressible obs satisfying
@@ -212,12 +217,9 @@ obtheory.txt 1.3.3                  UTF-8                          2024-03-26
         can be exhibited explicitly.
 
         This case is important because computation, for oMiser, can be viewed
-        as systematic determination of obs from given definite ones.  This
-        contrasts with the Ot characterizations of functions via patterned
-        specifications employing variables that assert conditions given any
-        definite obs. This is comparable to the situation with arithmetic
-        where decimal numerals are typical canonical forms for (natural)
-        numbers.
+        as systematic determination of definite obs from given definite ones.
+        This is comparable to the situation with arithmetic where decimal
+        numerals are typical canonical forms for (natural) numbers.
 
         Certain extensions to ‹ob› will augment the variety of canonical forms
         without altering the denumerability of them, preserving Ob1-Ob9.
@@ -404,7 +406,7 @@ obtheory.txt 1.3.3                  UTF-8                          2024-03-26
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.3.3 dated 2024-03-26 available on the
+   text file obtheory.txt version 1.4.0 dated 2024-04-14 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -423,6 +425,7 @@ TODO
 
  * Provide a little more about FOL= as used for ‹ob› structure, especially
    with regard to universal quantification and similarity to familiar algebra.
+   Account for the use of ¬ꓱy in Ob9.
 
  * Ensure that all of the citations and references here are available via
    orcmid.github.io/bib/ so they can be linked from the web version of
@@ -430,6 +433,8 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.4.0 2024-04-14T17:20Z Expand Ob9 to establish that primitives and lindies
+       have no predecessors.
  1.3.3 2024-03-26T17:09Z Add link for Davis1965
  1.3.2 2024-03-11T17:07Z Bibliography touch-ups
  1.3.1 2024-02-13T20:16Z More touch-ups to stay within finitism.
