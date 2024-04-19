@@ -1,4 +1,4 @@
-obtheory.txt 1.4.1                  UTF-8                          2024-04-14
+obtheory.txt 1.4.2                  UTF-8                          2024-04-19
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -13,13 +13,13 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
 
            Ob, nothing but obs, the domain of discourse
            Of, nothing but functions on obs
-           Ot, the applied-logic theory in which the structure is
+           Ot, the applied-logic axiomatic theory in which the structure is
                characterized for any obs whatsoever
 
    Obs are abstract mathematical entities.  They can be construed as encoding
    of data along with theoretical expression of effectively-computable
    functions on such data. This is the foundation on which the oMiser model of
-   computation model is errected.
+   computation is errected.
 
    The appeal of ‹ob› among computational models is how interpretation of obs
    as programs exhibits the stored-program principle and the manner in which
@@ -29,7 +29,7 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
    Church-Turing Complete.
 
    An informal overview, with illustrative usage, is found in the file
-   <https://orcmid.github.io/miser/ob/sketch.txt>.
+   <https://orcmid.github.io/miser/oFrugal/sketch.txt>.
 
 
                                   CONTENT
@@ -40,7 +40,7 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
 
      2. AXIOMATIC NOTIONS
         Four functions, together with "=" that are sufficient for expressing
-        all Obs, given a set of initial individuals.  Every computable
+        all Obs, given a supply of initial individuals.  Every computable
         function in Of (and decidable predicates) can be expressed in Ot in
         terms of the axiomatic provisions.
 
@@ -58,8 +58,10 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
    For Ot, standard First-Order Logic with Equality (FOL=) is employed
    [Wikipedia2019].  An equational format is used with variables understood
    to be universally quantified over the domain of discourse, Ob.  Set theory
-   is not employed. The reading of ∀x is "for any x" although the quantifiers
-   are generally implicit.  Form ∃x will be rare.
+   is not employed. The reading of ∀x is "for any x" or "given an ob, x";
+   ∀ quantifiers preceding an entire formula are generally implicit.  Form
+   ∃x with regard to the existence/non-existence of obs for satisfying a
+   condition is limited (cf. Ob9(g), below).
 
    Logical aspects of theory Ot are expressed using the following notation.
    We intend truth-value semantics of deductions involving propositions
@@ -79,7 +81,7 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
 
       x = y is the identity relationship, with ≠ its negation
 
-       read as x precedes y, an ordering relationship that applies
+      x ¶ y is read as x precedes y, an ordering relationship that applies
             over Ob
 
    Although these can be seen as rules for computation, Ot is a deductive
@@ -95,7 +97,7 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
    characteristics via mathematical conditions that distinguish them.
 
    Functions ob.a, ob.b, ob.c, ob.e and allied relations are taken
-   as given and complete.
+   as given and completely specified.
 
    Ob1. Pairs
         z = ob.c(x,y) ⇒ ob.a(z) = x ∧ ob.b(z) = y
@@ -183,7 +185,7 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
 
    Ob9. The ¶ Precedence Condition
 
-        ¬ (x ¶ x)                               (a), irreflexive
+        ¬ (x ¶ x)                                (a), irreflexive
         (x ¶ y) ⇒ ¬ (y ¶ x)                     (b), asymmetrical
         (x ¶ y) ∧ (y ¶ z) ⇒ (x ¶ z)             (c), transitive
 
@@ -275,13 +277,12 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
    mid-1960s, with operation now via a list-processing abstraction.
 
    "Effectively computable" and "effective computability" are used in the
-   manner of the title of [Rogers1987].  Identification, for now, with a kind
+   manner of the title of [Rogers1987].  Employment, for now, is as a kind
    of deduction separate from computational interpretations (e.g., as
-   algorithms) is meant as a case of effective calculability, the term
-   employed in [Church1936] before a general-purpose digital computer had
-   ever been seen or described.  For the Miser Project, computability is not
-   directly aligned with Turing Computability, despite demonstrable
-   equivalence in the Church-Turing sense.
+   algorithms), akin to the term employed in [Church1936] before a
+   general-purpose digital computer had ever been seen or described.  For the
+   Miser Project, computability is not directly aligned with Turing
+   Computability, despite demonstrable equivalence in the Church-Turing sense.
 
    When we speak of the effectively-computable functions on obs, as obs are
    characterized here, the claim will be that ‹ob› has equivalent power to all
@@ -408,7 +409,7 @@ obtheory.txt 1.4.1                  UTF-8                          2024-04-14
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.4.1 dated 2024-04-14 available on the
+   text file obtheory.txt version 1.4.2 dated 2024-04-19 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -425,16 +426,13 @@ TODO
    form.  Keep in mind that the .txt version had been intended to be always
    definitive.
 
- * Provide a little more about FOL= as used for ‹ob› structure, especially
-   with regard to universal quantification and similarity to familiar algebra.
-   Account for the use of ¬y in Ob9.
-
  * Ensure that all of the citations and references here are available via
    orcmid.github.io/bib/ so they can be linked from the web version of
    obtheory.txt.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.4.2 2024-04-19T18:57Z More touch-ups and clarification on qualtifiers
  1.4.1 2024-04-14T20:15Z Introduce ob-is-elemental on Ob9 and tighten x ¶ y
  1.4.0 2024-04-14T17:20Z Expand Ob9 to establish that primitives and lindies
        have no predecessors.
