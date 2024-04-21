@@ -1,4 +1,4 @@
-<!-- index.md 0.0.5                 UTF-8                         2024-03-02
+<!-- index.md 0.0.6                 UTF-8                         2024-04-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -24,10 +24,10 @@
       </a>
       <br /><br />
       <b><code>
-         <a href="index.html" target="_top">index</a>&gt;</code></b>
+         <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.5 2024-03-02T16:36Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.6 2024-04-19T19:56Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -40,18 +40,26 @@
 *in situ* under the Miser Project on GitHub.  On completion for this initial
 case, the material will be put in polished form under the
 [docEng](../../docEng/) project.  There is some urgency to applying this
-technique to the Miser Project first, so that continuing documentat and
+technique to the Miser Project first, so that continuing documentation and
 development can proceed using this technique. dh:2024-03-02
 
 This topic-level folder is an exemplar, a kind of self-describing template,
 for topics and topical articles documenting the Miser Project on Github.  This
 is Construction Material, but in the form of the exemplified topical content.
 
+By topic-level is meant that this hybridForm folder is a direct sublevel of
+a GitHub Pages source folder.  For the Miser Project, this is directly under
+[miser/docs](https://github.com/orcmid/miser/tree/master/docs) and
+published at
+[orcmid.github.io/miser/hybridForm](https://orcmid.github.io/miser/hybridForm).
+
 An entirely new Miser Project topic, or articles under existing topics, can be
 initialized by selectively copying from this folder, renaming the copies, and
 editing the copies to customize their content.  Each file of the `hybridForm/`
 folder incorporates instructions and checklists for customization with
-intended content.
+intended content.  For a new topic, the entire hybridForm folder can be
+copied and renamed.  Alternatively, it can be done by pirating copies from
+existing topics and portions of hybridForm/.
 
 The Construction Structure and HTML-article pages depend on Microsoft Office
 FrontPage 2003 features.  The hybridForm of Markdown pages does not. Take this
@@ -114,6 +122,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.6  2024-04-19T19:56Z Touch-up with annotations
   0.0.5  2024-03-02T16:36Z Notice about work in progress
   0.0.4  2024-02-26T21:28Z Improvement about the templating
   0.0.3  2024-02-14T21:07Z Emphasis on "examplar" and touch-ups

@@ -1,4 +1,4 @@
-hybridForm.txt 0.0.0                UTF-8                         2024-02-11
+hybridForm.txt 0.0.1                UTF-8                         2024-04-19
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                         The Miser Project on GitHub
@@ -14,7 +14,7 @@ hybridForm.txt 0.0.0                UTF-8                         2024-02-11
     construction material folder, construction/, and any over-all images
     folder, images/, are at the same level as the hybridForm/ folder.
 
-    This is separated from construction/ templates in order for relative
+    This is separated from construction/ templates so that relative
     addressing into construction and elsewhere is already correct.
 
     Technically, it would be ideal to have this as a topic on docEng, with
@@ -24,16 +24,20 @@ hybridForm.txt 0.0.0                UTF-8                         2024-02-11
     This is an "actual" topic that serves as its own boilerplate.  It is
     generally listed only in the construction structure.
 
+    When this file is copied under the setup of a new topic, it is renamed
+    to topic.txt, versioned for that, and with all of the text and Manifest
+    updated accordingly, taking this only as boilerplate.
+
 MANIFEST
 
     hybridForm.txt  This synopsis and manifest file/boilerplate
 
          index.htm  Construction Structure page/boilerplate
   construction.htm  Construction Zone page/boilerplate
-       c000000.htm  Construction Zone Diary and Job Jar
+       c000000.htm  Construction Zone Diary and Job Jar (boilerplate)
 
          index.md   hybrid topic page / boilerplate
-       h000000.htm  hybrid technical Diary and Job Jar
+       h000000.htm  hybrid technical Diary and Job Jar (boilerplate)
        h000001.htm  hybrid article catalog / boilerplate
 
           yyyy/      Articles initiated in year yyyy (boilerplate)
@@ -59,12 +63,13 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Hybrid Document-Formatting Template.  Miser Project
-   text file hybridForm.txt version 0.0.0 dated 2024-02-11 availabe on the
+   text file hybridForm.txt version 0.0.1 dated 2024-04-19 availabe on the
    Internet as a version of
    <https://orcmid.github.io/miser/hybridForm/hybridForm.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.1  2024-04-19T20:22Z Touch-ups
  0.0.0  2024-02-11T18:57Z Initial boilerplate of itself
 
                        *** end of hybridForm.txt ***
