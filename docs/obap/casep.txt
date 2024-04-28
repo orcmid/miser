@@ -1,0 +1,62 @@
+// casep.txt 0.0.0                  UTF-8                          2024-04-25
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+//                       OBAP ABSTRACTION FUNCTIONS
+//                       ===========================
+//
+//             <https://orcmid.github.io/miser/obap/casep.txt>
+//
+//                        HAND-COMPILED casep(v, L)
+//                        -------------------------
+//
+//       The casep(v, L) function is introduced in Miser Project Discussion
+//       Note #7.  This file demonstrates the manual compilation of the
+//       casep(v, L) Frugalese description to an oFrugal implementation.
+//
+//       This file is meant to be processable by oFrugal and the final
+//       form is not commented out.
+//
+//  1. THE ORIGINAL DEFINITION
+//
+//
+
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+//                   Copyright 2024 Dennis E. Hamilton
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//              http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// ATTRIBUTION
+//
+//   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
+//   Conception text file casep.txt version 0.0.0 dated 2024-04-26,
+//   available on the Internet as a version of
+//   <https://orcmid.github.io/miser/obap/casep.txt>
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// TODO
+//
+// * Transcribe the original definition
+//
+// * Create the oFrugal script literal form first.
+//
+// * Manually perform the 3 abstraction operations to achieve the final,
+//   confirmable form.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// 0.0.1 2024-04-26T22:22Z Create the initial draft (placeholder).
+//
+//                         *** end of casep.txt ***
