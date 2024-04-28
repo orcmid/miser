@@ -1,5 +1,5 @@
-ob-exp.txt 1.0.4                    UTF-8                         2024-01-31
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+ob-exp.txt 1.1.0                    UTF-8                         2024-04-28
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
                            The Miser Project Code
@@ -103,16 +103,15 @@ ob-exp.txt 1.0.4                    UTF-8                         2024-01-31
     〈parameters-form〉 ::= ( 〈list-terms〉 ) | 〈list-form〉
 
     〈function-form〉 ::= 〈term〉 | 〈function-form〉 〈parameters-form〉
-                     | 〈function-form〉 . 〈plain-lindy〉
+                     | 〈function-form〉.〈plain-lindy〉
            〈function-form〉s always begin with a 〈term〉
 
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉 | 〈obap-form〉 〈parameters-form〉
-                 | 〈obap-form〉 . 〈plain-lindy〉
+                 | 〈obap-form〉.〈plain-lindy〉
            〈obap-form〉s all begin with a bracket ("(" or "[")
 
            In 〈function-form〉 and 〈obap-form〉 patterns, the "." must have
-           white space before the 〈plain-lindy〉 unless there is no white
-           space before the ".".
+           no preceding white space, avoiding confusion with primitive forms.
 
     〈unary〉 ::= 〈function-form〉 | ‵ 〈obap-form〉 | ‵ 〈unary〉
 
@@ -275,12 +274,12 @@ ob-exp.txt 1.0.4                    UTF-8                         2024-01-31
 
     〈function-form〉 ::=  〈term〉 | 〈function-form〉 〈list-form〉
                         | 〈function-form〉 ( 〈parameters〉 )
-                        | 〈function-form〉 . 〈plain-lindy〉
+                        | 〈function-form〉.〈plain-lindy〉
 
     〈obap-form〉 ::= ( 〈ob-exp〉 ) | 〈list-form〉
                         | 〈obap-form〉 〈list-form〉
                         | 〈obap-form〉 ( 〈parameters〉 )
-                        | 〈obap-form〉 . 〈plain-lindy〉
+                        | 〈obap-form〉.〈plain-lindy〉
 
     〈parameters〉 ::= 〈ob-exp〉 | 〈ob-exp〉, 〈parameters〉
 
@@ -289,14 +288,14 @@ ob-exp.txt 1.0.4                    UTF-8                         2024-01-31
                     =: obap.ap( ‼〈function-form〉{ℰ}, ‼〈list-form〉{ℰ} )
     ‼〈function-form〉⎾〈function-form〉 ( 〈parameters〉 )⏋{ℰ}
                     =: ‼〈parameters〉{ ‼〈function-form〉{ℰ}, ℰ}
-    ‼〈function-form〉⎾〈function-form〉 . 〈plain-lindy〉 ⏋{ℰ}
+    ‼〈function-form〉⎾〈function-form〉.〈plain-lindy〉 ⏋{ℰ}
                     =: obap.ap( ‼〈function-form〉{ℰ}, ‼〈plain-lindy〉 )
 
     ‼〈obap-form〉⎾( 〈ob-exp〉 )⏋{ℰ} =: ‼〈ob-exp〉{ℰ}
     ‼〈obap-form〉⎾ 〈list-form〉 ⏋{ℰ} =: ‼〈list-form〉{ℰ}
     ‼〈obap-form〉⎾〈obap-form〉 〈list-form〉 ⏋{ℰ}
                     =: obap.ap( ‼〈obap-form〉{ℰ}, ‼〈list-form〉{ℰ} )
-    ‼〈obap-form〉⎾〈obap-form〉 . 〈plain-lindy〉 ⏋{ℰ}
+    ‼〈obap-form〉⎾〈obap-form〉.〈plain-lindy〉 ⏋{ℰ}
                     =: obap.ap(‼〈obap-form〉{ℰ}, ‼〈plain-lindy〉)
     ‼〈obap-form〉⎾〈obap-form〉 ( 〈parameters〉 )⏋‼{ℰ}
                     =: ‼〈parameters〉{ ‼〈obap-form〉{ℰ}, ℰ}
@@ -364,7 +363,7 @@ ob-exp.txt 1.0.4                    UTF-8                         2024-01-31
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 1.0.4 dated 2024-01-31,
+   Theory Conception text file ob-exp.txt version 1.1.0 dated 2024-04-28,
    available on the Internet as a version of
    <https://orcmid.github.io/oFrugal/ob-exp.txt>
 
@@ -446,6 +445,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.1.0  2024-04-28T16:26Z Clarify restriction on non-primitive "." usage.
  1.0.4  2024-01-31T23:31Z Correct links and location of this file.
  1.0.3  2024-01-22T22:28Z Adjust to repurposing and the tombstoned origin
  1.0.2  2022-08-11T14:32Z Move grammar theory references to grammars.txt
