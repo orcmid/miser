@@ -1,4 +1,4 @@
-// casep.txt 1.0.0                  UTF-8                          2024-04-29
+// casep.txt 1.1.0                  UTF-8                          2024-04-29
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -14,7 +14,7 @@
 //       casep(v, L) Frugalese description to an oFrugal implementation.
 //
 //       This file is meant to be processable by oFrugal and the final
-//       form is not commented out.
+//       form is not commented out completely.
 //
 //  1. THE ORIGINAL DEFINITION
 //     From <https://github.com/orcmid/miser/discussions/76>
@@ -25,7 +25,7 @@
 //                       then .a L
 //                       else casep(v) .b L;
 //
-//      This is moved into a labmda-extraction form
+//      This is moved into a lambda-extraction form
 //
 //      casep  = λ.v ρ.casepv λ.L
 //               ( if is-singleton(L)
@@ -38,7 +38,7 @@
 //   2. THE APPROACH
 //
 //      Assume that the abstractions procedures λ and ρ are already
-//      available.  Then what remains is transformating the body, "( ... )",
+//      available.  Then what remains is transforming the body, "( ... )",
 //      into the Canonical Form (CFob) operand to be abstracted into an
 //      applicative script.  In the CFob, lindies v, casepv, and L will
 //      appear where they are to be abstracted in transforming that body into
@@ -119,13 +119,14 @@
 //                         );
 //
 //        When the λ.v heuristic determines that the operand script-form is
-//        already an applicative-function script, the simple replacement of
+//        likely an applicative-function script, the simple replacement of
 //        all occurrences of v by .ARG is incorrect.
 //
 //        The required behavior in this case is to create a script that when
 //        applied to an operand, V, yields the above script but with `V in
 //        place of v. The quotation is required because we don't want to
-//        evaluate V, we want simply to use it.
+//        evaluate V, we want simply to use it.  Evaluation as a script comes
+//        later, if at all.
 //
 //        Fortunately, there is an abstraction function, σ.s, that is usable
 //        in all of these cases. Define
@@ -138,23 +139,64 @@
 //                           )
 //                  );
 //
-//         The applicative operation (σ.s M) produces an applicative script
-//         such that (σ.s M) T is M with every occurrence of s replaced by T.
+//        The applicative operation (σ.s M) produces an applicative script
+//        such that (σ.s M) T is M with every occurrence of s replaced by T.
 //
-//         So,
+//        So,
 //
-//             casep =  λ.v ρ.casepv λ.L F
+//            casep =  λ.v ρ.casepv λ.L F
 //
-//                   =  λ.v ρ.casepv (σ.L F) .ARG
+//                  =  λ.v ρ.casepv (σ.L F) .ARG
 //
-//                   =  λ.v (σ.casepv (σ.L F) .ARG) .SELF
+//                  =  λ.v (σ.casepv (σ.L F) .ARG) .SELF
 //
-//                   =  `(σ.v (σ.casepv (σ.L F) .ARG) .SELF) :: .e :: .ARG
+//                  =  `(σ.v (σ.casepv (σ.L F) .ARG) .SELF) :: .e :: .ARG
 //
-//         All of these flavors provide useful ways to confirm operation of
-//         the applicative-abstraction operations σ,λ, and ρ, with comparison
-//         of hand-crafted versions created as part of boot-strapping a
-//         collection of dependable applicative-operation scripts.
+//    8. WRAPPING UP
+//
+//       All of these flavors of σ.x usage provide interesting confirmation
+//       of the applicative-abstraction operations σ,λ, and ρ.
+//
+//       Hand-compiled versions are required for boot-strapping a
+//       collection of dependable applicative-operation scripts. In those
+//       cases, simplicity trumps performance.
+//
+//       Later, the formulations can be improved in ways that do not require
+//       so much σ.x operation and so many discarded intermediates.  That
+//       will be handled along lines described in subsequent notes.
+//
+//       Meanwhile, here is the complete oFrugal definition of ^casep assuming
+//       existing availability of the abstraction methods.
+//
+
+!def ob ^casep = ^λ.v ^ρ.casepv ^λ.L
+                 (.ev :: (.d :: L :: .b :: L)
+                      :: `(    L
+                            :: .ev :: ((.b :: .a :: L) :: v)
+                                   :: `(    (.a :: L)
+                                         :: casepv :: .b :: L)
+                            )
+                      );
+//
+//    9. BOOTSTRAPPING AND CONFIRMATION
+//
+//       When putting oFrugal together, it is important to confirm the
+//       operation of σ.x and its heavy usage.  This version does not
+//       provide for potential improvements to ^λ amd ^ρ:
+//
+// ! def ob ^_F = (.ev :: (.d :: L :: .b :: L)
+//                     :: `(    L
+//                           :: .ev :: ((.b :: .a :: L) :: v)
+//                                  :: `(    (.a :: L)
+//                                        :: casepv :: .b :: L)
+//                           )
+//                  );
+//
+// ! def ob ^casep = `(^σ.v (^σ.casepv (^σ.L ^_F) .ARG) .SELF) :: .e :: .ARG
+//
+//      using ^_F as a temporary binding that is not intended to shadow over
+//      any use of non-underscored lindies in an user's binding names.
+//
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -176,7 +218,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.0.0 dated 2024-04-29,
+//   Conception text file casep.txt version 1.1.0 dated 2024-04-29,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/obap/casep.txt>
 //
@@ -184,11 +226,11 @@
 //
 // TODO
 //
-// * When the fully-expanded casep has been derived, include it as an oFrugal
-//   definition outside of comments [;<).
+// * Test this with oFrugal when implementation is available.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.1.0 2024-04-29T18:42Z Complete with demonstration oFrugal code
 // 1.0.0 2024-04-29T00:14Z Completed explanation
 // 0.0.1 2024-04-26T22:22Z Create the initial draft (placeholder).
 //
