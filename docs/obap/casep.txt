@@ -1,4 +1,4 @@
-// casep.txt 0.0.0                  UTF-8                          2024-04-25
+// casep.txt 1.0.0                  UTF-8                          2024-04-29
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -10,16 +10,152 @@
 //                        -------------------------
 //
 //       The casep(v, L) function is introduced in Miser Project Discussion
-//       Note #7.  This file demonstrates the manual compilation of the
+//       Note #76.  This file demonstrates the manual compilation of the
 //       casep(v, L) Frugalese description to an oFrugal implementation.
 //
 //       This file is meant to be processable by oFrugal and the final
 //       form is not commented out.
 //
 //  1. THE ORIGINAL DEFINITION
+//     From <https://github.com/orcmid/miser/discussions/76>
 //
+//     casep(v) L = if is-singleton(L)
+//                  then L
+//                  else if (.b .a L) v
+//                       then .a L
+//                       else casep(v) .b L;
 //
-
+//      This is moved into a labmda-extraction form
+//
+//      casep  = λ.v ρ.casepv λ.L
+//               ( if is-singleton(L)
+//                 then L
+//                 else if (.b .a L) v
+//                      then .a L
+//                      else casepv .b L
+//                      );
+//
+//   2. THE APPROACH
+//
+//      Assume that the abstractions procedures λ and ρ are already
+//      available.  Then what remains is transformating the body, "( ... )",
+//      into the Canonical Form (CFob) operand to be abstracted into an
+//      applicative script.  In the CFob, lindies v, casepv, and L will
+//      appear where they are to be abstracted in transforming that body into
+//      the script, casep.
+//
+//   3. THE CONDITIONAL EVALUATION IDIOM
+//
+//      The oFrugal idiomatic handling of the conditional form
+//
+//          if condition-form
+//          then satisfied-part
+//          else not-satisfied-part
+//
+//       is with a script on the pattern
+//
+//           .ev :: (condition-form)::`(satisfied-part :: not-satified-part)
+//
+//       Evaluation of the condition-form will result in either .A (for
+//       satisfied) or .B (for not-satified) that will choose between one of
+//       the not-yet-evaluated parts of the encapsulated pair.  Then the
+//       .EV will cause evaluation of the selected part.
+//
+//    4. THE is-singleton(L) DEFAULT-RESULT CONDITIONAL
+//
+//       The is-singleton(x) condition is defined to be
+//
+//           .b x = x
+//
+//       so the first condition-form of casep translates to the oFrugal form
+//
+//           .ev :: (.d :: L :: .b :: L)
+//               :: `(    L
+//                     :: not-satisfied-part )
+//
+//    5. THE CURRENT CASE-CONDITION CHECKING PART
+//
+//       The not-satisfied-part of (4) is another conditional form, thus
+//
+//           .ev :: ((.b :: .a :: L) :: v)
+//               :: `(    (.a :: L)
+//                     :: casepv :: .b :: L)
+//
+//    6. PUTTING IT ALL TOGETHER
+//
+//           casep  = λ.v ρ.casepv λ.L
+//                    (.ev :: (.d :: L :: .b :: L)
+//                         :: `(    L
+//                               :: .ev :: ((.b :: .a :: L) :: v)
+//                                      :: `(    (.a :: L)
+//                                            :: casepv :: .b :: L)
+//                               )
+//                         );
+//
+//       That's a typical manual construction.  The script-form canonical
+//       form reads like an applicative procedure but there is no handling of
+//       operands for the intended applicative interpretation (1, above).
+//
+//    7. ABSTRACTING TO AN APPLICATIVE-FUNCTION SCRIPT
+//
+//       When a script-form is not yet for an applicative function taking any
+//       operands, the λ.L heuristic will simply rewrite that script so that
+//       every occurrence of L is replaced by the primitive .ARG.
+//
+//       The ρ.casepv heuristic operation is based on the assumption that the
+//       operand is (now) that of an applicative function which is desired to
+//       make recursive at all occurrences of lindy casepv.  Every occurrence
+//       of lindy casepv will be replaced by the primitive .SELF.
+//
+//       That reaches
+//
+//           casep  = λ.v
+//                    (.ev :: (.d :: L :: .b :: .ARG)
+//                         :: `(    .ARG
+//                               :: .ev :: ((.b :: .a :: .ARG) :: v)
+//                                      :: `(    (.a :: .ARG)
+//                                            :: .SELF :: .b :: .ARG)
+//                               )
+//                         );
+//
+//        When the λ.v heuristic determines that the operand script-form is
+//        already an applicative-function script, the simple replacement of
+//        all occurrences of v by .ARG is incorrect.
+//
+//        The required behavior in this case is to create a script that when
+//        applied to an operand, V, yields the above script but with `V in
+//        place of v. The quotation is required because we don't want to
+//        evaluate V, we want simply to use it.
+//
+//        Fortunately, there is an abstraction function, σ.s, that is usable
+//        in all of these cases. Define
+//
+//            F = (.ev :: (.d :: L :: .b :: L)
+//                     :: `(    L
+//                           :: .ev :: ((.b :: .a :: L) :: v)
+//                                  :: `(    (.a :: L)
+//                                        :: casepv :: .b :: L)
+//                           )
+//                  );
+//
+//         The applicative operation (σ.s M) produces an applicative script
+//         such that (σ.s M) T is M with every occurrence of s replaced by T.
+//
+//         So,
+//
+//             casep =  λ.v ρ.casepv λ.L F
+//
+//                   =  λ.v ρ.casepv (σ.L F) .ARG
+//
+//                   =  λ.v (σ.casepv (σ.L F) .ARG) .SELF
+//
+//                   =  `(σ.v (σ.casepv (σ.L F) .ARG) .SELF) :: .e :: .ARG
+//
+//         All of these flavors provide useful ways to confirm operation of
+//         the applicative-abstraction operations σ,λ, and ρ, with comparison
+//         of hand-crafted versions created as part of boot-strapping a
+//         collection of dependable applicative-operation scripts.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -40,7 +176,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 0.0.0 dated 2024-04-26,
+//   Conception text file casep.txt version 1.0.0 dated 2024-04-29,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/obap/casep.txt>
 //
@@ -48,15 +184,12 @@
 //
 // TODO
 //
-// * Transcribe the original definition
-//
-// * Create the oFrugal script literal form first.
-//
-// * Manually perform the 3 abstraction operations to achieve the final,
-//   confirmable form.
+// * When the fully-expanded casep has been derived, include it as an oFrugal
+//   definition outside of comments [;<).
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.0.0 2024-04-29T00:14Z Completed explanation
 // 0.0.1 2024-04-26T22:22Z Create the initial draft (placeholder).
 //
 //                         *** end of casep.txt ***
