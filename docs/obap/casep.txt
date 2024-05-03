@@ -1,4 +1,4 @@
-// casep.txt 1.1.0                  UTF-8                          2024-04-29
+// casep.txt 1.2.0                  UTF-8                          2024-05-03
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -15,6 +15,17 @@
 //
 //       This file is meant to be processable by oFrugal and the final
 //       form is not commented out completely.
+//
+//               1. The Original Definition
+//               2. The Approach
+//               3. The Conditional Evaluation Idiom
+//               4. The is-singleton(L) Default-Result Conditional
+//               5. The Current Case-Condition Checking Part
+//               6. Putting It All Together
+//               7. Abstracting to an Applicative-Function Script
+//               8. Wrapping Up
+//               9. Bootstrapping and Confirmation
+//              10. Simplification Possibilities
 //
 //  1. THE ORIGINAL DEFINITION
 //     From <https://github.com/orcmid/miser/discussions/76>
@@ -184,19 +195,40 @@
 //       operation of σ.x and its heavy usage.  This version does not
 //       provide for potential improvements to ^λ amd ^ρ:
 //
-// ! def ob ^_F = (.ev :: (.d :: L :: .b :: L)
-//                     :: `(    L
-//                           :: .ev :: ((.b :: .a :: L) :: v)
-//                                  :: `(    (.a :: L)
-//                                        :: casepv :: .b :: L)
-//                           )
-//                  );
+// !def ob ^_F = (.ev :: (.d :: L :: .b :: L)
+//                    :: `(    L
+//                          :: .ev :: ((.b :: .a :: L) :: v)
+//                                 :: `(    (.a :: L)
+//                                       :: casepv :: .b :: L)
+//                          )
+//                 );
 //
-// ! def ob ^casep = `(^σ.v (^σ.casepv (^σ.L ^_F) .ARG) .SELF) :: .e :: .ARG
+// !def ob ^casep = `(^σ.v (^σ.casepv (^σ.L ^_F) .ARG) .SELF) :: .e :: .ARG
 //
 //      using ^_F as a temporary binding that is not intended to shadow over
 //      any use of non-underscored lindies in an user's binding names.
 //
+//  10. SIMPLIFICATION POSSIBILITIES
+//
+//      The implementations taken in (9) for ^ρ.casepv and ^λ.L seem rather
+//      heavy-weight since they involve simple substitution operations.  It
+//      may be more efficient to use a function subst(val, x) L such that
+//
+//          subst(val, x) L = (σx L) val
+//
+//      read as "substitute val for x in L."  The definition should be
+//      satisfied, but with a stream-lined implementation that does not
+//      require use of ^σ.x in the oFrugal.
+//
+//      In that case (if it is worthwhile), the derivation in (9) can be
+//      accomplished instead by
+//
+// !def ob ^casep = `(^σ.v ^subst(.SELF, casepv) ^subst(.ARG, L) ^_F)
+//                  :: .e :: .ARG
+//
+//      This is not proposed as a good oFrugal approach.  The implementations
+//      of ^λ.x and ^ρ.P should take care of all of this, with pre-computed
+//      ^subst(.SELF) and ^subst(.ARG) scripts.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -218,7 +250,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.1.0 dated 2024-04-29,
+//   Conception text file casep.txt version 1.2.0 dated 2024-05-03,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/obap/casep.txt>
 //
@@ -230,6 +262,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.2.0 2024-05-03T19:35Z Introduce possibility for subst(val, x) usage.
 // 1.1.0 2024-04-29T18:42Z Complete with demonstration oFrugal code
 // 1.0.0 2024-04-29T00:14Z Completed explanation
 // 0.0.1 2024-04-26T22:22Z Create the initial draft (placeholder).
