@@ -1,0 +1,338 @@
+// sigma.txt 0.0.1                  UTF-8                          2024-05-05
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+//                       OBAP ABSTRACTION FUNCTIONS
+//                       ===========================
+//
+//             <https://orcmid.github.io/miser/oFrugal/sigma.txt>
+//
+//                        HAND-COMPILED sigma(s, M)
+//                        -------------------------
+//
+//       Note: the file at <https://orcmid.github.io/miser/obap/casep.txt>
+//       has been tombstoned with continuation in this location.
+//
+//       The sigma.s M function is introduced in Miser Project Discussion
+//       Note #42.  This file demonstrates the manual compilation of the
+//       sigma(s, M) Frugalese description into an oFrugal implementation.
+//
+//       Review the ^casep development for explanation of the basic skeleton,
+//       <https://orcmid.github.io/miser/oFrugal/casep.txt>.
+//
+//       This file is meant to be processable by oFrugal and the final
+//       form is not commented out completely.
+//
+//               1. The Original Definition
+//               2. The λ-form Expression
+//               3. Handling let Forms
+//                  3.1
+//  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
+//               4. The is-singleton(L) Default-Result Conditional
+//               5. The Current Case-Condition Checking Part
+//               6. Putting It All Together
+//               7. Abstracting to an Applicative-Function Script
+//               8. Wrapping Up
+//               9. Bootstrapping and Confirmation
+//              10. Simplification Possibilities
+//
+//  1. THE ORIGINAL DEFINITION
+//
+//     From <https://github.com/orcmid/miser/discussions/42>
+//
+//     σ.s M = if M = s
+//             then .ARG
+//             else if is-individual(M)
+//                  then ` M
+//                  else if is-enclosure(M)
+//                       then let R = σ.s .A M
+//                             in if is-enclosure(R)
+//                                then ` M
+//                                else .E :: R
+//                       else let R = σ.s .A M,
+//                                S = σ.s .B M
+//                             in if is-enclosure(R) ∧ is-enclosure(S)
+//                                then ` M
+//                                else .C :: R :: S
+//
+//   2. THE λ-FORM EXPRESSION
+//
+//      First switch to the oFrugal/Frugalese mixed form that establishes the
+//      application of λ-abstraction heuristics.  As we get farther into
+//      oFrugal, the Greek letters will be replaced by ^names limited to the
+//      Unicode Basic Latin (ISO 646) glyphs and their code points, so there
+//      is not dependence on Unicode and UTF-8 support.
+//
+//     sigma = λ.s ρ.sigmas λ.M
+//             if M = s
+//             then .ARG
+//             else if is-individual(M)
+//                  then ` M
+//                  else if is-enclosure(M)
+//                       then let R = sigmas .A M
+//                             in if is-enclosure(R)
+//                                then ` M
+//                                else .E :: R
+//                       else let R = sigmas .A M,
+//                                S = sigmas .B M
+//                             in if is-enclosure(R) ∧ is-enclosure(S)
+//                                then ` M
+//                                else .C :: R :: S
+
+//   3. HANDLING LET FORMS
+//
+//   3.1 The Simple let-Form
+//
+//      The oFrugal idiomatic handling of the form
+//
+//          let v = T in U
+//
+//      requires elimination of the literal v from U in this manner:
+//
+//          (λ.v U) T
+//
+//      Thus,
+//
+//          let R = sigmas .A M
+//           in if is-enclosure(R)
+//                 then ` M
+//                 else .E :: R
+//
+//      becomes
+//
+//          ( λ.R ( if is-enclosure(R)
+//                  then ` M
+//                  else .E :: R )
+//            ) sigmas .A .M
+//
+//      There is an occurrence of M in the body with λ.R abstraction.  This
+//      leads to the M in ` M having to be inserted every time sigma recurses
+//      on operand M, even for all the times is-enclosure(M) does not hold.
+//
+//      We can delay such deep substitution by abstracting M and introduction
+//      where rewriting is not required:
+//
+//         ( ( λ.R if is-enclosure(R)
+//                then λ.M ` M
+//                else λ.M (.E :: R )
+//                )
+//           sigmas .A .M) M
+//
+//      There is now an additional idiom that can be employed.  Since M is
+//      already abstracted and is the operand at the time of the outer
+//      application ((..)...) M, and the ((..)...) returns M-abstracted
+//      forms, an additional idiom applies:
+//
+//         ( .ev ( λ.R if is-enclosure(R)
+//                     then λ.M ` M
+//                     else λ.M (.E :: R )
+//                     )
+//                sigmas .A .M)
+//
+//    3.2 Handling Multiple let-Form Expressions
+//
+//  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
+//
+//    4. THE is-singleton(L) DEFAULT-RESULT CONDITIONAL
+//
+//       The is-singleton(x) condition is defined to be
+//
+//           .b x = x
+//
+//       so the first condition-form of casep translates to the oFrugal form
+//
+//           .ev :: (.d :: L :: .b :: L)
+//               :: `(    L
+//                     :: not-satisfied-part )
+//
+//    5. THE CURRENT CASE-CONDITION CHECKING PART
+//
+//       The not-satisfied-part of (4) is another conditional form, thus
+//
+//           .ev :: ((.b :: .a :: L) :: v)
+//               :: `(    (.a :: L)
+//                     :: casepv :: .b :: L)
+//
+//    6. PUTTING IT ALL TOGETHER
+//
+//           casep  = λ.v ρ.casepv λ.L
+//                    (.ev :: (.d :: L :: .b :: L)
+//                         :: `(    L
+//                               :: .ev :: ((.b :: .a :: L) :: v)
+//                                      :: `(    (.a :: L)
+//                                            :: casepv :: .b :: L)
+//                               )
+//                         );
+//
+//       That's a typical manual construction.  The script-form canonical
+//       form reads like an applicative procedure but there is no handling of
+//       operands for the intended applicative interpretation (1, above).
+//
+//    7. ABSTRACTING TO AN APPLICATIVE-FUNCTION SCRIPT
+//
+//       When a script-form is not yet for an applicative function taking any
+//       operands, the λ.L heuristic will simply rewrite that script so that
+//       every occurrence of L is replaced by the primitive .ARG.
+//
+//       The ρ.casepv heuristic operation is based on the assumption that the
+//       operand is (now) that of an applicative function which is desired to
+//       make recursive at all occurrences of lindy casepv.  Every occurrence
+//       of lindy casepv will be replaced by the primitive .SELF.
+//
+//       That reaches
+//
+//           casep  = λ.v
+//                    (.ev :: (.d :: L :: .b :: .ARG)
+//                         :: `(    .ARG
+//                               :: .ev :: ((.b :: .a :: .ARG) :: v)
+//                                      :: `(    (.a :: .ARG)
+//                                            :: .SELF :: .b :: .ARG)
+//                               )
+//                         );
+//
+//        When the λ.v heuristic determines that the operand script-form is
+//        likely an applicative-function script, the simple replacement of
+//        all occurrences of v by .ARG is incorrect.
+//
+//        The required behavior in this case is to create a script that when
+//        applied to an operand, V, yields the above script but with `V in
+//        place of v. The quotation is required because we don't want to
+//        evaluate V, we want simply to use it.  Evaluation as a script comes
+//        later, if at all.
+//
+//        Fortunately, there is an abstraction function, σ.s, that is usable
+//        in all of these cases. Define
+//
+//            F = (.ev :: (.d :: L :: .b :: L)
+//                     :: `(    L
+//                           :: .ev :: ((.b :: .a :: L) :: v)
+//                                  :: `(    (.a :: L)
+//                                        :: casepv :: .b :: L)
+//                           )
+//                  );
+//
+//        The applicative operation (σ.s M) produces an applicative script
+//        such that (σ.s M) T is M with every occurrence of s replaced by T.
+//
+//        So,
+//
+//            casep =  λ.v ρ.casepv λ.L F
+//
+//                  =  λ.v ρ.casepv (σ.L F) .ARG
+//
+//                  =  λ.v (σ.casepv (σ.L F) .ARG) .SELF
+//
+//                  =  `(σ.v (σ.casepv (σ.L F) .ARG) .SELF) :: .e :: .ARG
+//
+//    8. WRAPPING UP
+//
+//       All of these flavors of σ.x usage provide interesting confirmation
+//       of the applicative-abstraction operations σ,λ, and ρ.
+//
+//       Hand-compiled versions are required for boot-strapping a
+//       collection of dependable applicative-operation scripts. In those
+//       cases, simplicity trumps performance.
+//
+//       Later, the formulations can be improved in ways that do not require
+//       so much σ.x operation and so many discarded intermediates.  That
+//       will be handled along lines described in subsequent notes.
+//
+//       Meanwhile, here is the complete oFrugal definition of ^casep assuming
+//       existing availability of the abstraction methods.
+//
+
+!def ob ^casep = ^λ.v ^ρ.casepv ^λ.L
+                 (.ev :: (.d :: L :: .b :: L)
+                      :: `(    L
+                            :: .ev :: ((.b :: .a :: L) :: v)
+                                   :: `(    (.a :: L)
+                                         :: casepv :: .b :: L)
+                            )
+                      );
+//
+//    9. BOOTSTRAPPING AND CONFIRMATION
+//
+//       When putting oFrugal together, it is important to confirm the
+//       operation of σ.x and its heavy usage.  This version does not
+//       provide for potential improvements to ^λ amd ^ρ:
+//
+// !def ob ^_F = (.ev :: (.d :: L :: .b :: L)
+//                    :: `(    L
+//                          :: .ev :: ((.b :: .a :: L) :: v)
+//                                 :: `(    (.a :: L)
+//                                       :: casepv :: .b :: L)
+//                          )
+//                 );
+//
+// !def ob ^casep = `(^σ.v (^σ.casepv (^σ.L ^_F) .ARG) .SELF) :: .e :: .ARG
+//
+//      using ^_F as a temporary binding that is not intended to shadow over
+//      any use of non-underscored lindies in an user's binding names.
+//
+//  10. SIMPLIFICATION POSSIBILITIES
+//
+//      The implementations taken in (9) for ^ρ.casepv and ^λ.L seem rather
+//      heavy-weight since they involve simple substitution operations.  It
+//      may be more efficient to use a function subst(val, x) L such that
+//
+//          subst(val, x) L = (σx L) val
+//
+//      read as "substitute val for x in L."  The definition should be
+//      satisfied, but with a stream-lined implementation that does not
+//      require use of ^σ.x in the oFrugal.
+//
+//      In that case (if it is worthwhile), the derivation in (9) can be
+//      accomplished instead by
+//
+// !def ob ^casep = `(^σ.v ^subst(.SELF, casepv) ^subst(.ARG, L) ^_F)
+//                  :: .e :: .ARG
+//
+//      This is not proposed as a good oFrugal approach.  The implementations
+//      of ^λ.x and ^ρ.P should take care of all of this, with pre-computed
+//      ^subst(.SELF) and ^subst(.ARG) scripts.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+//                   Copyright 2024 Dennis E. Hamilton
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//              http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// ATTRIBUTION
+//
+//   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
+//   text file sigma.txt version 0.0.1 dated 2024-05-05, available on the
+//   Internet as a version of
+//   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// TODO
+//
+// * Extend handling let-forms to include multiple let forms.
+//
+// * Refer to the idioms already provided for casep.
+//
+// * Trim the contents and sections here as they are repurposed/deleted for
+//   sigma(s, M).
+//
+// * The achievement here is the handling of let and then how to deal with
+//   global references out of the let form, in this case to references to the
+//   global M.  We don't want to stuff M into those.  It will be interesting
+//   to see how this can be streamlined.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// 0.0.1 2024-05-05T21:16Z Introduce handling single let forms
+// 0.0.0 2024-05-05T18:36Z Create placeholder with boilerplate.
+//
+//                         *** end of sigma.txt ***
