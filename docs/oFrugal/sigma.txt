@@ -1,4 +1,4 @@
-// sigma.txt 0.0.1                  UTF-8                          2024-05-05
+// sigma.txt 0.0.2                  UTF-8                          2024-05-06
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -25,9 +25,10 @@
 //               1. The Original Definition
 //               2. The λ-form Expression
 //               3. Handling let Forms
-//                  3.1
+//                  3.1 Ths simple let-form
+//                  3.2 Handling multiple let-form expressions
+//               4. Handling Conjunction Conditions
 //  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
-//               4. The is-singleton(L) Default-Result Conditional
 //               5. The Current Case-Condition Checking Part
 //               6. Putting It All Together
 //               7. Abstracting to an Applicative-Function Script
@@ -44,15 +45,15 @@
 //             else if is-individual(M)
 //                  then ` M
 //                  else if is-enclosure(M)
-//                       then let R = σ.s .A M
+//                       then let R = σ.s .a M
 //                             in if is-enclosure(R)
 //                                then ` M
-//                                else .E :: R
-//                       else let R = σ.s .A M,
-//                                S = σ.s .B M
+//                                else .e :: R
+//                       else let R = σ.s .a M,
+//                                S = σ.s .b M
 //                             in if is-enclosure(R) ∧ is-enclosure(S)
 //                                then ` M
-//                                else .C :: R :: S
+//                                else .c :: R :: S
 //
 //   2. THE λ-FORM EXPRESSION
 //
@@ -68,15 +69,15 @@
 //             else if is-individual(M)
 //                  then ` M
 //                  else if is-enclosure(M)
-//                       then let R = sigmas .A M
+//                       then let R = sigmas .a M
 //                             in if is-enclosure(R)
 //                                then ` M
-//                                else .E :: R
-//                       else let R = sigmas .A M,
-//                                S = sigmas .B M
+//                                else .e :: R
+//                       else let R = sigmas .a M,
+//                                S = sigmas .b M
 //                             in if is-enclosure(R) ∧ is-enclosure(S)
 //                                then ` M
-//                                else .C :: R :: S
+//                                else .c :: R :: S
 
 //   3. HANDLING LET FORMS
 //
@@ -92,43 +93,71 @@
 //
 //      Thus,
 //
-//          let R = sigmas .A M
+//          let R = sigmas .a M
 //           in if is-enclosure(R)
 //                 then ` M
-//                 else .E :: R
+//                 else .e :: R
 //
 //      becomes
-//
+//                                                                      (a)
 //          ( λ.R ( if is-enclosure(R)
 //                  then ` M
-//                  else .E :: R )
-//            ) sigmas .A .M
+//                  else .e :: R )
+//            ) sigmas .a M
 //
-//      There is an occurrence of M in the body with λ.R abstraction.  This
+//      There is an occurrence of M in the body of the λ.R abstraction.  This
 //      leads to the M in ` M having to be inserted every time sigma recurses
 //      on operand M, even for all the times is-enclosure(M) does not hold.
 //
-//      We can delay such deep substitution by abstracting M and introduction
-//      where rewriting is not required:
-//
+//      We can delay such deep substitution by abstracting M and applying
+//      that result at the level where M is the current operand.
+//                                                                      (b)
 //         ( ( λ.R if is-enclosure(R)
 //                then λ.M ` M
-//                else λ.M (.E :: R )
+//                else λ.M (.e :: R )
 //                )
-//           sigmas .A .M) M
+//           sigmas .a .M) M
 //
 //      There is now an additional idiom that can be employed.  Since M is
 //      already abstracted and is the operand at the time of the outer
-//      application ((..)...) M, and the ((..)...) returns M-abstracted
-//      forms, an additional idiom applies:
-//
+//      application ((..)...) M, the ((..)...) returns simple M-abstracted
+//      forms.  That allows evaluation directly:
+//                                                                      (c)
 //         ( .ev ( λ.R if is-enclosure(R)
 //                     then λ.M ` M
 //                     else λ.M (.E :: R )
 //                     )
-//                sigmas .A .M)
+//                sigmas .A M)
 //
-//    3.2 Handling Multiple let-Form Expressions
+//   3.2 Handling Multiple let-Form Expressions
+//
+//      For the current M being a pair, the operation is
+//
+//          let R = sigmas .A M,
+//              S = sigmas .B M
+//           in if is-enclosure(R) ∧ is-enclosure(S)
+//              then ` M
+//              else .c :: R :: S
+//
+//      Treat this with the the same device as in (3.1a).  However, there is
+//      is no benefit to creating a
+//
+//          ((λ.R λ.S ...) sigmas .A M) sigmas .b M
+//
+//      since both operands are always going to be supplied.  The applicative
+//      structure can be simplifed by operating on R and S as a pair.
+//
+//           (λ.RS ...) ((sigmas .a M) :: (sigmas .b M))
+//
+//      and reaching the same form as (3.1c):
+//                                                                      (a)
+//           .ev ( λ.RS if is-enclosure(a.RS) ∧ is-enclosure(b.RS)
+//                      then λ.M ` M
+//                      else λ.M (.c :: RS )
+//                      )
+//               ((sigmas .a M) :: (sigmas .b M))
+//
+//    4. Handling Conjunction Conditions
 //
 //  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
 //
@@ -310,7 +339,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.1 dated 2024-05-05, available on the
+//   text file sigma.txt version 0.0.2 dated 2024-05-06, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -332,6 +361,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.2 2024-05-06T21:55Z Introduce listings for multiple let forms
 // 0.0.1 2024-05-05T21:16Z Introduce handling single let forms
 // 0.0.0 2024-05-05T18:36Z Create placeholder with boilerplate.
 //
