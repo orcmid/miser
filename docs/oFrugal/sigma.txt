@@ -1,4 +1,4 @@
-// sigma.txt 0.0.2                  UTF-8                          2024-05-06
+// sigma.txt 0.0.3                  UTF-8                          2024-05-07
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -123,11 +123,12 @@
 //      application ((..)...) M, the ((..)...) returns simple M-abstracted
 //      forms.  That allows evaluation directly:
 //                                                                      (c)
-//         ( .ev ( λ.R if is-enclosure(R)
-//                     then λ.M ` M
-//                     else λ.M (.E :: R )
-//                     )
-//                sigmas .A M)
+//         ( .ev ( ( λ.R if is-enclosure(R)
+//                      then λ.M ` M
+//                      else λ.M (.E :: R )
+//                      )
+//                 sigmas .A M )
+//                 )
 //
 //   3.2 Handling Multiple let-Form Expressions
 //
@@ -151,13 +152,30 @@
 //
 //      and reaching the same form as (3.1c):
 //                                                                      (a)
-//           .ev ( λ.RS if is-enclosure(a.RS) ∧ is-enclosure(b.RS)
-//                      then λ.M ` M
-//                      else λ.M (.c :: RS )
-//                      )
-//               ((sigmas .a M) :: (sigmas .b M))
+//           .ev ( ( λ.RS if is-enclosure(a.RS) ∧ is-enclosure(b.RS)
+//                        then λ.M ` M
+//                        else λ.M (.c :: RS )
+//                        )
+//                 ( (sigmas .a M) :: (sigmas .b M))
+//                 )
 //
 //    4. Handling Conjunction Conditions
+//
+//       For the conjunction,
+//
+//                 is-enclosure(a.RS) ∧ is-enclosure(b.RS)
+//
+//       the normal interpretation of P ∧ Q for oFrugal is by
+//
+//                 if P then Q else .b
+//
+//       where .b is the computational form for P ∧ Q not satisfied.
+//
+//       This short-circuit determination is valid in oFrugal because there
+//       is no side-effect being skirted by failing to evaluate Q when
+//       the result must be .b because P evaluates to .b.  Also, in this
+//       specific case, P and Q are already determined as part of the single
+//       derivation of the RS pair.
 //
 //  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
 //
@@ -339,7 +357,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.2 dated 2024-05-06, available on the
+//   text file sigma.txt version 0.0.3 dated 2024-05-07, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -361,6 +379,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.3 2024-05-07T16:17Z Touch-up and start expanding conjunction handling
 // 0.0.2 2024-05-06T21:55Z Introduce listings for multiple let forms
 // 0.0.1 2024-05-05T21:16Z Introduce handling single let forms
 // 0.0.0 2024-05-05T18:36Z Create placeholder with boilerplate.
