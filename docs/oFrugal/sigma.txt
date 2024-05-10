@@ -1,4 +1,4 @@
-// sigma.txt 0.0.5                  UTF-8                          2024-05-08
+// sigma.txt 0.0.6                  UTF-8                          2024-05-10
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -98,7 +98,7 @@
 //          λ.R ( if is-enclosure(R)
 //                then ` M
 //                else .e :: R
-                  )
+//                  )
 //          sigmas .a M
 //
 //      There is an occurrence of M in the body of the λ.R abstraction.  This
@@ -114,7 +114,7 @@
 //                )
 //           sigmas .a .M
 //           )
-//         M
+//          M
 //
 //      There is now an additional idiom that can be employed.  Since M is
 //      already abstracted and is the operand at the time of the outer
@@ -123,9 +123,9 @@
 //                                                                      (c)
 //         .ev ( ( λ.R if is-enclosure(R)
 //                     then λ.M ` M
-//                     else λ.M (.E :: R )
+//                     else λ.M (.e :: R )
 //                     )
-//                sigmas .A M
+//                sigmas .a M
 //                )
 //
 //   3.2 Handling Multiple let-Form Expressions
@@ -153,7 +153,7 @@
 //
 //      and reaching the same form as (3.1c):
 //                                                                      (b)
-//           .ev ( ( λ.RS if is-enclosure(a.RS) ∧ is-enclosure(b.RS)
+//           .ev ( ( λ.RS if is-enclosure(.a RS) ∧ is-enclosure(.b RS)
 //                        then λ.M ` M
 //                        else λ.M ( .c :: RS )
 //                        )
@@ -181,10 +181,14 @@
 //
 //       Expanding conjunction (a) in (3.2b) yields straight oFrugal
 //
+//       DON'T DO THIS.  EVEN IF CORRECT, IT IS TOO INSCRUTIBLE.  DO THIS
+//       BY DEFINING PARTS AND THEN PUTTING IT ALL TOGETHER.
+//       ****************************************************************
+//
 //       (.ev :: ( `( .ev :: ( .d :: (.a :: .arg)                        (b)
-                                 :: .b :: .a :: .arg )
+//                                :: .b :: .a :: .arg )
 //                       ::   `( (.d :: (.b :: .arg)
-                                     :: b :: .b :: .arg )
+//                                   :: b :: .b :: .arg )
 //                               :: .b )
 //                       )
 //                  :: `(    `( .e :: .arg)
@@ -218,7 +222,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.5 dated 2024-05-08, available on the
+//   text file sigma.txt version 0.0.6 dated 2024-05-10, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -238,8 +242,17 @@
 //   global M.  We don't want to stuff M into those.  It will be interesting
 //   to see how this can be streamlined.
 //
+// * Break down into definitions of temporary forms so the combination into
+//   the more-complex and unreadable mix of .self and .arg occurrences with
+//   no symbols is comprehensible.
+//
+// * Point out that use of temp intermediate definitions is also part of
+//   creating "macros" for building scripts.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.6 2024-05-10T23:50Z Review and prepare to use temporary definitions
+//       as a way of remaining comprehensible.
 // 0.0.5 2024-05-08T23:39Z Complete hand-compiling of the conjunction case
 // 0.0.4 2024-05-08T15:01Z Touch-Ups for printing and review
 // 0.0.3 2024-05-07T16:17Z Touch-up and start expanding conjunction handling
