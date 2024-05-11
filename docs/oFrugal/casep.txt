@@ -1,4 +1,4 @@
-// casep.txt 1.2.3                  UTF-8                          2024-05-11
+// casep.txt 1.2.4                  UTF-8                          2024-05-11
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -79,7 +79,7 @@
 //
 //       The is-singleton(x) condition is defined to be
 //
-//           .b x = x
+//            x =.b x
 //
 //       so the first condition-form of casep translates to the oFrugal form
 //
@@ -127,23 +127,36 @@
 //           casep  = λ.v ρ.casepv λ.L ^_5c
 //
 //       That seems far too opaque and there may be better annotated forms
-//       that can be sight-checked as well as confirmed in progressive
-//       construction steps:
+//       that can be sight-checked as well as confirmed agains the pseudo-
+//       Frugalese:
 
 !def ob ^casep
-     = ^λ.v ^ρ.casepv ^λ.L
-       (.ev :: (.d :: L :: .b :: L)                  // if is-singleton (L)
-            :: `(    L                               // then L
-                  :: .ev :: ((.b :: .a :: L) :: v)   // else if (.b .a L) v
-                         :: `(    (.a :: L)          //       than .a L
-                               :: casepv :: .b :: L) //       else casepv .b L
-                   )
-             );
 
-//       using previously defined abstraction scripts.  Before oFrugal 1.0,
-//       the abstraction operations will be written
+     = ^λ.v ^ρ.casepv ^λ.L
+
+       (     // if is-singleton(L)
+         .ev :: (.d :: L :: .b :: L)
+
+          :: `( // then  L
+                   L
+
+                // else if (.b .a L) v
+                :: .ev :: ((.b :: .a :: L) :: v)
+
+                    :: `( // then .a L
+                          (.a :: L)
+
+                           // else casepv .b L
+                           :: casepv :: .b :: L
+                           )
+                )
+          );
+
+//       assuming already-defined ^λ and ^ρ.
 //
-//             ^lambda.v ^rec.casepv ^lambda.L
+//       Before oFrugal 1.0 the abstraction operations will be written
+//
+//             ^lambda, ^rec, and  ^sigma
 //
 //       because of initial character-set limitations.
 //
@@ -282,7 +295,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.2.3 dated 2024-05-11,
+//   Conception text file casep.txt version 1.2.4 dated 2024-05-11,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -296,6 +309,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.2.4 2024-05-11T21:36Z Completed polishing ^casep for now.
 // 1.2.3 2024-05-11T16:46Z Use intermediates to make conditionals more
 //       explicit and perhaps understandable
 // 1.2.2 2024-05-03T20:35Z Touched-up to reflect new location
