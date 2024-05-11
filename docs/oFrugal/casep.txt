@@ -1,4 +1,4 @@
-// casep.txt 1.2.2                  UTF-8                          2024-05-03
+// casep.txt 1.2.3                  UTF-8                          2024-05-11
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -41,7 +41,7 @@
 //
 //      This is moved into a lambda-extraction form
 //
-//      casep  = λ.v ρ.casepv λ.L
+//      casep  = λ.v ρ.casepv λ.L                                    (a)
 //               ( if is-singleton(L)
 //                 then L
 //                 else if (.b .a L) v
@@ -71,9 +71,9 @@
 //           .ev :: (condition-form)::`(satisfied-part :: not-satified-part)
 //
 //       Evaluation of the condition-form will result in either .A (for
-//       satisfied) or .B (for not-satified) that will choose between one of
+//       satisfied) or .B (for not-satified) that will select between one of
 //       the not-yet-evaluated parts of the encapsulated pair.  Then the
-//       .EV will cause evaluation of the selected part.
+//       .EV will cause evaluation of the selected part only.
 //
 //    4. THE is-singleton(L) DEFAULT-RESULT CONDITIONAL
 //
@@ -83,7 +83,7 @@
 //
 //       so the first condition-form of casep translates to the oFrugal form
 //
-//           .ev :: (.d :: L :: .b :: L)
+//           .ev :: (.d :: L :: .b :: L)                             (a)
 //               :: `(    L
 //                     :: not-satisfied-part )
 //
@@ -91,13 +91,29 @@
 //
 //       The not-satisfied-part of (4) is another conditional form, thus
 //
-//           .ev :: ((.b :: .a :: L) :: v)
+//           .ev :: ((.b :: .a :: L) :: v)                            (a)
 //               :: `(    (.a :: L)
 //                     :: casepv :: .b :: L)
 //
+//       Since there definitely are not any "variables" in complete oFrugal
+//       forms, it is easy to loose the thread.  To hold onto the derivation,
+//       intermediate forms can be defined in the oFrugal script.  By
+//       convention, "_" prefixes will distinguish those.
+//
+
+!def ob ^_5b = .ev :: ((.b :: .a :: L) :: v)     // if (.b .a L) v    (5b)
+                   :: `(   (.a :: L)             // then .a L
+                         :: casepv :: .b :: L);  // else casepv .b L
+
+//       There is now enough to specify (4a) as pure (unabstracted) oFrugal:
+
+!def ob ^_5c = .ev :: (.d :: L :: .b :: L)       // if is-singleton(L) (5c)
+                   :: `(    L                    // then L
+                         :: ^_5b );              // else (5b)
+
 //    6. PUTTING IT ALL TOGETHER
 //
-//           casep  = λ.v ρ.casepv λ.L
+//           casep  = λ.v ρ.casepv λ.L                                 (a)
 //                    (.ev :: (.d :: L :: .b :: L)
 //                         :: `(    L
 //                               :: .ev :: ((.b :: .a :: L) :: v)
@@ -106,9 +122,31 @@
 //                               )
 //                         );
 //
-//       That's a typical manual construction.  The script-form canonical
-//       form reads like an applicative procedure but there is no handling of
-//       operands for the intended applicative interpretation (1, above).
+//       Although the oFrugal is most-compactly-expressed
+//
+//           casep  = λ.v ρ.casepv λ.L ^_5c
+//
+//       That seems far too opaque and there may be better annotated forms
+//       that can be sight-checked as well as confirmed in progressive
+//       construction steps:
+
+!def ob ^casep
+     = ^λ.v ^ρ.casepv ^λ.L
+       (.ev :: (.d :: L :: .b :: L)                  // if is-singleton (L)
+            :: `(    L                               // then L
+                  :: .ev :: ((.b :: .a :: L) :: v)   // else if (.b .a L) v
+                         :: `(    (.a :: L)          //       than .a L
+                               :: casepv :: .b :: L) //       else casepv .b L
+                   )
+             );
+
+//       using previously defined abstraction scripts.  Before oFrugal 1.0,
+//       the abstraction operations will be written
+//
+//             ^lambda.v ^rec.casepv ^lambda.L
+//
+//       because of initial character-set limitations.
+//
 //
 //    7. ABSTRACTING TO AN APPLICATIVE-FUNCTION SCRIPT
 //
@@ -182,15 +220,6 @@
 //       Meanwhile, here is the complete oFrugal definition of ^casep assuming
 //       existing availability of the abstraction methods.
 //
-
-!def ob ^casep = ^λ.v ^ρ.casepv ^λ.L
-                 (.ev :: (.d :: L :: .b :: L)
-                      :: `(    L
-                            :: .ev :: ((.b :: .a :: L) :: v)
-                                   :: `(    (.a :: L)
-                                         :: casepv :: .b :: L)
-                            )
-                      );
 //
 //    9. BOOTSTRAPPING AND CONFIRMATION
 //
@@ -253,7 +282,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.2.2 dated 2024-05-03,
+//   Conception text file casep.txt version 1.2.3 dated 2024-05-11,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -263,8 +292,12 @@
 //
 // * Test this with oFrugal when implementation is available.
 //
+// * Continue making this more-readable following section 4.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.2.3 2024-05-11T16:46Z Use intermediates to make conditionals more
+//       explicit and perhaps understandable
 // 1.2.2 2024-05-03T20:35Z Touched-up to reflect new location
 // 1.2.1 2024-05-03T19:35Z Moved here and tombstoned at previous location.
 // 1.2.0 2024-05-03T19:35Z Introduce possibility for subst(val, x) usage.
