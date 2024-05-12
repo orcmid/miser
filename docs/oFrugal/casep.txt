@@ -1,4 +1,4 @@
-// casep.txt 1.2.4                  UTF-8                          2024-05-11
+// casep.txt 1.3.0                  UTF-8                          2024-05-12
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -10,7 +10,7 @@
 //                        -------------------------
 //
 //       Note: the file at <https://orcmid.github.io/miser/obap/casep.txt>
-//       has been tombstoned with continuation in this location.
+//       has been tombstoned with continuation under the oFrugal topic.
 //
 //       The casep(v, L) function is introduced in Miser Project Discussion
 //       Note #76.  This file demonstrates the manual compilation of the
@@ -26,11 +26,13 @@
 //               5. The Current Case-Condition Checking Part
 //               6. Putting It All Together
 //               7. Abstracting to an Applicative-Function Script
-//               8. Wrapping Up
-//               9. Bootstrapping and Confirmation
-//              10. Simplification Possibilities
+//                  7.1 Abstracting operand L
+//                  7.2 Abstracting the recursion
+//                  7.3 Abstracting operand v
+//
 //
 //  1. THE ORIGINAL DEFINITION
+//
 //     From <https://github.com/orcmid/miser/discussions/76>
 //
 //     casep(v) L = if is-singleton(L)
@@ -39,7 +41,15 @@
 //                       then .a L
 //                       else casep(v) .b L;
 //
-//      This is moved into a lambda-extraction form
+//      Operand L is a list structure [r1:p1, r2:p2, ..., ` rdefault:].
+//
+//      casep(v) is a procedure that, given an L, finds the first ri:pi for
+//      which pi(v) is satisfied, returning the ri:pi pair.  If no pi(v)
+//      is satisfied, `rdefault is returned.  In this manner, .a casep(v) L
+//      is always the result for the v property case.
+//
+//      In Frugalese pseudo-notation, this can be reformed into a form in
+//      which the lambda-abstractions are explicitly applied.
 //
 //      casep  = λ.v ρ.casepv λ.L                                    (a)
 //               ( if is-singleton(L)
@@ -49,14 +59,19 @@
 //                      else casepv .b L
 //                      );
 //
+//      Note that the left hand side occurrences of parameters have been slid
+//      to the right-hand side, with introduction of ρ.casepv to account for
+//      the recursion on L, but with fixed operand v.  The renaming to lindy
+//      casepv is to emphasize that arrangement.
+//
 //   2. THE APPROACH
 //
 //      Assume that the abstractions procedures λ and ρ are already
 //      available.  Then what remains is transforming the body, "( ... )",
 //      into the Canonical Form (CFob) operand to be abstracted into an
 //      applicative script.  In the CFob, lindies v, casepv, and L will
-//      appear where they are to be abstracted in transforming that body into
-//      the script, casep.
+//      appear where they are to be abstracted in forming the applicative-
+//      operation script, casep.
 //
 //   3. THE CONDITIONAL EVALUATION IDIOM
 //
@@ -70,47 +85,43 @@
 //
 //           .ev :: (condition-form)::`(satisfied-part :: not-satified-part)
 //
-//       Evaluation of the condition-form will result in either .A (for
-//       satisfied) or .B (for not-satified) that will select between one of
+//       Evaluation of the condition-form will result in either an .A (for
+//       satisfied) or a .B (for not-satified) that will select between one of
 //       the not-yet-evaluated parts of the encapsulated pair.  Then the
-//       .EV will cause evaluation of the selected part only.
+//       .EV will cause evaluation of that selected part.
 //
 //    4. THE is-singleton(L) DEFAULT-RESULT CONDITIONAL
 //
 //       The is-singleton(x) condition is defined to be
 //
-//            x =.b x
+//            x = .b x
 //
-//       so the first condition-form of casep translates to the oFrugal form
+//       so the first condition-form in casep (1a) translates to the oFrugal
+//       form
 //
 //           .ev :: (.d :: L :: .b :: L)                             (a)
 //               :: `(    L
 //                     :: not-satisfied-part )
 //
+//
 //    5. THE CURRENT CASE-CONDITION CHECKING PART
 //
-//       The not-satisfied-part of (4) is another conditional form, thus
+//       The not-satisfied-part of (a) is another conditional form in (1a),
+//       thus
 //
 //           .ev :: ((.b :: .a :: L) :: v)                            (a)
 //               :: `(    (.a :: L)
 //                     :: casepv :: .b :: L)
 //
-//       Since there definitely are not any "variables" in complete oFrugal
-//       forms, it is easy to loose the thread.  To hold onto the derivation,
-//       intermediate forms can be defined in the oFrugal script.  By
-//       convention, "_" prefixes will distinguish those.
+//       We are slowly boiling the Frugalese pseudo-code down to a canonical
+//       oFrugal form in which the only remaining lindies are those which are
+//       to be abstracted away.
 //
-
-!def ob ^_5b = .ev :: ((.b :: .a :: L) :: v)     // if (.b .a L) v    (5b)
-                   :: `(   (.a :: L)             // then .a L
-                         :: casepv :: .b :: L);  // else casepv .b L
-
-//       There is now enough to specify (4a) as pure (unabstracted) oFrugal:
-
-!def ob ^_5c = .ev :: (.d :: L :: .b :: L)       // if is-singleton(L) (5c)
-                   :: `(    L                    // then L
-                         :: ^_5b );              // else (5b)
-
+//       One way to keep track of everything is by introduction of comments
+//       and also making of some intermediate oFrugal definitions to avoid
+//       recopying of portions already figured out.
+//
+//
 //    6. PUTTING IT ALL TOGETHER
 //
 //           casep  = λ.v ρ.casepv λ.L                                 (a)
@@ -122,13 +133,14 @@
 //                               )
 //                         );
 //
-//       Although the oFrugal is most-compactly-expressed
+//       This is the complete substitution of the derived oFrugal form of
+//       the script.  All of the detals are there, but we've lost the clarity
+//       of the original Frugalese form.
 //
-//           casep  = λ.v ρ.casepv λ.L ^_5c
-//
-//       That seems far too opaque and there may be better annotated forms
-//       that can be sight-checked as well as confirmed agains the pseudo-
-//       Frugalese:
+//       The following is offered as illustration of an annotated script that
+//       can be sight-checked for agreement between the comments and the
+//       oFrugal.  With availability of an operating oFrugal implementation,
+//       a dependable confirmation can also be established.
 
 !def ob ^casep
 
@@ -154,11 +166,12 @@
 
 //       assuming already-defined ^λ and ^ρ.
 //
-//       Before oFrugal 1.0 the abstraction operations will be written
+//       Note: Before oFrugal 1.0 the abstraction operations will be written
 //
 //             ^lambda, ^rec, and  ^sigma
 //
-//       because of initial character-set limitations.
+//       because of character-set limitations.  With oFrugal 1.0, both forms
+//       will be defined in a standard library file.
 //
 //
 //    7. ABSTRACTING TO AN APPLICATIVE-FUNCTION SCRIPT
@@ -167,6 +180,32 @@
 //       operands, the λ.L heuristic will simply rewrite that script so that
 //       every occurrence of L is replaced by the primitive .ARG.
 //
+//    7.1 Abstracting Operand L
+
+!def ob ^casep
+
+     = ^λ.v ^ρ.casepv // ^λ.L
+
+       (     // if is-singleton(L)
+         .ev :: (.d :: .arg :: .b :: .arg)
+
+          :: `( // then  L
+                   .arg
+
+                // else if (.b .a L) v
+                :: .ev :: ((.b :: .a :: .arg) :: v)
+
+                    :: `( // then .a L
+                          (.a :: .arg)
+
+                           // else casepv .b L
+                           :: casepv :: .b :: .arg
+                           )
+                )
+          );
+//
+//    7.2 Abstracting the Recursion
+//
 //       The ρ.casepv heuristic operation is based on the assumption that the
 //       operand is (now) that of an applicative function which is desired to
 //       make recursive at all occurrences of lindy casepv.  Every occurrence
@@ -174,106 +213,76 @@
 //
 //       That reaches
 //
-//           casep  = λ.v
-//                    (.ev :: (.d :: L :: .b :: .ARG)
-//                         :: `(    .ARG
-//                               :: .ev :: ((.b :: .a :: .ARG) :: v)
-//                                      :: `(    (.a :: .ARG)
-//                                            :: .SELF :: .b :: .ARG)
-//                               )
-//                         );
+!def ob ^casep
+
+     = ^λ.v // ^ρ.casepv ^λ.L
+
+       (     // if is-singleton(L)
+         .ev :: (.d :: .arg :: .b :: .arg)
+
+             :: `( // then  L
+                   .arg
+
+                   // else if (.b .a L) v
+                   :: .ev :: ((.b :: .a :: .arg) :: v)
+
+                          :: `( // then .a L
+                                (.a :: .arg)
+
+                                // else casepv .b L
+                                :: .self :: .b :: .arg
+                                )
+                   )
+          );
 //
-//        When the λ.v heuristic determines that the operand script-form is
-//        likely an applicative-function script, the simple replacement of
-//        all occurrences of v by .ARG is incorrect.
+//    7.3 Abstracting Operand v
+//
+//       When the λ.v heuristic determines that the operand script-form is
+//       likely an applicative-function script, the simple replacement of
+//       all occurrences of v by .ARG is incorrect.
 //
 //        The required behavior in this case is to create a script that when
 //        applied to an operand, V, yields the above script but with `V in
 //        place of v. The quotation is required because we don't want to
-//        evaluate V, we want simply to use it.  Evaluation as a script comes
-//        later, if at all.
+//        evaluate V, we want simply to use it in the form that is supplied
+//        as an operand.
 //
-//        Fortunately, there is an abstraction function, σ.s, that is usable
-//        in all of these cases. Define
+//        Forms of the abstraction function, σ.v, are useful in this case.
+//        Here, we provide that function manually.  We will, at this stage,
+//        have a loss of similarity with the Frugalese pseudo-language form
+//        that we started with.
 //
-//            F = (.ev :: (.d :: L :: .b :: L)
-//                     :: `(    L
-//                           :: .ev :: ((.b :: .a :: L) :: v)
-//                                  :: `(    (.a :: L)
-//                                        :: casepv :: .b :: L)
-//                           )
-//                  );
+//        This version is obtained by manually applying the algorithm in
+//        sigma.txt <https://orcmid.github.io/miser/oFrugal/sigma.txt>.
+
+!def ob ^casep
+
+     = // ^λ.v ^ρ.casepv ^λ.L
+
+       (     // if is-singleton(L)
+         .c  :: `.ev
+             :: .c :: `(.d :: .arg :: .b :: .arg)
+
+                            // then  L
+                   :: .e :: c :: `.arg
+
+                                  // else if (.b .a L) v
+                              :: .c :: `.ev
+                                    :: .c  :: (.c :: `(.b :: .a :: .arg)
+                                                  :: .e :: .arg)
+
+                                           :: ` `( // then .a L
+                                                   (.a :: .arg)
+
+                                                   // else casepv .b L
+                                                   :: .self :: .b :: .arg
+                                                   )
+         );
+
+//       demonstrating why it is important to have the abstraction functions
+//       up-and-running, with easier confirmation and, if necessary, saving
+//       definitions to a text file.
 //
-//        The applicative operation (σ.s M) produces an applicative script
-//        such that (σ.s M) T is M with every occurrence of s replaced by T.
-//
-//        So,
-//
-//            casep =  λ.v ρ.casepv λ.L F
-//
-//                  =  λ.v ρ.casepv (σ.L F) .ARG
-//
-//                  =  λ.v (σ.casepv (σ.L F) .ARG) .SELF
-//
-//                  =  `(σ.v (σ.casepv (σ.L F) .ARG) .SELF) :: .e :: .ARG
-//
-//    8. WRAPPING UP
-//
-//       All of these flavors of σ.x usage provide interesting confirmation
-//       of the applicative-abstraction operations σ,λ, and ρ.
-//
-//       Hand-compiled versions are required for boot-strapping a
-//       collection of dependable applicative-operation scripts. In those
-//       cases, simplicity trumps performance.
-//
-//       Later, the formulations can be improved in ways that do not require
-//       so much σ.x operation and so many discarded intermediates.  That
-//       will be handled along lines described in subsequent notes.
-//
-//       Meanwhile, here is the complete oFrugal definition of ^casep assuming
-//       existing availability of the abstraction methods.
-//
-//
-//    9. BOOTSTRAPPING AND CONFIRMATION
-//
-//       When putting oFrugal together, it is important to confirm the
-//       operation of σ.x and its heavy usage.  This version does not
-//       provide for potential improvements to ^λ amd ^ρ:
-//
-// !def ob ^_F = (.ev :: (.d :: L :: .b :: L)
-//                    :: `(    L
-//                          :: .ev :: ((.b :: .a :: L) :: v)
-//                                 :: `(    (.a :: L)
-//                                       :: casepv :: .b :: L)
-//                          )
-//                 );
-//
-// !def ob ^casep = `(^σ.v (^σ.casepv (^σ.L ^_F) .ARG) .SELF) :: .e :: .ARG
-//
-//      using ^_F as a temporary binding that is not intended to shadow over
-//      any use of non-underscored lindies in an user's binding names.
-//
-//  10. SIMPLIFICATION POSSIBILITIES
-//
-//      The implementations taken in (9) for ^ρ.casepv and ^λ.L seem rather
-//      heavy-weight since they involve simple substitution operations.  It
-//      may be more efficient to use a function subst(val, x) L such that
-//
-//          subst(val, x) L = (σx L) val
-//
-//      read as "substitute val for x in L."  The definition should be
-//      satisfied, but with a stream-lined implementation that does not
-//      require use of ^σ.x in the oFrugal.
-//
-//      In that case (if it is worthwhile), the derivation in (9) can be
-//      accomplished instead by
-//
-// !def ob ^casep = `(^σ.v ^subst(.SELF, casepv) ^subst(.ARG, L) ^_F)
-//                  :: .e :: .ARG
-//
-//      This is not proposed as a good oFrugal approach.  The implementations
-//      of ^λ.x and ^ρ.P should take care of all of this, with pre-computed
-//      ^subst(.SELF) and ^subst(.ARG) scripts.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -295,7 +304,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.2.4 dated 2024-05-11,
+//   Conception text file casep.txt version 1.3.0 dated 2024-05-12,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -309,6 +318,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.3.0 2024-05-12T20:41Z Cleanit it all up
 // 1.2.4 2024-05-11T21:36Z Completed polishing ^casep for now.
 // 1.2.3 2024-05-11T16:46Z Use intermediates to make conditionals more
 //       explicit and perhaps understandable
