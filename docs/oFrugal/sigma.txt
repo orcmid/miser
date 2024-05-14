@@ -1,4 +1,4 @@
-// sigma.txt 0.0.8                  UTF-8                          2024-05-13
+// sigma.txt 0.0.9                  UTF-8                          2024-05-14
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -14,11 +14,33 @@
 //       Note #42.  This file demonstrates the manual compilation of the
 //       sigma(s, M) Frugalese description into a raw oFrugal implementation.
 //
+//       sigma(s, M) derives a script that when applied to an operand, L,
+//       determines a version of M with L substituted wherever s occured:
+//
+//               sigma(s, M) L = subst(L, s) M
+//
+//       where subst(L, s) derives a substitution of L for s everywhere in its
+//       operand.  Both forms are valuable at various times.  Here, we take
+//       sigma as the starting point for defining and confirming other forms.
+//
 //       Review the ^casep development for an introductory demonstration of
 //       hand-compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
 //
-//       This file is meant to be processable by oFrugal and the final
-//       form is not commented out completely.
+//       This file is meant to be processable by oFrugal once available.
+//
+//       There is a serious practical requirement for hand-compiling the
+//       sigma script.  The other abstraction procedures, λ.s, ρ.sigmas, and
+//       λ.M in the σ.s definition rely upon σ.x applications in their
+//       definitions/implementations.  That chicken-and-egg problem is
+//       resolved by hand-crafting an initial sigma, here, which becomes
+//       usable in the crafting and confirmation of all of the abstraction
+//       utilities, including processing the λ-form expression of σ.s itself.
+//
+//       This bootstrapping of an initial σ.s is reminiscent of using early
+//       programming-language compilers to compile the compiler written in
+//       the language it compiles (e.g., compiling a C Language compiler
+//       written in C Language, and how that first C Language compiler is
+//       obtained by other means).
 //
 //               1. The Original Definition
 //               2. λ-form Expression
@@ -28,8 +50,8 @@
 //               4. let-Form Expressions
 //                  4.1 Single let-form
 //                  4.2 multiple let-clauses
-
-//               5. ****** BOILER PLATE BELOW HERE *****
+//               5. Putting It All Together
+//                  ****** CONTINUATION TBA *****
 //
 //
 //  1. THE ORIGINAL DEFINITION
@@ -63,11 +85,11 @@
 //             else if is-individual(M)
 //                  then ` M
 //                  else if is-enclosure(M)
-//                       then let R = sigmas .a M
+//                       then let R = sigmas .a M                   // (2a)
 //                             in if is-enclosure(R)
 //                                then ` M
 //                                else .e :: R
-//                       else let R = sigmas .a M,
+//                       else let R = sigmas .a M,                  // (2b)
 //                                S = sigmas .b M
 //                             in if is-enclosure(R) ∧ is-enclosure(S)
 //                                then ` M
@@ -89,7 +111,7 @@
 //
 //    3.1 is-singleton(z) and is-enclosure(z)
 //
-//           ob.is-singleton(z) ⇔ ob.b(z) = z                         (Ob4)
+//           ob.is-singleton(z) ⇔ ob.b(z) = z                    (from Ob4)
 //           ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
 //
 //       Translation of is-singleton(z) is directly to ( .d :: z :: .b :: z ).
@@ -101,7 +123,7 @@
 //
 //       use          if R then B else A.
 //
-//       For is-enclosure(z), take
+//       For is-enclosure(z), take the ob.a(z) ≠ z part in that manner:
 //
 //                    if .a z = z
 //                    then .b
@@ -109,13 +131,13 @@
 //
 //       which expands further to
 //
-//          is-enclosure(z) = if .a z = z                               (3b)
+//          is-enclosure(z) = if .a z = z                            // (3b)
 //                            then .b
 //                            else .b z = z
 //
 //       The oFrugal idiom for is-enclosure(z) is then
 //
-//                     // if z = .a z                                   (3c)
+//                     // if z = .a z                                // (3c)
 //               .ev :: ( .d :: z :: .a :: z )
 //
 //                             // then .b
@@ -140,8 +162,8 @@
 //
 //       and from there via (3b) to
 //
-//            // is-enclosure(P) ∧ is-enclosure(Q)
-//               if .a P = P                                            (3d)
+//            // is-enclosure(P) ∧ is-enclosure(Q)                   // (3d)
+//               if .a P = P
 //               then .b
 //               else if .b P = P
 //                    then if .a Q = Q
@@ -169,22 +191,22 @@
 //                 then ` M
 //                 else .e :: R
 //
-//      becomes
+//      at (2a) becomes
 //
-//          λ.R ( if is-enclosure(R)                                    (4a)
+//          λ.R ( if is-enclosure(R)                                 // (4a)
 //                then ` M
 //                else .e :: R
 //                  )
 //          sigmas .a M
 //
-//      There is an occurrence of M in the body of the λ.R abstraction.  This
+//      There is an occurrence of M in the body of the λ.R abstraction .  This
 //      leads to the M in ` M having to be inserted every time sigma recurses
 //      on operand M, even for all the times is-enclosure(M) does not hold.
 //
 //      We can delay such deep substitution by abstracting M and applying
 //      that result at the level where M is the current operand.
 //
-//         ( ( λ.R if is-enclosure(R)                                   (4b)
+//         ( ( λ.R if is-enclosure(R)                                // (4b)
 //                then λ.M ` M
 //                else λ.M (.e :: R )
 //                )
@@ -196,7 +218,7 @@
 //      the condition is already M-extracted (so-to-speak), it can be used in-
 //      line where M is the current operand.  Direct evaluation works:
 //
-//         .ev ( ( λ.R if is-enclosure(R)                               (4c)
+//         .ev ( ( λ.R if is-enclosure(R)                            // (4c)
 //                     then λ.M ` M
 //                     else λ.M (.e :: R )
 //                     )
@@ -205,19 +227,19 @@
 //
 //   4.2 Multiple let Clauses
 //
-//      For the current M being a pair, the operation is
+//      For the current M being a pair, the (2b) operation is
 //
-//          let R = sigmas .A M,                                        (4d)
+//          let R = sigmas .A M,                                     // (4d)
 //              S = sigmas .B M
 //           in if is-enclosure(R) ∧ is-enclosure(S)
 //              then ` M
 //              else .c :: R :: S
 //
-//      Treat this with the the same device as in (3.1a).
+//      Treat this with the the same device at (4a).
 //
 //      However, there is is no benefit to creating a
 //
-//          ( (λ.R λ.S ...) sigmas .A M ) sigmas .b M
+//          ( (λ.R λ.S ...) sigmas .a M ) sigmas .b M
 //
 //      since both operands are always going to be required and consumed
 //      immediately.
@@ -228,7 +250,7 @@
 //           (λ.RS ...) ( sigmas .a M :: sigmas .b M )
 //
 //      expandable to a variant of form (4c):
-//                                                                      (4e)
+//                                                                   // (4e)
 //           .ev ( ( λ.RS if is-enclosure(.a RS) ∧ is-enclosure(.b RS)
 //                        then λ.M ` M
 //                        else λ.M ( .c :: RS )
@@ -237,6 +259,7 @@
 //                 )
 //
 //
+//   5. PUTTING IT ALL TOGETHER
 //       CONTINUE BELOW HERE
 //       *******************
 //
@@ -263,7 +286,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.7 dated 2024-05-13, available on the
+//   text file sigma.txt version 0.0.9 dated 2024-05-14, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -272,9 +295,6 @@
 // TODO
 //
 // * Refer to the idioms already provided for casep.
-//
-// * Trim the contents and sections here as they are repurposed/deleted for
-//   sigma(s, M).
 //
 // * Break down into definitions of temporary forms so the combination into
 //   the more-complex and unreadable mix of .self and .arg occurrences with
@@ -285,6 +305,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.9 2024-05-14T16:47Z Polish down through section 4
 // 0.0.8 2024-05-13T20:36Z Reorganize and smooth the material so far
 // 0.0.7 2024-05-12T23:42Z Reorganize and improve conditional forms
 // 0.0.6 2024-05-10T23:50Z Review and prepare to use temporary definitions
