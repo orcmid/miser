@@ -1,4 +1,4 @@
-// sigma.txt 0.0.9                  UTF-8                          2024-05-14
+// sigma.txt 0.0.10                 UTF-8                          2024-05-14
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -11,8 +11,9 @@
 //
 //
 //       The sigma.s M function is introduced in Miser Project Discussion
-//       Note #42.  This file demonstrates the manual compilation of the
-//       sigma(s, M) Frugalese description into a raw oFrugal implementation.
+//       Note #42.  This sigma.txt file demonstrates the manual compilation
+//       of the sigma(s, M) Frugalese description into a raw oFrugal
+//       implementation.
 //
 //       sigma(s, M) derives a script that when applied to an operand, L,
 //       determines a version of M with L substituted wherever s occured:
@@ -47,9 +48,9 @@
 //               3. Conjunction Conditions
 //                  3.1 is-singleton(z) and is-enclosure(z)
 //                  3.2 is-enclosure(R) ∧ is-enclosure(S)
-//               4. let-Form Expressions
-//                  4.1 Single let-form
-//                  4.2 multiple let-clauses
+//               4. let-/where-Form Expressions
+//                  4.1 Single let/where form
+//                  4.2 multiple let/where clauses
 //               5. Putting It All Together
 //                  ****** CONTINUATION TBA *****
 //
@@ -150,7 +151,7 @@
 //
 //    3.2 is-enclosure(R) ∧ is-enclosure(S)
 //
-//       From (3a), the form
+//       By (3a), the (2b) form
 //
 //                 is-enclosure(P) ∧ is-enclosure(Q)
 //
@@ -172,26 +173,41 @@
 //                    else .b
 //
 //
-//   4. let-FORM EXPRESSIONS
+//   4. let-/where-FORM EXPRESSIONS
 //
-//   4.1 Single let-Form
+//   4.1 Single let/where Forms
 //
-//      The oFrugal idiomatic handling of the form
+//      The oFrugal idiomatic handling of the forms
 //
 //          let v = T in U
 //
-//      requires elimination of the literal v from U in this manner:
+//          U where v = T
 //
-//          (λ.v U) T
+//      require elimination of the literal v from U in this manner:
 //
-//      Thus,
+//          (λv U) T
+//
+//      There is a difference in precedence that can be challenging when
+//      both forms are employed, as in something like
+//
+//          let v = T
+//           in U
+//              where r = M
+//
+//      which becomes
+//
+//          (λv ((λr U) M )) T
+//
+//      That case is not a consideration for sigma.txt.
+//
+//      For sigmal.txt, the expression at (2a),
 //
 //          let R = sigmas .a M
 //           in if is-enclosure(R)
 //                 then ` M
 //                 else .e :: R
 //
-//      at (2a) becomes
+//      is transformed to the form
 //
 //          λ.R ( if is-enclosure(R)                                 // (4a)
 //                then ` M
@@ -201,9 +217,9 @@
 //
 //      There is an occurrence of M in the body of the λ.R abstraction .  This
 //      leads to the M in ` M having to be inserted every time sigma recurses
-//      on operand M, even for all the times is-enclosure(M) does not hold.
+//      on operand M, even for all the times is-enclosure(R) does not hold.
 //
-//      We can delay such deep substitution by abstracting M and applying
+//      We can avoid such deep substitution by abstracting M and applying
 //      that result at the level where M is the current operand.
 //
 //         ( ( λ.R if is-enclosure(R)                                // (4b)
@@ -214,9 +230,9 @@
 //           )
 //          M
 //
-//      Here an additional idiom that can be employed.  Since the result of
-//      the condition is already M-extracted (so-to-speak), it can be used in-
-//      line where M is the current operand.  Direct evaluation works:
+//      Here an additional idiom applies.  Since the result of is already
+//      M-abstracted (so-to-speak), it can be used inline where M is the
+//      current operand of the evaluation.  Direct evaluation works:
 //
 //         .ev ( ( λ.R if is-enclosure(R)                            // (4c)
 //                     then λ.M ` M
@@ -225,7 +241,7 @@
 //                sigmas .a M
 //                )
 //
-//   4.2 Multiple let Clauses
+//   4.2 Multiple let/where Clauses
 //
 //      For the current M being a pair, the (2b) operation is
 //
@@ -235,7 +251,10 @@
 //              then ` M
 //              else .c :: R :: S
 //
-//      Treat this with the the same device at (4a).
+//      Readability of the where-form seems unappealing for this case although
+//      the transformation is easily done.
+//
+//      For (4d) adapt the device employed at (4a).
 //
 //      However, there is is no benefit to creating a
 //
@@ -245,11 +264,11 @@
 //      immediately.
 //
 //     The applicative structure can be simplifed by operating on R and S as
-//     a pair.
+//     a pair,
 //
-//           (λ.RS ...) ( sigmas .a M :: sigmas .b M )
+//           (λ.RS ...) ( sigmas .a M :: sigmas .b M ),
 //
-//      expandable to a variant of form (4c):
+//      employing a variant of form (4c):
 //                                                                   // (4e)
 //           .ev ( ( λ.RS if is-enclosure(.a RS) ∧ is-enclosure(.b RS)
 //                        then λ.M ` M
@@ -286,7 +305,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.9 dated 2024-05-14, available on the
+//   text file sigma.txt version 0.0.10 dated 2024-05-15, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -305,6 +324,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.10 2024-05-15T15:26Z Touch-ups and touching-on where-form.
 // 0.0.9 2024-05-14T16:47Z Polish down through section 4
 // 0.0.8 2024-05-13T20:36Z Reorganize and smooth the material so far
 // 0.0.7 2024-05-12T23:42Z Reorganize and improve conditional forms
