@@ -1,4 +1,4 @@
-// sigma.txt 0.0.10                 UTF-8                          2024-05-14
+// sigma.txt 0.0.11                 UTF-8                          2024-05-16
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -21,13 +21,13 @@
 //               sigma(s, M) L = subst(L, s) M
 //
 //       where subst(L, s) derives a substitution of L for s everywhere in its
-//       operand.  Both forms are valuable at various times.  Here, we take
-//       sigma as the starting point for defining and confirming other forms.
+//       operand.  Both forms are valuable.  Here, we take sigma as a starting
+//       point and illustration for defining and confirming other forms.
 //
 //       Review the ^casep development for an introductory demonstration of
 //       hand-compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
 //
-//       This file is meant to be processable by oFrugal once available.
+//       This file is meant to be processable by oFrugal.
 //
 //       There is a serious practical requirement for hand-compiling the
 //       sigma script.  The other abstraction procedures, λ.s, ρ.sigmas, and
@@ -78,7 +78,7 @@
 //   2. λ-FORM EXPRESSION
 //
 //      Switch to the mixed oFrugal/Frugalese pseudo-code that
-//      establishes application of λ-abstraction heuristics.
+//      relies on application of λ-abstraction heuristics.
 //
 //     sigma = λ.s ρ.sigmas λ.M                                     //  (2)
 //             if M = s
@@ -124,7 +124,7 @@
 //
 //       use          if R then B else A.
 //
-//       For is-enclosure(z), take the ob.a(z) ≠ z part in that manner:
+//       For is-enclosure(z), take the ob.a(z) ≠ z apart in that manner:
 //
 //                    if .a z = z
 //                    then .b
@@ -187,8 +187,8 @@
 //
 //          (λv U) T
 //
-//      There is a difference in precedence that can be challenging when
-//      both forms are employed, as in something like
+//      The choice between let/where forms is driven by readability choises.
+//      Mixtures are possible, as in
 //
 //          let v = T
 //           in U
@@ -198,9 +198,10 @@
 //
 //          (λv ((λr U) M )) T
 //
-//      That case is not a consideration for sigma.txt.
+//      The hand-compiling of these forms will be explored in depth as part
+//      of further topics.
 //
-//      For sigmal.txt, the expression at (2a),
+//      For sigma.txt, the expression at (2a),
 //
 //          let R = sigmas .a M
 //           in if is-enclosure(R)
@@ -215,24 +216,24 @@
 //                  )
 //          sigmas .a M
 //
-//      There is an occurrence of M in the body of the λ.R abstraction .  This
+//      There is an occurrence of M in the body of the λ.R abstraction.  This
 //      leads to the M in ` M having to be inserted every time sigma recurses
 //      on operand M, even for all the times is-enclosure(R) does not hold.
 //
-//      We can avoid such deep substitution by abstracting M and applying
-//      that result at the level where M is the current operand.
+//      Avoid such deep substitution by abstracting M and applying that result
+//      at the level where M is the current operand.
 //
 //         ( ( λ.R if is-enclosure(R)                                // (4b)
-//                then λ.M ` M
-//                else λ.M (.e :: R )
-//                )
+//                 then λ.M ` M
+//                 else λ.M (.e :: R )
+//                 )
 //           sigmas .a .M
 //           )
 //          M
 //
-//      Here an additional idiom applies.  Since the result of is already
-//      M-abstracted (so-to-speak), it can be used inline where M is the
-//      current operand of the evaluation.  Direct evaluation works:
+//      Since the result of (λ.R ...) application yields an effectively
+//      M-abstracted script, the result can be evaluated in-line since M
+//      is already the current (abstracted) operand:
 //
 //         .ev ( ( λ.R if is-enclosure(R)                            // (4c)
 //                     then λ.M ` M
@@ -240,6 +241,9 @@
 //                     )
 //                sigmas .a M
 //                )
+//
+//      is sufficient.
+//
 //
 //   4.2 Multiple let/where Clauses
 //
@@ -256,7 +260,7 @@
 //
 //      For (4d) adapt the device employed at (4a).
 //
-//      However, there is is no benefit to creating a
+//      There is is no benefit to creating a
 //
 //          ( (λ.R λ.S ...) sigmas .a M ) sigmas .b M
 //
@@ -305,7 +309,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.10 dated 2024-05-15, available on the
+//   text file sigma.txt version 0.0.11 dated 2024-05-16, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -324,6 +328,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.11 2024-05-16T00:35Z More tidying around let-/where-forms
 // 0.0.10 2024-05-15T15:26Z Touch-ups and touching-on where-form.
 // 0.0.9 2024-05-14T16:47Z Polish down through section 4
 // 0.0.8 2024-05-13T20:36Z Reorganize and smooth the material so far
