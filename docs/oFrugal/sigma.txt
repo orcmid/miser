@@ -1,4 +1,4 @@
-// sigma.txt 0.0.11                 UTF-8                          2024-05-16
+// sigma.txt 0.0.12                 UTF-8                          2024-05-17
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -172,7 +172,36 @@
 //                         else .b Q = Q
 //                    else .b
 //
+//      The oFrugal form for (3d)
 //
+//        //     is-enclosure(P) ∧ is-enclosure(Q)                   // (3e)
+//
+//        //     if P = .a P
+//        .ev :: ( .d :: P :: .a :: P )
+//
+//        //     then .b
+//            :: ` ( .b
+//
+//        //     else          if P = .b P
+//                   :: .ev :: ( .d :: P :: .b :: P )
+//
+//                          // then        if Q = .a Q
+//                          :: ` ( (.ev :: (.d :: Q :: .a :: Q)
+//
+//                                      // then .b
+//                                      :: ` (  .b
+//
+//                                      // else Q = .b Q
+//                                              :: .d :: Q :: .b :: Q
+//                                              )
+//                                      )
+//
+//                          // else   .b
+//                                 :: .b )
+//
+//                  )
+
+
 //   4. let-/where-FORM EXPRESSIONS
 //
 //   4.1 Single let/where Forms
@@ -309,7 +338,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.11 dated 2024-05-16, available on the
+//   text file sigma.txt version 0.0.12 dated 2024-05-17, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -328,6 +357,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.12 2024-05-17T22:14Z More hand-coding of conjunctions
 // 0.0.11 2024-05-16T00:35Z More tidying around let-/where-forms
 // 0.0.10 2024-05-15T15:26Z Touch-ups and touching-on where-form.
 // 0.0.9 2024-05-14T16:47Z Polish down through section 4
