@@ -1,4 +1,4 @@
-// sigma.txt 0.0.12                 UTF-8                          2024-05-17
+// sigma.txt 0.0.13                 UTF-8                          2024-05-18
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -12,8 +12,8 @@
 //
 //       The sigma.s M function is introduced in Miser Project Discussion
 //       Note #42.  This sigma.txt file demonstrates the manual compilation
-//       of the sigma(s, M) Frugalese description into a raw oFrugal
-//       implementation.
+//       of the sigma(s, M) Frugalese pseudo-language specification into a
+//       raw oFrugal implementation.
 //
 //       sigma(s, M) derives a script that when applied to an operand, L,
 //       determines a version of M with L substituted wherever s occured:
@@ -43,6 +43,12 @@
 //       written in C Language, and how that first C Language compiler is
 //       obtained by other means).
 //
+//       The goal is to have a carefully hand-crafted ^sigma script that will
+//       facilitate crafting of the additional abstraction forms, ^lambda,
+//       ^rec, and ^subst.  From there, assembling procedure scripts based on
+//       Frugalese pseudo-code will be more easily-expressed and dependable.
+//       As the dentist says, "It will only hurt for a little while."
+//
 //               1. The Original Definition
 //               2. λ-form Expression
 //               3. Conjunction Conditions
@@ -59,7 +65,7 @@
 //
 //     From <https://github.com/orcmid/miser/discussions/42>,
 //
-//     σ.s M = if M = s                                             //  (1)
+//     σ.s M = if M = s                                             // (1)
 //             then .ARG
 //             else if is-individual(M)
 //                  then ` M
@@ -80,12 +86,12 @@
 //      Switch to the mixed oFrugal/Frugalese pseudo-code that
 //      relies on application of λ-abstraction heuristics.
 //
-//     sigma = λ.s ρ.sigmas λ.M                                     //  (2)
+//     sigma = λ.s ρ.sigmas λ.M                                     // (2)
 //             if M = s
 //             then .ARG
 //             else if is-individual(M)
 //                  then ` M
-//                  else if is-enclosure(M)
+//                  else if M = .b M  // hence is-enclosure(M)
 //                       then let R = sigmas .a M                   // (2a)
 //                             in if is-enclosure(R)
 //                                then ` M
@@ -99,24 +105,26 @@
 //
 //    3. CONJUNCTION CONDITIONS
 //
-//       The normal interpretation of P ∧ Q for oFrugal is by
+//       The normal interpretation of P ∧ Q in oFrugalese is by
 //
 //                 if P then Q else .b                                 (3a)
 //
-//       This short-circuit determination is valid in oFrugal because there
-//       is no side-effect being skirted by failing to evaluate Q when
-//       P evaluates to .b.
+//       This short-circuit determination is valid because there are no
+//       side-effects skirted by failing to evaluate Q when P evaluates
+//       to .b.  There are no side-effects in oMiser.
 //
-//       There is only one direct relation in oFrugal, it is for equality
-//       of two obs.  That is enough.
+//       There is only one direct relation in oMiser; it is for equality
+//       of two obs.  That is enough for oFrugal.
 //
 //    3.1 is-singleton(z) and is-enclosure(z)
 //
 //           ob.is-singleton(z) ⇔ ob.b(z) = z                    (from Ob4)
 //           ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
 //
+//              where ob.a(z) ≠ z is equivalent to ¬ is-individual(z).
+//
 //       Translation of is-singleton(z) is directly to ( .d :: z :: .b :: z ).
-
+//
 //       The form ob.a(z) ≠ z is equivalent to ¬( ob.a(z) = z ).
 //
 //       For
@@ -124,7 +132,7 @@
 //
 //       use          if R then B else A.
 //
-//       For is-enclosure(z), take the ob.a(z) ≠ z apart in that manner:
+//       Now for is-enclosure(z), take the ob.a(z) ≠ z apart in that manner:
 //
 //                    if .a z = z
 //                    then .b
@@ -138,16 +146,17 @@
 //
 //       The oFrugal idiom for is-enclosure(z) is then
 //
-//                     // if z = .a z                                // (3c)
+//                          // if z = .a z                           // (3c)
 //               .ev :: ( .d :: z :: .a :: z )
 //
-//                             // then .b
-//                      :: ` (    .b
+//                          // then .b
+//                   :: ` (   .b
+//                          ::
+//                          // else z = .b z
+//                            .d :: z :: .b :: z
+//                          )
 //
-//                             // else z = .b z
-//                             :: .d :: z :: .b :: z
-//                               )
-//
+//                with some "x = y" re-ordering to reduce (...) usage.
 //
 //    3.2 is-enclosure(R) ∧ is-enclosure(S)
 //
@@ -172,33 +181,32 @@
 //                         else .b Q = Q
 //                    else .b
 //
-//      The oFrugal form for (3d)
+//      Expanding to the oFrugal form for (3d),
 //
 //        //     is-enclosure(P) ∧ is-enclosure(Q)                   // (3e)
 //
-//        //     if P = .a P
+//                   // if P = .a P
 //        .ev :: ( .d :: P :: .a :: P )
 //
-//        //     then .b
-//            :: ` ( .b
+//                   // then .b
+//            :: ` (   .b
+//                   ::
+//                   // else         if P = .b P
+//                     .ev :: ( .d :: P :: .b :: P )
 //
-//        //     else          if P = .b P
-//                   :: .ev :: ( .d :: P :: .b :: P )
+//                                // then       if Q = .a Q
+//                         :: ` ( (.ev :: (.d :: Q :: .a :: Q)
 //
-//                          // then        if Q = .a Q
-//                          :: ` ( (.ev :: (.d :: Q :: .a :: Q)
-//
-//                                      // then .b
-//                                      :: ` (  .b
-//
-//                                      // else Q = .b Q
-//                                              :: .d :: Q :: .b :: Q
-//                                              )
+//                                           // then .b
+//                                     :: ` (   .b
+//                                            ::
+//                                           // else Q = .b Q
+//                                              .d :: Q :: .b :: Q
+//                                            )
 //                                      )
-//
-//                          // else   .b
-//                                 :: .b )
-//
+//                                ::
+//                                // else .b
+//                                  .b )
 //                  )
 
 
@@ -357,6 +365,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.13 2024-05-18T18:08Z Touching up around hand-codings
 // 0.0.12 2024-05-17T22:14Z More hand-coding of conjunctions
 // 0.0.11 2024-05-16T00:35Z More tidying around let-/where-forms
 // 0.0.10 2024-05-15T15:26Z Touch-ups and touching-on where-form.
