@@ -1,4 +1,4 @@
-// sigma.txt 0.0.14                 UTF-8                          2024-05-20
+// sigma.txt 0.0.15                 UTF-8                          2024-05-22
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -284,7 +284,7 @@
 //
 //   4.2 Multiple let/where Clauses
 //
-//      For the current M being a pair, the (2b) operation is
+//      For the current M being a pair, the (2d) operation is
 //
 //          let R = sigmas .A M,                                     // (4d)
 //              S = sigmas .B M
@@ -346,7 +346,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.12 dated 2024-05-17, available on the
+//   text file sigma.txt version 0.0.15 dated 2024-05-22, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -363,8 +363,12 @@
 // * Point out that use of temp intermediate definitions is also part of
 //   creating "macros" for building scripts.
 //
+// * This should probably be moved to the lambda topic, although sigma is a
+//   simple rewriting procedure.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.15 2024-05-22T17:29Z Simple typo fixes
 // 0.0.14 2024-05-20T23:23Z Cleanup through 4.1 with more steps consistency
 // 0.0.13 2024-05-18T18:08Z Touching up around hand-codings
 // 0.0.12 2024-05-17T22:14Z More hand-coding of conjunctions
