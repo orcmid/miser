@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.10                  UTF-8                          2024-01-22
+oFrugal.txt 0.0.11                  UTF-8                          2024-05-26
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -45,6 +45,10 @@ MANIFEST (text files only)
     ob-exp.txt
         the grammar for applicative expressions of ob computations
 
+    obSigma.txt
+        the hand-compiled σ.s abstraction utility for abstracting terms
+        from arbitrary obs to scripts that create term substitutions
+
     oFrugalese.txt
         the interpreted language for oFrugal text files/streams/terminal
         sources submitted to the oFrugal REPL.
@@ -73,7 +77,7 @@ MANIFEST (text files only)
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code text file oFrugal.txt version 0.0.10 dated 2024-01-22 available on the
+   Code text file oFrugal.txt version 0.0.11 dated 2024-05-26 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
@@ -117,6 +121,7 @@ TODO
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.11 2024-05-26T16:18Z Include obSigma.txt
  0.0.10 2024-01-22T22:39Z Touch-ups on the repurposing
  0.0.9 2024-01-17T00:40Z Refactored to orcmid.github.io/miser/oFrugal/ with
        reduced number of tombstoned components carried over.
