@@ -1,28 +1,29 @@
-// sigma.txt 0.0.16                 UTF-8                          2024-05-26
+// obSigma.txt 0.0.17               UTF-8                          2024-05-26
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
 //                       ===========================
 //
-//             <https://orcmid.github.io/miser/oFrugal/sigma.txt>
+//             <https://orcmid.github.io/miser/oFrugal/obSigma.txt>
 //
-//                        HAND-COMPILED sigma(s, M)
-//                        -------------------------
+//                      HAND-COMPILED obSsigma(s, M)
+//                      ----------------------------
 //
 //
 //       The sigma.s M function is introduced in Miser Project Discussion
-//       Note #42.  This sigma.txt file demonstrates the manual compilation
+//       Note #42.  This obSigma.txt file demonstrates the manual compilation
 //       of the sigma(s, M) Frugalese pseudo-language specification into a
-//       raw oFrugal implementation.
+//       raw oFrugal ^obSigma implementation.
 //
-//       sigma(s, M) derives a script that when applied to an operand, L,
+//       obSigma(s, M) derives a script that when applied to an operand, L,
 //       determines a version of M with L substituted wherever s occured:
 //
-//               sigma(s, M) L = subst(L, s) M
+//               obSigma(s, M) L = obSubst(L, s) M
 //
-//       where subst(L, s) derives a substitution of L for s everywhere in its
-//       operand.  Both forms are valuable.  Here, we take sigma as a starting
-//       point and illustration for defining and confirming other forms.
+//       where obSubst(L, s) derives a substitution of L for s everywhere in
+//       its operand.  Both forms are valuable.  Here, we take obSigma as a
+//       starting point and illustration for defining and confirming other
+//       forms.
 //
 //       Review the ^casep development for an introductory demonstration of
 //       hand-compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
@@ -33,7 +34,7 @@
 //       sigma script.  The other abstraction procedures, λ.s, ρ.sigmas, and
 //       λ.M in the σ.s definition rely upon σ.x applications in their
 //       definitions/implementations.  That chicken-and-egg problem is
-//       resolved by hand-crafting an initial sigma, here, which becomes
+//       resolved by hand-crafting an initial obSigma, here, which becomes
 //       usable in the crafting and confirmation of all of the abstraction
 //       utilities, including processing the λ-form expression of σ.s itself.
 //
@@ -43,11 +44,15 @@
 //       written in C Language, and how that first C Language compiler is
 //       obtained by other means).
 //
-//       The goal is to have a carefully hand-crafted ^sigma script that will
-//       facilitate crafting of the additional abstraction forms, ^lambda,
-//       ^rec, and ^subst.  From there, assembling procedure scripts based on
+//       The goal is to have a carefully hand-crafted ^obSigma script that
+//       facilitates crafting of the additional abstraction forms, ^obLambda,
+//       ^obRec, and ^obSubst.  From there, assembling procedure scripts in
 //       Frugalese pseudo-code will be more easily-expressed and dependable.
 //       As the dentist says, "It will only hurt for a little while."
+//
+//       Although obSigma and the related obSubst are precise algorithms,
+//       The scripts ^obLambda and ^obRec are heuristics and imperfect in
+//       ways that will be addressed with introduction of those scripts.
 //
 //               1. The Original Definition
 //               2. λ-form Expression
@@ -122,7 +127,7 @@
 //           ob.is-singleton(z) ⇔ ob.b(z) = z                    (from Ob4)
 //           ob.is-enclosure(z) ⇔ ob.is-singleton(z) ∧ ob.a(z) ≠ z
 //
-//              where ob.a(z) ≠ z is equivalent to ¬ is-individual(z).
+//                where ob.a(z) ≠ z is equivalent to ¬ is-individual(z).
 //
 //       Translation of is-singleton(z) is directly to ( .d :: z :: .b :: z ).
 //
@@ -157,7 +162,8 @@
 //                            .d :: R :: .b :: R
 //                          )
 //
-//                using some "x = y" symmetries to reduce (...) usage
+//                using some "x = y" symmetries to reduce (...) nesting,
+//                exploiting the right-associativity of "::".
 //                (another idiomatic practice).
 //
 //    3.2 is-enclosure(R) ∧ is-enclosure(S)
@@ -225,7 +231,7 @@
 //
 //          (λv U) T
 //
-//      The choice between let/where forms is driven by readability choises.
+//      The choice between let/where forms is driven by readability choices.
 //      Mixtures are possible, as in
 //
 //          let v = T
@@ -238,7 +244,7 @@
 //
 //      The hand-compiling of these forms will be explored in depth later on.
 //
-//      For sigma.txt, the expression at (2b),
+//      For obSigma.txt, the expression at (2b),
 //
 //          let R = sigmas .a M                                         (2b)
 //           in if is-enclosure(R)                                      (2c)
@@ -295,9 +301,8 @@
 //      Readability of the where-form seems unappealing for this case although
 //      the transformation is easily done.
 //
-//      For (4d) adapt the device employed at (4a).
-//
-//      There is is no benefit to creating a
+//      For (4d) we can adapt the device employed at (4a) except there is no
+//      benefit to creating a
 //
 //          ( (λ.R λ.S ...) sigmas .a M ) sigmas .b M
 //
@@ -346,7 +351,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.16 dated 2024-05-26, available on the
+//   text file sigma.txt version 0.0.17 dated 2024-05-26, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
 //
@@ -366,13 +371,17 @@
 // * This should probably be moved to the lambda topic, although sigma is a
 //   simple rewriting procedure.
 //
-// * Rename the heuristics with ob prefix.
-//
 // * Use abstraction tricks to allow combination in parts that remain
 //   faithful to the components.
 //
+// * I am unclear when and how to start using abstracted chunks for making
+//   the composed final form in some clean way.  I feel like I am losing my
+//   grip on this.  I think I will look at how to assemble the bits and then
+//   go back and extract the makers that make sense.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.17 2024-05-26T18:07Z Adjust to the renaming and ponder macro helpers
 // 0.0.16 2024-05-26T16:10Z TODO Prep for renaming from sigma to obSigma
 // 0.0.15 2024-05-22T17:29Z Simple typo fixes
 // 0.0.14 2024-05-20T23:23Z Cleanup through 4.1 with more steps consistency
