@@ -1,4 +1,4 @@
-// obSigma.txt 0.0.17               UTF-8                          2024-05-26
+// oSigma.txt 0.0.18                UTF-8                          2024-05-26
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -6,22 +6,22 @@
 //
 //             <https://orcmid.github.io/miser/oFrugal/obSigma.txt>
 //
-//                      HAND-COMPILED obSsigma(s, M)
-//                      ----------------------------
+//                      HAND-COMPILED oSsigma(s, M)
+//                      ---------------------------
 //
 //
 //       The sigma.s M function is introduced in Miser Project Discussion
-//       Note #42.  This obSigma.txt file demonstrates the manual compilation
+//       Note #42.  This oSigma.txt file demonstrates the manual compilation
 //       of the sigma(s, M) Frugalese pseudo-language specification into a
-//       raw oFrugal ^obSigma implementation.
+//       raw oFrugal ^oSigma implementation.
 //
-//       obSigma(s, M) derives a script that when applied to an operand, L,
+//       oSigma(s, M) derives a script that when applied to an operand, L,
 //       determines a version of M with L substituted wherever s occured:
 //
-//               obSigma(s, M) L = obSubst(L, s) M
+//               oSigma(s, M) L = oSubst(L, s) M
 //
 //       where obSubst(L, s) derives a substitution of L for s everywhere in
-//       its operand.  Both forms are valuable.  Here, we take obSigma as a
+//       its operand.  Both forms are valuable.  Here, we take oSigma as a
 //       starting point and illustration for defining and confirming other
 //       forms.
 //
@@ -34,7 +34,7 @@
 //       sigma script.  The other abstraction procedures, λ.s, ρ.sigmas, and
 //       λ.M in the σ.s definition rely upon σ.x applications in their
 //       definitions/implementations.  That chicken-and-egg problem is
-//       resolved by hand-crafting an initial obSigma, here, which becomes
+//       resolved by hand-crafting an initial oSigma, here, which becomes
 //       usable in the crafting and confirmation of all of the abstraction
 //       utilities, including processing the λ-form expression of σ.s itself.
 //
@@ -44,15 +44,15 @@
 //       written in C Language, and how that first C Language compiler is
 //       obtained by other means).
 //
-//       The goal is to have a carefully hand-crafted ^obSigma script that
-//       facilitates crafting of the additional abstraction forms, ^obLambda,
-//       ^obRec, and ^obSubst.  From there, assembling procedure scripts in
+//       The goal is to have a carefully hand-crafted ^oSigma script that
+//       facilitates crafting of the additional abstraction forms, ^oLambda,
+//       ^oRec, and ^oSubst.  From there, assembling procedure scripts in
 //       Frugalese pseudo-code will be more easily-expressed and dependable.
 //       As the dentist says, "It will only hurt for a little while."
 //
-//       Although obSigma and the related obSubst are precise algorithms,
-//       The scripts ^obLambda and ^obRec are heuristics and imperfect in
-//       ways that will be addressed with introduction of those scripts.
+//       Although oSigma and the related oSubst are precise algorithms,
+//       The scripts ^oLambda and ^oRec are heuristics and imperfect in
+//       ways that will be accounted for with introduction of those scripts.
 //
 //               1. The Original Definition
 //               2. λ-form Expression
@@ -96,14 +96,14 @@
 //             then .arg
 //             else if is-individual(M)                             // (2a)
 //                  then ` M
-//                  else if M = .b M  // hence is-enclosure(M)
-//                       then let R = sigmas .a M                   // (2b)
-//                             in if is-enclosure(R)                // (2c)
+//                  else if M = .b M  // hence is-enclosure(M)      // (2b)
+//                       then let R = sigmas .a M                   // (2c)
+//                             in if is-enclosure(R)                // (2d)
 //                                then ` M
 //                                else .e :: R
-//                       else let R = sigmas .a M,                  // (2d)
+//                       else let R = sigmas .a M,                  // (2e)
 //                                S = sigmas .b M
-//                             in if is-enclosure(R)                // (2e)
+//                             in if is-enclosure(R)                // (2f)
 //                                   ∧ is-enclosure(S)
 //                                then ` M
 //                                else .c :: R :: S
@@ -138,7 +138,7 @@
 //
 //       use          if R then B else A.
 //
-//       Now for is-enclosure(R) of (2c), take it apart in that manner:
+//       Now for is-enclosure(R) of (2d), take it apart in that manner:
 //
 //                    if .a R = R                                    // (3b)
 //                    then .b
@@ -146,7 +146,7 @@
 //
 //       which expands further to
 //
-//          is-enclosure(z) = if .a R = R                            // (3c)
+//          is-enclosure(R) = if .a R = R                            // (3c)
 //                            then .b
 //                            else .b R = R
 //
@@ -168,7 +168,7 @@
 //
 //    3.2 is-enclosure(R) ∧ is-enclosure(S)
 //
-//       By (3), the (2e) form
+//       By (3), the (2f) form
 //
 //                 is-enclosure(P) ∧ is-enclosure(Q)
 //
@@ -244,10 +244,10 @@
 //
 //      The hand-compiling of these forms will be explored in depth later on.
 //
-//      For obSigma.txt, the expression at (2b),
+//      For oSigma.txt, the expression at (2b),
 //
-//          let R = sigmas .a M                                         (2b)
-//           in if is-enclosure(R)                                      (2c)
+//          let R = sigmas .a M                                         (2c)
+//           in if is-enclosure(R)                                      (2d)
 //                 then ` M
 //                 else .e :: R
 //
@@ -290,7 +290,7 @@
 //
 //   4.2 Multiple let/where Clauses
 //
-//      For the current M being a pair, the (2d) operation is
+//      For the current M being a pair, the (2e) operation is
 //
 //          let R = sigmas .A M,                                     // (4d)
 //              S = sigmas .B M
@@ -351,9 +351,9 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file sigma.txt version 0.0.17 dated 2024-05-26, available on the
+//   text file oSigma.txt version 0.0.18 dated 2024-05-26, available on the
 //   Internet as a version of
-//   <https://orcmid.github.io/miser/oFrugal/sigma.txt>
+//   <https://orcmid.github.io/miser/oFrugal/oSigma.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -381,6 +381,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.18 2024-05-26T20:10Z Adjusting to renaming again, working toward macros
 // 0.0.17 2024-05-26T18:07Z Adjust to the renaming and ponder macro helpers
 // 0.0.16 2024-05-26T16:10Z TODO Prep for renaming from sigma to obSigma
 // 0.0.15 2024-05-22T17:29Z Simple typo fixes
