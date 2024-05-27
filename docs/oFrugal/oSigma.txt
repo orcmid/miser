@@ -1,4 +1,4 @@
-// oSigma.txt 0.0.18                UTF-8                          2024-05-26
+// oSigma.txt 0.0.19                UTF-8                          2024-05-27
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -25,8 +25,10 @@
 //       starting point and illustration for defining and confirming other
 //       forms.
 //
-//       Review the ^casep development for an introductory demonstration of
-//       hand-compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
+//       The applicative computational scheme is defined in the file
+//       <https://orcmid.github.io/miser/obap/obaptheory.txt>.  Review the
+//       caseep development for an introductory demonstration of hand-
+//       compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
 //
 //       This file is meant to be processable by oFrugal.
 //
@@ -89,7 +91,7 @@
 //   2. λ-FORM EXPRESSION
 //
 //      Switch to the mixed oFrugal/Frugalese pseudo-code that
-//      relies on application of λ-abstraction heuristics.
+//      relies on application of λ-abstraction procedures.
 //
 //     sigma = λ.s ρ.sigmas λ.M                                     // (2)
 //             if M = s
@@ -140,23 +142,23 @@
 //
 //       Now for is-enclosure(R) of (2d), take it apart in that manner:
 //
-//                    if .a R = R                                    // (3b)
+//                    if .a R = R                                    // (3a)
 //                    then .b
 //                    else is-singleton(R)
 //
 //       which expands further to
 //
-//          is-enclosure(R) = if .a R = R                            // (3c)
+//          is-enclosure(R) = if .a R = R                            // (3b)
 //                            then .b
 //                            else .b R = R
 //
 //       The oFrugal idiom for is-enclosure(R) is then
 //
-//                          // if R = .a R                           // (3d)
+//                          // if R = .a R                           // (3c)
 //               .ev :: ( .d :: R :: .a :: R )
 //
-//                          // then .b
-//                   :: ` (   .b
+//                   :: ` ( // then .b
+//                            .b
 //                          ::
 //                          // else R = .b R
 //                            .d :: R :: .b :: R
@@ -170,50 +172,51 @@
 //
 //       By (3), the (2f) form
 //
-//                 is-enclosure(P) ∧ is-enclosure(Q)
+//                 is-enclosure(R) ∧ is-enclosure(S)
 //
 //       expands to
 //
-//               if is-enclosure(P)
-//               then is-enclosure(Q)
+//               if is-enclosure(R)
+//               then is-enclosure(S)
 //               else .b
 //
 //       and from there via (3c) to
 //
-//            // is-enclosure(P) ∧ is-enclosure(Q)                   // (3e)
-//               if .a P = P
+//            // is-enclosure(R) ∧ is-enclosure(S)                   // (3d)
+//               if .a R = R
 //               then .b
-//               else if .b P = P
-//                    then if .a Q = Q
+//               else if .b R = R
+//                    then if .a S = S
 //                         then .b
-//                         else .b Q = Q
+//                         else .b S = S
 //                    else .b
 //
 //      Expanding to the raw oFrugal form for (3e),
 //
-//        //     is-enclosure(P) ∧ is-enclosure(Q)                   // (3f)
-//                   // if P = .a P
-//        .ev :: ( .d :: P :: .a :: P )
+//        //     is-enclosure(R) ∧ is-enclosure(S)                   // (3f)
+//                   // if R = .a R
+//        .ev :: ( .d :: R :: .a :: R )
 //
-//                   // then .b
-//            :: ` (   .b
+//            :: ` ( // then .b
+//                     .b
 //                   ::
-//                   // else         if P = .b P
-//                     .ev :: ( .d :: P :: .b :: P )
+//                   // else         if R = .b R
+//                     .ev :: ( .d :: R :: .b :: R )
 //
-//                                // then       if Q = .a Q
-//                         :: ` ( (.ev :: (.d :: Q :: .a :: Q)
+//                         :: ` ( // then        if S = .a S
+//                                (.ev :: (.d :: S :: .a :: S)
 //
-//                                           // then .b
-//                                     :: ` (   .b
+//                                     :: ` ( // then .b
+//                                               .b
 //                                            ::
-//                                           // else Q = .b Q
-//                                              .d :: Q :: .b :: Q
+//                                            // else S = .b S
+//                                               .d :: S :: .b :: S
 //                                            )
-//                                      )
+//                                     )
 //                                ::
 //                                // else .b
-//                                  .b )
+//                                  .b
+//                                )
 //                  )
 //
 //
@@ -231,7 +234,9 @@
 //
 //          (λv U) T
 //
-//      The choice between let/where forms is driven by readability choices.
+//      The choice between let/where forms is driven by readability
+//      considerations.
+//
 //      Mixtures are possible, as in
 //
 //          let v = T
@@ -244,7 +249,7 @@
 //
 //      The hand-compiling of these forms will be explored in depth later on.
 //
-//      For oSigma.txt, the expression at (2b),
+//      For oSigma.txt, the expression at (2c),
 //
 //          let R = sigmas .a M                                         (2c)
 //           in if is-enclosure(R)                                      (2d)
@@ -292,8 +297,8 @@
 //
 //      For the current M being a pair, the (2e) operation is
 //
-//          let R = sigmas .A M,                                     // (4d)
-//              S = sigmas .B M
+//          let R = sigmas .a M,                                     // (2e)
+//              S = sigmas .b M
 //           in if is-enclosure(R) ∧ is-enclosure(S)
 //              then ` M
 //              else .c :: R :: S
@@ -301,7 +306,7 @@
 //      Readability of the where-form seems unappealing for this case although
 //      the transformation is easily done.
 //
-//      For (4d) we can adapt the device employed at (4a) except there is no
+//      For (2e) we can adapt the device employed at (4a) except there is no
 //      benefit to creating a
 //
 //          ( (λ.R λ.S ...) sigmas .a M ) sigmas .b M
@@ -351,7 +356,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.0.18 dated 2024-05-26, available on the
+//   text file oSigma.txt version 0.0.19 dated 2024-05-27, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/oSigma.txt>
 //
@@ -381,6 +386,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.19 2024-05-27T22:49Z Cleaning up layout and formula labels
 // 0.0.18 2024-05-26T20:10Z Adjusting to renaming again, working toward macros
 // 0.0.17 2024-05-26T18:07Z Adjust to the renaming and ponder macro helpers
 // 0.0.16 2024-05-26T16:10Z TODO Prep for renaming from sigma to obSigma
