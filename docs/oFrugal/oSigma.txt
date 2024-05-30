@@ -1,4 +1,4 @@
-// oSigma.txt 0.0.21                UTF-8                          2024-05-30
+// oSigma.txt 0.0.22                UTF-8                          2024-05-30
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -336,9 +336,11 @@
 //      previously-defined ^oIsEnclosure script below (3c).
 
 !def ob ^_M-enclosure
+
         = // ρ.sigmas λ.M
+
               // (  λ.R           if is-enclosure(R)
-          .ev :: `( .ev :: ( ` ^oIsEnclosure :: .arg)
+          .ev :: `( .ev :: ^oIsEnclosure
 
                         :: ` ( // then λ.M ` M
                                   `( .e :: .arg )
@@ -414,7 +416,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.0.21 dated 2024-05-30, available on the
+//   text file oSigma.txt version 0.0.22 dated 2024-05-30, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/oSigma.txt>
 //
@@ -444,6 +446,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.22 2024-05-30T01:35Z Touch-up ^_M-enclosure
 // 0.0.21 2024-05-30T00:03Z Improve through ^_M-enclosure
 // 0.0.20 2024-05-28T01:02Z Adding oIsIndividual, oIsSingleton, oIsEnclosure.
 // 0.0.19 2024-05-27T22:49Z Cleaning up layout and formula labels
