@@ -1,4 +1,4 @@
-// oSigma.txt 0.0.22                UTF-8                          2024-05-30
+// oSigma.txt 0.0.23                UTF-8                          2024-05-30
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -26,8 +26,15 @@
 //       forms.
 //
 //       The applicative computational scheme is defined in the file
-//       <https://orcmid.github.io/miser/obap/obaptheory.txt>.  Review the
-//       caseep development for an introductory demonstration of hand-
+//       <https://orcmid.github.io/miser/obap/obaptheory.txt>.
+//
+//       A sketch of oFrugal notation is at
+//       <https://orcmid.github.io/miser/oFrugal/sketch.txt>.
+//
+//       The formal syntax and semantics of oFrugal expressions is at
+//       <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>.
+//
+//       See casep development for an introductory demonstration of hand-
 //       compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
 //
 //       This file is meant to be processable by oFrugal.
@@ -93,19 +100,19 @@
 //      Switch to the mixed oFrugal/Frugalese pseudo-code that
 //      relies on application of λ-abstraction procedures.
 //
-//     sigma = λ.s ρ.sigmas λ.M                                     // (2)
+//     sigma = λ.s ρ.sigmas λ.M                                      // (2)
 //             if M = s
 //             then .arg
-//             else if is-individual(M)                             // (2a)
+//             else if is-individual(M)                              // (2a)
 //                  then ` M
-//                  else if M = .b M  // hence is-enclosure(M)      // (2b)
-//                       then let R = sigmas .a M                   // (2c)
-//                             in if is-enclosure(R)                // (2d)
+//                  else if M = .b M  // hence is-enclosure(M)       // (2b)
+//                       then let R = sigmas .a M                    // (2c)
+//                             in if is-enclosure(R)                 // (2d)
 //                                then ` M
 //                                else .e :: R
-//                       else let R = sigmas .a M,                  // (2e)
+//                       else let R = sigmas .a M,                   // (2e)
 //                                S = sigmas .b M
-//                             in if is-enclosure(R)                // (2f)
+//                             in if is-enclosure(R)                 // (2f)
 //                                   ∧ is-enclosure(S)
 //                                then ` M
 //                                else .c :: R :: S
@@ -125,7 +132,7 @@
 //
 //       Translation of is-singleton(z) is directly to ( .d :: z :: .b :: z ).
 //       We can produce an oFrugal script for the applicative form.  The
-//       companion is-individual is expressible in the same manner
+//       companion is-individual is expressible in the same manner.
 
 !def ob ^oIsSingleton
         = // λz (z = .b z)
@@ -136,7 +143,8 @@
           .d :: .arg :: .a :: .arg ;
 
 //       Note how the abstracted literal symbol "z" has no distinct residue
-//       upon its abstraction. The .arg form serves the abstract purpose.
+//       upon its abstraction. The .arg form abstracts away the arbitrary
+//       choice of "z" via "λz".
 //
 //    3.1.2 is-enclosure
 
@@ -156,51 +164,46 @@
 //                             else .b
 //      and with
 //
-//          is-enclosure(R) = if .a R = R                            // (3a2)
+//          is-enclosure(R) = if is-individual(R)                    // (3a2)
 //                            then .b
 //                            else is-singleton(R)
 //
-//      The (3a2) form seems the most elegant, yet (3a1) may be a better
-//      choice if we want to rule out non-singletons quickly.  Here I opt for
-//      the simplicity of (3a2), which expands further to
+//      The (3a2) form seems the most elegant with its shallow definition, yet
+//      (3a1) may be a better choice by ruling out non-singletons quickly.
+//      Here, opt for the simplicity of (3a2), which expands further to
 //
 //          is-enclosure(R) = if .a R = R                            // (3b)
 //                            then .b
 //                            else .b R = R
 //
-//      The oFrugal idiom for is-enclosure(R) is then
-//
-//                          // if R = .a R                           // (3c)
-//               .ev :: ( .d :: R :: .a :: R )
-//
-//                   :: ` ( // then .b
-//                            .b
-//                          ::
-//                          // else R = .b R
-//                            .d :: R :: .b :: R
-//                          )
-//
-//     Abstracting R completes the hand-compilation:
+//     Abstracting R achievesa a hand-compilation:
 
 !def ob ^oIsEnclosure
-        = // λR        if R = .a R
-         .ev :: ( .d :: .arg :: .a :: .arg )
-             :: ` ( // then .b
-                       .b
-                    ::
-                    // else R = .b R
-                       .d :: .arg :: .b :: .arg
-                    );
 
+        = // λR         if is-individual(R)                          // (3c)
+          .ev :: ^oIsIndividual
 
+              :: ` ( // then .b
+                        .b
+                     ::
+                     // else is-singleton(R)
+                        ^oIsSingleton
+                     );
+
+//      Although is-singleton and is-individual representations are
+//      straightforward, insertion of ^oIsIndividual and ^oIsSingleton
+//      demonstrates aligned use of already-abstracted scripts.  This
+//      heavily-used device is a prominent feature of oMiser's
+//      applicative operation.
+//
 //    3.2 is-enclosure(R) ∧ is-enclosure(S)
 //
 //       The computational idiom for P ∧ Q in oFrugalese is
 //
-//                 if P then Q else .b                                 (3d)
+//                 if P then Q else .b                                  (3d)
 //
 //       This short-circuit determination is valid because there are no
-//       side-effects in oMiser, so failing to evaluate Q when P evaluates
+//       side-effects in oMiser.  Failing to evaluate Q when P evaluates
 //       to .b is valuable.
 //
 //       There is only one direct relation in oMiser; it is for equality
@@ -216,48 +219,23 @@
 //               then is-enclosure(S)
 //               else .b
 //
-//       and from there via (3b) to
+//       Using ^oIsEnclosure, this can be expressed as
 //
-//            // is-enclosure(R) ∧ is-enclosure(S)                   // (3f)
-//               if .a R = R
-//               then .b
-//               else if .b R = R
-//                    then if .a S = S
-//                         then .b
-//                         else .b S = S
-//                    else .b
+//        //            if is-enclosure(R)                           // (3f)
+//        .ev :: ( ` ^oIsEnclosure :: R )
 //
-//      Expanding to the raw oFrugal form for (3f),
-//
-//        //     is-enclosure(R) ∧ is-enclosure(S)                   // (3g)
-//                   // if R = .a R
-//        .ev :: ( .d :: R :: .a :: R )
-//
-//            :: ` ( // then .b
-//                     .b
+//            :: ` ( // then is-enclosure(S)
+//                   ( ` ^oIsEnclosure :: S )
 //                   ::
-//                   // else         if R = .b R
-//                     .ev :: ( .d :: R :: .b :: R )
+//                   // else .b
+//                      .b )
 //
-//                         :: ` ( // then        if S = .a S
-//                                (.ev :: (.d :: S :: .a :: S)
+//        Here, abstraction of R and S has not been accounted for and there is
+//        nothing farther until is addressed (cf. 4.2).
 //
-//                                     :: ` ( // then .b
-//                                               .b
-//                                            ::
-//                                            // else S = .b S
-//                                               .d :: S :: .b :: S
-//                                            )
-//                                     )
-//                                ::
-//                                // else .b
-//                                  .b
-//                                )
-//                  )
-//
-//      This is a bit more compact than using (3e) and ^oIsEnclosure.  Whether
-//      that is worthwhile will depend on the context in which this
-//      conjunction occurs (cf. 4.2 below).
+//        In-lining ^oIsEnclosure application is unavailable here, in contrast
+//        to the opportunity with ^obIsIndividual and ^obIsSingleton in the
+//        (3c) implementation of ^obIsEnclosure.
 //
 //
 //   4. let-/where-FORM EXPRESSIONS
@@ -332,10 +310,8 @@
 //
 //      is sufficient.
 //
-//      For insertion of hand-compiled (2c), we will take advantag of the
-//      previously-defined ^oIsEnclosure script below (3c).
 
-!def ob ^_M-enclosure
+!def ob ^_M-is-enclosure
 
         = // ρ.sigmas λ.M
 
@@ -346,7 +322,7 @@
                                   `( .e :: .arg )
                                ::
                                // else λ.M (.e :: R )
-                                  .e :: .c :: .e :: .arg
+                                  .e :: .c :: `.e :: .arg
                                )
                     )
               // ) where R = sigmas .a M
@@ -388,8 +364,43 @@
 //                 ( sigmas .a M :: sigmas .b M )
 //                 )
 //
+//      Expanding the conjunction from (3e), we obtain
 //
-//   5. PUTTING IT ALL TOGETHER
+//           .ev ( ( λ.RS if (if is-enclosure .a RS
+//                            then is-enclosure .b RS
+//                            else .b)
+//                        then λ.M ` M
+//                        else λ.M ( .c :: RS )
+//                        )
+//                 ( sigmas .a M :: sigmas .b M )
+//                 )
+
+!def ob ^_M-is-pair
+
+        = // ρ.sigmas λ.M
+
+             // (  λ.RS          if       if is-enclosure .a RS
+         .ev :: `( .ev :: ( .ev :: ( ` ^oIsEnclosure :: .a :: .arg )
+
+                                :: ` ( // then is-enclosure .b RS
+                                          ( ` ^oIsEnclosure :: .b :: .arg )
+                                       ::
+                                       // else .b
+                                          .b
+                                       )
+
+                       :: ` ( // then λ.M ` M
+                                 `( .e :: .arg )
+                              ::
+                              // else λ.M (.c :: RS ) )
+                                .e :: .c :: `.c :: .arg
+                              )
+                   )
+             // ) where RS = sigmas .a M :: sigmas .b M
+             :: .c :: (.self :: .a :: .arg) :: .self :: .b :: .arg  ;
+
+
+
 //       CONTINUE BELOW HERE
 //       *******************
 //
@@ -416,7 +427,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.0.22 dated 2024-05-30, available on the
+//   text file oSigma.txt version 0.0.23 dated 2024-05-30, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/oSigma.txt>
 //
@@ -446,6 +457,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.23 2024-05-30T22:59Z Adjusted through ^_M-is-pair
 // 0.0.22 2024-05-30T01:35Z Touch-up ^_M-enclosure
 // 0.0.21 2024-05-30T00:03Z Improve through ^_M-enclosure
 // 0.0.20 2024-05-28T01:02Z Adding oIsIndividual, oIsSingleton, oIsEnclosure.
