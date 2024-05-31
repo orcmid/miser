@@ -1,10 +1,10 @@
-// oSigma.txt 0.0.23                UTF-8                          2024-05-30
+// oSigma.txt 0.0.24                UTF-8                          2024-05-31
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
 //                       ===========================
 //
-//             <https://orcmid.github.io/miser/oFrugal/obSigma.txt>
+//           <https://orcmid.github.io/miser/lambda/obSigma.txt>
 //
 //                      HAND-COMPILED oSsigma(s, M)
 //                      ---------------------------
@@ -427,9 +427,9 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.0.23 dated 2024-05-30, available on the
+//   text file oSigma.txt version 0.0.24 dated 2024-05-31, available on the
 //   Internet as a version of
-//   <https://orcmid.github.io/miser/oFrugal/oSigma.txt>
+//   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -444,8 +444,7 @@
 // * Point out that use of temp intermediate definitions is also part of
 //   creating "macros" for building scripts.
 //
-// * This should probably be moved to the lambda topic, although sigma is a
-//   simple rewriting procedure.
+// * Place a tombstone at oFrugal and also correct any other tombstones.
 //
 // * Use abstraction tricks to allow combination in parts that remain
 //   faithful to the components.
@@ -457,6 +456,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.24 2024-05-31T19:07Z Move from topic oFrugal to topic lambda
 // 0.0.23 2024-05-30T22:59Z Adjusted through ^_M-is-pair
 // 0.0.22 2024-05-30T01:35Z Touch-up ^_M-enclosure
 // 0.0.21 2024-05-30T00:03Z Improve through ^_M-enclosure
