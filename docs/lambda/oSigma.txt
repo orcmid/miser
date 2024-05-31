@@ -1,4 +1,4 @@
-// oSigma.txt 0.0.25                UTF-8                          2024-05-31
+// oSigma.txt 0.1.0                 UTF-8                          2024-05-31
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -72,7 +72,8 @@
 //                  4.1 Single let/where form
 //                  4.2 multiple let/where clauses
 //               5. Putting It All Together
-//                  ****** CONTINUATION TBA *****
+//                  5.1 Everything but λ.s
+//                  5.2 Completed hand-compilation
 //
 //
 //  1. THE ORIGINAL DEFINITION
@@ -313,7 +314,7 @@
 
 !def ob ^_M-is-enclosure
 
-        = // ρ.sigmas λ.M
+        = // ρ.sigmas λ.M                                            // (4d)
 
               // (  λ.R           if is-enclosure(R)
           .ev :: `( .ev :: ^oIsEnclosure
@@ -350,8 +351,8 @@
 //      since both operands are always going to be required and consumed
 //      immediately.
 //
-//     The applicative structure can be simplifed by operating on R and S as
-//     a pair,
+//      The applicative structure can be simplifed by operating on R and S as
+//      a pair,
 //
 //           (λ.RS ...) ( sigmas .a M :: sigmas .b M ),
 //
@@ -377,35 +378,106 @@
 
 !def ob ^_M-is-pair
 
-        = // ρ.sigmas λ.M
+        = // ρ.sigmas λ.M                                            // (4f)
 
-             // (  λ.RS          if       if is-enclosure .a RS
-         .ev :: `( .ev :: ( .ev :: ( ` ^oIsEnclosure :: .a :: .arg )
+              // (  λ.RS          if       if is-enclosure .a RS
+          .ev :: `( .ev :: ( .ev :: ( ` ^oIsEnclosure :: .a :: .arg )
 
-                                :: ` ( // then is-enclosure .b RS
-                                          ( ` ^oIsEnclosure :: .b :: .arg )
-                                       ::
-                                       // else .b
-                                          .b
-                                       )
+                                 :: ` ( // then is-enclosure .b RS
+                                           ( ` ^oIsEnclosure :: .b :: .arg )
+                                        ::
+                                        // else .b
+                                           .b
+                                        )
 
-                       :: ` ( // then λ.M ` M
-                                 `( .e :: .arg )
-                              ::
-                              // else λ.M (.c :: RS ) )
-                                .e :: .c :: `.c :: .arg
-                              )
-                   )
+                        :: ` ( // then λ.M ` M
+                                  `( .e :: .arg )
+                               ::
+                               // else λ.M (.c :: RS ) )
+                                 .e :: .c :: `.c :: .arg
+                               )
+                    )
              // ) where RS = sigmas .a M :: sigmas .b M
              :: .c :: (.self :: .a :: .arg) :: .self :: .b :: .arg  ;
 
 
-//       CONTINUE BELOW HERE
-//       *******************
+//   5. PUTTING IT ALL TOGETHER
+//
+//      We have been developing the chunks with ρ.sigmas λ.M abstraction.
+//      The next step is to complete that for that portion of the λ-form
+//      expression (2).  The final challenge is to accomplish the λ.s
+//      abstraction.  This requires sigma itself, and we'll follow the
+//      Frugalese for the final manual steps.
+//
+//   5.1 Everything But λ.s
+//
+//      The oSigma code on which λ.s is to be applied is obtained from (2),
+//      ^_M-is-enclosure (4d), and ^_M-is-pair (4f):
+//
+//        // ρ.sigmas λ.M                                            // (5a)
+//
+//            //       if M = s
+//        .ev :: ( .d :: .arg :: ` s)             // s is held constant
+//
+//            :: `( // then
+//                     .arg
+//                  ::
+//                  // else      if is-individual(M)
+//                  .ev :: ^oIsIndividual
+//                      :: `( // then
+//                               (.e :: .arg)
+//                            ::
+//                            // else if is-singleton(M)
+//                            .ev :: ^oIsSingleton
+//                                :: `( // then
+//                                         ^_M-is-enclosure
+//                                      ::
+//                                      // else
+//                                         ^_M-is-pair
+//                                      )
+//                            )
+//                  )
+//
+//      When the given ob is already a script with arguments, additional
+//      λ-abstraction is by sigma-extraction.  That is, λ.s on (5a) is
+//      obtained via σ.s on (5a).
 //
 //
-//  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
+//   5.2 Completed Hand-Compilation
 //
+//      Fortunately, there is only one occurrence of s and it is near the
+//      beginning of the overall oFrugal script.  The substitution of an
+//      argument for the place of s after λ.s only requires building of the
+//      top line of (5a), with the remainder preserved as an unchanged
+//      enclosure:
+
+!def ob ^oSigma
+
+        = // λ.s ρ.sigmas λ.M
+                     //             if M = s
+          .c :: `.ev
+             :: .c :: (.c :: `.d :: .c :: `.arg :: .e :: .arg)
+
+                   ::``( // then
+                            .arg
+                         ::
+                         // else         if is-individual(M)
+                            .ev :: ^oIsIndividual
+                                :: `( // then
+                                         (.e :: .arg)
+                                      ::
+                                      // else         if is-singleton(M)
+                                         .ev :: ^oIsSingleton
+                                             :: `( // then
+                                                      ^_M-is-enclosure
+                                                   ::
+                                                   // else
+                                                      ^_M-is-pair
+                                                   )
+                                      )
+                         );
+
+
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -426,7 +498,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.0.25 dated 2024-05-31, available on the
+//   text file oSigma.txt version 0.1.0 dated 2024-05-31, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -434,27 +506,11 @@
 //
 // TODO
 //
-// * Refer to the idioms already provided for casep.
-//
-// * Break down into definitions of temporary forms so the combination into
-//   the more-complex and unreadable mix of .self and .arg occurrences with
-//   no symbols is comprehensible.
-//
-// * Point out that use of temp intermediate definitions is also part of
-//   creating "macros" for building scripts.
-//
-// * Place a tombstone at oFrugal and also correct any other tombstones.
-//
-// * Use abstraction tricks to allow combination in parts that remain
-//   faithful to the components.
-//
-// * I am unclear when and how to start using abstracted chunks for making
-//   the composed final form in some clean way.  I feel like I am losing my
-//   grip on this.  I think I will look at how to assemble the bits and then
-//   go back and extract the makers that make sense.
+// * Step through and check once the oFrugal REPL is working well enough
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.1.0  2024-05-31T22:56Z Creation of the complete script
 // 0.0.25 2024-05-31T19:17Z minor touch-ups
 // 0.0.24 2024-05-31T19:07Z Move from topic oFrugal to topic lambda
 // 0.0.23 2024-05-30T22:59Z Adjusted through ^_M-is-pair
@@ -483,4 +539,4 @@
 // 0.0.1 2024-05-05T21:16Z Introduce handling single let forms
 // 0.0.0 2024-05-05T18:36Z Create placeholder with boilerplate.
 //
-//                         *** end of sigma.txt ***
+//                         *** end of oSigma.txt ***
