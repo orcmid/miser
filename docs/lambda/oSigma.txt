@@ -1,4 +1,4 @@
-// oSigma.txt 0.0.24                UTF-8                          2024-05-31
+// oSigma.txt 0.0.25                UTF-8                          2024-05-31
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -6,8 +6,8 @@
 //
 //           <https://orcmid.github.io/miser/lambda/obSigma.txt>
 //
-//                      HAND-COMPILED oSsigma(s, M)
-//                      ---------------------------
+//                      HAND-COMPILED oSigma(s, M)
+//                      --------------------------
 //
 //
 //       The sigma.s M function is introduced in Miser Project Discussion
@@ -147,7 +147,7 @@
 //       choice of "z" via "λz".
 //
 //    3.1.2 is-enclosure
-
+//
 //       The form ob.a(z) ≠ z is equivalent to ¬( ob.a(z) = z ).
 //
 //       For
@@ -400,13 +400,12 @@
              :: .c :: (.self :: .a :: .arg) :: .self :: .b :: .arg  ;
 
 
-
 //       CONTINUE BELOW HERE
 //       *******************
 //
 //
 //  ****** BOILER PLATE BELOW HERE *** CUSTOMIZATION FOR SIGMA PENDING ****
-
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -427,7 +426,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.0.24 dated 2024-05-31, available on the
+//   text file oSigma.txt version 0.0.25 dated 2024-05-31, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -456,6 +455,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.25 2024-05-31T19:17Z minor touch-ups
 // 0.0.24 2024-05-31T19:07Z Move from topic oFrugal to topic lambda
 // 0.0.23 2024-05-30T22:59Z Adjusted through ^_M-is-pair
 // 0.0.22 2024-05-30T01:35Z Touch-up ^_M-enclosure
