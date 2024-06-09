@@ -1,4 +1,4 @@
-<!-- index.md 0.3.1                 UTF-8                         2024-06-09
+<!-- index.md 0.3.2                 UTF-8                         2024-06-09
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.1 2024-06-09T18:59Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.2 2024-06-09T21:58Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -222,26 +222,28 @@ incompleteness regarding nested strings in
 Ob enclosures in obs are akin to representations of strings that can nest
 arbitrary strings as individual beads, a limited feature of ALGOL 60,
 developed further by Doug Ross and colleagues in the AED system
-[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].  Enclosures
-are important in the treatment of obs as scripts and shifting between data
-and procedure in the computational model.
+\[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
+
+Enclosures are important in the treatment of obs as scripts and in shifting
+between obs as data and obs as scripts in the computationalmodel.
 
 The computational model founded on ‹ob› for oMiser is a fully-applicative
 scheme inspired through my association with Peter Landin and William H. Burge
 in the mid-1960s, with operation now via a list-processing abstraction.  The
 mechanism of evaluation is based on that for LISP, although Miser is not
 LISP.  oFrugal and Frugalese have inspiration in
-[Landin1966](https://orcmid.github.io/bib/funprog.htm#Landin1966),
-[Burge1975](https://orcmid.github.io/bib/funprog.htm#Burge1975), and some of
-SML [Paulson1996](https://orcmid.github.io/bib/funprog.htm#Paulson1996).
+\[[Landin1966](https://orcmid.github.io/bib/funprog.htm#Landin1966)\],
+\[[Burge1975](https://orcmid.github.io/bib/funprog.htm#Burge1975)\], and some
+of SML
+\[[Paulson1996](https://orcmid.github.io/bib/funprog.htm#Paulson1996)\].
 
 *oMiser* lacks input-output and any kind of filing system for reusable
 artifacts, whether data or applicative-expression scripts.  In this respect,
 there are similarities to the formulation of Functional Programming by John
-Backus [Backus1978](https://orcmid.github.io/bib/compsci.htm#Backus1978):  The
-operational "system" layer, *oFrugal*, provides storage and utility functions.
-The *oMiser* layer provides a computational *manifestation* of the ‹ob›
-mathematical structure.
+Backus \[[Backus1978](https://orcmid.github.io/bib/compsci.htm#Backus1978)\]:
+The operational "system" layer, *oFrugal*, provides storage and utility
+operations.  The *oMiser* layer provides a computational *manifestation* of
+the ‹ob› mathematical structure, including its universal-computation function.
 
 ## 5. Available Materials
 
@@ -362,6 +364,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.2  2024-06-09T21:58Z Fix citation formats, touch-up lightly
   0.3.1  2024-06-09T18:59Z More smoothing
   0.3.0  2024-05-20T17:34Z Tighten and add important background citations
   0.2.8  2024-02-02T13:45Z Add obapx
