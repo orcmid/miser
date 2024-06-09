@@ -1,4 +1,4 @@
-<!-- index.md 0.3.0                 UTF-8                         2024-05-20
+<!-- index.md 0.3.1                 UTF-8                         2024-06-09
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.0 2024-05-20T17:34Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.1 2024-06-09T18:59Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -71,7 +71,8 @@ computation: a member of the abstract structure, ‹ob›.
 
 - An *individual* has both the *a*-part and *b*-part be the ob itself.  The
   lowest component in the figure is an individual.  It is complete unto
-  itself.  There are any number of distinct individuals.
+  itself.  There are any number of distinct individuals. (There are ways that
+  they are distinctly/uniquelly named.)
 
 - An *enclosure* has only the *b*-part be itself.  The middle component in the
   figure is an enclosure.  As an ob, it consists of itself and the *a*-part
@@ -107,9 +108,9 @@ The Miser computational model is achieved with introduction of a universal
 computational function -- an abstraction still.
 
 The challenge becomes finding a dependable alignment between theory and
-practice, contending with a bridge that cannot be crossed. The dependable
-achievement of engineered manifestations of theoretical wonders is a marvel
-of our time.  Look carefully.
+practice, contending with a bridge that cannot be crossed in mathematics or
+logic alone. The dependable achievement of engineered manifestations of
+theoretical wonders is a marvel of our time.  Observe carefully.
 
 ### 1.3 Computational View
 
@@ -213,15 +214,17 @@ The notions of individual, enclosure, singleton, and pair have their
 inspiration in the nested-array work of
 \[[More1979](https://orcmid.github.io/bib/compsci.htm#More1979)\] and the
 foundation structure of LISP
-\[[McCarthy1960](https://orcmid.github.io/bib/funprog.htm#McCarthy1960)\].  The
-importance of enclosure as a structural feature of obs was observed in an
+\[[McCarthy1960](https://orcmid.github.io/bib/funprog.htm#McCarthy1960)\].
+
+The importance of enclosure as a structural feature of obs was observed in an
 incompleteness regarding nested strings in
 \[[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965)\].
-Representations of strings that have other strings as their beads, a limited
-feature of ALGOL 60, was developed further by Doug Ross and colleagues in the
-AED system, along with notions about storage structures that are reviewed
-for potential Miser application
-\[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
+Ob enclosures in obs are akin to representations of strings that can nest
+arbitrary strings as individual beads, a limited feature of ALGOL 60,
+developed further by Doug Ross and colleagues in the AED system
+[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].  Enclosures
+are important in the treatment of obs as scripts and shifting between data
+and procedure in the computational model.
 
 The computational model founded on ‹ob› for oMiser is a fully-applicative
 scheme inspired through my association with Peter Landin and William H. Burge
@@ -242,11 +245,19 @@ mathematical structure.
 
 ## 5. Available Materials
 
-The Miser Project web is organized in topical sections.
+The project is narrated with the software-development managed on GitHub
+repository [orcmid/miser](https://github.com/orcmid/miser).
+[Miser Project on GitHub](https://orcmid.github.io/miser/) content is
+authored at the [docs](https://github.com/orcmid/miser/tree/master/docs)
+folder of the repository.
 
-Current authoritative material is in text files.  Explanatory web-page
-narratives are pending.  Early review and discussion of preview topics is
+Important authoritative materials are in text files that can be preserved and
+employed without requiring a browser or access to the GitHub repository. These
+materials are often-created first; they are always available for preview from
+these web pages.  Early review and discussion of preview topics is
 invited.
+
+The Miser Project web material is organized in topical sections.
 
 | **Section**       |  **General Topic** |
 |   --:             |  ---               |
@@ -351,6 +362,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.1  2024-06-09T18:59Z More smoothing
   0.3.0  2024-05-20T17:34Z Tighten and add important background citations
   0.2.8  2024-02-02T13:45Z Add obapx
   0.2.7  2024-01-30T17:09Z Add docs.txt
