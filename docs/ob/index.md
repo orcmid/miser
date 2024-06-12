@@ -1,4 +1,4 @@
-<!-- index.md 0.0.5                UTF-8                         2024-06-12
+<!-- index.md 0.0.6                UTF-8                         2024-06-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.5 2024-06-12T15:50Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.6 2024-06-12T16:57Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -71,6 +71,25 @@ resolution and documentation in web materials.
 |                         |                  |            |              |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
 
+### Archival Materials
+
+A 2018-2019 series of blog posts provides original narratives on the
+‹ob› = 〈Ob,Of,Ot〉structure.  These will be supplanted under this Miser
+Project topic over time.
+
+ - [Miser Project: Hark! Is That a Theory I see Before Me?](https://orcmid.blogspot.com/2018/07/miser-project-hark-is-that-theory-i-see.html) 2018-07-10
+ - [Miser Project: ‹ob› Primitive Functions](https://orcmid.blogspot.com/2018/08/miser-project-ob-primitive-functions.html) 2018-08-26
+ - [Miser Project: Narrowing ‹ob› for Computational Interpretation](https://orcmid.blogspot.com/2018/09/miser-project-narrowing-ob-for.html) 2018-09-05
+ - [Miser Project: Representing Data as obs](https://orcmid.blogspot.com/2018/11/miser-project-representing-data-as-obs.html) 2018-11-16
+ - [Miser Project: Representing Functions in ‹ob›’s Abstract World](https://orcmid.blogspot.com/2018/12/miser-project-representing-functions-in.html) 2018-12-03,
+ also dealing with interpretations of other structures in ‹ob› = 〈Ob,Of,Ot〉,
+ leaning toward computational interpretations.  This will be reflected under
+ the [obreps](../obreps) topic.
+ - [Miser Project: Interpretation, Representation, Computation, and Manifestation](https://orcmid.blogspot.com/2019/02/miser-project-interpretation.html) 2019-02-11,
+lengthy treatment of computational interpretation and a perspective on
+the appreciation of computation applied to human affairs.  This will also be
+repurposed to other topics of the Miser Project.
+
 ----
 
 I invite discussion about Miser Project topics in the
@@ -98,6 +117,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.6  2024-06-12T16:57Z Add archival materials
   0.0.5  2024-06-12T15:50Z More touch-ups, tracking of provisional files
   0.0.4  2024-01-18T18:45Z Touch-ups, move sketch.txt to oFrugal
   0.0.3  2024-01-15T19:55Z 1.3.0 obtheory
@@ -106,4 +126,4 @@ from time to time.
   0.0.0  2024-01-13T17:33Z Placeholder from 0.2.2 index.md Miser as boilerplate
 
 
-               *** end of miser/docs/cs/index.md ***                     -->
+               *** end of miser/docs/ob/index.md ***                     -->
