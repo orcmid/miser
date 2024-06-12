@@ -1,4 +1,4 @@
-<!-- index.md 0.0.4                UTF-8                         2024-01-18
+<!-- index.md 0.0.5                UTF-8                         2024-06-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.4 2024-01-18T18:45Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.5 2024-06-12T15:50Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -36,24 +36,38 @@
 ## Initial Placeholder
 
 The elaboration of the fundamental structure,‹ob› = 〈Ob,Of,Ot〉, is
-provided here.  The essential characteristics of obs and reasoning (in Ot)
-about functions (thereby in Of) on obs is explained and expanded upon.
+provided here.  Essential characteristics of obs and reasoning (in Ot)
+about functions (thereby in Of) on obs are explained and expanded upon.
 
-There is also the introduction of uninterpreted symbols, the literal
-individuals (lindies) that have no intrinsic significance while being
-valuable as data in computational interpretations involving the
-[obap](../obap) universal function and [oFrugal](../oFrugal).
+There is also introduction of uninterpreted symbols, the literal
+individuals (lindies) that have no intrinsic significance.  Lindies are
+valuable in devising data representations and in [oFrugal](../oFrugal)
+expression of [obap](../obap) applicative-operation scripts.
 
-## Catalog (Specimen, obYYMMNN Content TBD)
+## Catalog (Provisional)
 
-This placeholder links to raw materials and notes, including text files.
-There will be organized folios of content as consolidation of documentation
-on the web progresses.
+### Work-in-Progress
+
+Current activity involves migration of text files from other areas of the
+repository to the web-based public face of the repository.  While migration
+is underway, there are placeholder links to raw materials and notes, including
+text files.
+
+### Provisional Content
+
+Authoritative material is maintained in text files that can be downloaded
+and consulted independent of the GitHub repository and availability on the
+Internet via web pages.  There will be improved organization and web materials
+as development proceeds.
+
+There are also text notes on topics that are being researched prior to
+resolution and documentation in web materials.
 
 | **ID** | **Status** | **Started** | **Topic** |
 |   :-:   |   :-:   |  :-:   |  ---  |
 | [obtheory](obtheory.txt)| 1.3.0 2024-01-15 | 2017-08-24 | ‹ob› = 〈Ob,Of,Ot〉Mathematical Structure |
 | [CFob](CFob.txt)        | 0.1.0 2023-11-10 | 2018-02-04 | Canonical Form of obs |
+| [Uchar](Uchar.txt)      | 0.0.1 2024-04-10 | 2024-02-10 | Universal Character Names for Identifiers |
 |                         |                  |            |              |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
 
@@ -84,6 +98,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.5  2024-06-12T15:50Z More touch-ups, tracking of provisional files
   0.0.4  2024-01-18T18:45Z Touch-ups, move sketch.txt to oFrugal
   0.0.3  2024-01-15T19:55Z 1.3.0 obtheory
   0.0.2  2024-01-14T22:12Z Make stable for now
