@@ -1,8 +1,8 @@
-// casep.txt 1.4.0                  UTF-8                          2024-06-08
+// casep.txt 1.4.1                  UTF-8                          2024-06-15
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
-//                       OBAP ABSTRACTION FUNCTIONS
-//                       ===========================
+//                        OFRUGAL UTILITY FUNCTIONS
+//                        =========================
 //
 //             <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -10,14 +10,13 @@
 //                        -------------------------
 //
 //       Note: the file at <https://orcmid.github.io/miser/obap/casep.txt>
-//       has been tombstoned with continuation under the oFrugal topic.
+//       has been tombstoned for continuation here under the oFrugal topic.
 //
 //       The casep(v, L) function is introduced in Miser Project Discussion
 //       Note #76.  This file demonstrates the manual compilation of the
 //       casep(v, L) Frugalese description to an oFrugal implementation.
 //
-//       This file is meant to be processable by oFrugal and the final
-//       form is not commented out completely.
+//       This file is meant to be processable by oFrugal.
 //
 //               1. The Original Definition
 //               2. The Approach
@@ -71,7 +70,7 @@
 //      into the Canonical Form (CFob) operand to be abstracted into an
 //      applicative script.  In the CFob, lindies v, casepv, and L will
 //      appear where they are to be abstracted in forming the applicative-
-//      operation script, casep.
+//      operation script, ^casep.
 //
 //   3. THE CONDITIONAL EVALUATION IDIOM
 //
@@ -83,12 +82,19 @@
 //
 //       is with a script on the pattern
 //
-//           .ev :: (condition-form)::`(satisfied-part :: not-satified-part)
+//           .ev :: (condition-form)
+//               ::`(    satisfied-part
+//                    ::
+//                       not-satified-part
+//                    )
 //
 //       Evaluation of the condition-form will result in either an .A (for
 //       satisfied) or a .B (for not-satified) that will select between one of
-//       the not-yet-evaluated parts of the encapsulated pair.  Then the
-//       .EV will cause evaluation of that selected part.
+//       the not-yet-evaluated parts of the encapsulated pair.  Then .EV
+//       evaluates the selected part for continuation of the procedure.
+//
+//       The layout on multiple indented lines is a convention for
+//       emphasizing the conditional structure.
 //
 //    4. THE is-singleton(L) DEFAULT-RESULT CONDITIONAL
 //
@@ -96,12 +102,14 @@
 //
 //            x = .b x
 //
-//       so the first condition-form in casep (1a) translates to the oFrugal
-//       form
+//       so the first condition-form in casep (1, above) translates to the
+//       oFrugal form
 //
 //           .ev :: (.d :: L :: .b :: L)                             // (4)
 //               :: `(    L
-//                     :: not-satisfied-part )
+//                     ::
+//                        not-satisfied-part
+//                     )
 //
 //
 //    5. THE CURRENT CASE-CONDITION CHECKING PART
@@ -111,7 +119,9 @@
 //
 //           .ev :: ((.b :: .a :: L) :: ` v)                         // (5)
 //               :: `(    (.a :: L)
-//                     :: casepv :: .b :: L)
+//                     ::
+//                        casepv :: .b :: L
+//                     )
 //
 //       We are slowly boiling the Frugalese pseudo-code down to a canonical
 //       oFrugal form in which the only remaining lindies are those which are
@@ -119,7 +129,7 @@
 //
 //       Note that v is enclosed, ensuring that at the level where (5) is
 //       evaluated, the previously-substituted operand value for v is simply
-//       used at that point, not evaluated further.
+//       used, not evaluated further.
 //
 //
 //
@@ -128,9 +138,12 @@
 //           casep  = λ.v ρ.casepv λ.L                              //  (6a)
 //                    (.ev :: (.d :: L :: .b :: L)
 //                         :: `(    L
-//                               :: .ev :: ((.b :: .a :: L) :: ` v)
+//                               ::
+//                                  .ev :: ((.b :: .a :: L) :: ` v)
 //                                      :: `(    (.a :: L)
-//                                            :: casepv :: .b :: L)
+//                                            ::
+//                                               casepv :: .b :: L
+//                                            )
 //                               )
 //                         );
 //
@@ -151,17 +164,17 @@
          .ev :: (.d :: L :: .b :: L)
 
              :: `( // then  L
-                   L
+                      L
                    ::
-                   // else      if (.b .a L) v
-                   .ev :: ((.b :: .a :: L) :: ` v)
+                   // else         if (.b .a L) v
+                      .ev :: ((.b :: .a :: L) :: ` v)
 
-                       :: `( // then .a L
-                                (.a :: L)
-                             ::
-                             // else casepv .b L
-                                casepv :: .b :: L
-                             )
+                          :: `( // then .a L
+                                   (.a :: L)
+                                ::
+                                // else casepv .b L
+                                   casepv :: .b :: L
+                                )
                    )
          );
 
@@ -191,17 +204,17 @@
          .ev :: (.d :: L :: .b :: .arg)
 
              :: `( // then  L
-                   .arg
+                      .arg
                    ::
-                   // else      if (.b .a L) v
-                   .ev :: ((.b :: .a :: .arg) :: ` v)
+                   // else         if (.b .a L) v
+                      .ev :: ((.b :: .a :: .arg) :: ` v)
 
-                       :: `( // then .a L
-                                (.a :: .arg)
-                             ::
-                             // else casepv .b L
-                                casepv :: .b :: .arg
-                             )
+                          :: `( // then .a L
+                                   (.a :: .arg)
+                                ::
+                                // else casepv .b L
+                                   casepv :: .b :: .arg
+                                )
                    )
          );
 //
@@ -222,17 +235,17 @@
          .ev :: (.d :: L :: .b :: .arg)
 
              :: `( // then  L
-                   .arg
+                      .arg
                    ::
                    // else      if (.b .a L) v
-                   .ev :: ((.b :: .a :: .arg) :: ` v)
+                      .ev :: ((.b :: .a :: .arg) :: ` v)
 
-                       :: `( // then .a L
-                                (.a :: .arg)
-                             ::
-                             // else casepv .b L
-                                .self :: .b :: .arg
-                             )
+                          :: `( // then .a L
+                                   (.a :: .arg)
+                                ::
+                                // else casepv .b L
+                                  .self :: .b :: .arg
+                                )
                    )
          );
 
@@ -254,23 +267,23 @@
 
      = // ^λ.v ^ρ.casepv ^λ.L
 
-       (     // if is-singleton(L)
+       (                      // if is-singleton(L)
          .c  :: `.ev
              :: .c :: `(.d :: .arg :: .b :: .arg)
 
-                            // then  L
+                              // then  L
                    :: .e :: c :: `.arg
-
-                                  // else if (.b .a L) v
-                              :: .c :: `.ev
+                              ::
+                              // else                 if (.b .a L) v
+                                 .c :: `.ev
                                     :: .c  :: (.c :: `(.b :: .a :: .arg)
                                                   :: .e :: .arg)
 
                                            :: ` `( // then .a L
-                                                   (.a :: .arg)
-
+                                                      (.a :: .arg)
+                                                   ::
                                                    // else casepv .b L
-                                                   :: .self :: .b :: .arg
+                                                     .self :: .b :: .arg
                                                    )
          );
 
@@ -298,7 +311,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.4.0 dated 2024-06-08,
+//   Conception text file casep.txt version 1.4.1 dated 2024-06-15,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -308,9 +321,12 @@
 //
 // * Test this with oFrugal when implementation is available.
 //
+// * Demonstrate conversion from casep to casev via editing with sigma.
+//
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.4.1 2024-06-15T18:32Z Touch-ups with layout improvements
 // 1.4.0 2024-06-98T16:06Z More clarifications, better layout, tying in oSigma
 // 1.3.0 2024-05-12T20:41Z Cleanit it all up
 // 1.2.4 2024-05-11T21:36Z Completed polishing ^casep for now.
