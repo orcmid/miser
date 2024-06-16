@@ -1,10 +1,10 @@
-// oSigma.txt 0.1.0                 UTF-8                          2024-05-31
+// oSigma.txt 0.1.1                 UTF-8                          2024-06-16
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
 //                       ===========================
 //
-//           <https://orcmid.github.io/miser/lambda/obSigma.txt>
+//           <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
 //                      HAND-COMPILED oSigma(s, M)
 //                      --------------------------
@@ -34,8 +34,8 @@
 //       The formal syntax and semantics of oFrugal expressions is at
 //       <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>.
 //
-//       See casep development for an introductory demonstration of hand-
-//       compiling <https://orcmid.github.io/miser/oFrugal/casep.txt>.
+//       See casep development for another demonstration of hand-compiling,
+//       <https://orcmid.github.io/miser/oFrugal/casep.txt>.
 //
 //       This file is meant to be processable by oFrugal.
 //
@@ -498,7 +498,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.1.0 dated 2024-05-31, available on the
+//   text file oSigma.txt version 0.1.1 dated 2024-06-16, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -510,6 +510,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.1.1  2024-06-16T16:40Z Touch-up
 // 0.1.0  2024-05-31T22:56Z Creation of the complete script
 // 0.0.25 2024-05-31T19:17Z minor touch-ups
 // 0.0.24 2024-05-31T19:07Z Move from topic oFrugal to topic lambda
