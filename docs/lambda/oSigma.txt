@@ -1,4 +1,4 @@
-// oSigma.txt 0.1.1                 UTF-8                          2024-06-16
+// oSigma.txt 0.2.0                 UTF-8                          2024-06-16
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -45,7 +45,8 @@
 //       definitions/implementations.  That chicken-and-egg problem is
 //       resolved by hand-crafting an initial oSigma, here, which becomes
 //       usable in the crafting and confirmation of all of the abstraction
-//       utilities, including processing the λ-form expression of σ.s itself.
+//       utilities, including processing the λ-form expression of σ.s itself
+//       (the ultimate test).
 //
 //       This bootstrapping of an initial σ.s is reminiscent of using early
 //       programming-language compilers to compile the compiler written in
@@ -74,6 +75,8 @@
 //               5. Putting It All Together
 //                  5.1 Everything but λ.s
 //                  5.2 Completed hand-compilation
+//               6. Now for subst(L,s)
+//
 //
 //
 //  1. THE ORIGINAL DEFINITION
@@ -478,6 +481,54 @@
                          );
 
 
+//   6. NOW FOR subst(L, s)
+//
+//      The definition
+//
+//                    oSubst(L, s) M = oSigma(s, M) L
+//
+//      is a mathematically straightforward way to define substitutions
+//      of L for s in the given M.  This may not be an efficient technique,
+//      but it could be the easiest to implement.  Here's how.
+//
+//      oSubst = λ.L λ.s λ.M
+//               oSigma(s, M) L
+//             = ((` oSigma :: ` s) :: M) :: ` L
+//
+//      oSubst = λ.L λ.s // λ.M
+//               ( (` oSigma :: ` s) :: .arg) :: ` L
+//
+//      oSubst = λ.L // λ.s λ.M
+//               .c :: (.c :: (`.e ::` oSigma :: .arg)
+//                         :: `.arg)
+//                  :: ` `L
+//
+//      Knowing a bit more about how ^oSigma applies to its first operand,
+//      It is possible to flatten the application to operand s in oSubst.
+//      This coupling depends on white-box knowledge of ^oSigma and should
+//      be done cautiously.  Fortunately, both scripts are defined here in
+//      this one place.  Here's what the flattening looks like.
+//
+//      oSubst = λ.L // λ.s λ.M
+//               .c :: (.c ::  (`.e :: ^oSigma) // oSigma(s)
+//                         :: `.arg)
+//                  :: ` `L
+//
+//      and finally,
+//
+
+!def ob ^oSubst
+        = // λ.L λ.s λ.M
+         .c :: `.c
+            ::  .c :: `(.c :: (`.e :: ^oSigma)
+                           :: `.arg)
+                   :: .e :: .e :: .arg;
+
+// That is much easier than coming up with a direct implementation of subst
+// that operates with no dependence on oSigma.  If that is ever entertained,
+// we can use this implementation for confirmation of matching results and
+// also for determining the difference in performance.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -498,7 +549,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.1.1 dated 2024-06-16, available on the
+//   text file oSigma.txt version 0.2.0 dated 2024-06-16, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -506,10 +557,13 @@
 //
 // TODO
 //
-// * Step through and check once the oFrugal REPL is working well enough
+// * Step through and check once the oFrugal REPL is working well enough.
+//
+// * Confirm ^oSubst also.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.2.0  2024-06-16T22:35Z Introduce ^oSubst
 // 0.1.1  2024-06-16T16:40Z Touch-up
 // 0.1.0  2024-05-31T22:56Z Creation of the complete script
 // 0.0.25 2024-05-31T19:17Z minor touch-ups
