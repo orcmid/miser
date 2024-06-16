@@ -1,4 +1,4 @@
-// casep.txt 1.4.1                  UTF-8                          2024-06-15
+// casep.txt 1.5.0                  UTF-8                          2024-06-16
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                        OFRUGAL UTILITY FUNCTIONS
@@ -28,6 +28,7 @@
 //                  7.1 Abstracting operand L
 //                  7.2 Abstracting the recursion
 //                  7.3 Abstracting operand v
+//               8. Musings
 //
 //
 //  1. THE ORIGINAL DEFINITION
@@ -291,6 +292,45 @@
 //       up-and-running, with easier confirmation and simpler expresssion.
 //
 //
+//    8. MUSINGS
+//
+//       There are no variables in oFrugal in the sense that variables occur
+//       in mathematical-logic expressions such as those in formulation of
+//       structure ‹ob› = 〈Ob,Of,Ot〉definitions, theorems, and introduction
+//       of the universal-computation functions obap.ap and obap.eval.
+//
+//       There are also no variables in the sense they are introduced and
+//       spoken about in the usage of programming languages for software
+//       development.
+//
+//       There are a flavor of pseudo-variables in oFrugalese where lindies
+//       (such as v, casepv, and L) are employed for abstraction in the guise
+//       of free variables.  The abstraction procedures replace such lindies
+//       with primitive forms lacking all evidence of the replaced lindies.
+//       In hand-compiled scripts, compensation for that lack is in the
+//       comments (which may or may not be accurate).  The undecorated oFrugal
+//       scripts are inscrutible.
+//
+//       Comprehension of raw oFrugal scripts without even pseudo-variables
+//       and narrative commentary is just as frustrating as are the binary
+//       machine-language binary program code for modern digital computers.
+//       It is small consolation that comprehension of any significant Turing
+//       Machine definitions is even more difficult.
+//
+//       An interesting exercise for the future would be to create a script
+//       that can be used to "de-abstract" an ob to an oFrugalese form that
+//       gives rise to it, substituting lindies in some understandable manner.
+//       This would provide a form of symbolic confirmation of what a script
+//       is abstracted from.
+//
+//       Generally, however, the best way to confirm the operation of scripts
+//       is to compose them from understandable parts, ideally parts that can
+//       be confirmed individually, exploiting the applicative techniques for
+//       composition of procedures to achieve the overall objective. Some
+//       indications of this can be seen in the formulation of oSigma.txt at
+//       <https://orcmid.github.io/miser/lambda/oSigma.txt>.  It will take
+//       practice.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -311,7 +351,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.4.1 dated 2024-06-15,
+//   Conception text file casep.txt version 1.5.0 dated 2024-06-16,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -321,11 +361,10 @@
 //
 // * Test this with oFrugal when implementation is available.
 //
-// * Demonstrate conversion from casep to casev via editing with sigma.
-//
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.5.0 2024-06-16T16:35Z Add Musings section 8
 // 1.4.1 2024-06-15T18:32Z Touch-ups with layout improvements
 // 1.4.0 2024-06-98T16:06Z More clarifications, better layout, tying in oSigma
 // 1.3.0 2024-05-12T20:41Z Cleanit it all up
