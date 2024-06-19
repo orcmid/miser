@@ -1,4 +1,4 @@
-// oSigma.txt 0.3.0                 UTF-8                          2024-06-19
+// oSigma.txt 0.3.1                 UTF-8                          2024-06-19
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -78,7 +78,7 @@
 //                  5.2 Completed hand-compilation
 //               6. Now for subst(L,s) and delta(s, L)
 //                  6.1 subst(L, s)
-//                  6.2 def(s, P), δ.s P
+//                  6.2 delta(s, P), δ.s(P)
 //
 //
 //
@@ -515,10 +515,10 @@
 //             = λ.L λ.s λ.M
 //               (( oSigma :: s) :: M) :: L
 //
-//      oSubst = λ.L λ.s // λ.M
+//             = λ.L λ.s // λ.M
 //               ( ( oSigma :: s) :: .arg) :: L
 //
-//      oSubst = λ.L // λ.s λ.M
+//             = λ.L // λ.s λ.M
 //               .c :: (.c :: (`.e :: ^oSigma) // oSigma(s) flattened
 //                         :: `.arg)
 //                  :: `L
@@ -532,8 +532,8 @@
 //      NOTE 2: It is permissible to apply oSigma as soon as the operand s
 //              is available.  That simplification, with flattening of the
 //              ^oSigma presence, is reflected in the hand-compiled λ.s
-//              abstraction.
-
+//              abstraction.  For a more-systematic approach, see 6.2, below.
+//
 //      Now finally,
 
 !def ob ^oSubst
@@ -549,32 +549,34 @@
 //      results and also for determining the difference in performance.
 //
 //
-//   6.2 def(s, P), δ.s P
+//   6.2 delta(s, P), δ.s(P)
 //
 //      Another way to deal with the occurrences of lindies that are intended
 //      to be replaced by scripts defined elsewhere is by use of simplifier
 //      function
 //
-//          δ.s(P) M = oDef(s, P) M = oSubst(`P, s) M = oSigma(s, M) `P
+//          δ.s(P) M = oDelta(s, P) M = oSubst(`P, s) M = oSigma(s, M) `P
 //
-//      The direct approach uses oSubst for the implementation. The use of
-//      δ.s(P) M is a bit like linking existing scripts in place of the
-//      (usually-lindy) occurrences of s in M.
+//      The direct approach uses oSubst for the implementation.
 //
-//      oDef = δ.subst(^oSubst) λ.s λ.P λ.M                           // (6)
-//             subst(`P, s) M
+//      IMPORTANT:  δ.s(P) M is intended as a convention for linking existing
+//      scripts of existing applicative operations in place of the occurrences
+//      of s in M.  That usage is simulated in definition of δ.s(P) itself.
 //
-//           = δ.subst(^oSubst) λ.s λ.P
-//             ( subst :: `P) :: s
+//      oDelta = δ.subst(^oSubst) λ.s λ.P λ.M                         // (6)
+//               subst(`P, s) M
 //
-//           = δ.subst(^oSubst) λ.s // λ.P
-//             ( subst :: .e :: .arg) :: s
+//             = δ.subst(^oSubst) λ.s λ.P
+//               ( subst :: `P) :: s
 //
-//           = δ.subst(^oSubst) // λ.s λ.P
-//             .c :: `( subst :: .e :: .arg)
-//                :: .e :: .arg
+//             = δ.subst(^oSubst) λ.s // λ.P
+//               ( subst :: .e :: .arg) :: s
+//
+//             = δ.subst(^oSubst) // λ.s λ.P
+//               .c :: `( subst :: .e :: .arg)
+//                  :: .e :: .arg
 
-!def ob ^oDef
+!def ob ^oDelta
         = // δ.subst(^oSubst) λ.s λ.P
           .c :: ` (` ^oSubst :: .e :: .arg)
              :: .e :: .arg;
@@ -611,7 +613,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.3.0 dated 2024-06-19, available on the
+//   text file oSigma.txt version 0.3.1 dated 2024-06-19, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -623,11 +625,11 @@
 //
 // * Confirm ^oSubst also.
 //
-// * Determine whether oDef and δ are compatible terms and decide what would
-//   improve on that.
+// * I wonder if there is a better symbolism than δ.s
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.3.1  2024-06-19T19:30Z Be consistent with oDelta and δ
 // 0.3.0  2024-06-19T17:30Z Introduce ^oDef and δ
 // 0.2.1  2024-06-17T15:38Z Elaborate on flattening and avoiding inclusion of
 //        other scripts prematurely
