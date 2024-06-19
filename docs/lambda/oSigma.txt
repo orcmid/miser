@@ -1,4 +1,4 @@
-// oSigma.txt 0.2.1                 UTF-8                          2024-06-17
+// oSigma.txt 0.3.0                 UTF-8                          2024-06-19
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -11,8 +11,9 @@
 //
 //
 //       The sigma.s M function is introduced in Miser Project Discussion
-//       Note #42.  This oSigma.txt file demonstrates the manual compilation
-//       of the sigma(s, M) Frugalese pseudo-language specification into a
+//       Note #42, <https://github.com/orcmid/miser/discussions/42>.  This
+//       oSigma.txt file demonstrates the manual compilation of the
+//       sigma(s, M) Frugalese pseudo-language specification into a
 //       raw oFrugal ^oSigma implementation.
 //
 //       oSigma(s, M) derives a script that when applied to an operand, L,
@@ -21,7 +22,7 @@
 //               oSigma(s, M) L = oSubst(L, s) M
 //
 //       where obSubst(L, s) derives a substitution of L for s everywhere in
-//       its operand.  Both forms are valuable.  Here, we take oSigma as a
+//       its operand M.  Both forms are valuable.  Here, we take oSigma as a
 //       starting point and illustration for defining and confirming other
 //       forms.
 //
@@ -75,7 +76,9 @@
 //               5. Putting It All Together
 //                  5.1 Everything but λ.s
 //                  5.2 Completed hand-compilation
-//               6. Now for subst(L,s)
+//               6. Now for subst(L,s) and delta(s, L)
+//                  6.1 subst(L, s)
+//                  6.2 def(s, P), δ.s P
 //
 //
 //
@@ -147,8 +150,11 @@
           .d :: .arg :: .a :: .arg ;
 
 //       Note how the abstracted literal symbol "z" has no distinct residue
-//       upon its abstraction. The .arg form abstracts away the arbitrary
-//       choice of "z" via "λz".
+//       upon its abstraction. The .arg form abstracts away the use of "z"
+//       paired with "λz".  Any other literal symbol could be used, as in
+//       λq (q = .b q) so long as there is no conflicting occurrence of the
+//       alternative symbol.  The abstracted forms are the same.
+//
 //
 //    3.1.2 is-enclosure
 //
@@ -194,11 +200,16 @@
                         ^oIsSingleton
                      );
 
-//      Although is-singleton and is-individual representations are
-//      straightforward, insertion of ^oIsIndividual and ^oIsSingleton
-//      demonstrates aligned use of already-abstracted scripts.  This
-//      heavily-used device is a prominent feature of oMiser's
-//      applicative operation.
+//      Because ^oIsIndividual and ^oIsSingleton are non-recursive scripts
+//      that have their operand already abstracted, it is as if R is already
+//      abstracted and those scripts can be spliced "in-line" without the need
+//      for (` ^oIsIndividual :: .arg) and (` oIsSingleton :: .arg).  This
+//      flattening device is very useful, although it depends on knowledge
+//      of the incorporated script.
+//
+//      That coupling can be error-prone.  It is risked here because the
+//      incorporated scripts are both well-known and defined nearby.
+//
 //
 //    3.2 is-enclosure(R) ∧ is-enclosure(S)
 //
@@ -235,7 +246,7 @@
 //                      .b )
 //
 //        Here, abstraction of R and S has not been accounted for and there is
-//        nothing farther until is addressed (cf. 4.2).
+//        nothing farther until that is addressed (cf. 4.2).
 //
 //        In-lining ^oIsEnclosure application is unavailable here, in contrast
 //        to the opportunity with ^obIsIndividual and ^obIsSingleton in the
@@ -484,9 +495,11 @@
 //      of M, but not before.  If they were included prior to application of
 //      an actual λ.M application, the appearance of .arg in those inclusions
 //      would mis-guide the abstraction.  See how that is handled for
-//      development of subst(L, s) below.
+//      development of subst(L, s) and introduction of delta(s, L) below.
 //
 //   6. NOW FOR subst(L, s)
+//
+//   6.1 subst(L, s)
 //
 //      The definition
 //
@@ -498,34 +511,30 @@
 //
 //      oSubst = λ.L λ.s λ.M
 //               oSigma(s, M) L
-//             = ((` oSigma :: ` s) :: M) :: ` L
+//
+//             = λ.L λ.s λ.M
+//               (( oSigma :: s) :: M) :: L
 //
 //      oSubst = λ.L λ.s // λ.M
-//               ( (` oSigma :: ` s) :: .arg) :: ` L
+//               ( ( oSigma :: s) :: .arg) :: L
 //
 //      oSubst = λ.L // λ.s λ.M
-//               .c :: (.c :: (`.e ::` oSigma :: .arg)
+//               .c :: (.c :: (`.e :: ^oSigma) // oSigma(s) flattened
 //                         :: `.arg)
-//                  :: ` `L
+//                  :: `L
 //
-//      NOTE: Up to this point, do nothing about the "free-occurrence" of the
-//            oSigma lindy in the oFrugal pseudo-code. Substitution before
-//            actual λ.M applications will mislead the heuristic's detection
-//            of .arg occurrences.  Now substition is safe.
+//      NOTE 1: Until this point, nothing was done about the "free-occurrence"
+//              of the oSigma in the oFrugal pseudo-code. Substitution before
+//              abstraction of operand M will mislead the λ.M heuristic
+//              detection of existing .arg occurrences.  Now insertion of
+//              ^oSigma is safe.
 //
-//      Knowing a bit more about how ^oSigma applies to its first operand,
-//      It is possible to flatten the application to operand s in oSubst.
-//      This coupling depends on white-box knowledge of ^oSigma and should
-//      be done cautiously.  Fortunately, both scripts are defined here in
-//      this one place.  Here's what the flattening looks like.
-//
-//      oSubst = λ.L // λ.s λ.M
-//               .c :: (.c ::  (`.e :: ^oSigma) // oSigma(s)
-//                         :: `.arg)
-//                  :: ` `L
-//
+//      NOTE 2: It is permissible to apply oSigma as soon as the operand s
+//              is available.  That simplification, with flattening of the
+//              ^oSigma presence, is reflected in the hand-compiled λ.s
+//              abstraction.
+
 //      Now finally,
-//
 
 !def ob ^oSubst
         = // λ.L λ.s λ.M
@@ -536,14 +545,51 @@
 
 //      That is much easier than coming up with a direct implementation of
 //      subst that operates with no dependence on oSigma.  If that is ever
-//      entertained, use this implementation for confirmation of matching
+//      preferable, use this implementation for confirmation of matching
 //      results and also for determining the difference in performance.
 //
-//      NOTE: Substitution of ^oSigma for the "free" occurrence of lindy
-//            oSigma is essentially accomplishment of oSubst(^oSigma, osigma).
-//            That's not available here, of course.  And flattening
-//            optimizations are not so apparent where that devise is
-//            usable.
+//
+//   6.2 def(s, P), δ.s P
+//
+//      Another way to deal with the occurrences of lindies that are intended
+//      to be replaced by scripts defined elsewhere is by use of simplifier
+//      function
+//
+//          δ.s(P) M = oDef(s, P) M = oSubst(`P, s) M = oSigma(s, M) `P
+//
+//      The direct approach uses oSubst for the implementation. The use of
+//      δ.s(P) M is a bit like linking existing scripts in place of the
+//      (usually-lindy) occurrences of s in M.
+//
+//      oDef = δ.subst(^oSubst) λ.s λ.P λ.M                           // (6)
+//             subst(`P, s) M
+//
+//           = δ.subst(^oSubst) λ.s λ.P
+//             ( subst :: `P) :: s
+//
+//           = δ.subst(^oSubst) λ.s // λ.P
+//             ( subst :: .e :: .arg) :: s
+//
+//           = δ.subst(^oSubst) // λ.s λ.P
+//             .c :: `( subst :: .e :: .arg)
+//                :: .e :: .arg
+
+!def ob ^oDef
+        = // δ.subst(^oSubst) λ.s λ.P
+          .c :: ` (` ^oSubst :: .e :: .arg)
+             :: .e :: .arg;
+
+//      illustrating how how δ.subst would work except the substitution of
+//      ^oSubst would be there.
+//
+//      The explicit use of δ.s is typically not carried down through the
+//      manual compilation of a script.  But when lambda transformations
+//      are available, the form (6) is appropriate.
+//
+//      NOTE: This is the recommended approach to linking in separately-
+//            defined scripts that are already in abstracted applicative form.
+//            Incorrect λ-heuristic determinations are avoided with this
+//            precaution.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -565,7 +611,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.2.1 dated 2024-06-17, available on the
+//   text file oSigma.txt version 0.3.0 dated 2024-06-19, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -577,8 +623,12 @@
 //
 // * Confirm ^oSubst also.
 //
+// * Determine whether oDef and δ are compatible terms and decide what would
+//   improve on that.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.3.0  2024-06-19T17:30Z Introduce ^oDef and δ
 // 0.2.1  2024-06-17T15:38Z Elaborate on flattening and avoiding inclusion of
 //        other scripts prematurely
 // 0.2.0  2024-06-16T22:35Z Introduce ^oSubst
