@@ -1,4 +1,4 @@
-// oSigma.txt 0.3.1                 UTF-8                          2024-06-19
+// oSigma.txt 0.3.2                 UTF-8                          2024-06-20
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -494,8 +494,8 @@
 //      NOTE: The insertion of parts is appropriate following the abstraction
 //      of M, but not before.  If they were included prior to application of
 //      an actual λ.M application, the appearance of .arg in those inclusions
-//      would mis-guide the abstraction.  See how that is handled for
-//      development of subst(L, s) and introduction of delta(s, L) below.
+//      would mis-guide the abstraction operation.  See how that is handled
+//      in development of subst(L, s) and introduction of delta(s, P) below.
 //
 //   6. NOW FOR subst(L, s)
 //
@@ -527,9 +527,11 @@
 //              of the oSigma in the oFrugal pseudo-code. Substitution before
 //              abstraction of operand M will mislead the λ.M heuristic
 //              detection of existing .arg occurrences.  Now insertion of
-//              ^oSigma is safe.
+//              ^oSigma is safe.  The use of δ.s(P), introduced in (6.2,
+//              below), supports a systematic practice for use in conjunction
+//              with abstraction operations once they are available.
 //
-//      NOTE 2: It is permissible to apply oSigma as soon as the operand s
+//      NOTE 2: It is permissible to apply oSigma as soon as its operand s
 //              is available.  That simplification, with flattening of the
 //              ^oSigma presence, is reflected in the hand-compiled λ.s
 //              abstraction.  For a more-systematic approach, see 6.2, below.
@@ -581,17 +583,35 @@
           .c :: ` (` ^oSubst :: .e :: .arg)
              :: .e :: .arg;
 
-//      illustrating how how δ.subst would work except the substitution of
-//      ^oSubst would be there.
+//      illustrating when δ.subst would occur (except the substitution of
+//      ^oSubst would have happened).
 //
-//      The explicit use of δ.s is typically not carried down through the
-//      manual compilation of a script.  But when lambda transformations
-//      are available, the form (6) is appropriate.
+//      The use of δ.s is usually not explicit in manual compilation in the
+//      manner of (6).  When lambda transformations are implemented and used
+//      in something like
 //
-//      NOTE: This is the recommended approach to linking in separately-
-//            defined scripts that are already in abstracted applicative form.
-//            Incorrect λ-heuristic determinations are avoided with this
-//            precaution.
+//          !def ob ^oDelta
+//                  = ^δ.subst(^oSubst) ^λ.s ^λ.P
+//                    (subst :: ` P) :: s;
+//
+//      the usage is indispensible,
+//
+//      Any clumsiness stems from the complete absence of anything like
+//      programming-language variables and references in oMiser.  oFrugal
+//      bindings (^-forms) must be explicit and always previously-defined.
+//
+//      NOTE 1: This is the recommended approach to linking in separately-
+//              defined scripts that are already in abstracted applicative
+//              form.  Incorrect λ-heuristic determinations are avoided with
+//              this precaution.
+//
+//      NOTE 2: There may be multiple applications of δ.s(P) forms. This is
+//              the intended practice.  CAVEAT: The stacking of δ.s(P) forms
+//              can be incorrect in the case that "s" occurs in the body of a
+//              preceding δ-linked component, or ambiguously in the current
+//              P operand.  That is a general risk of the abstraction
+//              heuristics.
+//
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -613,7 +633,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.3.1 dated 2024-06-19, available on the
+//   text file oSigma.txt version 0.3.2 dated 2024-06-20, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -629,6 +649,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.3.2  2024-06-20T16:19Z Expand on δ usage, with notes on hazards
 // 0.3.1  2024-06-19T19:30Z Be consistent with oDelta and δ
 // 0.3.0  2024-06-19T17:30Z Introduce ^oDef and δ
 // 0.2.1  2024-06-17T15:38Z Elaborate on flattening and avoiding inclusion of
