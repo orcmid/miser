@@ -1,0 +1,178 @@
+// oLambda.txt 0.0.0                UTF-8                          2024-06-20
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+//                       OBAP ABSTRACTION FUNCTIONS
+//                       ===========================
+//
+//          <https://orcmid.github.io/miser/lambda/oLambda.txt>
+//
+//           HAND-COMPILED λ.x and ρ.p ABSTRACTION OPERATIONS
+//           ------------------------------------------------
+//
+//
+//       The abstraction operations are introduced in Miser Project Discussion
+//       Note #42, <https://github.com/orcmid/miser/discussions/42>.  This
+//       oLambda.txt file provides for the manual compilation of the
+//       λ.x and ρ.p Frugalese definitions into raw oFrugal ^oLambda and
+//       oRec implementations.
+//
+//       The applicative computational scheme is defined in the file
+//       <https://orcmid.github.io/miser/obap/obaptheory.txt>.
+//
+//       A sketch of oFrugal notation is at
+//       <https://orcmid.github.io/miser/oFrugal/sketch.txt>.
+//
+//       The formal syntax and semantics of oFrugal expressions is at
+//       <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>.
+//
+//       Implementations of σ.s, subst(L, s), and δ.s(P) are relied upon.
+//       Their definitions illustrate derivation of applicative-operation
+//       scripts <https://orcmid.github.io/miser/lambda/oSigma.txt>.
+//
+//       See casep development for another demonstration of hand-compiling,
+//       <https://orcmid.github.io/miser/oFrugal/casep.txt>.
+//
+//       This file is meant to be processable by oFrugal.
+//
+// **** BOILER PLATE BELOW HERE *******************************************
+// ************************************************************************
+//
+//               1. The Original Definition
+//               2. λ-form Expression
+//               3. Conditionals
+//                  3.1 is-singleton(z), is-individual(z), and is-enclosure(z)
+//                  3.2 is-enclosure(R) ∧ is-enclosure(S)
+//               4. let-/where-Form Expressions
+//                  4.1 Single let/where form
+//                  4.2 multiple let/where clauses
+//               5. Putting It All Together
+//                  5.1 Everything but λ.s
+//                  5.2 Completed hand-compilation
+//               6. Now for subst(L,s) and delta(s, L)
+//                  6.1 subst(L, s)
+//                  6.2 delta(s, P), δ.s(P)
+//
+
+//   6. NOW FOR subst(L, s)
+//
+//   6.1 subst(L, s)
+//
+//      The definition
+//
+//                    oSubst(L, s) M = oSigma(s, M) L
+//
+//      is a mathematically straightforward way to define substitutions
+//      of L for s in the given M.  This may not be an efficient technique,
+//      but it is simple to implement in this form.  Here's how.
+//
+//      oSubst = λ.L λ.s λ.M
+//               oSigma(s, M) L
+//
+//             = λ.L λ.s λ.M
+//               (( oSigma :: s) :: M) :: L
+//
+//             = λ.L λ.s // λ.M
+//               ( ( oSigma :: s) :: .arg) :: L
+//
+//             = λ.L // λ.s λ.M
+//               .c :: (.c :: (`.e :: ^oSigma) // oSigma(s) flattened
+//                         :: `.arg)
+//                  :: `L
+//
+//      NOTE 1: Until this point, nothing was done about the "free-occurrence"
+//              of the oSigma in the oFrugal pseudo-code. Substitution before
+//              abstraction of operand M will mislead the λ.M heuristic
+//              detection of existing .arg occurrences.  Now insertion of
+//              ^oSigma is safe.  The use of δ.s(P), introduced in (6.2,
+//              below), supports a systematic practice for use in conjunction
+//              with abstraction operations once they are available.
+//
+//      NOTE 2: It is permissible to apply oSigma as soon as its operand s
+//              is available.  That simplification, with flattening of the
+//              ^oSigma presence, is reflected in the hand-compiled λ.s
+//              abstraction.  For a more-systematic approach, see 6.2, below.
+//
+//      Now finally,
+
+!def ob ^oSubst
+        = // λ.L λ.s λ.M
+         .c :: `.c
+            ::  .c :: `(.c :: (`.e :: ^oSigma)
+                           :: `.arg)
+                   :: .e :: .e :: .arg;
+
+//      That is much easier than coming up with a direct implementation of
+//      subst that operates with no dependence on oSigma.  If that is ever
+//      preferable, use this implementation for confirmation of matching
+//      results and also for determining the difference in performance.
+//
+//
+//   6.2 delta(s, P), δ.s(P)
+//
+//      Another way to deal with the occurrences of lindies that are intended
+//      to be replaced by scripts defined elsewhere is by use of simplifier
+//      function
+//
+//          δ.s(P) M = oDelta(s, P) M = oSubst(`P, s) M = oSigma(s, M) `P
+//
+//      The direct approach uses oSubst for the implementation.
+//
+//      IMPORTANT:  δ.s(P) M is intended as a convention for linking existing
+//      scripts of existing applicative operations in place of the occurrences
+//      of s in M.  That usage is simulated in definition of δ.s(P) itself.
+//
+//      oDelta = δ.subst(^oSubst) λ.s λ.P λ.M                         // (6)
+//               subst(`P, s) M
+//
+//             = δ.subst(^oSubst) λ.s λ.P
+//               ( subst :: `P) :: s
+//
+//             = δ.subst(^oSubst) λ.s // λ.P
+//               ( subst :: .e :: .arg) :: s
+//
+//             = δ.subst(^oSubst) // λ.s λ.P
+//               .c :: `( subst :: .e :: .arg)
+//                  :: .e :: .arg
+
+!def ob ^oDelta
+        = // δ.subst(^oSubst) λ.s λ.P
+          .c :: ` (` ^oSubst :: .e :: .arg)
+             :: .e :: .arg;
+
+//
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+//                   Copyright 2024 Dennis E. Hamilton
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//              http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// ATTRIBUTION
+//
+//   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
+//   Miser Theory Conception text file oLambda.txt version 0.0.0 dated
+//   2024-06-20, available on the Internet as a version of
+//   <https://orcmid.github.io/miser/lambda/oLambda.txt>
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// TODO
+//
+// * Replace the boilerplate and introduce the operations.
+//
+//--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+//
+// 0.0.0  2024-05-20T17:20Z Initial boilerplatwe from 0.3.2 oSigma.txt
+//
+//                         *** end of oLambda.txt ***
