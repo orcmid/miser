@@ -1,4 +1,4 @@
-// oLambda.txt 0.0.0                UTF-8                          2024-06-20
+// oLambda.txt 0.0.1                UTF-8                          2024-06-20
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -34,112 +34,105 @@
 //
 //       This file is meant to be processable by oFrugal.
 //
-// **** BOILER PLATE BELOW HERE *******************************************
-// ************************************************************************
 //
-//               1. The Original Definition
-//               2. λ-form Expression
-//               3. Conditionals
-//                  3.1 is-singleton(z), is-individual(z), and is-enclosure(z)
-//                  3.2 is-enclosure(R) ∧ is-enclosure(S)
-//               4. let-/where-Form Expressions
-//                  4.1 Single let/where form
-//                  4.2 multiple let/where clauses
-//               5. Putting It All Together
-//                  5.1 Everything but λ.s
-//                  5.2 Completed hand-compilation
-//               6. Now for subst(L,s) and delta(s, L)
-//                  6.1 subst(L, s)
-//                  6.2 delta(s, P), δ.s(P)
+//               1. λ-Abstraction
+//                  1.1 Heuristic
+//                  1.2 Frugalese definition
+//                  1.3 oFrugal derivation
+ //                 1.4 oFrugal definition
+//               2. ρ-Abstraction
 //
+//
+//   1. λ-ABSTRACTION
+//
+//   1.1 Heuristic
+//
+//      The heuristic for λ-Abstraction via λ.x S has two rules:
+//
+//        1. If the ob S has no occurrences of .arg, the abstraction of
+//           x from S is given by subst(.arg, x) S.
+//
+//        2. Otherwise, the abstraction of x from S is given by
+//
+//                      σ.x subst(` x, x) S.
+//
+//      These definitions depend on x being a lindy and x not being
+//      already enclosed, since it is not in oFrugalese
+//
+//
+//    1.2 Frugalese Definition
+//
+//      λ.x S = if is-enclosure σ(.arg) S
+//              then // no occurrence of .arg
+//                   subst(.arg, x) S
+//              else σ.x subst(` x, x) S;
+//
+//    1.3 oFrugal Derivation
+//
+//      λ =  λx λS //    if is-enclosure σ(.arg) S
+//          .ev :: (is-enclosure :: ( σ :: `.arg ) :: S )
+//
+//              :: `( // then subst(.arg, x) S
+//                       (((subst :: `.arg) :: x) :: S)
+//                    ::
+//                    // else σ.x subst(` x, x) S
+//                       (σ :: x) :: ((subst :: ` x) :: x) :: S
+//                    ) ;
+//
+//        = λx // λS    if is-enclosure σ(.arg) S
+//          .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
+//
+//              :: `( // then subst(.arg, x) S
+//                       (((subst :: `.arg) :: x) :: .arg)
+//                    ::
+//                    // else σ.x subst(` x, x) S
+//                       (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+//                    ) ;
+//
+//        = // λx λS        if is-enclosure σ(.arg) S
+//
+//          ((σ :: x):: (subst :: ` x) :: x)
+//          ::
+//          `( .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
+//
+//                 :: `( // then subst(.arg, x) S
+//                          (((subst :: `.arg) :: x) :: .arg)
+//                       ::
+//                       // else σ.x subst(` x, x) S
+//                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+//                    )
+//              );
+//
+//      bootstrapping λx in the definition by hand-following the Frugalse
+//      definition.  We don't have to go farther because all of the functions
+//      signified in the derivation are available.
+//
+//    1.4 oFrugal Definition
 
-//   6. NOW FOR subst(L, s)
-//
-//   6.1 subst(L, s)
-//
-//      The definition
-//
-//                    oSubst(L, s) M = oSigma(s, M) L
-//
-//      is a mathematically straightforward way to define substitutions
-//      of L for s in the given M.  This may not be an efficient technique,
-//      but it is simple to implement in this form.  Here's how.
-//
-//      oSubst = λ.L λ.s λ.M
-//               oSigma(s, M) L
-//
-//             = λ.L λ.s λ.M
-//               (( oSigma :: s) :: M) :: L
-//
-//             = λ.L λ.s // λ.M
-//               ( ( oSigma :: s) :: .arg) :: L
-//
-//             = λ.L // λ.s λ.M
-//               .c :: (.c :: (`.e :: ^oSigma) // oSigma(s) flattened
-//                         :: `.arg)
-//                  :: `L
-//
-//      NOTE 1: Until this point, nothing was done about the "free-occurrence"
-//              of the oSigma in the oFrugal pseudo-code. Substitution before
-//              abstraction of operand M will mislead the λ.M heuristic
-//              detection of existing .arg occurrences.  Now insertion of
-//              ^oSigma is safe.  The use of δ.s(P), introduced in (6.2,
-//              below), supports a systematic practice for use in conjunction
-//              with abstraction operations once they are available.
-//
-//      NOTE 2: It is permissible to apply oSigma as soon as its operand s
-//              is available.  That simplification, with flattening of the
-//              ^oSigma presence, is reflected in the hand-compiled λ.s
-//              abstraction.  For a more-systematic approach, see 6.2, below.
-//
-//      Now finally,
+!include "oSigma.txt"
 
-!def ob ^oSubst
-        = // λ.L λ.s λ.M
-         .c :: `.c
-            ::  .c :: `(.c :: (`.e :: ^oSigma)
-                           :: `.arg)
-                   :: .e :: .e :: .arg;
+!def ob ^oLambda
+        =    (δ.σ :: ^oSigma)
+          :: (δ.subst :: ^oSubst)
+          :: (δ.is-enclosure :: ^oIsEnclosure)
+          ::
+          // λx λS        if is-enclosure σ(.arg) S
 
-//      That is much easier than coming up with a direct implementation of
-//      subst that operates with no dependence on oSigma.  If that is ever
-//      preferable, use this implementation for confirmation of matching
-//      results and also for determining the difference in performance.
-//
-//
-//   6.2 delta(s, P), δ.s(P)
-//
-//      Another way to deal with the occurrences of lindies that are intended
-//      to be replaced by scripts defined elsewhere is by use of simplifier
-//      function
-//
-//          δ.s(P) M = oDelta(s, P) M = oSubst(`P, s) M = oSigma(s, M) `P
-//
-//      The direct approach uses oSubst for the implementation.
-//
-//      IMPORTANT:  δ.s(P) M is intended as a convention for linking existing
-//      scripts of existing applicative operations in place of the occurrences
-//      of s in M.  That usage is simulated in definition of δ.s(P) itself.
-//
-//      oDelta = δ.subst(^oSubst) λ.s λ.P λ.M                         // (6)
-//               subst(`P, s) M
-//
-//             = δ.subst(^oSubst) λ.s λ.P
-//               ( subst :: `P) :: s
-//
-//             = δ.subst(^oSubst) λ.s // λ.P
-//               ( subst :: .e :: .arg) :: s
-//
-//             = δ.subst(^oSubst) // λ.s λ.P
-//               .c :: `( subst :: .e :: .arg)
-//                  :: .e :: .arg
+          ((σ :: x):: (subst :: ` x) :: x)
+          ::
+          `( .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
 
-!def ob ^oDelta
-        = // δ.subst(^oSubst) λ.s λ.P
-          .c :: ` (` ^oSubst :: .e :: .arg)
-             :: .e :: .arg;
+                 :: `( // then subst(.arg, x) S
+                          (((subst :: `.arg) :: x) :: .arg)
+                       ::
+                       // else σ.x subst(` x, x) S
+                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+                    )
+              );
 
+//   2. ρ-ABSTRACTION
 //
+//   ***** TBD *****
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -161,7 +154,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
-//   Miser Theory Conception text file oLambda.txt version 0.0.0 dated
+//   Miser Theory Conception text file oLambda.txt version 0.0.1 dated
 //   2024-06-20, available on the Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oLambda.txt>
 //
@@ -173,6 +166,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
-// 0.0.0  2024-05-20T17:20Z Initial boilerplatwe from 0.3.2 oSigma.txt
+// 0.0.1  2024-06-20T23:37Z First draft of Section 1, λ-Abstraction
+// 0.0.0  2024-06-20T17:20Z Initial boilerplatwe from 0.3.2 oSigma.txt
 //
 //                         *** end of oLambda.txt ***
