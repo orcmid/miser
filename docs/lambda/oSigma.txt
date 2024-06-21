@@ -1,4 +1,4 @@
-// oSigma.txt 0.3.2                 UTF-8                          2024-06-20
+// oSigma.txt 0.3.3                 UTF-8                          2024-06-21
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -186,7 +186,7 @@
 //                            then .b
 //                            else .b R = R
 //
-//     Abstracting R achievesa a hand-compilation:
+//     Abstracting R achieves a hand-compilation:
 
 !def ob ^oIsEnclosure
 
@@ -331,7 +331,7 @@
         = // ρ.sigmas λ.M                                            // (4d)
 
               // (  λ.R           if is-enclosure(R)
-          .ev :: `( .ev :: ^oIsEnclosure
+          .ev :: `( .ev :: ` ^oIsEnclosure
 
                         :: ` ( // then λ.M ` M
                                   `( .e :: .arg )
@@ -437,12 +437,12 @@
 //                     .arg
 //                  ::
 //                  // else      if is-individual(M)
-//                  .ev :: ^oIsIndividual
+//                  .ev :: ` ^oIsIndividual
 //                      :: `( // then
 //                               (.e :: .arg)
 //                            ::
 //                            // else if is-singleton(M)
-//                            .ev :: ^oIsSingleton
+//                            .ev :: ` ^oIsSingleton
 //                                :: `( // then
 //                                         ^_M-is-enclosure
 //                                      ::
@@ -541,7 +541,7 @@
 !def ob ^oSubst
         = // λ.L λ.s λ.M
          .c :: `.c
-            ::  .c :: `(.c :: (`.e :: ^oSigma)
+            ::  .c :: `(.c :: (`.e :: ` ^oSigma)
                            :: `.arg)
                    :: .e :: .e :: .arg;
 
@@ -587,14 +587,14 @@
 //      ^oSubst would have happened).
 //
 //      The use of δ.s is usually not explicit in manual compilation in the
-//      manner of (6).  When lambda transformations are implemented and used
+//      manner of (6).  When lambda transformations are implemented and there
+//      is no manual observation of intermediates, the forms such as
 //      in something like
 //
-//          !def ob ^oDelta
-//                  = ^δ.subst(^oSubst) ^λ.s ^λ.P
+//                    ^δ.subst(^oSubst) ^λ.s ^λ.P
 //                    (subst :: ` P) :: s;
 //
-//      the usage is indispensible,
+//      are indispensible,
 //
 //      Any clumsiness stems from the complete absence of anything like
 //      programming-language variables and references in oMiser.  oFrugal
@@ -633,7 +633,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.3.2 dated 2024-06-20, available on the
+//   text file oSigma.txt version 0.3.3 dated 2024-06-21, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -649,6 +649,8 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.3.3  2024-06-21T19:27Z Clean-up the simulated δ cases for non-inlined
+//        insertions of defined applicative obs
 // 0.3.2  2024-06-20T16:19Z Expand on δ usage, with notes on hazards
 // 0.3.1  2024-06-19T19:30Z Be consistent with oDelta and δ
 // 0.3.0  2024-06-19T17:30Z Introduce ^oDef and δ
