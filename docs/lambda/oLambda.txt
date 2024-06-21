@@ -1,4 +1,4 @@
-// oLambda.txt 0.0.1                UTF-8                          2024-06-20
+// oLambda.txt 0.0.2                UTF-8                          2024-06-21
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -91,8 +91,8 @@
 //
 //        = // λx λS        if is-enclosure σ(.arg) S
 //
-//          ((σ :: x):: (subst :: ` x) :: x)
-//          ::
+//          ^σ.x ^subst(` x, x)
+//
 //          `( .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
 //
 //                 :: `( // then subst(.arg, x) S
@@ -112,23 +112,23 @@
 !include "oSigma.txt"
 
 !def ob ^oLambda
-        =    (δ.σ :: ^oSigma)
-          :: (δ.subst :: ^oSubst)
-          :: (δ.is-enclosure :: ^oIsEnclosure)
-          ::
+        = ^δ(σ, ^oSigma)
+          ^δ(subst, ^oSubst)
+          ^δ(is-enclosure, ^oIsEnclosure)
+
           // λx λS        if is-enclosure σ(.arg) S
 
-          ((σ :: x):: (subst :: ` x) :: x)
-          ::
-          `( .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
+          ^σ.x ^subst(` x, x)
 
-                 :: `( // then subst(.arg, x) S
-                          (((subst :: `.arg) :: x) :: .arg)
-                       ::
-                       // else σ.x subst(` x, x) S
-                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
-                    )
-              );
+               `( .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
+
+                      :: `( // then subst(.arg, x) S
+                               (((subst :: `.arg) :: x) :: .arg)
+                            ::
+                            // else σ.x subst(` x, x) S
+                               (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+                            )
+                  );
 
 //   2. ρ-ABSTRACTION
 //
@@ -154,8 +154,8 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
-//   Miser Theory Conception text file oLambda.txt version 0.0.1 dated
-//   2024-06-20, available on the Internet as a version of
+//   Miser Theory Conception text file oLambda.txt version 0.0.2 dated
+//   2024-06-21, available on the Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oLambda.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -166,6 +166,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.0.2  2024-06-21T17:02Z Correct λ and oLambda derivations
 // 0.0.1  2024-06-20T23:37Z First draft of Section 1, λ-Abstraction
 // 0.0.0  2024-06-20T17:20Z Initial boilerplatwe from 0.3.2 oSigma.txt
 //
