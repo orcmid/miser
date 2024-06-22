@@ -1,4 +1,4 @@
-// oLambda.txt 0.1.0                UTF-8                          2024-06-21
+// oLambda.txt 0.2.0                UTF-8                          2024-06-22
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -73,30 +73,33 @@
 //          .ev :: (is-enclosure :: ( σ :: `.arg ) :: S )
 //
 //              :: `( // then subst(.arg, x) S
-//                       ((`(subst `.arg) :: x) :: S)
+//                       ((subst .arg) :: x) :: S
 //                    ::
 //                    // else σ.x subst(` x, x) S
 //                       (σ :: x) :: ((subst :: ` x) :: x) :: S
 //                    ) ;
 //
 //        = λx // λS    if is-enclosure σ(.arg) S
-//          .ev :: (is-enclosure :: ( σ :: `.arg ) :: .arg )
+//          .ev :: (is-enclosure :: ( σ .arg ) :: .arg )
 //
 //              :: `( // then subst(.arg, x) S
-//                       ((`(subst `.arg) :: x) :: .arg)
+//                       (((subst .arg) :: x) :: .arg)
 //                    ::
 //                    // else σ.x subst(` x, x) S
 //                       (σ :: x) :: ((subst :: ` x) :: x) :: .arg
 //                    ) ;
 //
-//        = // λx λS        if is-enclosure σ(.arg) S
+//        = ^δ(      sigarg, ^oSigma .arg)
+//          ^δ(      subarg, ^oSubst .arg)
 //
-//          ^σ.x ^oSubst(` x, x)
+//          // λx λS        if is-enclosure σ(.arg) S
 //
-//          `( .ev :: (is-enclosure :: `(^oSigma .arg ) :: .arg )
+//          ^σ.x subst(` x, x)
+//
+//          `( .ev :: (is-enclosure :: sigarg :: .arg )
 //
 //                 :: `( // then subst(.arg, x) S
-//                          ((`(^oSubst .arg) :: x) :: .arg)
+//                          ((subarg :: x) :: .arg)
 //                       ::
 //                       // else σ.x subst(` x, x) S
 //                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
@@ -108,31 +111,34 @@
 //      signified in the derivation are available.
 //
 //      Note that σ(.arg) and subst(.arg) are constant terms precomputed into
-//      the script at points where it is safe to do so.
+//      the script via ^δ(sigarg) and ^δ(subarg), an idiomatic practice
+//      for defining in fixed materials.
 //
 //    1.4 oFrugal Definition
 
 !include "oSigma.txt"
 
 !def ob ^oLambda
-        = ^δ(σ, ^oSigma)
-          ^δ(subst, ^oSubst)
-          ^δ(is-enclosure, ^oIsEnclosure)
+        = ^δ(is-enclosure, ^oIsEnclosure)
+          ^δ(      sigarg, ^oSigma .arg)
+          ^δ(       subst, ^oSubst)
+          ^δ(      subarg, ^oSubst .arg)
+          ^δ(           σ, ^oSigma)
 
           // λx λS        if is-enclosure σ(.arg) S
 
-          ^σ.x ^oSubst(` x, x)
+          ^σ.x subst(` x, x)
 
-               `( .ev :: (is-enclosure :: `( ^oSigma .arg ) :: .arg )
+          `( .ev :: (is-enclosure :: sigarg :: .arg )
 
-                      :: `( // then subst(.arg, x) S
-                               ((`(^oSubst .arg) :: x) :: .arg)
-                            ::
-                            // else σ.x subst(` x, x) S
-                               (σ :: x) :: ((subst :: ` x) :: x) :: .arg
-                            )
-                  );
-
+                 :: `( // then subst(.arg, x) S
+                          ((subarg :: x) :: .arg)
+                       ::
+                       // else σ.x subst(` x, x) S
+                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+                    )
+              );
+//
 //   2. ρ-ABSTRACTION
 //
 //      The heuristic for ρ-abstraction is rather trivial.  It is based
@@ -150,14 +156,12 @@
 //          subst(.self) p
 //
 //        = // λp λS
-//          subst .self
+//          subst .self;
 
 !def ob ^oRec
         = ^oSubst .self;
 
-//      where the precomputation of (subst .self) is the point of having the
-//      curried form of subst.
-//
+
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -178,8 +182,8 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
-//   Miser Theory Conception text file oLambda.txt version 0.1.0 dated
-//   2024-06-21, available on the Internet as a version of
+//   Miser Theory Conception text file oLambda.txt version 0.2.0 dated
+//   2024-06-22, available on the Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oLambda.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -191,6 +195,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.2.0  2024-06-22T05:00Z Use ^δ for external definitions and precomputations
 // 0.1.0  2024-06-21T22:31Z Complete with definition of ρ-Abstraction and also
 //        factor in pre-computation of some constant expressions.
 // 0.0.2  2024-06-21T17:02Z Correct λ and oLambda derivations
