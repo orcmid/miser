@@ -1,4 +1,4 @@
-// oLambda.txt 0.2.1                UTF-8                          2024-06-22
+// oLambda.txt 0.3.0                UTF-8                          2024-06-23
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -196,33 +196,6 @@
 //                )
 //              (x, S);
 //
-//      and λ.x λ.S (σ.x subst(` x, x) S)
-//
-//          =  λ.x λ.S
-//             ((σ :: x) :: ((subst :: ` x) :: x) :: S)
-//
-//          =  λ.x // λ.S
-//             ((σ :: x) :: ((subst :: ` x) :: x) :: .arg)
-//
-//          =  // λ.x  λ.S
-//             σ.x subst(` x, x) ((σ :: x) :: ((subst :: ` x) :: x) :: .arg)
-//
-//          =  // λ.x  λ.S
-//             σ.x ((σ ::` x) :: ((subst :: `` x) :: ` x) :: .arg)
-//
-//          =  // λ.y  λ.S
-//             σ.y ((σ ::` y) :: ((subst :: `` y) :: ` y) :: .arg)
-//
-//       with the substitution of λ.y to avoid confusion with the "outer"
-//       handling of λ.x in
-//
-//      λ.x S = ( if is-enclosure σ(.arg) S
-//                then // no occurrence of .arg
-//                     subst(.arg)
-//                else σ.y ((σ ::` y) :: ((subst :: `` y) :: ` y) :: .arg)
-//                )
-//              (x, S);
-//
 //      Each arm of the conditional can be completely pre-computed, the point
 //      of this alternative formulation.
 //
@@ -231,13 +204,66 @@
 //      branch delivers a fixed precomputed value.  Because laziness is used
 //      in another manner in contrast to the eager evaluation computational
 //      model for oMiser, perhaps "opportunistic" or "minimalist" might be
-//      preferable notions.  I choose "least-effort" as the feature of this
+//      preferable notions.  I chose "least-effort" as the feature of this
 //      solution.
 //
-//    3.3 Derivation
+//       Since we already have an implementation of ^oLambda, We can make use
+//       of it in bootstrapping to what should be a more efficient version.
 //
-//      *** TBD ***
+//    3.3 oFrugal Derivation
 //
+//      λ = λx λS //    if is-enclosure σ(.arg) S
+//          ( ( (is-enclosure :: ( σ :: `.arg ) :: S )
+//              ::
+//              `( // then subst(.arg)
+//                    (subst .arg)
+//                 ::
+//                 // else λ.x λ.S (σ.x subst(` x, x) S)
+//                    (λ.x λ.S `(    (σ :: x)
+//                                :: (subst :: .e :: x) :: x)
+//                                :: S )
+//                 )
+//            :: x
+//            )
+//          :: S
+//          );
+//
+//    3.4 oLambda Improvement
+
+!def ob ^oLambda
+
+        = ^δ( is-enclosure, ^oIsEnclosure)
+          ^δ(       sigarg, ^oSigma .arg)
+          ^δ(        subst, ^oSubst)
+          ^δ(            σ, ^oSigma)
+
+          ^σ(       subarg, ^oSubst .arg)
+          ^σ(applicative-S, ^oLambda.x `(    (σ :: x)
+                                          :: ( (subst :: .e :: x) :: x )
+                                          :: .arg )  )
+
+          ^oLambda.x ^oLambda.S
+              //    if is-enclosure σ(.arg) S
+          `(  ( (is-enclosure :: sigarg :: S )
+                ::
+                `( // then subst(.arg)
+                      subarg
+                   ::
+                   // else λ.x λ.S (σ.x subst(` x, x) S)
+                      applicative-S
+                  )
+              :: x
+              )
+           :: S
+           );
+
+Although it appears to be much work, effort is all on behalf of deriving
+the least-effort script.  We are putting oFugal and the previous oLambda
+to work.
+
+The ordering of ^δ and ^σ introductions at the top of the description is
+important.  Keep in mind the order in which these operations are all applied.
+
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -271,6 +297,8 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.3.0  2024-06-23T20:12Z Complete the Least-Effort λ-abstraction and use
+//        oLambda to do it.
 // 0.2.1  2024-06-22T19:23Z Initiate Least-Effort λ-abstraction treatment
 // 0.2.0  2024-06-22T05:00Z Use ^δ for external definitions and
 //        precomputations
