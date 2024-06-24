@@ -1,4 +1,4 @@
-// oLambda.txt 0.3.0                UTF-8                          2024-06-23
+// oLambda.txt 0.4.0                UTF-8                          2024-06-24
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -90,8 +90,8 @@
 //                       (σ :: x) :: ((subst :: ` x) :: x) :: .arg
 //                    ) ;
 //
-//        = ^δ(      sigarg, ^oSigma .arg)
-//          ^δ(      subarg, ^oSubst .arg)
+//        = ^δ(      sigarg, ` ^oSigma(.arg) )
+//          ^δ(      subarg, ` ^oSubst(.arg) )
 //
 //          // λx λS        if is-enclosure σ(.arg) S
 //
@@ -120,11 +120,11 @@
 !include "oSigma.txt"
 
 !def ob ^oLambda
-        = ^δ(is-enclosure, ^oIsEnclosure)
-          ^δ(      sigarg, ^oSigma .arg)
-          ^δ(       subst, ^oSubst)
-          ^δ(      subarg, ^oSubst .arg)
-          ^δ(           σ, ^oSigma)
+        = ^δ(is-enclosure, ` ^oIsEnclosure)
+          ^δ(       subst, ` ^oSubst)
+          ^δ(           σ, ` ^oSigma)
+          ^δ(      sigarg, ` ^oSigma(.arg) )
+          ^δ(      subarg, ` ^oSubst(.arg) )
 
           // λx λS        if is-enclosure σ(.arg) S
 
@@ -160,7 +160,7 @@
 //          subst .self;
 
 !def ob ^oRec
-        = ^oSubst .self;
+        = ^oSubst(.self);
 
 
 //   3. LEAST-EFFORT λ-ABSTRACTION
@@ -232,15 +232,15 @@
 
 !def ob ^oLambda
 
-        = ^δ( is-enclosure, ^oIsEnclosure)
-          ^δ(       sigarg, ^oSigma .arg)
-          ^δ(        subst, ^oSubst)
-          ^δ(            σ, ^oSigma)
+        = ^δ( is-enclosure, ` ^oIsEnclosure)
+          ^δ(       sigarg, ` ^oSigma .arg)
+          ^δ(        subst, ` ^oSubst)
+          ^δ(            σ, ` ^oSigma)
 
-          ^σ(       subarg, ^oSubst .arg)
-          ^σ(applicative-S, ^oLambda.x `(    (σ :: x)
-                                          :: ( (subst :: .e :: x) :: x )
-                                          :: .arg )  )
+          ^δ(       subarg, ^oSubst .arg)
+          ^δ(applicative-S, ^oLambda.x (    (σ :: x)
+                                         :: ( (subst :: .e :: x) :: x )
+                                         :: .arg )  )
 
           ^oLambda.x ^oLambda.S
               //    if is-enclosure σ(.arg) S
@@ -257,12 +257,15 @@
            :: S
            );
 
-Although it appears to be much work, effort is all on behalf of deriving
-the least-effort script.  We are putting oFugal and the previous oLambda
-to work.
+// Although it appears to be much work, effort is all on behalf of deriving
+// the least-effort script.  Using the derived script is straightforward.
+// We are putting oFugal and the previous oLambda  to work.
 
-The ordering of ^δ and ^σ introductions at the top of the description is
-important.  Keep in mind the order in which these operations are all applied.
+The sequences of ^δ introductions at the top of the definition is important.
+Keep in mind the order in which these operations are all applied.  Also,
+notice that there is no need for .ev on the conditional results; they are
+already computed.  This accounts for the differences in the ^δ-substitution
+of subarg and application-S from the others.
 
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
@@ -284,8 +287,8 @@ important.  Keep in mind the order in which these operations are all applied.
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
-//   Miser Theory Conception text file oLambda.txt version 0.2.1 dated
-//   2024-06-22, available on the Internet as a version of
+//   Miser Theory Conception text file oLambda.txt version 0.4.0 dated
+//   2024-06-24, available on the Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oLambda.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -297,6 +300,7 @@ important.  Keep in mind the order in which these operations are all applied.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.4.0  2024-06-24T15:46Z Use revised ^δ and explain better
 // 0.3.0  2024-06-23T20:12Z Complete the Least-Effort λ-abstraction and use
 //        oLambda to do it.
 // 0.2.1  2024-06-22T19:23Z Initiate Least-Effort λ-abstraction treatment
