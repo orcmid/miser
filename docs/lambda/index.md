@@ -1,4 +1,4 @@
-<!-- index.md 0.0.0                UTF-8                         2024-01-25
+<!-- index.md 0.1.0                 UTF-8                         2024-07-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.0 2024-01-25T17:26Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.0 2024-07-01T20:08Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -53,6 +53,8 @@ on the web progresses.
 
 | **ID**                  | **Status** | **Started** | **Topic** |
 |   :-:                   |   :-:      |  :-:        |  ---      |
+| [oSigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M` & `subst(L, s)` definition |
+| [lambda](oLambda.txt)   | 0.4.0 2024-06-24 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations |
 | [c000000](c000000.htm)  | undated    | 2024-01-25  | Construction Diary & Job Jar |
 
 ----
@@ -83,6 +85,7 @@ from time to time.
 </table>
 <!--
 
+  0.1.0  2024-07-01T20:08Z oSigma and oLambda introduction
   0.0.0  2024-01-25T17:26Z Placeholder from 0.0.2 obap/index.md boilerplate
 
                *** end of miser/docs/lambda/index.md ***                  -->
