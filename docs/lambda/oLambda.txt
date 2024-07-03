@@ -1,4 +1,4 @@
-// oLambda.txt 0.4.0                UTF-8                          2024-06-24
+// oLambda.txt 0.4.1                UTF-8                          2024-07-02
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -57,8 +57,9 @@
 //
 //                      σ.x subst(` x, x) S.
 //
-//      These definitions depend on x being a lindy and x not being
-//      already enclosed, since it is not in oFrugalese
+//      These definitions depend on x being a lindy and not occuring in S
+//      for any intended purpose other than treatment as an applicative-
+//      expression "free-variable."
 //
 //
 //    1.2 Frugalese Definition
@@ -67,6 +68,18 @@
 //              then // no occurrence of .arg
 //                   (subst(.arg) x) S
 //              else σ.x subst(` x, x) S;
+//
+//      Note that σ(.arg) S yields enclosure ` S when there is no occurrence
+//      of .arg in S.
+//
+//      When there is an occurrence of .arg in S, the operation is based on
+//      the premise that for (λ.x S) P, the value of P is to be inserted into
+//      S for use, without further use until applied-to or used-as an
+//      operand in a subsequent application of ((λ.x S) P).
+//
+//      For a clear demonstration, it is valuable to conduct small tests,
+//      such as interpretations of combinators and simple list-processing
+//      operations.
 //
 //    1.3 oFrugal Derivation
 //
@@ -113,7 +126,7 @@
 //
 //      Note that σ(.arg) and subst(.arg) are constant terms precomputed into
 //      the script via ^δ(sigarg) and ^δ(subarg), an idiomatic practice
-//      for defining in fixed materials.
+//      for introducing already-evaluated or -bound materials.
 //
 //    1.4 oFrugal Definition
 
@@ -208,7 +221,7 @@
 //      solution.
 //
 //       Since we already have an implementation of ^oLambda, We can make use
-//       of it in bootstrapping to what should be a more efficient version.
+//       of it in bootstrapping to what should be a more-efficient version.
 //
 //    3.3 oFrugal Derivation
 //
@@ -259,14 +272,14 @@
 
 // Although it appears to be much work, effort is all on behalf of deriving
 // the least-effort script.  Using the derived script is straightforward.
-// We are putting oFugal and the previous oLambda  to work.
-
-The sequences of ^δ introductions at the top of the definition is important.
-Keep in mind the order in which these operations are all applied.  Also,
-notice that there is no need for .ev on the conditional results; they are
-already computed.  This accounts for the differences in the ^δ-substitution
-of subarg and application-S from the others.
-
+// We are putting oFrugal and the previous oLambda  to work.
+//
+// The sequences of ^δ introductions at the top of the definition is
+// important.  Keep in mind the order in which these operations are all
+// applied.  Also, notice that there is no need for .ev on the conditional
+// results; they are already-computed.  This accounts for the differences in
+// the ^δ-substitution of subarg and application-S from the others.
+//
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                   Copyright 2024 Dennis E. Hamilton
@@ -287,8 +300,8 @@ of subarg and application-S from the others.
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
-//   Miser Theory Conception text file oLambda.txt version 0.4.0 dated
-//   2024-06-24, available on the Internet as a version of
+//   Miser Theory Conception text file oLambda.txt version 0.4.1 dated
+//   2024-07-02, available on the Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oLambda.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -300,6 +313,7 @@ of subarg and application-S from the others.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.4.1  2024-07-02T16:54Z Touch-ups, additional explanation
 // 0.4.0  2024-06-24T15:46Z Use revised ^δ and explain better
 // 0.3.0  2024-06-23T20:12Z Complete the Least-Effort λ-abstraction and use
 //        oLambda to do it.
