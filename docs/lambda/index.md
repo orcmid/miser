@@ -1,4 +1,4 @@
-<!-- index.md 0.2.0                 UTF-8                         2024-07-11
+<!-- index.md 0.2.1                 UTF-8                         2024-07-11
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.0 2024-07-12T16:54Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.1 2024-07-12T21:11Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -35,15 +35,11 @@
 
 ## The Abstraction Idea
 
-> "This process \[of extracting common features\] can be regarded as a
-> repeated abstraction ... and under certain circumstances such abstracting
-> processes can be repeatedly piled on top of one another.  Here '_abstract_'
-> has to be understood in the literal meaning of the word as 'removing', as
-> leaving aside everything inessential for the context in question or for a
-> particular purpose ... ."
-<div align="right">[Hans Reichardt](https://mathshistory.st-andrews.ac.uk/Biographies/Reichardt/)
-\[[VNR1977](https://orcmid.github.io/bib/authors.htm#VNR1977): Introduction,
-p.11\]</div>
+| **Background** |
+| --- |
+| "This process \[of extracting common features\] can be regarded as a repeated abstraction ... and under certain circumstances such abstracting processes can be repeatedly piled on top of one another.  Here '_abstract_' has to be understood in the literal meaning of the word as 'removing', as leaving aside everything inessential for the context in question or for a particular purpose ... ." |
+| -- [Hans Reichardt](https://mathshistory.st-andrews.ac.uk/Biographies/Reichardt/)\[[VNR1977](https://orcmid.github.io/bib/authors.htm#VNR1977): Introduction,
+p.11\] |
 
 
 The abstraction of functions from oMiser applicative procedures is developed
@@ -96,6 +92,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.1  2024-07-12T21:11Z Try using a table for quotations layout
   0.2.0  2024-07-12T16:54Z Begin draft text
   0.1.0  2024-07-01T20:08Z oSigma and oLambda introduction
   0.0.0  2024-01-25T17:26Z Placeholder from 0.0.2 obap/index.md boilerplate
