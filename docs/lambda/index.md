@@ -1,4 +1,4 @@
-<!-- index.md 0.2.2                 UTF-8                         2024-07-13
+<!-- index.md 0.2.3                 UTF-8                         2024-07-13
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.2 2024-07-13T15:39Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.3 2024-07-13T17:14Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -39,6 +39,9 @@
 | --- |
 | "This process \[of extracting common features\] can be regarded as a repeated abstraction ... and under certain circumstances such abstracting processes can be repeatedly piled on top of one another.  Here '_abstract_' has to be understood in the literal meaning of the word as 'removing', as leaving aside everything inessential for the context in question or for a particular purpose ... ." |
 | -- [Hans Reichardt](https://mathshistory.st-andrews.ac.uk/Biographies/Reichardt/) \[[VNR1977](https://orcmid.github.io/bib/authors.htm#VNR1977): Introduction,p.11\] |
+|  |
+| "A high-level computer language _abstracts away the machine_ \[so that\] the programmer need not be an expert in the machinations of computer hardware ... in order to successfully program a computer.  High-level languages (HLLs) automate, hide, or otherwise abstract away the underlying operations of the machine ... ." |
+| -- Mark Jones Lorenzo \[[Lorenzo2019](https://orcmid.github.io/bib/progsys.htm#Lorenzo2019): Introduction, p.13\] |
 
 
 The abstraction of functions from oMiser applicative procedures is developed
@@ -91,6 +94,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.3  2024-07-13T17:14Z Add Lorenzo2019 quotation
   0.2.2  2024-07-13T15:39Z Repair tabulation for quotations
   0.2.1  2024-07-12T21:11Z Try using a table for quotations layout
   0.2.0  2024-07-12T16:54Z Begin draft text
