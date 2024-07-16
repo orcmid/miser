@@ -1,4 +1,4 @@
-<!-- index.md 0.2.5                 UTF-8                         2024-07-15
+<!-- index.md 0.2.6                 UTF-8                         2024-07-16
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.5 2024-07-15T00:53Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.6 2024-07-16T16:09Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -44,7 +44,7 @@
 | -- Mark Jones Lorenzo \[[Lorenzo2019](https://orcmid.github.io/bib/progsys.htm#Lorenzo2019): Introduction, p.13\] |
 |  |
 | "We call the symbol λx an _abstraction operator_, and speak of the function which is denoted by (λx _M_) as obtained from the expression _M_ by _abstraction_." |
-| -- Alonzo Church \[[Church1941](https://orcmid.github.io/bib/logic.htm#Church1941): p.7\] |
+| -- [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) \[[Church1941](https://orcmid.github.io/bib/logic.htm#Church1941): p.7\] |
 
 
 The abstraction of functions from oMiser applicative procedures is developed
@@ -97,6 +97,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.6  2024-07-16T16:09Z Add link to Church Wikipedia article
   0.2.5  2024-07-15T00:53Z Fix italic M in Church quotation
   0.2.4  2024-07-14T19:49Z Add Church1941 quotation
   0.2.3  2024-07-13T17:14Z Add Lorenzo2019 quotation
