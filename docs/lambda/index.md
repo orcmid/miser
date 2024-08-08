@@ -1,4 +1,4 @@
-<!-- index.md 0.2.8                 UTF-8                         2024-07-17
+<!-- index.md 0.2.9                 UTF-8                         2024-08-08
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.8 2024-07-16T16:11Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.9 2024-08-08T18:05Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -53,12 +53,19 @@
 The abstraction of functions from oMiser applicative procedures is developed
 as an oMiser applicative procedure itself.  oMiser is sufficiently low-level,
 and the ob.ap function sufficiently universal, that lambda abstraction is
-implementable as an oMiser applicative procedure.
+implemented as an oMiser applicative procedure.
 
 The derivation of `^lambda` and of the companion, `^rec`, is carried out and
 carefully demonstrated because of its importance in useful formulations of
 oFrugal procedures.
 
+The challenge at the oFrugal level is the need to appreciate that _every_ ob
+has an applicative interpretation and _any_ ob can be introduced with an
+intended use as data or as a script, including as data that is the basis for a
+script.  There are particular *maebe* (pronounced maybe) forms that resemble
+symbolic applicative expressions employing lindies; abstraction operations and
+the universal function are designed to encourage such forms and intended
+interpretations.
 
 ## Catalog (Specimen, LYYMMNN Content TBD)
 
@@ -68,7 +75,7 @@ on the web progresses.
 
 | **ID**                  | **Status** | **Started** | **Topic** |
 |   :-:                   |   :-:      |  :-:        |  ---      |
-| [oSigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M` & `subst(L, s)` definition |
+| [sigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M`, `subst(L, s)`, `δ(s, L)` definitions |
 | [lambda](oLambda.txt)   | 0.4.0 2024-06-24 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations |
 | [c000000](c000000.htm)  | undated    | 2024-01-25  | Construction Diary & Job Jar |
 
@@ -100,6 +107,8 @@ from time to time.
 </table>
 <!--
 
+  0.2.9  2024-08-08T18:05Z Introduce maebe and start normalizing abstraction
+         notation
   0.2.8  2024-07-17T16:11Z Link to Eugenia Cheng Wikipedia
   0.2.7  2024-07-16T17:07Z Add quote from Eugenia Cheng, Joy of Abstracktion
   0.2.6  2024-07-16T16:09Z Add link to Church Wikipedia article
