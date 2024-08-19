@@ -1,4 +1,4 @@
-<!-- index.md 0.2.9                 UTF-8                         2024-08-08
+<!-- index.md 0.2.10                UTF-8                         2024-08-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,13 +27,13 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.9 2024-08-08T18:05Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.10 2024-08-19T19:46Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
-## The Abstraction Idea
+## 1. The Abstraction Idea
 
 | Views on Abstraction |
 | --- |
@@ -49,20 +49,56 @@
 | "We call the symbol λx an _abstraction operator_, and speak of the function which is denoted by (λx _M_) as obtained from the expression _M_ by _abstraction_." |
 | -- [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) \[[Church1941](https://orcmid.github.io/bib/logic.htm#Church1941): p.7\] |
 
+## 2. The Abstraction Challenge
 
-The abstraction of functions from oMiser applicative procedures is developed
-as an oMiser applicative procedure itself.  oMiser is sufficiently low-level,
-and the ob.ap function sufficiently universal, that lambda abstraction is
-implemented as an oMiser applicative procedure.
+The challenge at the oMiser/oFrugal level is the fact that there are _only_
+obs and _every_ ob has an applicative interpretation; _any_ ob can have an
+intended operational use as both data and script.  The computational
+accomplishment of abstraction for oMiser straddles that ambiguity/flexibility
+of interpretation.
+
+### 2.1 Pure abstraction
+
+Pure abstraction operations on obs depend on an ob and its structure without
+consideration of anything other than the ob "as-is."  The abstraction `σ.s M`
+is a script for a function that determines an `M` with its operand substituted
+for all occurrences of `s` in `M`.  This and some handy variations are based
+strictly on ob structure and not on the applicative interpretation of any `M`.
+
+Although `σ.s M` determines an ob, that ob has no occurrences of `s`.
+Nevertheless, taken as a script, as in `(σ.s M) N` where `N` is any ob, the
+applicative operation determines a form of `M` with `N` substituted for all
+occurrences of `s` in `M`.
+
+In this sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M`
+as-is.
+
+### 2.2 Symbolic forms
+
+The oMiser computational model's applicative operation treats lindies as
+constant individual obs whose applicative interpretations are essentially as
+themselves.  Although lindies are not variables in any usual sense, they can
+be employed with intended use as a form of variable in obs formulated as
+symbolic-expression forms.
+
+The [oMiser universal function](https://orcmid.github.io/miser/obap/)
+recognizes *maebe* (pronounced maybe) ob forms resembling encodings of
+formulas (not direct scripts) of applicative expressions. Maebes are preserved
+without modification.  Allowance for maebies is a mathematical-engineering
+companion of having lindies be preserved as fixed symbols (i.e., themselves)
+under applicative interpretation.
+
+### 2.3 Functional abstraction
 
 The derivation of `^lambda` and of the companion, `^rec`, is carried out and
 carefully demonstrated because of its importance in useful formulations of
-oFrugal procedures.
+oMiser procedures in oFrugal.
 
-The challenge at the oFrugal level is the need to appreciate that _every_ ob
-has an applicative interpretation and _any_ ob can be introduced with an
-intended use as data or as a script, including as data that is the basis for a
-script.  There are particular *maebe* (pronounced maybe) forms that resemble
+
+
+An important exploitation of the data-script duality is having data obs taken
+as symbolic applicative-expression formulas to be abstracted into applicative-
+operation scripts.  There are particular *maebe* (pronounced maybe) forms that resemble
 symbolic applicative expressions employing lindies; abstraction operations and
 the universal function are designed to encourage such forms and intended
 interpretations.
@@ -107,6 +143,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.10 2024-08-19T19:46Z Backup of intermediate draft on abstraction
   0.2.9  2024-08-08T18:05Z Introduce maebe and start normalizing abstraction
          notation
   0.2.8  2024-07-17T16:11Z Link to Eugenia Cheng Wikipedia
