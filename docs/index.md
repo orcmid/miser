@@ -1,4 +1,4 @@
-<!-- index.md 0.3.4                 UTF-8                         2024-07-13
+<!-- index.md 0.3.5                 UTF-8                         2024-08-22
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.4 2024-07-13T16:51Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.5 2024-08-22T18:37Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -103,7 +103,7 @@ purposes, so long as the programs are not confused with the abstractions.
 
 Theoretically, obs are entirely abstract
 mathematical entities.  In this sense, obs arise only in language and there
-is no direct concrete existence, no existence in reality.
+is no direct concrete existence, no existence in nature.
 The Miser computational model is achieved with introduction of a universal
 computational function -- an abstraction still.
 
@@ -364,6 +364,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.5  2024-08-22T18:37Z Important change from "reality" to "nature."
   0.3.4  2024-07-12T16:51Z Correct the title for lambda
   0.3.3  2024-06-28T16:31Z Review and fix a typo
   0.3.2  2024-06-09T21:58Z Fix citation formats, touch-up lightly
