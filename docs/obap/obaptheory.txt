@@ -1,4 +1,4 @@
-obaptheory.txt 1.2.3                UTF-8                          2023-12-18
+obaptheory.txt 1.2.4                UTF-8                          2024-08-23
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -272,7 +272,7 @@ obaptheory.txt 1.2.3                UTF-8                          2023-12-18
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                  Copyright 2017-2023 Dennis E. Hamilton
+                  Copyright 2017-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -291,7 +291,7 @@ obaptheory.txt 1.2.3                UTF-8                          2023-12-18
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.2.3 dated 2023-12-18,
+   Conception text file obaptheory.txt version 1.2.4 dated 2024-08-23,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -341,8 +341,10 @@ TODO
    option or simply the way of doing this sort of thing.  Then presenting
    list [x,y, ...] forms also needs to be considered.  Oh my.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.2.4  2024-08-23T19:16Z Correct ruler above this history to be intact under
+        GPG signature
  1.2.3  2023-12-18T18:46Z Cleanup URLs and smooth some connections
  1.2.2  2023-11-10T05:24Z Adjusted to the chosen refactoring location.
  1.2.1  2023-11-10T05:14Z Tombstone with refactoring continued from
