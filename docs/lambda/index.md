@@ -1,4 +1,4 @@
-<!-- index.md 0.2.10                UTF-8                         2024-08-19
+<!-- index.md 0.2.11                UTF-8                         2024-08-29
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.10 2024-08-19T19:46Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.11 2024-08-29T18:33Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -72,6 +72,16 @@ occurrences of `s` in `M`.
 
 In this sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M`
 as-is.
+
+There are convenient companion functions for use in particular circumstances,
+often when one or more operands are known first or in advance.
+
+```ML
+δ(s, N) M = subst(N, s) M = (σ.s M) N
+```
+
+Application of these and _their_ abstractions, known as Curried forms, will
+be demonstrated in the development of utility scripts in oFrugal.
 
 ### 2.2 Symbolic forms
 
@@ -143,6 +153,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.11 2024-08-29T18:33Z Expand 2.1 on Pure Abstractions
   0.2.10 2024-08-19T19:46Z Backup of intermediate draft on abstraction
   0.2.9  2024-08-08T18:05Z Introduce maebe and start normalizing abstraction
          notation
