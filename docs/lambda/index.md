@@ -1,4 +1,4 @@
-<!-- index.md 0.2.11                UTF-8                         2024-08-29
+<!-- index.md 0.2.12                UTF-8                         2024-08-31
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.11 2024-08-29T18:33Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.12 2024-08-31T23:13Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -77,26 +77,42 @@ There are convenient companion functions for use in particular circumstances,
 often when one or more operands are known first or in advance.
 
 ```ML
-δ(s, N) M = subst(N, s) M = (σ.s M) N
+δ(s, N) M = subst(N, s) M = (σ.s M) N = (s, M, N)
 ```
 
-Application of these and _their_ abstractions, known as Curried forms, will
-be demonstrated in the development of utility scripts in oFrugal.
+Application of these and their intermediate variations, known as Curried
+forms, will be demonstrated in the development of oFrugal utility scripts.
 
 ### 2.2 Symbolic forms
 
-The oMiser computational model's applicative operation treats lindies as
-constant individual obs whose applicative interpretations are essentially as
-themselves.  Although lindies are not variables in any usual sense, they can
-be employed with intended use as a form of variable in obs formulated as
-symbolic-expression forms.
+The oMiser computational model's applicative operations treat lindies as
+invariant individuals whose applicative interpretations are essentially as
+themselves.  The model goes farther, preserving the applicative occurrences
+of lindies for which computation can go no farther.
 
-The [oMiser universal function](https://orcmid.github.io/miser/obap/)
-recognizes *maebe* (pronounced maybe) ob forms resembling encodings of
-formulas (not direct scripts) of applicative expressions. Maebes are preserved
-without modification.  Allowance for maebies is a mathematical-engineering
-companion of having lindies be preserved as fixed symbols (i.e., themselves)
-under applicative interpretation.
+That is, the oFrugal expression
+
+```ML
+(a x) b x ;
+```
+
+evaluates to
+
+```ML
+(a :: x) :: b :: x ;
+```
+
+and
+
+```ML
+!eval (a :: x) :: b :: x ;
+```
+
+the same.  This hinges on the mathematical engineering by which script
+`!eval x :: y` is evaluated as `obap.ap(x,y)` with result `x :: y`.
+
+
+/[NEED MORE/BETTER WORDS FROM HERE/]
 
 ### 2.3 Functional abstraction
 
@@ -153,6 +169,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.12 2024-08-31T23:13Z Continue on 2.2 Symbolic Expressions
   0.2.11 2024-08-29T18:33Z Expand 2.1 on Pure Abstractions
   0.2.10 2024-08-19T19:46Z Backup of intermediate draft on abstraction
   0.2.9  2024-08-08T18:05Z Introduce maebe and start normalizing abstraction
