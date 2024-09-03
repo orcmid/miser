@@ -1,4 +1,4 @@
-<!-- index.md 0.2.12                UTF-8                         2024-08-31
+<!-- index.md 0.2.13                UTF-8                         2024-09-03
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.12 2024-08-31T23:13Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.13 2024-09-03T15:42Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -61,26 +61,23 @@ of interpretation.
 
 Pure abstraction operations on obs depend on an ob and its structure without
 consideration of anything other than the ob "as-is."  The abstraction `σ.s M`
-is a script for a function that determines an `M` with its operand substituted
-for all occurrences of `s` in `M`.  This and some handy variations are based
-strictly on ob structure and not on the applicative interpretation of any `M`.
+is a script for a function such that `(σ.s M) N` determines a form of `M` with
+`N` substituted everywhere `s` occurs in `M`.  This is based strictly on ob
+structure and not on any applicative interpretation of `M`.
 
-Although `σ.s M` determines an ob, that ob has no occurrences of `s`.
-Nevertheless, taken as a script, as in `(σ.s M) N` where `N` is any ob, the
-applicative operation determines a form of `M` with `N` substituted for all
-occurrences of `s` in `M`.
-
-In this sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M`
-as-is.
+Although `σ.s M` determines an ob, that ob has no occurrences of `s`.  In this
+sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M` as-is.
 
 There are convenient companion functions for use in particular circumstances,
-often when one or more operands are known first or in advance.
+often when one or more operands are known in advance.
 
 ```ML
-δ(s, N) M = subst(N, s) M = (σ.s M) N = (s, M, N)
+δ(s, N) M = subst(N, s) M = (σ.s M) N = σ(s, M, N)
 ```
 
-Application of these and their intermediate variations, known as Curried
+also illustrating various Frugalese forms for achieving the same result.
+
+Employment of these and their intermediate variations, known as Curried
 forms, will be demonstrated in the development of oFrugal utility scripts.
 
 ### 2.2 Symbolic forms
@@ -169,6 +166,7 @@ from time to time.
 </table>
 <!--
 
+  0.2.13 2024-09-03T15:42Z Cleanup 2.1
   0.2.12 2024-08-31T23:13Z Continue on 2.2 Symbolic Expressions
   0.2.11 2024-08-29T18:33Z Expand 2.1 on Pure Abstractions
   0.2.10 2024-08-19T19:46Z Backup of intermediate draft on abstraction
