@@ -21,5 +21,5 @@ vulerability reporting provision of this project's Security tab.
 If you are unable to exercise that capability, or prefer private email communication, send a digitally-signed plaintext email to 
 [orcmid](mailto:orcmid@msn.com).
 
-If you have concerns about email security, use an ASCII-armored PGP-encrypted text file with the
+If you have concerns about email security/privacy, enclose an ASCII-armored file PGP-encrypted the
 [orcmid Apache](https://people.apache.org/keys/committer/orcmid.asc) public key.
