@@ -16,7 +16,7 @@ generally unwarranted at this time.
 ## Reporting a Vulnerability
 
 If you believe there is need to engage in a private discussion about a potential threat or threat-surface defect, please use the GitHub
-vulerability reporting provision of this project's Security tab.
+vulnerability reporting provision of this project's Security tab.
 
 If you are unable to exercise that capability, or prefer private email communication, send a digitally-signed plaintext email to 
 [orcmid](mailto:orcmid@msn.com).
