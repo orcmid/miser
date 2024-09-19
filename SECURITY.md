@@ -25,22 +25,13 @@ To privately report an exploitable vulnerability or exposed threat-surface,
 please use the GitHub vulnerability reporting provision of the
 [Miser Security](https://github.com/orcmid/miser/security) tab.
 
-If you are unable to exercise that capability, or prefer private email communication, send a digitally-signed plaintext email to
-[orcmid](mailto:orcmid@msn.com).
+If you are unable to exercise that capability, or prefer private email communication,
+send a digitally-signed plaintext email to [orcmid](mailto:orcmid@msn.com).
 
 If you have reservations about email security/privacy, enclose an
 ASCII-armored file PGP-encrypted using the
+If you have reservations about email security/privacy, enclose an
+ASCII-armored file PGP-encrypted using the
 [orcmid Apache](https://people.apache.org/keys/committer/orcmid.asc)
-public key. If you wish encrypted responses, also sign that message before
-encryption in order for your public key to be available for that purpose.
-
-## Exclusion of Forks
-
-The `SECURITY.md` policy statement, along with `README.md`, will be replicated
-in GitHub-created forks.  These should not be edited directly so long as
-synchronization of changes from the Miser Project is desired.
-
-Independently-released forked projects must avoid confusion with products of
-the Miser Project.  They should bear non-conflicting names.  Any Security
-Policy and support information of forked projects shall not suggest that
-support is to be found at the Miser Project.
+public key. If you wish encrypted responses, also sign that email in order for
+your public key to be known.
