@@ -2,19 +2,18 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     security.md 1.0.6             UTF-8                        dh:2024-09-14
+     security.md 1.0.11            UTF-8                        dh:2024-09-19
      -->
-## Supported Versions
-
-**2024-09-04 Status**: At this time there are no code releases for which there
+**2024-09-19 Status**: At this time there are no code releases for which there
 need be any vulnerability and exploit concerns.
 
 Current repository content consists of text files and web documentation of an
 experimental/provisional nature with limited use of SML for proofs-of-concept.
 
 Most considerations of errors and defects can be handled using the project
-Issues and Discussion topics.  Pull-requests are generally unwarranted at this
-time.
+Issues and Discussion topics.  Pull-requests are unwarranted at this time.
+
+## Supported Versions
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -22,15 +21,26 @@ time.
 
 ## Reporting a Vulnerability
 
-If you believe there is need to engage in a private discussion about a
-potential threat or threat-surface defect, please use the GitHub
-vulnerability reporting provision of this repository/project Security tab.
+To privately report an exploitable vulnerability or exposed threat-surface,
+please use the GitHub vulnerability reporting provision of the
+[Miser Security](https://github.com/orcmid/miser/security) tab.
 
-If you are unable to exercise that capability, or prefer private email
-communication, send a digitally-signed plaintext email to
+If you are unable to exercise that capability, or prefer private email communication, send a digitally-signed plaintext email to
 [orcmid](mailto:orcmid@msn.com).
 
-If you have concerns about email security/privacy, enclose an ASCII-armored
-PGP-encrypted text file using the
+If you have reservations about email security/privacy, enclose an
+ASCII-armored file PGP-encrypted using the
 [orcmid Apache](https://people.apache.org/keys/committer/orcmid.asc)
-public key.
+public key. If you wish encrypted responses, also sign that message before
+encryption in order for your public key to be available for that purpose.
+
+## Exclusion of Forks
+
+The `SECURITY.md` policy statement, along with `README.md`, will be replicated
+in GitHub-created forks.  These should not be edited directly so long as
+synchronization of changes from the Miser Project is desired.
+
+Independently-released forked projects must avoid confusion with products of
+the Miser Project.  They should bear non-conflicting names.  Any Security
+Policy and support information of forked projects shall not suggest that
+support is to be found at the Miser Project.
