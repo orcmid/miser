@@ -30,8 +30,19 @@ send a digitally-signed plaintext email to [orcmid](mailto:orcmid@msn.com).
 
 If you have reservations about email security/privacy, enclose an
 ASCII-armored file PGP-encrypted using the
-If you have reservations about email security/privacy, enclose an
-ASCII-armored file PGP-encrypted using the
 [orcmid Apache](https://people.apache.org/keys/committer/orcmid.asc)
-public key. If you wish encrypted responses, also sign that email in order for
-your public key to be known.
+public key.
+
+If you wish encrypted responses, also sign that email in order for
+your public key to be used for that.
+
+## Exclusion of Forked Projects
+
+When the Miser Project is forked using GitHub, the README.md and SECURITY.md
+files will be included.  So long as synchronized updates from the Miser
+Project are desired, all development in the fork should occur on a separate
+fork-unique branch.
+
+For independent releases of a fork-based project, it must be clear that there
+is no support at the Miser Project and the Security Policy does not extend to
+the fork.
