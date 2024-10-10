@@ -1,4 +1,4 @@
-<!-- index.md 0.3.5                 UTF-8                         2024-08-22
+<!-- index.md 0.3.6                 UTF-8                         2024-10-10
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.5 2024-08-22T18:37Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.6 2024-10-10T17:08Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -343,7 +343,7 @@ I invite discussion about Miser Project topics in the
 Improvements and removal of defects in this particular documentation can be
 reported and addressed in the
 [Issues section](https://github.com/orcmid/miser/issues).  There are also
-relevant [projects](https://github.com/orcmid/miser/projects?type=classic)
+relevant [projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
 from time to time.
 
 <table border="0" cellspacing="3" width="100%">
@@ -364,6 +364,8 @@ from time to time.
 </table>
 <!--
 
+
+  0.3.6  2024-10-10T17:08Z Correct projects link
   0.3.5  2024-08-22T18:37Z Important change from "reality" to "nature."
   0.3.4  2024-07-12T16:51Z Correct the title for lambda
   0.3.3  2024-06-28T16:31Z Review and fix a typo
