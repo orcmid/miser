@@ -1,4 +1,4 @@
-<!-- index.md 0.2.13                UTF-8                         2024-09-03
+<!-- index.md 0.3.0                 UTF-8                         2024-10-28
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -83,11 +83,11 @@ forms, will be demonstrated in the development of oFrugal utility scripts.
 ### 2.2 Symbolic forms
 
 The oMiser computational model's applicative operations treat lindies as
-invariant individuals whose applicative interpretations are essentially as
-themselves.  The model goes farther, preserving the applicative occurrences
-of lindies for which computation can go no farther.
+invariant individuals whose applicative interpretations are merely
+themselves.  The model goes farther, preserving constructions with lindies as
+symbolic forms whose applicative interpretation is themselves.
 
-That is, the oFrugal expression
+For example, the oFrugal expression
 
 ```ML
 (a x) b x ;
@@ -105,26 +105,20 @@ and
 !eval (a :: x) :: b :: x ;
 ```
 
-the same.  This hinges on the mathematical engineering by which script
-`!eval x :: y` is evaluated as `obap.ap(x,y)` with result `x :: y`.
+the same.  This hinges on the mathematical engineering by which scripts such
+as `!eval x :: y` with lindies `x` and `y` are evaluated as `obap.ap(x,y)`
+with result `x :: y`.
 
+When application operator `p` and operand `x` are both symbolic forms, the
+result of application is the composed symbolic form `p :: x`.
 
-/[NEED MORE/BETTER WORDS FROM HERE/]
+When only `p` is a symbolic form, the result of application is `p :: \`x`,
+a (mixed) symbolic-form that evaluates to itself even though `x` may be an ob
+of any form.
 
 ### 2.3 Functional abstraction
 
-The derivation of `^lambda` and of the companion, `^rec`, is carried out and
-carefully demonstrated because of its importance in useful formulations of
-oMiser procedures in oFrugal.
-
-
-
-An important exploitation of the data-script duality is having data obs taken
-as symbolic applicative-expression formulas to be abstracted into applicative-
-operation scripts.  There are particular *maebe* (pronounced maybe) forms that resemble
-symbolic applicative expressions employing lindies; abstraction operations and
-the universal function are designed to encourage such forms and intended
-interpretations.
+\[Author's Note\]: Brief introduction to the two forms.
 
 ## Catalog (Specimen, LYYMMNN Content TBD)
 
@@ -166,6 +160,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.0  2024-10-28T18:04Z Complete 2.2 on Symbolic Forms
   0.2.13 2024-09-03T15:42Z Cleanup 2.1
   0.2.12 2024-08-31T23:13Z Continue on 2.2 Symbolic Expressions
   0.2.11 2024-08-29T18:33Z Expand 2.1 on Pure Abstractions
