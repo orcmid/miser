@@ -1,4 +1,4 @@
-<!-- index.md 0.3.0                 UTF-8                         2024-10-28
+<!-- index.md 0.3.1                 UTF-8                         2024-10-28
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.13 2024-09-03T15:42Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3/1 2024-10-28T19:47Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -112,7 +112,7 @@ with result `x :: y`.
 When application operator `p` and operand `x` are both symbolic forms, the
 result of application is the composed symbolic form `p :: x`.
 
-When only `p` is a symbolic form, the result of application is `p :: \`x`,
+When only `p` is a symbolic form, the result of application is `p :: ‵ x`,
 a (mixed) symbolic-form that evaluates to itself even though `x` may be an ob
 of any form.
 
@@ -160,6 +160,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.1  2024-10-28T19:47Z Touch up 2.2
   0.3.0  2024-10-28T18:04Z Complete 2.2 on Symbolic Forms
   0.2.13 2024-09-03T15:42Z Cleanup 2.1
   0.2.12 2024-08-31T23:13Z Continue on 2.2 Symbolic Expressions
