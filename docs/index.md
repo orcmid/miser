@@ -1,4 +1,4 @@
-<!-- index.md 0.3.6                 UTF-8                         2024-10-10
+<!-- index.md 0.3.7                 UTF-8                         2024-10-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.6 2024-10-10T17:08Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.7 2024-10-28T19:33Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -72,7 +72,7 @@ computation: a member of the abstract structure, ‹ob›.
 - An *individual* has both the *a*-part and *b*-part be the ob itself.  The
   lowest component in the figure is an individual.  It is complete unto
   itself.  There are any number of distinct individuals. (There are ways that
-  they are distinctly/uniquelly named.)
+  they are distinctly/uniquelly distinguished.)
 
 - An *enclosure* has only the *b*-part be itself.  The middle component in the
   figure is an enclosure.  As an ob, it consists of itself and the *a*-part
@@ -190,7 +190,7 @@ software-engineering terms, this is the model side of an interactive computer
 application.
 
 The Application Programming Interface (API) serves to ensure a computational
-manifestation of ob›, its navigation and universal functions.
+manifestation of ‹ob›, its navigation and universal functions.
 
 ![Hosting oFrugal/oMiser](images/ofrugal-2023-08-18-1839-1stStack.png).
 
@@ -365,6 +365,7 @@ from time to time.
 <!--
 
 
+  0.3.7  2024-10-28T19:33Z Small touch-up, wordsmithing
   0.3.6  2024-10-10T17:08Z Correct projects link
   0.3.5  2024-08-22T18:37Z Important change from "reality" to "nature."
   0.3.4  2024-07-12T16:51Z Correct the title for lambda
