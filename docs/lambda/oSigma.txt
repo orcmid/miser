@@ -632,7 +632,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.4.0 dated 2024-06-24, available on the
+//   text file oSigma.txt version 0.5.0 dated 2024-10-29, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -648,7 +648,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
-// 0.5.0  2024-10-19T17:39Z  Use linking-style δ(s, P) form with linking usage
+// 0.5.0  2024-10-19T17:42Z Use linking-style δ(s, P) form with linking usage
 // 0.4.0  2024-06-24T15:10Z Breaking change/fix to δ definition and usage
 // 0.3.3  2024-06-21T19:27Z Clean-up the simulated δ cases for non-inlined
 //        insertions of defined applicative obs
