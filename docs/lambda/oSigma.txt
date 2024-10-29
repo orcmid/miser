@@ -1,4 +1,4 @@
-// oSigma.txt 0.4.0                 UTF-8                          2024-06-24
+// oSigma.txt 0.5.0                 UTF-8                          2024-10-29
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -566,26 +566,26 @@
 //      pre-calculated/-bound scripts in place of occurrences of (lindy) s in
 //      M.  That usage is simulated in definition of δ.s(P) itself.
 //
-//      oDelta = δ.subst(` ^oSubst) λ.s λ.P λ.M                         // (6)
+//      oDelta = δ(subst, ` ^oSubst) λ.s λ.P λ.M                     // (6)
 //               subst(P, s) M
 //
-//             = δ.subst(` ^oSubst) λ.s λ.P
+//             = δ(subst, ` ^oSubst) λ.s λ.P
 //               ( subst :: P) :: s
 //
-//             = δ.subst(` ^oSubst) λ.s // λ.P
+//             = δ(subst, ` ^oSubst) λ.s // λ.P
 //               ( subst :: .arg) :: s
 //
-//             = δ.subst(` ^oSubst) // λ.s λ.P
+//             = δ(subst, ` ^oSubst) // λ.s λ.P
 //               .c :: `( subst :: .arg)
 //                  :: .e :: .arg
 
 !def ob ^oDelta
-        = // δ.subst(` ^oSubst) λ.s λ.P
+        = // δ(subst, ` ^oSubst) λ.s λ.P
           .c :: ` (` ^oSubst :: .arg)
              :: .e :: .arg;
 
 
-//      The use of δ.s is usually not explicit in manual compilation in the
+//      The use of δ.s is often not explicit in manual compilation in the
 //      manner of (6).  When lambda transformations are implemented and there
 //      is no manual observation of intermediates, post-λ linkings as with
 //
@@ -648,6 +648,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.5.0  2024-10-19T17:39Z  Use linking-style δ(s, P) form with linking usage
 // 0.4.0  2024-06-24T15:10Z Breaking change/fix to δ definition and usage
 // 0.3.3  2024-06-21T19:27Z Clean-up the simulated δ cases for non-inlined
 //        insertions of defined applicative obs
