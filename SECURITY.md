@@ -2,9 +2,44 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     security.md 1.1.0             UTF-8                        dh:2024-09-24
+     SECURITY.md 1.2.0             UTF-8                        dh:2024-11-07
+     source: <https://github.com/orcmid/miser/blob/master/SECURITY.md>
      -->
-**2024-09-24 Status**: At this time there are no code releases for which there
+<table border="0" width="100%">
+  <tr>
+    <td width="25%" align="left" height="6">
+       <a href="https://orcmid.github.io/miser/"
+          title="The Miser Project on GitHub">
+          <img src="https://orcmid.github.io/miser/images/misertheory-logo.png" />
+       </a>
+    </td>
+    <td width="48%" height="6"><p align="center"><font color="#990033">
+        <strong>
+          <i>The Miser Project</i><br />
+          <i><big><big>Miser Project Security Policy Statement</big></big></i>
+        </strong></font></p>
+    </td>
+    <td width="27%" height="6" valign="middle" align="right">
+      <b><code>
+         <a href="https://orcmid.github.io/miser/" target="_top">miser</a>&gt;
+      </code></b>
+      <br /><br />
+      <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
+            <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
+      </a>
+      <br /><br />
+      <b><code>
+         <a href="https://github.com/orcmid/miser/blob/master/SECURITY.md"
+            target="_top">SECURITY</a>&gt;
+      </code></b>
+      <br />
+      <small><small>
+        1.2.0 2024-11-07T17:55Z<!-- MAINTAIN THIS MANUALLY -->
+      </small></small>
+      </td>
+  </tr>
+</table>
+**2024-11-07 Status**: At this time there are no code releases for which there
 need be any vulnerability and exploit concerns.
 
 Current repository content consists of text files and web documentation of an
@@ -55,3 +90,31 @@ fork/clone should be with README.md, SECURITY.md, LICENSE.txt, and NOTICE.txt
 versions, if any, that prevent confusion with supported Miser Project code.
 Attribution to the Miser Project origin is expected, in compliance with the
 Miser Project license.
+
+<table border="0" cellspacing="3" width="100%">
+  <tr>
+    <td width="14%">
+    <a href="https://orcmid.github.io/miser/index.htm" target="_top">
+       <img border="0"
+            src="https://orcmid.github.io/miser/images/hardhat-thumb.gif"
+            alt="Hard Hat Area"
+            align="left" width="80" height="57">
+       </a>
+    </td>
+    <td width="54%" valign="middle" align="center">
+      You are navigating the
+      <a href="https://orcmid.github.io/miser/">Miser Project on Github
+      </a></td>
+    <td width="30%"><!-- CUSTOMIZATION REQUIRED -->
+      <p align="right"><font size="-2">created 2024-11-07 by
+         <a target="_top"
+            href="https://orcmid.github.io/orcmid">orcmid
+         </a></font></p>
+    </td>
+  </tr>
+</table>
+<!--
+  1.2.0  2024-11-07T17:55Z Splice in hybridForm top/bottom banners
+
+               *** end of miser/SECURITY.md ***
+         -->
