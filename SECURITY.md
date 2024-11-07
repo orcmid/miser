@@ -2,7 +2,7 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     SECURITY.md 1.2.0             UTF-8                        dh:2024-11-07
+     SECURITY.md 1.2.1             UTF-8                        dh:2024-11-07
      source: <https://github.com/orcmid/miser/blob/master/SECURITY.md>
      -->
 <table border="0" width="100%">
@@ -24,21 +24,19 @@
          <a href="https://orcmid.github.io/miser/" target="_top">miser</a>&gt;
       </code></b>
       <br /><br />
-      <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
-            <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
-      </a>
       <br /><br />
       <b><code>
          <a href="https://github.com/orcmid/miser/blob/master/SECURITY.md"
             target="_top">SECURITY</a>&gt;
       </code></b>
       <br />
-      <small><small>
-        1.2.0 2024-11-07T17:55Z<!-- MAINTAIN THIS MANUALLY -->
-      </small></small>
-      </td>
+      <font size="-2">
+        1.2.1 2024-11-07T19:17Z<!-- MAINTAIN THIS MANUALLY -->
+      </font>
+    </td>
   </tr>
 </table>
+
 **2024-11-07 Status**: At this time there are no code releases for which there
 need be any vulnerability and exploit concerns.
 
@@ -114,6 +112,7 @@ Miser Project license.
   </tr>
 </table>
 <!--
+  1.2.1  2024-11-07T19:17Z Remove ClustrMap, attempt downsizing font
   1.2.0  2024-11-07T17:55Z Splice in hybridForm top/bottom banners
 
                *** end of miser/SECURITY.md ***
