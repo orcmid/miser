@@ -2,7 +2,7 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     SECURITY.md 1.3.0             UTF-8                        dh:2024-11-09
+     SECURITY.md 1.3.2             UTF-8                        dh:2024-11-09
      source: <https://github.com/orcmid/miser/blob/master/SECURITY.md>
      -->
 <table border="0" width="100%">
@@ -31,7 +31,7 @@
       </code></b>
       <br />
       <font size="-2">
-        1.3.0 2024-11-09T16:48Z<!-- MAINTAIN THIS MANUALLY -->
+        1.3.2 2024-11-09T17:28Z<!-- MAINTAIN THIS MANUALLY -->
       </font>
     </td>
   </tr>
@@ -66,15 +66,15 @@ Miser project/repository at
 
 ## Reporting a Miser Project Vulnerability
 
-To privately report an exploitable vulnerability or exposed threat-surface
-that pertains to the Miser Project, however unlikely, use the GitHub
-vulnerability reporting provision of the
-[Miser Project Security](https://github.com/orcmid/miser/security) tab.
-
 See the
 [orcmid.github.io Security Sandbox](https://orcmid.github.io/SECURITY.html)
-for examples of what to expect, how to kick off a vulnerability report, and
-alternative reporting options.
+for a walk-through of what to expect, how to kick off a vulnerability report,
+and an alternative reporting option.
+
+Securely report an exploitable vulnerability or exposed threat-surface
+specific to the Miser Project using the vulnerability reporting provision
+of the
+[Miser Project Security](https://github.com/orcmid/miser/security) tab.
 
 ## Exclusion of Forked/Cloned Projects
 
@@ -105,6 +105,8 @@ does not extend to the fork/clone.
   </tr>
 </table>
 <!--
+  1.3.2  2024-11-09T17:28Z More wordsmithing
+  1.3.1  2024-11-09T17:23Z More smoothing around the sandbox
   1.3.0  2024-11-09T16:48Z Smoothing, tying in the sandbox for a walkthrough
   1.2.1  2024-11-07T19:17Z Remove ClustrMap, attempt downsizing font
   1.2.0  2024-11-07T17:55Z Splice in hybridForm top/bottom banners
