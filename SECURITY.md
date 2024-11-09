@@ -2,7 +2,7 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     SECURITY.md 1.2.1             UTF-8                        dh:2024-11-07
+     SECURITY.md 1.3.0             UTF-8                        dh:2024-11-09
      source: <https://github.com/orcmid/miser/blob/master/SECURITY.md>
      -->
 <table border="0" width="100%">
@@ -16,7 +16,7 @@
     <td width="48%" height="6"><p align="center"><font color="#990033">
         <strong>
           <i>The Miser Project</i><br />
-          <i><big><big>Miser Project Security Policy Statement</big></big></i>
+          <i><big><big>Security Policy Statement</big></big></i>
         </strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
@@ -31,13 +31,13 @@
       </code></b>
       <br />
       <font size="-2">
-        1.2.1 2024-11-07T19:17Z<!-- MAINTAIN THIS MANUALLY -->
+        1.3.0 2024-11-09T16:48Z<!-- MAINTAIN THIS MANUALLY -->
       </font>
     </td>
   </tr>
 </table>
 
-**2024-11-07 Status**: At this time there are no code releases for which there
+**2024-11-09 Status**: At this time there are no code releases for which there
 need be any vulnerability and exploit concerns.
 
 Current repository content consists of text files and web documentation of an
@@ -52,42 +52,35 @@ Issues and Discussion topics.  Pull-requests are unwarranted at this time.
 | ------- | ------------------ |
 | none    | :x:                |
 
-## Reporting a Vulnerability
+## Finding Miser Project Vulnerability Announcements
 
-Please confine vulnerability reporting to Orcmid on GitHub projects that have
-supported releases.
+Public vulnerability announcements confirm vulnerabilities, reporting their
+nature, their mitigation, and any actions required by those who may be
+employing vulnerable software versions. Occassionally, a vulnerability
+announcement can explain why a particular situation does not qualify as a
+vulnerability.
+
+Find already-issued public vulnerability announcements, if any, for the
+Miser project/repository at
+[miser advisories](https://github.com/orcmid/miser/security/advisories).
+
+## Reporting a Miser Project Vulnerability
 
 To privately report an exploitable vulnerability or exposed threat-surface
 that pertains to the Miser Project, however unlikely, use the GitHub
 vulnerability reporting provision of the
 [Miser Project Security](https://github.com/orcmid/miser/security) tab.
 
-If you are unable to exercise that capability, or prefer private email
-communication, send a digitally-signed plaintext email to
-[orcmid](mailto:orcmid@msn.com).
-
-If you have reservations about email security/privacy, enclose an
-ASCII-armored file PGP-encrypted using the
-[orcmid Apache](https://people.apache.org/keys/committer/orcmid.asc)
-public key.
-
-Finally, if you wish encrypted responses, sign that message before
-encryption in order for your public key to be available for that purpose.
+See the
+[orcmid.github.io Security Sandbox](https://orcmid.github.io/SECURITY.html)
+for examples of what to expect, how to kick off a vulnerability report, and
+alternative reporting options.
 
 ## Exclusion of Forked/Cloned Projects
 
-When the Miser Project is forked/cloned using GitHub, the README.md and
-SECURITY.md files will be included.  So long as synchronized updates from the
-Miser Project are desired in a GitHub fork, all development should occur on a
-separate and fork-distinct branch.
-
-For independent releases of a fork/clone-based project, it must be clear that
+For independent releases of a fork-/clone-based project, it must be clear that
 there is no support commitment at the Miser Project and the Security Policy
-does not extend to the fork/clone.  Independent release branches from a GitHub
-fork/clone should be with README.md, SECURITY.md, LICENSE.txt, and NOTICE.txt
-versions, if any, that prevent confusion with supported Miser Project code.
-Attribution to the Miser Project origin is expected, in compliance with the
-Miser Project license.
+does not extend to the fork/clone.
 
 <table border="0" cellspacing="3" width="100%">
   <tr>
@@ -112,6 +105,7 @@ Miser Project license.
   </tr>
 </table>
 <!--
+  1.3.0  2024-11-09T16:48Z Smoothing, tying in the sandbox for a walkthrough
   1.2.1  2024-11-07T19:17Z Remove ClustrMap, attempt downsizing font
   1.2.0  2024-11-07T17:55Z Splice in hybridForm top/bottom banners
 
