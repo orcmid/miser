@@ -1,4 +1,4 @@
-<!-- index.md 0.3.8                 UTF-8                         2024-11-12
+<!-- index.md 0.3.9                 UTF-8                         2024-11-26
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.8 2024-11-12T18:03Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.9 2024-11-26T23:41Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -70,16 +70,17 @@ computation: a member of the abstract structure, ‹ob›.
   obs. Any ob may be a pairing of obs in this manner.
 
 - An *individual* has both the *a*-part and *b*-part be the ob itself.  The
-  lowest component in the figure is an individual.  It is complete unto
-  itself.  There are any number of distinct individuals. (There are ways that
-  they are distinctly/uniquelly distinguished.)
+  lowest component depicted in the figure is an individual.  It is complete
+  unto itself.  There are any number of distinct individuals. (There are ways
+  that   they are distinctly/uniquelly distinguished.)
 
-- An *enclosure* has only the *b*-part be itself.  The middle component in the
-  figure is an enclosure.  As an ob, it consists of itself and the *a*-part
-  taken together as a whole.
+- An *enclosure* has only the *b*-part be itself.  The middle component
+  depicted in the figure is an enclosure.  As an ob, it consists of itself and
+  the *a*-part taken together as a whole.
 
-- Similarly, the top component of the figure is a plain pairing.  As an ob,
-  it consists of the pairing and the *a*-part and *b*-part taken together.
+- Similarly, the top component depicted in the figure is a plain pairing.  As
+  an ob, it consists of the pairing and the *a*-part and *b*-part taken
+  together.
 
 - There is no limit on such compositions of obs except that
   - no ob is part of its own composition in any other manner, and
@@ -104,13 +105,17 @@ purposes, so long as the programs are not confused with the abstractions.
 Theoretically, obs are entirely abstract
 mathematical entities.  In this sense, obs arise only in language and there
 is no direct concrete existence, no existence in nature.
-The Miser computational model is achieved with introduction of a universal
+The Miser computational model is established with introduction of a universal
 computational function -- an abstraction still.
 
-The challenge becomes finding a dependable alignment between theory and
-practice, contending with a bridge that cannot be crossed in mathematics or
-logic alone. The dependable achievement of engineered manifestations of
-theoretical wonders is a marvel of our time.  Observe carefully.
+The challenge becomes finding a dependable alignment between thc computational
+model as a theoretical conception and practical operation of a computing
+mechanism, demonstrationg an empirical bridge that cannot be crossed with
+mathematics and logic alone. Observe carefully how that is accomplished in the
+Miser Project.
+
+Such dependable achievement of engineered manifestations of theoretical
+wonders is a marvel of our time.
 
 ### 1.3 Computational View
 
@@ -121,7 +126,7 @@ The diagram is also suggestive of a possible computer representation of the
   structures where the *a*-parts and *b*-parts are addresses of ob
   representations in computer memory.
 
-- Computational forms are immutable and without any cycles via separate
+- The computational forms are immutable and without any cycles via separate
   parts, all in accordance with the mathematical formulation.
 
 - In this perspective, the ob representations are building blocks of
@@ -136,18 +141,15 @@ Management of computer implementations
 will become more elaborate than the simple structure suggested in the diagram.
 The diagram remains descriptive as a visualization.
 
-In this endeavor, confirming that conditions established in theory are honored
-successfully in contingent reality demands thorough empirical inspection and
-demonstration.
-
 ## 2. The Project
 
 The Miser Project provides operational demonstration of computation-theoretic
 aspects of software.  Emphasis is on the stored-program principle and the
 manner in which computational representation of "higher-order" structures
-and types of entities emerge from the ‹ob› foundation.
+and types of entities emerge from the ‹ob› foundation, similarly with today's
+digital computers.
 
-Achievement of the Miser Project is the career capstone project of the author.
+Development of the Miser Project is the career-capstone project of the author.
 Miser is the outgrowth of a 60-year inquiry into applicative-programming
 languages and their theoretical foundations.  The operational program is
 intended for the insights it provides and the fundamentals it demonstrates
@@ -176,8 +178,7 @@ rather than practical application.
 
 The production/reference *oMiser* run-time is intended for use by other
 software.  It has portable implementations that operate on
-general-purpose computer platforms as a library to other programs on the
-platform.
+general-purpose computer platforms as a library to other programs.
 
 The interplay of implementation and theoretical foundations is accomplished in
 layers.
@@ -220,12 +221,13 @@ The importance of enclosure as a structural feature of obs was observed in an
 incompleteness regarding nested strings in
 \[[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965)\].
 Ob enclosures in obs are akin to representations of strings that can nest
-arbitrary strings as individual beads, a limited feature of ALGOL 60,
+arbitrary strings as individual beads, a limited feature of ALGOL 60
 developed further by Doug Ross and colleagues in the AED system
 \[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
 
 Enclosures are important in the treatment of obs as scripts and in shifting
-between obs as data and obs as scripts in the computational model.
+between obs as data to scripts and obs as scripts themselves in the
+computational model.
 
 The computational model founded on ‹ob› for oMiser is a fully-applicative
 scheme inspired through my association with Peter Landin and William H. Burge
@@ -243,7 +245,8 @@ there are similarities to the formulation of Functional Programming by John
 Backus \[[Backus1978](https://orcmid.github.io/bib/compsci.htm#Backus1978)\]:
 The operational "system" layer, *oFrugal*, provides storage and utility
 operations.  The *oMiser* layer provides a computational *manifestation* of
-the ‹ob› mathematical structure, including its universal-computation function.
+the ‹ob› mathematical structure, including its universal-computation function
+via computational procedure.
 
 ## 5. Available Materials
 
@@ -255,11 +258,11 @@ folder of the repository.
 
 Important authoritative materials are in text files that can be preserved and
 employed without requiring a browser or access to the GitHub repository. These
-materials are often-created first; they are always available for preview from
+materials are often created first; they are always available for preview from
 these web pages.  Early review and discussion of preview topics is
 invited.
 
-The Miser Project web material is organized in topical sections.
+The web material is organized in topical sections:
 
 | **Section**       |  **General Topic** |
 |   --:             |  ---               |
@@ -366,6 +369,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.9  2024-11-26T23:41Z Polish the text for clarity
   0.3.8  2024-11-12T18:03Z Add Security Policy link
   0.3.7  2024-10-28T19:33Z Small touch-up, wordsmithing
   0.3.6  2024-10-10T17:08Z Correct projects link
