@@ -1,4 +1,4 @@
-obaptheory.txt 1.3.1                UTF-8                          2024-11-27
+obaptheory.txt 1.3.2                UTF-8                          2024-11-28
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -117,9 +117,9 @@ obaptheory.txt 1.3.1                UTF-8                          2024-11-27
              where s is a finite-length character string consisting of one or
                      more alphanumeric characters
 
-          The additional forms with prefixed '?' and '?.' are here independent
-          of those without such prefixes.  They are also distinguished from
-          other lindies in the same manner as the undecorated lindies.  Their
+          The additional forms with prefixed '?' are here independent of those
+          without such prefixes, including the form of primitive names.  They
+          are also distinguished from the undecorated forms.  Their
           utilitarian presence is related to questionable occurrences of
           binding names and undefined primitives in oFrugal processing.  See
           the treatment of binding names in
@@ -129,8 +129,9 @@ obaptheory.txt 1.3.1                UTF-8                          2024-11-27
           intentionally.  They need not survive input to oFrugal and may be
           treated as erroneous.
 
-          Here, we introduce a way in which lindies have an useful limitation
-          of applicative interpretation.
+          Here is an applicative-expression script form in which in which
+          lindies are preserved, having no definable applicative
+          interpretation.
 
           obap.is-lindy(x) => is-symbolic-form(x)                    (a)
 
@@ -147,7 +148,7 @@ obaptheory.txt 1.3.1                UTF-8                          2024-11-27
           further; there is no intrinsic applicative interpretation.
           Instead, it is consistent to have applications of them be
           preserved as symbolic forms that cannot be taken farther
-          (Obap4(c)).
+          (Obap4(c)) while preserving applicative-expression form.
 
           Note that symbolic forms are still parsed and subject to being
           marched through Obap6(d) and Obap6(i) although the form is derived
@@ -155,7 +156,7 @@ obaptheory.txt 1.3.1                UTF-8                          2024-11-27
 
           The mathematical engineering of symbolic forms supports the oMiser
           convention that forms with no defined applicative interpretation
-          be perserved intact in the computational model.  The practical value
+          be preserved intact in the computational model.  The practical value
           is in the ability to transform such forms into operational scripts
           by successive abstraction operations that are more-easily confirmed.
           See <https://orcmid.github.io/miser/lambda> for practical benefits.
@@ -290,7 +291,7 @@ obaptheory.txt 1.3.1                UTF-8                          2024-11-27
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.3.1 dated 2024-11-27,
+   Conception text file obaptheory.txt version 1.3.2 dated 2024-11-28,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -342,6 +343,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.3.2  2024-11-28T19:22Z Cleanup Obap3 explanation
  1.3.1  2024-11-27T00:40Z Smooth Symbolic Form a bit
  1.3.0  2024-10-27T18:55Z Introduce is-symbolic form and touch up about this.
  1.2.4  2024-08-23T19:16Z Correct ruler above this history to be intact under
