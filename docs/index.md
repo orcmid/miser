@@ -1,4 +1,4 @@
-<!-- index.md 0.3.10                UTF-8                         2024-11-28
+<!-- index.md 0.3.11                UTF-8                         2024-11-28
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.10 2024-11-28T04:56Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.11 2024-11-28T17:06Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -104,10 +104,10 @@ purposes, so long as the programs are not confused with the abstractions.
 Theoretically, obs are entirely abstract
 mathematical entities.  In this sense, obs arise only in language and there
 is no direct concrete existence, no existence in nature.
-The Miser computational model is established with introduction of a universal
-computational function -- an abstraction still.
+The Miser computational model is established with definition of a universal
+computational function -- a mathematical entity still.
 
-The challenge becomes finding a dependable alignment between thc computational
+The challenge becomes finding a dependable alignment between the computational
 model as a theoretical conception and practical operation of a computing
 mechanism, demonstrationg an empirical bridge that cannot be crossed with
 mathematics and logic alone. Observe carefully how that is accomplished in the
@@ -368,6 +368,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.11 2024-11-28T17:06Z Fix typo, smooth nature of universal function
   0.3.10 2024-11-28T04:56Z Remove extraneous observation
   0.3.9  2024-11-26T23:41Z Polish the text for clarity
   0.3.8  2024-11-12T18:03Z Add Security Policy link
