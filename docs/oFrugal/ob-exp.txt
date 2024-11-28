@@ -1,4 +1,4 @@
-ob-exp.txt 1.1.0                    UTF-8                         2024-04-28
+ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -26,8 +26,7 @@ ob-exp.txt 1.1.0                    UTF-8                         2024-04-28
     In addition to the grammatical structure for composing ob-exp
     expressions, there is also a formal definition of the computation by
     which an ob-exp is evaluated as computation of a canonical ob, the
-    formal semantics of ob-exps.  It is this fact that has ob-exp be defined
-    under oMiser, even though it is oFrugal that will enact that semantics.
+    formal semantics of ob-exps.
 
     For an informal introduction to the use of Frugalese in the computational
     model defined on the mathematical structure ‹ob› = 〈Ob,Of,Ot〉, see
@@ -58,14 +57,14 @@ ob-exp.txt 1.1.0                    UTF-8                         2024-04-28
 
     All ob-exps satisfy the summary grammar.  The "official" grammar
     rules detailed in subsequent sections employ syntactically-equivalent
-    structures in order to provide a rigorous interpretation as expressions of
-    ob computations.
+    structures in order to provide a rigorous semantics in terms of
+    applicative operations.
 
      The concrete reference syntax consists of Unicode, usually in UTF8
-    encoding, and a %-escape mechanism is used when a character is not
+    encoding, and a \-escape mechanism is used when a character is not
     printable.  It is recommended that characters that are not easily typed
     be avoided by authors of ob expressions, recognizing that a recipient
-    may encounter %-encoding instead.  If you don't know what this is about,
+    may encounter \-encoding instead.  If you don't know what this is about,
     you are probably on safe ground.
 
     Basically, white-space is allowed wherever it does not change the
@@ -149,7 +148,7 @@ ob-exp.txt 1.1.0                    UTF-8                         2024-04-28
 
     The obaptheory formulation in Ot, the theory language of structure
     ‹ob› = 〈Ob,Of,Ot〉, is available at
-    <https://github.com/orcmid/miser/blob/master/oMiser/obaptheory.txt>.
+    <https://orcmid.github.io/miser/obap/obaptheory.txt>.
 
     For example,
 
@@ -445,6 +444,7 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+ 1.1.1  2024-11-28T19:49Z Touch up Section 1
  1.1.0  2024-04-28T16:26Z Clarify restriction on non-primitive "." usage.
  1.0.4  2024-01-31T23:31Z Correct links and location of this file.
  1.0.3  2024-01-22T22:28Z Adjust to repurposing and the tombstoned origin
