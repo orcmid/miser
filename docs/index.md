@@ -1,4 +1,4 @@
-<!-- index.md 0.3.9                 UTF-8                         2024-11-26
+<!-- index.md 0.3.10                UTF-8                         2024-11-28
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.9 2024-11-26T23:41Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.10 2024-11-28T04:56Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -71,8 +71,7 @@ computation: a member of the abstract structure, ‹ob›.
 
 - An *individual* has both the *a*-part and *b*-part be the ob itself.  The
   lowest component depicted in the figure is an individual.  It is complete
-  unto itself.  There are any number of distinct individuals. (There are ways
-  that   they are distinctly/uniquelly distinguished.)
+  unto itself.  There are any number of distinct individuals.
 
 - An *enclosure* has only the *b*-part be itself.  The middle component
   depicted in the figure is an enclosure.  As an ob, it consists of itself and
@@ -369,6 +368,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.10 2024-11-28T04:56Z Remove extraneous observation
   0.3.9  2024-11-26T23:41Z Polish the text for clarity
   0.3.8  2024-11-12T18:03Z Add Security Policy link
   0.3.7  2024-10-28T19:33Z Small touch-up, wordsmithing
