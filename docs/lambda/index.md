@@ -1,4 +1,4 @@
-<!-- index.md 0.3.1                 UTF-8                         2024-10-28
+<!-- index.md 0.3.2                 UTF-8                         2024-11-28
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3/1 2024-10-28T19:47Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.2 2024-11-28T17:39Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -68,8 +68,9 @@ structure and not on any applicative interpretation of `M`.
 Although `σ.s M` determines an ob, that ob has no occurrences of `s`.  In this
 sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M` as-is.
 
-There are convenient companion functions for use in particular circumstances,
-often when one or more operands are known in advance.
+There are handy companion functions, `δ(s, N` and `subst(N, s)`, for use in
+particular circumstances, often when one or more operands are known in
+advance.
 
 ```ML
 δ(s, N) M = subst(N, s) M = (σ.s M) N = σ(s, M, N)
@@ -77,8 +78,8 @@ often when one or more operands are known in advance.
 
 also illustrating various Frugalese forms for achieving the same result.
 
-Employment of these and their intermediate variations, known as Curried
-forms, will be demonstrated in the development of oFrugal utility scripts.
+These and their intermediate variations, known as Curried forms, will be
+employed in the development of oFrugal utility scripts.
 
 ### 2.2 Symbolic forms
 
@@ -160,6 +161,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.2  2024-11-28T17:39Z Touch up 2.1 a bit more
   0.3.1  2024-10-28T19:47Z Touch up 2.2
   0.3.0  2024-10-28T18:04Z Complete 2.2 on Symbolic Forms
   0.2.13 2024-09-03T15:42Z Cleanup 2.1
