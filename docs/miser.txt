@@ -1,4 +1,4 @@
-miser.txt 0.0.2                    UTF-8                         2024-01-30
+miser.txt 0.0.3                    UTF-8                         2024-11-30
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -52,10 +52,14 @@ miser.txt 0.0.2                    UTF-8                         2024-01-30
  ATTRIBUTION
 
    Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
-   miser.txt version 0.0.2 dated 2024-01-30, available on the Internet as a
+   miser.txt version 0.0.3 dated 2024-11-30, available on the Internet as a
    version of <https://orcmid.github.io/miser/miser.txt>
 
 TODO
+
+  * I have no idea why I called this a "shadow" file. I need to look at the
+    "original" in the full GitHub repository and figure out what I mean and
+    where maintenance is intended to continue.
 
   * I did not sign up for the Australasian Logic Colloquium just held in
     Brisbane, November 6-7, 2023.  I did not see a program and the time zone
@@ -67,7 +71,8 @@ TODO
 
   * I need to determine what came out of the workshop on Logic for
     Undergraduate Computer Science.  I must track down the organizer and ask
-    what happened.
+    what happened.  The workshop was called LogTeach-22 (L4UCS).  I've asked
+    the organizer and Moshe Vardi what happened.  There is no word.
 
   * I need to put the slides and paper on L4UCS on bib/ and let Edgar Daylight
     know about them and also the use of Manifestation in that paper.  I also
@@ -111,6 +116,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2024-11-30T16:53Z Touch-ups and wondering
  0.0.2 2024-01-30T16:08Z Reduce TODOs to those remaining applicable here.
  0.0.1 2024-01-30T16:01Z Boilerplate from 0.0.18 miser.txt from the gitHub
        root.
