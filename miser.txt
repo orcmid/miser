@@ -1,115 +1,31 @@
-miser.txt 0.0.18                    UTF-8                         2023-11-**
+miser.txt 0.1.0                     UTF-8                         2024-11-30
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
                                =================
 
-                        <https://github.com/orcmid/miser>
+                       <https://orcmid.github.io/miser>
 
                          THE MISER PROJECT ON GITHUB
                          ---------------------------
 
-             <https://github.com/orcmid/miser/blob/master/miser.txt>
+                                  TOMBSTONE
+                                  =========
 
-    MAJOR REFACTORING UNDERWAY.  Matters are a bit up-in-the-air while that
-    is underway.  There will be cross-connects and accounting for this, with
-    substitution of tombstones where material has been vacated.  There will
-    also be advancement of minor versions as indicative.
+        <https://github.com/orcmid/miser/blob/master/miser.txt>
 
-    The Miser Project is being moved to GitHub in its entirety.  It is also
-    being made web-centric, so that the authoritative text files of the
-    project are housed in web folders from which orcmid.github.io/miser is
-    published.  This proximity improves the likelihood that there is not
-    maintenance drift between web presentations and authoritative text files.
+    NOTE: Generally, folders of the Miser Project on GitHub repository
+      have folder.txt text files where the folder name is used.  This
+      miser.txt file had served that purpose.  However, the maintained
+      version is now under under folder miser/docs for accessibility on
+      the web and having maintenance be in exactly one place.  See
+      <https://orcmid.github.io/miser/miser.txt> for the now-maintained
+      version.
 
-    The main introduction and sketch is the page now  presented at the link
-    <https://orcmid.github.io/miser>.  The current repository organization,
-    described in the MANIFEST here, is going to be refactored around the web
-    pages published from GitHub orcmid/miser/docs.
-
-MANIFEST
-
-    README.md
-        GitHub-rendered "home page" for the public source-code repository,
-        with introduction to the project.
-
-    miser.txt
-        this manifest and job-jar file
-
-    dev/
-        subtree of materials on the development of Miser Project releases
-
-    docs/
-        folder for docs and management as GitHub Pages
-
-    models/
-        subtree for model-related exposition and comparisons
-
-    oFrugal/
-        subtree for working out oFrugal processors including reference
-        implementations and also companions to oMiser mockups
-
-    oMiser/
-        subtree for working out and confirming oMiser conceptualization and
-        proof-of-concept demonstrations, including run-time
-
-    background.txt
-        description of the inspirational sources and evolution of the ideas
-         behind The Miser Project
-
-    challenges.txt
-        description of challenges to be worked through in the development
-        of oMiser and its integration in higher-level functions and lower-
-        level implementations.
-
-    engineering.txt
-        on the engineering approach to the Miser project and the
-        development of reliable implementations of oMiser and oFrugal
-
-    logic.txt
-        on the use of logics in support of theories.txt, the specific
-        oMiser theories, and also provers as they might be developed and
-        applied to Miser itself
-
-    principles.txt
-        description of the strong principles by which the connection
-        between theory and achieved computational interpretation are
-        sustained, from the computational perspective
-
-    programming.txt
-        text description of information for programming in oFrugal
-        notation with the oFrugal REPL
-
-    theory.txt
-        account for the theoretical progressions that are the foundation
-        for achievement of the oMiser computational model and its
-        concrete representations
-
-    truth.txt
-        explanation of the use of "truth" in the context of a concrete
-        computational model and how it figures in computational interpre-
-        tations and abstraction representations
-
-    LICENSE.txt
-         The open-source software license that applies to the entire
-         Miser Project repository content except where stated otherwise.
-
-    NOTICE.txt
-         Notice that applies with respect to particular components of
-         Miser Project software.
-
-    .gitattributes
-         A declaration of file attributes for use in Git repositories of
-         the Miser Project.
-
-    .gitignore
-         A declaration of artifacts to be ignored and excluded from Git
-         repositories, applying to working files that are not part of the
-         managed archive materials
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2017-2020, 2023 Dennis E. Hamilton
+             Copyright 2017-2020, 2023-2024 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -128,116 +44,13 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
-   miser.txt version 0.0.18 dated 2023-11-**, available on the Internet as a
+   miser.txt version 0.1.0 dated 2024-11-30, available on the Internet as a
    version of <https://github.com/orcmid/miser/blob/master/miser.txt>
-
-TODO
-
-  * This file is an example of the kind of (blurry) distinction between the
-    subject matter and the construction here.  These TODOs are examples of
-    the conflation that I want to remedy somewhat.  I wonder if vision/ is
-    a place for this, or there is some other top-level topic in docs/ where
-    these should be refactored.
-
-  * I did not sign up for the Australasian Logic Colloquium just held in
-    Brisbane, November 6-7, 2023.  I did not see a program and the time zone
-    differences were difficult.  However, the focus on logic, computation, and
-    philosophy (philosophical logic?) is intriguing, along with LLC (language,
-    logic, and computation in different venues).  There is also a Journal of
-    Logic and Computation which is worth looking into.  Also, the ALC was
-    sponsored by the Association for Symbolic Logic (ASL).
-
-  * I need to determine what came out of the workshop on Logic for
-    Undergraduate Computer Science.  I must track down the organizer and ask
-    what happened.
-
-  * I need to put the slides and paper on L4UCS on bib/ and let Edgar Daylight
-    know about them and also the use of Manifestation in that paper.  I also
-    need to figure out the AuthorizeIt thing with ACM. I could also put my own
-    vitae here, now that I think about it.
-
-  * In the refactoring, there needs to be a distinction between construction
-    and management of the web materials versus job jar and diary regarding the
-    subject matter, not the site construction.  There are clearly editorial
-    cross-overs, but they are not so much construction as content, such as
-    the observation about "manifestation" just below.  That's not unlike
-    talking about material changes in code, even if it is about clarity or
-    formatting.  This separation of concerns should be addressed in docEng
-    also, even though that sort of goes meta there.
-
-  * I completely dropped the valuable use of "manifestation" here.  That's an
-    invaluable notion, along with interpretation, and I need to put it back
-    into the account, including on the current docs/ front page.  Thanks to
-    an exchange with Edgar Daylight that had me notice my neglect of that
-    valuable term.
-
-  * Provide tombstones as materials are moved under the docs/ structure.  Move
-    this material under the Construction/Development structure, once I figure
-    out that aspect.
-
-   * MAJOR REFACTOR.  I still want text files such as omiser/obtheory.txt
-    to be the ground truth.  But maintaining that in conjunction with web
-    (docs/) materials is difficult.  The proposal is to move those text files
-    to the folders where the particular aspect is covered.  Do this once the
-    transpositions from miser-theory.info to orcmid.github.io/miser are
-    completed.
-
-  * SCRUB: Move items to docs.txt when to be handled better with web pages.
-
-  * Provide a little bit more information about what this is and where to
-    find more about it.
-
-  * Add links to other locations of materials and discussions.  Use docs/
-
-  * Ensure a hierarchical organization that fits the nfoTools construction
-    sets pattern.  ???
-
-  * Explain the reference implementation(s) and notation(s) as the mainline,
-    with mockups for proof-of-concept, demonstrations, and exercises.
-
-  * Link to Golden Geek and to Numbering Peano, noting restoration of blogging
-    and the web site.  SCRUB TO DOCS, MAKE PROVISIONAL
-
-  * Docs will be moved here under docs/ in whatever authoring scheme I settle
-    upon.  Miser-theory.info materials will be salvaged.  GitHub appears to be
-    a more secure preservation mechanism.
-
-   * See how to get a Wiki working here too.  I am concerned mainly about
-    reflow and getting pages to work properly.  There is frustration between
-    using GitHub versus Blogger at the moment.  The GitHub support is more
-    desirable if view reflow works.  It seems to in the Wiki theme.
-
-  * Review the efficacy of the various text files.  This may be too much
-    subdivision.  Documentation might address this better.  Those files/topics
-    might move accordingly.
-
-  * Account for the use of .md as well as .txt files in this project.
-
-  * Do we need engineering of the GitHub project (and document engineering)
-    as distinct from the engineering of implementations.  We can handle this
-    with a docs/construction mechanism.  I don't know about the construction
-    structure of the code other than that.
-
-  * Make the global change of orcmid repositories to have main as the default
-    branch name, deprecating master (which will presumably redirect to main).
-
-  * When deep links to https://github.com/orcmid/miser/blob/main/ work,
-    replace the permalink on this page and in any attribution statement
-    to employ that absolute path.
-
-  * systematically apply this change to all .txt and .md files in the current
-    level.
-
-  * systematically extend the changes into all subfolders of this project,
-    expanding breadth first.
-
-  * Review for changes needed in blog, wiki, and documentation pages.
-
-  * For new text, use main as soon as it is workable.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.18 2023-11-**
+ 0.1.0  2024-11-30T17:40Z Make tombstone, linking to the continuation
+        at <https://orcmid.github.io/miser/miser.txt>
  0.0.17 2023-11-02T15:43Z More on refactoring and separation of concerns
  0.0.16 2023-10-29T16:01Z The return of "manifestation."
  0.0.15 2023-10-27T19:37Z Announce refactoring, setting the stage.
