@@ -1,4 +1,4 @@
-<!-- index.md 0.3.11                UTF-8                         2024-11-28
+<!-- index.md 0.3.12                UTF-8                         2024-12-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -24,7 +24,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.11 2024-11-28T17:06Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.12 2024-12-15T22:03Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -93,7 +93,7 @@ computation: a member of the abstract structure, ‹ob›.
 The Miser Project is very much about computational interpretation of abstract
 entities, with mathematical-logic theory as guidance toward
 dependable computational interpretations.  The importance of logic to
-computer sciences is demonstrated.
+computer science is demonstrated.
 
 Ob diagrams are props in the same manner as rulers,
 compasses and pencils on paper are useful in the understanding of Euclidean
@@ -109,7 +109,7 @@ computational function -- a mathematical entity still.
 
 The challenge becomes finding a dependable alignment between the computational
 model as a theoretical conception and practical operation of a computing
-mechanism, demonstrationg an empirical bridge that cannot be crossed with
+mechanism, demonstrating an empirical bridge that cannot be crossed with
 mathematics and logic alone. Observe carefully how that is accomplished in the
 Miser Project.
 
@@ -368,6 +368,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.12 2024-12-16T22:03Z Small typo and text fixes
   0.3.11 2024-11-28T17:06Z Fix typo, smooth nature of universal function
   0.3.10 2024-11-28T04:56Z Remove extraneous observation
   0.3.9  2024-11-26T23:41Z Polish the text for clarity
