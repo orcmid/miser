@@ -1,4 +1,4 @@
-obtheory.txt 1.4.2                  UTF-8                          2024-04-19
+obtheory.txt 1.4.3                  UTF-8                          2024-12-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -409,7 +409,7 @@ obtheory.txt 1.4.2                  UTF-8                          2024-04-19
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.4.2 dated 2024-04-19 available on the
+   text file obtheory.txt version 1.4.3 dated 2024-12-15 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -430,9 +430,13 @@ TODO
    orcmid.github.io/bib/ so they can be linked from the web version of
    obtheory.txt.
 
+ * I definitely need a link to [Landin1965] and to fix the mention of MEE
+   in that citation.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 1.4.2 2024-04-19T18:57Z More touch-ups and clarification on qualtifiers
+ 1.4.3 2024-12-15-12:00Z Fix typo in 1.4.2 (below) and small touch-ups
+ 1.4.2 2024-04-19T18:57Z More touch-ups and clarification on quantifiers
  1.4.1 2024-04-14T20:15Z Introduce ob-is-elemental on Ob9 and tighten x ¶ y
  1.4.0 2024-04-14T17:20Z Expand Ob9 to establish that primitives and lindies
        have no predecessors.
