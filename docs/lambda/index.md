@@ -1,4 +1,4 @@
-<!-- index.md 0.3.2                 UTF-8                         2024-11-28
+<!-- index.md 0.3.3                 UTF-8                         2024-12-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.2 2024-11-28T17:39Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.3 2024-12-15T23:29Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -78,15 +78,15 @@ advance.
 
 also illustrating various Frugalese forms for achieving the same result.
 
-These and their intermediate variations, known as Curried forms, will be
-employed in the development of oFrugal utility scripts.
+These and their intermediate variations, such as `subst(.ARG)`, known as
+Curried forms, will be employed in the development of oFrugal utility scripts.
 
 ### 2.2 Symbolic forms
 
-The oMiser computational model's applicative operations treat lindies as
-invariant individuals whose applicative interpretations are merely
-themselves.  The model goes farther, preserving constructions with lindies as
-symbolic forms whose applicative interpretation is themselves.
+The oMiser computational model's application function treats lindies as
+individuals having no definable/individual applicative interpretations.
+Application of lindies as operators results in an uninterpreted re-expression
+of the applicative operation.  Symbolic form is preserved in this manner.
 
 For example, the oFrugal expression
 
@@ -114,8 +114,11 @@ When application operator `p` and operand `x` are both symbolic forms, the
 result of application is the composed symbolic form `p :: x`.
 
 When only `p` is a symbolic form, the result of application is `p :: ‵ x`,
-a (mixed) symbolic-form that evaluates to itself even though `x` may be an ob
-of any form.
+itself a symbolic form even though `x` may be an ob of any form.
+
+The utility of symbolic forms and their treatment as applicative expressions
+becomes more comfortable with practice and especially with us of the oFrugal
+formulations of functional abstraction.
 
 ### 2.3 Functional abstraction
 
@@ -161,6 +164,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.3  2024-12-15T23:29Z Smooth 2.2 more
   0.3.2  2024-11-28T17:39Z Touch up 2.1 a bit more
   0.3.1  2024-10-28T19:47Z Touch up 2.2
   0.3.0  2024-10-28T18:04Z Complete 2.2 on Symbolic Forms
