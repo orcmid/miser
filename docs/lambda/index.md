@@ -1,4 +1,4 @@
-<!-- index.md 0.3.3                 UTF-8                         2024-12-15
+<!-- index.md 0.3.4                 UTF-8                         2024-12-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.3 2024-12-15T23:29Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.4 2024-12-18T22:53Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -69,8 +69,8 @@ Although `σ.s M` determines an ob, that ob has no occurrences of `s`.  In this
 sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M` as-is.
 
 There are handy companion functions, `δ(s, N` and `subst(N, s)`, for use in
-particular circumstances, often when one or more operands are known in
-advance.
+particular circumstances, often when one or more particular operands are known
+in advance.
 
 ```ML
 δ(s, N) M = subst(N, s) M = (σ.s M) N = σ(s, M, N)
@@ -83,10 +83,15 @@ Curried forms, will be employed in the development of oFrugal utility scripts.
 
 ### 2.2 Symbolic forms
 
-The oMiser computational model's application function treats lindies as
-individuals having no definable/individual applicative interpretations.
-Application of lindies as operators results in an uninterpreted re-expression
-of the applicative operation.  Symbolic form is preserved in this manner.
+Symbolic forms are obs having the appearance of applicative expressions and/or
+constant list structures.  Intended interpretations for them are not
+self-evident, however suggestive the form might be.  Purpose for a symbolic
+form is revealed only in the context of its usage.
+
+When a symbolic form is evaluated or applied directly, the symbolic
+form is preserved.
+
+#### 2.2.1 Examples of symbolic-form preservation
 
 For example, the oFrugal expression
 
@@ -108,19 +113,26 @@ and
 
 the same.  This hinges on the mathematical engineering by which scripts such
 as `!eval x :: y` with lindies `x` and `y` are evaluated as `obap.ap(x,y)`
-with result `x :: y`.
+with result `x :: y` in accordance with the distinguishing of symbolic forms.
+
+#### 2.2.2 Rules of symbolic-form structure
+
+The oMiser computational model's application function treats lindies as
+individuals having no definable/separate applicative interpretations.
+
+Lindies are individual symbolic forms.
 
 When application operator `p` and operand `x` are both symbolic forms, the
-result of application is the composed symbolic form `p :: x`.
+result of application is the composed symbolic form `(p) :: x`.
 
-When only `p` is a symbolic form, the result of application is `p :: ‵ x`,
+When `p` is a symbolic form, `(p)::.NIL` is a symbolic form.  Otherwise
+when only `p` is a symbolic form, the result of application is `(p) :: ‵ x`,
 itself a symbolic form even though `x` may be an ob of any form.
 
-The utility of symbolic forms and their treatment as applicative expressions
-becomes more comfortable with practice and especially with us of the oFrugal
-formulations of functional abstraction.
+As is done in the examples (2.2.1), symbolic forms are usually written in
+canonical form, omitting unnecessary parentheses.
 
-### 2.3 Functional abstraction
+## 3. Functional Abstraction
 
 \[Author's Note\]: Brief introduction to the two forms.
 
@@ -164,6 +176,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.4  2024-12-18T22:53Z Still struggling with Symbolic Form motivation
   0.3.3  2024-12-15T23:29Z Smooth 2.2 more
   0.3.2  2024-11-28T17:39Z Touch up 2.1 a bit more
   0.3.1  2024-10-28T19:47Z Touch up 2.2
