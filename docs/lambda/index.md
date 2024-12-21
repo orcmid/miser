@@ -1,4 +1,4 @@
-<!-- index.md 0.3.5                 UTF-8                         2024-12-21
+<!-- index.md 0.3.6                 UTF-8                         2024-12-21
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.5 2024-12-21T17:51Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.6 2024-12-21T22:25Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -68,7 +68,7 @@ structure and not on any applicative interpretation of `M`.
 Although `σ.s M` determines an ob, that ob has no occurrences of `s`.  In this
 sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M` as-is.
 
-There are handy companion functions, `δ(s, N` and `subst(N, s)`, for use in
+There are handy companion functions, `δ(s, N)` and `subst(N, s)`, for use in
 particular circumstances, often when one or more particular operands are known
 in advance.
 
@@ -89,15 +89,16 @@ self-evident, however suggestive the form might be.  Purpose for a symbolic
 form is revealed only in the context of its usage.
 
 The harmony of symbolic form and applicative-expression, when that
-interpretation is the case, is anchored on the fact that the computational
-interpretation of `f :: g :: x` is tantamount to the Frugalese applicative
-expression `f g x`, both being right-associative and equivalent to `f(g x)`.
+interpretation is the case, is encouraged by the computational interpretation
+of `f :: g :: x` being tantamount to the Frugalese applicative expression
+`f g x`, both being right-associative and equivalent to `f(g x)` were the
+lindies `f`, `g`, and `x` taken to be variables for appropriate obs.
 
 The oFrugal definitions of applicative-procedure abstraction rely on that
-structural nicety, facilitating abstraction of applicative-function scripts
-and confirmation of their operation.
+structural nicety, transforming symbolic forms into applicative-function
+scripts in a manner that supports confirmation of correct operation.
 
-#### 2.2.1 Examples of symbolic-form preservation
+#### 2.2.1 Symbolic-form preservation
 
 When a symbolic form is evaluated or applied directly, the symbolic
 form is preserved.
@@ -129,7 +130,7 @@ with result `x :: y` in accordance with the distinguishing of symbolic forms.
 The oMiser computational model's application function treats lindies as
 individuals having no definable/separate applicative interpretations.
 
-Lindies are individual symbolic forms.
+Lindies are taken as individual symbolic forms.
 
 When application operator `p` and operand `x` are both symbolic forms, the
 result of application is the composed symbolic form `(p) :: x`.
@@ -138,8 +139,8 @@ When `p` is a symbolic form, `(p)::.NIL` is a symbolic form.  Otherwise
 when only `p` is a symbolic form, the result of application is `(p) :: ‵ x`,
 itself a symbolic form even though `x` may be an ob of any form.
 
-As is done in the examples (2.2.1), symbolic forms are usually written in
-canonical form, omitting unnecessary parentheses.
+As is done in the examples (2.2.1, above), symbolic forms are usually written
+in canonical form, omitting unnecessary parentheses.
 
 ## 3. Functional Abstraction Heuristics
 
@@ -185,7 +186,9 @@ from time to time.
 </table>
 <!--
 
-  0.3.5  2024-12-12T17:51Z Enough fussing with Symbolic Form for now
+  0.3.6  2024-12-21T22:25Z You are trapped in a twisty symbolic form with
+                           intrpretations all the same
+  0.3.5  2024-12-21T17:51Z Enough fussing with Symbolic Form for now
   0.3.4  2024-12-18T22:53Z Still struggling with Symbolic Form motivation
   0.3.3  2024-12-15T23:29Z Smooth 2.2 more
   0.3.2  2024-11-28T17:39Z Touch up 2.1 a bit more
