@@ -1,4 +1,4 @@
-<!-- index.md 0.3.6                 UTF-8                         2024-12-21
+<!-- index.md 0.3.7                 UTF-8                         2024-12-22
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.6 2024-12-21T22:25Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.7 2024-12-22T17:41Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -123,7 +123,8 @@ and
 
 the same.  This hinges on the mathematical engineering by which scripts such
 as `!eval x :: y` with lindies `x` and `y` are evaluated as `obap.ap(x,y)`
-with result `x :: y` in accordance with the distinguishing of symbolic forms.
+with result `x :: y` in accordance with the distinguishing of symbolic forms
+in the [definition of obap.ap](../obap/obaptheory.txt).
 
 #### 2.2.2 Rules of symbolic-form structure
 
@@ -186,6 +187,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.7  2024-12-22T17:41Z Tie in obaptheory.txt symbolic form treatment
   0.3.6  2024-12-21T22:25Z You are trapped in a twisty symbolic form with
                            intrpretations all the same
   0.3.5  2024-12-21T17:51Z Enough fussing with Symbolic Form for now
