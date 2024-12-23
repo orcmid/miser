@@ -1,4 +1,4 @@
-<!-- index.md 0.3.7                 UTF-8                         2024-12-22
+<!-- index.md 0.3.8                 UTF-8                         2024-12-23
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,11 +27,20 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.7 2024-12-22T17:41Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.8 2024-12-23T18:09Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
+
+- [1. The Abstraction Idea](#1-the-abstraction-idea)
+- [2. The Abstraction Challenge](#2-the-abstraction-challenge)
+  - [2.1 Pure abstraction](#21-pure-abstraction)
+  - [2.2 Symbolic forms](#22-symbolic-forms)
+    - [2.2.1 Symbolic-form preservation](#221-symbolic-form-preservation)
+    - [2.2.2 Rules of symbolic-form structure](#222-rules-of-symbolic-form-structure)
+- [3. Applicative-Procedure Abstraction Techniques](#3-applicative-procedure-abstraction-techniques)
+- [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
 
@@ -143,11 +152,11 @@ itself a symbolic form even though `x` may be an ob of any form.
 As is done in the examples (2.2.1, above), symbolic forms are usually written
 in canonical form, omitting unnecessary parentheses.
 
-## 3. Functional Abstraction Heuristics
+## 3. Applicative-Procedure Abstraction Techniques
 
 \[Author's Note\]: Brief introduction to the two forms.
 
-## Catalog (Specimen, LYYMMNN Content TBD)
+## Related Material
 
 This placeholder links to raw materials and notes, including text files.
 There will be organized folios of content as consolidation of documentation
@@ -187,6 +196,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.8  2024-12-23T18:09Z Develop Table of Content
   0.3.7  2024-12-22T17:41Z Tie in obaptheory.txt symbolic form treatment
   0.3.6  2024-12-21T22:25Z You are trapped in a twisty symbolic form with
                            intrpretations all the same
