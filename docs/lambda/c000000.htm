@@ -24,11 +24,7 @@
 <a href="../" target="_top">
 <img border="0" src="../images/ScaffoldingWorkers-logo.png" alt="The Miser Project" width="192" height="152"></a>
 <!-- included from miser /construction/templates/00/c000004b.htm of 2023-11-02T22:47Z -->
-<!--webbot bot="Include" i-checksum="47124" endspan -->
-
-
-
-    </td>
+<!--webbot bot="Include" i-checksum="47124" endspan --></td>
     
     <td width="72%" height="6">
       <p align="center"><strong><font color="#990033"><em><big><big>lambda: 
@@ -47,7 +43,7 @@
 		<a target="_top" href="c000000.htm">c000000</a>&gt;</code></b><br>
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
-      S-Format="%Y-%m-%d" startspan -->2024-08-22<!--webbot bot="Timestamp" i-checksum="12512" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->11:48 -0700<!--webbot bot="Timestamp" i-checksum="12082" endspan -->
+      S-Format="%Y-%m-%d" startspan -->2024-12-25<!--webbot bot="Timestamp" i-checksum="12166" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->09:55 -0800<!--webbot bot="Timestamp" i-checksum="12058" endspan -->
       </small></small></p>
       </td>
     
@@ -125,17 +121,6 @@
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
       <td width="11%" align="center" valign="top">
-   <font size="2">2024-08-22</font></td>
-      <td width="78%" align="left" valign="top">
-        <font size="2">I am giving up on trace and &quot;maeby&quot; in favor of symbolic 
-		forms.&nbsp; The obaptheory.txt must be updated to reflect that.&nbsp; 
-		And we will speak of it properly in other parts of the project, 
-		including here on lambda/. </font></td>
-    </tr>
-    
-    <tr>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">
    <font size="2">2024-08-12</font></td>
       <td width="78%" align="left" valign="top">
         <font size="2">I need to understand about the
@@ -177,7 +162,8 @@
     </tr>
     
     <tr>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><font size="2"><b>in progress<br>
+		2024-06-22</b></font></td>
       <td width="11%" align="center" valign="top">
    <font size="2">2024-01-25</font></td>
       <td width="78%" align="left" valign="top">
@@ -186,19 +172,24 @@
 		I might have to separate the two cases.&nbsp; But this would influence 
 		how parsing of p happens in working out where and how to restructure.&nbsp; 
 		I need to work out the structure first to deal with this and find good 
-		cases.</font></td>
+		cases. [2024-12-25 I think the current approach to oLambda accounts for 
+		this and the use of oSigma(.ARG) as a check seems adequate.</font></td>
     </tr>
     
     <tr>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><font size="2"><b>in progress<br>
+		2024-12-25</b></font></td>
       <td width="11%" align="center" valign="top">
    <font size="2">2024-01-25</font></td>
       <td width="78%" align="left" valign="top">
         <font size="2">There is an accelerator, of course, for 
-		is-pure-lindy-trace and it can be handled by a flag bit in the storage 
+		<strike>is-pure-lindy-trace</strike> symbolic form and it can be handled by a flag bit in the storage 
 		structure for an ob element.&nbsp; Whether it is set or not on ob.NIL is 
-		something to be worked out.&nbsp; It seems safe to do so.&nbsp; It is 
-		easy to then set the flag bit on the result of an ob.c(x, y) operation.</font></td>
+		something to be worked out.&nbsp; It seems safe to do so.&nbsp; 
+		[2024-12-25 not safe.&nbsp; The safe case is in obaptheory.txt] ] It is 
+		easy to then set the flag bit on the result of an ob.c(x, y) operation.&nbsp; 
+		[2024-12-25 This note needs to move to oMiser development when we have 
+		the right place for it.]</font></td>
     </tr>
     
     <tr>
@@ -211,11 +202,19 @@
 		list-structure editing mechanism that I saw Conal Elliott (<a href="http://conal.net/">http://conal.net/</a>) 
 		describe in a blog post somewhere.&nbsp; I will mention that, although 
 		the particular procedure for lambda abstraction is similar in terms of 
-		how the rewriting works although it is not established in the same way.</font></td>
+		how the rewriting works although it is not established in the same way.&nbsp; 
+		[2024-12-25 When I tracked this down and mentioned it to Conal, I 
+		realized the connection was about paths to things and this is reflected 
+		in the oSigma.txt procedure on rewriting.&nbsp; The connection is pretty 
+		weak even though I didn&#39;t think so at the time.&nbsp; When I get into 
+		forms/states and assignments (<b>with-</b>expressions), it may be 
+		interesting how that will work, since it is more-like editing a <b>
+		struct</b>.)</font></td>
     </tr>
     
     <tr>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><font size="2"><b>in progress<br>
+		2024-07-12</b></font></td>
       <td width="11%" align="center" valign="top">
    <font size="2">2024-01-25</font></td>
       <td width="78%" align="left" valign="top">
@@ -224,11 +223,29 @@
     </tr>
     
     <tr>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">
-   <font size="2">2024-01-25</font></td>
-      <td width="78%" align="left" valign="top">
-        <font size="2">Provide a hybrid stub page for lambda/</font></td>
+      <td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
+		<font size="2"><b>done<br>
+		2024-10-27</b></font></td>
+      <td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
+   <b>
+   <font size="2">2024-08-22</font></b></td>
+      <td width="78%" align="left" valign="top" bgcolor="#CCCCFF">
+        <b>
+        <font size="2">I am giving up on trace and &quot;maeby&quot; in favor of symbolic 
+		forms.&nbsp; The obaptheory.txt must be updated to reflect that.&nbsp; 
+		And we will speak of it properly in other parts of the project, 
+		including here on lambda/. </font></b></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top" bgcolor="#CCCCFF"><b>
+		<font size="2">done</font></b></td>
+      <td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
+   <b>
+   <font size="2">2024-01-25</font></b></td>
+      <td width="78%" align="left" valign="top" bgcolor="#CCCCFF">
+        <b>
+        <font size="2">Provide a hybrid stub page for lambda/</font></b></td>
     </tr>
     
     <tr>
@@ -297,8 +314,7 @@ You are navigating
 <a href="../construction/" target="_top">construction material</a><br>
 of the <a href="../" target="_top">Miser Project</a></small></small></font>
 <!-- Included from miser /construction/templates/00/c000004d.htm version of 2014-01-08-18:45 -0800 -->
-<!--webbot bot="Include" i-checksum="14676" endspan -->
-    </td>
+<!--webbot bot="Include" i-checksum="14676" endspan --></td>
     <td width="23%">
       <p align="right"><font size="-2">created 2024-01-08T19:12Z by
 		<a rel="nofollow" href="../../orcmid">orcmid</a></font></p>
