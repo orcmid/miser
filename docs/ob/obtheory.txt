@@ -1,4 +1,4 @@
-obtheory.txt 1.4.3                  UTF-8                          2024-12-15
+obtheory.txt 1.4.4                  UTF-8                          2024-12-26
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -349,6 +349,11 @@ obtheory.txt 1.4.3                  UTF-8                          2024-12-15
        Rave Press (New York: 1965).  ISBN 0-911216-01-4.  See
        (../../bib/authors.htm#Davis1965).
 
+   [Echemendy????] I want to reference the Stanford EdX class on Semantics
+       of First-Order Logic.  First, I need to audit the course and come up
+       with a précis that accounts for how it should be construed in the
+       context of the Miser Project and ‹ob›.
+
    [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
        expressions and their computation by machine, Part I.  Comm. ACM
        3, 4 (April 1960), 184-195.  doi>10.1145/367177.367199 available at
@@ -409,10 +414,20 @@ obtheory.txt 1.4.3                  UTF-8                          2024-12-15
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.4.3 dated 2024-12-15 available on the
+   text file obtheory.txt version 1.4.4 dated 2024-12-26 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
+
+ * There are many references here that are not in any sense relied upon in
+   the text.  They are useful references, but need to be moved (1) to the
+   Orcmid on GitHub bib/ topic and (2) perhaps used in more-appropriate
+   locations once the orcmid.github.io/miser topics are elaborated.
+
+ * I want to reference the Stanford EdX class on Semantics
+   of First-Order Logic.  First, I need to audit the course and come up
+   with a précis that accounts for how it should be construed in the
+   context of the Miser Project and ‹ob›.
 
  * Figure out what to do about well-definedness.  Is this an Ob11 or Ob12
    condition?  I claim it is implicit in Ob11 and it can be made explicit
@@ -435,7 +450,8 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 1.4.3 2024-12-15-12:00Z Fix typo in 1.4.2 (below) and small touch-ups
+ 1.4.4 2024-12-26T18:50Z Add note/TODO about the Semantics of FOL Coursse
+ 1.4.3 2024-12-15T12:00Z Fix typo in 1.4.2 (below) and small touch-ups
  1.4.2 2024-04-19T18:57Z More touch-ups and clarification on quantifiers
  1.4.1 2024-04-14T20:15Z Introduce ob-is-elemental on Ob9 and tighten x ¶ y
  1.4.0 2024-04-14T17:20Z Expand Ob9 to establish that primitives and lindies
