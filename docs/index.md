@@ -1,4 +1,4 @@
-<!-- index.md 0.3.12                UTF-8                         2024-12-15
+<!-- index.md 0.3.13                UTF-8                         2024-12-30
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -12,8 +12,7 @@
        <img src="images/n170601d2.png">
     </td>
     <td width="28%" valign="middle" align="right">
-      <b><code><a href="../" target="top">orcmid.github.io</a>&gt;<br />
-	  <a href="./" target="_top">miser</a>&gt;
+      <b><code><a href="../" target="top">orcmid.github.io</a>&gt;
       </code></b>
       <br /><br />
       <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
@@ -21,10 +20,13 @@
       </a>
       <br /><br />
       <b><code>
+      <br />
+	     <a href="./" target="_top">miser</a>&gt;
+      <br />
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.12 2024-12-15T22:03Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.13 2024-12-30T19:00Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -253,7 +255,7 @@ The project is narrated with the software-development managed on GitHub
 repository [orcmid/miser](https://github.com/orcmid/miser).
 [Miser Project on GitHub](https://orcmid.github.io/miser/) content is
 authored at the [docs](https://github.com/orcmid/miser/tree/master/docs)
-folder of the repository.
+folder of that repository.
 
 Important authoritative materials are in text files that can be preserved and
 employed without requiring a browser or access to the GitHub repository. These
@@ -368,6 +370,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.13 2024-12-30T19:00Z Touch up and fix PageView map placement
   0.3.12 2024-12-16T22:03Z Small typo and text fixes
   0.3.11 2024-11-28T17:06Z Fix typo, smooth nature of universal function
   0.3.10 2024-11-28T04:56Z Remove extraneous observation
