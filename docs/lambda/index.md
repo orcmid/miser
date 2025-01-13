@@ -1,4 +1,4 @@
-<!-- index.md 0.3.8                 UTF-8                         2024-12-23
+<!-- index.md 0.3.9                 UTF-8                         2025-01-13
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.8 2024-12-23T18:09Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.9 2025-01-13T18:10Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -69,13 +69,20 @@ of interpretation.
 ### 2.1 Pure abstraction
 
 Pure abstraction operations on obs depend on an ob and its structure without
-consideration of anything other than the ob "as-is."  The abstraction `σ.s M`
-is a script for a function such that `(σ.s M) N` determines a form of `M` with
-`N` substituted everywhere `s` occurs in `M`.  This is based strictly on ob
-structure and not on any applicative interpretation of `M`.
+consideration of anything other than the ob "as-is."  The abstraction
 
-Although `σ.s M` determines an ob, that ob has no occurrences of `s`.  In this
-sense, `σ.s M` has `s` abstracted away; `(σ.s M) s` determines `M` as-is.
+> σ.*s* *M*
+
+is a script for a function such that, given obs *s*, *M*, and *N*,
+
+> (σ.*s* *M*) *N*
+
+determines a form of ob *M* with *N* substituted everywhere *s* occurs in *M*.
+This is based strictly on ob structure and not on any applicative
+interpretation of *M* as an applicative-operation script.
+
+Although `σ.s M` determines an ob, that ob has no occurrences of *s*.  In this
+sense, `σ.s M` has *s* abstracted away; `(σ.s M) s` determines *M* as-is.
 
 There are handy companion functions, `δ(s, N)` and `subst(N, s)`, for use in
 particular circumstances, often when one or more particular operands are known
@@ -85,7 +92,7 @@ in advance.
 δ(s, N) M = subst(N, s) M = (σ.s M) N = σ(s, M, N)
 ```
 
-also illustrating various Frugalese forms for achieving the same result.
+illustrating various Frugalese forms for achieving the same result.
 
 These and their intermediate variations, such as `subst(.ARG)`, known as
 Curried forms, will be employed in the development of oFrugal utility scripts.
@@ -196,6 +203,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.9  2025-01-13T18:10Z Change 2.2.1 to mathematical form for variables
   0.3.8  2024-12-23T18:09Z Develop Table of Content
   0.3.7  2024-12-22T17:41Z Tie in obaptheory.txt symbolic form treatment
   0.3.6  2024-12-21T22:25Z You are trapped in a twisty symbolic form with
