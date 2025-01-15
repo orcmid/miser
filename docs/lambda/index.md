@@ -1,4 +1,4 @@
-<!-- index.md 0.3.11                UTF-8                         2025-01-13
+<!-- index.md 0.3.12                UTF-8                         2025-01-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.11 2025-01-13T23:12Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.12 2025-01-15T17:23Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -97,7 +97,9 @@ illustrating various Frugalese forms for achieving the same result, given
 definite *s*, *N*, and *M*.
 
 These and their intermediate variations, such as subst(**.ARG**), known as
-Curried forms, will be employed in the development of oFrugal utility scripts.
+Curried forms, will be employed in the development of oFrugal utility scripts,
+including those for
+[applicative-procedure abstraction](#3-applicative-procedure-abstraction-techniques).
 
 ### 2.2 Symbolic forms
 
@@ -205,6 +207,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.12 2025-01-15T17:23Z 2.1 touch-up with reference to section 3
   0.3.11 2025-01-14T23:12Z 2.2.1 mathematical tyhpography refined
   0.3.10 2025-01-13T19:47Z Complete mathematical forms in 2.2.1
   0.3.9  2025-01-13T18:10Z Change 2.2.1 to mathematical form for variables
