@@ -1,4 +1,4 @@
-obaptheory.txt 1.3.3                UTF-8                          2024-12-15
+obaptheory.txt 1.3.4                UTF-8                          2025-01-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -58,9 +58,11 @@ obaptheory.txt 1.3.3                UTF-8                          2024-12-15
    a. The right-associative infix pair operator, ::, is introduced, with
 
         x :: y = ob.c(x,y)
-        t :: u :: v:: ... :: y :: z = t :: (u :: (v :: ... :: (y :: z) ... ) )
 
-   n. The prefix form ‵ x is equivalent to ob.e(x).  E.g.,
+        t :: u :: v:: ... :: y :: z
+           = t :: (u :: (v :: ... :: (y :: z) ... ) )
+
+   b. The prefix form ‵ x is equivalent to ob.e(x).  E.g.,
 
           ‵(ob.NIL :: ‵ ‵ob.NIL :: ‵ob.NIL)
                 = ob.e(ob.c( ob.NIL,
@@ -129,9 +131,9 @@ obaptheory.txt 1.3.3                UTF-8                          2024-12-15
           intentionally.  They need not survive input to oFrugal and may be
           treated as erroneous.
 
-          Here is an applicative-expression script form in which in which
-          lindies are preserved, having no definable applicative
-          interpretation.
+          There is an applicative-operation script form in which lindies are
+          preserved, having no definable applicative interpretation
+          other-wise.
 
           obap.is-lindy(x) => is-symbolic-form(x)                    (a)
 
@@ -151,13 +153,12 @@ obaptheory.txt 1.3.3                UTF-8                          2024-12-15
           applicative-expression forms, and other potential purposes.
 
           Note that symbolic forms are still parsed and subject to being
-          marched through Obap6(d) and Obap6(i) although the form is returned
-          intact.
+          marched through Obap6(d) and Obap6(i) in the computational
+          interpretation, even though the form is returned intact.
 
          The intended practical value is in the ability to transform such
-         forms into operational scripts by successive abstraction operations
-         that are more-easily confirmed by experimental demonstration.  See
-         <https://orcmid.github.io/miser/lambda> for practical benefits.
+         forms into operational scripts by successive abstraction operations.
+         See <https://orcmid.github.io/miser/lambda> for practical benefits.
 
          It should also be clear from the definition of oFrugalese that
          the preserved form could be intended entirely as "data" since
@@ -191,10 +192,11 @@ obaptheory.txt 1.3.3                UTF-8                          2024-12-15
                 ⇒ obap.ap(p,x) = p :: x
         is-symbolic-form(p) ∧ ¬ is-symbolic-form(x)
                 ⇒ obap.ap(p,x) = p :: ob.e(x)
+
           Symbolic forms are resolved in this manner to be more informative
           on inspection when an occurrence is unintended. Intensional usage
-          is also supported by preservation of the symbolic form appearing
-          applicatively.
+          is also supported, as in the lambda abstraction of applicative-
+          operations.
 
         ¬ is-symbolic-form(p)                                       (d)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = ev(p,x,p)
@@ -294,16 +296,12 @@ obaptheory.txt 1.3.3                UTF-8                          2024-12-15
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.3.3 dated 2024-12-16,
+   Conception text file obaptheory.txt version 1.3.4 dated 2025-01-16,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 TODO
-
- * Ensure there's a tombstone on the miser/oMiser folder.
-
- * Ensure that attributions have the refactored locations.
 
  * Be very clear about the inspiration of this in McCarthy's LISP approach.
 
@@ -346,6 +344,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.3.4  2025-01-16T21:38Z Smoothing, including on symbolic forms
  1.3.3  2024-12-15T21:28Z More Obap3 touch-ups
  1.3.2  2024-11-28T19:22Z Cleanup Obap3 explanation
  1.3.1  2024-11-27T00:40Z Smooth Symbolic Form a bit
