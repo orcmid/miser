@@ -1,4 +1,4 @@
-<!-- index.md 0.3.12                UTF-8                         2025-01-15
+<!-- index.md 0.4.0                 UTF-8                         2025-01-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.12 2025-01-15T17:23Z<!-- MAINTAIN THIS MANUALLY -->
+        0.4.0 2025-01-18T22.42Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -37,8 +37,8 @@
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
   - [2.1 Pure abstraction](#21-pure-abstraction)
   - [2.2 Symbolic forms](#22-symbolic-forms)
-    - [2.2.1 Symbolic-form preservation](#221-symbolic-form-preservation)
-    - [2.2.2 Rules of symbolic-form structure](#222-rules-of-symbolic-form-structure)
+  - [2.2.1 Symbolic form principles](#221-symbolic-form-principles)
+  - [2.2.2 Utility of symbolic forms](#222-utility-of-symbolic-forms)
 - [3. Applicative-Procedure Abstraction Techniques](#3-applicative-procedure-abstraction-techniques)
 - [Related Material](#related-material)
 
@@ -103,27 +103,49 @@ including those for
 
 ### 2.2 Symbolic forms
 
-Symbolic forms are obs having the appearance of applicative expressions and/or
-constant list structures.  Intended interpretations for them are not
-self-evident, however suggestive the form might be.  Purpose for a symbolic
-form is revealed only in the context of its usage.
+### 2.2.1 Symbolic form principles
 
-The harmony of symbolic form and applicative-expression, when that
-interpretation is the case, is encouraged by the computational interpretation
-of `f :: g :: x` being tantamount to the Frugalese applicative expression
-`f g x`, both being right-associative and equivalent to `f(g x)` were the
-lindies `f`, `g`, and `x` taken to be variables for appropriate obs.
+It is a design principle of the oMiser universal functions **ap** and
+**eval** that *when there is no specific interpretation of an **ap** operator
+ob, "no change" occurs*.
 
-The oFrugal definitions of applicative-procedure abstraction rely on that
-structural nicety, transforming symbolic forms into applicative-function
-scripts in a manner that supports confirmation of correct operation.
+The definitions of obap.a and obap.b for the cases of singletons--individuals
+and enclosures--illustrate that principle.  Those cases were arrived at
+indirectly by seeking a computational implementation that has those functions
+be total--definite for all definite obs.  The principle was generalized as
+more cases arose.
 
-#### 2.2.1 Symbolic-form preservation
+In oMiser, lindies denote distinct constant obs that are invariant under the
+universal functions.  In this case "no change" is accomplished by the mathematical engineering of obaptheory such that when a lindy ob is applied to
+an operand, the lindy *and the operand* are preserved: the result is pairing
+of the lindy and the operand.  In this way,
 
-When a symbolic form is evaluated or applied directly, the symbolic
-form is preserved.
+> **ap**(*lindy*, *x*) yields (*lindy* :: *x*)
 
-For example, the oFrugal expression
+using (\` *x*) when *x* is not also invariant. The result is invariant in this
+same sense.
+
+The lindy-involved invariant obs are classified as **symbolic forms** and
+distinguished by the obaptheory predicate is-symbolic-form(*x*); symbolic
+forms are all preserved without change in this manner.  The general rules is
+
+> **ap**(*symbolic-form*, *x*) = (*symbolic-form* :: *x*)
+
+> using (\` *x*) when *x* is neither `ob.NIL` nor a symbolic form.
+
+### 2.2.2 Utility of symbolic forms
+
+Symbolic forms have the appearance of applicative-procedure scripts and/or
+constant list structures.  Intended purpose for a symbolic form is revealed
+only in the context of usage.
+
+Harmony of symbolic forms with applicative-operation expressions is supported
+by the computational interpretation of `f :: g :: x` being tantamount to the
+Frugalese applicative expression `f g x`, both being right-associative and
+equivalent to `f(g x)` with a prospective interpretation of lindies `f`, `g`,
+and `x` as variables in an applicative-operation formula.
+
+For example, the oFrugal expression with lindies `a`, `b`, and `x`
 
 ```ML
 (a x) b x ;
@@ -141,27 +163,7 @@ and
 !eval (a :: x) :: b :: x ;
 ```
 
-the same.  This hinges on the mathematical engineering by which scripts such
-as `!eval x :: y` with lindies `x` and `y` are evaluated as `obap.ap(x,y)`
-with result `x :: y` in accordance with the distinguishing of symbolic forms
-in the [definition of obap.ap](../obap/obaptheory.txt).
-
-#### 2.2.2 Rules of symbolic-form structure
-
-The oMiser computational model's application function treats lindies as
-individuals having no definable/separate applicative interpretations.
-
-Lindies are taken as individual symbolic forms.
-
-When application operator `p` and operand `x` are both symbolic forms, the
-result of application is the composed symbolic form `(p) :: x`.
-
-When `p` is a symbolic form, `(p)::.NIL` is a symbolic form.  Otherwise
-when only `p` is a symbolic form, the result of application is `(p) :: ‵ x`,
-itself a symbolic form even though `x` may be an ob of any form.
-
-As is done in the examples (2.2.1, above), symbolic forms are usually written
-in canonical form, omitting unnecessary parentheses.
+the same.
 
 ## 3. Applicative-Procedure Abstraction Techniques
 
@@ -207,6 +209,7 @@ from time to time.
 </table>
 <!--
 
+  0.4.0  2024-01-18T22:42Z 2 Refactoring of symbolic form introduction
   0.3.12 2025-01-15T17:23Z 2.1 touch-up with reference to section 3
   0.3.11 2025-01-14T23:12Z 2.2.1 mathematical tyhpography refined
   0.3.10 2025-01-13T19:47Z Complete mathematical forms in 2.2.1
