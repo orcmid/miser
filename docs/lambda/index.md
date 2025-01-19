@@ -1,4 +1,4 @@
-<!-- index.md 0.4.0                 UTF-8                         2025-01-18
+<!-- index.md 0.4.1                 UTF-8                         2025-01-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.4.0 2025-01-18T22.42Z<!-- MAINTAIN THIS MANUALLY -->
+        0.4.1 2025-01-19T17:48Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -80,7 +80,7 @@ and definite function σ (sigma),
 
 determines a form of ob *M* with *N* substituted everywhere *s* occurs in *M*.
 This is based strictly on ob structure and not on any interpretation of *M*
-as an applicative-operation script.
+as an applicative-procedure script.
 
 Evaluation of (σ.*s* *M*) determines an ob different than *M* having no
 occurrences of *s*.  (σ.*s* *M*) has *s* abstracted away in a sense comparable
@@ -112,8 +112,8 @@ ob, "no change" occurs*.
 The definitions of obap.a and obap.b for the cases of singletons--individuals
 and enclosures--illustrate that principle.  Those cases were arrived at
 indirectly by seeking a computational implementation that has those functions
-be total--definite for all definite obs.  The principle was generalized as
-more cases arose.
+be total--definite for all definite obs.  The principle is generalized for
+further cases, including the introduction of symbolic forms.
 
 In oMiser, lindies denote distinct constant obs that are invariant under the
 universal functions.  In this case "no change" is accomplished by the mathematical engineering of obaptheory such that when a lindy ob is applied to
@@ -136,8 +136,8 @@ forms are all preserved without change in this manner.  The general rules is
 ### 2.2.2 Utility of symbolic forms
 
 Symbolic forms have the appearance of applicative-procedure scripts and/or
-constant list structures.  Intended purpose for a symbolic form is revealed
-only in the context of usage.
+constant list structures, perhaps in mixtures.  Intended purpose for a
+symbolic form is revealed only in the context of usage.
 
 Harmony of symbolic forms with applicative-operation expressions is supported
 by the computational interpretation of `f :: g :: x` being tantamount to the
@@ -209,7 +209,8 @@ from time to time.
 </table>
 <!--
 
-  0.4.0  2024-01-18T22:42Z 2 Refactoring of symbolic form introduction
+  0.4.1  2025-01-19T17:48Z Checking changes with small touch-ups
+  0.4.0  2025-01-18T22:42Z 2 Refactoring of symbolic form introduction
   0.3.12 2025-01-15T17:23Z 2.1 touch-up with reference to section 3
   0.3.11 2025-01-14T23:12Z 2.2.1 mathematical tyhpography refined
   0.3.10 2025-01-13T19:47Z Complete mathematical forms in 2.2.1
