@@ -1,4 +1,4 @@
-<!-- index.md 0.4.1                 UTF-8                         2025-01-19
+<!-- index.md 0.5.0                 UTF-8                         2025-03-08
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.4.1 2025-01-19T17:48Z<!-- MAINTAIN THIS MANUALLY -->
+        0.5.0 2025-03-08T01:47Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -46,6 +46,9 @@
 
 | Views on Abstraction |
 | --- |
+| "We call the symbol λx an _abstraction operator_, and speak of the function which is denoted by (λx _M_) as obtained from the expression _M_ by _abstraction_." |
+| -- [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) \[[Church1941](https://orcmid.github.io/bib/logic.htm#Church1941): p.7\] |
+|  |
 | "This process \[of extracting common features\] can be regarded as a repeated abstraction ... and under certain circumstances such abstracting processes can be repeatedly piled on top of one another.  Here '_abstract_' has to be understood in the literal meaning of the word as 'removing', as leaving aside everything inessential for the context in question or for a particular purpose ... ." |
 | -- [Hans Reichardt](https://mathshistory.st-andrews.ac.uk/Biographies/Reichardt/) \[[VNR1977](https://orcmid.github.io/bib/authors.htm#VNR1977): Introduction,p.11\] |
 |  |
@@ -55,8 +58,8 @@
 | "Abstraction is about digging deep into a situation to find out what is at its core making it tick.  Another way to think of it is about stripping away irrelevant details, or rather, stripping away details that are irrelevant to what we're thinking about." |
 | -- [Eugenia Cheng](https://en.wikipedia.org/wiki/Eugenia_Cheng), _The Joy of Abstraction_ \[[Cheng2023](https://orcmid.github.io/bib/math.htm#Cheng2023): 2.3 Forgetting Details\] |
 |  |
-| "We call the symbol λx an _abstraction operator_, and speak of the function which is denoted by (λx _M_) as obtained from the expression _M_ by _abstraction_." |
-| -- [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) \[[Church1941](https://orcmid.github.io/bib/logic.htm#Church1941): p.7\] |
+| "Abstraction is a verb: to abstract is to identify the basic principles and laws of a process so that it can be studied without regard to physical implementation; the abstraction can then guide many implementations.  Abstraction is also a noun: An abstraction is a mental construct that unifies a set of objects.  Objects of an abstraction have their own logic of relations with each other that does not require knowledge of lower-level details." |
+| -- Peter J. Denning. Abstractions \[[Denning2025](https://orcmid.github.io/bib/compsci.htm#Denning2025): What is Abstraction?\] |
 
 ## 2. The Abstraction Challenge
 
@@ -209,6 +212,7 @@ from time to time.
 </table>
 <!--
 
+  0.5.0  2025-03-08T01:47Z Rework The Abstraction Idea, adding [Denning2025]
   0.4.1  2025-01-19T17:48Z Checking changes with small touch-ups
   0.4.0  2025-01-18T22:42Z 2 Refactoring of symbolic form introduction
   0.3.12 2025-01-15T17:23Z 2.1 touch-up with reference to section 3
