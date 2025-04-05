@@ -1,4 +1,4 @@
-<!-- index.md 0.0.6                UTF-8                         2024-06-12
+<!-- index.md 0.0.7                 UTF-8                         2025-04-05
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.6 2024-06-12T16:57Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.7 2025-04-05T18:51Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -65,7 +65,7 @@ resolution and documentation in web materials.
 
 | **ID** | **Status** | **Started** | **Topic** |
 |   :-:   |   :-:   |  :-:   |  ---  |
-| [obtheory](obtheory.txt)| 1.3.0 2024-01-15 | 2017-08-24 | ‹ob› = 〈Ob,Of,Ot〉Mathematical Structure |
+| [obtheory](obtheory.txt)| 1.4.5 2025-04-05 | 2017-08-24 | ‹ob› = 〈Ob,Of,Ot〉Mathematical Structure \(authoritative\)|
 | [CFob](CFob.txt)        | 0.1.0 2023-11-10 | 2018-02-04 | Canonical Form of obs |
 | [Uchar](Uchar.txt)      | 0.0.1 2024-04-10 | 2024-02-10 | Universal Character Names for Identifiers |
 |                         |                  |            |              |
@@ -117,6 +117,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.7  2025-04-05T18:51Z Reflect obtheory.txt as authoritative
   0.0.6  2024-06-12T16:57Z Add archival materials
   0.0.5  2024-06-12T15:50Z More touch-ups, tracking of provisional files
   0.0.4  2024-01-18T18:45Z Touch-ups, move sketch.txt to oFrugal
