@@ -1,4 +1,4 @@
-obtheory.txt 1.4.4                  UTF-8                          2024-12-26
+obtheory.txt 1.4.5                  UTF-8                          2025-04-05
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                           MISER THEORETICAL CONCEPTION
                           ============================
@@ -6,8 +6,8 @@ obtheory.txt 1.4.4                  UTF-8                          2024-12-26
                <https://orcmid.github.io/miser/ob/obtheory.txt>
             The latest version is always available at this location.
 
-                           ‹ob› MATHEMATICAL STRUCTURE
-                           ---------------------------
+                    ‹ob› MATHEMATICAL STRUCTURE (Authoritative)
+                    -------------------------------------------
 
    The mathematical structure, ‹ob› = 〈Ob,Of,Ot〉consists of
 
@@ -30,6 +30,10 @@ obtheory.txt 1.4.4                  UTF-8                          2024-12-26
 
    An informal overview, with illustrative usage, is found in the file
    <https://orcmid.github.io/miser/oFrugal/sketch.txt>.
+
+   The present text is the authoritative specification.  It is in this form
+   so that it can be read and viewed as text and can be accessed and used
+   without requiring access to the GitHub account where it is preserved.
 
 
                                   CONTENT
@@ -327,7 +331,7 @@ obtheory.txt 1.4.4                  UTF-8                          2024-12-26
        and in ‹ob›.  There is extensive attention to interpretations and
        representations of Boolean Algebras by way of illustration and for
        future application.  See
-       <https://github.com/orcmid/miser/blob/master/oMiser/boole.txt>.
+       <https://orcmid.github.io/miser/obreps/boole.txt>.
 
      * Miser Project: Interpretation, Representation, Computation, and
        Manifestation
@@ -337,17 +341,17 @@ obtheory.txt 1.4.4                  UTF-8                          2024-12-26
 
    [Burge1975] Burge, William H.  Recursive Programming Techniques.
        Addison-Wesley (Reading, MA: 1975).  ISBN 0-201-14450-6.  See
-       (../../bib/authors.htm#Burge1975).
+       (https://orcmid.github.io/bib/funprog.htm#Burge1975).
 
    [Church1936] Church, Alonzo.  An Unsolvable Problem of Elementary Number
        Theory.  American Journal of Mathematics 58 (1936), 345-363. Reprinted
        on pp.88-115 with supplemental notes in [Davis1965].  See
-       (../../bib/authors.htm#Church1936).
+       (https://orcmid.github.io/bib/logic.htm#Church1936).
 
     [Davis1965] Davis, Martin (ed.).  The Undecidable: Basic Papers on
        Undecidable Propositions, Unsolvable Problems and Computable Functions.
        Rave Press (New York: 1965).  ISBN 0-911216-01-4.  See
-       (../../bib/authors.htm#Davis1965).
+       (https://orcmid.github.io/bib/logic.htm#Davis1965).
 
    [Echemendy????] I want to reference the Stanford EdX class on Semantics
        of First-Order Logic.  First, I need to audit the course and come up
@@ -358,44 +362,46 @@ obtheory.txt 1.4.4                  UTF-8                          2024-12-26
        expressions and their computation by machine, Part I.  Comm. ACM
        3, 4 (April 1960), 184-195.  doi>10.1145/367177.367199 available at
        <https://dl.acm.org/citation.cfm?doid=367177.367199>.  See
-       (../../bib/authors.htm#McCarthy1960).
+       (https://orcmid.github.io/bib/funprog.htm#McCarthy1960).
 
    [More1979] More, Trenchard.  The nested rectangular array as a model
        of data.  pp. 55-73 in "APL '79 Proceedings of the international
        conference on APL: Part 1."  doi>10.1145/390009.804440 available at
        <https://dl.acm.org/citation.cfm?id=804440>.  See
-       (../../bib/authors.htm#More1979).
+       (https://orcmid.github.io/bib/compsci.htm#More1979).
 
    [Rogers1987] Rogers, Hartley, Jr.  Theory of Recursive Functions and
        Effective Computability.  MIT Press (Cambridge, MA: 1987).  ISBN
-       0-262-68052-1 pbk.  See (../../bib/authors#Rogers1987).
+       0-262-68052-1 pbk.  See
+       (https://orcmid.github.io/bib/logic.htm#Rogers1987).
 
    [Ross1967] Ross, Douglas T. The AED Free Storage Package.  Comm. ACM 10, 8
-       (August 1967), 482-492.  See (../../bib/authors#Ross1967).
+       (August 1967), 482-492.  See
+       (https://orcmid.github.io/bib/softools.htm#Ross1967).
 
    [Strachey1965] Strachey, Christopher.  A General Purpose Macrogenerator.
        The Computer Journal 8, 3 (January 1965), 225-241.  Available at
        <https://doi.org/10.1093/comjnl/8.3.225>.  See
-       (../../bib/authors.htm#Strachey1965)
+       (https://orcmid.github.io/bib/softools.htm#Strachey1965)
 
    [Wikipedia2018a] Canonical form.  2018-10-10 article available on the
        Internet at
   <https://en.wikipedia.org/w/index.php?title=Canonical_form&oldid=863443547>.
-       See (../../bib/authors.htm#Wikipedia2018a).
+       See (https://orcmid.github.io/bib/math.htm#Wikipedia2018a).
 
    [Wikipedia2018b] Structural induction. 2018-09-09 article available on the
        Internet at
 <https://en.wikipedia.org/w/index.php?title=Structural_induction&oldid=858748480>.
-       See (../../bib/authors.htm#Wikipedia2018b).
+       See (https://orcmid.github.io/bib/logic.htm#Wikipedia2018b).
 
    [Wikipedia2019] First-order logic. 2019-01-07 article available on the
        Internet at
 <https://en.wikipedia.org/w/index.php?title=First-order_logic&oldid=877262034>.
-       See (../../bib/authors.htm#Wikipedia2019).
+       See (https://orcmid.github.io/bib/logic.htm#Wikipedia2019).
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-             Copyright 2017-2020, 2023-2024 Dennis E. Hamilton
+             Copyright 2017-2020, 2023-2025 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -414,7 +420,7 @@ obtheory.txt 1.4.4                  UTF-8                          2024-12-26
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Theory Conception
-   text file obtheory.txt version 1.4.4 dated 2024-12-26 available on the
+   text file obtheory.txt version 1.4.5 dated 2025-04-05 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/obtheory.txt>.
 
 TODO
@@ -450,6 +456,7 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.4.5 2025-04-05T17:14Z Clean up references and identify as authoritative
  1.4.4 2024-12-26T18:50Z Add note/TODO about the Semantics of FOL Coursse
  1.4.3 2024-12-15T12:00Z Fix typo in 1.4.2 (below) and small touch-ups
  1.4.2 2024-04-19T18:57Z More touch-ups and clarification on quantifiers
