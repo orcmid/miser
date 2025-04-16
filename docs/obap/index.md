@@ -1,4 +1,4 @@
-<!-- index.md 0.0.3                UTF-8                          2025-04-02
+<!-- index.md 0.0.4                UTF-8                          2025-04-16
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/index.html>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.3 2025-01-02T22:26Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.4 2025-04-16T21:21Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -49,7 +49,7 @@ authoritative definition.
 
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
-| [obaptheory](obaptheory.txt)    | 1.2.3 2023-12-18 | 2017-09-11  | ‹ob› Universal Applicative Functions \(authoritative\)|
+| [obaptheory](obaptheory.txt)    | 1.4.2 2025-04-16 | 2017-09-11  | ‹ob› Universal Applicative Functions \(authoritative\)|
 | [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-08  | Notes until there is better narrative material |
 
 ----
@@ -80,6 +80,7 @@ from time to time.
 </table>
 <!--
 
+  0.0.4  2025-04-16T21:21Z Reflect obaptheory.txt 1.4.2 status
   0.0.3  2025-04-02T22:26Z Identify obaptheory.txt as authoritative
   0.0.2  2024-01-24T16:42Z Touch-ups
   0.0.1  2024-01-17T21:59Z Simplified title

@@ -1,4 +1,4 @@
-obaptheory.txt 1.4.1                UTF-8                          2025-04-02
+obaptheory.txt 1.4.2                UTF-8                          2025-04-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -6,8 +6,8 @@ obaptheory.txt 1.4.1                UTF-8                          2025-04-02
 
              <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
-                      ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS
-                      ------------------------------------
+             ‹ob› UNIVERSAL APPLICATIVE FUNCTIONS (Authoritative)
+             ----------------------------------------------------
 
    For the mathematical structure, ‹ob› = 〈Ob,Of,Ot〉, we present a
    universal function, obap.ap(p,x) and important companion obap.ev(p,x,e)
@@ -46,7 +46,9 @@ obaptheory.txt 1.4.1                UTF-8                          2025-04-02
             4. The Evaluation Functions
             5. Notes and References
 
-
+   The present text is the authoritative specification.  It is in this form
+   so that it can be read and viewed as text and can be accessed and used
+   without requiring access to the GitHub account where it is preserved.
 
 1. PRELIMINARIES
 
@@ -307,7 +309,7 @@ obaptheory.txt 1.4.1                UTF-8                          2025-04-02
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.4.1 dated 2025-04-02,
+   Conception text file obaptheory.txt version 1.4.2 dated 2025-04-16,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -361,6 +363,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 1.4.2  2025-04-16T21:14Z Establish as authoritative
  1.4.1  2025-04-02T22:21Z obap.F makes for 10 primitives, and also touch-up
                           plus TODOs
  1.4.0  2025-01-21T15:23Z Introduce obap.F and obap.f(x)
