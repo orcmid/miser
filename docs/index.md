@@ -1,4 +1,4 @@
-<!-- index.md 0.3.13                UTF-8                         2024-12-30
+<!-- index.md 0.3.14                UTF-8                         2025-06-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -26,7 +26,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.13 2024-12-30T19:00Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.14 2025-06-12T21:46Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -346,11 +346,12 @@ may need to tag along with that.
 
 I invite discussion about Miser Project topics in the
 [Discussion section](https://github.com/orcmid/miser/discussions).
-Improvements and removal of defects in this particular documentation can be
-reported and addressed in the
+Improvements and removal of defects in this particular documentation and Miser
+Project software can be reported and addressed in the
 [Issues section](https://github.com/orcmid/miser/issues).  There are also
 relevant [projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
-from time to time.
+from time to time.  For any security concerns, please consult the
+[project security policy](https://github.com/orcmid/miser/security).
 
 <table border="0" cellspacing="3" width="100%">
   <tr>
@@ -370,6 +371,7 @@ from time to time.
 </table>
 <!--
 
+  0.3.14 2025-06-12T21:46Z touch-up footer information
   0.3.13 2024-12-30T19:00Z Touch up and fix PageView map placement
   0.3.12 2024-12-16T22:03Z Small typo and text fixes
   0.3.11 2024-11-28T17:06Z Fix typo, smooth nature of universal function
