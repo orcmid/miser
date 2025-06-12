@@ -1,4 +1,4 @@
-<!-- index.md 0.5.0                 UTF-8                         2025-03-08
+<!-- index.md 0.5.1                 UTF-8                         2025-06-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index</a>&gt;</code></b>
       <br />
       <small><small>
-        0.5.0 2025-03-08T01:47Z<!-- MAINTAIN THIS MANUALLY -->
+        0.5.1 2025-06-12T23:22Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -181,7 +181,7 @@ on the web progresses.
 | **ID**                  | **Status** | **Started** | **Topic** |
 |   :-:                   |   :-:      |  :-:        |  ---      |
 | [sigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M`, `subst(L, s)`, `δ(s, L)` definitions |
-| [lambda](oLambda.txt)   | 0.4.0 2024-06-24 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations |
+| [lambda](oLambda.txt)   | 0.5.0 2025-06-12 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations |
 | [c000000](c000000.htm)  | undated    | 2024-01-25  | Construction Diary & Job Jar |
 
 ----
@@ -212,6 +212,7 @@ from time to time.
 </table>
 <!--
 
+  0.5.1  2025-06-12T23:22Z reflect 0.5.0 oLambda.txt
   0.5.0  2025-03-08T01:47Z Rework The Abstraction Idea, adding [Denning2025]
   0.4.1  2025-01-19T17:48Z Checking changes with small touch-ups
   0.4.0  2025-01-18T22:42Z 2 Refactoring of symbolic form introduction
