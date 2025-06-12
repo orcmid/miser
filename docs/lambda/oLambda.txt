@@ -1,4 +1,4 @@
-// oLambda.txt 0.4.1                UTF-8                          2024-07-02
+// oLambda.txt 0.5.0                UTF-8                          2025-06-12
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -55,7 +55,10 @@
 //
 //        2. Otherwise, the abstraction of x from S is given by
 //
-//                      σ.x subst(` x, x) S.
+//                      σ.x subst(.f :: x, x) S
+
+//           avoiding ` x in the case that the operand happens to be a
+//           symbolic form and requires no enclosing.
 //
 //      These definitions depend on x being a lindy and not occuring in S
 //      for any intended purpose other than treatment as an applicative-
@@ -67,7 +70,7 @@
 //      λ.x S = if is-enclosure σ(.arg) S
 //              then // no occurrence of .arg
 //                   (subst(.arg) x) S
-//              else σ.x subst(` x, x) S;
+//              else σ.x subst(.f :: x, x) S;
 //
 //      Note that σ(.arg) S yields enclosure ` S when there is no occurrence
 //      of .arg in S.
@@ -75,7 +78,9 @@
 //      When there is an occurrence of .arg in S, the operation is based on
 //      the premise that for (λ.x S) P, the value of P is to be inserted into
 //      S for use, without further use until applied-to or used-as an
-//      operand in a subsequent application of ((λ.x S) P).
+//      operand in a subsequent application of ((λ.x S) P). In the case that
+//      there is application to a symbolic form, there is no need to enclose
+//      the substituted operand.
 //
 //      For a clear demonstration, it is valuable to conduct small tests,
 //      such as interpretations of combinators and simple list-processing
@@ -89,34 +94,34 @@
 //              :: `( // then subst(.arg, x) S
 //                       ((subst .arg) :: x) :: S
 //                    ::
-//                    // else σ.x subst(` x, x) S
-//                       (σ :: x) :: ((subst :: ` x) :: x) :: S
+//                    // else σ.x subst(.f :: x, x) S
+//                       (σ :: x) :: ((subst :: .f :: x) :: x) :: S
 //                    ) ;
 //
 //        = λx // λS    if is-enclosure σ(.arg) S
-//          .ev :: (is-enclosure :: ( σ .arg ) :: .arg )
+//          .ev :: (is-enclosure :: ( σ `.arg ) :: .arg )
 //
 //              :: `( // then subst(.arg, x) S
-//                       (((subst .arg) :: x) :: .arg)
+//                       (((subst `.arg) :: x) :: .arg)
 //                    ::
-//                    // else σ.x subst(` x, x) S
-//                       (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+//                    // else σ.x subst(.f :: x, x) S
+//                       (σ :: x) :: ((subst :: .f :: x) :: x) :: .arg
 //                    ) ;
 //
-//        = ^δ(      sigarg, ` ^oSigma(.arg) )
-//          ^δ(      subarg, ` ^oSubst(.arg) )
+//        = ^δ(      sigarg, ` ^oSigma(`.arg) )
+//          ^δ(      subarg, ` ^oSubst(`.arg) )
 //
-//          // λx λS        if is-enclosure σ(.arg) S
+//          // λx λS        if is-enclosure σ(`.arg) S
 //
-//          ^σ.x subst(` x, x)
+//          ^σ.x subst(.f :: x, x)
 //
 //          `( .ev :: (is-enclosure :: sigarg :: .arg )
 //
 //                 :: `( // then subst(.arg, x) S
 //                          ((subarg :: x) :: .arg)
 //                       ::
-//                       // else σ.x subst(` x, x) S
-//                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+//                       // else σ.x subst(.f :: x, x) S
+//                          (σ :: x) :: ((subst :: .f :: x) :: x) :: .arg
 //                    )
 //              );
 //
@@ -136,20 +141,20 @@
         = ^δ(is-enclosure, ` ^oIsEnclosure)
           ^δ(       subst, ` ^oSubst)
           ^δ(           σ, ` ^oSigma)
-          ^δ(      sigarg, ` ^oSigma(.arg) )
-          ^δ(      subarg, ` ^oSubst(.arg) )
+          ^δ(      sigarg, ` ^oSigma(`.arg) )
+          ^δ(      subarg, ` ^oSubst(`.arg) )
 
           // λx λS        if is-enclosure σ(.arg) S
 
-          ^σ.x subst(` x, x)
+          ^σ.x subst(.f :: x, x)
 
           `( .ev :: (is-enclosure :: sigarg :: .arg )
 
                  :: `( // then subst(.arg, x) S
                           ((subarg :: x) :: .arg)
                        ::
-                       // else σ.x subst(` x, x) S
-                          (σ :: x) :: ((subst :: ` x) :: x) :: .arg
+                       // else σ.x subst(.f :: x, x) S
+                          (σ :: x) :: ((subst :: .f :: x) :: x) :: .arg
                     )
               );
 //
@@ -180,12 +185,12 @@
 //
 //   3.1 The Challenge
 //
-//      A limitation of ^oLambda (section 1) is the substantial work that
+//      A limitation of ^oLambda (section 1.4) is the substantial work that
 //      is performed by the overall
 //
-//          ^σ.x subst(` x, x)
+//          ^σ.x subst(.f :: x, x)
 //
-//      When there will be only one of the two case depending on operand S.
+//      When there will be only one of the two cases depending on operand S.
 //      It is worth looking at having two cases for operand x depending on
 //      the condition satisfied by S.
 //
@@ -195,8 +200,8 @@
 //
 //      λ.x S = ( if is-enclosure σ(.arg) S
 //                then // no occurrence of .arg
-//                     λ.x λ.S ((subst(.arg) x) S)
-//                else λ.x λ.S (σ.x subst(` x, x) S)
+//                     λ.x λ.S ((subst(`.arg) x) S)
+//                else λ.x λ.S (σ.x subst(.f :: x, x) S)
 //                )
 //              (x, S);
 //
@@ -205,7 +210,7 @@
 //      λ.x S = ( if is-enclosure σ(.arg) S
 //                then // no occurrence of .arg
 //                     subst(.arg)
-//                else λ.x λ.S (σ.x subst(` x, x) S)
+//                else λ.x λ.S (σ.x subst(.f :: x, x) S)
 //                )
 //              (x, S);
 //
@@ -231,9 +236,9 @@
 //              `( // then subst(.arg)
 //                    (subst .arg)
 //                 ::
-//                 // else λ.x λ.S (σ.x subst(` x, x) S)
+//                 // else λ.x λ.S (σ.x subst(.f :: x, x) S)
 //                    (λ.x λ.S `(    (σ :: x)
-//                                :: (subst :: .e :: x) :: x)
+//                                :: (subst :: .f :: x) :: x)
 //                                :: S )
 //                 )
 //            :: x
@@ -246,13 +251,13 @@
 !def ob ^oLambda
 
         = ^δ( is-enclosure, ` ^oIsEnclosure)
-          ^δ(       sigarg, ` ^oSigma .arg)
+          ^δ(       sigarg, ` ^oSigma `.arg)
           ^δ(        subst, ` ^oSubst)
           ^δ(            σ, ` ^oSigma)
 
-          ^δ(       subarg, ^oSubst .arg)
+          ^δ(       subarg, ^oSubst `.arg)
           ^δ(applicative-S, ^oLambda.x (    (σ :: x)
-                                         :: ( (subst :: .e :: x) :: x )
+                                         :: ( (subst :: .f :: x) :: x )
                                          :: .arg )  )
 
           ^oLambda.x ^oLambda.S
@@ -262,7 +267,7 @@
                 `( // then subst(.arg)
                       subarg
                    ::
-                   // else λ.x λ.S (σ.x subst(` x, x) S)
+                   // else λ.x λ.S (σ.x subst(.f :: x, x) S)
                       applicative-S
                   )
               :: x
@@ -282,7 +287,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
-//                   Copyright 2024 Dennis E. Hamilton
+//                   Copyright 2024-2025 Dennis E. Hamilton
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -300,8 +305,8 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled λ.x and ρ.p Abstraction Operations.
-//   Miser Theory Conception text file oLambda.txt version 0.4.1 dated
-//   2024-07-02, available on the Internet as a version of
+//   Miser Theory Conception text file oLambda.txt version 0.5.0 dated
+//   2025-06-12, available on the Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oLambda.txt>
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -313,6 +318,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.5.0  2025-06-12T23:10Z Introduce stream-lining with .F
 // 0.4.1  2024-07-02T16:54Z Touch-ups, additional explanation
 // 0.4.0  2024-06-24T15:46Z Use revised ^δ and explain better
 // 0.3.0  2024-06-23T20:12Z Complete the Least-Effort λ-abstraction and use
