@@ -1,4 +1,4 @@
-obaptheory.txt 1.4.2                UTF-8                          2025-04-16
+obaptheory.txt 1.5.0                UTF-8                          2025-05-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -138,7 +138,7 @@ obaptheory.txt 1.4.2                UTF-8                          2025-04-16
 
           There is an applicative-operation script form in which lindies are
           preserved, having no definable applicative interpretation
-          other-wise.
+          otherwise.
 
           obap.is-lindy(x) => is-symbolic-form(x)                    (a)
 
@@ -188,30 +188,27 @@ obaptheory.txt 1.4.2                UTF-8                          2025-04-16
         obap.ap(obap.A, x) = ob.a(x)
         obap.ap(obap.B, x) = ob.b(x)
 
-        obap.ap(obap.C, x) = obap.C :: ob.e(x) :: obap.ARG           (a)
-        obap.ap(obap.D, x) = obap.D :: ob.e(x) :: obap.ARG
+        obap.ap(obap.C, x) = obap.C :: obap.f(x) :: obap.ARG         (a)
+        obap.ap(obap.D, x) = obap.D :: obap.f(x) :: obap.ARG
 
         obap.ap(obap.E, x) = ob.e(x)
         obap.ap(obap.F, x) = obap.f(x)             (see Obap3(e), above)
 
-        obap.ap(obap.SELF, x) = ob.e(obap.SELF) :: ob.e(x)           (b)
-        obap.ap(obap.ARG, x) = ob.e(obap.ARG) :: ob.e(x)
-        obap.ap(obap.EV, x) = ob.e(obap.EV) :: ob.e(x)
+        obap.ap(obap.SELF, x) = ob.e(obap.SELF) :: obap.f(x)         (b)
+        obap.ap(obap.ARG, x) = ob.e(obap.ARG) :: obap.f(x)
+        obap.ap(obap.EV, x) = ob.e(obap.EV) :: obap.f(x)
                 three non-lindy cases for the absence of sensible
                 interpretation for these primitives as operators apart from
                 their syntactic function in ev(p, x, e) below (Obap6).
 
-        is-symbolic-form(p) ∧ is-symbolic-form(x)                   (c)
-                ⇒ obap.ap(p,x) = p :: x
-        is-symbolic-form(p) ∧ ¬ is-symbolic-form(x)
-                ⇒ obap.ap(p,x) = p :: ob.e(x)
+        is-symbolic-form(p) ⇒ obap.ap(p,x) = p :: obap.f(x)         (c)
 
           Symbolic forms are resolved in this manner to be more informative
           on inspection when an occurrence is unintended. Intensional usage
           is also supported, as in the lambda abstraction of applicative-
           operations.
 
-        ¬ is-symbolic-form(p)                                       (d)
+        ¬ is-symbolic-form(p)                                        (d)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = ev(p,x,p)
 
         In (b, above) the obap.ap evaluations for obap.C and obap.D
@@ -309,7 +306,7 @@ obaptheory.txt 1.4.2                UTF-8                          2025-04-16
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.4.2 dated 2025-04-16,
+   Conception text file obaptheory.txt version 1.5.0 dated 2025-06-18,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -353,7 +350,7 @@ TODO
    and it is common for an operation to simply return an unmodified object
    instead of any further result evaluation.  A consequence is that there
    is use as a hack for symbolic execution and for interpretation of
-   symbolic forms as text structures that can be treated as strings.
+   symbolic forms as list structures that can be treated literally.
 
  * It is desirable for output containing symbolic forms be presentable in
    applicative rather than pairing ('::') form.  This should be either an
@@ -363,6 +360,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 1.5.0  2025-06-18T15:17Z Clean up and use obap.F all the places it works
  1.4.2  2025-04-16T21:14Z Establish as authoritative
  1.4.1  2025-04-02T22:21Z obap.F makes for 10 primitives, and also touch-up
                           plus TODOs
