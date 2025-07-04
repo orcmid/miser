@@ -1,4 +1,4 @@
-<!-- index.md 0.3.15                UTF-8                         2025-07-04
+<!-- index.md 0.3.16                UTF-8                         2025-07-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -26,7 +26,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.15 2025-07-04T16:26Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.16 2025-07-04T16:54Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -344,10 +344,10 @@ may need to tag along with that.
 
 ----
 
-I invite discussion about Miser Project topics in the
+Using a GitHub account, discuss Miser Project topics in the
 [Discussion section](https://github.com/orcmid/miser/discussions).
 Improvements and removal of defects in this particular documentation and Miser
-Project software can be reported and addressed in the
+Project software are reported and addressed in the
 [Issues section](https://github.com/orcmid/miser/issues).  There are also
 relevant [projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
 from time to time.  For any security concerns, please consult the
@@ -371,6 +371,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.3.16 2026-07-04T16:54Z solidify the common footer text
   0.3.15 2025-07-04T16:26Z touch-ups, current availabilities
   0.3.14 2025-06-12T21:46Z touch-up footer information
   0.3.13 2024-12-30T19:00Z Touch up and fix PageView map placement
