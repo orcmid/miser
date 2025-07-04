@@ -1,4 +1,4 @@
-<!-- index.md 0.0.6                 UTF-8                         2024-04-19
+<!-- index.md 0.0.7                 UTF-8                         2025-07-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -27,7 +27,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.6 2024-04-19T19:56Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.7 2025-07-04T17:51Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -97,13 +97,14 @@ hard-hat logo.
 
 ----
 
-I invite discussion about Miser Project topics in the
+Using a GitHub account, discuss Miser Project topics in the
 [Discussion section](https://github.com/orcmid/miser/discussions).
-Improvements and removal of defects in this particular documentation can be
-reported and addressed in the
+Improvements and removal of defects in this particular documentation and Miser
+Project software are reported and addressed in the
 [Issues section](https://github.com/orcmid/miser/issues).  There are also
-relevant [projects](https://github.com/orcmid/miser/projects?type=classic)
-from time to time.
+relevant [projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
+from time to time.  For any security concerns, please consult the
+[project security policy](https://github.com/orcmid/miser/security).
 
 <table border="0" cellspacing="3" width="100%">
   <tr>
@@ -122,6 +123,7 @@ from time to time.
   </tr>
 </table>
 <!--
+  0.0.7  2025-07-04T17:51Z Use the preferred footer-note
   0.0.6  2024-04-19T19:56Z Touch-up with annotations
   0.0.5  2024-03-02T16:36Z Notice about work in progress
   0.0.4  2024-02-26T21:28Z Improvement about the templating
