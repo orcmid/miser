@@ -2,7 +2,7 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     SECURITY.md 1.3.2             UTF-8                        dh:2024-11-09
+     SECURITY.md 1.3.3             UTF-8                        dh:2025-07-04
      source: <https://github.com/orcmid/miser/blob/master/SECURITY.md>
      -->
 <table border="0" width="100%">
@@ -31,7 +31,7 @@
       </code></b>
       <br />
       <font size="-2">
-        1.3.2 2024-11-09T17:28Z<!-- MAINTAIN THIS MANUALLY -->
+        1.3.3 2025-07-04T16:47Z<!-- MAINTAIN THIS MANUALLY -->
       </font>
     </td>
   </tr>
@@ -44,7 +44,9 @@ Current repository content consists of text files and web documentation of an
 experimental/provisional nature with limited use of SML for proofs-of-concept.
 
 Most considerations of errors and defects can be handled using the project
-Issues and Discussion topics.  Pull-requests are unwarranted at this time.
+[Issues](https://github.com/orcmid/miser/issues) and
+[Discussions](https://github.com/orcmid/miser/discussions) topics.
+Pull-requests are unwarranted at this time.
 
 ## Supported Versions
 
@@ -105,6 +107,7 @@ does not extend to the fork/clone.
   </tr>
 </table>
 <!--
+  1.3.3  2025-07-04T16:47Z Links to Issues and Discussions
   1.3.2  2024-11-09T17:28Z More wordsmithing
   1.3.1  2024-11-09T17:23Z More smoothing around the sandbox
   1.3.0  2024-11-09T16:48Z Smoothing, tying in the sandbox for a walkthrough
