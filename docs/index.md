@@ -1,4 +1,4 @@
-<!-- index.md 0.3.14                UTF-8                         2025-06-12
+<!-- index.md 0.3.15                UTF-8                         2025-07-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -26,7 +26,7 @@
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.3.14 2025-06-12T21:46Z<!-- MAINTAIN THIS MANUALLY -->
+        0.3.15 2025-07-04T16:26Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -246,7 +246,7 @@ there are similarities to the formulation of Functional Programming by John
 Backus \[[Backus1978](https://orcmid.github.io/bib/compsci.htm#Backus1978)\]:
 The operational "system" layer, *oFrugal*, provides storage and utility
 operations.  The *oMiser* layer provides a computational *manifestation* of
-the ‹ob› mathematical structure, including its universal-computation function
+the ‹ob› mathematical structure, including its universal-computation function,
 via computational procedure.
 
 ## 5. Available Materials
@@ -269,13 +269,13 @@ The web material is organized in topical sections:
 |   --:             |  ---               |
 | [ob](ob/)         | ‹ob› Mathematical Structure (preview) |
 | [obap](obap/)     | ‹ob› Universal Computation Function (preview) |
-| [obreps](obreps/) | Interpretations in ‹ob› (preview) |
+| [obreps](obreps/) | Interpretations and Representations in ‹ob› (preview) |
 | | |
 | [oFrugal](oFrugal/) | oFrugal REPL Principles of Operation (preview) |
 | [oMiser](oMiser/)   | oMiser Conception, Principles, and Engineering (preview) |
 | | |
-| [lambda](lambda/) | λ Applicative-Procedure Abstraction |
-| [obapx](obapx/)   | Extensions to the ‹ob› Universal Computation Function |
+| [lambda](lambda/) | λ Applicative-Procedure Abstraction (sketch) |
+| [obapx](obapx/)   | Extensions to the ‹ob› Universal Computation Function (preview) |
 | | |
 | [docs.txt](docs.txt) | Text Synopsis and Job Jar for orcmid.github.io/miser
 | [miser.txt](miser.txt) | Miser Project on GitHub (shadow) |
@@ -371,6 +371,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.3.15 2025-07-04T16:26Z touch-ups, current availabilities
   0.3.14 2025-06-12T21:46Z touch-up footer information
   0.3.13 2024-12-30T19:00Z Touch up and fix PageView map placement
   0.3.12 2024-12-16T22:03Z Small typo and text fixes
