@@ -1,4 +1,4 @@
-<!-- index.md 0.3.16                UTF-8                         2025-07-04
+<!-- index.md 0.3.17                UTF-8                         2025-07-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -11,24 +11,26 @@
     <td width="72%" align="left">
        <img src="images/n170601d2.png">
     </td>
-    <td width="28%" valign="middle" align="right">
-      <b><code><a href="../" target="top">orcmid.github.io</a>&gt;
-      </code></b>
-      <br /><br />
-      <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
-            <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
-      </a>
-      <br /><br />
-      <b><code>
-      <br />
-	     <a href="./" target="_top">miser</a>&gt;
-      <br />
-         <a href="index.html" target="_top">index.html</a>&gt;</code></b>
-      <br />
-      <small><small>
-        0.3.16 2025-07-04T16:54Z<!-- MAINTAIN THIS MANUALLY -->
-      </small></small>
-      </td>
+    <td width="27%" height="6" valign="middle" align="right">
+          <b><code>
+          <a href="../../" target="_top">orcmid.github.io</a>&gt;
+          </code></b>
+          <br />
+          <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
+                <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
+          </a>
+          <br />
+          <b><code>
+          <a href="../" target="_top">miser</a>&gt;
+          </code></b>
+          <br />
+          <b><code>
+          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
+          <br />
+          <small><small>
+            0.3.17 2025-07-08T17:59Z<!-- MAINTAIN THIS MANUALLY -->
+          </small></small>
+    </td>
   </tr>
 </table>
 
@@ -345,11 +347,11 @@ may need to tag along with that.
 ----
 
 Using a GitHub account, discuss Miser Project topics in the
-[Discussion section](https://github.com/orcmid/miser/discussions).
-Improvements and removal of defects in this particular documentation and Miser
-Project software are reported and addressed in the
-[Issues section](https://github.com/orcmid/miser/issues).  There are also
-relevant [projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
+[Discussion section](https://github.com/orcmid/miser/discussions).  Propose
+improvements and removal of defects in Miser Project documentation and
+software in the [Issues section](https://github.com/orcmid/miser/issues).
+There are also relevant
+[projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
 from time to time.  For any security concerns, please consult the
 [project security policy](https://github.com/orcmid/miser/security).
 
@@ -370,8 +372,8 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
-
-  0.3.16 2026-07-04T16:54Z solidify the common footer text
+  0.3.17 2025-07-04T19:59Z conform to latest hybridForm
+  0.3.16 2025-07-04T16:54Z solidify the common footer text
   0.3.15 2025-07-04T16:26Z touch-ups, current availabilities
   0.3.14 2025-06-12T21:46Z touch-up footer information
   0.3.13 2024-12-30T19:00Z Touch up and fix PageView map placement
