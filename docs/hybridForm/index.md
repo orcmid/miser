@@ -1,4 +1,4 @@
-<!-- index.md 0.0.7                 UTF-8                         2025-07-04
+<!-- index.md 0.0.8                 UTF-8                         2025-07-09
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -15,19 +15,20 @@
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
-	  <a href="../" target="_top">miser</a>&gt;<!-- CUSTOMIZE FOR PROJECT -->
-      <a href="./" target="_top">hybridForm</a>&gt;<!-- CUSTOMIZE FOR TOPIC -->
+	  <a href="../../" target="_top">orcmid.github.io</a>&gt;
       </code></b>
-      <br /><br />
+      <br />
       <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
             <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
       </a>
       <br /><br />
       <b><code>
+      <a href="../" target="_top">miser</a>&gt;<!-- CUSTOMIZE FOR PROJECT -->
+      <a href="./" target="_top">hybridForm</a>&gt;<!-- CUSTOMIZE FOR TOPIC -->
          <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.7 2025-07-04T17:51Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.8 2025-07-08T15:01Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -123,6 +124,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.0.8  2025-07-08T15:01Z Correct layout with Cluster Map
   0.0.7  2025-07-04T17:51Z Use the preferred footer-note
   0.0.6  2024-04-19T19:56Z Touch-up with annotations
   0.0.5  2024-03-02T16:36Z Notice about work in progress
