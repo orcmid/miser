@@ -1,4 +1,4 @@
-<!-- index.md 0.3.18                UTF-8                         2025-07-04
+<!-- index.md 0.4.0                 UTF-8                         2025-07-04
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -28,7 +28,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.3.18 2025-07-08T20:19Z<!-- MAINTAIN THIS MANUALLY -->
+            0.4.0 2025-07-08T20:51Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -279,6 +279,8 @@ The web material is organized in topical sections:
 | [lambda](lambda/) | λ Applicative-Procedure Abstraction (sketch) |
 | [obapx](obapx/)   | Extensions to the ‹ob› Universal Computation Function (preview) |
 | | |
+| [about](about/)   | About the Miser Project on GitHub |
+| | |
 | [docs.txt](docs.txt) | Text Synopsis and Job Jar for orcmid.github.io/miser
 | [miser.txt](miser.txt) | Miser Project on GitHub (shadow) |
 | [construction](construction/) | Miser Project Web Construction Materials |
@@ -372,6 +374,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.4.0  2025-07-04T20:51Z Add about/
   0.3.18 2025-07-04T20:19Z tweek spacing in location bloc
   0.3.17 2025-07-04T19:59Z conform to latest hybridForm
   0.3.16 2025-07-04T16:54Z solidify the common footer text
