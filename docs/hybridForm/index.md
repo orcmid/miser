@@ -1,4 +1,4 @@
-<!-- index.md 0.1.0                 UTF-8                         2025-07-09
+<!-- index.md 0.1.1                 UTF-8                         2025-07-08
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -31,7 +31,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.0 2025-07-08T16:01Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.1 2025-07-08T16:35Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -103,11 +103,11 @@ hard-hat logo.
 ----
 
 Using a GitHub account, discuss Miser Project topics in the
-[Discussion section](https://github.com/orcmid/miser/discussions).
-Improvements and removal of defects in this particular documentation and Miser
-Project software are reported and addressed in the
-[Issues section](https://github.com/orcmid/miser/issues).  There are also
-relevant [projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
+[Discussion section](https://github.com/orcmid/miser/discussions).  Propose
+improvements and removal of defects in Miser Project documentation and
+software in the [Issues section](https://github.com/orcmid/miser/issues).
+There are also relevant
+[projects](https://github.com/orcmid/miser/projects?query=is%3Aopen)
 from time to time.  For any security concerns, please consult the
 [project security policy](https://github.com/orcmid/miser/security).
 
@@ -128,6 +128,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.1.1  2025-07-08T16:35Z Cleanup the bottom project-tie-in paragraph
   0.1.0  2025-07-08T16:01Z Tweeking the layout further
   0.0.9  2025-07-08T15:30Z Touch-up that layout slightly
   0.0.8  2025-07-08T15:01Z Correct layout with Cluster Map
