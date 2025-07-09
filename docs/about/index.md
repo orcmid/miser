@@ -1,4 +1,4 @@
-<!-- index.md  0.0.2                UTF-8                    dh:2025-07-08 -->
+<!-- index.md  0.0.3                UTF-8                    dh:2025-07-09 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/
               docs/about/index.md>
@@ -31,12 +31,12 @@
       <a href="../" target="_top">miser</a>&gt;
       <a href="./" target="_top">about</a>&gt;
       </code></b>
-      <br />
+      <br /><br />
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.2 2025-07-08T20:40Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.3 2025-07-09T20:53Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -73,7 +73,8 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
-  0.0.2  2025-07-98T20:40Z Update to employ the latest hybridForm
+  0.0.3  2025-07-09T20:53Z Match 0.1.2 hybridForm location block layout
+  0.0.2  2025-07-08T20:40Z Update to employ the latest hybridForm
   0.0.1  2025-07-04T18:57Z Fill out placeholder top and bottom material
 
                   *** end of docs/about/index.md ***                     -->
