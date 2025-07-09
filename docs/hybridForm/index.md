@@ -1,4 +1,4 @@
-<!-- index.md 0.1.1                 UTF-8                         2025-07-08
+<!-- index.md 0.1.2                 UTF-8                         2025-07-09
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  source <https://github.com/orcmid/miser/blob/master/docs/hybridForm/index.md>
  publication <https://orcmid.github.io/miser/hybridForm/>
@@ -26,12 +26,12 @@
       <a href="../" target="_top">miser</a>&gt;<!-- CUSTOMIZE FOR PROJECT -->
       <a href="./" target="_top">hybridForm</a>&gt;<!-- CUSTOMIZE FOR TOPIC -->
       </code></b>
-      <br />
+      <br /><br />
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.1 2025-07-08T16:35Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.2 2025-07-09T20:44Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -128,6 +128,8 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.1.2  2025-07-09T20:44Z Adjust spacing in location block to match with
+         front-porch index.md 0.4.1
   0.1.1  2025-07-08T16:35Z Cleanup the bottom project-tie-in paragraph
   0.1.0  2025-07-08T16:01Z Tweeking the layout further
   0.0.9  2025-07-08T15:30Z Touch-up that layout slightly
