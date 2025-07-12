@@ -1,4 +1,4 @@
-<!-- index.md 0.0.4                 UTF-8                         2025-07-09
+<!-- index.md 0.0.5                 UTF-8                         2025-07-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -11,7 +11,7 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
     <i>The Miser Project</i><br />
-    <i><big><big>Computer Science Methodology</big></big></i></strong></font></p>
+    <i><big><big>Computer Science Topics</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -31,7 +31,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.4 2025-07-09T21:23Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.5 2025-07-12T22:53Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -76,6 +76,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.5  2025-07-12T22:53Z Change title to Computer Science Topics
   0.0.4  2025-07-09T21:23Z Add 0.1.2 hybridForm top/bottom banners
   0.0.3  2024-01-29T17:46Z Add syntactics, update content versions
   0.0.0  2024-01-13T19:36Z Morphed from ob/ placeholder as boilerplate

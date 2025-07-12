@@ -1,4 +1,4 @@
-<!-- index.md 0.0.2                UTF-8                         2025-07-09
+<!-- index.md 0.0.3                 UTF-8                         2025-07-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ct/index.md>
      publication <https://orcmid.github.io/miser/ct/>
@@ -31,7 +31,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.2 2025-07-09T21:31Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.3 2025-07-12T22:55Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -78,6 +78,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.3  2025-07-12T22:55Z Change title to Church-Turing Completeness
   0.0.2  2025-07-09T21:31Z Align top/bottom with 0.1.2 hybridForm
   0.0.1  2024-01-14T17:40Z Touch up Catalog entry
   0.0.0  2024-01-13T22:46Z Morphed from cs/ placeholder as boilerplate
