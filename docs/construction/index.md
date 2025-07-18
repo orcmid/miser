@@ -1,4 +1,4 @@
-<!-- index.md  0.0.1                UTF-8                    dh:2025-07-09 -->
+<!-- index.md  0.0.2                UTF-8                    dh:2025-07-18 -->
 <!--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|-->
 <!-- source: <https://github.com/orcmid/miser/blob/master/
               docs/construction/index.md>
@@ -6,7 +6,7 @@
      <https://orcmid.github.io/miser/construction/construction.txt>
      -->
 
-# MISER PROJECT DOCS: CONSTRUCTION MATERIAL
+# Miser Project Web Construction Materials
 <table border="0" width="100%">
   <tr>
     <td width="25%" align="left" height="6">
@@ -15,7 +15,7 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
     <i>The Miser Project on GitHub</i><br />
-    <i><big><big>Construction Material</big></big></i></strong></font></p>
+    <i><big><big>Web Construction Material</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -35,7 +35,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.1 2025-07-09T21:11Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.2 2025-07-18T19:06Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -70,6 +70,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+   0.0.2  2025-07-18T19:06Z Align titles with front porch link
    0.0.1  2025-07-09T21:11Z hybridForm top and bottom material
    0.0.0  2019-11-24T19:24Z Initial placeholder
 

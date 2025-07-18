@@ -1,4 +1,4 @@
-<!-- index.md 0.0.3                 UTF-8                         2025-07-12
+<!-- index.md 0.0.4                 UTF-8                         2025-07-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ct/index.md>
      publication <https://orcmid.github.io/miser/ct/>
@@ -11,7 +11,7 @@
     </td>
        <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
     <i>The Miser Project</i><br />
-    <i><big><big>Computation Theory Demonstration</big></big></i></strong></font></p>
+    <i><big><big>Church-Turing Completeness</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -31,7 +31,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.3 2025-07-12T22:55Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.4 2025-07-18T19:01Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -78,6 +78,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.4  2025-07-18T19:01Z Align Title with home page
   0.0.3  2025-07-12T22:55Z Change title to Church-Turing Completeness
   0.0.2  2025-07-09T21:31Z Align top/bottom with 0.1.2 hybridForm
   0.0.1  2024-01-14T17:40Z Touch up Catalog entry

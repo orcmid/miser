@@ -1,4 +1,4 @@
-<!-- index.md 0.0.2                 UTF-8                          2025-07-10
+<!-- index.md 0.0.3                 UTF-8                          2025-07-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obreps/index.md>
      publication <https://orcmid.github.io/miser/obreps/>
@@ -25,14 +25,14 @@
       <br />
       <b><code>
       <a href="../" target="_top">miser</a>&gt;
-      <a href="./" target="_top">obrep</a>&gt;
+      <a href="./" target="_top">obreps</a>&gt;
       </code></b>
       <br /><br />
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.2 2025-07-10T20:02Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.3 2025-07-18T18:51Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -108,6 +108,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.3  2025-07-18T18:51Z Correct obrep> to obreps> in location block
   0.0.2  2025-07-10T20:01Z Conform top/bottom banners to 0.1.2 hybridForm
   0.0.1  2024-01-17T21:53Z Add explanatory synopsis
   0.0.0  2024-01-15T21:20Z Placeholder from 0.0.3 obap index.md as boilerplate
