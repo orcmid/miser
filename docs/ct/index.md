@@ -1,4 +1,4 @@
-<!-- index.md 0.0.4                 UTF-8                         2025-07-18
+<!-- index.md 0.1.0                 UTF-8                         2025-07-24
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ct/index.md>
      publication <https://orcmid.github.io/miser/ct/>
@@ -31,14 +31,33 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.4 2025-07-18T19:01Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.0 2025-07-24T19:23Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
 
-## Initial Placeholder
+## Synopsis
+
+There are three important computation-theoretical claims to be made and
+demonstrated about the
+[‹ob› Universal Computational function](https://orcmid.github.io/miser/obap/)
+obap**.ap**(*p*, *x*) and the companion function obap**.eval**(*p*).
+
+  1. obap.**.ap** is a universal function in the sense that for every
+ computable function *f*(*x*) on obs *x* there is an ob *p* for which
+ obap**.ap**(*p*, *x*) = *f*(*x*) for every determined ob *x*.
+  2. The obs are denumerably infinite (i.e., are countable) and ‹ob› can
+ represent the natural numbers, *N*, and their arithmetic.  This puts ‹ob›
+ with obap**.ap** on par with other schemes, including Universal Turing
+ Machines, that satisfy Church's Thesis on effective computability.
+  3. A feature of universal computation systems is any one can simulate the
+ others. This is demonstrationed for ‹ob› by representation of a Universal
+ Turing Machine, a roundabout confirmation of claim (1).
+
+ This topic carries details of the historical and technical conditions by
+ which these claims are demonstrated, and precisely what they signify.
 
 ## Catalog (Specimens, draft notes, ctYYMMXX Content TBD)
 
@@ -78,6 +97,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.1.0  2025-07-24T19>23Z Add Synopsis
   0.0.4  2025-07-18T19:01Z Align Title with home page
   0.0.3  2025-07-12T22:55Z Change title to Church-Turing Completeness
   0.0.2  2025-07-09T21:31Z Align top/bottom with 0.1.2 hybridForm
