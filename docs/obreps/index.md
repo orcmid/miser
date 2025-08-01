@@ -1,4 +1,4 @@
-<!-- index.md 0.0.3                 UTF-8                          2025-07-18
+<!-- index.md 0.0.4                 UTF-8                          2025-08-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obreps/index.md>
      publication <https://orcmid.github.io/miser/obreps/>
@@ -32,7 +32,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.3 2025-07-18T18:51Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.4 2025-08-01T19:49Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -76,7 +76,7 @@ on the web progresses.
 |   :-:   |   :-:   |  :-:   |  ---  |
 | [boole](boole.txt)| 0.5.6 2024-01-15 | 2018-11-13 | Interpretation of Boolean Algebras in ‹ob› |
 | [combinators](combinators.txt) | 0.1.7 2024-01-15 | 2018-02-10 | Interpretation of Combinators in ‹obap› |
-| [Z2adic](Z2adic.txt)    | 0.0.8 2024-01-17 | 2023-01-30 | Z 2'S Complement Arithmetic Implementation |
+| [Z2adic](Z2adic.txt)    | 0.0.9 2025-08-01 | 2023-01-30 | Z 2'S Complement Arithmetic Implementation |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
 
 ----
@@ -108,6 +108,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.4  2025-08-01T19:49Z Reflect 0.0.9 Z2adic
   0.0.3  2025-07-18T18:51Z Correct obrep> to obreps> in location block
   0.0.2  2025-07-10T20:01Z Conform top/bottom banners to 0.1.2 hybridForm
   0.0.1  2024-01-17T21:53Z Add explanatory synopsis
