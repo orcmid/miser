@@ -37,7 +37,56 @@
   </tr>
 </table>
 
-## Initial Placeholder
+## Sketch
+
+### Logic for Computer Science
+
+Symbolic logic is used in specification of oMiser and oFrugal, and in
+reasoning about relationships, functions, structures, and their computational
+representations in ‹ob›.  Logic sufficient for the Miser Project consists of
+
+- classical propositional logic and selected notation
+- first-order logic with equality (FOL=), usually in equational form
+- structural induction in theorems about functions in ‹ob›.
+
+### Functional Programming
+
+oFrugal libraries of scripts and further libraries built with them illustrate
+functional programming via applicative expressions.
+
+[sweep some of this into a folio on functional programming and/or frugalese]
+
+Frugalese is a form of expressions that is more-abstracted than oFrugal and
+serves as a functional-programming pseudo-code that is translatable to oFrugal
+scripts.
+
+oMiser and oFrugal are rudimentary, with the only type of entity being Ob.
+Representations of other types and functions are manifest in obs through
+constrained usage.
+
+The essential characteristics of functional programming are exhibited.
+
+- well-definedness (purity)
+- immutable data
+- referential transparency (and no side-effects)
+- first-class functions
+- higher-order functions
+
+An important qualification is the complete absence of variables in oMiser.
+
+[Add SML and ISWIM as sources.  Link to courses like Little Lisper, the
+UW course, and the UBC courses that rely on structural induction.  Some of
+this needs to be spun off into the folio that treats this topic.
+
+I will not use lambda-calculus as a term.  The use of lambda-abstraction
+is not the same and it is not the same in other programming systems that
+use such abstraction forms.  The representation of combinators is also
+distinct from combinatory logic, despite the common primitives.]
+
+### Software Development Methodology
+
+A particular software-development lifecycle methodology will be employed,
+also serving as
 
 ## Catalog (Specimens, draft notes, csYYMMXX Content TBD)
 
