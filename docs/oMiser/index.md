@@ -1,4 +1,4 @@
-<!-- index.md 0.0.5                 UTF-8                         2025-07-10
+<!-- index.md 0.0.6                 UTF-8                         2025-09-03
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -32,7 +32,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.5 2025-07-10T22:14Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.6 2025-09-03T22:38Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -98,7 +98,7 @@ alone.  Exploration of how type abstraction can be supported, along with
 preservation of idealism, will follow availability of oMiser and
 [oFrugal](../oFrugal) implementations.
 
-## Catalog (Specimen, mYYMMNN Content TBD)
+## Related Material
 
 This placeholder links to raw materials and notes, including text files.
 There will be organized folios of content as consolidation of documentation
@@ -108,6 +108,7 @@ on the web progresses.
 |   :-:                           |   :-:            |  :-:        |  ---  |
 | [oMiser.txt](oMiser.txt) | 0.1.2 2023-11-06 | 2017-07-26  | Conception, Definition, and Implementation Notes |
 | [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-20  | More notes and work items |
+| [sxhash](sxhash-2024-02-01-2004-copilot.png) | undated | 2024-02-01 | information on LISP sxhash function |
 
 ----
 
@@ -138,6 +139,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.6  2025-09-03T22:38Z Touch ups, add sxhash
   0.0.5  2025-07-10T22:14Z Conform top/bottom material to 0.1.2 hybridForm
   0.0.4  2024-01-23T17:56Z Expand the overview
   0.0.3  2024-01-22T20:30Z Remove the unreasonable from the synopsis
