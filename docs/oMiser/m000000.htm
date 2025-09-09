@@ -68,7 +68,7 @@
       <p align="right"><b><code><a target="_top" href="m000000.htm">m000000</a>&gt;</code></b><br>
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
-      S-Format="%Y-%m-%d" startspan -->2025-09-07<!--webbot bot="Timestamp" i-checksum="12592" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->15:32 -0700<!--webbot bot="Timestamp" i-checksum="11986" endspan -->
+      S-Format="%Y-%m-%d" startspan -->2025-09-08<!--webbot bot="Timestamp" i-checksum="12594" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->14:59 -0700<!--webbot bot="Timestamp" i-checksum="12112" endspan -->
       </small></small></p>
       </td>
     
@@ -143,6 +143,68 @@
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="78%" align="left" valign="top">
+        &nbsp;</td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2025-09-08</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">Can we use COM interfaces, but without reference 
+		counting.&nbsp; If we do reference counting, and having other elements, 
+		where so we put it.&nbsp; And how do we stay within the rules for COM, 
+		if that is really a requirement.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2025-09-08</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">The process for elimination of duplicates needs to have a 
+		way to determine which is the best one to keep.&nbsp; This will depend 
+		on a number of things around how allocation of cells works.&nbsp; 
+		Consider the one with largest reference count, or being older in 
+		allocation, or some other thing that will not cause some kind of 
+		thrashing.&nbsp; Think through this carefully.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2025-09-08</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">The hashes derived for lindies and for primitives do not 
+		have to be the same algorithms.&nbsp; The interest in hash performance 
+		is in creation of enclosures and pairs.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2025-09-08</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">The hash review and the trick on collapsing when two 
+		different identical structures are encountered needs to be defined and 
+		explained</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2025-09-08</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">I need to credit being told about hash values for 
+		differentiating structures quickly.</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2025-09-08</small></td>
+      <td width="78%" align="left" valign="top">
+        <font size="2">I need to cover the hash, reviewing #76:45, :36, #75 ...</font></td>
+    </tr>
+    
+    <tr>
+      <td width="11%" align="center" valign="top">&nbsp;</td>
       <td width="11%" align="center" valign="top"><small>2025-09-03</small></td>
       <td width="78%" align="left" valign="top">
         <font size="2">oMiser should not have to create anything, that is 
@@ -157,7 +219,12 @@
 		instances and versions, because it will/should accompany/be mention of 
 		an individual in external forms, such as XML dumps.&nbsp; There is also 
 		the matter of an app that embeds oMiser wanting to introduce individuals 
-		for whatever purpose.&nbsp; This needs a folio of its own.</font></td>
+		for whatever purpose.&nbsp; This needs a folio of its own. 
+		[dh:2025-09-08 This is not strictly true.&nbsp; The oMiser API has to 
+		allow for the construction of lindies and the primitives.&nbsp; These 
+		have to return an appropriate individual and there has to be away to 
+		obtain the name back.&nbsp; This is different from binding names, which 
+		are handled entirely in oFrugal at this point.</font></td>
     </tr>
     
     <tr>
