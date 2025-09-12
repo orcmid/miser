@@ -1,4 +1,4 @@
-<!-- index.md 0.6.0                 UTF-8                         2025-07-13
+<!-- index.md 0.6.1                 UTF-8                         2025-09-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      construction structure, manifest, and job jar at
@@ -28,7 +28,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.0 2025-07-13T17:00Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.1 2025-09-12T16:41Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -281,7 +281,7 @@ The web material is organized in topical sections:
 | [obapx](obapx/)   | Extensions to the ‹ob› Universal Computation Function (preview) |
 | | |
 | [cs](cs/)         | Computer Science Topics |
-| [ct](ct/)         | Church-Turing Completeness |
+| [ct](ct/)         | Computation Theory Topics |
 | | |
 | [about](about/)   | About the Miser Project on GitHub |
 | | |
@@ -378,6 +378,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.1  2025-09-12T16:41Z Use Computation Theory as a topic consistently
   0.6.0  2025-07-13T17:00Z Add dev/ topic
   0.5.0  2025-07-12T22:50Z Add cs/ and ct/ to the topics
   0.4.1  2025-07-04T21:15Z Fix link from miser> in the location block
