@@ -1,4 +1,4 @@
-<!-- index.md 0.1.1                 UTF-8                         2025-09-14
+<!-- index.md 0.1.2                 UTF-8                         2025-09-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -29,10 +29,10 @@
       </code></b>
       <br /><br />
       <b><code>
-      <a href="index.html" target="_top">index.html</a>&gt;</code></b>
+      <a href="m230900" target="_top">./</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.1 2025-09-14T16:30Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.2 2025-09-18T23:46Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -107,7 +107,7 @@ on the web progresses.
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
 | [oMiser.txt](oMiser.txt) | 0.1.2 2023-11-06 | 2017-07-26  | Conception, Definition, and Implementation Notes (temporary)|
-| [Technical Notes](m000000.htm)  | undated          | 2025-09-10  | Subject matter notes and work items |
+| [Technical Notes](m000000.htm)  | undated          | 2025-09-10  | Subject-matter notes and work items |
 | [Folios Catalog](m000001.htm)  | undated          | 2025-09-10  | Subordinate Topics Catalog|
 
 ----
@@ -139,6 +139,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.1.2  2025-09-18T23:46Z Link corrections and formatting touch-ups
   0.1.1  2025-09-14T16:30Z Remove construction, touch-up subject-matter links
   0.1.0  2025-09-14T16:20Z Dump sxhash, add folio substructure
   0.0.6  2025-09-03T22:38Z Touch ups, add sxhash
