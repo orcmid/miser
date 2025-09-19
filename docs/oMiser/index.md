@@ -1,4 +1,4 @@
-<!-- index.md 0.1.2                 UTF-8                         2025-09-18
+<!-- index.md 0.1.3                 UTF-8                         2025-09-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -25,11 +25,10 @@
       <br />
       <b><code>
       <a href="../" target="_top">miser</a>&gt;
-      <a href="./" target="_top">oMiser</a>&gt;
       </code></b>
       <br /><br />
       <b><code>
-      <a href="m230900" target="_top">./</a>&gt;</code></b>
+      <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
         0.1.2 2025-09-18T23:46Z<!-- MAINTAIN THIS MANUALLY -->
@@ -139,6 +138,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.1.3  2025-09-19T00:55Z Repair context block
   0.1.2  2025-09-18T23:46Z Link corrections and formatting touch-ups
   0.1.1  2025-09-14T16:30Z Remove construction, touch-up subject-matter links
   0.1.0  2025-09-14T16:20Z Dump sxhash, add folio substructure
