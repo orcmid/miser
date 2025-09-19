@@ -1,4 +1,4 @@
-<!-- index.md 0.1.3                 UTF-8                         2025-09-18
+<!-- index.md 0.1.4                 UTF-8                         2025-09-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -31,23 +31,24 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.2 2025-09-18T23:46Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.4 2025-09-19T15:42Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
 oMiser is constructed as a software library for use on desktop computers. The
-library employs object-oriented techniques for manifesting ‹ob› = 〈Ob,Of,Ot〉
-in a navigational computation interpretation.  The [obap](../obap) Universal
-Computation functions are delivered as oMiser operations.
+library manifests ‹ob› = 〈Ob,Of,Ot〉in a computational interpretation.
+The [obap](../obap) Universal Computation functions are delivered as oMiser
+operations.
 
 This topic includes definition of software-library interfaces -- the oMiser
-API -- and the derivation of supporting algorithms for manifestation of ‹ob›
-through the API. This level of computer-program access is often termed an
-operational model for the manifestation that is achieved.
+Application Programming Interface (API) -- and the derivation of supporting
+algorithms for manifestation of ‹ob› through the API. This level of access
+from a computer program provides a semblance of navigating through the
+‹ob› manifestation that is achieved.
 
-Releases of the software are provided
+Releases of the oMiser software are provided
 under the [dev](../dev) topic.  Development of the software is managed in the
 [GitHub Repository](https://github.com/orcmid/miser/tree/master/dev), along
 with [discussions](https://github.com/orcmid/miser/discussions),
@@ -65,19 +66,20 @@ idealism.
 
 ### Immutability
 
-The API exposes ‹ob› as immutable entities which are always "at hand", even
-though there are alterations and accelerations behind the API that improve
-operation without ever violating immutability of the representation.
-Accelerators expedite operations behind the scenes. Conservers provide for
-recovery of computer storage of no-longer reachable ob instances.  The design
-and verification of such optimization techniques is covered here.
+The API exposes the Ob domain of ‹ob› as consisting of immutable entities
+that are always "at hand", even though there are alterations and accelerations
+behind the API that improve operation without ever violating immutability of
+the representation. Accelerators expedite operations behind the scenes.
+Conservers provide for recovery of computer storage of no-longer reachable ob
+instances.  The design and verification of such optimization techniques is
+covered here.
 
 ### Idealism
 
 When oMiser operates in multiple instances, even when coordinated by local
-or remote connections, there is semblance of there being only one ‹ob› domain
-that is navigated by all of the instances.  Flavors of distributed operation,
-even on the same computer, will maintain that appearance.
+or remote connections, there is appearance of there being only one ‹ob› Ob
+domain being navigated by all of the instances.  Flavors of distributed
+operation will maintain that appearance.
 
 ### Type Abstraction
 
@@ -100,8 +102,8 @@ preservation of idealism, will follow availability of oMiser and
 ## Related Material
 
 This placeholder links to raw materials and notes, including text files.
-There will be organized folios of content as consolidation of documentation
-on the web progresses.
+There are considated in folios of documentation on the derivation of the
+oMiser implementation.
 
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
@@ -138,6 +140,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.1.4  2025-09-19T15:42Z Word-smithing
   0.1.3  2025-09-19T00:55Z Repair context block
   0.1.2  2025-09-18T23:46Z Link corrections and formatting touch-ups
   0.1.1  2025-09-14T16:30Z Remove construction, touch-up subject-matter links
