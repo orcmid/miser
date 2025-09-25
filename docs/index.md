@@ -1,8 +1,7 @@
-<!-- index.md 0.6.1                 UTF-8                         2025-09-12
+<!-- index.md 0.6.2                 UTF-8                         2025-09-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
-     construction structure, manifest, and job jar at
-     <https://orcmid.github.io/miser/docs.txt>
+     published at <https://orcmid.github.io/miser/>
      -->
 # The Miser Project on GitHub
 
@@ -28,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.1 2025-09-12T16:41Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.2 2025-09-25T18:18Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -56,7 +55,7 @@ rigor; it is informally formal and doesn't have to be swallowed whole.
     - [1.3 Computational View](#13-computational-view)
   - [2. The Project](#2-the-project)
   - [3. The Software](#3-the-software)
-  - [4. Background](#4-background)
+  - [4. Historical Background](#4-historical-background)
   - [5. Available Materials](#5-available-materials)
   - [6. Development](#6-development)
     - [6.1 Principles](#61-principles)
@@ -126,13 +125,13 @@ The diagram is also suggestive of a possible computer representation of the
 ‹ob› computational model.
 
 - Computer implementations can employ computer data
-  structures where the *a*-parts and *b*-parts are addresses of ob
-  representations in computer memory.
+  structures, *ob-cells*,  where the *a*-parts and *b*-parts are addresses of
+  ob-representing ob-cells in computer memory.
 
 - The computational forms are immutable and without any cycles via separate
   parts, all in accordance with the mathematical formulation.
 
-- In this perspective, the ob representations are building blocks of
+- In this perspective, the ob-representing ob-cells are building blocks of
   computational data structures.
 
 For practical computations, a greater variety of data forms is desirable. In
@@ -209,7 +208,7 @@ It is appropriate to regard *oFrugal* as an ‹ob› calculator.
 persistent form, known as **Frugalese**.  *oFrugal* reference formats
 are usable in portable interchange of programs and data.
 
-## 4. Background
+## 4. Historical Background
 
 *oMiser* represents procedures and data in the same data format, demonstrating
 the essence and power of the stored-program concept.
@@ -378,6 +377,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.2  2025-09-25T18:18Z Introduce ob-cell and do some wordsmithing
   0.6.1  2025-09-12T16:41Z Use Computation Theory as a topic consistently
   0.6.0  2025-07-13T17:00Z Add dev/ topic
   0.5.0  2025-07-12T22:50Z Add cs/ and ct/ to the topics
@@ -392,7 +392,7 @@ from time to time.  For any security concerns, please consult the
   0.3.12 2024-12-16T22:03Z Small typo and text fixes
   0.3.11 2024-11-28T17:06Z Fix typo, smooth nature of universal function
   0.3.10 2024-11-28T04:56Z Remove extraneous observation
-  0.3.9  2024-11-26T23:41Z Polish the text for clarity
+  0.3.9  2024-11-26T23:41Z Pollish the text for clarity
   0.3.8  2024-11-12T18:03Z Add Security Policy link
   0.3.7  2024-10-28T19:33Z Small touch-up, wordsmithing
   0.3.6  2024-10-10T17:08Z Correct projects link
