@@ -1,4 +1,4 @@
-<!-- index.md 0.1.5                 UTF-8                         2025-09-19
+<!-- index.md 0.1.6                 UTF-8                         2025-09-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -31,7 +31,7 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.5 2025-09-19T21:34Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.6 2025-09-25T18:31Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -44,7 +44,8 @@ delivered as oMiser operations.
 
 This topic includes definition of software-library interfaces -- the oMiser
 Application Programming Interface (API) -- and the derivation of supporting
-algorithms for manifestation of ‹ob› through the API. This level of access
+algorithms for manifestation of ‹ob› through the API and *ob-cell* data
+structures. This level of access
 from a computer program provides a semblance of navigating through the
 ‹ob› manifestation that is achieved.
 
@@ -140,7 +141,8 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
-  0.1.4  2025-09-19T21:34Z link to ‹ob›, reflect obtheory 1.4.5
+  0.1.6  2025-09-25T18:31Z Employ ob-cell in some touch-ups
+  0.1.5  2025-09-19T21:34Z link to ‹ob›, reflect obtheory 1.4.5
   0.1.4  2025-09-19T15:42Z Word-smithing
   0.1.3  2025-09-19T00:55Z Repair context block
   0.1.2  2025-09-18T23:46Z Link corrections and formatting touch-ups
