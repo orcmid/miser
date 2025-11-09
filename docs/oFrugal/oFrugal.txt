@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.12                  UTF-8                          2024-10-27
+oFrugal.txt 0.0.14                  UTF-8                          2025-11-09
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -42,6 +42,11 @@ MANIFEST (text files only)
     oFrugal.txt
         this synopsis and TODOs
 
+    casep.txt
+        "hand-compiled" oFrugal script for a case-expression where the
+        items are procedures, not values, and the first procedure that
+        passes returns its pair.
+
     ob-exp.txt
         the grammar for applicative expressions of ob computations
 
@@ -51,14 +56,15 @@ MANIFEST (text files only)
 
     oSigma.txt
         the hand-compiled σ.s abstraction utility for abstracting terms
-        from arbitrary obs to scripts that create term substitutions
+        from arbitrary obs to scripts that create term substitutions.
+        TOMBSTONE.  See <https://orcmid.github.io/miser/lambda/oSigma.txt>.
 
     sketch.txt
         A sketch of oFrugal with a bit about the ob mathematical structure
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2020-2022, 2024 Dennis E. Hamilton
+                    Copyright 2020-2022, 2024-2025 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -77,7 +83,7 @@ MANIFEST (text files only)
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code text file oFrugal.txt version 0.0.13 dated 2024-10-27 available on the
+   Code text file oFrugal.txt version 0.0.14 dated 2025-11-09 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
@@ -123,11 +129,24 @@ TODO
     just don't have my head around it.  Maybe we put the processed text into
     a log, if it is not being brought in from a file in the first place?
 
+  * Digging into my file cabinet, under F80.11 Combinatory Systems, I find
+    that I was fussing with Frugal in 1979-1980, although I don't think I
+    had the clarity on ‹ob› = 〈Ob,Of,Ot〉at that point.  The choice of LISP-
+    like structures did not strike me until I saw an article on XLISP in
+    Dr. Dobb's Journal.  Until that point I had been thinking of string
+    manipulation (inspired by Strachey) and not list structures.
+
+  * In casep.txt, .F should be used where ` v was used, since no need to
+    enclose a symbolic form and everything works out anyhow.  I am here
+    anticipating that symbolic forms will be flagged in ob-cells and there
+    is never any need to look down a list to satisfy is-symbolic-form(x).
+
 
 
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.14 2025-11-20T19:33Z Add note on F80.11 and update manifest
  0.0.13 2024-10-27T21:02Z Musings about line numbers, restarts, and fixes.
  0.0.12 2024-05-26T18:14Z Manage TODOs
  0.0.11 2024-05-26T16:18Z Include obSigma.txt
