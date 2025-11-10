@@ -1,0 +1,89 @@
+ob.txt 0.0.1                        UTF-8                       dh:2025-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          The Miser Project on GitHub
+                          ---------------------------
+
+                    <https://orcmid.github.io/miser/ob/ob.txt>
+
+
+                        ‹ob› MATHEMATICAL STRUCTURE
+                        ---------------------------
+
+            <https://github.com/orcmid/miser/blob/master/docs/ob/ob.txt>
+
+MANIFEST
+
+     ob.txt
+        this manifest and job-jar file
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2025 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Project on GitHub
+   text file ob.txt version 0.0.1 dated 2025-11-10 available on the
+   Internet as a version of <https://orcmid.github.io/miser/ob/ob.txt>.
+
+NOTES AND TODO
+
+ * My oldest preserved information on ‹ob› starts on the 2000-03-05 notebook
+   #19.18-24 pages on the Miser Ob Level and ideas about quoted singletons
+   where there were two different ideas about enclosures plus a kind of
+   individual that linked to its "class" or something. The simplicity that I
+   finally arrived at is not yet evident.
+
+ * On pp. #19.26-27 I get to equality (distinction) of obs, and distinction
+   of same-instance and is-equal.
+
+ * By 2000-03-18 (#19.69-71) I am getting closer.  I am fumbling around with
+   individuals versus "units," later to become singletons and individuals. I
+   am getting close to the partial ordering, but speak of "is-later."
+
+ * On 2000-04-19 (#20.35) I am using "≺" for what will become "¶"
+
+ * On 2000-05-07 (#20.59) I am coming around to wanting a mathematical
+   *structure* (rather than model) and also pondering about incidentals, what
+   is alway more in an implementation.
+
+ * I wanted to find the completeness paper about CONS, and also about
+   assignment operations.  I also saw to introduce Peano Arithmetic in a
+   constructive way, and about Boolean/propositional schemes too.
+
+  * On 2000-05-20 (#20.74-76) I restate my thinking about abstraction,
+   interpretation, and representation.  I get to individuals but am still
+   thinking of quotations and not enclosures.  I get a littler stuck on
+   the enumerability of individuals.  I'm not clear when that became a
+   non-issue.
+
+ * On 2001-01-11 (#27.38) I note a need to demonstrate countability and
+   enumerability of Obs. This includes whether individuals are countable.
+   I no longer have any doubt, since having the CFob canonical forms does
+   the job. Even with synthetics, there is still CFob expression.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.1 2025-11-10T04:46Z Start collecting notes from old notebooks to recover
+       the history of this effort
+ 0.0.0 2025-11-10T00:37Z Initial placehold and start on capturing historical
+       information.
+
+
+                          ***** end of ob.txt *****

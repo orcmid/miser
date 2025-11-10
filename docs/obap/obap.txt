@@ -1,0 +1,135 @@
+obap.txt 0.0.1                      UTF-8                       dh:2025-11-10
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          The Miser Project on GitHub
+                          ---------------------------
+
+                 <https://orcmid.github.io/miser/obap/obap.txt>
+
+
+                     ‹ob› UNIVERSAL COMPUTATION FUNCTION
+                     ===================================
+
+            <https://github.com/orcmid/miser/blob/master/docs/ob/ob.txt>
+
+MANIFEST
+
+        obap.txt
+             this manifest and job-jar file
+
+  obaptheory.txt
+             the FOL= definition of obap.ap and obap.eval universal functions
+             in the structure ‹ob›
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2025 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. ‹ob› Universal Computation Function.  Miser Project on
+   GitHub text file obap.txt version 0.0.1 dated 2025-11-10 available on the
+   Internet as a version of <https://orcmid.github.io/miser/obap/obap.txt>.
+
+NOTES AND TODO
+
+ * I am perusing old personal notebooks and identifying where various topics
+   on the Miser Project arise.
+
+ * The earliest materials are identified with respect to obtheory and are
+   catalogued at <httsp://orcmid.github.io/miser/ob/ob.txt> for now.
+
+ * On 2000-12-25 (#27.16) I start asking about truth values and is it
+   necessary to have something like .YES and .NO? I also start pondering
+   a predicate for is-determined, which would certainly be undecidable so
+   I'm not certain where this musing is going.  These are pertinent for
+   obaptheory though and I am continuing from here.
+
+ * On 2001-01-01 (Notebook #27.25) I wonder off about is-determined-ob, but
+   do get to the von Neuman stored-program property and how the essence of
+   that applies. I identify some properties/factors that may be pertinent
+   and that do not seem very clarifying on reflect now.
+     - operating with Boolean values (true" and "false") and having
+       recognizable propositional expression
+     - trusting obs (?)
+     - algorithms versus implementations
+     - finiteness versus the countably infinite/unbounded but finite, etc.
+     - identity and distribution of Obs (now considered under realism)
+     - unstratified control and the eval/apply paradox (? really ?)
+     - capacity for Obs. Dictionary/Concordance problem with Obs
+       (and I don't think there is such a problem now)
+
+ * On 2001-01-23 (#27.51-52) I worry myself about features but more famously
+   that every individual of a class be typical of the class.  I will sort
+   this out in the computational model.  I had imagined that COM interfaces
+   help with demonstration of that. To make this more specific look at it
+   this way. Numbers as we think of them do not have independent identity from
+   number theory.  That is, a feature of the numerical interpretation of
+   something like 3.14159 is more than just a sequence of seven glyphs.
+   There's a context in which that is distinguished as signifying a member of
+   some mathematical class and it is the whole of that (conceptually) that the
+   individual connects into.  In some sense, each individual evokes the whole
+   and in a computer representation I fancy that individuals should provide
+   access to manifestation of any (though not literally the whole of course).
+   I am cross-posting this with ob.txt.
+
+ * There's more on the one page, including thinking about "Do Programs Teach
+   Algorithms" at <https://orcmid.github.io/bib/2001/r010101.htm>.  That's
+   about abstraction and arising-in-language but it's unclear what I'm raving
+   about on #27.81.
+
+ * On 2001-05-24 at #30.9, I recognize that when an ob-instance is a parameter
+   of an ob function, assuming via COM interfaces, there is no way to be
+   assured that the ob being delivered as a parameter to a function of another
+   whether the parameter ob is for the same instance.  It could be remoted,
+   it could be from a different one on the same computer, etc.  This is where
+   I started to figure out how to have a way of knowing an ob-cell parameter
+   is one of the same ‹ob› representation and one can work directly in that
+   representation instead of over APIs that abstract above it. I think of this
+   as a bit "aspect-oriented" ability to work at the implementation level
+   than over the API that hides the underlying machinery and, in particular,
+   organization of computer storage.
+
+ * Continuing on 2000-05-20 (#20.82-86) I am looking at scripts and what
+   are now .A, .B, .C, .E, .D (though .Q at first), .ARG, and .SELF.  Also
+   a .NIL if needed.  I started figuring out scripts for combinators K and S.
+
+ * On 2000-11-11 (#22.92) I have settled on .A, .B, .C, .D (not quite), and
+   .E.  The Miser Project seems to be set aside for a time.
+
+ * On 2000-12-25 (#27.16) I start asking about truth values and is it
+   necessary to have something like .YES and .NO. I also start pondering
+   a predicate for is-determined, which would certainly be undecidable so
+   I'm not certain where this musing is going.  These are pertinent for
+   obaptheory though.  (I will get around this by saying this is all
+   determined by whatever the comparison operation returns, just like for
+   LISP, C Language, and many others. The addition of Boolean types is fine,
+   but the notion of true and false is actually to be discouraged.  It's
+   really about what we mean by the question, even when we have some other
+   two-valued distinction. )
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.1 2025-11-10T04:45Z Add gleanings from old notebooks on how I wandered to
+       the current state of affairs.
+ 0.0.0 2025-11-10T00:37Z Initial placeholder and more capturing of historical
+       information.
+
+
+                         ***** end of obap.txt *****

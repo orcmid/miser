@@ -1,4 +1,4 @@
-oMiser.txt 0.1.3                    UTF-8                         2024-01-27
+oMiser.txt 0.1.4                    UTF-8                         2025-11-10
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -22,7 +22,7 @@ oMiser.txt 0.1.3                    UTF-8                         2024-01-27
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2018-2024 Dennis E. Hamilton
+                    Copyright 2018-2025 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ oMiser.txt 0.1.3                    UTF-8                         2024-01-27
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.3 dated 2024-01-27,
+   Notes.  Miser Project text file oMiser.txt version 0.1.4 dated 2025-11-10,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
@@ -151,8 +151,39 @@ TODO
     for other data types, since lyndies give us sufficient literals for
     atoms in strings (list structures).
 
+  * On 2000-05-12 (#20.65) I start thinking about Miser objects and operating
+    on a local system with flat namespace.  I am contemplating something like
+    COM for attaching implementations to ob-cells, as it were.  I'm not there
+    yet though.
+
+ * On 2000-06-09 (#21.15) I muse about using Scheme after seeing "The Little
+   Schemer" in Borders.  But I learned Scheme does not have immutable obs,
+   so I could simulate obs there but it didn't feel great.  Later I found SML
+   more appealing and I started there.
+
+ * On 2000-06-10 (#21.19-20) I am thinking about Python obs or using the
+   C code to introduce Miser obs into Python.  I also start to ponder
+   distributed operations and get wary about individuals having state being
+   a problem for that.
+
+ * On 2001-01-23 (#27.51-52) I worry myself about features but more famously
+   that every individual of a class be typical of the class.  I will sort
+   this out in the computational model.  I had imagined that COM interfaces
+   help with demonstration of that. To make this more specific look at it
+   this way. Numbers as we think of them do not have independent identity from
+   number theory.  That is, a feature of the numerical interpretation of
+   something like 3.14159 is more than just a sequence of seven glyphs.
+   There's a context in which that is distinguished as signifying a member of
+   some mathematical class and it is the whole of that (conceptually) that the
+   individual connects into.  In some sense, each individual evokes the whole
+   and in a computer representation I fancy that individuals should provide
+   access to manifestation of any (though not literally the whole of course).
+
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.4  2025-11-10T04:47Z Start gathering material from old notebooks,
+        cross-posting as seems necessary at the time
  0.1.3  2024-01-27T19:30Z Clean up TODOs and connection with tombstone.
  0.1.2  2023-11-06T18:59Z Note about NBG and how it might come up.
  0.1.1  2023-11-05T21:32Z Additional TODO about save/suspension in oFrugal.
