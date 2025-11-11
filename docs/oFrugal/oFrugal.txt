@@ -1,5 +1,5 @@
-oFrugal.txt 0.0.14                  UTF-8                          2025-11-09
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+oFrugal.txt 0.0.15                  UTF-8                          2025-11-11
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
                            ======================
@@ -62,7 +62,7 @@ MANIFEST (text files only)
     sketch.txt
         A sketch of oFrugal with a bit about the ob mathematical structure
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                     Copyright 2020-2022, 2024-2025 Dennis E. Hamilton
 
@@ -78,16 +78,16 @@ MANIFEST (text files only)
     See the License for the specific language governing permissions and
     limitations under the License.
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code text file oFrugal.txt version 0.0.14 dated 2025-11-09 available on the
+   Code text file oFrugal.txt version 0.0.15 dated 2025-11-11 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
-TODO
+NOTES AND TODO
 
   * Create these, with attention to the division of labor and the reliance
     on the common ob-exp txt.
@@ -141,12 +141,17 @@ TODO
     anticipating that symbolic forms will be flagged in ob-cells and there
     is never any need to look down a list to satisfy is-symbolic-form(x).
 
+  * On 2006-09-05 (#54.72) I muse on [a,b] just be a pairing (as opposed to
+    [a,b:] which is later adopted).  I don't have "::" for right-associative
+    pairing yet.  (I didn't express CFob until 2018.)  I have unchecked notes
+    to consult Burge and also Backus (FP) on the matter.
 
 
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.14 2025-11-20T19:33Z Add note on F80.11 and update manifest
+ 0.0.15 2025-11-11T19:28Z Back up what I have for now
+ 0.0.14 2025-11-10T19:33Z Add note on F80.11 and update manifest
  0.0.13 2024-10-27T21:02Z Musings about line numbers, restarts, and fixes.
  0.0.12 2024-05-26T18:14Z Manage TODOs
  0.0.11 2024-05-26T16:18Z Include obSigma.txt

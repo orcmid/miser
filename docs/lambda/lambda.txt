@@ -1,0 +1,66 @@
+lambda.txt 0.0.1                    UTF-8                       dh:2025-11-11
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          The Miser Project on GitHub
+                          ---------------------------
+
+               <https://orcmid.github.io/miser/lambda/lambda.txt>
+
+
+                     λ APPLICATIVE-PROCEDURE ABSTRACTION
+                     ===================================
+
+            <https://github.com/orcmid/miser/blob/master/docs/ob/ob.txt>
+
+MANIFEST
+
+     lambda.txt
+            this manifest and job-jar file
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2025 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. λ Applicative-Procedure Abstraction.  Miser Project on
+   GitHub text file lambda.txt version 0.0.1 dated 2025-11-11 available on the
+   Internet as a version of
+   <https://orcmid.github.io/miser/lambda/lambda.txt>.
+
+NOTES AND TODO
+
+ * On 2006-09-19 (#54.106-108), while at ICFP, I start writing Frugalese for
+   is-member(x) L and getting to is-member(x) and then λx rec.ismemx λL (...)
+   which just doesn't look right.  I do remark that it is tail-recursive
+   though.  I'm  after getting recursion right.
+
+ * On 2006-09-20 (#54.109-111) I continue fussing with Frugalese and getting
+   combinators out of it in the sense that the oMiser representations of them
+   preserve functional type and that works.  I don't have it explained that
+   well though.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.1 2025-11-11T19:25Z Backing up what I have
+ 0.0.0 2025-11-11T00:37Z Initial placehold and start on capturing historical
+       information.
+
+
+                         ***** end of lambda.txt *****

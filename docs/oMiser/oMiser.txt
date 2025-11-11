@@ -1,4 +1,4 @@
-oMiser.txt 0.1.5                    UTF-8                         2025-11-11
+oMiser.txt 0.1.6                    UTF-8                         2025-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,7 +41,7 @@ oMiser.txt 0.1.5                    UTF-8                         2025-11-11
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.5 dated 2025-11-11,
+   Notes.  Miser Project text file oMiser.txt version 0.1.6 dated 2025-11-11,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
@@ -342,9 +342,29 @@ TODO
    unique.  Their locations might be reference-counted. I made an observation
    that individuals should always be moveable, but I don't think that works.
 
+ * On 2006-09-17 (#54.103) I'm at ICFP in Portland, Oregon.  It is somehow
+   inspiring.  But here I fuss about oMiser Identity and needing an identity
+   "oracle."  I was thinking that proc (now a case of synthetic) somehow
+   needed such a thing, when the solution is simply not to ever make duplicate
+   procs (in an instance).  Now (2025-11-11) I wonder how remoting preserves
+   that.
+
+ * On 2006-09-17 (#54.103) And I also get confused about extensibility, I
+   think.  I see that I am using "oracles" with respect to discriminators,
+   being able to determine that an individual is a proc, for example.  I have
+   a solution that's quite different.  I also had a foolish idea that
+   ap(ob.ARG, x) is x, and ap(ob.SELF, x) is ob.SELF.  That's not how these
+   will end up.
+
+ * On 2006-09-17 (#54.104) I talked with Carl Hauser (known previously at
+   PARC) at ICFP and came up with the idea that oMiser shows something about
+   proofs by symbolic extension.  I have no idea what I meant by that note.
+   I did get that λ is programmable, and I thought it got into handling traces
+   (now called symbolic forms) and it does.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.6  2025-11-11T19:27Z Backing up what I have so far
  0.1.5  2025-11-11T02:57Z Continue old-notebook clippings
  0.1.4  2025-11-10T04:47Z Start gathering material from old notebooks,
         cross-posting as seems necessary at the time

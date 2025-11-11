@@ -1,4 +1,4 @@
-miser.txt 0.1.1                     UTF-8                         2025-11-11
+miser.txt 0.1.2                     UTF-8                         2025-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -32,7 +32,8 @@ miser.txt 0.1.1                     UTF-8                         2025-11-11
     commences at <https://orcmid.github.io/miser/index.htm>.
 
 
-MANIFEST FOR <https://github/orcmid/miser>
+MANIFEST FOR <https://github/orcmid/miser> but maintained on the GitHub Pages.
+    For the web side of things, see <https://orcmid.github.io/miser/docs.txt>.
 
     README.md
         GitHub-rendered "home page" for the public source-code repository,
@@ -118,7 +119,7 @@ MANIFEST FOR <https://github/orcmid/miser>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2017-2020, 2023-2024 Dennis E. Hamilton
+                 Copyright 2017-2020, 2023-2025 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -137,7 +138,7 @@ MANIFEST FOR <https://github/orcmid/miser>
  ATTRIBUTION
 
    Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
-   miser.txt version 0.1.1 dated 2025-11-11, available on the Internet as a
+   miser.txt version 0.1.2 dated 2025-11-11, available on the Internet as a
    version of <https://orcmid.github.io/miser/miser.txt>
 
 TODO
@@ -146,7 +147,8 @@ TODO
     "original" in the full GitHub repository and figure out what I mean and
     where maintenance is intended to continue.  I am renaming it to be a
     "tracker" since it is under docs/ but about the overall GitHub repository
-    organization.
+    organization.  2025-11-11: Then I forgot about this and was confused to
+    find this here.  All better now.
 
   * I did not sign up for the Australasian Logic Colloquium just held in
     Brisbane, November 6-7, 2023.  I did not see a program and the time zone
@@ -235,6 +237,8 @@ TODO
   * On 2002-08-28 (#35.29-30) I raise some observations on oMiser 0.05 (no
     idea) and mention my discomfort with Böhm claiming a discriminator in
     the λ-calculus (since recanted).  Other musings turned out not to matter.
+    (Later, Böhm would conclude that he was in error and correct his web
+    page.)
 
   * On 2002-09-06 (#35.50 and #35.52) I get into the topic of "The
     Unreasonable Effectiveness of Mathematics."  This led to my post on
@@ -265,8 +269,19 @@ TODO
     like data types is a different matter, so interpretation and
     representation have to figure in.
 
+  * THE MANIFEST IS INCORRECT. SORT THIS OUT.  It's for the repository, not
+    for the docs/ folder.  For the docs/ folder, there is also docs.txt.  I
+    ended up confusing myself, and now I understand this being a "tracker."
+    The docs.txt file is just about managing documentation, but not content
+    so much.  It does explain what miser.txt is doing here though.
+
+  * On 2006-09-23 (#54.117) I make a note to write something about hosting
+    on different platforms/languages.  I clearly haven't done that yet.  I was
+    mostly thinking about .NET though.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.2 2025-11-11T19:24Z Continue adding materials from old notebooks
  0.1.1 2025-11-11T02:47Z Bring in items from old notebooks
  0.1.0 2024-11-30T17:52Z Rework as tracker, tombstoning the repo root version
  0.0.3 2024-11-30T16:53Z Touch-ups and wondering
