@@ -1,4 +1,4 @@
-obap.txt 0.0.1                      UTF-8                       dh:2025-11-10
+obap.txt 0.0.2                      UTF-8                       dh:2025-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -43,7 +43,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Computation Function.  Miser Project on
-   GitHub text file obap.txt version 0.0.1 dated 2025-11-10 available on the
+   GitHub text file obap.txt version 0.0.2 dated 2025-11-11 available on the
    Internet as a version of <https://orcmid.github.io/miser/obap/obap.txt>.
 
 NOTES AND TODO
@@ -121,11 +121,29 @@ NOTES AND TODO
    LISP, C Language, and many others. The addition of Boolean types is fine,
    but the notion of true and false is actually to be discouraged.  It's
    really about what we mean by the question, even when we have some other
-   two-valued distinction. )
+   two-valued distinction.)
+
+ * On 2001-12-14 (#31.101) I am musing on Church's Thesis, not making much
+   sense, but add a TODO to follow-up on what Church's Thesis *is*.  Instead
+   of adding a FAQ on it, I now have a place to address it on
+   <https://orcmid.github.io/miser/ct>.
+
+  * On 2002-06-25 (#34.29) to 2002-07-02 (#34.34), I am working my way into
+    the eval-apply business and some confusion that I seem to have had. I am
+    also anticipating synthetic individuals. Too much metaphysics her though.
+
+  * On 2002-07-04 (#34.37) I am working on a sketch for miser-theory.info. I
+    come up with the diagram that will illustrate Ob everywhere (#34.39).
+
+  * On 2002-07-06 (#34.40) I am getting Apply and almost ev(p, x, f).
+
+  * On 2002-07-08 (#34.43) I have figured out the interpretation of the S
+    combinator in ob with obap.
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2025-11-11T02:52Z Contine capturing gleanings from old notebooks
  0.0.1 2025-11-10T04:45Z Add gleanings from old notebooks on how I wandered to
        the current state of affairs.
  0.0.0 2025-11-10T00:37Z Initial placeholder and more capturing of historical

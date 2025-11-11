@@ -1,4 +1,4 @@
-ob.txt 0.0.1                        UTF-8                       dh:2025-11-10
+ob.txt 0.0.2                        UTF-8                       dh:2025-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -39,7 +39,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Project on GitHub
-   text file ob.txt version 0.0.1 dated 2025-11-10 available on the
+   text file ob.txt version 0.0.2 dated 2025-11-11 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/ob.txt>.
 
 NOTES AND TODO
@@ -78,8 +78,38 @@ NOTES AND TODO
    I no longer have any doubt, since having the CFob canonical forms does
    the job. Even with synthetics, there is still CFob expression.
 
+ * On 2001-05-24 (#30.10) I am still pondering the "≺" (and "≻") symbols and
+   accepting that there is no such relation available to an implementation.
+   The necessary precedence is accomplished by how an implementation works,
+   but it is a partial ordering and it is satisfied by construction, but not
+   available by inspection.  It is a nothing-burger.
+
+ * On 2001-05-25 (#30.20) I get into the basic logical framework that is now
+   stated under obtheory.txt sections on Logical Notation and Primitive
+   Notions.  And I start using ¶ for the Precedence Condition.  I am doing
+   this while at Logic, Language, and Computation (LLC) Workshop 10.
+
+ * On 2001-05-26 (#30.25) I start demonstrating canonicalization of obs by
+   simply writing a phrase-structure grammar for them, what will eventually
+   become CFob.txt.  The key is to then claim that the obs are denumerable/
+   countable, even though an enumeration might take some work. I'm still at
+   LLC10.
+
+ * On 2005-09-29 (#48.25) I was musing, regard to variables x, y, etc., that
+   these are ways of having attention on particular Obs.  I'm not getting
+   nutty about the platonism and the notion of all Obs somehow pre-existing.
+   This musing also led to
+   <https://miser-theory.info/notes/2002/06/n020600c.htm> though.  This now
+   explains what earlier notes talking about as 0.05.  It is here, last
+   updated on 2002-07-17
+   <https://miser-theory.info/notes/2002/06/n020600.htm>.
+
+ * On 2006-06-29 (#52.66) I am still musing about what I need for a pair
+   operator.  I got to ":" but not "::" yet, for right-associative pairings.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2025-11-11T02:49Z Continue collection of historical notes
  0.0.1 2025-11-10T04:46Z Start collecting notes from old notebooks to recover
        the history of this effort
  0.0.0 2025-11-10T00:37Z Initial placehold and start on capturing historical

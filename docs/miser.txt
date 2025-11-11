@@ -1,4 +1,4 @@
-miser.txt 0.1.0                     UTF-8                         2024-11-30
+miser.txt 0.1.1                     UTF-8                         2025-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -137,7 +137,7 @@ MANIFEST FOR <https://github/orcmid/miser>
  ATTRIBUTION
 
    Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
-   miser.txt version 0.1.0 dated 2024-11-30, available on the Internet as a
+   miser.txt version 0.1.1 dated 2025-11-11, available on the Internet as a
    version of <https://orcmid.github.io/miser/miser.txt>
 
 TODO
@@ -219,8 +219,55 @@ TODO
 
   * Review for changes needed in blog, wiki, and documentation pages.
 
+  * From 2002-07-18 (#34.52) to 2002-07-27 (#34.65) there are many notes and
+    they seem related to content at miser-theory.info, and an N020701. I need
+    to figure out where to rescue that.  There's more on 2002-07-28
+    (#34.69-70), (#34.73-78, 2002-07-29 to 07-30).  It seems that what I'm
+    fussing about is <https://miser-theory.info/notes/2002/07/n020701.htm>.
+    The site seems to have some breakage though.
+
+  * On 2002-08-01 (#34.81) I am considering submission of a paper to STACS
+    2003.  I was nowhere near ready and didn't go ahead with the idea.
+
+  * On 2002-08-24 (#35.22-23) I found some interesting references and I'm
+    uncertain what I tracked down, and whether any got into my bibliography.
+
+  * On 2002-08-28 (#35.29-30) I raise some observations on oMiser 0.05 (no
+    idea) and mention my discomfort with Böhm claiming a discriminator in
+    the λ-calculus (since recanted).  Other musings turned out not to matter.
+
+  * On 2002-09-06 (#35.50 and #35.52) I get into the topic of "The
+    Unreasonable Effectiveness of Mathematics."  This led to my post on
+    Einstein's observation. And here there are references to other articles
+    where folks address the question, some apparently unaware of what
+    Einstein had to say.  Now I need to find my own post on the topic. I refer
+    to it in my paper on Logic for Computer Science undergraduates.
+
+  * On 2002-10-18 (#35.86) I refer to N021000 in Well-Definedness. I wonder.
+
+  * On 2002-10-26 (#35.91) I list some things that need notes, such as
+    existence of mathematical entities, predicative sets, using Unicode,
+    Gödel's self-referencing statement, and mumbles about tags in sMiser
+    (which I suspect is lindies in oMiser)
+
+  * On 2004-05-30 (#42.47) I come up with Astraendo for abstraction and use
+    it on miser-theory.info.
+
+  * On 2006-07-15 (#53.56) I realized that what I was calling caching somehow
+    also attached implementation shortcuts on any Ob, something I would
+    expect, along with having a COM-style vector, also having an applicative
+    interpretation with acceleration.  That's not quite the same as having
+    a COM pv on an ob-cell, so I really need to figure out how this all can
+    work.
+
+  * On 2006-09-03 (#54.71) I am talking about types but being confused, since
+    I will come to functional types when I get to combinators.  Other types,
+    like data types is a different matter, so interpretation and
+    representation have to figure in.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.1 2025-11-11T02:47Z Bring in items from old notebooks
  0.1.0 2024-11-30T17:52Z Rework as tracker, tombstoning the repo root version
  0.0.3 2024-11-30T16:53Z Touch-ups and wondering
  0.0.2 2024-01-30T16:08Z Reduce TODOs to those remaining applicable here.

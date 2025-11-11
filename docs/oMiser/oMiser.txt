@@ -1,4 +1,4 @@
-oMiser.txt 0.1.4                    UTF-8                         2025-11-10
+oMiser.txt 0.1.5                    UTF-8                         2025-11-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,7 +41,7 @@ oMiser.txt 0.1.4                    UTF-8                         2025-11-10
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.4 dated 2025-11-10,
+   Notes.  Miser Project text file oMiser.txt version 0.1.5 dated 2025-11-11,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
@@ -96,7 +96,8 @@ TODO
     language in the conventional sense.  And, at the oMiser/oFrugal level,
     we are basically seeing an assembler (reader) and a disassembler (printer)
     of the oMiser machine code.  Where oFrugal becomes more interesting may
-    be with Proc and maybe something about data structures.
+    be with Proc and maybe something about data structures. [2025-11-10: I am
+    calling these synthetics now.]
 
   * The Golden Geek treatment of the connection between these could perhaps
     be handled with an oMiser.md page here.  That could also address the
@@ -112,7 +113,7 @@ TODO
     for consistent usage and links to related resources of the project and
     and elsewhere, especially ones of reference/historical value.
 
-  * There are a number engineering and programming matters in these TODOs
+  * There are a number of engineering and programming matters in these TODOs
     that are best moved to an alternative place, such as engineering.txt
     for the overall project.
 
@@ -120,6 +121,13 @@ TODO
     oMiser is [McCarthy1960] McCarthy, John.  Recursive functions of symbolic
     expressions and their computation by machine, Part 1.  Comm. ACM 3, 4
     (April 1960), 184-195, https://doi.org/10.1145/367177.367199
+
+  * I should also point out that the James Allen book, "Anatomy of LISP"
+    was inspirational in how it continued the sort-of-meta level that McCarthy
+    used in the original paper, but did not carry very far.  My efforts with
+    ‹ob› structure and then the universal computational function (obap) are
+    firmly in what I take to be in the James Allen spirit, but with more
+    mathematical logic.
 
   * A related article of possible interest in accelerators or possibly other
     situations is [Perlis1960] Perlis, A.J., Thornton, Charles.  Symbol
@@ -132,7 +140,9 @@ TODO
   * How did the Mapping of ALGOL 60 to the lambda calculus deal with
     assignment operations and storage state?  It looks like continuations
     are fruitful, if the compute expression of F# is informative.  I still
-    haven't got my head around it (2023-01-11).
+    haven't got my head around it (2023-01-11).  [2025-11-10 I don't think
+    continuation is the correct term - it is more about passing and returning
+    stateful objects, but it is more about transformation, not continuation.]
 
   * EMERGENCE OF TYPES AND "OBJECTS" is a key matter. It is at the heart of
     the stored-program model and it serves to illustrate the limits of
@@ -179,9 +189,163 @@ TODO
    and in a computer representation I fancy that individuals should provide
    access to manifestation of any (though not literally the whole of course).
 
+ * On 2001-05-24 (#30.9-10) I go off on VTables, the idea that ob-cells (not
+   called that yet) have a VTable pointer at the top, just like binary COM
+   objects.  I am working on the problem of a functions reached by VTable
+   working best if it knows the implementation behind a ppv provided as a
+   parameter of a VTabled function (e.g., for apply).  I observed that I can't
+   use QueryInterface to deliver the implementation, because it violates
+   remoting (even though I expect to only be doing in-process COM).  My
+   solution is to have an IID that on QueryInterface returns access to the
+   implementation.  In this case, the only question is about the requesting
+   application.  So that IID should be obtained as part of the generation
+   (in the COM sense) of an oMiser instance.  It should be generated randomly
+   and be very unlikely to be recognized by a stub of a remote or even a
+   co-resident instance of oMiser. [2025-11-10 And while I rhapsodying on
+   this, I should point out that having two running instances in the same
+   process is rather unlikely because of the way memory-management is
+   intended to work.]  The key thing is that if the QueryInterface with that
+   IID fails, we know we're not dealing with an object of the oMiser instance
+   that is asking and so no assumptions about its run-time can be assumed.
+
+ * On 2001-05-25 (#30.15) I get into the problem on releasing individuals
+   because there may be much more than just the ob-cell involved. My fear was
+   that I would need to know when the Garbage Collector is releasing an
+   individual, if allowed at all, and that doesn't let me do the Henry Baker
+   scrap-it-all stack retreat after moving only ob-cells that there are
+   references to from outside heap-0, as it were.  I am thinking at this
+   (2025-11-10) moment that individuals never go onto heap-0 and they will
+   always be reference-counted.  There is then some serious difficulty with
+   synthetics -- individuals that hold obs in their definitions and must not
+   appear to be younger than the ob they are holding onto.
+      IT SEEMS, AT THIS MOMENT, THAT CREATION OF A SYNTHETIC REQUIRES INSTANT
+   GENERATION-MOVEMENT OF THE OB THAT THE SYNTHETIC MUST HOLD AND BE ABLE TO
+   DELIVER.  Now that I think about it, the precedence rule requires this. If
+   I play my cards right, the Cheney copy rule should just work. I just hope
+   there's no joker in the deck.  The trick might be knowing what individuals
+   were established during the creating of a heap-0 and so we know who to
+   preserve before retreating heap-0.  This might have to work through all
+   of the generations.
+
+ * On 2001-05-26/27 (#30.33) I ponder a progression involving completion of
+   an ob theory, something about manifestation and also how individuals work
+   and are distinguishable.  I haven't come up with lindies yet.
+
+ * On 2001-05-27 (#30.34-35) I am still lost on indentity between individuals.
+   I come up with "in computing and especially the implementation of
+   programming languages, we appeal to mathematical concepts for explanation
+   and identification of concepts for the function of the language.  Then, we
+   introduce pragmatic considerations in a way that undermines the
+   mathematical function."
+
+ * On 2001-05-27 (#30.35) I have some terrible ideas for Iob interfaces
+   (maybe) and I'm too much in love with C++ notions.
+
+ * On 2001-05-29 (#30.38-40) I am getting lost in Ob [COM] Interface
+   principles.  I am thinking of some sort of hybrid sort-of-COM operation,
+   but not thinking clearly about tagging of Ob form (individual, enclosure,
+   pair) and so on.
+
+ * On 2001-06-01 (#30.44) I start rambling about Ob brokers determined Obs.
+   My conclusion is that communication of canonical forms is all it takes.
+
+ * On 2001-06-15 (#30.51) I am pondering what I now term "realism."
+   "The idea is that we always see things in a process space as if there is
+   this persistent, consistent world.  Whenever process spaces are connected,
+   the behavior is as if there is only one world visible to all of them.
+   This is an illusion and we have to be careful."
+   I was definitely over-thinking this, because it does not concern me today
+   (2025-11-10).
+
+ * On 2001-07-26 (#30.76) I am musing about Obs that carry values (ie., now
+   called synthetic individuals) and get that difference of the synthetics
+   does not imply difference in their values (although I now intend to make
+   that the case), and that if the the obs are identical, they necessarily
+   carry the same values.
+
+ * On 2001-09-08 (#31.11) I start wondering about the cost of creation/
+   deletion/use of ob-cells.  The cost of creation happens exactly once and
+   the cost of deletion happens exactly once for an occurrence.  So we can
+   treat it all as the cost of creation.  I do wonder about when I can avoid
+   an addref (if reference counting).  I do suggest that a special case in
+   comparison does not alter any references someone is already holding. I
+   think this is about the prospect of consolidating references when two obs
+   in different ob-cells are found to be identical.  That definitely has
+   reference-counting impacts.
+
+ * On 2002-01-24 (#32.16-17) I am still pondering basic operations on a COM-
+   like interface structure.  So there is a class factory call and we get
+   an interface (essentially the IUnknown) back but also a "key" that is used
+   to ask for access to the run-time instance storage as if via an interface.
+   When successful, it allows the interpreter to go beneath the covers and
+   operate much more efficiently. It might be the case that this always works,
+   but this allows for the possibility of remoting across multiple Miser
+   instances.
+
+ * On 2002-02-24 (#32.61-64) I'm setting up <https://miser-theory.info>. That
+   is defunct and what matters is being moved to orcmid.github.io/miser.  I do
+   note that there is a call for a binding check.  That's more about providing
+   the class factory with a parameter struct that reveals the caller has run-
+   time assumptions that applies to the library that is bound/linked with
+   the app that uses the Miser run-time.  This might not be necessary. I am
+   still fiddling with COM-style API.
+
+ * One thing I notice on the #32.63 is that I have two version of ob.c, one to
+   put the other as an a-part with self, one to put the other as a b-part with
+   self.  The same could go with apply then.  Checking for equality doesn't,
+   though it might matter under the covers with regard to remoteness.  If all
+   local, comparison just runs rampant directly in the storage without having
+   to use the COM API.
+
+ * On 2002-06-04 (#34.18) I raise the issue of Miser Trust Points.  This has
+   to do with determining that an implementation has been compromised or that
+   an user of the API appears to be compromised.  I have no recollection now
+   and think the question might be at the wrong level.  I need to go back into
+   the cybersecurity materials where Trust Points come up, and recalibrate.
+
+ * On 2002-08-04/05 (#34.86) I bothered myself about transfinite as
+   unreachable and I have no idea why that matters for what I now officially
+   call oMiser.
+
+ * On 2002-08-10 (#34.93) I'm back wondering about failure modes, the identity
+   and distinctness matters, and some examples of symbols that are needed.
+
+ * On 2002-08-13 (#34.99) I am now pondering self-reference, but it is not
+   an issue and cycles are simply not allowed in Obs. I do identify some
+   problems over mutual recursion though, and have a case in obap itself.
+
+ * On 2002-08-28 (#35.33) I mention Computational Logic but don't explain
+   what matters or what I am expecting in that respect.  I do mumble about
+   hidden side-effects in oMiser being OK though.  That is, things that
+   happen under the covers that in no manner interfere with the appearance
+   of immutability.
+
+ * On 2003-07-01 (#40.41) I mention alternative ways of doing combinator S.
+   I think this has to do with simplifying when some of the operands are
+   non-recursive and can sort of be spliced in-line.  There is obap.f now,
+   but I think this is taking even more advantage of the structure of the
+   first two operands.
+
+ * On 2004-10-18 (#44.41) I am musing about individuals, procs, and
+   reflection.  It will be the case that if x = y, proc x = proc y. And vice
+   versa. I thought there was an extensionality question, but I don't think
+   so.  It is all still about obs and obap.
+
+ * On 2006-06-18 (#52.25) I observe that the way to handle (a ∨ b) is with
+   ¬(¬a ∧ ¬b) in Wang's algorithm.  I have another wrinkle that has with two
+   stacks of hypotheses, affirmed ones and denied ones.  The bigger thing
+   about this is that I have gone 2 years without working on the Miser Project
+   and now about to resume.
+
+ * On 2006-06-25 (#52.52) I muse about caching individuals (namely synthetics)
+   but I don't think it matters so much as simply keeping individual ob-cells
+   unique.  Their locations might be reference-counted. I made an observation
+   that individuals should always be moveable, but I don't think that works.
+
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.5  2025-11-11T02:57Z Continue old-notebook clippings
  0.1.4  2025-11-10T04:47Z Start gathering material from old notebooks,
         cross-posting as seems necessary at the time
  0.1.3  2024-01-27T19:30Z Clean up TODOs and connection with tombstone.
