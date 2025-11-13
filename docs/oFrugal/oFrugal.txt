@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.15                  UTF-8                          2025-11-11
+oFrugal.txt 0.0.16                  UTF-8                          2025-11-12
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -83,7 +83,7 @@ MANIFEST (text files only)
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code text file oFrugal.txt version 0.0.15 dated 2025-11-11 available on the
+   Code text file oFrugal.txt version 0.0.16 dated 2025-11-12 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
@@ -146,10 +146,46 @@ NOTES AND TODO
     pairing yet.  (I didn't express CFob until 2018.)  I have unchecked notes
     to consult Burge and also Backus (FP) on the matter.
 
+  * On 2007-09-25 (#59.34) I muse on IDEs, being able to fix things from the
+    command line, and conclude that let's just stick to the source-code file
+    and editing it, not unlike working with SML.  There are thoughts about
+    dump formats which could be interchanged/reloaded, but that's another
+    matter.
+
+  * On 2007-10-25 (#59.72) I contend with there not being "free" occurences
+    of variables in Miser and oFrugal in the sense that is meant in the
+    mathematical formulation of λ-expressions.  There are no variables, to
+    start with.  I am still formulating, and the comment is generally off-base
+    compared to where this all ended up.
+
+  * On 2007-10-27 (#59.74) I am still muddling with this.  I also had the odd
+    idea that `f.x` be equivalent to `(f 'x)` and that's not it at all.  Some
+    of this pondering is that oFrugal λ-abstraction is a rewriting action and
+    there are no variables whatsoever at the expression level.
+
+  * On 2007-10-27 (#59.75) I am still a bit stuck, but the remarks about
+    caching *proc* synthetics now makes sense.  It is about making them
+    individuals and hence they need to be somewhere that occurences of the
+    same *proc* definition end up having the same individual.  I'm still
+    stuck about free variables though.
+
+  * On 2008-02-11 (#60.66) I start putting together the Frugalese applicative
+    notation.  The notation is being imagined as it is today, with application
+    being right associative.  a b c d is the same as a(b(c(d))).  I am pretty
+    clear about it.
+
+  * On 2008-02-12 (#60.72-73) I am more clear about the applicative structure
+    and it is exactly in this form to this day (2025-11-12).
+
+  * On 2008-02-20 (#60.88) I am still rationalizing the notation I have zeroed
+    in on.  I still haven't gotten to "::" yet.  I'm also referring to a
+    (blog?) post and I need to go back and look at the Numbering Peano blog.
+
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.16 2025-11-12T00:08Z More historical notes
  0.0.15 2025-11-11T19:28Z Back up what I have for now
  0.0.14 2025-11-10T19:33Z Add note on F80.11 and update manifest
  0.0.13 2024-10-27T21:02Z Musings about line numbers, restarts, and fixes.

@@ -1,4 +1,4 @@
-ob.txt 0.0.2                        UTF-8                       dh:2025-11-11
+ob.txt 0.0.3                        UTF-8                       dh:2025-11-12
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -39,7 +39,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Project on GitHub
-   text file ob.txt version 0.0.2 dated 2025-11-11 available on the
+   text file ob.txt version 0.0.3 dated 2025-11-12 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/ob.txt>.
 
 NOTES AND TODO
@@ -107,8 +107,22 @@ NOTES AND TODO
  * On 2006-06-29 (#52.66) I am still musing about what I need for a pair
    operator.  I got to ":" but not "::" yet, for right-associative pairings.
 
+ * On 2007-11-05 (#59.84) I signal the conception of ‹ob› as a structure
+   tying all the pieces together.
+
+ * On 2007-11-19 (#59.113, 116-120) I am struggling to develop Ot have the
+   notion that "Ot is how we observe the structure.  Until we have Ot, we
+   have not achieve the mathematical abstraction, because it is the Ot that
+   gives the structure its existence as a mathemtical object."
+      After that there is much stumbling around though.
+
+ * On 2008-04-15 (#60.124) I'm looking at Miser, Frugal, and Logic versus
+   computation.  I am now centered on the structure ‹ob› and the idea that
+   Of has all of the functions f:Ob -> Ob.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2025-11-12T00:05Z More historical notes
  0.0.2 2025-11-11T02:49Z Continue collection of historical notes
  0.0.1 2025-11-10T04:46Z Start collecting notes from old notebooks to recover
        the history of this effort

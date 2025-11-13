@@ -1,4 +1,4 @@
-oMiser.txt 0.1.6                    UTF-8                         2025-11-11
+oMiser.txt 0.1.7                    UTF-8                         2025-11-12
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,7 +41,7 @@ oMiser.txt 0.1.6                    UTF-8                         2025-11-11
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.6 dated 2025-11-11,
+   Notes.  Miser Project text file oMiser.txt version 0.1.7 dated 2025-11-12,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
@@ -362,8 +362,14 @@ TODO
    I did get that λ is programmable, and I thought it got into handling traces
    (now called symbolic forms) and it does.
 
+ * On 2007-11-05 (#59.84) I consider "code formats" with XML streams that are
+   slow to write but fast to read, and also enclosing in an OPC container
+   (or the ODF equivalent), and also self-contained/-extracting executables.
+   Just musings at that point.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.7  2025-11-12T00:11Z More historical notes
  0.1.6  2025-11-11T19:27Z Backing up what I have so far
  0.1.5  2025-11-11T02:57Z Continue old-notebook clippings
  0.1.4  2025-11-10T04:47Z Start gathering material from old notebooks,

@@ -1,0 +1,60 @@
+cs.txt 0.0.0                        UTF-8                         2025-11-12
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                               The Miser Project
+                               =================
+
+                   <https://orcmid.github.io/miser/ct/ct.txt>
+
+                           COMPUTER SCIENCED TOPICS
+                           ------------------------
+
+
+                              maintained at
+       <https://github.com/orcmid/miser/tree/master/docs/cs/cs.txt>
+
+
+MANIFEST
+
+      cs.txt
+         This synopsis and manifest, with notes and TODOs
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2025 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. Computer Science Topics.  Miser Project text file
+   cs.txt version 0.0.0 dated 2025-11-12, available on the Internet as a
+   version of <https://orcmid.github.io/miser/cs/cs.txt>
+
+NOTES AND TODO
+
+ * On 2008-04-23 (#60.124) I make mention of an LtU (?)article on Fetzer
+   and the gap between logical theories, verification, and the contingent
+   world in which software runs.  Practical/scientific/engineering success.
+   Exploiting regularities in nature.  Having a circuit diagram, a blue
+   print, a logical design, and a testable interpetation is a lot better
+   than not having one.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.0 2025-11-12T00:03Z Create placeholder and initial job jar for the topic
+
+                          ***** end of cs.txt *****
