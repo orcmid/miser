@@ -1,4 +1,4 @@
-ob.txt 0.0.3                        UTF-8                       dh:2025-11-12
+ob.txt 0.0.4                        UTF-8                       dh:2025-11-13
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -39,7 +39,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Project on GitHub
-   text file ob.txt version 0.0.3 dated 2025-11-12 available on the
+   text file ob.txt version 0.0.4 dated 2025-11-13 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/ob.txt>.
 
 NOTES AND TODO
@@ -120,8 +120,21 @@ NOTES AND TODO
    computation.  I am now centered on the structure ‹ob› and the idea that
    Of has all of the functions f:Ob -> Ob.
 
+ * On 2008-04-28 (#60.135) On the "The Logic of It" I add need for a citation
+   to the Handbook of Mathematical Logic chapter on FOL. I identify the Miser
+   (ob) theory with FOL= and Ot in the structure being the theory and
+   foundation for oMiser computations.  There are boxes I had not checked but
+   have been dealt with now.  I do distinguish the theory from a computational
+   model.
+
+ * On 2008-05-07 (#60.137) I am elaborating the structure of ‹ob›.  I specify
+   doing the axioms, ... the use of structural stuff, using Ot, Ob as the
+   domain of discourse, etc. I am easily distracted into meta-questions that
+   I do not form well, though.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.4 2025-11-13T21:41Z Wrap-up with notebook #60
  0.0.3 2025-11-12T00:05Z More historical notes
  0.0.2 2025-11-11T02:49Z Continue collection of historical notes
  0.0.1 2025-11-10T04:46Z Start collecting notes from old notebooks to recover
