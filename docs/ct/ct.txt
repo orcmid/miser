@@ -1,4 +1,4 @@
-ct.txt 0.0.0                        UTF-8                         2025-11-11
+ct.txt 0.0.1                        UTF-8                         2025-11-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -42,7 +42,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Computation Theory Topics.  Miser Project text file
-   ct.txt version 0.0.0 dated 2025-11-11, available on the Internet as a
+   ct.txt version 0.0.1 dated 2025-11-16, available on the Internet as a
    version of <https://orcmid.github.io/miser/ct/ct.txt>
 
 NOTES AND TODO
@@ -55,9 +55,40 @@ NOTES AND TODO
    Wolfram's presentation.  I have no way to grasp how this is universal
    though.
 
+ * On 2010-12-15 (#66.33) I note that there is a difference between
+   completeness and inconsistency for FOL.
+    - Check in Hilbert for a formulation
+    - Check Bernays if necessary
+    - Work through Gödel
+
+ * On 2010-12-16 (#66.33) I observe that this is needed for Astraendo (Miser)
+   in order to look at computational completeness and how it is established
+    - Rosenbloom
+    - Hilbert, Gödel, and others
+
+  * On 2010-12-16 (#66.33) I say I must update Orcmid [orcmid.github.io/bib]
+    readings in logic, philosophy, and computation theory.  Also Carnap and
+    others because of model theory.
+
+  * On 2010-12-16 (#66.33) I also identify Church's Thesis aspect
+     - Represetation of the function in FOL
+     - Representation in the (primitive) recursive function
+     - Representation in Turing Machine (programs)
+     - Representation in λ Calculus
+     - The applicative representation, Conbinatory Logic
+
+  * On 2010-12-18 (#66.33) I make a note to find abut about categorical /
+    hereditary and how that works.  (I should look on [FOM] because I've seen
+    Henry use the term.) I also mumble about true being provable
+    and I no longer have any idea what that is about.
+
+  * On 2011-01-27 (#66.70) I seem proud to demonstrate that p ∧ (p ⇒ q) is
+    equivalent to p ∧ q.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
- 0.0.0 2025-11-11T23:53Z Create placeholder and initial job jar for the topic
+ 0.0.1  2025-11-16T01:15Z Complete notes capture through #66
+ 0.0.0  2025-11-11T23:53Z Create placeholder and initial job jar for the topic
 
                           ***** end of ct.txt *****

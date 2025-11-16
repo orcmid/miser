@@ -1,4 +1,4 @@
-cs.txt 0.0.0                        UTF-8                         2025-11-12
+cs.txt 0.0.1                        UTF-8                         2025-11-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -6,8 +6,8 @@ cs.txt 0.0.0                        UTF-8                         2025-11-12
 
                    <https://orcmid.github.io/miser/ct/ct.txt>
 
-                           COMPUTER SCIENCED TOPICS
-                           ------------------------
+                            COMPUTER SCIENCE TOPICS
+                            -----------------------
 
 
                               maintained at
@@ -40,7 +40,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Computer Science Topics.  Miser Project text file
-   cs.txt version 0.0.0 dated 2025-11-12, available on the Internet as a
+   cs.txt version 0.0.1 dated 2025-11-16, available on the Internet as a
    version of <https://orcmid.github.io/miser/cs/cs.txt>
 
 NOTES AND TODO
@@ -52,9 +52,85 @@ NOTES AND TODO
    print, a logical design, and a testable interpetation is a lot better
    than not having one.
 
+ * On 2010-02-17 (#64.62) I rapsodize on Astrendo: Theory, Abstraction,
+   Procedures. This will show up on the blog series about ‹ob› structure
+   and in places where I discussed the manifestation of documents in computer
+   systems.
+    - Einstein on Theories versus Realities - I have a blog post about thta
+      and I will reference it in a workshop contribution on Logic for Computer
+      Science Undergraduates.  I must surface those materials and links.
+    - Programming Concepts as Abstractions realized in Codes
+       -- Modularity ideas
+       -- The use of models as characterizations of informal theories
+       -- Design reusability
+       -- The conflict of programming model abstractions and the abstraction
+          the software is used to manifest
+       -- Structural abstractions in the representation vresus what is being
+          represented
+    - Matching abstraction of input-procedure-output in terms of domains and
+      ranges
+       -- but there can be structural abstractions on the procedure and its
+          behavior that go to higher level
+       -- these might or might *not* build to a higher level interpretation
+          (theory) or they may be incidental to that
+       -- TCP/IP and packet assembly, blocking in files, etc., versus putting
+          the bits back together makes things a matter of indifference
+           --- the invisible transport
+           --- the structure one-level up
+           --- sessions! connections - !
+           [2025-11-15 observation: I have always been fascinated about this
+            and I started musing on it when at Remington Rand Univac in the
+            early 1960s.  The input-output models annoucned for IBM System/360
+            had mee looking at this even more.]
+    - A Turing Machine is a *structural abstraction*
+    - The OSI 7-layer system versu the IETF one. (ALGOL versus other languages
+      too.)
+
+ * On 2010-02-20 (#64.66-67) I go off on Einstein on Theory+Reality.  There
+   are citations and extracts on [Einstein1921].  This note is the basis for
+   a blog post on this that is cross-posted to Numbering Peano.
+
+ * On 2010-03-13 (#64.67) I come up with Bratman diagrams on how abstraction
+   works above the T-diagram and its input and outputs.  I think this is on
+   the blog series for computation interpretation and repreentation and need
+   to recover it. As a time-check, I was immersed in ODF TC and also OOXML
+   in this period.
+
+ * In 2010-10-29 (#66.11) I make note "Astraendo: Computer Models" which seems
+   to look at what Programmers Know, a follow-on to "What Computers Know."
+   (look that up).  I saw programmers looking into computers as black boxes
+   but where the model+rules are understood.  Outside looking in. Users know
+   what is manifest at the surface and how it is seen as an instrument in
+   their world of opportunity.  This applies to programmers too.
+
+ * On 2010-12-02 (#66.11) On the same page I am doing a truth-value
+   demonstration of a=b and b=c implies a=c.  I don't recall what my
+   motivation was for this.
+
+ * On 2010-12-03 (#66.29) I have a note on "Gödel's Formulation" but I don't
+   see what of Gödel this is in reference to. It appears that "~" is "<=>"
+   though.
+
+ * On 2010-12-06 (#66.29) I see a note on "individuals" and reference
+   Principia Mathematical *9.13 where it is said that x is an individual when
+   it is neither a proposition nor a function.
+
+ * On 2010-12-07 (#66.29) there is a quotation "in classical FOL an empty
+   domain is prohibited."  It looks like Drake or Drahe and I have no idea
+   who that is.
+
+ * On 2011-02-08 (#66.70) I mention problems, opportunities, solutions, and
+   concerns, breakdowns, barriers, obstacles, and instruments. [It seems as
+   if I am looking at pattern languages.]
+    - I pose "What is information science?  What is computer science?"
+    - I observe "The conceptualization of reality is all our doing.  It is
+      not arbitrary, being constrained by our experience and limitations
+      thereof."
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.1 2025-11-16T01:10Z Complete note capture through #66
  0.0.0 2025-11-12T00:03Z Create placeholder and initial job jar for the topic
 
                           ***** end of cs.txt *****

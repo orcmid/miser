@@ -1,4 +1,4 @@
-oMiser.txt 0.1.7                    UTF-8                         2025-11-12
+oMiser.txt 0.1.8                    UTF-8                         2025-11-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,7 +41,7 @@ oMiser.txt 0.1.7                    UTF-8                         2025-11-12
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.7 dated 2025-11-12,
+   Notes.  Miser Project text file oMiser.txt version 0.1.8 dated 2025-11-16,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
@@ -367,8 +367,66 @@ TODO
    (or the ODF equivalent), and also self-contained/-extracting executables.
    Just musings at that point.
 
+ * On 2010-10-07 (#65.119) I turn my attention to Miser Accelerators.  In
+   this case it is about having some sort of block of extended data and an
+   ob-cell that refers to it and is reference by it.  The idea is to treat
+   the extended-data block holding more than the ob-cell.  The ob-cell is
+   taken to be the holder, but it is holding something that is also memory-
+   managed and they need to be preserved/released together.  I am thinking
+   of *proc* obs in this case.
+    - I say I need a way to mege holders when two are found to be the same.
+      This becomes unnecessary (2025-11-15) because these are tied to
+      individuals. Ideally, there's only one block of storage with common
+      ob-cell on top and the memory-manager knows what to do.  That needs to
+      deal with accelerators happening later than creation of an ob-cell, so
+      I must ponder that.
+    - If cross-referencing happens, and the thing or its parts are moved,
+      I do have to work out reference counting and other release mechanisms.
+      I will need some compare-and-swap or other mechanism to avoid race
+      conditions.
+    - 2025-11-15: I do need to look at the AED Free-store system and also
+      how this can fit with Henry Baker's generational scheme.  The longer-
+      lived heaps may just be managed differently. Murky topic to be
+      handled by new folio needed now.
+
+ * On 2011-04-22 (#66.98) I Make notes on Hash Tables and gather some useful
+   references.
+    - [Litw80] Litwin, Witold.  Linear Hashing: A New Tool for File and Table
+      Addressing. pp.212-223 in Proceedings of the 6th International
+      Conference on Very Large Databases (VLDB), Montreal Quebec, Canada,
+      October 1980.
+    - My foray into the Nemes patent stuff,
+      <http://lwn.net/Articles/439720/>.  My commentary begins at
+      <https://lwn.net/Articles/439733?>.  This is about infringement of a
+      patent involving incremental garbage collection in a "linear" hashing
+      system.  The patent is about opportunistic deletion of unused entries
+      and a possible shrinkage of the number of buckets containing all of
+      the items (or at least a portion of the items that is needed to search
+      with).  In the scheme, the number of buckets (each having groups of
+      keys) is increased as the database increases.  There's nothing about
+      key distributions and key popularity.  That's outside the perview.
+      The patent seems to be aboupt opportunistic removal of dead items
+      while searching through the items in a bucket.  There also needs to
+      be some consideration of shrinking the number of buckets as things
+      become sparse, but that might not be relevant, depending on the
+      application. On 2025-11-15 I captured the LNW.net discussion of this,
+      starting with my first comment, in
+      LwNet-2011-04-21-2131-ThreadOnNemesPatentForLinearHashingDeletions.pdf
+      I am interested in this as part of the hash-table lookup and this aspect
+      of memory management can be considered to have been looked at starting
+      in 2011.
+ * ACTIONS ON HASHING. There needs to be an oMiser folio on Memory Management.
+   There is a collateral matter for linear hashing that is collateral with
+   memory management.  Mmm, maybe more than collateral since all individuals
+   and many others may have accelerators or any kind of synthetic "behind"
+   them.  And if other ob-cells can have accelerators, it gets sort of
+   important to share those, if not the ob-cells themselve.  This can make
+   the improvement of comparisons even more valuable at some point.  A ton of
+   performance modeling is going to be needed though.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.8  2025-11-16T10:11Z Complete notes capture through #66
  0.1.7  2025-11-12T00:11Z More historical notes
  0.1.6  2025-11-11T19:27Z Backing up what I have so far
  0.1.5  2025-11-11T02:57Z Continue old-notebook clippings

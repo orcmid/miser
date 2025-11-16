@@ -1,4 +1,4 @@
-ob.txt 0.0.4                        UTF-8                       dh:2025-11-13
+ob.txt 0.0.5                        UTF-8                       dh:2025-11-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -39,7 +39,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Mathematical Structure.  Miser Project on GitHub
-   text file ob.txt version 0.0.4 dated 2025-11-13 available on the
+   text file ob.txt version 0.0.5 dated 2025-11-16 available on the
    Internet as a version of <https://orcmid.github.io/miser/ob/ob.txt>.
 
 NOTES AND TODO
@@ -132,8 +132,19 @@ NOTES AND TODO
    domain of discourse, etc. I am easily distracted into meta-questions that
    I do not form well, though.
 
+ * In 2008-07-20 (#61.16) I start a page headed "Miser: Primitive Identities
+   for Obs" and that is otherwise completely blank.  In this notebook I am
+   getting better "chaining" topics together by pointing to the previous page
+   on the same subject and then, when there's a later one, pointing to the
+   succeeding page, all across notebooks as needed. There are lots of stickies
+   on the right edge of pages where there are items to follow-up by a future
+   me.  This curation is just beginning here in #61.  A lot going on is work
+   on OASIS ODF TC and notes on "Dreaming in Code."  This sort of thing
+   continues through #62-#63 with no mention of Miser Project.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5 2025-11-16T01:08Z Complete notes capture through #66
  0.0.4 2025-11-13T21:41Z Wrap-up with notebook #60
  0.0.3 2025-11-12T00:05Z More historical notes
  0.0.2 2025-11-11T02:49Z Continue collection of historical notes

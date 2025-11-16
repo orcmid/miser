@@ -1,4 +1,4 @@
-miser.txt 0.1.3                     UTF-8                         2025-11-12
+miser.txt 0.1.4                     UTF-8                         2025-11-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                The Miser Project
@@ -138,10 +138,17 @@ MANIFEST FOR <https://github/orcmid/miser> but maintained on the GitHub Pages.
  ATTRIBUTION
 
    Hamilton, Dennis E. The Miser Project on GitHub.  Miser Project text file
-   miser.txt version 0.1.3 dated 2025-11-12, available on the Internet as a
+   miser.txt version 0.1.4 dated 2025-11-16, available on the Internet as a
    version of <https://orcmid.github.io/miser/miser.txt>
 
 TODO
+
+  * URGENT? I need to rescue what I can from <https://miser-theory.info> while
+    I still own the domain and have the site available to me on the Internet
+    and, better, on my laptop's VSS and FrontPage files. I have access from
+    my Windows 10 Desktop and I should treat this with some urgency before
+    everything gets refactored with retirement of computers and migration off
+    Windows 10 (and XP in case of the old laptop).
 
   * I have no idea why I called this a "shadow" file. I need to look at the
     "original" in the full GitHub repository and figure out what I mean and
@@ -311,8 +318,46 @@ TODO
     programming system. Here I am entertaining a progressions of versions
     to get there, but have no idea how to start.
 
+  * Around 2010-02-17 (#64.62) A silence while I was focused on other things
+    ends up on an Astraendo/MISER topic.  This gets into some abstract-theory
+    musings that are appropriate under the (now-created) CS topic.  Astraendo
+    is what I take as the Italian form of "Abstraction" and I use it for
+    material at <httsp://miser-theory.info> that I should rescue and preserve
+    here, as I reflect on 2025-11-15.
+
+  * On 2010-10-28 (#66.9) I ponder Miser Determinism/Interaction.  Now
+    (2025-11-15) it seems that I have decided that there is no need to
+    differentiate between pure evaluations and have something different
+    where there are side-effects and especially interactions.  My angst is
+    about non-pure variables.  I have a different view of stateful things,
+    and input-output is also covered by the notion of IO-reproducibility
+    (a Van Horn dictum that I need to dig up).  Interaction is tricky, since
+    the ins-and-outs are interdependent but not in ways visible internally.
+    I may have to punt on that, which may be as bad as Landin punting on
+    assignment operations.  We'll see if I can get away with it.  It's
+    not so easy as modeling assignment, it is more like having volatile
+    things where the other parties are invisible.
+
+  * These days (2025-11-15), I think of input (i.e., from CON:) is reading
+    from a list as if it was always there are it is only being navigated.  So
+    it could be replaed.  There does not seem to be a counterpart for output
+    except building a kind of reverse log.  Because CON input and output must
+    be considered an interaction, even if there is no such context, and that
+    could be coordinated in a kind of log also.  Since it is [o]Frugal that is
+    I/O involved, this becomes an interesting interaction between oFrugal and
+    oMiser and rather fascinating if we introduce input-output at the oMiser
+    level.
+
+  * On 2010-12-16 ($66.33) I consider that Frugal is like a browser int a
+    Miser server/cloud.
+     - The command Frugal can be told which server to use
+        -- should makd for testing in scripts
+        -- depends on a COM DLL for the server?
+        -- this methodology comes from nfoWare.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.4 2025-11-16T01:09Z Complete note captures through #66
  0.1.3 2025-11-12T00:09Z More historical notes
  0.1.2 2025-11-11T19:24Z Continue adding materials from old notebooks
  0.1.1 2025-11-11T02:47Z Bring in items from old notebooks
