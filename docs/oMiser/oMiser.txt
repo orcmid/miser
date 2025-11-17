@@ -1,4 +1,4 @@
-oMiser.txt 0.1.8                    UTF-8                         2025-11-16
+oMiser.txt 0.1.9                    UTF-8                         2025-11-17
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,7 +41,7 @@ oMiser.txt 0.1.8                    UTF-8                         2025-11-16
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.8 dated 2025-11-16,
+   Notes.  Miser Project text file oMiser.txt version 0.1.9 dated 2025-11-17,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
@@ -249,13 +249,13 @@ TODO
  * On 2001-06-01 (#30.44) I start rambling about Ob brokers determined Obs.
    My conclusion is that communication of canonical forms is all it takes.
 
- * On 2001-06-15 (#30.51) I am pondering what I now term "realism."
+ * On 2001-06-15 (#30.51) I am pondering what I now term "~~real~~idealism."
    "The idea is that we always see things in a process space as if there is
    this persistent, consistent world.  Whenever process spaces are connected,
    the behavior is as if there is only one world visible to all of them.
    This is an illusion and we have to be careful."
    I was definitely over-thinking this, because it does not concern me today
-   (2025-11-10).
+   (2025-11-10).[2025-11-17 The term is "idealism", not "realism."]
 
  * On 2001-07-26 (#30.76) I am musing about Obs that carry values (ie., now
    called synthetic individuals) and get that difference of the synthetics
@@ -271,7 +271,15 @@ TODO
    comparison does not alter any references someone is already holding. I
    think this is about the prospect of consolidating references when two obs
    in different ob-cells are found to be identical.  That definitely has
-   reference-counting impacts.
+   reference-counting impacts. [2025-11-17 not particularly, it decrements
+   one and increases another, that's all. We might have some performance
+   issues on what happens when a count gets to 0, and more about threading
+   things together in generations.  Using symmetric lists is the best trick.
+   But we're now talking about holding more pointers, somewhere.  Because it
+   is intended to have HashFlags indicate when a(x) and b(x) self-referencing
+   we could use those link slots for other things. That could be messy but
+   checking the flags should be more efficient than traversing a pointer,
+   shouldn't it?]
 
  * On 2002-01-24 (#32.16-17) I am still pondering basic operations on a COM-
    like interface structure.  So there is a class factory call and we get
@@ -365,7 +373,15 @@ TODO
  * On 2007-11-05 (#59.84) I consider "code formats" with XML streams that are
    slow to write but fast to read, and also enclosing in an OPC container
    (or the ODF equivalent), and also self-contained/-extracting executables.
-   Just musings at that point.
+   Just musings at that point.  [2025-11-07 for Fast reading, the XML must
+   provide a kind of reverse Polish and in that case, producing the XML
+   requires topological sorting and a kind of labelling and back pointing to
+   shared ob-cells.  But that says more, now, about needing a symbol table
+   for those at least while loading.  This has me thinking about Knuth's
+   assembly-language "program points" though that's not really it.  It does
+   mean that the HashFlag is not enough in this case. There needs to be a
+   generated label, and whether those can be reused in the stream is up for
+   grabs.]
 
  * On 2010-10-07 (#65.119) I turn my attention to Miser Accelerators.  In
    this case it is about having some sort of block of extended data and an
@@ -426,6 +442,8 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.9  2025-11-17T20:42Z Correct "realism" to "idealism" and add some further
+        musings
  0.1.8  2025-11-16T10:11Z Complete notes capture through #66
  0.1.7  2025-11-12T00:11Z More historical notes
  0.1.6  2025-11-11T19:27Z Backing up what I have so far
