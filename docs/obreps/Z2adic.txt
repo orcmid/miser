@@ -1,4 +1,4 @@
-Z2adic.txt 0.0.9                     UTF-8                         2025-08-01
+Z2adic.txt 0.0.10                   UTF-8                         2025-11-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
@@ -79,25 +79,22 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
 
                               CONTENT
 
+              1. SYNOPSIS: THE FUNDAMENTAL REPRESENTATION
+
               2. MATHEMATICAL STRUCTURES ‹N› AND ‹Z›
 
-                 1.1 Notation and Basic Operations
-                 1.2 Basic Constraints (Axioms)
-                 1.3 Additional Characteristics
-                 1.4 Interpretations
+                 2.1 Notation and Basic Operations
+                 2.2 Basic Constraints (Axioms)
+                 2.3 Additional Characteristics
+                 2.4 Interpretations
 
               3. Zadic IMPLEMENTATION OF ‹Z›
 
-                 2.1 Prototypical (Standard) Representation
-                 2.2 Notable Qualities
-                 2.3 ‹bp› Interpretation in ‹ob›
-
+                 3.1 Prototypical (Standard) Representation
+                 3.2 Notable Qualities
+                 3.3 Interpretation in ‹ob›
 
               4. ‹Z› PRIMITIVE OPERATIONS
-
-                 3.4 ‹ba› Simulation in ‹ob›: All-‹bvn› Interpretation ob.bvx
-                 3.5 Circling back: Distinguishing ob.bvx as ‹ba›
-                     interpretation
 
               5. NOTES AND REFERENCES
                  Sources on N, Z, and 2's complement numeral representations
@@ -114,301 +111,6 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     ‹N› = 〈Ni,Nf,Nt〉
     ‹Z› = 〈Zi,Zf,Zt〉
 
-
-
- 2.1 Notation and Basic Operations
-
-    The ‹ba› domain of discourse, Ba, is a finite set having at least two
-    distinct members, two of which are distinguished as ⊤ and ⊥, respectively.
-
-    The ‹bp› domain of discourse, Bp, consists of only the two distinguished
-    entities and is taken as the prototypical (standard) Boolean Algebra.
-
-       ⊤ (nickname "top")
-       ⊥ (nickname "bot")
-
-    The basic operations consist of a small number of functions typically
-    expressed as operations.
-
-        ~ x  "comp" x, signifies the complement of x, comp(x)
-
-      x ∩ y  x "cap" y also known as the meet of x and y, meet(x,y)
-
-      x ∪ y  x "cup" y also known as the join of x and y, join(x,y)
-
-      x ∸ y  x "sep" y, sep(x,y) is x ∪ y excluding x ∩ y, also known as the
-             symmetric difference, that which is separate between x and y, if
-             anything.
-
-    In addition to equality, there is also an ordering relation,
-
-      x ⊆ y  x "sub" y, sub(x, y) comparable to the subset relation among
-             sets.
-
-    To simplify expressions and reduce parentheses, the above listing is
-    taken as an order of precedence, from strongest to weakest.  That is
-
-        x ∩ ~ y ∪ ~ x ∩ y = (x ∩ (~ y)) ∪ ((~ x) ∩ y)
-
- 1.2 Basic Constraints (Axioms)
-
-    The basic conditions on all ‹ba› structures are presented in terms of
-    axioms, arrangements that hold whatever the domain of discourse, Ba,
-    happens to be and however the operations are defined in satisfaction
-    of these constraints without any inconsistency.  The conditions Ba1-Ba5
-    are standard axioms for Boolean Algebras.  They are invariants, applying
-    without exception in the context of a structure that satisfies Boolean
-    Algebra conditions.  This can also be said to constitute a Boolean Algebra
-    interpretation of a satisfying structure.
-
-    Ba1. Commutativity
-         x ∪ y = y ∪ x
-         x ∩ y = y ∩ x
-
-    Ba2. Identity
-         x ∪ ⊥ = x
-         x ∩ ⊤ = x
-
-    Ba3. Distributivity
-         x ∪ (y ∩ z) = (x ∪ y) ∩ (x ∪ z)
-         x ∩ (y ∪ z) = (x ∩ y) ∪ (x ∩ z)
-
-    Ba4. Complements
-         x ∪ ~ x = ⊤
-         x ∩ ~ x = ⊥
-
-    Ba5. Subordination
-         x ⊆ y ⇔ x = x ∩ y
-
- 1.3 Additional Characteristics
-
-    The following are consequences of the chosen axioms.  They apply to any
-    Boolean Algebra structure ‹ba› with distinguished domain of discourse Ba
-    and definite basic operations satisfying Ba1-Ba5.
-
-    Ba6. Associativity
-         x ∪ (y ∪ z) = (x ∪ y) ∪ z
-         x ∩ (y ∩ z) = (x ∩ y) ∩ z
-
-    Ba7. Absorption
-         x ∪ (x ∩ y) = x
-         x ∩ (x ∪ y) = x
-
-    Ba8. Unique Complement Pairs
-         x = ~ ~ x
-         x ≠ ~ x
-
-    Ba9. Separation (definition)
-         x ∸ y = x ∩ ~ y ∪ ~ x ∩ y
-
-    Ba10. Partial Ordering
-         ⊥ ⊆ y (hence "bot")
-         x ⊆ ⊤ (hence "top")
-
-    Ba11. Identity
-         x = y  ⇔ x ⊆ y ∧ y ⊆ x
-
-    Ba12. The number of members in the domain of discourse Ba is even and a
-         power of 2.
-
- 1.4 Interpretations
-
-
-
-    After [Forster2003], an interpretation where "="s correspond is termed
-    an implementation.  We will make that the case.
-
- 2. Z2adic IMPLEMENTATION OF ‹Z›
-
- 3.4 ‹Z› Implementation in ‹ob›: Treatment of ob.bvx
-
-    By virtue of the isomorphism between any ‹ba› and some ‹bn› (section 3.1)
-    and thence some ‹bvn› (section 3.2), it is sufficient to interpret the
-    ‹bvn› in ‹ob›.
-
-      * For 0 and 1 vi entities in ‹bvn› n-tuples [v1, v2, ..., vn], use the
-        interpretation ob.p01.bp in the equivalence form (section 2.5),
-        signified I(vi).
-
-      * Interpret the sequence [v1, v2, ..., vn] with the construction
-        ob.c(I(v1), (ob.c(I(v2), ob.c(..., ob.c(I(v(n-1)), xn)...)))) where
-        xn is restricted to a singleton under interpretation ob.p01.bp.  This
-        ‹ob› representation is abbreviated [I(v1), I(v2), ..., I(vn):] with
-        I(vn) not a pair.
-
-      * For representation of corresponding ‹bvn› and the concrete-isomorph
-        sequence [xn, ... x2, x1] (section 3.3), interpret via ‹ob› sequence
-        representation [I(x1), I(x2), ..., I(xn):].
-
-    Interpretation of the ‹bvn›-represented basic operations (section 1.1) is
-    by corresponding ob.bvx functions represented as follows.
-
-         ob.bvx.bot = ob.p01.bp.bot  (i.e., representing [0, 0, ...] here)
-         ob.bvx.top = ob.p01.bp.top  (i.e., representing [1, 1, ...] here)
-
-         ob.is-singleton(x) ⇒ ob.bvx.comp(x) = ob.p01.bp.comp(x)
-       ¬ ob.is-singleton(x)
-           ⇒ ob.bvx.comp(x) = ob.c( ob.p01.bp.comp(ob.a(x)),
-                                       ob.bvx.comp(ob.b(x)) )
-
-         ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ ob.bvx.meet(x, y) = ob.p01.bp.meet(x, y)
-         ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.bvx.meet(x, y) = ob.bvx.meet(y, x)
-       ¬ ob.is-singleton(x) ∧ ob.is-individual(y)
-           ⇒ ob.bvx.meet(x, y) = y
-       ¬ ob.is-singleton(x) ∧ ob.is-enclosure(y)
-            ⇒ ob.bvx.meet(x, y) = x
-       ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.bvx.meet(x, y) = ob.c( ob.p01.bp.meet(ob.a(x), ob.a(y)),
-                                          ob.bvx.meet(ob.b(x),ob.b(y)) )
-
-    Using the above representation of ob.bvx.meet, represent each of
-    ob.bvx.join and ob.bvx.sep by substitution of "join" for "meet"
-    and substitution of "sep" for "meet", respectively.  Adjust the two
-    ¬ ob.is-singleton(x) ∧ ob.is-singleton(y) cases appropriately (in the
-    manner of section 2.1 standard operations) taking y as if one of
-    ob.bvx.bot or ob.bvx.top.
-
-         ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ ( ob.bvx.sub(x, y) ⇔ ob.p01.bp.sub(x, y) )
-         ob.is-individual(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ob.bvx.sub(x, y)
-         ob.is-enclosure(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ( ob.bvx.sub(x, y)
-                  ⇔ ob.bvx.sub(x, ob.b(y)) )
-       ¬ ob.is-singleton(x) ∧ ob.is-singleton(y)
-           ⇒ ( ob.bvx.sub(x, y)
-                 ⇔ ob.p01.bp.sub(ob.a(x), y) ∧ ob.bvx.sub(ob.b(x), y) )
-       ¬ ob.is-singleton(x) ∧ ¬ ob.is-singleton(y)
-           ⇒ ( ob.bvx.sub(x, y)
-                 ⇔ ob.p01.bp.sub(ob.a(x), ob.a(y))
-                      ∧ ob.bvx.sub(ob.b(x),ob.b(y)) )
-
-         ob.bvx.is-eq(x, y) ⇔ ob.bvx.sub(x,y) ∧ ob.bvx.sub(y,x)
-
-    with the interpretation of ‹bvn› x = y being ob.bvx.is-eq(I(x),I(y)).
-
-    Note some features of this interpretation.
-
-      * The ob.bvx representations are total.  Every ob has interpretation
-        as a sequence under this simulation of ‹bvn› and the representation
-        is defined over all definite obs.
-
-      * Provided that the represented operations are confined to operand obs
-        that are interpretations of ‹bvn› = 〈Bvn,Bvnf,Bvnt〉 domain elements,
-        there is complete fidelity of ob.bvx as a simulation of ‹bvn›.
-
-      * The interpretation of ‹bv1› in ob.bvx is equivalent to simulation in
-        ob.p01.bp restricted to singletons.
-
-      * When an operand sequence [x1, x2, ..., xm:] is of length less
-        than that of another operand [y1, y2, ..., yn:], the ob.bvx
-        representation is as if the shorter sequence is extended to match the
-        length of the longer one by suffixing its xm element enought times,
-        [x1, x2, ..., xm, xm, ..., xm:]
-
-      * ob.bvx simulates a Boolean Algebra, one that accomodates all ‹bvn› of
-        arbitrary (but finite) n.
-
-      * Another interpretation of ob.bvx is as a simulation of binary numerals
-        of arbitrary length.  In this case, xi corresponds to 2^(i-1) and a
-        subset corresponds to to the sum of those powers for which xi = 1.
-
-    The extension of shorter sequences can be taken as viewing the shortened
-    one as contraction of an arbitrary x.  We can go farther and derive
-    canonical forms by contraction.
-
-         ob.is-singleton(x)
-           ⇒ ob.bvx.cf(x) = ob.p01.bp.cf(x)
-       ¬ ob.is-singleton(x)
-           ⇒ ob.bvx.cf(x) = contraction(ob.p01.bp.cf(ob.a(x)), ob.b(x))
-      where
-         ob.is-singleton(y)
-           ⇒ contraction(x, y) = trimback(x, ob.p01.bp.cf(y))
-       ¬ ob.is-singleton(y)
-           ⇒ contraction(x, y)
-                 = contraction(ob.c(ob.p01.bp.cf(ob.a(y)),x), ob.b(y))
-      where
-         ob.is-singleton(x) ∧ x = y
-           ⇒ trimback(x, y) = y
-         ob.is-singleton(x) ∧ x ≠ y
-           ⇒ trimback(x, y) = ob.c(x, y)
-       ¬ ob.is-singleton(x) ∧ ob.a(x) = y
-           ⇒ trimback(x, y) = trimback(ob.b(x), y)
-       ¬ ob.is-singleton(x) ∧ ob.a(x) ≠ y
-           ⇒ trimback(x, y) = repack(x, y)
-      where
-         ob.is-singleton(x)
-           ⇒ repack(x, y) = ob.c(x, y)
-       ¬ ob.is-singleton(x)
-           ⇒ repack(x, y) = repack(ob.b(x), ob.c(ob.a(x), y))
-
-    Here the auxiliary function representations for contraction, trimback,
-    and repack are internal to the representation of ob.bvx.cf(x).  There are
-    preconditions only satisfied by how the subordinate representations are
-    appealed to in the representation of their superiors, above.  These
-    together ensure that the result is an ob.bvx canonical form.
-
-    ob.bvx.cf(x) is an ob sequence in which the elements are ob.p01.bp.cf
-    canonical forms, whether labelled as ⊥ and ⊤ or 0 and 1.  Furthermore,
-    ob.bvx.cf(x) is the shortest ob sequence, [v1:] or [v1, v2, ..., v(n-1),
-    vn:], where v(n-1) is different than vn.  It can be seen that [0:] in
-    this notation is  equivalent to [0, 0, 0, ...], hence the ⊥ of ‹bvx›, and
-    [1:] is equivalent to [1, 1, 1, ...] and hence the ⊤.
-
- 3.5 Circling back: Distinguishing ob.bvx as ‹ba› interpretation
-
-    Concluding that the representation, ob.bvx, is amenable to interpretation
-    of any Boolean Algebra in ‹ob› leaves open questions about which Boolean
-    Algebra and which interpretation thereof, and how is that conveyed.
-
-    Assuming some sequence, An = [a1, a2, ..., an], the indicator functions
-    (section 3.3), can be represented as follows.  Associate, with An, the
-    corresponding vectors Vn = [[1,0:], [0,1,0:], ..., [0,...,0,1:]] where
-    the last has n-1 leading 0's and V1 = [[1:]].
-
-    Then ob.bvx.sub(vi, x) ⇔ ob.bvx.bvn.Iai(x) = 1, by definition.
-
-    In order to interpret a specific ‹bvn›, n > 0, in ob.bvx, one can clamp
-    the canonical forms such that only n bits of variation are in the
-    interpretation and the set of canonical forms.
-
-        ob.bvx.bvn.top = [1,...,1,0:]                    "with n 1's"
-
-        ob.bvx.bvn.clamp(x) = ob.bvx.meet(x, ob.bvx.bvn.top)
-
-        ob.bvx.bvn.cf(x) = ob.bvx.comp(ob.bvx.comp(ob.bvx.bvn.clamp(x) ) ).
-
-    That some ob.bvx vectors have an additional (n+1)-th position does not
-    impact taking other ob.bvx operations as ob.bvx.bvn operations, provided
-    that the ‹bvn› x = y is interpreted in ‹ob› as
-
-        ob.bvx.bvn.cf(x) = ob.bvx.bvn.cf(y)
-
-    and ob.bvx.bvn.sub(x,y) ⇔ ob.bvx.sub(ob.bvx.bvn.clamp(x), y)
-
-    Association with ai is still implicit and also order-dependent.  It is
-    tempting to go farther and present the association explicitly, say with
-
-        Mn = [[v1, I(a1)], [v2, I(a2)], ..., [vn, I(an)]]
-
-    where we require some manner of interpretation/expression of the ai,
-    internal to the structure, especially in simple domains such as that of
-    ‹ob›.
-
-    For interpretation in ‹ob› by means such as ob.bvx, there are two
-    important circumstances to be dealt with, especially when carried into
-    computational-interpretation: the designation of the ai and preserving
-    association with vi in operands of the represented primitive operations.
-    Such implementation/simulation exigencies apply in the reduction to
-    computation no matter the simplicity of the mathematical formulations.
-
-    There are provisions in computational systems that bring some order to
-    securing of interpretation constraints by computational means, including
-    reconciliation between what appear to be incompatible interpretations of
-    the same structures.  Investigation of those prospects is left to
-    consideration of extensions to the basic ‹ob› model of computation.
 
 5. NOTES AND REFERENCES
 
@@ -454,7 +156,6 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
            Exercise 4.1(31) introduces K. Hensle's 2-adic numbers and the
         integer cases are precisely those of arithZ here.
 
-     Internet at <https://en.wikipedia.org/w/index.php?title=Boolean_algebra_(structure)&oldid=867568743>.
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -478,13 +179,13 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
  ATTRIBUTION
 
    Hamilton, Dennis E. Z2adic Integer Arithmetic in oMiser.  Miser Theory
-   Conception text file Z2adic.txt version 0.0.9 dated 2025-08-01, available
+   Conception text file Z2adic.txt version 0.0.10 dated 2025-11-18, available
    on the Internet as a version of
    <https://orcmid.github.io/miser/obreps/Z2adic.txt>
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- TODO:
+ NOTES AND TODOS:
 
   * Complete the refactoring and establish tombstones in the previous
     location.  There are incorrect cross-references in this material.
@@ -541,22 +242,47 @@ BOILERPLATE BELOW HERE - REWRITING FOR mathZ PENDING
     in the Z2adic case to FOM.  We'll see how that lands.  I am restating it
     here, now.
 
+ * Representing Rationales: (2025-11-18) I was having a conversation in my
+   head about explaining why ‹ob› Obs are acyclic and what can one do when
+   wanting to represent a cyclic number.  There is a device in [Knuth1998:
+   Exercise 4.1(31)] that I have not mastered, but there is a way to do a
+   kind of generator "for as many elements as you want, but always finite."
+   There has to be some constraint to avoid looping indefinitely, of course.
+   Consider a pair [next, rep:] where, if next is a singleton, we proceed
+   with [.a rep, rep:] and otherwise take .a next as the next item and the
+   continuation is [.b next, rep:]  That's the idea. what has to be worked
+   out is how we are getting things in the proper order.  For example, the
+   representation of integer (parts) is little endien, so as we travers the
+   list we are getting higher-order digits.  The rational recurrences are
+   heading in the other direction and I don't know the adjustment for that
+   off-hand.  Instead of climbing upward, we are working downward.  That
+   seems peculiar.
+
+ * I need to determine how to deal with Q2adic (rationales) separate from
+   integers and also how to deal with them because there is a binary point
+   placement matter.  I'm not yet (2026-11-18) ready to dig any farther
+   into this.  It looks like a costly arithmetic if done at this binary
+   level in list structures.
+
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.9 2025-08-01T19:47Z Correct error in the rule for compressing :1
- 0.0.8 2024-01-17T18:26Z More TODOs, much more refactoring required
+ 0.0.10 2025-11-18T15:19Z Tear out old carry-over material, start pondering
+        the way to make Q2adic repeated digits work.
+ 0.0.9  2025-08-01T19:47Z Correct error in the rule for compressing :1
+ 0.0.8  2024-01-17T18:26Z More TODOs, much more refactoring required
  0.0.7 2024-01-15T20:33Z Touch-ups, simplifying title
- 0.0.6 2023-11-10T20:38Z Adjust as part of refactoring to orcmid.github.io
- 0.0.5 2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obrep/Z2adic.txt
-       as part of Miser Project on GitHub refactoring.
- 0.0.4 2023-02-05T05:48Z Adjust to name Z2adic.txt and introduce a short-hand
-       numerical-bumpered notation that is more compact than the list forms
-       employed in the oMiser computational interpretation.
- 0.0.3 2023-02-05T02:41Z Small change commited before changing the name again.
- 0.0.2 2023-02-03T16:48Z Rename mathZ to Zadic and touch up accordingly.
- 0.0.1 2023-02-03T16:04Z Ponderings on 2-adic and what that means, with new
-       references and some more scrapping of the boilerplate.
- 0.0.0 2023-01-30T23:22Z Draft synopsis over boilerplate of boole.txt version
-       0.5.3
+ 0.0.6  2023-11-10T20:38Z Adjust as part of refactoring to orcmid.github.io
+ 0.0.5  2023-11-10T20:32Z Migrate to orcmid.github.io/miser/obrep/Z2adic.txt
+        as part of Miser Project on GitHub refactoring.
+ 0.0.4  2023-02-05T05:48Z Adjust to name Z2adic.txt and introduce a short-hand
+        numerical-bumpered notation that is more compact than the list forms
+        employed in the oMiser computational interpretation.
+ 0.0.3  2023-02-05T02:41Z Small change commited before changing the name again.
+ 0.0.2  2023-02-03T16:48Z Rename mathZ to Zadic and touch up accordingly.
+ 0.0.1  2023-02-03T16:04Z Ponderings on 2-adic and what that means, with new
+        references and some more scrapping of the boilerplate.
+ 0.0.0  2023-01-30T23:22Z Draft synopsis over boilerplate of boole.txt version
+        0.5.3
 
                        *** end of Z2adic.txt ***
