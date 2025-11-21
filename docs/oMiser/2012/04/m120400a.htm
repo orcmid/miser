@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Language" content="en-us">
 <meta name="GENERATOR" content="Microsoft FrontPage 6.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>m110400a: Notes &amp; Work Items</title>
+<title>m120400a: Notes &amp; Work Items</title>
 <!--$$Header: /miserCompagno/construction/2007/11/c071101a.htm 45    13-12-08 11:14 Orcmid $-->
 <!-- Customized from TROST /info/templates/00/i000006a.htm of 2005-08-17T16:32Z -->
 <base target="_self">
@@ -32,10 +32,10 @@
 <font color="#990033"><strong>
 
 <font face="Arial, Helvetica, Geneva, Swiss, Sans Serif">
-<a rel="nofollow" href="../../m000001.htm#m110400"><font color="#990033">m110400</font></a>
+<a rel="nofollow" href="../../m000001.htm#m120400"><font color="#990033">m120400</font></a>
 <a href="../../m000001.htm"><font color="#990033">oMiser Articles</font></a><big><big><i><br>
-</i></big></big><a href="m110400.html"><font color="#990033">Omiser Objects 
-(MOb) Directory Operation</font></a><br>
+</i></big></big><a href="m110400.html"><font color="#990033">MobPack: oMiser Ob 
+External Packaging</font></a><br>
 <em><font size="5">Notes &amp; Work Items</font></em></font></strong></font></p>
     </td>
     
@@ -45,15 +45,15 @@
       <p align="right">
 		<b><code>
 		<a target="_top" rel="nofollow" href="../../../">miser</a>&gt;<a target="_top" rel="nofollow" href="../../">oMiser</a>&gt;<br>
-		<a target="_top" rel="nofollow" href="../">2011</a>&gt;<a target="_top" rel="nofollow" href="./">04</a>&gt;</code></b></p>
+		<a target="_top" rel="nofollow" href="../../2011/">2012</a>&gt;<a target="_top" rel="nofollow" href="../../2011/04/">04</a>&gt;</code></b></p>
 <p align="right">
 		<a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
             &nbsp;</a></p>
       <p align="right"><b><code>
-		<a target="_top" rel="nofollow" href="m110400a.htm">m110400a</a>&gt;</code></b><br>
+		<a target="_top" rel="nofollow" href="../../2011/04/m110400a.htm">m120400a</a>&gt;</code></b><br>
       <small>
       <small>
-      <a href="#v0.0.1">0.0.1</a>&nbsp;<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M %Z" startspan -->2025-11-20 16:27 -0800<!--webbot bot="Timestamp" i-checksum="28646" endspan --> </small></small></p>
+      <a href="#v0.0.1">0.0.1</a>&nbsp;<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M %Z" startspan -->2025-11-20 17:08 -0800<!--webbot bot="Timestamp" i-checksum="28662" endspan --> </small></small></p>
 </font>
       </td>
     
@@ -133,141 +133,91 @@
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">There is a constraint that I hope is not fatal.&nbsp; In 
-		running oMiser, when we need to clean heap-0 on the &quot;hardware&quot; stack, we 
-		need a way to know what items are referenced from outside of heap-0.&nbsp; 
-		A couple of those might involve &quot;working&quot; pointers about to be used in 
-		the interpreter or other process.&nbsp; There may be others referenced 
-		from the MOb, but technically not from older heaps.&nbsp; There has to 
-		be a rule that older heaps can't point into younger ones.&nbsp; That 
-		breaks the partial ordering on obs, for one thing.&nbsp; Now there's a 
-		problem with synthetics. And individuals generally, perhaps.&nbsp; In 
-		some sense, the MOb is the oldest heap of all, and everything it points 
-		to is, in this sense, younger than itself.&nbsp; This situation is 
-		making my head hurt and I need to work this out better, also with a 
-		general memory-management organization and appropriate principles.
-		</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">I notice some confusion between the key and hash-function 
-		terminology in the Wikipedia article.&nbsp; In particular, there is the 
-		assumption that the key and content are together.&nbsp; That's not great 
-		for variable-size and even changing content.&nbsp; For oMiser, we have 
-		the desire for some content be moveable as part of garbage-collection, 
-		although it is unclear whether some content goes into a different kind 
-		of storage.&nbsp; Hmm, and if we generate some kind of computer code, 
-		that code must work when relocated as a block.&nbsp; Basically, the 
-		problem I think I am avoiding is holding pointers into the MOb that 
-		would then have to be fixed if a MOb entry were moved (i.e.., as a 
-		result of splitting/shrinking).&nbsp; We're talking about operations 
-		within a single memory and that might make this all easier.</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">On 2011-04-19 (#66.98) I also referenced Griswold and 
-		Townsend in Software Practice &amp; Experience but had no link.&nbsp; The 
-		Wikipedia Linear Hashing does find the reference for [<a href="https://onlinelibrary.wiley.com/doi/10.1002/spe.4380230402">Griswold1993</a>]. 
-		This has a relevant usage and I must (1) capture it in bib/ and (2)&nbsp; 
-		explore it for useful information on oMiser memory management.</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">On 2011-04-22 (#66.98) I mention a
-		<a href="https://en.wikipedia.org/wiki/Linear_hashing">Wikipedia Linear 
-		Hashing</a> article.&nbsp; The current article is useful but evidently 
-		different.&nbsp; It also seems a bit sloppy.&nbsp; I need to go through 
-		the citations and incorporate good links in my bib/&nbsp; I also think 
-		that the LH* extension simply doesn't apply to oMiser.&nbsp; For a 
-		distributed Miser operation, maybe. The Talk on this article consists of 
-		7 remarks from October 2005 to January 2008 and that's it.</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">There needs to be a separate topic on Memory Management 
-		overall.&nbsp; I know I was interested in buddy systems very early, I 
-		just don't know that it figurd into my thinking about Miser and I 
-		haven't found any helpful notes on the topic.</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">I am musing that Memory Management, apart from the stack, 
-		should be by a Knuth buddy system, if the use of powers-of-2 holds up.&nbsp; 
-		A lot of this, and ever doing deletions from the MOb needs to be figured 
-		out.&nbsp; But a buddy system can work with the creation of generations 
-		as well as MOb growth.&nbsp; Just wondering for now.&nbsp; Much would 
-		need to be tested and I think instrumentation will be indispensible.&nbsp; 
-		Of course that will impact things, so hopefully not detrimental.&nbsp; I 
-		also need to think about this controlled &quot;heaping&quot; with regard to the 
-		C/C++ Language Heap that is part of the run-time platform and how 
-		memory-management is handled generally.</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-19</font></td>
+		&nbsp;</td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">Use ]<a href="https://orcmid.github.io/bib/compsci.htm#Larson1988">Larson1988</a>] 
-		as the better source for laying out how Linear Hashing works.</font></td>
+		&nbsp;</td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-16</font></td>
+		<b><small>2025-11-20</small></b></td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">Resolve the connection of an ob-cell with additional 
-		materials of any kind, lifecycle management of any of them, and 
-		determining generational memory-management associations.</font></td>
+		<font size="2"><b>It occurs to me that reference-counting is helpful in 
+		this respect.&nbsp; I need to see if that makes the difference or not.</b></font></td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-16</font></td>
+		<b><small>2025-11-20</small></b></td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">Recover the principles of operation around Linear Hashing 
-		and the fundamental technique.</font></td>
+		<font size="2"><b>Go into (#68.9) and scrub out whatever else is needed 
+		for Notes and Work Items here.</b></font></td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
-		<font size="2"><b>in progress<br>
-&nbsp;</b></font></td>
+		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		<font size="2">2025-11-16</font></td>
+		<b><small>2025-11-20</small></b></td>
 		<td width="78%" align="left" valign="top">
-		<font size="2">Scan through the 2011-04-19/30 (#66.98, .101-.109, 
-		.112-.113, .116) notes to create bib/ citations of materials around the 
-		Linear Hashing technique and descriptions/applications of it.</font></td>
+		<font size="2"><b>See if the topological sorting in the Stanford 
+		Graphbase will work with shared nodes by labeling and cross-references 
+		to labels.</b></font></td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
 		<font size="2"><b>done</b></font></td>
 		<td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
-		<b><small>2025-11-16</small></b></td>
+		<b><small>2025-11-20</small></b></td>
 		<td width="78%" valign="top" bgcolor="#CCCCFF">
 		<p align="left"><b><small>Create this this page from the hybridForm examplar</small></b></td>
 	</tr>
@@ -276,7 +226,7 @@
 		<font size="2"><b>done</b></font></td>
 		<td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
 		<b>
-		<small>2025-11-06</small></b></td>
+		<small>2025-11-20</small></b></td>
 		<td width="78%" align="left" valign="top" bgcolor="#CCCCFF">
 		<div align="center">
 			<!--webbot bot="Include" U-Include="../../../construction/2007/11/c071101d4.htm" TAG="BODY" startspan -->
@@ -317,8 +267,8 @@
 <small>
 <dl>
 		<dt><b><a name="RevisionHistory">Revision History:</a></b></dt>
-		<dt><b><a name="v0.0.1">0.0.1</a> 2025-11-16T23:37Z Initial TODOs</b></dt>
-		<dt><b><a name="v0.0.0">0.0.0</a> 2025-11-16T23:20Z Creation from 
+		<dt><b><a name="v0.0.1">0.0.1</a> 2025-11-21T01:06Z Initial TODOs</b></dt>
+		<dt><b><a name="v0.0.0">0.0.0</a> 2025-11-21T00:27Z Creation from 
 		hybridForm 
 		boilerplate</b></dt>
 		</dl>
