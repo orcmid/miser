@@ -1,0 +1,148 @@
+m2511xx-OuchLoc.txt 0.0.1           UTF-8                       dh:2026-01-05
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+// This is about using the stack as heap-0, and a way to automatically grab
+// on the stack unless the grab is too big and then the heap is used.  It's
+// tricky about returning the stack/heap allocation and other things, but
+// interesting in this context, on Windows.
+
+// BEST VIEWED IN A COLOR-IZING TEXT EDITOR, FOR THE C LANGUAGE EXAMPLE.
+
+// I WAS LOOKING UP COMPILER INTRINSICS AND SOMEHOW I RAN INTO A STATEMENT
+// THAT alloca IS DEPRECATED IN FAVOR OF _malloca.  SO I LOOKED UP _malloca
+// AND GOT THIS AI-GENERATED EXPLANATION.
+
+// I LEARNED A NICE HACK.  A _malloca(0) REQUEST ALLOCATES NO STACK SPACE
+// AND ESSENTIALLY RETURNS A POINTER WITH THE CURRENT STACK POINTER VALUE.
+// I GUESS IT STILL HAS TO BE FREED WITH _freea() THOUGH. HURTS MY HEAD.
+
+// HERE'S MY LIGHTLY-EDITED TRANSCRIPT OF THE AI-GENERATED EXPLANATION.  I
+// JUST GOT LINES TO FIT UNDER 80 CHARACTERS.  Grin and bear that it is all
+// about Microsoft C runtime library specifics.
+
+In Microsoft’s C runtime library, _malloca is a special memory allocation
+function that can allocate memory either on the stack or on the heap,
+depending on the requested size.
+
+Unlike malloc, _malloca can throw a structured exception
+(STATUS_STACK_OVERFLOW) if the allocation is attempted on the stack and fails
+due to insufficient stack space. This is not a normal C++ exception — it’s a
+Windows Structured Exception Handling (SEH) event.
+
+Key Points About _malloca Exceptions
+
+Allocation Behavior
+
+If the requested size is less than or equal to _ALLOCA_S_THRESHOLD
+(default 1024 bytes), _malloca allocates from the stack.
+If larger, it allocates from the heap (like malloc).
+
+Exception Type
+
+Stack allocation failure triggers a structured exception
+(STATUS_STACK_OVERFLOW), not a NULL return.
+Heap allocation failure returns NULL (like malloc).
+
+Catching the Exception
+
+You must use SEH (__try / __except) in C, not C++ try / catch.
+Example:
+#define _CRT_SECURE_NO_WARNINGS
+#include <malloc.h>
+#include <stdio.h>
+#include <windows.h>
+
+int main(void) {
+    void *ptr = NULL;
+
+    __try {
+        // Try to allocate memory
+        ptr = _malloca(500000000); // Large size to force failure
+        if (ptr == NULL) {
+            printf("Heap allocation failed.\n");
+        } else {
+            printf("Allocation succeeded.\n");
+        }
+    }
+    __except (GetExceptionCode() == STATUS_STACK_OVERFLOW ?
+              EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH) {
+        printf("Stack overflow during _malloca allocation.\n");
+        // Clear the stack overflow condition
+        _resetstkoflw();
+    }
+
+    if (ptr) {
+        _freea(ptr); // Always free with _freea
+    }
+
+    return 0;
+}
+
+
+Freeing Memory
+
+Always use _freea(ptr) to free memory allocated by _malloca, regardless of
+whether it came from the stack or heap.
+
+Best Practices
+
+Avoid _malloca for untrusted or unpredictable sizes — stack overflows can
+terminate your program if not handled.  For safer, portable code, prefer
+malloc unless you specifically need _malloca’s stack allocation optimization.
+
+✅ If you want, I can give you a safe _malloca wrapper that automatically
+catches stack overflow and falls back to heap allocation without crashing.
+Do you want me to prepare that?
+
+// THERE WAS NOTHING IN THE ABOVE WEB PAGE THAT ALLOWED ME TO ACCEPT
+// OR DECLINE THE OFFER.
+
+// HERE IN THE VISUAL STUDIO CODE TEXT FILE WHERE I PASTED AND CLEANED UP
+// THE WEB PAGE RESPONSE, I TYPED THE QUESTION MYSELF AND CO-PILOT STEPPED IN
+
+Do you want a safe malloca wrapper?
+Yes, please provide a safe _malloca wrapper that handles stack overflow
+gracefully.  Here’s a safe wrapper for _malloca that catches stack overflow
+exceptions and falls back to heap allocation if necessary:
+
+// THE FOLLOWING CODE IS INCORRECT IN A WEIRD WAY.  IT HAS TO DO WITH THE
+// FACT THAT DIFFERENT FREE OPERATIONS ARE REQUIRED BETWEEN _malloca AND
+// malloc.
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <malloc.h>
+#include <stdio.h>
+#include <windows.h>
+
+void* safe_malloca(size_t size) {
+    void *ptr = NULL;
+
+    __try {
+        ptr = _malloca(size);
+    }
+    __except (GetExceptionCode() == STATUS_STACK_OVERFLOW ?
+              EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH) {
+        // Stack overflow occurred, fall back to heap allocation
+        _resetstkoflw(); // Clear the stack overflow condition
+        ptr = malloc(size); // Allocate from heap
+    }
+
+    return ptr;
+}
+
+// LOL: I WAS ABOUT TO ADD SOMETHING AND CO-PILOT JUMPED IN AGAIN.
+
+void safe_freea(void *ptr, size_t size) {
+    if (size <= _ALLOCA_S_THRESHOLD) {
+        _freea(ptr); // Free stack allocation
+    } else {
+        free(ptr); // Free heap allocation
+    }
+}
+
+// THIS IS STILL WRONG OF COURSE.  IT ASSUMES THERE WAS NO STACK OVERFLOW.
+// **MAYBE** IT ACTUALLY WORKS BECAUSE _frea(ptr) recognizes whether the
+// pointer was on the stack or not, in which case this procedure is not
+// necessary at all. Just use freea(ptr) always.
+//
+// 0.0.1  2026-01-05T00:18Z Label this and explain it a bit more
