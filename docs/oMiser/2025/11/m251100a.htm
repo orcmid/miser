@@ -52,7 +52,7 @@
 		<a target="_top" rel="nofollow" href="../../2023/09/m230900a.htm">m251100a</a>&gt;</code></b><br>
       <small>
       <small>
-      <a href="#v0.0.1">0.0.0</a>&nbsp;<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M %Z" startspan -->2025-11-21 15:27 -0800<!--webbot bot="Timestamp" i-checksum="28632" endspan --> </small></small></p>
+      <a href="#v0.0.1">0.0.0</a>&nbsp;<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M %Z" startspan -->2026-01-04 13:09 -0800<!--webbot bot="Timestamp" i-checksum="28708" endspan --> </small></small></p>
 </font>
       </td>
     
@@ -124,9 +124,20 @@
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
-		&nbsp;</td>
+		<font size="2">2026-01-04</font></td>
 		<td width="78%" align="left" valign="top">
-		&nbsp;</td>
+		<font size="2">I need to nail down the connection between the hash table 
+		and memory management.&nbsp; There may be a third case.&nbsp; If there 
+		is material associated with ob-cells that are not for individuals, 
+		reference-counting may be the essential means of leaving the space to 
+		the garbage collector.&nbsp;&nbsp; It is unclear whether such an action 
+		releases stack storage though and there still needs to be a scheme for 
+		Cheney copying ob-cells/-structures that need to be moved.&nbsp; This is 
+		sort of about needing some sort of scheme related to knowing which items 
+		in heap-0 are referenced from elsewhere as part of working storage.&nbsp; 
+		In some sense we need to know something about generations and lifecycle 
+		of ob-cells, so the cases of synthetics and accelerators can be managed 
+		properly.</font></td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
