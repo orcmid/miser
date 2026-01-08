@@ -1,5 +1,5 @@
-dev.txt 0.0.1                        UTF-8                       dh:2018-08-09
-----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+devLab.txt 0.0.2                    UTF-8                       dh:2026-01-08
+#---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
 
@@ -10,17 +10,17 @@ dev.txt 0.0.1                        UTF-8                       dh:2018-08-09
                     INCREMENTAL DEVELOPMENT OF MISER SOFTWARE
                     -----------------------------------------
 
-            <https://github.com/orcmid/miser/blob/master/dev/dev.txt>
+            <https://github.com/orcmid/miser/blob/master/devLab/devLab.txt>
 
 MANIFEST
 
-    dev.txt
-        this manifest and job-jar file
+    devLab.txt
+           this manifest and job-jar file
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                       Copyright 2018 Dennis E. Hamilton
+                    Copyright 2018, 2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -34,9 +34,12 @@ MANIFEST
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-TODO
+NOTES AND TODO
+
+  * Create a substructure for oMiser and oFrugal construction that initially
+    has oMiser be a cached build for oFrugal and they spiral together.
 
   * Consider whether different packagings may be served better by having
     separate GitHub projects, perhaps tied to particular implementation/
@@ -64,10 +67,13 @@ TODO
     and that interferes with the "shallow-end" and minimal tooling notions
     I have been attempting for nfoTools.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+
+ 0.0.2 2026-01-08T15:27Z Break the logjam here and rename this part of the
+       repository to devLab/ from dev/
  0.0.1 2018-08-09-11:34 Elaborate TODOs.  Stop sitting on check-in for more.
  0.0.0 2018-04-19-10:29 Create placeholder and initial job jar for the
        Miser Project code.
 
-                          ***** end of dev.txt *****
+                        ***** end of devLab.txt *****
