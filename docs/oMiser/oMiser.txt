@@ -1,4 +1,4 @@
-oMiser.txt 0.1.9                    UTF-8                         2025-11-17
+oMiser.txt 0.1.10                   UTF-8                         2026-01-07
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -22,7 +22,7 @@ oMiser.txt 0.1.9                    UTF-8                         2025-11-17
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2018-2025 Dennis E. Hamilton
+                    Copyright 2018-2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -41,13 +41,26 @@ oMiser.txt 0.1.9                    UTF-8                         2025-11-17
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.9 dated 2025-11-17,
+   Notes.  Miser Project text file oMiser.txt version 0.1.10 dated 2026-01-07,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-TODO
+NOTES AND TODOS
+
+  * [2026-01-07] The spiraling needs to be in step with oFrugal development.
+    So there needs to be an initial command-line operations that works in
+    sync with addition of features in an instrumented spiral.  There may need
+    to be an oFrugal feature with regard to instrumentation.
+
+  * [2026-01-07] I have been obsessing about memory management, hashing
+    tables and performance of RNGs and garbage collection.  Instead of making
+    myself crazy digging into research publications I don't understand at the
+    detail level, I am going into a test-first approach where I build things
+    that work a little, instrument the heck out of it, and keep expanding
+    as I get a grip on it bit-by-bit.  There may need to be occasional
+    refactorings, but that has to be superior than being paralyzed.
 
   * 2023-11-06 Use "NBG" for von Neumann, Bernays, Goedel set theory and how
     it is used in model theory, although we will stay in the finitism realm
@@ -442,6 +455,8 @@ TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.10 2026-01-07T23:53Z Hand-wring about my going obsessive on perfection
+        and needing to start small and iterate/spiral
  0.1.9  2025-11-17T20:42Z Correct "realism" to "idealism" and add some further
         musings
  0.1.8  2025-11-16T10:11Z Complete notes capture through #66

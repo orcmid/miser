@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.16                  UTF-8                          2025-11-12
+oFrugal.txt 0.0.17                  UTF-8                          2026-01-08
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -64,7 +64,7 @@ MANIFEST (text files only)
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                    Copyright 2020-2022, 2024-2025 Dennis E. Hamilton
+               Copyright 2020-2022, 2024-2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -83,11 +83,22 @@ MANIFEST (text files only)
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code text file oFrugal.txt version 0.0.16 dated 2025-11-12 available on the
+   Code text file oFrugal.txt version 0.0.17 dated 2026-01-08 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
 NOTES AND TODO
+
+  * [2026-01-08] To break my perfectionalism obsession, start a development
+    spiral that works not unlike the VCrayApp setup except we'd doing the
+    library (essentially oMiser) and the application.  So I can use that
+    structure.  Because it is test-first, I need to start with oFrugal first,
+    although that doesn't have to be strictly true.
+
+  * [2016-01-08] The oFrugal parser is basically a fairly straightforward
+    precedence parser.  The depiction and development for that part will be
+    using the notation introduced by Bob Floyd for this purpose.  I just have
+    to find it.
 
   * Create these, with attention to the division of labor and the reliance
     on the common ob-exp txt.
@@ -185,6 +196,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.17 2026-01-08T00:24Z Unleash the development spiral
  0.0.16 2025-11-12T00:08Z More historical notes
  0.0.15 2025-11-11T19:28Z Back up what I have for now
  0.0.14 2025-11-10T19:33Z Add note on F80.11 and update manifest
