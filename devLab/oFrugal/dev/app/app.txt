@@ -1,0 +1,84 @@
+oFrugal 0.0.0 app.txt 0.0.0         UTF-8                          2023-06-08
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                      oFRUGAL APPLICATION-BUILD DEVKIT
+                      ================================
+
+                           XCOPY/MSIX APP FOLDER
+                           ---------------------
+
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  *                                                                       *
+  *         DO NOT REMOVE THIS FILE. MKOFRUGAL.BAT REQUIRES ONE           *
+  *         ***************************************************           *
+  *                                                                       *
+  *    app\ is the standard subfolder into which oFrugal's .exe           *
+  *    executable code is compiled.  app\ is also the location for any    *
+  *    accompanying files/folders that must be adjacent to the .exe       *
+  *    for correct operation.  This is not expeced for oFrugal.           *
+  *                                                                       *
+  *    app\ folder content is amenable to delivery in a Zip file after    *
+  *    copying to a separate location, removal of extraneous material     *
+  *    (such as this file), and addition of supporting content needed     *
+  *    for the deployed result.                                           *
+  *                                                                       *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+MANIFEST
+
+    app.txt
+        this synopsis and manifest (not usually deployed by project)
+
+    .gitignore
+        excluding some VCrayApp app\ and compilation results from
+        any Git so that modifications here are entirely local.
+        (possibly customized or removed, not usually deployed with the app)
+
+    resources\
+        here when provided as a neighbor of the compiled .exe file and
+        included in the app package (the typical raylib technique).  There
+        may be other "assets" here, whether in subfolders or as companion
+        files.
+
+    *.exe
+        here as the compiled product (deliverable), with the exe name
+        specified for compilation with mkOfrugal command.
+
+    *.obj
+        files that are only transient here and not part of the app package
+        (not to be deployed, usually remaining only if a compile fails)
+
+    Other materials are part of the individual project and untouched by
+    mkOFrugal.  They should be preserved and backed-up as needed.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oFrugal XCOPY/MSIX App Folder.  File app.txt version
+   0.0.0 dated 2026-01-08 and available as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/app/app.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0 2026-01-08T19:59Z Adapted from the 0.0.15 counterpart of VCrayApp.
+
+
+                          ***** end of app.txt *****

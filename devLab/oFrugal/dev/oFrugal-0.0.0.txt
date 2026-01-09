@@ -1,0 +1,116 @@
+oFrugal-0.0.0.txt                   UTF-8                         2026-01-08
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                             The Miser Project Code
+                             ======================
+
+                        <https://github.com/orcmid/miser>
+
+                     DEVELOPMENT OF MISER SOFTWARE RELEASES
+                    ----------------------------------------
+
+<https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/oFrugal-0.0.0.txt>
+
+                    OFRUGAL RELEASE 0.0.0 DISTRIBUTION
+                    ==================================
+
+  This is about releases of the source-code for the oFrugal REPL.  For
+  distribution of executables, consult the Miser Project web pages at
+  <https://orcmid.github.io/miser>.  To work with the oFrugal implementation,
+  having a GitHub account and accessing <https://orcmid.github.io/miser> is
+  preferable.
+
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  *                                                                     *
+  *                                                                     *
+  *                           SPECIAL NOTICE                            *
+  *                           **************                            *
+  *                                                                     *
+  *   oFrugal-0.0.0 is not intended for release.  It is a pre-alpha     *
+  *   experiment that is intentionally incomplete as part of spiral     *
+  *   development between oMiser run-time and its oFrugal REPL          *
+  *   implementation.  This and subsquent stages are the least that     *
+  *   can possibly work, with low expectations in degress of "work".    *
+  *                                                                     *
+  *                                                                     *
+  *                             IMPORTANT                               *
+  *                             *********                               *
+  *                                                                     *
+  *    It is recommended that VS 2022 Version 17.5 or later (including  *
+  *    Build Tools) be employed to build oFrugal. There is improved     *
+  *    C Language 2011 support assumed in oFrugal source code.          *
+  *                                                                     *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  oFrugal is designed to build with versions of Visual Studio that are free
+  for personal/open-source use, including the Visual Studio Build Tools
+  (recommended) and the Visual Studio Community editions.  Additional levels
+  of licensed Visual Studio can also be used, all via their Native Tools
+  Command Prompt.
+
+ PREREQUISITES AND DEPENDENCIES
+
+    Exploration and Use of oFrugal source code requires the following tools
+    along with confident use of C Language:
+
+     * Windows File Explorer
+     * Windows Built-in Zip-Folder Tool
+     * Visual Studio Native Build Tools
+     * Developer Command Prompt
+     * Microsoft VC/C++ Command Line Compiler, CL.exe
+     * A text-editor for work on source code, other files, all in plain text
+       (Visual Studio Code recommended for its C/C++ and Microsoft support)
+     + Git4Win implementation for source-code control
+     + TortoiseGit for File Explorer integration of Git
+     + GitHub Windows Client for public access to development projects
+     + GPG4Win for creation and verification of digital signatures
+
+    The first six are essential.  The remainder are recommended; those are
+    not required for starting up.  There are alternatives.  The specific ones
+    happen to be those relied upon in the development of the Miser project.
+
+DOWNLOADS AND SETUP
+
+    [TBD]
+
+MANIFEST OF oFrugal-0.0.0.zip
+
+    [TBD]
+
+    Nothing at this point.
+
+    The supplied text files provide further descriptions and explanations
+    for usage and customization of app\, cache\ and src\.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                      Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, oFrugal Release 0.0.0 Distribution.  Miser Project file
+   oFrugal-0.0.0.txt version 0.0.0 dated 2026-01-08 available
+   on the internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/oFrugal-0.0.0.txt>
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0  2026-01-08T21:58Z Simple placeholder derived VCrayApp-0.1.0.txt
+
+
+                    ***** end of oFrugal-0.0.0.txt *****

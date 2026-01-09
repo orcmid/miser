@@ -1,0 +1,105 @@
+dev.txt 0.0.0                       UTF-8                         2026-01-08
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          The Miser Project Code
+                          ======================
+
+
+   <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/dev.txt>
+
+                  BUILDING THE OFRUGAL REPL APPLICATION
+                  -------------------------------------
+
+SYNOPSIS
+
+    This folder is for the under-development version of oFrugal.
+
+    Frozen versions for a release of any kind (alpha, beta, etc.) appear at
+    the oFrugal level and also in a web location for direct download and
+    employment.  See <https://orcmid.github.io/nfoTools/miser/dev>.
+
+    Versions of oFrugal code in this folder are under development and should
+    be considered unstable.  This code should not be used directly except on
+    an experimental basis and when participating in development of oFrugal
+    itself.
+
+    IMPORTANT: This source-code and build setup expects that a copy of
+       oMiser source code is available for incorporation in the oFrugal
+       build.  The oMiser source code must be obtained separately.
+
+MANIFEST
+
+    dev.txt
+        this manifest and job jar.  This file is not packaged in oFrugal
+        deliverables.
+
+    oFrugal-0.0.0.txt
+        the oFrugal source manifest and synopsis, made available for review
+        prior to downloading a source distribution, and also packaged in the
+        Zip of any corresponding release.
+
+    NOTICE.txt
+        notice applicable to oFrugal releases.
+
+    CHANGES-0.0.0.txt
+        tabulation of changess made in the current under-development release
+
+    mkOFrugal.bat
+        Batch file for compiling Native VC code using the cache/, app/, and
+        src/ setups.
+
+    .vscode\
+        VS Code folder information for any folder the oFrugal release Zip is
+        extracted into
+
+    app\
+        the folder compiled executables and their resourses are placed in
+
+    cache\
+        folder for VCrayApp-required assets and the caching of oMiser
+        modules for linking into the project .exe.
+
+    src\
+        the folder containing the source code of the under-development
+        oFrugal release.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                    Copyright 2021-2023 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Building the oFrugal REPL Application.  Miser Project text file
+   dev.txt version 0.0.0 dated 2026-01-08, available on the Internet as a
+   version of
+    <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/dev.txt>
+
+TODO
+
+ * Complete customization of the dev/ substructure.
+
+ * Complete customization of the dev-level files
+
+ * Make the "stub" minimal code for the first demonstration, inspired by
+   the same for the Adv10 project.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0  2026-01-08T22:43Z Create initial placeholder with manifest based on
+        on from nfoTools VCrayApp.
+
+                          ***** end of dev.txt *****

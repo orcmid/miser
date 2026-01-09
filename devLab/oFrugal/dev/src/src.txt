@@ -1,0 +1,56 @@
+oFrugal 0.0.0 src.txt 0.0.0         UTF-8                        2026-01-09
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                                 OMISER CODE
+
+                      OFRUGAL 0.0.0 REPL SOURCE CODE
+                      ==============================
+
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  *                                                                       *
+  *          DO NOT REMOVE THIS FILE. mkOFrugal.BAT REQUIRES ONE          *
+  *          ***************************************************          *
+  *                                                                       *
+  *    This src\ folder is for oFrugal's source-code *.c and *.h code     *
+  *    files. Including exactly one *.c file containing the main()        *
+  *    function.                                                          *
+  *                                                                       *
+  *    This source code is backed-up and managed using Git and GitHub.    *
+  *    a source-code management system such as Git and GitHub.  See       *
+  *    <http://orcmid.github.io/miser/dev/*TBD*> for more details.        *
+  *                                                                       *
+  *    If oFrugal is re-extracted or an update is extracted, this file    *
+  *    file will be restored/replaced.  Any other files already in this   *
+  *    folder will be untouched.                                          *
+  *                                                                       *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                      Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oFrugal 0.0.0 REPL Source Code.  Text file src.txt
+   version 0.0.0 dated 2026-01-09, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/src/src.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0 2026-01-08T00:51Z Adapted from VCrayApp src.txt 0.0.5
+
+                          ***** end of src.txt *****

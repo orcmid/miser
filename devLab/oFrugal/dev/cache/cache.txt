@@ -1,0 +1,128 @@
+oFrugal 0.0.0 cache.txt 0.0.0       UTF-8                          2026-01-08
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                          The Miser Project Code
+
+                  BUILDING THE OFRUGAL REPL APPLICATION
+                  =====================================
+
+                       OFRUGAL OMISER CACHE FOLDER
+                       ---------------------------
+
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  *                                                                       *
+  *      DO NOT REMOVE THIS FILE. MKOFRUGAL.BAT REQUIRES ONE HERE         *
+  *      ********************************************************         *
+  *                                                                       *
+  *    cache\ is the location for a cache of compiled oMiser *.obj files  *
+  *    files and a setup confirmation file for demonstrating successful   *
+  *    compilation.  It is also the location for a cache of compiled      *
+  *    raylib *.obj files that can be used as a library in building       *
+  *    oFrugal without taking the time to compile them every time.        *
+  *                                                                       *
+  *    If oFrugal is re-extracted or is updated and extracted, this       *
+  *    file and all other files of the new manifest will be replaced. If  *
+  *    any current *.opt files have been altered by the user, they should *
+  *    first be renamed for protection againsst being over-written.  Then *
+  *    use those for review and adjustment of the restored/updated        *
+  *    versions.                                                          *
+  *                                                                       *
+  *  CRITICAL IMPORTANCE.  Rebuild the cache (using mkOFrugal option "-c")*
+  *    every time the oMiser\ folder is populated or updated.  If this is *
+  *    not done, there is risk that oMiser\src\ header files accessed in  *
+  *    the project will not be compatible with the *.obj files in the     *
+  *    cache.                                                             *
+  *                                                                       *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+    cache/ contains compilation materials, setup confirmation programs, and
+    compiled oMiser files that become a pre-compiled library to the project.
+
+    When the cache has been populated with compiled oMiser code, new oFrugal
+    compiles will avoid the time it would take to compile that code again.
+
+    Using a cache in this manner, with the applicable compilation *.opt files,
+    ensures that the compiled oMiser *.obj files and the oFrugal files
+    are always compatible.
+
+    IMPORTANT DEPENDENCY: The mkOFrugal.bat file (in the folder above cache/)
+    and the option files oMiserCode-x.y.z.opt and VCoptions.opt all depend on
+    relative location of an oMiser/ source-code folder.  The use of relative
+    addresses also requires that oFrugal/ be installed on the same drive as
+    the oMiser/ release code.
+
+    For more information, see <tbd>.
+
+    For details of the *.opt files and how they are employed with mkOFrugal
+    see <tbd>.
+
+MANIFEST
+
+    cache.txt
+        this manifest and job-jar file
+
+    .gitignore
+        excluding the compilation intermediates and other ephemeral files
+        from any git commits.
+
+    oMiserLinking.opt
+        Parameters for linking the compiled oFrugal app and the cache of
+        oMiser *.obj files into an .exe program in app\.
+
+    oMiserCode.opt
+        Ephemerial file chosen depending on the version of oMiser that is to
+        be cached.
+
+    oMiserCode.0.0.0.opt
+        Option file to be copied to oMiserCode.opt when using an acceptable
+        oMiser-0.0.0 release.
+
+    raylibCode.4.x.0.opt
+        Option file copied to raylibCode.opt when using an acceptable
+        raylib-4.x or raylib-4.x-dev.
+
+    oMiserVars.opt
+        Preprocessor definitions for the compilation of the raylib modules
+
+    VCoptions.opt
+        Compilation options for Visual C/C++ native compiler cl.exe.
+        These options are the same between cache\ and app\ compiles.  This
+        file also depends on oMiser\ being in the same predictable relative
+        location as relied on in oMiserCode.opt.
+
+    *.obj (after compilation of cached oMiser components)
+        VC/C++ compiled C Language *.obj modules from compilation of the
+        raylib files identified in raylibCode.opt.
+
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                    Copyright 2021-2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. OFrugal oMiser Cache Folder.  oFrugal 0.0.0 text file
+   cache.txt version 0.0.0 dated 2026-01-08, available on the Internet as a
+   version of cache.txt in
+   <orcmid.github.io package location TBD>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+ 0.0.0  2026-01-08T23:28Z Draft cache setup transposed from VCrayApp 0.1.0.
+
+                            *** end of cache.txt ***

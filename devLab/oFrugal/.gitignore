@@ -1,0 +1,26 @@
+# .gitignore 0.0.18                 UTF-8                       dh:2026-01-08
+#---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+#
+#                       OFRUGAL DEVELOPMENT PROJECT
+#                       ===========================
+#
+#         .GITIGNORE FOR KEEPING OMISER OUT OF THE REPOSITORY
+#
+## ELIMINATE THE oFrugal/oMiser/ FOLDER FROM THE GITHUB REPOSITORY.
+##
+## The testing version of oMiser that is used for development of oFrugal is
+## kept separate from the devLab/oMiser version, which may be under further
+## development and testing.  The oMiser version is always identified and it
+## can be recovered (ideally from a saved Zip) if there is a regression
+## roll-back for any reason.
+
+oMiser/
+
+#---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+# 0.0.18 2026-01-08T16:40Z Introduce oMiser/ exclusion from oFrugal dev.
+# 0.00 2014-12-03-16:11 Initial .gitignore from GitHub
+#      As part of creation of the repositiory, the GitHub provision for
+#      ignoring Visual Studio build artifacts was created automatically.
+
+#                    *** end of .gitignore ***

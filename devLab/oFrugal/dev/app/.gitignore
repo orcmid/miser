@@ -1,0 +1,25 @@
+# .gitignore 0.0.5                  UTF-8                         2026-01-08
+#---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+#
+#                   COMPILED OFRUGAL APPLICATION FOLDER
+#                   ===================================
+#
+#       .GITIGNORE FOR KEEPING EXECUTABLES OUT OF A GIT REPOSITORY
+#
+#   This .gitignore file is intended to exclude intermediate compilation
+#   and even the deliverables from a Git repository.  The presumption is
+#   that project customizations are all reflected elsewhere and the files
+#   here can be recreated on demand.  See the app.txt file.
+
+#   XCopy/MSIX package executables
+*.exe
+resources/
+#   intermediate files
+*.obj
+# Intermediate objects in the compilation folder are produced here too.
+
+#---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+# 0.0.5 2026-01-08T19:43Z Derived from an nfoTools 0.0.4 .gitignore.
+
+#                       *** end of app/.gitignore ***

@@ -1,0 +1,72 @@
+oFrugal.txt 0.0.2                   UTF-8                       dh:2026-01-08
+#---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+                             The Miser Project Code
+                             ======================
+
+                        <https://github.com/orcmid/miser>
+
+                 DEVELOPMENT OF MISER PROJECT SOFTWARE RELEASES
+
+                   INCREMENTAL DEVELOPMENT OF OFRUGAL RELEASES
+                   -------------------------------------------
+
+  <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/oFrugal.txt>
+
+MANIFEST
+
+    oFrugal.txt this manifest and job-jar file
+
+        dev/    folder for the source-code development of oFrugal
+                releases with an embedded oMiser
+
+     oMiser/    (not in GitHub) version of oMiser currently used
+                for dev/ and tests/
+
+      tests/    tests of oFrugal builds
+
+    oFrugal development procedes with a specific version of oMiser while
+    further development of oMiser happens separately. The tests keep pace
+    with those developments as well as the continuing development of the
+    (next) oFrugal release.
+
+    A variant of test-first development is used to have oFrugal code that
+    always builds and runs, but is at each point, the least that can
+    possibly work.  Getting to a 1.0.0 will take a great deal of spiraling.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+NOTES AND TODO
+
+  * Initial focus is exclusively on use of the Microsoft Windows Platform
+    and Visual Studio Build Tools.  The code shall be sufficiently
+    interoperable for transposition to other platforms.  It is not
+    proposed to do that here.
+
+  * Start with the least that can possibly work, always being incomplete
+    while oMiser is also progressed.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.2 2026-01-08T19:00Z Touch ups with a little explanation
+ 0.0.1 2026-01-08T16:53Z Introduce dev/, oMiser/, and tests/ subfolders
+ 0.0.0 2026-01-08T16:15Z Create placeholder and initial job jar for the
+       development and testing of oFrugal as a command-line REPL.
+
+                        ***** end of oFrugal.txt *****
