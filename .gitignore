@@ -1,4 +1,4 @@
-# .gitignore 0.0.9                    UTF-8                     dh:2023-10-28
+# .gitignore 0.0.10                    UTF-8                   dh:2026-01-10
 #
 #                                  ORCMID/MISER
 #                                  ============
@@ -26,6 +26,13 @@ _vti_*/
 #   Windows authoring artifacts
 desktop.ini
 Thumbs.db
+
+## ELIMINATE COMPILATION PRODUCTS
+## ------------------------------
+## what about *.lib and *.dll?
+
+*.[Oo]bj
+*.exe
 
 ## ELIMINATION OF VISUAL STUDIO SOLUTIONS
 ## --------------------------------------
@@ -228,6 +235,7 @@ FakesAssemblies/
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 0.0.10 2026-01-10T23:12Z Adjust for Visual Studio and other build artifacts
 # 0.0.9 2023-10-28T17:32Z More Windows and FrontPage artifacts
 # 0.0.8 2023-08-14T20:43Z Adjust for Windows and FrontPage artifacts
 # 0.0.7 2017-11-17-13:19 Adjust annotation and confirm *.scc is ignored.
