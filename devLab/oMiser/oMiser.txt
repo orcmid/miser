@@ -1,4 +1,4 @@
-oMiser.txt 0.0.0                    UTF-8                       dh:2026-01-08
+oMiser.txt 0.0.1                    UTF-8                       dh:2026-01-10
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -39,6 +39,27 @@ MANIFEST
 
 NOTES AND TODO
 
+  * I had this weird musing which would be a hallucination if copilot
+    suggested it.  I have the idea that the creation of an oMiser structure
+    should return a randomly-generated "key" by which an oMiser operation
+    could determine whether a object (via COM-(like) interface) could be
+    determined to be in the same oMiser instantiation as the one that will
+    rely on it.  This is important with regard to applicative operation and
+    other things.  It needs to be known that an operand is "local" before
+    diving in and using direct access to the implementation of an instance.
+       The musing is that an instance should return a PPV for itself.  That
+    is, the instance is itself a gigantic COM-like object.  It doesn't have
+    to have a giant block of contiguous storage, but it is the to foundation
+    for whatever memory-management is hung off of it.
+
+  * I need to work on the header technique that was used for the JNI
+    integration of ODMA.  It allows headers for objects to compile as C++
+    virtual   interfaces or as C Language structures with the PV at the
+    beginning.
+      I think it must be in the definition of the JNI header used with
+    <https://nfocentrale.com/nuovodoc/products/ODMJNI10.htm>.  It might be
+    in the ODMpractical stuff.
+
   * Create a substructure for oMiser construction that initially
     has oMiser be a cached build for oFrugal and they spiral together.
 
@@ -50,8 +71,8 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-
- 0.0.0 2018-04-19-16:14Z Create placeholder and initial job jar for the
+ 0.0.1 2026-01-10T18:20Z Rhapsodize on one giant COM object
+ 0.0.0 2026-01-08T16:14Z Create placeholder and initial job jar for the
        oMiser library code.
 
                         ***** end of oMiser.txt *****
