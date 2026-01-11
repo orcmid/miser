@@ -1,0 +1,3 @@
+/utf-8 /validate-charset /EHsc
+/std:c11 /O2 /Oi /GL /favor:blend /fp:precise
+/MT
