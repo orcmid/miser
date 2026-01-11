@@ -1,4 +1,4 @@
-oFrugal 0.0.0 src.txt 0.0.1         UTF-8                          2026-01-11
+oFrugal 0.0.0 src.txt 0.0.2         UTF-8                          2026-01-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -25,6 +25,10 @@ oFrugal 0.0.0 src.txt 0.0.1         UTF-8                          2026-01-11
   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 MANIFEST
+
+   src.txt
+      This synopsis and manifest to be preserved in the installation of an
+      oFrugal source distribution snapshot.
 
    mkOFrugal-0.0.0.bat
       Temporary construction from a seedling oFrugal.c directly in src/
@@ -59,7 +63,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Source Code Folder for the oFrugal Win32 REPL.
-   File src.txt version 0.0.1 dated 2026-01-11 available on the Internet as a
+   File src.txt version 0.0.2 dated 2026-01-11 available on the Internet as a
    version of
    <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/src/src.txt>.
 
@@ -79,6 +83,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2026-01-11T17:22Z Include in the manifest
  0.0.1 2026-01-11T16:58Z Customized for the oFrugal seedling
  0.0.0 2026-01-11T02:40Z Adapted from VCrayApp src.txt 0.0.5
 
