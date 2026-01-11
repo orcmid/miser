@@ -1,0 +1,84 @@
+CHANGES-0.0.0.txt 0.0.0             UTF-8                         2026-01-11
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       AN OFRUGAL COMING ATTRACTION
+                       ============================
+
+   <https://orcmid.github.io/miser/oFrugal/*SOMETHING*/CHANGES-0.0.0.txt>
+
+                    CHANGES MADE FOR oFrugal REPL 0.0.0
+                    -----------------------------------
+
+    This file provides tracking of changes made to oFrugal as part of
+    developing oFrugal 0.0.1 (seedling) as the successor of oFrubal 0.0.0
+    (sprout).  These changes are documented in the release information at
+    <https://orcmid.github.com/miser/oFrugal/*something-something*/>.
+
+    Further information on the development of oFrugal 0.0.1 can be found
+    at the GitHub project, <https://github.com/orcmid/miser/projects/>,
+    and Miser Project issues, <https://github.com/orcmid/miser/issues>.
+
+CHANGES IN 0.0.1
+****************
+
+**THIS FILE** is boilerplate for further customization when there is any
+distribution and and changes are worth describing.  We probably need to have
+bundled a distribution as maybe 0.1.0 (alpha) and then there will be this
+for whatever the next distribution is.
+
+BREAKING: Probably not, more about progressive improvements.
+
+IMPORTANT: With this change, oFrugal-0.1.0 is not a simple drop-in
+replacement for oFrugal-0.0.0.  The workflow within which oFrugal is used
+must be adjusted for the changed command prompt.
+
+    oFrugal [+] ?
+    oFrugal [+] whatever
+
+Note 1:
+
+Note 2:
+
+ADVANCED TECHNIQUES
+
+NEW FEATURES
+
+oFrugal failure messages all have FAILCODE numbers and each message has links
+to details under <https://orcmid.github.io/miser/dev/*SOMETHING*>.
+
+CHANGES
+
+
+
+CORRECTION:
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                       Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. Changes Made for oFrugal 0.0.0.  nfoTools text file
+   version 0.0.0 dated 2026-01-11, available on the Internet as a version of
+   <https://orcmid.github.io/miser/oFrugal/*SOMETHING*/CHANGES-0.0.0.txt>
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0  2026-01-11T20:03Z Boilerplate derived from VCrayApp's 0.0.16
+
+                        ***** end of CHANGES.txt *****

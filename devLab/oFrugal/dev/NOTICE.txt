@@ -1,0 +1,40 @@
+NOTICE.txt 0.0.0                      UTF-8                       2026-01-11
+
+                                  oFrugal NOTICE
+                                  ==============
+
+This work is licensed to you under the Apache License, Version 2.0 (the
+"License"); you may not use this work except in compliance with the License.
+You may obtain a copy of the license at
+
+    <http://www.apache.org/licenses/LICENSE-2.0>.
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.  See
+the License for the specific language governing permission and limitations
+under the License.
+
+THIRD-PARTY ACKNOWLEDGMENT
+
+    There are no third-party elements at this time.
+
+INFORMAL SUMMARY
+
+    This notification applies only to the materials distributed in the
+    oFrugal-0.0.0.zip package and not to any content from other sources
+    apart from the unzipped materials.
+
+    You can use and redistribute releases of oFrugal without limitation.
+    If you modify and/or incorporate any of oFrugal in a distribution of your
+    own, you should provide attribution to the origin of oFrugal and also
+    assert that the locatable original forms are available under the Apache
+    License and found at <https://orcmid.github.io/miser/dev/*SOMEPLACE*>.
+
+    You can provide a different license of your own choosing.  That does not
+    alter the copyright status and license over the portions that do not
+    comprise your original authorship.
+
+    For specific details, consult the complete Apache License.
+
+                     *** end of oFrugal NOTICE.txt ***

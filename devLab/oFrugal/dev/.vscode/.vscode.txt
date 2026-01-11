@@ -1,0 +1,86 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+VCrayApp-0.1.0 .vscode.txt 0.0.6    UTF-8                         2023-05-07
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  *                                                                       *
+  *                              CAUTION                                  *
+  *                              *******                                  *
+  *                                                                       *
+  *    The .vscode\ folder is intended for the use of Visual Studio       *
+  *    Code.  If Visual Studio Code is not used, leave this folder        *
+  *    alone.                                                             *
+  *                                                                       *
+  *    DO NOT COMPILE INTO THIS FOLDER.  DO NOT PUT SOURCE CODE IN THIS   *
+  *    FOLDER. USE THE COMPANION src\ FOLDER OR ANOTHER FOLDER FOR YOUR   *
+  *    OWN PROJECT.  SEE THE DESCRIPTION FOR THIS VCrayApp RELEASE        *
+  *    (E.G., THE VCrayApp-0.1.0.txt FILE and the web pages at            *
+  *    <https://orcmid.github.io/nfoTools/dev/D211101/e/>).               *                            *                                                     *
+  *                                                                       *
+  *    If VCrayApp is re-extracted or is updated and extracted, the       *
+  *    files listed in this manifest will be replaced.  If any VS Code    *
+  *    customizations have been made, they should be backed up with       *
+  *    different names to avoid their being over-written.  Then review    *
+  *    the new content for merging your customizations as appropriate.    *                                                         *
+  *                                                                       *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+USAGE WITH VS CODE
+
+    When a VCrayApp project is accessed via Visual Studio Code, the Windows
+    folder that contains this .vscode folder should be the current directory.
+    VS Code will then rely on configuration properties and variables of the
+    Developer Command Prompt to integrate the project with raylib and with
+    the Windows SDK libraries. The benefit is having intellisense for all of
+    the project source code, including standard headers and their libraries.
+
+    See <https://orcmid.github.io/nfoTools/dev/D211101/b/> for further
+    details on using VS Code with VCrayApp.  For additional information on
+    usage of VS Code, see <https://orcmid.github.io/nfoTools/tools/T211001/>.
+
+MANIFEST
+
+            .vscode.txt    This text file
+
+   c_cpp_properties.json   VSCode parameters for VC/C++ compile configuration
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2022-2023 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+0.0.6 2023-05-07T21:09Z Adjust references to locations in dev/D211101
+0.0.5 2023-03-26T23:13Z Fixed rulers; ASCII-armor signed for VCrayApp 0.1.0.
+0.0.4 2023-03-26T19:28Z Complete links and advice for VCrayApp 0.1.0.
+0.0.3 2023-01-14T21:34Z Adjust for VCrayApp 0.1.0
+0.0.2 2022-07-09T19:10Z Touch-up, complete TODO
+0.0.1 2022-07-09T17:34Z Provide initial draft of content
+0.0.0 2022-07-08T17:48Z Creation of placeholder for further explanation.
+
+                      ** end of VCrayApp .vscode.txt **
+-----BEGIN PGP SIGNATURE-----
+
+iQFGBAEBCAAwFiEEBNBDIpebhN4QdwM0+W6J/9RWYooFAmRYFAYSHG9yY21pZEBh
+cGFjaGUub3JnAAoJEPluif/UVmKK094H+gNGdEEt2M7NMKSq409jxQPZvEIKnejh
+wFcnqNd1xDxEd+ZCnH0J7p5OCe4UiUzohiS3BPLe2mkUHxcreNdKyYXY0auO2U7b
+uKiohOU9OVGu+z8KlWk2GUfryoTkyAT435Aki7EUGsrKIVAbatu4XCGmQtli923s
+Q3v/RkBEHLvYOWYEG5peSoHsHHGx4qXAMZMf2UL0nBHjs5RlpJaO3MrefsdJxyue
+C4WB8njWrR+mbeuHMfQ+U4CWgY7QUN1tOlZLAT9jRxjjqAXE51RJql/FCbc2909C
+rfCKt2cPFAIqao9KmNgrPKxXLn1qwIlY8nCTeqD2T8zJpeTEjINPDio=
+=bNLc
+-----END PGP SIGNATURE-----
