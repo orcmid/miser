@@ -1,4 +1,4 @@
-oFrugal 0.0.0 cache.txt 0.0.1       UTF-8                          2026-01-11
+oFrugal 0.0.0 cache.txt 0.0.2       UTF-8                          2026-01-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project Code
@@ -37,7 +37,7 @@ MANIFEST
         excluding the compilation intermediates and other ephemeral files
         from any git commits.
 
-    oMiserLinking.opt (pending)
+    oMiserLinking.opt
         Parameters for linking the compiled oFrugal app and the cache of
         oMiser *.obj files into an .exe program in app\.
 
@@ -77,11 +77,12 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. OFrugal oMiser Cache Folder.  oFrugal 0.0.0 text file
-   cache.txt version 0.0.1 dated 2026-01-11, available on the Internet as a
+   cache.txt version 0.0.2 dated 2026-01-11, available on the Internet as a
    version of cache.txt in
    <orcmid.github.io package location TBD>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+ 0.0.2  2026-01-11T18:11Z Add oMiserLinking.opt presence to manifest
  0.0.1  2026-01-11T18:02Z Update to be specific to the oFrugal seedling
  0.0.0  2026-01-08T23:28Z Draft cache setup transposed from VCrayApp 0.1.0.
 
