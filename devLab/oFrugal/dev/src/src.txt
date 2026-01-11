@@ -1,4 +1,4 @@
-oFrugal 0.0.0 src.txt 0.0.0         UTF-8                        2026-01-09
+oFrugal 0.0.0 src.txt 0.0.1         UTF-8                          2026-01-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -16,18 +16,31 @@ oFrugal 0.0.0 src.txt 0.0.0         UTF-8                        2026-01-09
   *    function.                                                          *
   *                                                                       *
   *    This source code is backed-up and managed using Git and GitHub.    *
-  *    a source-code management system such as Git and GitHub.  See       *
-  *    <http://orcmid.github.io/miser/dev/*TBD*> for more details.        *
+  *    See <http://orcmid.github.io/miser/dev/*TBD*> for more details.    *
   *                                                                       *
   *    If oFrugal is re-extracted or an update is extracted, this file    *
-  *    file will be restored/replaced.  Any other files already in this   *
-  *    folder will be untouched.                                          *
+  *    will be restored/replaced.  Existing files may also be replaced by *
+  *    new versions, updated or not.                                      *
   *                                                                       *
   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
+MANIFEST
+
+   mkOFrugal-0.0.0.bat
+      Temporary construction from a seedling oFrugal.c directly in src/
+      before availability of any oMiser to incorporate.
+
+   oFrugal.c
+      The seedling code as it prepares to merge with an initial oMiser
+      sprout
+
+   VCoptions.opt
+      VC/C++ options for compiling the oFrugal.c seedling
+
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                      Copyright 2026 Dennis E. Hamilton
+                     Copyright 2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -45,12 +58,28 @@ oFrugal 0.0.0 src.txt 0.0.0         UTF-8                        2026-01-09
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oFrugal 0.0.0 REPL Source Code.  Text file src.txt
-   version 0.0.0 dated 2026-01-09, available on the Internet as a version of
+   Hamilton, Dennis E. Source Code Folder for the oFrugal Win32 REPL.
+   File src.txt version 0.0.1 dated 2026-01-11 available on the Internet as a
+   version of
    <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/dev/src/src.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.0 2026-01-08T00:51Z Adapted from VCrayApp src.txt 0.0.5
+NOTES AND TODOS
+
+ * I need to figure out where to link to this that's maybe in a better
+   location, but probably not.
+
+ * Once there's any seedling of oMiser at ../../oMiser, we'll switch to using
+   ../mkOFrugal.bat (that's in oFrugal/dev/), and scrub this src.txt to a
+   typical version that could be bundled into a snapshot.
+
+ * This will ultimately be a PGP-signed distributed src.txt in a snapshot
+   bundle.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.1 2026-01-11T16:58Z Customized for the oFrugal seedling
+ 0.0.0 2026-01-11T02:40Z Adapted from VCrayApp src.txt 0.0.5
 
                           ***** end of src.txt *****
