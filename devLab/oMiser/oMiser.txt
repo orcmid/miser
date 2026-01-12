@@ -1,4 +1,4 @@
-oMiser.txt 0.0.1                    UTF-8                       dh:2026-01-10
+oMiser.txt 0.0.2                    UTF-8                       dh:2026-01-12
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -13,10 +13,39 @@ oMiser.txt 0.0.1                    UTF-8                       dh:2026-01-10
 
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/oMiser.txt>
 
+    oMiser is developed as a collection of header (*.h) and C Language
+    (*.c) files.  Some of the files may be platform specific and their
+    names (i.e., *-Win32.c) will reflect that.
+
+    oMiser source code is meant to be taken as a library.  It is undecided
+    whether a *.lib packaging of the compiled sources is to be provided.
+    All early development of oFrugal will compile and use the oMiser source
+    code directly.
+
+    It is expected that oMiser will be created and usable via in-process
+    COM interfaces, usable in C and C++ languages.  Whether that becomes the
+    official API, techniques for encapsulation and hiding of implementation
+    details will be featured.
+
+    Because performance is crucial at the low level of operations with
+    ob-cells, there are also means by which API operations, such as the
+    apply and eval functions, can short-circuit the externally-offered API
+    to maximize performance.
+
+    Performance/stress testing will determine the degree to which COM
+    interfaces are suitable.  Integrated testing with oFrugal will also
+    determine whether or not the COM interfaces are an impediment to having
+    the parser be input bound.
+
+
 MANIFEST
 
-    oMiser.txt
-           this manifest and job-jar file
+    oMiser.txt  this manifest and job-jar file
+
+       src/     all source code for oMiser
+
+     tests/     all tests using only oMiser, separate from the combined
+                testing of oFrugal builds
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -36,6 +65,13 @@ MANIFEST
     limitations under the License.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ATTRIBUTION
+
+   Hamilton, Dennis E. Incremental Development of oMiser Software.  Miser
+   Project text file oMiser.txt version 0.0.2 dated 2026-01-12, available
+   on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/oMiser.txt>
 
 NOTES AND TODO
 
@@ -71,6 +107,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2026-01-12T17:31Z Synopsis and attribution
  0.0.1 2026-01-10T18:20Z Rhapsodize on one giant COM object
  0.0.0 2026-01-08T16:14Z Create placeholder and initial job jar for the
        oMiser library code.

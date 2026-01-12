@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.2                   UTF-8                       dh:2026-01-08
+oFrugal.txt 0.0.3                   UTF-8                       dh:2026-01-12
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
                              The Miser Project Code
                              ======================
@@ -24,13 +24,16 @@ MANIFEST
 
       tests/    tests of oFrugal builds
 
+    .gitignore  ensuring the local copy of oMiser is excluded
+
+
     oFrugal development procedes with a specific version of oMiser while
     further development of oMiser happens separately. The tests keep pace
     with those developments as well as the continuing development of the
     (next) oFrugal release.
 
     A variant of test-first development is used to have oFrugal code that
-    always builds and runs, but is at each point, the least that can
+    always builds and runs, but is, at each point, the least that can
     possibly work.  Getting to a 1.0.0 will take a great deal of spiraling.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -51,6 +54,13 @@ MANIFEST
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ATTRIBUTION
+
+   Hamilton, Dennis E. nfoTools: Source Code Version Control Repository.
+   nfoTools project text file nfoTools.txt version 0.0.11 dated 2021-09-02,
+   available on the Internet as a version of
+   <https://github.com/orcmid/nfoTools/blob/master/nfoTools.txt>
+
 NOTES AND TODO
 
   * Initial focus is exclusively on use of the Microsoft Windows Platform
@@ -63,7 +73,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-
+ 0.0.3 2026-01-12T17:22Z Attribution and updated manifest
  0.0.2 2026-01-08T19:00Z Touch ups with a little explanation
  0.0.1 2026-01-08T16:53Z Introduce dev/, oMiser/, and tests/ subfolders
  0.0.0 2026-01-08T16:15Z Create placeholder and initial job jar for the
