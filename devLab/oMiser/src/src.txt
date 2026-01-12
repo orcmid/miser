@@ -1,0 +1,59 @@
+oMiser 0.0.0 src.txt 0.0.0          UTF-8                          2026-01-12
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                                 OMISER CODE
+
+                     OMISER 0.0.0 LIBRARY SOURCE CODE
+                     ================================
+
+MANIFEST
+
+   src.txt
+      This synopsis and manifest of an oMiser source code.
+
+
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oMiser 0.0.0 Library Source Code folder file src.txt
+   version 0.0.0 dated 2026-01-12, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/src/src.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+NOTES AND TODOS
+
+ * This will ultimately be a PGP-signed distributed src.txt in a snapshot
+   bundle.
+
+ * I need a block of GUIDs that should last for all the interfaces we will
+   need.
+
+ * I also need a fast way to recognize primitives. Not just that it is a
+   primitive, but which one, to streamline eval and ap acting on them without
+   much nesting conditionals and matchings.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0 2026-01-12T22:54Z Initial form derived from the oFrugal/dev/src version
+
+                          ***** end of src.txt *****
