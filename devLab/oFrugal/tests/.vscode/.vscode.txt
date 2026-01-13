@@ -1,4 +1,4 @@
-oFrugal/dev/.vscode/.vscode.txt 0.0.5 UTF-8                       2026-01-13
+oFrugal/tests/.vscode/.vscode.txt 0.0.5 UTF-8                      2026-01-13
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -41,7 +41,7 @@ MANIFEST
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-0.0.5 2026-01-13T01:47Z Transpose for oFrugal/dev/.vscode
+0.0.5 2026-01-13T01:51Z Transpose for oFrugal/tests/.vscode/
 0.0.4 2026-01-13T01:42Z Simplify and remove mention of raylib
 0.0.3 2025-12-03T02:10Z Touch up for nfoGenRandsKit/tests/.vscode
 0.0.2 2025-12-02T23:23Z Fix some typos
