@@ -1,0 +1,69 @@
+tests.txt 0.0.0                     UTF-8                          2026-01-13
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                         OFRUGAL REPL DEVELOPMENT
+                         ========================
+
+                     TEST CASES FOR OFRUGAL VERSIONS
+                     -------------------------------
+
+  <https://github.com/orcmid/miser/blob/master/devLab/oFrugal/tests/tests.txt>
+
+    Files in this directory are for various test cases used to demonstrate
+    and confirm dependable oFrugal operation.
+
+    Beside basic operational confirmation, there will also be some stress
+    testing involving instrumentation and timing of different challenges
+    to oFrugal operation.
+
+MANIFEST
+
+        tests.txt  this synopsis, manifest, and TODOs
+
+      .vscode/     Visual Studio code workspace setting for tests/
+     myPrompt.bat  simple script for setting colorization of CMD.exe terminal
+    VCoptions.opt  VC/C++ options for compiles of test procedures.
+
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. Test Cases for oMiser Releases. Miser Project text file
+   tests.txt 0.0.0 dated 2026-01-13, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/tests/tests.txt>
+
+NOTES AND TODO
+
+ * Provide initial establishment of an oMiser instance.
+
+ * Exercise the basic parsing mechanism and processing of an impossibly huge
+   symbolic form.
+
+ * I need to access and report the instrumented elements of oMiser.  I also
+   need instrumentation on the operational performance of oFrugal on top of
+   that.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0 2026-01-13T01:30Z Initial placeholder
+
+
+                        ***** end of tests.txt *****
