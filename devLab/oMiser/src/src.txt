@@ -1,4 +1,4 @@
-oMiser 0.0.0 src.txt 0.0.0          UTF-8                          2026-01-12
+oMiser 0.0.0 src.txt 0.0.1          UTF-8                          2026-01-13
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -35,7 +35,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser 0.0.0 Library Source Code folder file src.txt
-   version 0.0.0 dated 2026-01-12, available on the Internet as a version of
+   version 0.0.1 dated 2026-01-13, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/src/src.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -48,12 +48,25 @@ NOTES AND TODOS
  * I need a block of GUIDs that should last for all the interfaces we will
    need.
 
+ * I need a block of HRESULTs and definition of oFrugal method-specific ones.
+   See "Inside COM" HRESULTs, p.104.  I need the list of ones that are
+   normally returned from COM interfaces - the sort-of elementary ones,
+   and then a way to specify
+
+ * I need a block of GUIDs and I'll need those to be listed in some
+   convenient place.  How GUIDs are stored somewhere for use by users of the
+   oMiser (COM) interfaces is an interesting problem.  I also need to have a
+   good way to cope with versioning of GUIDs tied to particular releases of
+   oMiser.  This starts on p.111 of "Inside COM."  (I'm not sanguine about
+   how that book describes things.  I will have to provide a better account.)
+
  * I also need a fast way to recognize primitives. Not just that it is a
    primitive, but which one, to streamline eval and ap acting on them without
    much nesting conditionals and matchings.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.1 2026-01-13T22:44Z Pondering HRESULTs and GUIDs
  0.0.0 2026-01-12T22:54Z Initial form derived from the oFrugal/dev/src version
 
                           ***** end of src.txt *****
