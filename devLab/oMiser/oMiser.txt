@@ -1,4 +1,4 @@
-oMiser.txt 0.0.2                    UTF-8                       dh:2026-01-12
+oMiser.txt 0.0.3                    UTF-8                       dh:2026-01-14
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -88,6 +88,42 @@ NOTES AND TODO
     to have a giant block of contiguous storage, but it is the to foundation
     for whatever memory-management is hung off of it.
 
+  * [2026-01-14] I am getting worked up about how complicated COM is versus
+    how simple it is to provide in-process interfaces.  There need be no
+    interaction with the COM SCM, and in any case, it should all be hidden.
+    So the use of COM SCM functions should be completely hidden.  It is just
+    the interface model I am interested in, without any difficult dressing.
+    The trickiest business will be around using ppv pointers, using HRESULTs,
+    and using GUIDs for things.  That has to be enough, but the machinery is
+    hidden other than that.
+
+  * [2026-01-14] The difficulty at a lower level has to do with what interface
+    is delivered when ob-cells are navigated. This seems messy because we're
+    delivering ppv (a pointer to the beginning of an ob-cell where there's
+    a pointer to a function-entry vtable).  The ppv, the location of the
+    ob-cell for example, is provided as the first so it is known which ob-cell
+    (or other instance structure) having that interface is being pointed at.
+
+  * [2026-01-14] I am uncertain how this handling of ob-cells works with
+    regard to garbage collection.  Garbage collection depends on knowing
+    what is referenced, and has to be moved.  But that means all ppvs that
+    refer to the ob-cell have to be known in order to for it to be moved.  So
+    it doesn't work if all we have is a reference count but no idea who is
+    doing the referring.  One can't go fix ppvs wherever they might be held.
+
+  * [2026-01-14] I think the oMiser interfaces need to be the least that are
+    needed for an oFrugal to work.  I think the definition of semantics and
+    the construction of the parser tells us what that is. I think we need
+    a way to thread through ob-cells (or have them on a list) that lets us
+    tell which ones are somewhere that they can be moved.  I need to be
+    careful here.
+
+  * [2026-01-14] This strikes me as weird.  It feels like there is something
+    outside of ob-cells, but intimately connected, that determines what
+    ob-cells are live in a way that they can be removed from that structure
+    or generationally moved.  But that puts us back in the previously-
+    unsolved problem.  In what way do they get "moved" if not removed.
+
   * I need to work on the header technique that was used for the JNI
     integration of ODMA.  It allows headers for objects to compile as C++
     virtual   interfaces or as C Language structures with the PV at the
@@ -107,6 +143,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2026-01-14T17:28Z Musing on a paradox around being garbage-collectable
  0.0.2 2026-01-12T17:31Z Synopsis and attribution
  0.0.1 2026-01-10T18:20Z Rhapsodize on one giant COM object
  0.0.0 2026-01-08T16:14Z Create placeholder and initial job jar for the
