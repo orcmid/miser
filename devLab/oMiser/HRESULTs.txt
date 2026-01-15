@@ -1,4 +1,4 @@
-HRESULTs.txt 0.0.0                  UTF-8                          2026-01-14
+HRESULTs.txt 0.0.1                  UTF-8                          2026-01-15
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -9,14 +9,14 @@ HRESULTs.txt 0.0.0                  UTF-8                          2026-01-14
     HRESULTs are a convention for returning, possibly passing-on, result codes
     from API functions.  Although heavily employed in Microsoft Windows and
     the Component Object Model (COM) on several platforms, these codes are
-    adopted for the oMiser API in a manner consistent with operation of
-    COM-style interfaces and methods.
+    adopted for the oMiser API in a manner consistent with interoperaable
+    operation of COM-style interfaces and methods on additional platforms.
 
     Although harmonious with the use in COM operations, this does not imply
     that oMiser will be distributed as a COM library.  Nevertheless HRESULTs
-    are used in the COM-compatible APIs of oFrugal.
+    are used in the COM-compatible APIs relied upon in oFrugal.
 
-    Common HRESULT values are used where applicable.  For oFrugal-specific
+    Common HRESULT values are used where applicable.  For oMiser-specific
     error codes, the HRESULT extension mechanism is used.
 
     These are the common ones from facilities 0 (FACILITY_NULL) and 7
@@ -35,11 +35,13 @@ HRESULTs.txt 0.0.0                  UTF-8                          2026-01-14
      E_OUTOFMEMORY 0x8007000E Failed to allocated necessary memory
       E_INVALIDARG 0x80070057 One or more arguments are not valid
 
-    The FACILITY_ITF (4), with HRESULTs 0x8004xxxx is for interface specific
-    to a single interface.  Any new ones required by oMiser will be in this
-    category.  They should also have codes of 0x80040200 or greater just to
-    avoid ones that COM uses for some of its interfaces.  This is according
-    to [Rogerson1997] and that may be dated information.  Playing safe here.
+    The FACILITY_ITF (4), with HRESULTs 0x8004xxxx is for interface-specific
+    responses to use of a particular interface.  These are specified in
+    conjunction with individual interface contracts.  Any new ones required
+    by oMiser will be in this category.  They will have codes of 0x80040200
+    or greater to avoid ones COM uses for some of its interfaces.  This is
+    according to [Rogerson1997] even though that may be dated information.
+    Playing safe here.
 
     SOURCES
 
@@ -59,8 +61,9 @@ HRESULTs.txt 0.0.0                  UTF-8                          2026-01-14
    <https://learn.microsoft.com/en-us/windows/win32/com/com-error-codes-1>
    facilities 0 (FACILITY_NULL) and 4 (FACILITY_ITF)
 
-
-
+[Rogerson1997]
+    Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
+    1-57321-349-8.  <https://orcmid.github.io/bib/progsys.htm#Rogerson1997>.
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -83,9 +86,9 @@ HRESULTs.txt 0.0.0                  UTF-8                          2026-01-14
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of HRESULTs.  Text file version 0.0.0
-   dated 2026-01-14, available on the Internet as a version of
-   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/src/HRESULTs.txt>.
+   Hamilton, Dennis E. oMiser Use of HRESULTs.  Text file version 0.0.1
+   dated 2026-01-15, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/HRESULTs.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -99,15 +102,12 @@ NOTES AND TODOS
 
  * Find the original COM specification.  It is out there.
 
- * Create, and refer to, [Rogerson1997].
-
  * I need a block of HRESULTs and definition of oFrugal method-specific ones.
-   See "Inside COM" HRESULTs, p.104.  I need the list of ones that are
-   normally returned from COM interfaces - the sort-of elementary ones,
-   and then a way to specify
+   See [Rogerson1997] HRESULTs, p.104.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.1 2026-01-15T17:05Z Move to oMiser/ and touch-up, supply [Rogerson1997]
  0.0.0 2026-01-14T23:30Z Initial draft on HRESULTs
 
                         ***** end of HRESULTS.txt *****

@@ -1,4 +1,4 @@
-oMiser.txt 0.0.3                    UTF-8                       dh:2026-01-14
+oMiser.txt 0.0.4                    UTF-8                       dh:2026-01-15
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -23,9 +23,9 @@ oMiser.txt 0.0.3                    UTF-8                       dh:2026-01-14
     code directly.
 
     It is expected that oMiser will be created and usable via in-process
-    COM interfaces, usable in C and C++ languages.  Whether that becomes the
-    official API, techniques for encapsulation and hiding of implementation
-    details will be featured.
+    COM interfaces, usable in C and C++ languages.  Whether or not that
+    becomes the official API, techniques for encapsulation and hiding of
+    implementation details will be featured in the chosen API.
 
     Because performance is crucial at the low level of operations with
     ob-cells, there are also means by which API operations, such as the
@@ -46,6 +46,9 @@ MANIFEST
 
      tests/     all tests using only oMiser, separate from the combined
                 testing of oFrugal builds
+
+  HRESULTs.txt  Principles for choice of HRESULTs returned from oMiser API
+                functions, including methods of COM interfaces.
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -69,7 +72,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. Incremental Development of oMiser Software.  Miser
-   Project text file oMiser.txt version 0.0.2 dated 2026-01-12, available
+   Project text file oMiser.txt version 0.0.4 dated 2026-01-15, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/oMiser.txt>
 
@@ -143,6 +146,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.4 2026-01-15T17:15Z Add HRESULTs.txt, touch-ups
  0.0.3 2026-01-14T17:28Z Musing on a paradox around being garbage-collectable
  0.0.2 2026-01-12T17:31Z Synopsis and attribution
  0.0.1 2026-01-10T18:20Z Rhapsodize on one giant COM object
