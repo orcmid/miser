@@ -1,0 +1,78 @@
+COM.txt 0.0.0                       UTF-8                          2026-01-15
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                                 OMISER CODE
+
+                       OMISER USE OF COM INTERFACES
+                       ============================
+
+    It is expected that oMiser will be created and usable via in-process
+    COM interfaces, usable in C and C++ languages.  Whether or not that
+    becomes the official API, techniques for encapsulation and hiding of
+    implementation details will be featured in the chosen API.
+
+    The intentions is to provide a portable object-oriented technique for
+    operating on any platform supporting standard C/C++ languages.  The
+    COM-specific (and Microsoft-ish) development will be relied upon,
+    rather than use of variant COM-like approaches that have arisen as
+    alternatives.  Instead, the published and XOpen-adopted specification
+    will be adhered to.
+
+
+SOURCES
+
+[Rogerson1997]
+    Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
+    1-57321-349-8.  <https://orcmid.github.io/bib/progsys.htm#Rogerson1997>.
+
+Microsoft Learn
+    Component Object Model (COM) Portal.  English version accessed at
+    <https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal>
+    on 2026-01-15, with complete 2020-08-21 windows-win32-com.pdf (56.274 MB
+    3,738 pages) downloaded.
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.0
+   dated 2026-01-15, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+NOTES AND TODOS
+
+ * Find the original COM specification.  It is out there.
+
+ * I need to describe the oMiser scheme for a block of GUIDs and their
+   systematic usage on versions of interfaces.
+
+ * I need to figure out aggregation and other ways of combining interfaces
+   and the underlying objects.
+
+ * I definitely need the scheme by which both C and C++ rendition of the
+   binary-compatible interfaces is handled.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0 2026-01-15T17:55Z Initial draft on COM
+
+                          ***** end of COM.txt *****

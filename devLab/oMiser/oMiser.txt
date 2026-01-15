@@ -1,4 +1,4 @@
-oMiser.txt 0.0.4                    UTF-8                       dh:2026-01-15
+oMiser.txt 0.0.5                    UTF-8                       dh:2026-01-15
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -46,6 +46,8 @@ MANIFEST
 
      tests/     all tests using only oMiser, separate from the combined
                 testing of oFrugal builds
+
+       COM.txt  Usage of COM for oMiser, featuring C/C++ interface usage
 
   HRESULTs.txt  Principles for choice of HRESULTs returned from oMiser API
                 functions, including methods of COM interfaces.
@@ -146,6 +148,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5 2026-01-15T17:35Z Add COM.txt
  0.0.4 2026-01-15T17:15Z Add HRESULTs.txt, touch-ups
  0.0.3 2026-01-14T17:28Z Musing on a paradox around being garbage-collectable
  0.0.2 2026-01-12T17:31Z Synopsis and attribution
