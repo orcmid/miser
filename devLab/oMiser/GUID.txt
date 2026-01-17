@@ -1,0 +1,181 @@
+GUID.txt 0.0.0                      UTF-8                          2026-01-17
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                                 OMISER CODE
+
+                            OMISER USE OF GUIDS
+                            ===================
+
+    GUIDs are used to identify interfaces of COM object instances.  Some
+    GUIDs are fixed as part of the COM specification.  Others are generated
+    for oMiser-specific purposes.  The organization of interfaces satisfies
+    the requirements of oFrugal having an abstracted interface to oMiser for
+    oFrugal REPL operation.
+
+    An important reliance of GUIDs is related to interface versioning.  When
+    an interface contract changes, the evolved interface will have a new
+    unique GUID.  In this manner, code designed to operate with a previous
+    version of the interface can be preserved, and if not, the loss of
+    support can be reported via a suitable HRESULT.
+
+    The standard GUIDs that oMiser supports as part of Fundamental usage
+    of COM consist of the following:
+
+    DEFINE_OLEGUID(IID_IUnknown,            0x00000000L, 0, 0);
+    DEFINE_OLEGUID(IID_IClassFactory,       0x00000001L, 0, 0);
+    DEFINE_OLEGUID(IID_IMalloc,             0x00000002L, 0, 0);
+    DEFINE_OLEGUID(IID_IMarshal,            0x00000003L, 0, 0);
+
+Some others that might need to be minded,
+
+    /* storage related interfaces */
+    DEFINE_OLEGUID(IID_ILockBytes,          0x0000000aL, 0, 0);
+    DEFINE_OLEGUID(IID_IStorage,            0x0000000bL, 0, 0);
+    DEFINE_OLEGUID(IID_IStream,             0x0000000cL, 0, 0);
+    DEFINE_OLEGUID(IID_IEnumSTATSTG,        0x0000000dL, 0, 0);
+
+/* moniker related interfaces */
+    DEFINE_OLEGUID(IID_IBindCtx,            0x0000000eL, 0, 0);
+    DEFINE_OLEGUID(IID_IMoniker,            0x0000000fL, 0, 0);
+    DEFINE_OLEGUID(IID_IRunningObjectTable, 0x00000010L, 0, 0);
+    DEFINE_OLEGUID(IID_IInternalMoniker,    0x00000011L, 0, 0);
+
+/* storage related interfaces */
+    DEFINE_OLEGUID(IID_IRootStorage,        0x00000012L, 0, 0);
+    DEFINE_OLEGUID(IID_IDfReserved1,        0x00000013L, 0, 0);
+    DEFINE_OLEGUID(IID_IDfReserved2,        0x00000014L, 0, 0);
+    DEFINE_OLEGUID(IID_IDfReserved3,        0x00000015L, 0, 0);
+
+    with
+    #define DEFINE_OLEGUID(name, l, w1, w2) \
+            EXTERN_C const GUID name \
+              = { l, w1, w2, { 0xC0,0,0,0,0,0,0,0x46 } }
+     name → The variable name for the GUID (e.g., IID_IUnknown)
+     l → First 32 bits of the GUID
+     w1 → Next 16 bits
+     w2 → Next 16 bits
+
+     The last 8 bytes are fixed to { 0xC0, 0, 0, 0, 0, 0, 0, 0x46 } for OLE
+     GUIDs.
+
+     There are 16 bytes per GUID.  Note that OLEGUIDs are serialized in the
+     first 8 bytes.  That's a bit heavy.
+
+UTILITY FOR GENERATING GUIDS
+
+    The utility is at BuildTools/Common7/tools/guidgen.exe for me.  It does
+    not allow generation of blocks of GUIDs, unfortunately.  I might be able
+    to do it by making variations.  I should check that.  Here are a few,
+
+// {F47081DE-AB5B-4E9D-9C40-7601C24E7060}
+   static const GUID <<name>> =
+{ 0xf47081de, 0xab5b, 0x4e9d, { 0x9c, 0x40, 0x76, 0x1, 0xc2, 0x4e, 0x70, 0x60 } };
+
+// {94CC012C-E179-4CCD-AF60-95B8F8952003}
+static const GUID <<name>> =
+{ 0x94cc012c, 0xe179, 0x4ccd, { 0xaf, 0x60, 0x95, 0xb8, 0xf8, 0x95, 0x20, 0x3 } };
+
+// {C62F1021-E130-42BC-A26B-29424B3AFFB4}
+static const GUID <<name>> =
+{ 0xc62f1021, 0xe130, 0x42bc, { 0xa2, 0x6b, 0x29, 0x42, 0x4b, 0x3a, 0xff, 0xb4 } };
+
+The GUID type is basically a struct {uint32, uint16, uint16, uint8[8]}.
+
+The 0x4... for the third field indicates something about this being a random
+one, not using times or device IDs.  Generating sequences is apparently now
+frowned upon.
+
+The idea of making them sequential in some sense might be about using a fixed
+field as an index into an array, use it for comparison of agreement, and then
+use the index for whatever else we want to do about it.
+
+Note: The OLE-defined COM GUIDs are counted off in the low-order byte of
+Data1, below.  If we never thought we'd be using any of these, we can start
+our own sequence there, but avoiding those in case we will use some of them
+in the future.  We will fail on the others.
+
+It looks like ours will get IID_ names to reflect them being for Interface
+Definitions. And REF_IID (or whatever the correct name is) will apply in
+the pointers, if that makes sense.  There needs to be more consistency and
+clearcut explanation here.
+
+[From Copilot Search on GUID typedef]
+
+On Windows, it is typically defined in guiddef.h (included via objbase.h or
+windows.h) as a typedef for a struct:
+
+typedef struct _GUID {
+    unsigned long  Data1;   // 32 bits
+    unsigned short Data2;   // 16 bits
+    unsigned short Data3;   // 16 bits
+    unsigned char  Data4[8]; // 64 bits
+} GUID;
+
+Breakdown of Fields
+
+Data1: 4 bytes (DWORD)
+Data2: 2 bytes (WORD)
+Data3: 2 bytes (WORD)
+Data4: 8 bytes (BYTE array)
+
+This structure matches the standard UUID layout defined in RFC 4122.
+
+
+
+SOURCES
+
+[Rogerson1997]
+    Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
+    1-57321-349-8.  <https://orcmid.github.io/bib/progsys.htm#Rogerson1997>.
+
+Microsoft Learn
+    Component Object Model (COM) Portal.  English version accessed at
+    <https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal>
+    on 2026-01-15, with complete 2020-08-21 windows-win32-com.pdf (56.274 MB
+    3,738 pages) downloaded.
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.0
+   dated 2026-01-17, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/GUID.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+NOTES AND TODOS
+
+ * Find the original COM specification.  It is out there.
+
+ * I need to describe the oMiser scheme for a block of GUIDs and their
+   systematic usage on versions of interfaces.
+
+ * I need to figure out aggregation and other ways of combining interfaces
+   and the underlying objects.
+
+ * I definitely need the scheme by which both C and C++ rendition of the
+   binary-compatible interfaces is handled.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ 0.0.0 2026-01-17T00:28Z Initial draft on COM
+
+                          ***** end of COM.txt *****
