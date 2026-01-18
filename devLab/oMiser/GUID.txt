@@ -1,4 +1,4 @@
-GUID.txt 0.0.0                      UTF-8                          2026-01-17
+GUID.txt 0.0.1                      UTF-8                          2026-01-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -99,6 +99,25 @@ Definitions. And REF_IID (or whatever the correct name is) will apply in
 the pointers, if that makes sense.  There needs to be more consistency and
 clearcut explanation here.
 
+ADDITION [2026-01-18]:
+  The use of various Windows.h defines and types is problematic here.  I would
+  like something more at the essential C Language level.  I get to do that,
+  I'm not actually using the Windows COM stuff, just using the model.  I can
+  use the last byte (or even nibble) for oFrugal GUIDs.  The idea is to leave
+  the ones retained from Microsoft, such as IID_IUnknown alone. Whatever lower
+  digits need to be kept from those IIDs will be kept for those identifiers.
+  Then I will navigate on the nibble, verify that the supplied GUID matches
+  the full one we support, and flunk all the others.
+
+  We get particular nibble values for oMiser GUIDs by generating random ones
+  until the desired number shows up.  This will give us 16 slots to start
+  with, We may never need that many, so playing it safe.  This should
+  provide enough if we end up versioning any interfaces.  We could reserve
+  32 to be safe, expecting that old code wouldn't care.  In that respect,
+  the 16-slot table is probably too much also. We don't have to generate
+  any more than actually needed.  And we can always expand to 32 when
+  needed (LOL: linear hashing sort-of)
+
 [From Copilot Search on GUID typedef]
 
 On Windows, it is typically defined in guiddef.h (included via objbase.h or
@@ -176,6 +195,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.1 2026-01-18T21:58Z Expand on reserving a GUID block
  0.0.0 2026-01-17T00:28Z Initial draft on COM
 
                           ***** end of COM.txt *****
