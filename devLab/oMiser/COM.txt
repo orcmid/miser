@@ -1,4 +1,4 @@
-COM.txt 0.0.0                       UTF-8                          2026-01-15
+COM.txt 0.0.1                       UTF-8                          2026-01-18
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -31,6 +31,11 @@ Microsoft Learn
     on 2026-01-15, with complete 2020-08-21 windows-win32-com.pdf (56.274 MB
     3,738 pages) downloaded.
 
+Wikipedia
+    IUnknown.  Article at <https://en.wikipedia.org/wiki/IUnknown>. Accessed
+    on 2026-01-18T22:04Z.  This article describes the key aspects of IUnknown
+    and the rules or it on all interfaces (all inheriting from IUnknown).
+
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -52,15 +57,16 @@ Microsoft Learn
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.0
-   dated 2026-01-15, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.1
+   dated 2026-01-18, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 NOTES AND TODOS
 
- * Find the original COM specification.  It is out there.
+ * Find the original COM specification.  It is out there.  I have found a
+   1995 version in PostScript format.  I will have to see how to view it.
 
  * I need to describe the oMiser scheme for a block of GUIDs and their
    systematic usage on versions of interfaces.
@@ -73,6 +79,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.1 2026-01-18T23:15Z Note on locating a 1995 specification
  0.0.0 2026-01-15T17:55Z Initial draft on COM
 
                           ***** end of COM.txt *****
