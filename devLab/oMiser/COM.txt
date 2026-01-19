@@ -1,4 +1,4 @@
-COM.txt 0.0.1                       UTF-8                          2026-01-18
+COM.txt 0.0.2                       UTF-8                          2026-01-19
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -11,13 +11,44 @@ COM.txt 0.0.1                       UTF-8                          2026-01-18
     becomes the official API, techniques for encapsulation and hiding of
     implementation details will be featured in the chosen API.
 
-    The intentions is to provide a portable object-oriented technique for
+    The intention is to provide a portable object-oriented technique for
     operating on any platform supporting standard C/C++ languages.  The
     COM-specific (and Microsoft-ish) development will be relied upon,
     rather than use of variant COM-like approaches that have arisen as
     alternatives.  Instead, the published and XOpen-adopted specification
     will be adhered to.
 
+Potential Interfaces
+
+    These interfaces are likely, or potentially available, so we need to
+    watch how IIDs are contrived to allow rapid determination and validation
+    of a supplied IID to QueryInterface.
+
+             IUnknown  because that's always available, 0x00
+
+          IDataObject  ways to access a data object (unlikely)
+
+      IPersistStorage  for saving the state of an object in a storage
+                       structure
+
+       IPersistStream  another way to save the state of an object
+
+         IPersistFile  and the usual way
+
+    * EDITOR NOTE: These do not all seem to be identified in the near-original
+      list of defined interface GUIDs.  I need to get on top of that.
+
+    None of this is obligatory, and there is no intention to (expose or
+    rely upon) COM creation of Class Factories and Class Factory creation of class instances.  This does require that there is a simple function to
+    create a single oMiser instance.  It might not be OK to create more than
+    one in a single process.
+
+    It appears that there should be only one "object" that is all of oMiser,
+    even though there are multiple interfaces.  I can also imagine there
+    being some form of separation, because we can envision there being
+    separation of the MOb something abut the structure separate individual
+    ob-cells.  I'm going to leave that all here for now and resolve it as
+    there is more effort on the code.
 
 SOURCES
 
@@ -30,11 +61,27 @@ Microsoft Learn
     <https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal>
     on 2026-01-15, with complete 2020-08-21 windows-win32-com.pdf (56.274 MB
     3,738 pages) downloaded.
+       This material presumes a Visual Studio C++ implementation of COM
+    interfaces and lacks the clarity of the original specification
+    (See [Microsoft2002], below)
 
 Wikipedia
     IUnknown.  Article at <https://en.wikipedia.org/wiki/IUnknown>. Accessed
     on 2026-01-18T22:04Z.  This article describes the key aspects of IUnknown
     and the rules or it on all interfaces (all inheriting from IUnknown).
+
+[Microsoft2002]
+    The Component Object Model Specification. (Microsoft:2002).  Now available
+    online at the WayBackMachine archive
+    <https://web.archive.org/web/20040215095320/http://www.microsoft.com/com/resources/comdocs.asp>
+       There are choices of 3 packagings in Zip containers: Postscript,
+    Microsoft Word with 8.3 filenames, and Microsoft Word 6 form.  The latter
+    is recommended for its better-named *.doc chapter files.
+       The link to an HTML version is akin to the Microsoft Learn version and
+    not the original document.
+       For oMiser purposes, this specification is sufficient and also offers
+    the greatest clarity around binary-interface compatibility.
+
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -57,8 +104,8 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.1
-   dated 2026-01-18, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.2
+   dated 2026-01-19, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -77,8 +124,11 @@ NOTES AND TODOS
  * I definitely need the scheme by which both C and C++ rendition of the
    binary-compatible interfaces is handled.
 
+ * And I need to know how many classes we're talking about.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2026-01-19T21:59Z More ponderings
  0.0.1 2026-01-18T23:15Z Note on locating a 1995 specification
  0.0.0 2026-01-15T17:55Z Initial draft on COM
 
