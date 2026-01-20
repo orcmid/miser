@@ -1,4 +1,4 @@
-oMiser 0.0.0 src.txt 0.0.1          UTF-8                          2026-01-13
+oMiser 0.0.0 src.txt 0.0.2          UTF-8                          2026-01-20
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -8,8 +8,9 @@ oMiser 0.0.0 src.txt 0.0.1          UTF-8                          2026-01-13
 
 MANIFEST
 
-   src.txt
-      This synopsis and manifest of an oMiser source code.
+     src.txt  This synopsis and manifest of an oMiser source code.
+
+   oMiser.h   The oMiser API header file
 
 
 
@@ -35,7 +36,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser 0.0.0 Library Source Code folder file src.txt
-   version 0.0.1 dated 2026-01-13, available on the Internet as a version of
+   version 0.0.2 dated 2026-01-20, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/src/src.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -66,6 +67,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2026-01-20T20:06Z Add oMiser.h
  0.0.1 2026-01-13T22:44Z Pondering HRESULTs and GUIDs
  0.0.0 2026-01-12T22:54Z Initial form derived from the oFrugal/dev/src version
 
