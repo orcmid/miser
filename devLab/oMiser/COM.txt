@@ -1,4 +1,4 @@
-COM.txt 0.0.2                       UTF-8                          2026-01-19
+COM.txt 0.0.3                       UTF-8                          2026-01-22
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -104,30 +104,72 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.2
-   dated 2026-01-19, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.3
+   dated 2026-01-22, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 NOTES AND TODOS
 
- * Find the original COM specification.  It is out there.  I have found a
-   1995 version in PostScript format.  I will have to see how to view it.
+ * Find the original COM specification.  I am viewing that specification in
+   separate Work 6 files per chapter.
+
+ * I HAVE A PROBLEM: It appears that strings are communicated to and from
+   COM Interface methods in Unicode (wchar_t) all of the time.  I had not
+   intended to do that, and I need to see if that is necessarily the case.
+   I prefer to use UTF-8, but that does create problems at times.  I also
+   need to know whether BSTRs are intended, are really just pure (wchar_t)
+   with u0000 terminators and UTF-16LE.  There is also a conflict with
+   Linux/Unix, which use 32 bits and UTF-32 encoding.  One feature of BSTRs
+   is there reliable remote communication.  Also, the way they are pointed
+   into makes them useful as simply null-terminated wchar_t vectors.  I'm
+   still waffling about all of this.  I need to figure it out by the time
+   I provide MOb interfaces.
+
+ * Whatever the choice, I need to figure out the communication of text
+   parameters (i.e., literals) to and from oFrugal, and that will matter for
+   the way terminal is handled also.  There is a non-trivial impact on the
+   display of canonical-form literals in oFrugal STDOUT delivery.
+
+ * I also don't want to be wedded to wchar_t for stdout and output to files.
+   UTF-8 is definitely more appealing.  I need to get on top of that.
 
  * I need to describe the oMiser scheme for a block of GUIDs and their
-   systematic usage on versions of interfaces.
+   systematic usage on versions of interfaces.  [dh:2026-01-21 I have a
+   solution using a single nibble (16 0-F values) and I'll generate random
+   guids until I get the series I want, apart from those take by standard
+   COM GUIDs for Interfaces I might also support.  It might be *really*
+   safe to choose 32, with the expectation of there never being a need for
+   that many, even with versioning of interfaces (maybe).]
 
  * I need to figure out aggregation and other ways of combining interfaces
    and the underlying objects.
 
  * I definitely need the scheme by which both C and C++ rendition of the
-   binary-compatible interfaces is handled.
+   binary-compatible interfaces is handled. [dh:2026-01-21 It seems that
+   the choice of calling sequence is relevant, since COM expects a particular
+   way arguments are pushed on the stack sort-of right-to-left. Also, only
+   the caller can release the parameter list from the stack, because
+   technically, only the caller knows how many are supplied.]
+
+ * Must test all of this at the binary level using both C++ generation of
+   interfaces and the same via C Language explicit methods.
+
+ * I need a way to confirm that calls and implementations are with the same
+   version of oMiser COM objects.  I also want to deal at run-time with
+   agreements on versions to the degree that matters.  This should get
+   handled at ofEstablish, I think.  Smells like a secret hand-shake though.
 
  * And I need to know how many classes we're talking about.
 
+ * I had an introduction to COM that had code for such things as IUnknown
+   that was in Clean C (although there was a bug in AddRef/Release not
+   being atomic).
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2026-01-22T02:50Z Struggling still, pondering BSTRs too.
  0.0.2 2026-01-19T21:59Z More ponderings
  0.0.1 2026-01-18T23:15Z Note on locating a 1995 specification
  0.0.0 2026-01-15T17:55Z Initial draft on COM
