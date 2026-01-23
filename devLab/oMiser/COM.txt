@@ -1,4 +1,4 @@
-COM.txt 0.0.4                       UTF-8                          2026-01-23
+COM.txt 0.0.5                       UTF-8                          2026-01-23
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -49,6 +49,37 @@ Potential Interfaces
     separation of the MOb something abut the structure separate individual
     ob-cells.  I'm going to leave that all here for now and resolve it as
     there is more effort on the code.
+
+    CRUCIAL: One problem with COM objects: They are not movable, because while
+       there are reference counts, it is not known where the references are
+       and it is not expected that could be known.  So ob-cells on the stack
+       cannot be moved if they are reference counted.  This suggests that
+       ob-cells on the stack are not reference counted, they are treated
+       differently as semi-transient entities until that is not the case and
+       the object must be swept.  It may be that an ob-cell should not have an interface while it is on the stack until it is moved to the heap.
+       It might be necessary to use the heap because of how C++ handles these.  Then the question is, how can that work.
+          That ¶ must hold should be a clue. ob-cells can only refer to
+       ob-cells older than themselves.  And because ¶ is indefinite between
+       individuals, we must deal with individuals differently to establish
+       uniqueness of individuals and that means they are not on the stack.
+       So synthetics (and bindings) are automatically swept, because the
+       defining ob must be made "older."  So there needs to be a "persisting"
+       mechanism, which smells like a Cheney to a new location.  But it
+       preserves ¶ between the synthetic and its definition.  And then
+       reference counting has to work, which is interesting.  So it could be
+       that ob-cells on the stack are not reference counted and reference
+       counting only happens on being persisted.  This looks like we are
+       dealing with anonymity of ob-cells.  It seems that individuals are not
+       anonymous and that might also be true of a result delivered to an app
+       until that result is discarded.  If not anonymous, it must have a
+       reference count of 1 at that point.
+          We may be ignoring the impact of a reference being held by a parser,
+       as for the oFrugal REPL.  I am presuming these are manageable, but
+       I'm nervous about that.  Whatever the solution is, it must work for
+       other external users of the oMiser API.  So most of this hand-wringing
+       is going to be about obs not exposed to the external world.
+          I am feeling very fragile here, and I definitely need to understand
+       flyweights and tear-offs mentioned in [Box1998].
 
 SOURCES
 
@@ -112,7 +143,7 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.4
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.5
    dated 2026-01-23, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
@@ -177,6 +208,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5 2026-01-23T17:20Z Handwringing about reference counting and ¶
  0.0.4 2026-01-23T00:11Z Add [Box1998] and [Microsoft1995]
  0.0.3 2026-01-22T02:50Z Struggling still, pondering BSTRs too.
  0.0.2 2026-01-19T21:59Z More ponderings
