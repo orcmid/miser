@@ -1,4 +1,4 @@
-COM.txt 0.0.6                       UTF-8                          2026-01-23
+COM.txt 0.0.7                       UTF-8                          2026-01-23
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -84,6 +84,20 @@ Potential Interfaces
           I am feeling very fragile here, and I definitely need to understand
        flyweights and tear-offs mentioned in [Box1998].
 
+    In [Box1998: Appendix A] there is a discussion of flyweight objects as a
+    variation of Crispin Goswell's tearoff technique.  The COM Programmer's
+    Cookbook is no longer available at microsoft.com, so I need to find
+    something better.  Tear-Off Interfaces are described at
+    <http://www.369o.com/data/books/atl/0321159624/ch06lev1sec4.html> in
+    ATL Internals: Working with ATL 8, Second Edition. Chapter 6,
+    <http://www.369o.com/data/books/atl/>.
+    There is a copy of Crispin's article at Wishfly's blog on CSDN.
+    <https://blog.csdn.net/wishfly/article/details/1116343>.  I have failed
+    to capture it in any form. I'm also uncertain that this makes any
+    difference.  I'm uncertain about what is being saved.  I still have to
+    find a way to use tiny objects easily, even if it is only under the
+    covers of the COM-level interfaces.
+
 SOURCES
 
 [Box1998]
@@ -130,7 +144,7 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.6
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.7
    dated 2026-01-23, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
@@ -195,6 +209,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.7 2026-01-23T23:27Z Fretting over tear-off interfaces
  0.0.6 2026-01-23T18:14Z Cleanup cross-referencing [Microsoft1995] and
        [Microsoft2020]
  0.0.5 2026-01-23T17:20Z Handwringing about reference counting and ¶
