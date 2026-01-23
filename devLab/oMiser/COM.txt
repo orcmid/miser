@@ -1,4 +1,4 @@
-COM.txt 0.0.5                       UTF-8                          2026-01-23
+COM.txt 0.0.6                       UTF-8                          2026-01-23
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -39,7 +39,8 @@ Potential Interfaces
       list of defined interface GUIDs.  I need to get on top of that.
 
     None of this is obligatory, and there is no intention to (expose or
-    rely upon) COM creation of Class Factories and Class Factory creation of class instances.  This does require that there is a simple function to
+    rely upon) COM creation of Class Factories and Class Factory creation of
+    class instances.  This does require that there is a simple function to
     create a single oMiser instance.  It might not be OK to create more than
     one in a single process.
 
@@ -56,8 +57,10 @@ Potential Interfaces
        cannot be moved if they are reference counted.  This suggests that
        ob-cells on the stack are not reference counted, they are treated
        differently as semi-transient entities until that is not the case and
-       the object must be swept.  It may be that an ob-cell should not have an interface while it is on the stack until it is moved to the heap.
-       It might be necessary to use the heap because of how C++ handles these.  Then the question is, how can that work.
+       the object must be swept.  It may be that an ob-cell should not have an
+       interface while it is on the stack until it is moved to the heap.
+       It might be necessary to use the heap because of how C++ handles these.
+       Then the question is, how can that work.
           That ¶ must hold should be a clue. ob-cells can only refer to
        ob-cells older than themselves.  And because ¶ is indefinite between
        individuals, we must deal with individuals differently to establish
@@ -91,14 +94,9 @@ SOURCES
     Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
     1-57321-349-8.  <https://orcmid.github.io/bib/progsys.htm#Rogerson1997>.
 
-Microsoft Learn
-    Component Object Model (COM) Portal.  English version accessed at
-    <https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal>
-    on 2026-01-15, with complete 2020-08-21 windows-win32-com.pdf (56.274 MB
-    3,738 pages) downloaded.
-       This material presumes a Visual Studio C++ implementation of COM
-    interfaces and lacks the clarity of the original specification
-    (See [Microsoft1995], below)
+[Microsoft2020]
+    Component Object Model (COM) Portal.  English version accessed on
+    2026-01-15.  See <https://orcmid.github.io/bib/authors.htm#Microsoft2020>.
 
 Wikipedia
     IUnknown.  Article at <https://en.wikipedia.org/wiki/IUnknown>. Accessed
@@ -107,19 +105,8 @@ Wikipedia
 
 [Microsoft1995]
     The Component Object Model Specification 0.9 (draft). October 24, 1995.
-    Now available online at the WayBackMachine archive
-    <https://web.archive.org/web/20040215095320/http://www.microsoft.com/com/resources/comdocs.asp>
-       There are choices of 3 packagings in Zip containers: Postscript,
-    Microsoft Word with 8.3 filenames, and Microsoft Word 6 form.  The latter
-    is recommended for its better-named *.doc chapter files.  It should be
-    readable using various applications that accept Microsoft *.doc files.
-       The link to an HTML version is akin to the Microsoft Learn version and
-    not the original document.
-       For oMiser purposes, this specification is sufficient and also offers
-    the greatest clarity around binary-interface compatibility.  Although a
-    draft, there is no difficulty for the creation of COM-compliant interfaces
-    and standard behaviors with regard to binary compatibility.  When in
-    doubt, double-check with [Box1998].
+    See <https://orcmid.github.io/bib/authors.htm#Microsoft1995>.
+
 
 
 
@@ -143,7 +130,7 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.5
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.6
    dated 2026-01-23, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
@@ -208,6 +195,8 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.6 2026-01-23T18:14Z Cleanup cross-referencing [Microsoft1995] and
+       [Microsoft2020]
  0.0.5 2026-01-23T17:20Z Handwringing about reference counting and ¶
  0.0.4 2026-01-23T00:11Z Add [Box1998] and [Microsoft1995]
  0.0.3 2026-01-22T02:50Z Struggling still, pondering BSTRs too.
