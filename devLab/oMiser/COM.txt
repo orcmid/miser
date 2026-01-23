@@ -1,4 +1,4 @@
-COM.txt 0.0.3                       UTF-8                          2026-01-22
+COM.txt 0.0.4                       UTF-8                          2026-01-23
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -52,6 +52,10 @@ Potential Interfaces
 
 SOURCES
 
+[Box1998]
+    Box, Don.  Essential COM.  Addison-Wesley (Reading MA: 1998).  ISBN
+    0-201-63446-5. <https://orcmid.github.io/bib/progsys.htm#Box1998>
+
 [Rogerson1997]
     Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
     1-57321-349-8.  <https://orcmid.github.io/bib/progsys.htm#Rogerson1997>.
@@ -63,24 +67,28 @@ Microsoft Learn
     3,738 pages) downloaded.
        This material presumes a Visual Studio C++ implementation of COM
     interfaces and lacks the clarity of the original specification
-    (See [Microsoft2002], below)
+    (See [Microsoft1995], below)
 
 Wikipedia
     IUnknown.  Article at <https://en.wikipedia.org/wiki/IUnknown>. Accessed
     on 2026-01-18T22:04Z.  This article describes the key aspects of IUnknown
-    and the rules or it on all interfaces (all inheriting from IUnknown).
+    and the rules for it on all interfaces (all inheriting from IUnknown).
 
-[Microsoft2002]
-    The Component Object Model Specification. (Microsoft:2002).  Now available
-    online at the WayBackMachine archive
+[Microsoft1995]
+    The Component Object Model Specification 0.9 (draft). October 24, 1995.
+    Now available online at the WayBackMachine archive
     <https://web.archive.org/web/20040215095320/http://www.microsoft.com/com/resources/comdocs.asp>
        There are choices of 3 packagings in Zip containers: Postscript,
     Microsoft Word with 8.3 filenames, and Microsoft Word 6 form.  The latter
-    is recommended for its better-named *.doc chapter files.
+    is recommended for its better-named *.doc chapter files.  It should be
+    readable using various applications that accept Microsoft *.doc files.
        The link to an HTML version is akin to the Microsoft Learn version and
     not the original document.
        For oMiser purposes, this specification is sufficient and also offers
-    the greatest clarity around binary-interface compatibility.
+    the greatest clarity around binary-interface compatibility.  Although a
+    draft, there is no difficulty for the creation of COM-compliant interfaces
+    and standard behaviors with regard to binary compatibility.  When in
+    doubt, double-check with [Box1998].
 
 
 
@@ -104,8 +112,8 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.3
-   dated 2026-01-22, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.4
+   dated 2026-01-23, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/COM.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -169,6 +177,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.4 2026-01-23T00:11Z Add [Box1998] and [Microsoft1995]
  0.0.3 2026-01-22T02:50Z Struggling still, pondering BSTRs too.
  0.0.2 2026-01-19T21:59Z More ponderings
  0.0.1 2026-01-18T23:15Z Note on locating a 1995 specification
