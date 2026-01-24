@@ -1,4 +1,4 @@
-HRESULTs.txt 0.0.1                  UTF-8                          2026-01-15
+HRESULTs.txt 0.0.2                  UTF-8                          2026-01-24
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -43,6 +43,11 @@ HRESULTs.txt 0.0.1                  UTF-8                          2026-01-15
     according to [Rogerson1997] even though that may be dated information.
     Playing safe here.
 
+    The naming of oMiser HRESULTS in FACILITY_ITF will all be in the form
+    OMiface_E_reason where iface will be indicative of the oMiser interface(s)
+    that deliver that code.  Duplications (or not) for multiple/groups of
+    interfaces will be figured out when the situation comes up.
+
     SOURCES
 
  * <https://learn.microsoft.com/en-us/windows/win32/seccrypto/common-hresult-values>
@@ -50,16 +55,35 @@ HRESULTs.txt 0.0.1                  UTF-8                          2026-01-15
 
  * <https://learn.microsoft.com/en-us/windows/win32/learnwin32/error-handling-in-com>
 
+ * <https://learn.microsoft.com/en-us/windows/win32/com/structure-of-com-error-codes>
+   this provides expanded structure detail.  Although there is provision
+   for being vendor-specific, I intend to always use the simple structure
+   with FACILITY_ITF and nothing else.
+
+ * <https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types>
+   This document indicates that HRESULT and related macros are defined in
+   WinNT.h rather than WinDef.h.  I need to figure that out.  (There are
+   other headers mentioned in the listing here also.)
 
  * winerror.h header
    <https://learn.microsoft.com/en-us/windows/win32/api/winerror/>
    provides functions HRESULT_CODE, HRESULT_FACILITY, and HRESULT_SEVERITY
    for taking apart an HRESULT.  That's unlikely to be needed in oMiser
    and oFrugal.
+     NOTE: There are some case differences (e.g., also Winerror.h) and it
+   needs to be determined whether there is any difference.  It will be
+   necessary to dig into the Microsoft SDK.
 
  * COM Error codes
    <https://learn.microsoft.com/en-us/windows/win32/com/com-error-codes-1>
    facilities 0 (FACILITY_NULL) and 4 (FACILITY_ITF)
+
+ * <https://learn.microsoft.com/en-us/windows/win32/winprog64/the-new-data-types>
+   is related to COM and oMiser but point out some gimmicks between x86 and
+   x64 changes in things such as pointer size, etc.  We want to be specific
+   to x64, and that matters because we have pointers in COM Interface vtables.
+   This page refers to BaseTsd.h and there's coverage at the already-linked
+   <https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types>
 
 [Rogerson1997]
     Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
@@ -86,8 +110,8 @@ HRESULTs.txt 0.0.1                  UTF-8                          2026-01-15
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of HRESULTs.  Text file version 0.0.1
-   dated 2026-01-15, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Use of HRESULTs.  Text file version 0.0.2
+   dated 2026-01-24, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/HRESULTs.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -105,8 +129,13 @@ NOTES AND TODOS
  * I need a block of HRESULTs and definition of oFrugal method-specific ones.
    See [Rogerson1997] HRESULTs, p.104.
 
+ * I might want to refer to [Box1998] as well as [Rogerson1997] and cross
+   check.
+
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2026-01-24T20:30Z More wrestling with Microsoft source materials
  0.0.1 2026-01-15T17:05Z Move to oMiser/ and touch-up, supply [Rogerson1997]
  0.0.0 2026-01-14T23:30Z Initial draft on HRESULTs
 
