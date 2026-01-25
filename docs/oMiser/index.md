@@ -1,4 +1,4 @@
-<!-- index.md 0.1.6                 UTF-8                         2025-09-25
+<!-- index.md 0.1.7                 UTF-8                         2026-01-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -31,7 +31,7 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.6 2025-09-25T18:31Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.7 2026-01-25T18:03Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -103,12 +103,12 @@ preservation of idealism, will follow availability of oMiser and
 ## Related Material
 
 This placeholder links to raw materials and notes, including text files.
-There are considated in folios of documentation on the derivation of the
+These are considated in folios of documentation on the derivation of the
 oMiser implementation.
 
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
-| [oMiser.txt](oMiser.txt) | 0.1.3 2024-01-27 | 2017-07-26  | Conception, Definition, and Implementation Notes (temporary)|
+| [oMiser.txt](oMiser.txt) | 0.1.10 2026-01-07 | 2017-07-26  | Conception, Definition, and Implementation Notes (temporary)|
 | [Technical Notes](m000000.htm)  | undated          | 2025-09-10  | Subject-matter notes and work items |
 | [Folios Catalog](m000001.htm)  | undated          | 2025-09-10  | Subordinate Topics Catalog|
 
@@ -141,6 +141,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.1.7  2026-01-25T18:03Z Touch-up, bring current with oMiser.txt 0.1.10
   0.1.6  2025-09-25T18:31Z Employ ob-cell in some touch-ups
   0.1.5  2025-09-19T21:34Z link to ‹ob›, reflect obtheory 1.4.5
   0.1.4  2025-09-19T15:42Z Word-smithing

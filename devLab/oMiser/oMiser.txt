@@ -1,4 +1,4 @@
-oMiser.txt 0.0.6                    UTF-8                       dh:2026-01-24
+oMiser.txt 0.0.7                    UTF-8                       dh:2026-01-24
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -74,7 +74,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. Incremental Development of oMiser Software.  Miser
-   Project text file oMiser.txt version 0.0.6 dated 2026-01-24, available
+   Project text file oMiser.txt version 0.0.7 dated 2026-01-24, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/oMiser.txt>
 
@@ -148,11 +148,13 @@ NOTES AND TODO
   * I want to work through nicknames for oMiser builds - making a list that
     goes through the advent of flight until space and deeper things.
     For starters: oragami, balsa, wind tunnel, Kitty Hawk, Sputnik, (famous
-    test pilots), (the dog), (the monkey), Gagarin, Glenn, ..., Tranquility Base, ...
+    test pilots), (the dog), (the monkey), Gagarin, Glenn, ..., Tranquility Base, ...  There're also Hermes and Artemis and anything else in nifty
+    science fiction.  So [Tau] Ceti then, also.
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.7 2026-01-24T23:02Z More musing
  0.0.6 2026-01-24T20:32Z Musing about build nicknames
  0.0.5 2026-01-15T17:35Z Add COM.txt
  0.0.4 2026-01-15T17:15Z Add HRESULTs.txt, touch-ups
