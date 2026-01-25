@@ -1,4 +1,4 @@
-oMiser.txt 0.1.10                   UTF-8                         2026-01-07
+oMiser.txt 0.1.11                   UTF-8                         2026-01-25
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -41,13 +41,18 @@ oMiser.txt 0.1.10                   UTF-8                         2026-01-07
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser Conception, Definition, and Implementation
-   Notes.  Miser Project text file oMiser.txt version 0.1.10 dated 2026-01-07,
+   Notes.  Miser Project text file oMiser.txt version 0.1.11 dated 2026-01-25,
    available on the Internet as a version of
    <https://oMiser.github.io/Miser/oMiser/oMiser.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 NOTES AND TODOS
+
+  * [2026-01-25] These historical notes will disappear if/when acted upon.
+    A better scheme might be sweeping these onto m000000.htm where they
+    can be resolve or not, but always preserved.  This will only work as
+    long as I can continue to use FrontPage though.
 
   * [2026-01-07] The spiraling needs to be in step with oFrugal development.
     So there needs to be an initial command-line operations that works in
@@ -444,6 +449,7 @@ NOTES AND TODOS
       I am interested in this as part of the hash-table lookup and this aspect
       of memory management can be considered to have been looked at starting
       in 2011.
+
  * ACTIONS ON HASHING. There needs to be an oMiser folio on Memory Management.
    There is a collateral matter for linear hashing that is collateral with
    memory management.  Mmm, maybe more than collateral since all individuals
@@ -455,6 +461,8 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.11 2026-01-25T19:26Z Proposing to sweep all of these note onto m000000
+        where they are preserved even after action is taken.
  0.1.10 2026-01-07T23:53Z Hand-wring about my going obsessive on perfection
         and needing to start small and iterate/spiral
  0.1.9  2025-11-17T20:42Z Correct "realism" to "idealism" and add some further
