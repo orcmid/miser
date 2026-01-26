@@ -1,4 +1,4 @@
-oMiser.txt 0.0.7                    UTF-8                       dh:2026-01-24
+oMiser.txt 0.0.8                    UTF-8                       dh:2026-01-26
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -49,6 +49,8 @@ MANIFEST
 
        COM.txt  Usage of COM for oMiser, featuring C/C++ interface usage
 
+      GUID.txt  Usage of GUIDs for oMiser, especially for COM interfaces
+
   HRESULTs.txt  Principles for choice of HRESULTs returned from oMiser API
                 functions, including methods of COM interfaces.
 
@@ -74,7 +76,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. Incremental Development of oMiser Software.  Miser
-   Project text file oMiser.txt version 0.0.7 dated 2026-01-24, available
+   Project text file oMiser.txt version 0.0.8 dated 2026-01-26, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/oMiser.txt>
 
@@ -149,11 +151,15 @@ NOTES AND TODO
     goes through the advent of flight until space and deeper things.
     For starters: oragami, balsa, wind tunnel, Kitty Hawk, Sputnik, (famous
     test pilots), (the dog), (the monkey), Gagarin, Glenn, ..., Tranquility Base, ...  There're also Hermes and Artemis and anything else in nifty
-    science fiction.  So [Tau] Ceti then, also.
-
+    science fiction.  So [Tau] Ceti then, also.  Paper airplane names include
+    Marlin, Barracuda, Hickory, Trireme (like that), Cheetah, Puma, Marlin,
+    Clipper, Falcon, and there is an Origami paper airplane - it's the basic
+    one. See
+    <https://www.creativefabrica.com/pt/product/origami-paper-airplane-instructions/>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.8 2026-02-26T20:38Z More about paper airplane types
  0.0.7 2026-01-24T23:02Z More musing
  0.0.6 2026-01-24T20:32Z Musing about build nicknames
  0.0.5 2026-01-15T17:35Z Add COM.txt
