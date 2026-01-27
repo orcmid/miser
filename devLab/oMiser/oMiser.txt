@@ -1,4 +1,4 @@
-oMiser.txt 0.0.9                    UTF-8                       dh:2026-01-27
+oMiser.txt 0.0.10                   UTF-8                       dh:2026-01-27
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -52,6 +52,8 @@ MANIFEST
      tests/     all tests using only oMiser, separate from the combined
                 testing of oFrugal builds
 
+   CLASSes.txt  Establishment of the oMiser COM Class hierarchy
+
        COM.txt  Usage of COM for oMiser, featuring C/C++ interface usage
 
       GUID.txt  Usage of GUIDs for oMiser, especially for COM interfaces
@@ -81,7 +83,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. Incremental Development of oMiser Software.  Miser
-   Project text file oMiser.txt version 0.0.9 dated 2026-01-27, available
+   Project text file oMiser.txt version 0.0.10 dated 2026-01-27, available
    on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/oMiser.txt>
 
@@ -167,17 +169,18 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.9 2026-02-28T15:27Z Ponder how to rationalize COM vs platform and also
-       classes versus instances
- 0.0.8 2026-02-26T20:38Z More about paper airplane types
- 0.0.7 2026-01-24T23:02Z More musing
- 0.0.6 2026-01-24T20:32Z Musing about build nicknames
- 0.0.5 2026-01-15T17:35Z Add COM.txt
- 0.0.4 2026-01-15T17:15Z Add HRESULTs.txt, touch-ups
- 0.0.3 2026-01-14T17:28Z Musing on a paradox around being garbage-collectable
- 0.0.2 2026-01-12T17:31Z Synopsis and attribution
- 0.0.1 2026-01-10T18:20Z Rhapsodize on one giant COM object
- 0.0.0 2026-01-08T16:14Z Create placeholder and initial job jar for the
-       oMiser library code.
+ 0.0.10 2026-01-27T16:48Z Add CLASSes.txt
+ 0.0.9  2026-01-27T15:27Z Ponder how to rationalize COM vs platform and also
+                          classes versus instances
+ 0.0.8  2026-01-26T20:38Z More about paper airplane types
+ 0.0.7  2026-01-24T23:02Z More musing
+ 0.0.6  2026-01-24T20:32Z Musing about build nicknames
+ 0.0.5  2026-01-15T17:35Z Add COM.txt
+ 0.0.4  2026-01-15T17:15Z Add HRESULTs.txt, touch-ups
+ 0.0.3  2026-01-14T17:28Z Musing on a paradox around being garbage-collectable
+ 0.0.2  2026-01-12T17:31Z Synopsis and attribution
+ 0.0.1  2026-01-10T18:20Z Rhapsodize on one giant COM object
+ 0.0.0  2026-01-08T16:14Z Create placeholder and initial job jar for the
+                          oMiser library code.
 
                         ***** end of oMiser.txt *****

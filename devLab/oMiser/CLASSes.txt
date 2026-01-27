@@ -1,0 +1,154 @@
+CLASSes.txt 0.0.0                   UTF-8                          2026-01-27
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                                 OMISER CODE
+
+                         OMISER CLASSES HIERARCHY
+                         ========================
+
+    To accomplish the hierarchical establishment of classes of instances,
+    the mechanism for instantiating such instances needs to be rationalized.
+
+    Because of how operation proceeds, the top class is that for which
+    omEstablish returns an instance interface.  The instance must be for the
+    MOb directory.  There can be only one such instance and repeated requests
+    to establish it will continue to deliver an interface of the same
+    instance.  (This does not deal with the prospect of different processes
+    and remoting, since the initial oMiser implementation(s) will not rely on
+    the COM SCM.)
+
+    The default interface is essentially to the MOb because for oFrugal
+    or any other application, one needs a way to access primitive individuals
+    and lindies.  In the case of lindies, new ones will lead to creation of
+    new individuals as needed.
+
+    The establishment of bindings is a straight-forward operation.
+    Conceptually, it produces a MOb entity that holds onto an Ob instance.
+    Operationally, it means that the bound Ob must seem older than anything
+    that comes after, and the rule that anything referenced from other than
+    the MOb can't be moved, because we cannot know where the references are.
+
+    There will need to be some careful analysis to establish that the
+    lifecycle management of classes and their instances works properly with
+    respect to memory management of instances.
+
+
+Potential Classes
+
+    MOb the directory by which externally-reachable and specially-persistent
+        entities are managed.  This class has only one instance (per process).
+        The Class ID GUID will change as the situation evolves, and the
+        conception of versioning will be done carefully to ensure alignment
+        of interface contracts and any versioning that can work.
+
+    ... as we go farther.
+
+
+
+SOURCES [FIXME: Move up, decide which are needed and what to do about
+         Tear-off Interfaces and Crispin]
+
+[Box1998]
+    Box, Don.  Essential COM.  Addison-Wesley (Reading MA: 1998).  ISBN
+    0-201-63446-5. <https://orcmid.github.io/bib/progsys.htm#Box1998>
+
+[Rogerson1997]
+    Rogerson, Dale.  Inside COM. Microsoft Press (Redmond, WA: 1997).  ISBN
+    1-57321-349-8.  <https://orcmid.github.io/bib/progsys.htm#Rogerson1997>.
+
+[Microsoft2020]
+    Component Object Model (COM) Portal.  English version accessed on
+    2026-01-15.  See <https://orcmid.github.io/bib/authors.htm#Microsoft2020>.
+
+Wikipedia
+    IUnknown.  Article at <https://en.wikipedia.org/wiki/IUnknown>. Accessed
+    on 2026-01-18T22:04Z.  This article describes the key aspects of IUnknown
+    and the rules for it on all interfaces (all inheriting from IUnknown).
+
+[Microsoft1995]
+    The Component Object Model Specification 0.9 (draft). October 24, 1995.
+    See <https://orcmid.github.io/bib/authors.htm#Microsoft1995>.
+
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+                     Copyright 2026 Dennis E. Hamilton
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+ ATTRIBUTION
+
+   Hamilton, Dennis E. oMiser Classes Hierarchy.  Text file version 0.0.0
+   dated 2026-01-27, available on the Internet as a version of
+   <https://github.com/orcmid/miser/blob/master/devLab/oMiser/CLASSes.txt>.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+NOTES AND TODOS
+
+ *  CRUCIAL: One problem with COM objects: They are not movable, because while
+       there are reference counts, it is not known where the references are
+       and it is not expected that could be known.  So ob-cells on the stack
+       cannot be moved if they are reference counted.  This suggests that
+       ob-cells on the stack are not reference counted, they are treated
+       differently as semi-transient entities until that is not the case and
+       the object must be swept.  It may be that an ob-cell should not have an
+       interface while it is on the stack until it is moved to the heap.
+       It might be necessary to use the heap because of how C++ handles these.
+       Then the question is, how can that work.
+          That ¶ must hold should be a clue. ob-cells can only refer to
+       ob-cells older than themselves.  And because ¶ is indefinite between
+       individuals, we must deal with individuals differently to establish
+       uniqueness of individuals and that means they are not on the stack.
+       So synthetics (and bindings) are automatically swept, because the
+       defining ob must be made "older."  So there needs to be a "persisting"
+       mechanism, which smells like a Cheney to a new location.  But it
+       preserves ¶ between the synthetic and its definition.  And then
+       reference counting has to work, which is interesting.  So it could be
+       that ob-cells on the stack are not reference counted and reference
+       counting only happens on being persisted.  This looks like we are
+       dealing with anonymity of ob-cells.  It seems that individuals are not
+       anonymous and that might also be true of a result delivered to an app
+       until that result is discarded.  If not anonymous, it must have a
+       reference count of 1 at that point.
+          We may be ignoring the impact of a reference being held by a parser,
+       as for the oFrugal REPL.  I am presuming these are manageable, but
+       I'm nervous about that.  Whatever the solution is, it must work for
+       other external users of the oMiser API.  So most of this hand-wringing
+       is going to be about obs not exposed to the external world.
+          I am feeling very fragile here, and I definitely need to understand
+       flyweights and tear-offs mentioned in [Box1998].
+
+ *  In [Box1998: Appendix A] there is a discussion of flyweight objects as a
+    variation of Crispin Goswell's tearoff technique.  The COM Programmer's
+    Cookbook is no longer available at microsoft.com, so I need to find
+    something better.  Tear-Off Interfaces are described at
+    <http://www.369o.com/data/books/atl/0321159624/ch06lev1sec4.html> in
+    ATL Internals: Working with ATL 8, Second Edition. Chapter 6,
+    <http://www.369o.com/data/books/atl/>.
+    There is a copy of Crispin's article at Wishfly's blog on CSDN.
+    <https://blog.csdn.net/wishfly/article/details/1116343>.  I have failed
+    to capture it in any form. I'm also uncertain that this makes any
+    difference.  I'm uncertain about what is being saved.  I still have to
+    find a way to use tiny objects easily, even if it is only under the
+    covers of the COM-level interfaces.
+
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+
+
+ 0.0.0 2026-01-27T16:43Z Initial draft on COM
+
+                        ***** end of CLASSes.txt *****
