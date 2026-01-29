@@ -1,4 +1,4 @@
-/* oMiser.h 0.0.0                   UTF-8                         2026-01-20
+/* oMiser.h 0.0.1                   UTF-8                         2026-01-29
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                             The oMiser API
@@ -11,6 +11,7 @@
  */
 
 #ifdef __cplusplus
+#warning oMiser.hpp is preferable for C++ instead the oMiser.h C level API.
 extern "C" {
 #endif
 
@@ -23,7 +24,8 @@ extern "C" {
 /*
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
- *  0.0.0 2026-01-20T19:38Z Empty skeleton
+ *  0.0.1  2026-01-29T19:25Z Warn about using oMiser.h in C++
+ *  0.0.0  2026-01-20T19:38Z Empty skeleton
  *
  *                        *** end of oMiser.h ***
  */

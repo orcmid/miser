@@ -1,4 +1,4 @@
-oMiser 0.0.0 src.txt 0.0.3          UTF-8                          2026-01-21
+oMiser 0.0.0 src.txt 0.0.4          UTF-8                          2026-01-29
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -10,9 +10,8 @@ MANIFEST
 
      src.txt  This synopsis and manifest of an oMiser source code.
 
-   oMiser.h   The oMiser API header file
-
-
+   oMiser.h   The oMiser API header file for the C Language API level
+   oMiser.hpp The oMiser API header for the C++ Interface API form
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -36,7 +35,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser 0.0.0 Library Source Code folder file src.txt
-   version 0.0.3 dated 2026-01-21, available on the Internet as a version of
+   version 0.0.4 dated 2026-01-29, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/src/src.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -65,12 +64,9 @@ NOTES AND TODOS
    primitive, but which one, to streamline eval and ap acting on them without
    much nesting conditionals and matchings.
 
- * I wonder if I need to have both oMiser.h and oMiser.hpp even though
-   there should be just one implementation somehow.
-
  * I would like to get away from windows.h, but I'm uncertain how to get away
-   with it.  I'm already stuck with HRESULT and GUID, going to deal with ppv's
-   and the various definitions around them.
+   without it.  I'm already stuck with HRESULT and GUID, going to deal with
+   ppv's and the various definitions around them.
 
  * I need to figure out how to use the COM materials without dragging in all
    of the windows.h gunk that I don't want.
@@ -80,7 +76,8 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
- 0.0.3 2026-02-32T00:41Z Worry about confirming that the mapping is correct,
+ 0.0.4 2026-01-29T19:30Z Introduce oMiser.h and oMiser.hpp
+ 0.0.3 2026-01-21T00:41Z Worry about confirming that the mapping is correct,
        when I attempt to work it in C and not C++.
  0.0.2 2026-01-20T20:06Z Add oMiser.h
  0.0.1 2026-01-13T22:44Z Pondering HRESULTs and GUIDs
