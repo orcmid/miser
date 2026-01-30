@@ -1,4 +1,4 @@
-CLASSes.txt 0.0.0                   UTF-8                          2026-01-27
+CLASSes.txt 0.0.1                   UTF-8                          2026-01-30
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -43,7 +43,9 @@ Potential Classes
 
     ... as we go farther.
 
+Class IDs
 
+    {476EAF02-4524-4D81-9227-6272464959CB} OmOrigami 0.0.0 version
 
 SOURCES [FIXME: Move up, decide which are needed and what to do about
          Tear-off Interfaces and Crispin]
@@ -90,8 +92,8 @@ Wikipedia
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Classes Hierarchy.  Text file version 0.0.0
-   dated 2026-01-27, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Classes Hierarchy.  Text file version 0.0.1
+   dated 2026-01-30, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/CLASSes.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -148,7 +150,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-
+ 0.0.1 2026-01-30T00:03Z Add Origami CLSID
  0.0.0 2026-01-27T16:43Z Initial draft on COM
 
                         ***** end of CLASSes.txt *****
