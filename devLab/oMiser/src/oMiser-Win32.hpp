@@ -1,23 +1,23 @@
-/* oMiser.h 0.0.3                   UTF-8                         2026-01-31
+/* oMiser-Win32.hpp 0.0.3           UTF-8                         2026-02-01
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
- *                             The oMiser API
- *                             ==============
+ *                           The oMiser C++ API
+ *                           ==================
  *
- *   This is the spirally-developed oMiser API.  The API is designed for use
- *   on any x64 platform, but this code depends on Microsoft Visual Studio
- *   Code and Microsoft Windows SDK libraries.
+ *   This is the spirally-developed oMiser API with C++ alternatives of the
+ *   Microsoft COM interfaces.  The API is designed for use on any x64
+ *   platform, but the C/C++ implementation depends on Microsoft Visual
+ *   Studio and Windows SDKs for some of its features.
  *
  */
+#ifndef __cplusplus
+#error oMiser.hpp provides the C++ API only.  Use oMiser.h for C Language.
+#endif
 
 #include <WinNT.h>       // For HRESULT definition
 #include <guiddef.h>     // For GUID, IID, CLSID definitions
-#include <Unknwn.h>      // For IUnknown definition (mayb C++ only?)
 
-#ifdef __cplusplus
-#warning oMiser.hpp is preferable for C++ use of oMiser COM interfaces.
 extern "C" {
-#endif
 
 HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppvObject);
 
@@ -34,7 +34,7 @@ static const CLSID omSpitball
                    { 0x92, 0x27, 0x62, 0x72, 0x46, 0x49, 0x59, 0xcb }
                  };
 
-    /* The Class ID for the Spitball version of the oMiser engine:
+    /* The Class ID for the Spitball version of the oMiser engine.
        {476EAF02-4524-4D81-9227-6272464959CB}.  This is very much pre-flight
        and having no treasured air/space flight significance.  Ths is the
        CLSID for initial stumblings toward a meaningful omEstablish.
@@ -44,17 +44,20 @@ static const CLSID omSpitball
        at runtime.
        */
 
+
+
+
 #ifdef __cplusplus
-}
+} // extern "C"
 #endif
 
 /*
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
- *  0.0.3  2026-01-31T20:33Z Initial staging for oMiser spitball
- *  0.0.2  2026-01-30T18:06Z Align with 0.0.1 oMiser.hpp
- *  0.0.1  2026-01-29T19:25Z Warn about using oMiser.h in C++
- *  0.0.0  2026-01-20T19:38Z Empty skeleton
+ *  0.0.3  2026-02-01T17:33Z Remove Unknown include, rename as a Win32
+ *  0.0.2  2026-01-31T20:35Z Initial staging and change to oMiser spitball
+ *  0.0.1  2026-01-29T23:57Z Introduce omEstablish and omOrigami CLSID
+ *  0.0.0  2026-01-29T19:18Z Empty skeleton
  *
- *                        *** end of oMiser.h ***
+ *                      *** end of oMiser-Win32.hpp ***
  */
