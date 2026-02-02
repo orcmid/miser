@@ -1,4 +1,4 @@
-GUID.txt 0.0.1                      UTF-8                          2026-01-18
+GUID.txt 0.0.2                      UTF-8                          2026-02-02
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -18,13 +18,63 @@ GUID.txt 0.0.1                      UTF-8                          2026-01-18
     version of the interface can be preserved, and if not, the loss of
     support can be reported via a suitable HRESULT.
 
-    The standard GUIDs that oMiser supports as part of Fundamental usage
-    of COM consist of the following:
+    The standard GUIDs that are claimed by Microsoft for COM/OLE
+    consist of the following.  Note that we group them by the low-order 5
+    bits because of how they must not conflict with oFrugal choices having
+    the same lower bits in a situation in which the OLE IID might be
+    supported.
 
-    DEFINE_OLEGUID(IID_IUnknown,            0x00000000L, 0, 0);
-    DEFINE_OLEGUID(IID_IClassFactory,       0x00000001L, 0, 0);
-    DEFINE_OLEGUID(IID_IMalloc,             0x00000002L, 0, 0);
-    DEFINE_OLEGUID(IID_IMarshal,            0x00000003L, 0, 0);
+    On Windows, it is typically defined in guiddef.h (included via objbase.h
+    or windows.h) as a typedef for a struct:
+
+    typedef struct _GUID {
+        unsigned long  Data1;   // 32 bits
+        unsigned short Data2;   // 16 bits
+        unsigned short Data3;   // 16 bits
+        unsigned char  Data4[8]; // 64 bits
+        } GUID;
+
+    Breakdown of Fields
+
+        Data1: 4 bytes (DWORD)
+        Data2: 2 bytes (WORD)
+        Data3: 2 bytes (WORD)
+        Data4: 8 bytes (BYTE array)
+
+    This structure matches the standard UUID layout defined in RFC 4122.
+
+    To have a fast-filtering set of GUIDs, the obvious choice is branching
+    on the lowest 4 (16 choices) or 5 (32 choices) bits of Data1.  This
+    allows for fast switching and checking by comparison with the oMiser-
+    supported GUID having that pattern.
+
+    What we don't want is a clash with defined OLE GUIDs that we might also
+    want to provide interfaces for.  For example, we must not conflict with
+    IID_IUnknown, and that has to be supported on every oMiser QueryInterface
+    implementation.
+
+    Here are known OLEGUID definitions from various sources, grouped by
+    their matching the lowest 5 bits of Data1:
+
+    DEFINE_OLEGUID(IID_IUnknown,        0x00000000L, 0, 0); Reserved
+    DEFINE_OLEGUID(IID_IDispatch,       0x00020400L, 0, 0);
+    DEFINE_OLEGUID(IID_IEnumUnknown,    0x00000100L, 0, 0);
+
+    DEFINE_OLEGUID(IID_IClassFactory,   0x00000001L, 0, 0);
+    DEFINE_OLEGUID(IID_IEnumString,     0x00000101L, 0, 0);
+
+    DEFINE_OLEGUID(IID_IMalloc,         0x00000002L, 0, 0);
+    DEFINE_OLEGUID(IID_IEnumMoniker,    0x00000102L, 0, 0);
+
+    DEFINE_OLEGUID(IID_IMarshal,        0x00000003L, 0, 0);
+    DEFINE_OLEGUID(IID_IEnumFORMATETC,  0x00000103L, 0, 0);
+    DEFINE_OLEGUID(IID_IDebug,          0x00000123L, 0, 0);
+
+    DEFINE_OLEGUID(IID_IEnumOLEVERB,    0x00000104L, 0, 0);
+    DEFINE_OLEGUID(IID_IDebugStream,    0x00000124L, 0, 0);
+
+    DEFINE_OLEGUID(IID_STATDATA,        0x00000105L, 0, 0);
+
 
 Some others that might need to be minded,
 
@@ -34,32 +84,24 @@ Some others that might need to be minded,
     DEFINE_OLEGUID(IID_IStream,             0x0000000cL, 0, 0);
     DEFINE_OLEGUID(IID_IEnumSTATSTG,        0x0000000dL, 0, 0);
 
-/* moniker related interfaces */
+    /* moniker related interfaces */
     DEFINE_OLEGUID(IID_IBindCtx,            0x0000000eL, 0, 0);
     DEFINE_OLEGUID(IID_IMoniker,            0x0000000fL, 0, 0);
     DEFINE_OLEGUID(IID_IRunningObjectTable, 0x00000010L, 0, 0);
     DEFINE_OLEGUID(IID_IInternalMoniker,    0x00000011L, 0, 0);
 
-/* storage related interfaces */
+    /* storage related interfaces */
     DEFINE_OLEGUID(IID_IRootStorage,        0x00000012L, 0, 0);
     DEFINE_OLEGUID(IID_IDfReserved1,        0x00000013L, 0, 0);
     DEFINE_OLEGUID(IID_IDfReserved2,        0x00000014L, 0, 0);
     DEFINE_OLEGUID(IID_IDfReserved3,        0x00000015L, 0, 0);
 
-    with
-    #define DEFINE_OLEGUID(name, l, w1, w2) \
-            EXTERN_C const GUID name \
-              = { l, w1, w2, { 0xC0,0,0,0,0,0,0,0x46 } }
-     name → The variable name for the GUID (e.g., IID_IUnknown)
-     l → First 32 bits of the GUID
-     w1 → Next 16 bits
-     w2 → Next 16 bits
+    DEFINE_OLEGUID(IID_IOleLink,            0x0000011dL, 0, 0);
 
-     The last 8 bytes are fixed to { 0xC0, 0, 0, 0, 0, 0, 0, 0x46 } for OLE
-     GUIDs.
 
-     There are 16 bytes per GUID.  Note that OLEGUIDs are serialized in the
-     first 8 bytes.  That's a bit heavy.
+    We could also over-use among the 16/32 cases when we're dealing with
+    instances of different oMiser classes.
+
 
 UTILITY FOR GENERATING GUIDS
 
@@ -79,25 +121,10 @@ static const GUID <<name>> =
 static const GUID <<name>> =
 { 0xc62f1021, 0xe130, 0x42bc, { 0xa2, 0x6b, 0x29, 0x42, 0x4b, 0x3a, 0xff, 0xb4 } };
 
-The GUID type is basically a struct {uint32, uint16, uint16, uint8[8]}.
-
-The 0x4... for the third field indicates something about this being a random
+The 0x4... for the third field indicates something about these being random
 one, not using times or device IDs.  Generating sequences is apparently now
 frowned upon.
 
-The idea of making them sequential in some sense might be about using a fixed
-field as an index into an array, use it for comparison of agreement, and then
-use the index for whatever else we want to do about it.
-
-Note: The OLE-defined COM GUIDs are counted off in the low-order byte of
-Data1, below.  If we never thought we'd be using any of these, we can start
-our own sequence there, but avoiding those in case we will use some of them
-in the future.  We will fail on the others.
-
-It looks like ours will get IID_ names to reflect them being for Interface
-Definitions. And REF_IID (or whatever the correct name is) will apply in
-the pointers, if that makes sense.  There needs to be more consistency and
-clearcut explanation here.
 
 ADDITION [2026-01-18]:
   The use of various Windows.h defines and types is problematic here.  I would
@@ -112,34 +139,11 @@ ADDITION [2026-01-18]:
   We get particular nibble values for oMiser GUIDs by generating random ones
   until the desired number shows up.  This will give us 16 slots to start
   with, We may never need that many, so playing it safe.  This should
-  provide enough if we end up versioning any interfaces.  We could reserve
+  provide enough if we end up versioning any interfaces.  I am reserving
   32 to be safe, expecting that old code wouldn't care.  In that respect,
   the 16-slot table is probably too much also. We don't have to generate
   any more than actually needed.  And we can always expand to 32 when
-  needed (LOL: linear hashing sort-of)
-
-[From Copilot Search on GUID typedef]
-
-On Windows, it is typically defined in guiddef.h (included via objbase.h or
-windows.h) as a typedef for a struct:
-
-typedef struct _GUID {
-    unsigned long  Data1;   // 32 bits
-    unsigned short Data2;   // 16 bits
-    unsigned short Data3;   // 16 bits
-    unsigned char  Data4[8]; // 64 bits
-} GUID;
-
-Breakdown of Fields
-
-Data1: 4 bytes (DWORD)
-Data2: 2 bytes (WORD)
-Data3: 2 bytes (WORD)
-Data4: 8 bytes (BYTE array)
-
-This structure matches the standard UUID layout defined in RFC 4122.
-
-
+  needed.
 
 SOURCES
 
@@ -174,7 +178,7 @@ Microsoft Learn
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.0
+   Hamilton, Dennis E. oMiser Use of COM Interfaces.  Text file version 0.0.2
    dated 2026-01-17, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/GUID.txt>.
 
@@ -182,19 +186,15 @@ Microsoft Learn
 
 NOTES AND TODOS
 
- * Find the original COM specification.  It is out there.
-
- * I need to describe the oMiser scheme for a block of GUIDs and their
-   systematic usage on versions of interfaces.
+ * FIND AND COMPLETE THE LIST OF THE FIRST 32 OLE_GUIDs
 
  * I need to figure out aggregation and other ways of combining interfaces
-   and the underlying objects.
+   and the underlying objects.  I might not need it though.
 
- * I definitely need the scheme by which both C and C++ rendition of the
-   binary-compatible interfaces is handled.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.2 2026-02-02T21:08Z Rerranging around known OLE GUIDs
  0.0.1 2026-01-18T21:58Z Expand on reserving a GUID block
  0.0.0 2026-01-17T00:28Z Initial draft on COM
 
