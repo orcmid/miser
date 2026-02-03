@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.1              UTF-8                         2026-02-01
+/* oMiser-Win32.c 0.0.2              UTF-8                         2026-02-03
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -31,19 +31,57 @@
    */
 
 #include "oMiser-Win32.h"     // For oMiser API declarations
-#include <Unknwn.h>           // For IUnknown definition
+
+typedef struct {void *pv; ULONG refs;} omSpitball;
+    /* A minimal COM object for Spitball testing.  It just
+       reference counts. */
+
+static omSpitball pvIomSpitball = { NULL, 0 };
+
+/* FIXME: I don't know how I got from omSpitBall to these nom* names.
+          I need something else, even though I don't know what yet.
+          I need to figure out what these names should be when I
+          finalize the prefix for the main uber Class - These are not
+          exposed, but the names should be consistent internally,
+          especially as there become more classes and interfaces. */
+
+static ULONG nomAddRef(omSpitball *This)
+{  /* count a new reference */
+   return InterlockedIncrement(This->refs);
+   }
+
+static ULONG nomRelease(omSpitball *This)
+{  /* reduce reference count */
+   return InterlockedDecrement(This->refs);
+   }
+
+HRESULT nomQueryInterface(omSpitball *This, REFIID riid, void **ppv)
+{  /* provide minimal query choices */
+
+   /* defend ourselves */
+   if (omSpitball == NULL || riid == NULL || ppv == NULL)
+       return E_POINTER;
+   *ppv = NULL;
+
+   /* we have only IUnknown as a SpitBall option */
+   if (!IsEqualIID(riid, &IID_IUnknown))
+       return E_NOINTERFACE;
+
+   *ppv = This;
+   nomAddRef(This);
+   return S_OK;
+
+   } /* nomQueryInterface */
+
+static const IUnknownV IomSpitballV
+             = { nomQueryInterface, nomAddRef, nomRelease };
 
 
-       */
-
-static IUnknown *pvIoMiserUniverse = NULL;
-
-
-HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppvObject)
+HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
 
 { /* The "factory" for establishing an oMiser universe instance.*/
 
-  const CLSID omNoPitch
+  const CLSID CLSID_omNoPitch         /* Must match CLSID_omSpitBall */
               = { 0x476eaf02, 0x4524, 0x4d81,
                    { 0x92, 0x27, 0x62, 0x72, 0x46, 0x49, 0x59, 0xcb }
                  };
@@ -55,29 +93,31 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppvObject)
 
   /* FIXIT: Verify everything in the parameters before proceeding.*/
 
-  if ( pvIoMiserUniverse != NULL )
-       /* An oMiser universe is already established. */
-       return (  (pvIoMiserUniverse)->QueryInterface
-                                       ( pvIoMiserUniverse,
-                                         riid,
-                                         ppvObject
-                                         )
-                 );
+  /* There is never more than one instance of the oMiser engine.
+     If the engine is already established, operation is simply a
+     QueryInterface on that existing instance.
+     */
+
+  if ( pvIomSpitball.pv == NULL )
+       /* An oMiser universe needs establishment. */
+       pvIomSpitball.pv = &IomSpitballV;
+
+  return ( (pvIomSpitball.pv)->QueryInterface
+                               (  &pvIomSpitball,
+                                  &IID_IUnknown,
+                                  ppv
+                                  )
+            );
 
 
-
-
-  /*   FIXIT: There is never more than one instance of the oMiser engine.
-       If the engine is already established, operation is simply a
-       QueryInterface on that existing instance.
-       */
   }  /* omEstablish */
 
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-   0.0.1 2026-02-01T17:56Z Identify as Win32 C Language specific
-   0.0.0 2023-05-26T23:12Z Placeholder for the Spitball setup for oMiser..
+   0.0.2  2026-02-03T22:51Z First pass at implementation draft
+   0.0.1  2026-02-01T17:56Z Identify as Win32 C Language specific
+   0.0.0  2023-05-26T23:12Z Placeholder for the Spitball setup for oMiser..
 
                          *** end of oMiser-Win32.c ***
    */
