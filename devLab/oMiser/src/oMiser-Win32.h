@@ -1,4 +1,4 @@
-/* oMiser-Win32.h 0.0.5             UTF-8                         2026-02-02
+/* oMiser-Win32.h 0.0.6             UTF-8                         2026-02-04
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                             The oMiser API
@@ -6,7 +6,7 @@
  *
  *   This is the spirally-developed oMiser API.  The API is designed for use
  *   on any x64 platform, but this code depends on Microsoft Visual Studio
- *   Code, Build Tools, and Microsoft Windows SDK libraries.
+ *   Code, Build Tools, and Windows SDK libraries.
  *
  */
 
@@ -44,19 +44,20 @@ static const CLSID CLSID_omSpitball
        */
 
 static const IID IID_IUnknown
-                 /* The Interface that every component supports and that
-                    every interface begins with (derives from) */
              = { 0x00000000, 0x0000, 0x0000,
                    { 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46 }
                  };
+    /* The Interface that every component supports and that every
+       interface begins with (derives from)
+                */
 
 #define IUNKNOWN_V \
         HRESULT (*QueryInterface)(void* This, IID* riid, void **ppv); \
         ULONG (*AddRef)(void* This); \
         ULONG (*Release)(void* This)
-        /* The standard IUnknown interface methods supplied at the beginning
-           of every COM interface vtable
-           */
+    /* The standard IUnknown interface methods supplied at the beginning
+       of every COM interface vtable
+       */
 
 typedef struct IUnknownV { IUNKNOWN_V; } IUnknownV;
     /* Just enough vtable for an instance's IUnknown interface */
@@ -72,6 +73,7 @@ typedef struct IUnknown { IUnknownV *pv; } IUnknown;
 /*
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
+ * *0.0.6  2026-02-04T23:09Z Touch-up comments and formatting
  *  0.0.5  2026-02-02T18:04Z Introduce IUnknownV and IUnknown structures
  *  0.0.4  2026-02-01T17:39Z Remove Unknown reference, rename as Win32 version
  *  0.0.3  2026-01-31T20:33Z Initial staging for oMiser spitball
