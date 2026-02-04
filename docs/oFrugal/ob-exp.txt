@@ -1,4 +1,4 @@
-ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
+ob-exp.txt 1.2.0                    UTF-8                         2026-02-02
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -88,12 +88,12 @@ ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
            otherwise.  〈primitive〉 interpretations in ‹ob› are established in
            particular obaptheory versions.  (See section 4, below.)
 
-    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?〈primitive〉
+    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?〈primitive〉 | ^^
            〈binding-name〉 occurrences are references to previously-defined
            obs and one of the ?-forms is the interpretation when there is
            no such definition, an interaction with oFrugal that accounts for
            how ?-prefixed lindy forms arise in canonical ob forms to indicate
-           errors.
+           errors.  The form ^^ refers to the most-recently derived result.
 
     〈list-terms〉 ::= 〈ob-exp〉 | 〈ob-exp〉 , 〈list-terms〉
 
@@ -232,7 +232,7 @@ ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
 
 
 
-    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉
+    〈binding-name〉 ::= ^〈plane-lindy〉 | ?〈plane-lindy〉 | ?.〈plane-lindy〉 | ^^
 
     ‼〈term〉⎾〈binding-name〉⏋{ℰ} =: ‼〈binding-name〉{ℰ}
                                   defined in the oFrugal file syntax.txt
@@ -245,6 +245,8 @@ ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
 
     When there is a binding for ^〈plane-lindy〉, interpretation is the most-
     recently bound value.  Otherwise, the interpretation is as ?〈plain-lindy〉.
+
+    When there is no binding for ^^, the result is ob.NIL.
 
     The ?〈plane-lindy〉 is treated the same as ^〈plane-lindy〉 when there is a
     binding for the 〈plane-lindy〉; otherwise the interpretation is as a lindy
@@ -341,9 +343,9 @@ ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
  10. REFERENCES
 
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                 Copyright 2018-2022, 2024 Dennis E. Hamilton
+                 Copyright 2018-2022, 2024, 2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -357,12 +359,12 @@ ob-exp.txt 1.1.1                    UTF-8                         2024-11-28
     See the License for the specific language governing permissions and
     limitations under the License.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
   ATTRIBUTION
 
    Hamilton, Dennis E. Formal Grammar for oFrugal Construction of Obs.  Miser
-   Theory Conception text file ob-exp.txt version 1.1.0 dated 2024-04-28,
+   Theory Conception text file ob-exp.txt version 1.2.0 dated 2026-02-04,
    available on the Internet as a version of
    <https://orcmid.github.io/oFrugal/ob-exp.txt>
 
@@ -442,8 +444,11 @@ TODO
  * It is necessary to make clear that these are geneative grammars and there
    should be some links about those.  The Saul Gorn clarity would be useful.
 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 1.2.0  2026-02-04T18:12Z Add ^^ as the binding for "the previous result."
+        I have no idea why it took me this long to introduce this.  There is
+        a similar arrangement in SML/NJ.
  1.1.1  2024-11-28T19:49Z Touch up Section 1
  1.1.0  2024-04-28T16:26Z Clarify restriction on non-primitive "." usage.
  1.0.4  2024-01-31T23:31Z Correct links and location of this file.
