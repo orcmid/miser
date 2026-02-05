@@ -110,7 +110,7 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-   0.0.3  2026-02-05T00:42Z Get the basic COM interface but clumsy
+   0.0.3  2026-02-05T00:54Z Get the basic COM interface but clumsy
    0.0.2  2026-02-03T22:51Z First pass at implementation draft
    0.0.1  2026-02-01T17:56Z Identify as Win32 C Language specific
    0.0.0  2023-05-26T23:12Z Placeholder for the Spitball setup for oMiser..
