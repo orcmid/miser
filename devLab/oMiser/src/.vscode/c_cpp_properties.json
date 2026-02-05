@@ -4,7 +4,6 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "$(workspaceFolder)/../src/**"
             ],
             "intelliSenseMode": "windows-msvc-x64",
             "compilerPath": "cl.exe",

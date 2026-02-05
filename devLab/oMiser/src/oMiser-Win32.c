@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.2              UTF-8                         2026-02-03
+/* oMiser-Win32.c 0.0.3              UTF-8                         2026-02-05
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -30,9 +30,10 @@
    the Win32 x64 environment.
    */
 
+#include <WinNT.h>            // For HRESULT definition
 #include "oMiser-Win32.h"     // For oMiser API declarations
 
-typedef struct {void *pv; ULONG refs;} omSpitball;
+typedef struct {IUnknownV *pv; ULONG refs;} omSpitball;
     /* A minimal COM object for Spitball testing.  It just
        reference counts. */
 
@@ -59,7 +60,7 @@ HRESULT nomQueryInterface(omSpitball *This, REFIID riid, void **ppv)
 {  /* provide minimal query choices */
 
    /* defend ourselves */
-   if (omSpitball == NULL || riid == NULL || ppv == NULL)
+   if (This == NULL || riid == NULL || ppv == NULL)
        return E_POINTER;
    *ppv = NULL;
 
@@ -102,19 +103,14 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
        /* An oMiser universe needs establishment. */
        pvIomSpitball.pv = &IomSpitballV;
 
-  return ( (pvIomSpitball.pv)->QueryInterface
-                               (  &pvIomSpitball,
-                                  &IID_IUnknown,
-                                  ppv
-                                  )
-            );
-
+  return IomSpitballV.QueryInterface( &pvIomSpitball, riid, ppv);
 
   }  /* omEstablish */
 
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.3  2026-02-05T00:42Z Get the basic COM interface but clumsy
    0.0.2  2026-02-03T22:51Z First pass at implementation draft
    0.0.1  2026-02-01T17:56Z Identify as Win32 C Language specific
    0.0.0  2023-05-26T23:12Z Placeholder for the Spitball setup for oMiser..

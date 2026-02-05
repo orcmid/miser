@@ -1,4 +1,4 @@
-/* oMiser-Win32.h 0.0.6             UTF-8                         2026-02-04
+/* oMiser-Win32.h 0.0.7             UTF-8                         2026-02-05
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                             The oMiser API
@@ -12,6 +12,8 @@
 
 #include <WinNT.h>       // For HRESULT definition
 #include <guiddef.h>     // For GUID, IID, CLSID definitions
+#include <WinDef.h>      // For basic Windows types
+#include <Winerror.h>    // For named HRESULT error codes
 
 #ifdef __cplusplus
 #warning oMiser.hpp is preferable for C++ use of oMiser COM interfaces.
@@ -73,7 +75,8 @@ typedef struct IUnknown { IUnknownV *pv; } IUnknown;
 /*
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
- * *0.0.6  2026-02-04T23:09Z Touch-up comments and formatting
+ *  0.0.7  2026-02-05T00:31Z Clean up the types and HRESULT definitions
+ *  0.0.6  2026-02-04T23:09Z Touch-up comments and formatting
  *  0.0.5  2026-02-02T18:04Z Introduce IUnknownV and IUnknown structures
  *  0.0.4  2026-02-01T17:39Z Remove Unknown reference, rename as Win32 version
  *  0.0.3  2026-01-31T20:33Z Initial staging for oMiser spitball
