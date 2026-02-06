@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.3              UTF-8                         2026-02-05
+/* oMiser-Win32.c 0.0.4              UTF-8                         2026-02-06
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -9,59 +9,49 @@
 
    This is the minimalist "Spitball" trial for oMiser, a tiny and simple
    confirmation of the fundamental usage of COM interfaces.  The purpose is
-   to simply verify that the basic mechanisms of COM are estblished correctly
-   for both C and C++ language environments.
+   to confirm that the basic mechanisms of COM are estblished correctly
+   for both C and C++ language access to oMiser.
 
    The present version is for the C Language implementation of the oMiser
    Win32 Run-Time Library.  This will be the authoritative implementation,
-   usable from both C and C++ language environments.
-
-   The only difference for C++ is that the oMiser-Win32.hpp header file is
-   used to provide the necessary declarations and definitions for oMiser COM
-   interfaces, even though the underlying implementation is in C Language..
-
-   The fundamental purpose of this very-early Spitball stage of oMiser code
-   is to establish the basic mechanisms of COM interface usage and to
-   verify that they work correctly used from both C and C++ language
-   environments.
-
+   usable from both C and C++ language environments in Micrsoft Windows.
    There is a necessary dependency on the Windows SDK for COM interface
    definitions and declarations, with the implementation being specific to
    the Win32 x64 environment.
+
+   The only difference for C++ is that the oMiser-Win32.hpp header file is
+   used to provide the necessary declarations and definitions for oMiser COM
+   interfaces, even though the underlying implementation is in C Language
+   and the oMiser-Win32.h header is used for C language access.
    */
 
 #include <WinNT.h>            // For HRESULT definition
 #include "oMiser-Win32.h"     // For oMiser API declarations
 
 typedef struct {IUnknownV *pv; ULONG refs;} omSpitball;
-    /* A minimal COM object for Spitball testing.  It just
+    /* A minimal COM state for Spitball testing.  It just has
        reference counts. */
 
-static omSpitball pvIomSpitball = { NULL, 0 };
 
-/* FIXME: I don't know how I got from omSpitBall to these nom* names.
-          I need something else, even though I don't know what yet.
-          I need to figure out what these names should be when I
-          finalize the prefix for the main uber Class - These are not
-          exposed, but the names should be consistent internally,
-          especially as there become more classes and interfaces. */
 
-static ULONG nomAddRef(omSpitball *This)
+static ULONG omSpitAddRef(omSpitball *This)
 {  /* count a new reference */
    return InterlockedIncrement(This->refs);
    }
 
-static ULONG nomRelease(omSpitball *This)
+static ULONG omSpitRelease(omSpitball *This)
 {  /* reduce reference count */
    return InterlockedDecrement(This->refs);
    }
 
-HRESULT nomQueryInterface(omSpitball *This, REFIID riid, void **ppv)
+static HRESULT omSpitQueryInterface(omSpitball *This, REFIID riid, void **ppv)
 {  /* provide minimal query choices */
 
    /* defend ourselves */
    if (This == NULL || riid == NULL || ppv == NULL)
        return E_POINTER;
+
+   /* default result if no interface delivered*/
    *ppv = NULL;
 
    /* we have only IUnknown as a SpitBall option */
@@ -69,13 +59,20 @@ HRESULT nomQueryInterface(omSpitball *This, REFIID riid, void **ppv)
        return E_NOINTERFACE;
 
    *ppv = This;
-   nomAddRef(This);
+   omSpitAddRef(This);
    return S_OK;
 
-   } /* nomQueryInterface */
+   } /* omSpitQueryInterface */
+
+/* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
+ *
+ *         THE SINGULAR SPITBALL INSTANCE AND ITS ESTABLISHMENT
+ */
 
 static const IUnknownV IomSpitballV
-             = { nomQueryInterface, nomAddRef, nomRelease };
+             = { omSpitQueryInterface, omSpitAddRef, omSpitRelease };
+
+static omSpitball omSpitballState = { NULL, 0 };
 
 
 HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
@@ -99,17 +96,21 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
      QueryInterface on that existing instance.
      */
 
-  if ( pvIomSpitball.pv == NULL )
+  if ( omSpitballState.pv == NULL )
        /* An oMiser universe needs establishment. */
-       pvIomSpitball.pv = &IomSpitballV;
+       omSpitballState.pv = &IomSpitballV;
 
-  return IomSpitballV.QueryInterface( &pvIomSpitball, riid, ppv);
+  return omSpitQueryInterface( &omSpitballState, riid, ppv);
+         /* Even if the QueryInterface fails, the engine is
+            established and it won't be re-established.
+            */
 
   }  /* omEstablish */
 
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.4  2026-02-06T00:26Z Complete Spitball Implementation Draft
    0.0.3  2026-02-05T00:54Z Get the basic COM interface but clumsy
    0.0.2  2026-02-03T22:51Z First pass at implementation draft
    0.0.1  2026-02-01T17:56Z Identify as Win32 C Language specific
