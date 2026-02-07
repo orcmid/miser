@@ -1,4 +1,4 @@
-HRESULTs.txt 0.0.2                  UTF-8                          2026-01-24
+HRESULTs.txt 0.0.3                  UTF-8                          2026-02-07
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -44,9 +44,13 @@ HRESULTs.txt 0.0.2                  UTF-8                          2026-01-24
     Playing safe here.
 
     The naming of oMiser HRESULTS in FACILITY_ITF will all be in the form
-    OMiface_E_reason where iface will be indicative of the oMiser interface(s)
-    that deliver that code.  Duplications (or not) for multiple/groups of
-    interfaces will be figured out when the situation comes up.
+    OM_E_reason and described with oMiser API and interface methods
+    that deliver such an HRESULT.  Duplications (or not) for multiple/groups
+    of interfaces will be figured out when the situation comes up.
+
+    Here is the current list:
+
+       OM_E_CLSID_UNSUPPORTED 0x80040200  from omEstablish()
 
     SOURCES
 
@@ -110,8 +114,8 @@ HRESULTs.txt 0.0.2                  UTF-8                          2026-01-24
 
  ATTRIBUTION
 
-   Hamilton, Dennis E. oMiser Use of HRESULTs.  Text file version 0.0.2
-   dated 2026-01-24, available on the Internet as a version of
+   Hamilton, Dennis E. oMiser Use of HRESULTs.  Text file version 0.0.3
+   dated 2026-02-07, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/HRESULTs.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -124,8 +128,6 @@ NOTES AND TODOS
  * I need a block of GUIDs that should last for all the interfaces we will
    need.
 
- * Find the original COM specification.  It is out there.
-
  * I need a block of HRESULTs and definition of oFrugal method-specific ones.
    See [Rogerson1997] HRESULTs, p.104.
 
@@ -135,6 +137,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2026-02-07T17:23Z Start introducing oMiser HRESULTs
  0.0.2 2026-01-24T20:30Z More wrestling with Microsoft source materials
  0.0.1 2026-01-15T17:05Z Move to oMiser/ and touch-up, supply [Rogerson1997]
  0.0.0 2026-01-14T23:30Z Initial draft on HRESULTs
