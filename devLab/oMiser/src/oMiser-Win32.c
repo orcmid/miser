@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.4              UTF-8                         2026-02-06
+/* oMiser-Win32.c 0.0.5              UTF-8                         2026-02-07
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -30,9 +30,12 @@
 
 typedef struct {IUnknownV *pv; ULONG refs;} omSpitball;
     /* A minimal COM state for Spitball testing.  It just has
-       reference counts. */
-
-
+       reference counts.
+       FACTOID: If successive versions of this struct always start
+                with the same components, in the manner PV vectors do,
+                the Spitball CLSID can continue to be accepted, in
+                the same manner as IUknown and descendents are
+                preserved. Well ... maybe. */
 
 static ULONG omSpitAddRef(omSpitball *This)
 {  /* count a new reference */
@@ -76,7 +79,6 @@ static omSpitball omSpitballState = { NULL, 0 };
 
 
 HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
-
 { /* The "factory" for establishing an oMiser universe instance.*/
 
   const CLSID CLSID_omNoPitch         /* Must match CLSID_omSpitBall */
@@ -84,32 +86,53 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
                    { 0x92, 0x27, 0x62, 0x72, 0x46, 0x49, 0x59, 0xcb }
                  };
         /* This is a differently-named value of the omSpitBall CLSID.
-           It is used to confirm agreement between the header and this
-           implementation source.
-           FIXIT: Identify the possible HRESULT return values.
-        */
+           It is used to confirm agreement between the header used and
+           this implementation source.
+           */
 
-  /* FIXIT: Verify everything in the parameters before proceeding.*/
+   #define OM_E_CLSID_UNSUPPORTED \
+           MAKE_HRESULT(0x, FACILITY_ITF, 0x200)
+
+   /* defend ourselves */
+   if (omClassID == NULL || riid == NULL || ppv == NULL)
+       return E_POINTER;
+
+   /* default result in case no interface is delivered */
+   *ppv = NULL;
+
+   /* we have only one supported CLSID for Spitball  */
+   if (!IsEqualIID(&CLSID_omNoPitch, omClassID))
+       return OM_E_CLSID_UNSUPPORTED;
 
   /* There is never more than one instance of the oMiser engine.
      If the engine is already established, operation is simply a
      QueryInterface on that existing instance.
      */
 
-  if ( omSpitballState.pv == NULL )
-       /* An oMiser universe needs establishment. */
-       omSpitballState.pv = &IomSpitballV;
+  if ( omSpitballState.pv != NULL )
+       return omSpitQueryInterface( &omSpitballState, riid, ppv);
+
+
+/*             ESTABLISH THE SINGULAR SPITBALL INSTANCE
+ *             ****************************************
+ *
+ * Here would be a lot more to create for a full oMiser engine, with a
+ * complete set of COM interfaces and internal state management.
+ */
+
+  omSpitballState.pv = &IomSpitballV;
 
   return omSpitQueryInterface( &omSpitballState, riid, ppv);
          /* Even if the QueryInterface fails, the engine is
-            established and it won't be re-established.
-            */
+          already established and it won't be re-established.
+          */
 
-  }  /* omEstablish */
+  } /* omEstablish */
 
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.5  2026-02-07T01:06Z Complete Spitball Implementation
    0.0.4  2026-02-06T00:26Z Complete Spitball Implementation Draft
    0.0.3  2026-02-05T00:54Z Get the basic COM interface but clumsy
    0.0.2  2026-02-03T22:51Z First pass at implementation draft
