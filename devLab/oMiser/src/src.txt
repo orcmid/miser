@@ -1,4 +1,4 @@
-oMiser 0.0.0 src.txt 0.0.6          UTF-8                          2026-02-03
+oMiser 0.0.0 src.txt 0.0.7          UTF-8                          2026-02-07
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                                  OMISER CODE
@@ -8,13 +8,15 @@ oMiser 0.0.0 src.txt 0.0.6          UTF-8                          2026-02-03
 
 MANIFEST
 
-     src.txt     This synopsis and manifest of an oMiser source code.
-        .vscode  Visual Studio Code workspace information
+           src.txt  This synopsis and manifest of an oMiser source code.
 
-   oMiser-Win32.h      The oMiser API header file for the C Language API level
-   oMiser-Win32.hpp    The oMiser API header for the C++ Interface API form
+       .vscode/     Visual Studio Code workspace information, primarily for
+                    editing and intellisense of #includes
 
-   oMiser-Win32.c      The oMiser
+  oMiser-Win32.h    The oMiser API header file for the C Language API level
+   Miser-Win32.hpp  The oMiser API header for the C++ Interface API form
+
+  oMiser-Win32.c    oMiser Core Implementation in Clean C
 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
@@ -38,23 +40,22 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. oMiser 0.0.0 Library Source Code folder file src.txt
-   version 0.0.6 dated 2026-02-03, available on the Internet as a version of
+   version 0.0.7 dated 2026-02-07, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/src/src.txt>.
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 NOTES AND TODOS
 
+ * For SpitBall, add a CLSID slot to the state fixture.  This is not exposed
+   by any method, but reachable by instrumentation and testing of the various
+   editions.  It can also be displayed by test harnesses.
+
  * This will ultimately be a PGP-signed distributed src.txt in a snapshot
    bundle.
 
  * I need a block of GUIDs that should last for all the interfaces we will
    need.
-
- * I need a block of HRESULTs and definition of oFrugal method-specific ones.
-   See "Inside COM" HRESULTs, p.104.  I need the list of ones that are
-   normally returned from COM interfaces - the sort-of elementary ones,
-   and then a way to specify
 
  * I need a block of GUIDs and I'll need those to be listed in some
    convenient place.  How GUIDs are stored somewhere for use by users of the
@@ -79,6 +80,7 @@ NOTES AND TODOS
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.7  2026-02-07T20:15Z Manage TODOs, Add need to carry CLSID in the core
  0.0.6  2026-02-03T23:03Z Manifest oMiser-Win32.c, oMiser-Win32.h, and
                           oMiser-Win32.hpp
  0.0.5  2026-01-31T20:42Z Introduce .vscode
