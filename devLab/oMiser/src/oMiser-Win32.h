@@ -30,10 +30,7 @@
  *   C++ specific support in oMiser-Win32.hpp.
  */
 
-#include <WinNT.h>       // For HRESULT definition
-#include <guiddef.h>     // For GUID, IID, CLSID definitions
-#include <WinDef.h>      // For basic Windows types used in COM interfaces
-#include <Winerror.h>    // For named HRESULT error codes
+ #include <windows.h>
 
 #ifdef __cplusplus
 #warning oMiser.hpp is preferable for C++ use of oMiser COM interfaces.
@@ -148,6 +145,7 @@ typedef IUnknownPV *pIUnknown;
 /*
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
+ *  0.0.10 2026-02-08T01:30Z Get clean compile, switching to windows.h
  *  0.0.9  2026-02-07T17:13Z Refine comments and define OM_E_CLSID_UNSUPPORTED
  *  0.0.8  2026-02-05T23:52Z Improve namings and explanations of the pattern.
  *  0.0.7  2026-02-05T00:55Z Clean up the types and HRESULT definitions

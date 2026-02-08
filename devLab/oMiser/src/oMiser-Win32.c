@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.6              UTF-8                         2026-02-07
+/* oMiser-Win32.c 0.0.7              UTF-8                         2026-02-08
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -25,10 +25,11 @@
    and the oMiser-Win32.h header is used for C language access.
    */
 
-#include <WinNT.h>            // For HRESULT definition
+#include <windows.h>
+
 #include "oMiser-Win32.h"     // For oMiser API declarations
 
-typedef struct {IUnknownV *pv; ULONG refs;} omSpitball;
+typedef struct {const IUnknownV *pv; volatile long refs;} omSpitball;
     /* A minimal COM state for Spitball testing.  It just has
        reference counts.
        FACTOID: If successive versions of this struct always start
@@ -37,17 +38,17 @@ typedef struct {IUnknownV *pv; ULONG refs;} omSpitball;
                 the same manner as IUknown and descendents are
                 preserved. Well ... maybe. */
 
-static ULONG omSpitAddRef(omSpitball *This)
+static long omSpitAddRef(omSpitball *This)
 {  /* count a new reference */
-   return InterlockedIncrement(This->refs);
+   return InterlockedIncrement(&This->refs);
    }
 
-static ULONG omSpitRelease(omSpitball *This)
+static long omSpitRelease(omSpitball *This)
 {  /* reduce reference count */
-   return InterlockedDecrement(This->refs);
+   return InterlockedDecrement(&This->refs);
    }
 
-static HRESULT omSpitQueryInterface(omSpitball *This, REFIID riid, void **ppv)
+static HRESULT omSpitQueryInterface(omSpitball *This, IID *riid, void **ppv)
 {  /* provide minimal query choices */
 
    /* defend ourselves */
@@ -133,6 +134,7 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.7  2026-02-08T01:22Z Get clean compile
    0.0.6  2026-02-07T17:45Z Expose omSpitballV for testing purposes and
           instrumentation purposes
    0.0.5  2026-02-07T01:06Z Complete Spitball Implementation
