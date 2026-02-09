@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.7              UTF-8                         2026-02-08
+/* oMiser-Win32.c 0.0.8              UTF-8                         2026-02-09
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -80,7 +80,13 @@ extern const IUnknownV IomSpitballV
        is implemented correctly, this vtable location is exposed. In the
        future, the vtable will be static */
 
-static omSpitball omSpitballState = { NULL, 0 };
+extern omSpitball omGlobalState = { NULL, 0 };
+    /* The singular Spitball instance of Global State.  So long as the
+       subsequent CLSIDs have the same initial layout of the first two
+       members, everything lines up for interface IUnknown functions.
+          XXX: I remain uncertain that the same CLSID can be supported
+       even if this part of the state is unchanged though.
+       */
 
 
 HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
@@ -111,8 +117,8 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
      QueryInterface on that existing instance.
      */
 
-  if ( omSpitballState.pv != NULL )
-       return omSpitQueryInterface( &omSpitballState, riid, ppv);
+  if ( omGlobalState.pv != NULL )
+       return omSpitQueryInterface( &omGlobalState, riid, ppv);
 
 
 /*             ESTABLISH THE SINGULAR SPITBALL INSTANCE
@@ -122,9 +128,9 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
  * complete set of COM interfaces and internal state management.
  */
 
-  omSpitballState.pv = &IomSpitballV;
+  omGlobalState.pv = &IomSpitballV;
 
-  return omSpitQueryInterface( &omSpitballState, riid, ppv);
+  return omSpitQueryInterface( &omGlobalState, riid, ppv);
          /* Even if the QueryInterface fails, the engine is
           already established and it won't be re-established.
           */
@@ -134,6 +140,7 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.8  2026-02-09T22:41Z Change exposed state to omGlobalState.
    0.0.7  2026-02-08T01:22Z Get clean compile
    0.0.6  2026-02-07T17:45Z Expose omSpitballV for testing purposes and
           instrumentation purposes
