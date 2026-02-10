@@ -1,4 +1,4 @@
-tests.txt 0.0.2                UTF-8                              2026-02-07
+tests.txt 0.0.3                UTF-8                              2026-02-10
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                       OMISER LIB DEVELOPMENT PROJECT
@@ -34,6 +34,8 @@ MANIFEST
         myPrompt.bat  simple script for setting colorization of CMD.exe
          .vscode/     Visual Studio Code workspace setting for tests/
 
+ SpitCheck-0.0.1.png  Image of successful omSpitCheck-0.0.1 build and run
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                      Copyright 2026 Dennis E. Hamilton
@@ -55,7 +57,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Test Cases for oMiser Releases. Miser Project text file
-   tests.txt 0.0.2 dated 2026-02-07, available on the Internet as a version of
+   tests.txt 0.0.3 dated 2026-02-10, available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/oMiser/tests/tests.txt>
 
 NOTES AND TODO
@@ -73,6 +75,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.3 2026-02-10T15:17Z Add SpitCheck-0.0.1.png (renamed) success
  0.0.2 2026-02-07T23:31Z Add omSpitCheck and Spitball compiler options
  0.0.1 2026-01-27T15:54Z Musing about the first things to test
  0.0.0 2026-01-12T22:27Z Initial placeholder
