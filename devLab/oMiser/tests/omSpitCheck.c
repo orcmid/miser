@@ -1,4 +1,4 @@
-/* omSpitCHeck.c 0.0.1              UTF-8                         2026-02-10
+/* omSpitCHeck.c 0.0.2              UTF-8                         2026-02-10
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                      THE MISER PROJECT ON GITHUB
@@ -57,8 +57,9 @@ extern omSpitball omGlobalState;
 int main(void)
 {
 
-  fputs("\n[om] omSpitCheck 0.0.1 Confirmation of oMiser Spitball", stdout);
+  fputs("\n[om] omSpitCheck 0.0.2 Confirmation of oMiser Spitball", stdout);
 
+  /* CONFIRM ACCESS AND STATUS OF UNESTABLISHED omGlobalState */
   fputs("\n"
         "\n     Checking unestablished omGlobalState ...", stdout);
 
@@ -72,19 +73,62 @@ int main(void)
         exit(EXIT_FAILURE);
         }
 
-  fputs("\n     omGlobalState seems correctly unestablished", stdout);
+  fputs("\n     omGlobalState seems correctly not yet established", stdout);
+
+  /* CONFIRM DEFENSES OF omEstablish API */
+  const CLSID CLSID_omFowlTip         /* A never-supported oMiser CLSID */
+              = { 0xb51e2358, 0xadad, 0x4509,
+                    { 0xb0, 0xd1, 0xf0, 0x2a, 0xd, 0x14, 0x78, 0x37 }
+                  };
+
+  /* FIXME: CREATE NON-NULL IUnknown REFIID Pointer to confirm that
+            it is not altered by any of the pointer errors
+            */
+
+  fputs("\n"
+        "\n     Checking omEstablish Defenses ...", stdout);
+
+  /* FIXME: March NULL parameters through calls on omEstablish,
+            Each should get E_POINTER error and the REFIID pointer
+            should not be touched.
+            */
+
+  /* FIXME: Have a valid omEstablish call but with CLSID_omFowlTip
+            causing OM_E_CLSID_UNSUPPORTED *and* the REFIID has
+            been NULLed.
+            */
+
+  /* FIXME: Have a valid CLSID_omSpitball call to omEstablish but
+            not a recognized IID parameter.  This will again NULL
+            the REFIID parameter.  The global state will be established,
+            but no interface will be delivered.  The refs count should
+            be 0, since no reference has been delivered.  CONFIRIM
+            THIS CASE.
+            */
+
+  /* FIXME: Have a valid call on omEstablish and now confirm that
+            Global State is delivered *and*, the expected VTable is
+            there, and the refs value is 1.
+            */
+
+  /* FIXME: Confirm that the delivered interface is functional by calling
+            AddRef and Release and confirming the expected changes in
+            refs values returned.   Because it is going to dive into the
+            methods, this and an unsuccessful and successful QueryInterface
+            should also be checked.
+            */
 
   fputs("\n"
         "\n     MORE CHECKING TBD. STAY TUNED\n\n", stdout);
-
 
 
   exit(EXIT_SUCCESS);
 
  }
 /*
-   0.0.1 2026-02-10T02:39Z Checking for unestablished omGlobalState.
-   0.0.0 2026-02-07T23:44Z Tiny nothing-to-see stub to kick-start the code.
+   0.0.2  2026-02-10T18:37Z Add FIXMEs for the additional checsk needed
+   0.0.1  2026-02-10T02:39Z Checking for unestablished omGlobalState.
+   0.0.0  2026-02-07T23:44Z Tiny nothing-to-see stub to kick-start the code.
    */
 
 /*                      ***** end of omSpitCheck.c *****                   */
