@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.8              UTF-8                         2026-02-09
+/* oMiser-Win32.c 0.0.9              UTF-8                         2026-02-10
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -76,7 +76,7 @@ static HRESULT omSpitQueryInterface(omSpitball *This, IID *riid, void **ppv)
 extern const IUnknownV IomSpitballV
              = { omSpitQueryInterface, omSpitAddRef, omSpitRelease };
     /* The vtable for the singular Spitball instance.
-       SPITBALL VERSION ONLY: For confirmation thatCOM interface usage
+       SPITBALL VERSION ONLY: For confirmation that COM interface usage
        is implemented correctly, this vtable location is exposed. In the
        future, the vtable will be static */
 
@@ -140,6 +140,7 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.9  2026-02-10T18:35Z tiny touch-up
    0.0.8  2026-02-09T22:41Z Change exposed state to omGlobalState.
    0.0.7  2026-02-08T01:22Z Get clean compile
    0.0.6  2026-02-07T17:45Z Expose omSpitballV for testing purposes and
