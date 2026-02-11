@@ -1,4 +1,4 @@
-/* oMiser-Win32.c 0.0.9              UTF-8                         2026-02-10
+/* oMiser-Win32.c 0.0.10            UTF-8                         2026-02-11
    -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
              C LANGUAGE IMPLEMENTATION OF oMiser RUN-TIME LIBRARY
@@ -48,7 +48,8 @@ static long omSpitRelease(omSpitball *This)
    return InterlockedDecrement(&This->refs);
    }
 
-static HRESULT omSpitQueryInterface(omSpitball *This, IID *riid, void **ppv)
+static HRESULT omSpitQueryInterface( omSpitball *This, const IID *riid,
+                                     void **ppv)
 {  /* provide minimal query choices */
 
    /* defend ourselves */
@@ -89,7 +90,7 @@ extern omSpitball omGlobalState = { NULL, 0 };
        */
 
 
-HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
+HRESULT omEstablish(const CLSID* omClassID, const IID* riid, void **ppv)
 { /* The "factory" for establishing an oMiser universe instance.*/
 
   const CLSID CLSID_omNoPitch         /* Must match CLSID_omSpitBall */
@@ -140,6 +141,7 @@ HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppv)
 
 /* -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+   0.0.10 2026-02-11T05:07Z Consistent use of const parameters.
    0.0.9  2026-02-10T18:35Z tiny touch-up
    0.0.8  2026-02-09T22:41Z Change exposed state to omGlobalState.
    0.0.7  2026-02-08T01:22Z Get clean compile
