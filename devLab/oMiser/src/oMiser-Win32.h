@@ -1,4 +1,4 @@
-/* oMiser-Win32.h 0.0.9             UTF-8                         2026-02-07
+/* oMiser-Win32.h 0.0.10            UTF-8                         2026-02-11
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                             The oMiser API
@@ -37,7 +37,8 @@
 extern "C" {
 #endif
 
-HRESULT omEstablish(CLSID* omClassID, IID* riid, void **ppvObject);
+HRESULT omEstablish( const CLSID* omClassID, const IID* riid,
+                     void **ppvObject );
 
     /* The "factory" interface for establishing an oMiser universe instance.
        There is never more than one instance of the oMiser engine.  If the
@@ -145,6 +146,8 @@ typedef IUnknownPV *pIUnknown;
 /*
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
+ *  0.0.11 2026-02-11T04:56Z Clean up consistent use of const pointer
+ *         parameters.
  *  0.0.10 2026-02-08T01:30Z Get clean compile, switching to windows.h
  *  0.0.9  2026-02-07T17:13Z Refine comments and define OM_E_CLSID_UNSUPPORTED
  *  0.0.8  2026-02-05T23:52Z Improve namings and explanations of the pattern.
