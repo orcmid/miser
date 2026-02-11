@@ -1,4 +1,4 @@
-/* omSpitCHeck.c 0.0.4              UTF-8                         2026-02-11
+/* omSpitCHeck.c 0.0.5              UTF-8                         2026-02-11
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                      THE MISER PROJECT ON GITHUB
@@ -58,7 +58,7 @@ extern omSpitball omGlobalState;
 int main(void)
 {
 
-  fputs("\n[om] omSpitCheck 0.0.4 Confirmation of oMiser Spitball", stdout);
+  fputs("\n[om] omSpitCheck 0.0.5 Confirmation of oMiser Spitball", stdout);
 
   /* CONFIRM ACCESS AND STATUS OF UNESTABLISHED omGlobalState */
   /* -------------------------------------------------------- */
@@ -99,9 +99,11 @@ int main(void)
                     { 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46 }
                   };
 
-  IUnknown  *pIUnknown = (void *)0xDEADBEEF01234567;
+  pIUnknown myUnknown = (void *)0xDEADBEEF01234567;
             /* A non-NULL pointer to confirm no alteration on any of the
-               pointer errors.
+               pointer errors. Note that pIUnknown is established in
+               oMiser-Win32.h as a pointer to an IunknownV pointer,
+               and we cannot steal the IUnknown name.
                */
 
   fputs("\n"
@@ -112,13 +114,13 @@ int main(void)
             should not be touched.
             */
 
-  HRESULT hr = omEstablish( NULL, &IID_IUnknown, (void **)&pIUnknown);
+  HRESULT hr = omEstablish( NULL, &IID_IUnknown, (void **)&myUnknown);
   if (hr != E_POINTER)
       { fputs("\n     ERROR: no E_POINTER for NULL CLSID\n\n", stdout);
         exit(EXIT_FAILURE);
         }
 
-  hr = omEstablish( &CLSID_omFoulTip, NULL, (void **)&pIUnknown);
+  hr = omEstablish( &CLSID_omFoulTip, NULL, (void **)&myUnknown);
   if (hr != E_POINTER)
       { fputs("\n     ERROR: no E_POINTER for NULL IID*\n\n", stdout);
         exit(EXIT_FAILURE);
@@ -130,8 +132,8 @@ int main(void)
         exit(EXIT_FAILURE);
         }
 
-  if (pIUnknown != (void *)0xDEADBEEF01234567)
-      { fputs("\n     ERROR: pIUnknown pointer was altered prematurely\n\n",
+  if (myUnknown != (void *)0xDEADBEEF01234567)
+      { fputs("\n     ERROR: myUnknown pointer was altered prematurely\n\n",
               stdout
               );
         exit(EXIT_FAILURE);
@@ -147,9 +149,9 @@ int main(void)
   fputs("\n"
         "\n     Checking CLSID Verification ...", stdout);
 
-  hr = omEstablish( &CLSID_omFoulTip, &IID_Fake, (void **)&pIUnknown);
+  hr = omEstablish( &CLSID_omFoulTip, &IID_Fake, (void **)&myUnknown);
 
-  if (pIUnknown != NULL)
+  if (myUnknown != NULL)
        fputs("\n     warning: no precautionary ppv clearing done.", stdout);
 
   if (hr != OM_E_CLSID_UNSUPPORTED)
@@ -157,7 +159,7 @@ int main(void)
         exit(EXIT_FAILURE);
         }
 
-  hr = omEstablish( &CLSID_omSpitball, &IID_Fake, (void **)&pIUnknown);
+  hr = omEstablish( &CLSID_omSpitball, &IID_Fake, (void **)&myUnknown);
 
   if (hr != OM_E_CLSID_UNSUPPORTED)
        fputs("\n     omSpitball CLSID likely accepted.", stdout);
@@ -206,7 +208,7 @@ int main(void)
         "\n     E_NOINTERFACE received as expected for IID_Fake.", stdout);
 
 
-  hr = omEstablish( &CLSID_omSpitball, &IID_IUnknown, (void **)&pIUnknown);
+  hr = omEstablish( &CLSID_omSpitball, &IID_IUnknown, (void **)&myUnknown);
 
   if (hr != S_OK)
        { fputs("\n     ERROR: IUnknown not obtained\n\n", stdout);
@@ -215,12 +217,12 @@ int main(void)
 
   fputs("\n     IUnknown interface received as expected", stdout);
 
-  if (2 != pIUnknown->pv->AddRef(pIUnknown))
+  if (2 != myUnknown->pv->AddRef(myUnknown))
        fputs("\n     IUnknown AddRef did not return expected value 2\n\n",
                stdout
                );
 
-  if (1!= pIUnknown->pv->Release(pIUnknown))
+  if (1!= myUnknown->pv->Release(myUnknown))
        fputs("\n     IUnknown Release did not return expected value 1\n\n",
                stdout
                );
@@ -233,6 +235,7 @@ int main(void)
 
  }
 /*
+   0.0.5  2026-02-11T04:54Z Clean up with const and myUnknown pointer.
    0.0.4  2026-02-11T03:44Z First complete draft of omSpitCheck.c.
    0.0.3  2026-02-10T20:04Z Setup before checking E_POINTER cases
    0.0.2  2026-02-10T18:37Z Add FIXMEs for the additional checsk needed
