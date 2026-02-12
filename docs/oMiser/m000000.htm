@@ -68,7 +68,7 @@
       <p align="right"><b><code><a target="_top" href="m000000.htm">m000000</a>&gt;</code></b><br>
       <small><small>
 		<!--webbot bot="Timestamp" S-Type="EDITED"
-      S-Format="%Y-%m-%d" startspan -->2026-01-04<!--webbot bot="Timestamp" i-checksum="12082" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->12:51 -0800<!--webbot bot="Timestamp" i-checksum="11981" endspan -->
+      S-Format="%Y-%m-%d" startspan -->2026-02-12<!--webbot bot="Timestamp" i-checksum="12143" endspan --> -<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%H:%M %Z" startspan -->08:38 -0800<!--webbot bot="Timestamp" i-checksum="12088" endspan -->
       </small></small></p>
       </td>
     
@@ -149,16 +149,38 @@
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2026-02-12</small></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">Treatment of oMiser reliance on the Component Object 
+		Model (COM) is fairly clumsy and I need some better way to motivate it, 
+		so long as that is the direction.&nbsp; I&#39;m uncertain that nfoTools is a 
+		good place for it.&nbsp; There are generic parts, and there needs to be 
+		links to material on it.&nbsp; So it should be somewhere than in oMIser 
+		documentation, even though the way it is relied upon should be clear in 
+		how the oMiser-specific treatment is handled here.&nbsp; Things like how 
+		interfaces and their methods are documented, and so on, could be 
+		established under nfoTools, and the treatment here could be, more here 
+		is how it is applied, without having to explain it all.&nbsp; And I have 
+		mixed feelings about this.&nbsp; I might wait until I have more to show 
+		about oMiser and see what inspiration arises.</font></td>
     </tr>
     
     <tr>
       <td width="11%" align="center" valign="top">&nbsp;</td>
-      <td width="11%" align="center" valign="top">&nbsp;</td>
+      <td width="11%" align="center" valign="top"><small>2026-02-12</small></td>
       <td width="78%" align="left" valign="top">
-        &nbsp;</td>
+        <font size="2">I want to understand how the comparison operation might 
+		result in an adjustment when two ob-cells in different locations have 
+		identical hashtags and are actually identical.&nbsp; In that case we 
+		might be able to replace the reference to one of them by a reference to 
+		the other.&nbsp; One needs to know the referencing obs in both cases, to 
+		be able to make the switch.&nbsp; The heuristic for deciding which one 
+		whose reference is replaced needs to be understood.&nbsp; One tip would 
+		be to release the pointer to the one with the least (or no) reference 
+		count, increasing the reference (count) of the one retained.&nbsp; In 
+		the current understanding of oMiser principles of operation, individuals 
+		(including synthetics) are never duplicated, so any of these are never 
+		with same hash but different locations.</font></td>
     </tr>
     
     <tr>
@@ -227,7 +249,7 @@
       <td width="78%" align="left" valign="top">
         <font size="2">Can we use COM interfaces, but without reference 
 		counting.&nbsp; If we do reference counting, and having other elements, 
-		where so we put it.&nbsp; And how do we stay within the rules for COM, 
+		where do we put it.&nbsp; And how do we stay within the rules for COM, 
 		if that is really a requirement.</font></td>
     </tr>
     
@@ -645,7 +667,7 @@
 		mathematical model though.&nbsp; I think I am safe with structure, it is 
 		just making the associated theory explicit is a shift in notation.&nbsp; 
 		However, &lt;<a href="https://en.wikipedia.org/wiki/Model_theory">https://en.wikipedia.org/wiki/Model_theory</a>&gt; 
-		suggests some rather abstruse matters goinng back to Tarski and, lately, 
+		suggests some rather abstruse matters going back to Tarski and, lately, 
 		&lt;<a href="https://en.wikipedia.org/wiki/Stable_theory">https://en.wikipedia.org/wiki/Stable_theory</a>&gt;.&nbsp; 
 		This is all rather murky and I wonder if confinement to denumerable 
 		domains is a saving grace in respect to models of computation and C-T 
@@ -696,7 +718,7 @@
 		provides a link (dor) on McG.&nbsp; There is also a connection on the M4 
 		processor that was a Unix tool.&nbsp; https://en.wikipedia.org/wiki/M4_(computer_language).&nbsp; 
 		I will refer to that, although I need to verify whatever the similarity 
-		is, apart from the inspiration by Kerighan and Ritchie in 1977.&nbsp; 
+		is, apart from the inspiration by Kernighan and Ritchie in 1977.&nbsp; 
 		The connection to RATFOR is also cool from a Software Tools pespective.&nbsp; 
 		Rhapsodize about this, Dennis.&nbsp; Also, Strachey is a great example 
 		of Burge&#39;s observation that computer programmers and computer scientists 
