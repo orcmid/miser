@@ -1,4 +1,4 @@
-<!-- index.md 0.1.7                 UTF-8                         2026-01-25
+<!-- index.md 0.1.8                 UTF-8                         2026-02-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -80,7 +80,10 @@ covered here.
 When oMiser operates in multiple instances, even when coordinated by local
 or remote connections, there is appearance of there being only one ‹ob› Ob
 domain being navigated by all of the instances.  Flavors of distributed
-operation will maintain that appearance.
+operation will maintain that appearance.  This does not mean there is lockstep
+synchronization.  It means that immediately-irrelevant differences are not
+discernable.
+
 
 ### Type Abstraction
 
@@ -141,6 +144,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.1.8  2026-02-12T27:19Z Clarify Idealism (and probably add confusion)
   0.1.7  2026-01-25T18:03Z Touch-up, bring current with oMiser.txt 0.1.10
   0.1.6  2025-09-25T18:31Z Employ ob-cell in some touch-ups
   0.1.5  2025-09-19T21:34Z link to ‹ob›, reflect obtheory 1.4.5
