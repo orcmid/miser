@@ -1,4 +1,4 @@
-/* omSpitCHeck.c 0.0.5              UTF-8                         2026-02-11
+/* omSpitCHeck.c 0.0.6              UTF-8                         2026-02-12
  * -|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
  *
  *                      THE MISER PROJECT ON GITHUB
@@ -58,7 +58,7 @@ extern omSpitball omGlobalState;
 int main(void)
 {
 
-  fputs("\n[om] omSpitCheck 0.0.5 Confirmation of oMiser Spitball", stdout);
+  fputs("\n[om] omSpitCheck 0.0.6 Confirmation of oMiser Spitball", stdout);
 
   /* CONFIRM ACCESS AND STATUS OF UNESTABLISHED omGlobalState */
   /* -------------------------------------------------------- */
@@ -194,7 +194,8 @@ int main(void)
   if (omGlobalState.pv != &IomSpitballV)
        fputs("\n     warning: omGlobalState is not for Spitball",
              stdout);
-  else fputs("\n     omGlobalState is for Spitball", stdout);
+  else fputs("\n     omGlobalState is for Spitball, CLSID was accepted.",
+             stdout);
 
 
   /* CONFIRM INTERFACE OBTAINED */
@@ -221,11 +222,13 @@ int main(void)
        fputs("\n     IUnknown AddRef did not return expected value 2\n\n",
                stdout
                );
+       fputs("\n     IUnknown AddRef returned expected value 2", stdout);
 
   if (1!= myUnknown->pv->Release(myUnknown))
        fputs("\n     IUnknown Release did not return expected value 1\n\n",
                stdout
                );
+       fputs("\n     IUnknown Release returned expected value 1", stdout);
 
   fputs("\n"
         "\n     omSpitCheck completed.\n\n", stdout);
@@ -235,6 +238,7 @@ int main(void)
 
  }
 /*
+   0.0.6  2026-02-12T00:06Z Include AddRef and Release success results, more.
    0.0.5  2026-02-11T04:54Z Clean up with const and myUnknown pointer.
    0.0.4  2026-02-11T03:44Z First complete draft of omSpitCheck.c.
    0.0.3  2026-02-10T20:04Z Setup before checking E_POINTER cases
