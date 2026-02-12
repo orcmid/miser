@@ -52,7 +52,7 @@
 		<a target="_top" rel="nofollow" href="m230900a.htm">m230900a</a>&gt;</code></b><br>
       <small>
       <small>
-      <a href="#v0.0.1">0.0.1</a>&nbsp;<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M %Z" startspan -->2026-01-25 15:28 -0800<!--webbot bot="Timestamp" i-checksum="28744" endspan --> </small></small></p>
+      <a href="#v0.0.1">0.0.1</a>&nbsp;<!--webbot bot="Timestamp" S-Type="REGENERATED" S-Format="%Y-%m-%d %H:%M %Z" startspan -->2026-02-12 12:32 -0800<!--webbot bot="Timestamp" i-checksum="28049" endspan --> </small></small></p>
 </font>
       </td>
     
@@ -92,6 +92,57 @@
 		<td width="11%" align="center" valign="top">
 		&nbsp;</td>
 		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="78%" align="left" valign="top">
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="78%" align="left" valign="top">
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="78%" align="left" valign="top">
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="11%" align="center" valign="top">
+		&nbsp;</td>
+		<td width="78%" align="left" valign="top">
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="11%" align="center" valign="top">
+		<font size="2"><b>in progress</b></font></td>
+		<td width="11%" align="center" valign="top">
+		<font size="2">2026-02-12</font></td>
+		<td width="78%" align="left" valign="top">
+		<font size="2">Add m230900c on Object Comparison.&nbsp; Also find where 
+		that's talked about and link to m230900c.</font></td>
+	</tr>
+	<tr>
+		<td width="11%" align="center" valign="top">
+		<font size="2"><b>in progress</b></font></td>
+		<td width="11%" align="center" valign="top">
+		<font size="2">2026-02-12</font></td>
+		<td width="78%" align="left" valign="top">
+		<font size="2">Clean up m230900b on invariance, and mention the MOb 
+		there since it figure into how names are recovered for certain cases of 
+		individuals.</font></td>
+	</tr>
+	<tr>
+		<td width="11%" align="center" valign="top">
+		<font size="2"><b>in progress</b></font></td>
+		<td width="11%" align="center" valign="top">
 		<font size="2">2026-01-25</font></td>
 		<td width="78%" align="left" valign="top">
 		<font size="2">If there is a bit on ob-cells to indicate possible value 
@@ -100,7 +151,17 @@
 		So it can only be a hint, and it doesn't even indicate when it might be 
 		the value of more than one binding as well as no binding (any longer).&nbsp; 
 		While this might be solvable by another level of indirection.&nbsp; 
-		That's a scary prospect.</font></td>
+		That's a scary prospect. [dh:2026-02-12: I thought it might work by some 
+		finess with the hash of such an object.&nbsp; Each binding of the same 
+		object would require an entry in the MOb, a kind of pseudo-individual 
+		that ties an individual to a particular binding name.&nbsp; But the 
+		bound ob-cell has no way to get back to any of those unless the ob-cell 
+		hashflag is somehow useable to get &quot;back up hill.&quot;&nbsp; We also need<br>
+		to cope with false positives when the ob-cell is no longer so bound.&nbsp; 
+		This might simply be a bridge too far.&nbsp; It's still interesting.&nbsp; 
+		The flag bit, if there is one, cannot be part of the HashFlag because 
+		it's not structural and invariant.]&nbsp; <br>
+&nbsp;</font></td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top">
@@ -120,7 +181,13 @@
 		dieharder offered good RNGs and see how the hashflags can be taken as 
 		seeds to generate new ones, especially for pairs.&nbsp; For enclosures 
 		and synthetics, different RNG methods could be used.&nbsp; For named 
-		individuals, we have the hashing on names to be of assistance.]</font></td>
+		individuals, we have the hashing on names to be of assistance.][dh:2026-02-12 
+		because the reference count needs to be a 32-bit word, the HashFlags 
+		field only has 32 bit available.&nbsp; How many flag bits are needed 
+		determins how large the Hash portion can be.&nbsp; I am thinking of 8 
+		bits for the flag, but that might not be essential.&nbsp; I know of 3 
+		bits so far.&nbsp; I need to know how good a 24 bit hash can be before 
+		shrinking the 8-bit flag allowance though.</font></td>
 	</tr>
 	<tr>
 		<td width="11%" align="center" valign="top" bgcolor="#CCCCFF">
