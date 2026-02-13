@@ -1,4 +1,4 @@
-<!-- index.md 0.6.2                 UTF-8                         2025-09-25
+<!-- index.md 0.6.3                 UTF-8                         2026-02-13
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -27,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.2 2025-09-25T18:18Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.3 2026-02-13T16:33Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -89,7 +89,8 @@ computation: a member of the abstract structure, ‹ob›.
   - every composition is finite
 
 - Obs are distinguishable by their composition and the differentiation of
-  individuals.
+  individuals.  It is a valuable characteristic that, if one were to have an
+  ob "in hand", its flavor is determined by inspection of the a- and b-parts.
 
 ### 1.2 Theory
 
@@ -113,8 +114,12 @@ computational function -- a mathematical entity still.
 The challenge becomes finding a dependable alignment between the computational
 model as a theoretical conception and practical operation of a computing
 mechanism, demonstrating an empirical bridge that cannot be crossed with
-mathematics and logic alone. Observe carefully how that is accomplished in the
-Miser Project.
+mathematics and logic alone.
+
+A century ago, Albert Einstein described the gap between theory and nature
+in a homage to how such theory could be applied in powerful and dramatic ways
+[Hamilton2010](https://orcmid.github.io/bib/logic.htm#Hamilton2010)
+[Einstein1921](https://orcmid.github.io/bib/science.htm#Einstein1921). Observe carefully how that is accomplished in the Miser Project.
 
 Such dependable achievement of engineered manifestations of theoretical
 wonders is a marvel of our time.
@@ -222,7 +227,7 @@ foundation structure of LISP
 The importance of enclosure as a structural feature of obs was observed in an
 incompleteness regarding nested strings in
 \[[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965)\].
-Ob enclosures in obs are akin to representations of strings that can nest
+Ob enclosures in ‹ob› are akin to representations of strings that can nest
 arbitrary strings as individual beads, a limited feature of ALGOL 60
 developed further by Doug Ross and colleagues in the AED system
 \[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
@@ -231,11 +236,11 @@ Enclosures are important in the treatment of obs as scripts and in shifting
 between obs as data to scripts and obs as scripts themselves in the
 computational model.
 
-The computational model founded on ‹ob› for oMiser is a fully-applicative
-scheme inspired through my association with Peter Landin and William H. Burge
-in the mid-1960s, with operation now via a list-processing abstraction.  The
-mechanism of evaluation is based on that for LISP, although Miser is not
-LISP.  oFrugal and Frugalese have inspiration in
+The computational interpretation founded on ‹ob› for oMiser is a
+fully-applicative scheme inspired through my association with Peter Landin and
+William H. Burge in the mid-1960s, with operation now via a list-processing
+abstraction.  The mechanism of evaluation is based on that for LISP, although
+Miser is not LISP.  oFrugal and Frugalese have inspiration in
 \[[Landin1966](https://orcmid.github.io/bib/funprog.htm#Landin1966)\],
 \[[Burge1975](https://orcmid.github.io/bib/funprog.htm#Burge1975)\], and some
 of SML
@@ -377,6 +382,8 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.3  2026-02-13T16:33Z Explain ‹ob› more, along with Einstein on theory
+         versus reality.
   0.6.2  2025-09-25T18:18Z Introduce ob-cell and do some wordsmithing
   0.6.1  2025-09-12T16:41Z Use Computation Theory as a topic consistently
   0.6.0  2025-07-13T17:00Z Add dev/ topic
