@@ -27,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.3 2026-02-13T16:33Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.4 2026-02-13T18:04Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -90,7 +90,8 @@ computation: a member of the abstract structure, ‹ob›.
 
 - Obs are distinguishable by their composition and the differentiation of
   individuals.  It is a valuable characteristic that, if one were to have an
-  ob "in hand", its flavor is determined by inspection of the a- and b-parts.
+  ob "in hand", its flavor is determined by inspection of the a- and b-parts
+  (and an ability to detect when two obs are the same or not).
 
 ### 1.2 Theory
 
@@ -118,8 +119,9 @@ mathematics and logic alone.
 
 A century ago, Albert Einstein described the gap between theory and nature
 in a homage to how such theory could be applied in powerful and dramatic ways
-[Hamilton2010](https://orcmid.github.io/bib/logic.htm#Hamilton2010)
-[Einstein1921](https://orcmid.github.io/bib/science.htm#Einstein1921). Observe carefully how that is accomplished in the Miser Project.
+\[[Hamilton2010](https://orcmid.github.io/bib/logic.htm#Hamilton2010)\]
+\[[Einstein1921](https://orcmid.github.io/bib/science.htm#Einstein1921)\].
+Observe carefully how that is accomplished in the Miser Project.
 
 Such dependable achievement of engineered manifestations of theoretical
 wonders is a marvel of our time.
@@ -382,6 +384,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.4  2026-02-13T18:04Z Fixed format of [Einstein1921] and [Hamilton2010]
   0.6.3  2026-02-13T16:33Z Explain ‹ob› more, along with Einstein on theory
          versus reality.
   0.6.2  2025-09-25T18:18Z Introduce ob-cell and do some wordsmithing
