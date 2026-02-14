@@ -1,4 +1,4 @@
-devLab.txt 0.0.3                    UTF-8                          2026-01-12
+devLab.txt 0.0.4                    UTF-8                          2026-02-14
 #---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project Code
@@ -22,6 +22,11 @@ MANIFEST
 
     oMiser/     development of oMiser distributions
 
+    ACM-DL-2026-02-12-1436-FriedmanNotes.txt
+                Some papers with Daniel Friedman that caught my eye while
+                unsuccessfully searching for something else in the ACM DL.
+                Of possible interest to examine farther here.
+
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -44,7 +49,7 @@ MANIFEST
  ATTRIBUTION
 
    Hamilton, Dennis E. Incremental Development of Miser Software.  Miser
-   Project text file devLab.txt version 0.0.3 dated 2026-01-12,
+   Project text file devLab.txt version 0.0.4 dated 2026-02-14,
    available on the Internet as a version of
    <https://github.com/orcmid/miser/blob/master/devLab/devLab.txt>
 
@@ -79,9 +84,31 @@ NOTES AND TODO
     and that interferes with the "shallow-end" and minimal tooling notions
     I have been attempting for nfoTools.
 
+  * [2026-02-13] POSSIBLE RESOURCES.
+    I found a citation to Friedman about CONS should not evaluate, before
+    Henry Baker's use of the notion. I just can't find it, but I did find
+    these of possible interest for oMiser, but unlikely.  These might
+    suggest alternatives for me though.
+    ** Sobel, Friedman.  Recycling continuations.
+       September 1998
+       <https://dl.acm.org/doi/10.1145/289423.289452>
+
+    ** Hilsdale, Ashley, Dybvig, Friedman.  Compiler Construction
+       Using Scheme.  December 1995
+       <https://dl.acm.org/doi/10.5555/645422.652564>.
+
+    ** Haynes, Friedman.  Embedding continuations in procedural
+       objects.  October 1987.
+       <https://dl.acm.org/doi/10.1145/29873.30392>
+
+    ** Haynes, Friedman, Wand.  Obtaining coroutines with
+       continuations.  1986
+       <https://doi.org/10.1016/0096-0551(86)90007-X>
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 0.0.4 2026-02-14T01:39Z Capture some Daniel Friedman citations
  0.0.3 2026-01-12T17:15Z Attribution, synopsis, and updated manifest
  0.0.2 2026-01-08T15:27Z Break the logjam here and rename this part of the
        repository to devLab/ from dev/
