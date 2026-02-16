@@ -1,4 +1,4 @@
-obap.txt 0.0.4                      UTF-8                       dh:2025-11-13
+obap.txt 0.0.5                      UTF-8                       dh:2026-02-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -43,7 +43,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Computation Function.  Miser Project on
-   GitHub text file obap.txt version 0.0.4 dated 2025-11-13 available on the
+   GitHub text file obap.txt version 0.0.5 dated 2026-02-16 available on the
    Internet as a version of <https://orcmid.github.io/miser/obap/obap.txt>.
 
 NOTES AND TODO
@@ -106,11 +106,11 @@ NOTES AND TODO
    organization of computer storage.
 
  * Continuing on 2000-05-20 (#20.82-86) I am looking at scripts and what
-   are now .A, .B, .C, .E, .D (though .Q at first), .ARG, and .SELF.  Also
+   are now .A, .B, .C, .E, .Q (actually .D then), .ARG, and .SELF.  Also
    a .NIL if needed.  I started figuring out scripts for combinators K and S.
 
- * On 2000-11-11 (#22.92) I have settled on .A, .B, .C, .D (not quite), and
-   .E.  The Miser Project seems to be set aside for a time.
+ * On 2000-11-11 (#22.92) I have settled on .A, .B, .C, .D (2026-02-16 now .Q
+   better), and .E.  The Miser Project seems to be set aside for a time.
 
  * On 2000-12-25 (#27.16) I start asking about truth values and is it
    necessary to have something like .YES and .NO. I also start pondering
@@ -172,9 +172,15 @@ NOTES AND TODO
   * On 2008-05-14 (#60.137) I note that special forms are needed, including
     for ob.NULL versus obap.ARG and obap.SELF
 
+  * On 2026-02-16 (no notebook) I realize that using .D for "distinction" just
+    doesn't work and .EQ is more like it.  But I apparently had considered .Q
+    at some point in the past and Im going to go that direction.  No special
+    reason except there are no Booleans and I like the on-letter choice.
+
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.5 2026-02-16T22:01Z Switch over from obap.D to obap.Q in all descriptions
  0.0.4 2025-11-13T21:40Z Finish up on Notebook #60
  0.0.3 2025-11-11T00:06Z More notebook gleanings
  0.0.2 2025-11-11T02:52Z Continue capturing gleanings from old notebooks

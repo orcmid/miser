@@ -1,4 +1,4 @@
-obaptheory.txt 1.5.0                UTF-8                          2025-05-18
+obaptheory.txt 1.6.0                UTF-8                          2026-02-16
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -104,7 +104,7 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
              1 ob that signifies a special unary operator in scripts
 
           is-primitive(obap.C)
-          is-primitive(obap.D)
+          is-primitive(obap.Q)
              2 obs that signify special binary operators in scripts
 
           The last five constitute special forms in the evaluation of obs as
@@ -112,7 +112,9 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
 
           For simplicity of expression, the CFob notation for primitive
           individuals uses the name with only the prefix ".".  For example,
-          .NIL, .A, and .SELF.
+          .NIL, .A, and .SELF.  These are also case-insensitive, but capitals
+          are the default and how they are produced in generated CFob
+          expressions.
 
 2. ADDITIONAL NOTIONS
 
@@ -151,8 +153,8 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
           is-symbolic-form(x :: ob.NIL)                              (d)
              ⇔ is-symbolic-form(x)
 
-          is-symbolic-form(x) ⇒ obap.f(x) = x                       (e)
-          ¬ is-symbolic-form(x) ⇒ obap.f(x) = ob.e(x)
+          is-symbolic-form(x) ⇒ obap.F(x) = x                       (e)
+          ¬ is-symbolic-form(x) ⇒ obap.F(x) = ob.e(x)
 
           Apply of a lindy to operands in scripts cannot proceed further;
           there is no defined or definable applicative interpretation.
@@ -189,7 +191,7 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
         obap.ap(obap.B, x) = ob.b(x)
 
         obap.ap(obap.C, x) = obap.C :: obap.f(x) :: obap.ARG         (a)
-        obap.ap(obap.D, x) = obap.D :: obap.f(x) :: obap.ARG
+        obap.ap(obap.Q, x) = obap.Q :: obap.f(x) :: obap.ARG
 
         obap.ap(obap.E, x) = ob.e(x)
         obap.ap(obap.F, x) = obap.f(x)             (see Obap3(e), above)
@@ -211,10 +213,10 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
         ¬ is-symbolic-form(p)                                        (d)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = ev(p,x,p)
 
-        In (b, above) the obap.ap evaluations for obap.C and obap.D
+        In (a, above) the obap.ap evaluations for obap.C and obap.EQ
         determine partial applications, effectively curried use of functions
-        ob.c and obap.d, consistent with the special-form treatment of obap.C
-        and obap.D in Obap6(e-f) below.
+        ob.c and obap.eq, consistent with the special-form treatment of obap.C
+        and obap.Q in Obap6(e-f) below.
 
         When p is a pair that is not a pure symbolic form, in satisfaction of
         (d, above) obap.ap(p,x) is tantamount to an expression in which
@@ -243,16 +245,16 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
         ob.is-individual(e) ∧ ¬ is-evref(e) ⇒ ev(p,x,e) = e         (d)
 
         is-evbinop(obap.C)
-        is-evbinop(obap.D)
+        is-evbinop(obap.Q)
 
         ev(p,x,obap.C::e1::e2)                                       (e)
            = ob.c(ev(p,x,e1), ev(p,x,e2))
 
-        ev(p,x,obap.D::e1::e2)                                       (f)
-           = d(ev(p,x,e1), ev(p,x,e2))
-        x = y ⇒ d(x,y) = obap.A
-        x ≠ y ⇒ d(x,y) = obap.B
-            function d(x,y) being exclusive to ev here and providing for
+        ev(p,x,obap.Q::e1::e2)                                       (f)
+           = eq(ev(p,x,e1), ev(p,x,e2))
+        x = y ⇒ eq(x,y) = obap.A
+        x ≠ y ⇒ eq(x,y) = obap.B
+            function eq(x,y) being exclusive to ev here and providing for
             selection of alternatives based on application of the comparison
             result. This is the basis for conditional processing of
             deterministic computational-interpretation cases.  See 4.2 The Uβ
@@ -287,7 +289,7 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-                  Copyright 2017-2025 Dennis E. Hamilton
+                  Copyright 2017-2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -306,7 +308,7 @@ obaptheory.txt 1.5.0                UTF-8                          2025-05-18
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.5.0 dated 2025-06-18,
+   Conception text file obaptheory.txt version 1.6.0 dated 2026-02-16,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -360,6 +362,9 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 1.6.0  2026-02-16T22:06Z BREAKING CHANGE: obap.D is replaced with obap.Q
+                          and this must be remedied in all scripts and other
+                          places where oFrugal and evaluations are offered.
  1.5.0  2025-06-18T15:17Z Clean up and use obap.F all the places it works
  1.4.2  2025-04-16T21:14Z Establish as authoritative
  1.4.1  2025-04-02T22:21Z obap.F makes for 10 primitives, and also touch-up
