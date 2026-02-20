@@ -1,4 +1,4 @@
-<!-- index.md 0.1.8                 UTF-8                         2026-02-12
+<!-- index.md 0.2.0                 UTF-8                         2026-02-20
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -31,23 +31,23 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.7 2026-01-25T18:03Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.0 2026-02-20T22:43Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
 oMiser is constructed as a software library for use on desktop computers. The
-library manifests [‹ob›](../ob) = 〈Ob,Of,Ot〉in a computational
-interpretation.  The [obap](../obap) Universal Computation functions are
-delivered as oMiser operations.
+library manifests mathematical structure [‹ob›](../ob) = 〈Ob,Of,Ot〉in a
+computational interpretation.  The [obap](../obap) Universal Computation
+functions are delivered as oMiser operations.
 
 This topic includes definition of software-library interfaces -- the oMiser
 Application Programming Interface (API) -- and the derivation of supporting
 algorithms for manifestation of ‹ob› through the API and *ob-cell* data
 structures. This level of access
-from a computer program provides a semblance of navigating through the
-‹ob› manifestation that is achieved.
+from a computer program provides a semblance of navigating through an ‹ob›
+manifestation.
 
 Releases of the oMiser software are provided
 under the [dev](../dev) topic.  Development of the software is managed in the
@@ -65,7 +65,7 @@ can provide important optimizations behind the scenes of the API.
 There are two qualities that oMiser shall always preserve: immutability and
 idealism.
 
-### Immutability
+## 1. Immutability
 
 The API exposes the Ob domain of ‹ob› as consisting of immutable entities
 that are always "at hand", even though there are alterations and accelerations
@@ -75,7 +75,7 @@ Conservers provide for recovery of computer storage of no-longer reachable ob
 instances.  The design and verification of such optimization techniques is
 covered here.
 
-### Idealism
+## 2. Idealism
 
 When oMiser operates in multiple instances, even when coordinated by local
 or remote connections, there is appearance of there being only one ‹ob› Ob
@@ -85,7 +85,7 @@ synchronization.  It means that immediately-irrelevant differences are not
 discernable.
 
 
-### Type Abstraction
+## 3. Type Abstraction
 
 It is valuable that every ob has an also-immutable applicative interpretation.
 This allows attaching computer code to ob representations in order to expedite
@@ -105,15 +105,14 @@ preservation of idealism, will follow availability of oMiser and
 
 ## Related Material
 
-This placeholder links to raw materials and notes, including text files.
-These are considated in folios of documentation on the derivation of the
-oMiser implementation.
-
-| **ID**                          | **Status**       | **Started** | **Topic** |
-|   :-:                           |   :-:            |  :-:        |  ---  |
-| [oMiser.txt](oMiser.txt) | 0.1.10 2026-01-07 | 2017-07-26  | Conception, Definition, and Implementation Notes (temporary)|
-| [Technical Notes](m000000.htm)  | undated          | 2025-09-10  | Subject-matter notes and work items |
-| [Folios Catalog](m000001.htm)  | undated          | 2025-09-10  | Subordinate Topics Catalog|
+| **ID**                          | **Status**        | **Started** | **Topic** |
+|   :-:                           |   :-:             |  :-:        |  ---      |
+| [oMiser.txt](oMiser.txt)        | 0.1.10 2026-01-07 | 2017-07-26  | Conception, Definition, and Implementation Notes |
+| [Technical Notes](m000000.htm)  | undated           | 2025-09-10  |           |
+| [m110400](2011/04/m110400.html) | 0.0.5 2026-01-06  | 2025-11-16  | Miser Objects (MOb) Directory |
+| [m120400](2012/04/m120400.html) | 0.0.0 placeholder | 2025-11-21  | MObPack: External Packaging |
+| [m230900](2023/09/m230900.html) | 0.3.0 2026-02-20  | 2025-09-14  | HashFlag Technique |
+| [m251100](2025/11/m251100.html) | 0.0.0 starter     | 2025-11-21  | Memory Management |
 
 ----
 
@@ -144,6 +143,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.2.0  2026-02-20T22:43Z Touch-Up, Add Related Material table
   0.1.8  2026-02-12T27:19Z Clarify Idealism (and probably add confusion)
   0.1.7  2026-01-25T18:03Z Touch-up, bring current with oMiser.txt 0.1.10
   0.1.6  2025-09-25T18:31Z Employ ob-cell in some touch-ups
