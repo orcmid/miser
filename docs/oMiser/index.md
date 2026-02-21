@@ -31,7 +31,7 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.0 2026-02-20T22:43Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.1 2026-02-21T23:07Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -46,8 +46,8 @@ This topic includes definition of software-library interfaces -- the oMiser
 Application Programming Interface (API) -- and the derivation of supporting
 algorithms for manifestation of ‹ob› through the API and *ob-cell* data
 structures. This level of access
-from a computer program provides a semblance of navigating through an ‹ob›
-manifestation.
+from a computer program provides a semblance of navigating through an
+‹ob›-domain manifestation.
 
 Releases of the oMiser software are provided
 under the [dev](../dev) topic.  Development of the software is managed in the
@@ -103,7 +103,7 @@ alone.  Exploration of how type abstraction can be supported, along with
 preservation of idealism, will follow availability of oMiser and
 [oFrugal](../oFrugal) implementations.
 
-## Related Material
+## 4. Related Material
 
 | **ID**                          | **Status**        | **Started** | **Topic** |
 |   :-:                           |   :-:             |  :-:        |  ---      |
@@ -143,6 +143,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.2.1  2026-02-21T23:07Z Determine Permalinks
   0.2.0  2026-02-20T22:43Z Touch-Up, Add Related Material table
   0.1.8  2026-02-12T27:19Z Clarify Idealism (and probably add confusion)
   0.1.7  2026-01-25T18:03Z Touch-up, bring current with oMiser.txt 0.1.10
