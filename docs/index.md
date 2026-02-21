@@ -1,4 +1,4 @@
-<!-- index.md 0.6.3                 UTF-8                         2026-02-13
+<!-- index.md 0.6.5                 UTF-8                         2026-02-21
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -27,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.4 2026-02-13T18:04Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.5 2026-02-21T18:56<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -35,7 +35,9 @@
 
 > [**Computation Theory Made Demonstrable**](https://github.com/orcmid/miser)
 
-The Miser Project computational model has two important qualities:
+The Miser Project
+[model of computation](https://en.wikipedia.org/wiki/Model_of_computation)
+has two important qualities:
 
 - simplicity, using a small number of concepts that take the covers off
   the power of digital abstraction in exchange for more effort in operational
@@ -45,8 +47,10 @@ The Miser Project computational model has two important qualities:
   assumed about computers, programming and programming languages
 
 If not already, become comfortable with theoretical approaches.  Embrace a
-different kind of math, one based on symbolic logic.  Tolerate the degree of
-rigor; it is informally formal and doesn't have to be swallowed whole.
+different kind of math, one based on a
+[symbolic logic](https://en.wikipedia.org/wiki/First-order_logic).  Tolerate
+the degree of rigor; it is informally formal and doesn't have to be swallowed
+whole.
 
 - [The Miser Project on GitHub](#the-miser-project-on-github)
   - [1. Taking a Look](#1-taking-a-look)
@@ -66,7 +70,7 @@ rigor; it is informally formal and doesn't have to be swallowed whole.
 ### 1.1 Abstraction
 
 The diagram depicts a fundamental entity of the Miser Project model of
-computation: a member of the abstract structure, ‹ob›.
+computation: a member of the abstract structure, [‹ob›](ob/).
 
 - The entities are called *obs* and they can be visualized as *pairs*, each
   having an *a*-part and a *b*-part. The two parts of of a pair are themselves
@@ -90,8 +94,9 @@ computation: a member of the abstract structure, ‹ob›.
 
 - Obs are distinguishable by their composition and the differentiation of
   individuals.  It is a valuable characteristic that, if one were to have an
-  ob "in hand", its flavor is determined by inspection of the a- and b-parts
-  (and an ability to detect when two obs are the same or not).
+  ob "in hand", its flavor is determined by inspection of the a- and b-parts.
+  It is always possible to detect whether such attention on two obs is to
+  the same one or not.
 
 ### 1.2 Theory
 
@@ -118,9 +123,9 @@ mechanism, demonstrating an empirical bridge that cannot be crossed with
 mathematics and logic alone.
 
 A century ago, Albert Einstein described the gap between theory and nature
-in a homage to how such theory could be applied in powerful and dramatic ways
-\[[Hamilton2010](https://orcmid.github.io/bib/logic.htm#Hamilton2010)\]
-\[[Einstein1921](https://orcmid.github.io/bib/science.htm#Einstein1921)\].
+in a homage to how axiomatic theories could be applied in powerful an dramatic ways
+\[[Einstein1921](https://orcmid.github.io/bib/science.htm#Einstein1921)\]
+\[[Hamilton2010](https://orcmid.github.io/bib/logic.htm#Hamilton2010)\].
 Observe carefully how that is accomplished in the Miser Project.
 
 Such dependable achievement of engineered manifestations of theoretical
@@ -129,7 +134,7 @@ wonders is a marvel of our time.
 ### 1.3 Computational View
 
 The diagram is also suggestive of a possible computer representation of the
-‹ob› computational model.
+‹ob› interpretation as model of computation.
 
 - Computer implementations can employ computer data
   structures, *ob-cells*,  where the *a*-parts and *b*-parts are addresses of
@@ -153,16 +158,17 @@ The diagram remains descriptive as a visualization.
 ## 2. The Project
 
 The Miser Project provides operational demonstration of computation-theoretic
-aspects of software.  Emphasis is on the stored-program principle and the
-manner in which computational representation of "higher-order" structures
-and types of entities emerge from the ‹ob› foundation, similarly with today's
-digital computers.
+aspects of software.  Emphasis is on the
+[stored-program principle](https://www.uvm.edu/~cbcafier/cs2210/content/02_basics_of_architecture/stored_program.html)
+and the manner in which computational representation of "higher-order"
+structures and types of entities emerge from the ‹ob› foundation, similarly
+with today's digital computers.
 
 Development of the Miser Project is the career-capstone project of the author.
 Miser is the outgrowth of a 60-year inquiry into applicative-programming
 languages and their theoretical foundations.  The operational program is
 intended for the insights it provides and the fundamentals it demonstrates
-rather than practical application.
+rather than practical application.  Finding it recreational is a bonus.
 
 - Miser is thoroughly defined using mathematical-logic formalisms.  The
   applicability of logic in computer science and software development is
@@ -170,8 +176,9 @@ rather than practical application.
 
 - Run-time *oMiser* operation demonstrates computational manifestation of the
   mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
-  **ap** and companion **eval**.  The *oMiser* form emphasizes the limitation
-  to ‹ob› and only obs, reserving the possibility of going beyond.
+  **ap** and companion **eval**.  The *oMiser* designation emphasizes the
+  limitation   to ‹ob› and only obs, reserving the possibility of going
+  beyond.
 
 - The interface language, *oFrugal*, is defined with a formal grammar having
   semantics defined in terms of ‹ob› functions, providing a complete
@@ -212,8 +219,9 @@ operation is known as a REPL (read-evaluate-print-loop) arrangement.
 It is appropriate to regard *oFrugal* as an ‹ob› calculator.
 
 *oFrugal* provides expression of data and results in a visible and
-persistent form, known as **Frugalese**.  *oFrugal* reference formats
-are usable in portable interchange of programs and data.
+persistent form, depictable in a friendlier language known as **Frugalese**.
+*oFrugal* reference formats are usable in portable interchange of programs and
+data.
 
 ## 4. Historical Background
 
@@ -229,8 +237,8 @@ foundation structure of LISP
 The importance of enclosure as a structural feature of obs was observed in an
 incompleteness regarding nested strings in
 \[[Strachey1965](https://orcmid.github.io/bib/softools.htm#Strachey1965)\].
-Ob enclosures in ‹ob› are akin to representations of strings that can nest
-arbitrary strings as individual beads, a limited feature of ALGOL 60
+Ob enclosures in ‹ob› are akin to representations of text strings that can
+nest arbitrary strings as individual beads, a limited feature of ALGOL 60
 developed further by Doug Ross and colleagues in the AED system
 \[[Ross1967](https://orcmid.github.io/bib/softools.htm#Ross1967)\].
 
@@ -275,16 +283,16 @@ The web material is organized in topical sections:
 
 | **Section**       |  **General Topic** |
 |   --:             |  ---               |
-| [ob](ob/)         | ‹ob› Mathematical Structure (preview) |
-| [obap](obap/)     | ‹ob› Universal Computation Function (preview) |
-| [obreps](obreps/) | Interpretations and Representations in ‹ob› (preview) |
+| [ob](ob/)         | ‹ob› Mathematical Structure (provisional) |
+| [obap](obap/)     | ‹ob› Universal Computation Function (provisional) |
+| [obreps](obreps/) | Interpretations and Representations in ‹ob› (provisional) |
 | | |
-| [oFrugal](oFrugal/) | oFrugal REPL Principles of Operation (preview) |
-| [oMiser](oMiser/)   | oMiser Conception, Principles, and Engineering (preview) |
+| [oFrugal](oFrugal/) | oFrugal REPL Principles of Operation (provisional) |
+| [oMiser](oMiser/)   | oMiser Conception, Principles, and Engineering (in-progress) |
 | [dev](dev/)         | Development Releases |
 | | |
 | [lambda](lambda/) | λ Applicative-Procedure Abstraction (sketch) |
-| [obapx](obapx/)   | Extensions to the ‹ob› Universal Computation Function (preview) |
+| [obapx](obapx/)   | Extensions to the ‹ob› Universal Computation Function (provisional) |
 | | |
 | [cs](cs/)         | Computer Science Topics |
 | [ct](ct/)         | Computation Theory Topics |
@@ -313,7 +321,7 @@ The web material is organized in topical sections:
 ### 6.1 Principles
 
 - Development is supported by narrative and reference materials, with
-  important attributions to sources, at all times.
+  important attributions to sources at all times.
 
 - Proof-of-concept demonstrations and releasable software are developed
   with freely-available and free-to-use development tools.  The project
@@ -384,6 +392,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.5  2026-02-21T18:56Z Dressed up with more links, update on activity
   0.6.4  2026-02-13T18:04Z Fixed format of [Einstein1921] and [Hamilton2010]
   0.6.3  2026-02-13T16:33Z Explain ‹ob› more, along with Einstein on theory
          versus reality.
