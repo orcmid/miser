@@ -1,4 +1,4 @@
-<!-- index.md 0.2.2                 UTF-8                         2026-02-25
+<!-- index.md 0.2.3                 UTF-8                         2026-02-27
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -24,19 +24,27 @@
       </a>
       <br />
       <b><code>
-      <a href="../" target="_top">miser</a>&gt;
+      <a href="../" target="_top">miser</a>&gt
       </code></b>
       <br /><br />
       <b><code>
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.2 2026-02-25T22:20Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.3 2026-02-27T18:19Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
+- [1. Overview](#1-overview)
+- [2. Immutability](#2-immutability)
+- [3. Idealism](#3-idealism)
+- [4. Type Abstraction](#4-type-abstraction)
+- [Related Material](#related-material)
+
+
+## 1. Overview
 oMiser is constructed as a software library for use on desktop computers. The
 library manifests mathematical structure [‹ob›](../ob) = 〈Ob,Of,Ot〉in a
 computational interpretation.  The [obap](../obap) Universal Computation
@@ -65,7 +73,7 @@ can provide important optimizations behind the scenes of the API.
 There are two qualities that oMiser shall always preserve: immutability and
 idealism.
 
-## 1. Immutability
+## 2. Immutability
 
 The API exposes the Ob domain of ‹ob› as consisting of immutable entities
 that are always "at hand", even though there are alterations and accelerations
@@ -75,7 +83,7 @@ Conservers provide for recovery of computer storage of no-longer reachable ob
 instances.  The design and verification of such optimization techniques is
 covered here.
 
-## 2. Idealism
+## 3. Idealism
 
 When oMiser operates in multiple instances, even when coordinated by local
 or remote connections, there is appearance of there being only one ‹ob› Ob
@@ -85,7 +93,7 @@ synchronization.  It means that immediately-irrelevant differences are not
 discernable.
 
 
-## 3. Type Abstraction
+## 4. Type Abstraction
 
 It is valuable that every ob has an also-immutable applicative interpretation.
 This allows attaching computer code to ob representations in order to expedite
@@ -103,13 +111,13 @@ alone.  Exploration of how type abstraction can be supported, along with
 preservation of idealism, will follow availability of oMiser and
 [oFrugal](../oFrugal) implementations.
 
-## 4. Related Material
+## Related Material
 
 | **ID**                          | **Status**        | **Started** | **Topic** |
 |   :-:                           |   :-:             |  :-:        |  ---      |
 | [oMiser.txt](oMiser.txt)        | 0.1.10 2026-01-07 | 2017-07-26  | Conception, Definition, and Implementation Notes |
 | [Technical Notes](m000000.htm)  | undated           | 2025-09-10  |           |
-| [m110400](2011/04/m110400.html) | 0.1.2 2026-01-25  | 2025-11-16  | Miser Objects (MOb) Directory |
+| [m110400](2011/04/m110400.html) | 0.1.3 2026-02-27  | 2025-11-16  | Miser Objects (MOb) Directory |
 | [m120400](2012/04/m120400.html) | 0.0.0 placeholder | 2025-11-21  | MObPack: External Packaging |
 | [m230900](2023/09/m230900.html) | 0.3.0 2026-02-20  | 2025-09-14  | HashFlag Technique |
 | [m251100](2025/11/m251100.html) | 0.0.0 starter     | 2025-11-21  | Memory Management |
@@ -143,6 +151,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.2.3  2026-02-27T18:19Z TOC and 0.1.3 m110400 MOb Directory
   0.2.2  2026-02-25T22:20Z 0.1.2 m110400 MOb Directory
   0.2.1  2026-02-21T23:07Z Determine Permalinks
   0.2.0  2026-02-20T22:43Z Touch-Up, Add Related Material table
