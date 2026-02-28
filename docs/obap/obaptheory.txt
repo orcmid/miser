@@ -1,4 +1,4 @@
-obaptheory.txt 1.6.0                UTF-8                          2026-02-16
+obaptheory.txt 1.6.1                UTF-8                          2026-02-28
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -153,8 +153,8 @@ obaptheory.txt 1.6.0                UTF-8                          2026-02-16
           is-symbolic-form(x :: ob.NIL)                              (d)
              ⇔ is-symbolic-form(x)
 
-          is-symbolic-form(x) ⇒ obap.F(x) = x                       (e)
-          ¬ is-symbolic-form(x) ⇒ obap.F(x) = ob.e(x)
+          is-symbolic-form(x) ⇒ obap.f(x) = x                       (e)
+          ¬ is-symbolic-form(x) ⇒ obap.f(x) = ob.e(x)
 
           Apply of a lindy to operands in scripts cannot proceed further;
           there is no defined or definable applicative interpretation.
@@ -213,7 +213,7 @@ obaptheory.txt 1.6.0                UTF-8                          2026-02-16
         ¬ is-symbolic-form(p)                                        (d)
                 => ob.is-pair(p) ⇒ obap.ap(p,x) = ev(p,x,p)
 
-        In (a, above) the obap.ap evaluations for obap.C and obap.EQ
+        In (a, above) the obap.ap evaluations for obap.C and obap.Q
         determine partial applications, effectively curried use of functions
         ob.c and obap.eq, consistent with the special-form treatment of obap.C
         and obap.Q in Obap6(e-f) below.
@@ -308,7 +308,7 @@ obaptheory.txt 1.6.0                UTF-8                          2026-02-16
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.6.0 dated 2026-02-16,
+   Conception text file obaptheory.txt version 1.6.1 dated 2026-02-28,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -362,6 +362,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 1.6.1  2026-02-28T16:56Z Correct some typos
  1.6.0  2026-02-16T22:06Z BREAKING CHANGE: obap.D is replaced with obap.Q
                           and this must be remedied in all scripts and other
                           places where oFrugal and evaluations are offered.
