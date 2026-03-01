@@ -1,4 +1,4 @@
-<!-- index.md 0.6.5                 UTF-8                         2026-02-21
+<!-- index.md 0.6.6                 UTF-8                         2026-03-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -27,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.5 2026-02-21T18:56<!-- MAINTAIN THIS MANUALLY -->
+            0.6.6 2026-03-01T17:17<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -60,10 +60,10 @@ whole.
   - [2. The Project](#2-the-project)
   - [3. The Software](#3-the-software)
   - [4. Historical Background](#4-historical-background)
-  - [5. Available Materials](#5-available-materials)
-  - [6. Development](#6-development)
-    - [6.1 Principles](#61-principles)
-    - [6.2 Future Prospects](#62-future-prospects)
+  - [5. Development](#5-development)
+    - [5.1 Principles](#51-principles)
+    - [5.2 Future Prospects](#52-future-prospects)
+  - [Related Materials](#related-materials)
 
 ## 1. Taking a Look
 
@@ -265,7 +265,68 @@ operations.  The *oMiser* layer provides a computational *manifestation* of
 the ‹ob› mathematical structure, including its universal-computation function,
 via computational procedure.
 
-## 5. Available Materials
+
+
+## 5. Development
+
+- Important milestones include
+
+  - establishment that Miser provides an effective representation of the
+    computable functions under the Church-Turing thesis
+
+  - demonstration of how such a mechanism is itself amenable to mechanizing
+    logical deductions and theorem proving
+
+  - introduction of accelerators that improve operation entirely within the
+    inherent computational complexity of the approach.
+
+### 5.1 Principles
+
+- Development is supported by narrative and reference materials, with
+  important attributions to sources at all times.
+
+- Proof-of-concept demonstrations and releasable software are developed
+  with freely-available and free-to-use development tools.  The project
+  is conducted entirely with code in the open and the work is free to use and
+  to adapt with appropriate attribution.
+
+- The *oFrugal* REPL shall be provided as a simple standalone command-line
+  program fully usable in conjunction with a text editor for creating scripts.
+
+### 5.2 Future Prospects
+
+The refinement of oMiser and oFrugal mockups toward conventional-computer
+production code is a kind of bootstrapping spiral. Once there is a stable
+*oFrugal* REPL, more-ambitious extensions are aspired to.  There are no
+concrete provisions at this time.
+
+- Expanding to additional levels of Miser engines that extend to operation
+  over multiple forms of data, representation of mutable state, and
+  input-output including interaction and distributed operation.
+
+- Expansion to additional levels of Frugal front-ends to provide higher-level
+  programming-language support and compilation of programs into distributable,
+  directly-usable forms on general-purpose computers such as Windows PCs.
+
+- Enrichment of Miser to the point where the  engine is capable of having
+  Frugal as a Miser application, rather than as a
+  surrounding host-system application.  The appearance to users can be the
+  same, whether or not the performance is as responsive.
+
+- In the other
+  direction, the bonus challenge is having Miser able to compile Miser
+  applications down to direct operations on the host platform in a dependable
+  and disciplined manner.
+
+It may become necessary to take one more run at
+[computational monads](https://en.wikipedia.org/wiki/Monad_(functional_programming))
+and embrace some
+[Category Theory](https://en.wikipedia.org/wiki/Category_theory)
+although some
+[Computational Logic](https://www.cs.utexas.edu/users/moore/acl2/) equivalent
+may need to tag along with that.
+
+## Related Materials
 
 The project is narrated with the software-development managed on GitHub
 repository [orcmid/miser](https://github.com/orcmid/miser).
@@ -305,65 +366,6 @@ The web material is organized in topical sections:
 | | |
 | [Security](https://github.com/orcmid/miser/security) | Security Policy |
 
-## 6. Development
-
-- Important milestones include
-
-  - establishment that Miser provides an effective representation of the
-    computable functions under the Church-Turing thesis
-
-  - demonstration of how such a mechanism is itself amenable to mechanizing
-    logical deductions and theorem proving
-
-  - introduction of accelerators that improve operation entirely within the
-    inherent computational complexity of the approach.
-
-### 6.1 Principles
-
-- Development is supported by narrative and reference materials, with
-  important attributions to sources at all times.
-
-- Proof-of-concept demonstrations and releasable software are developed
-  with freely-available and free-to-use development tools.  The project
-  is conducted entirely with code in the open and the work is free to use and
-  to adapt with appropriate attribution.
-
-- The *oFrugal* REPL shall be provided as a simple standalone command-line
-  program fully usable in conjunction with a text editor for creating scripts.
-
-### 6.2 Future Prospects
-
-The refinement of oMiser and oFrugal mockups toward conventional-computer
-production code is a kind of bootstrapping spiral. Once there is a stable
-*oFrugal* REPL, more-ambitious extensions are aspired to.  There are no
-concrete provisions at this time.
-
-- Expanding to additional levels of Miser engines that extend to operation
-  over multiple forms of data, representation of mutable state, and
-  input-output including interaction and distributed operation.
-
-- Expansion to additional levels of Frugal front-ends to provide higher-level
-  programming-language support and compilation of programs into distributable,
-  directly-usable forms on general-purpose computers such as Windows PCs.
-
-- Enrichment of Miser to the point where the  engine is capable of having
-  Frugal as a Miser application, rather than as a
-  surrounding host-system application.  The appearance to users can be the
-  same, whether or not the performance is as responsive.
-
-- In the other
-  direction, the bonus challenge is having Miser able to compile Miser
-  applications down to direct operations on the host platform in a dependable
-  and disciplined manner.
-
-It may become necessary to take one more run at
-[computational monads](https://en.wikipedia.org/wiki/Monad_(functional_programming))
-and embrace some
-[Category Theory](https://en.wikipedia.org/wiki/Category_theory)
-although some
-[Computational Logic](https://www.cs.utexas.edu/users/moore/acl2/) equivalent
-may need to tag along with that.
-
 ----
 
 Using a GitHub account, discuss Miser Project topics in the
@@ -392,6 +394,8 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.6  2026-03-01T17:17Z Move Related Materials to the end, providing
+         consistent permalink
   0.6.5  2026-02-21T18:56Z Dressed up with more links, update on activity
   0.6.4  2026-02-13T18:04Z Fixed format of [Einstein1921] and [Hamilton2010]
   0.6.3  2026-02-13T16:33Z Explain ‹ob› more, along with Einstein on theory
