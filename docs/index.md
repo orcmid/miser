@@ -1,4 +1,4 @@
-<!-- index.md 0.6.6                 UTF-8                         2026-03-01
+<!-- index.md 0.6.7                 UTF-8                         2026-03-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -27,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.6 2026-03-01T17:17<!-- MAINTAIN THIS MANUALLY -->
+            0.6.7 2026-03-01T17:26<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -63,7 +63,7 @@ whole.
   - [5. Development](#5-development)
     - [5.1 Principles](#51-principles)
     - [5.2 Future Prospects](#52-future-prospects)
-  - [Related Materials](#related-materials)
+  - [Related Material](#related-material)
 
 ## 1. Taking a Look
 
@@ -326,7 +326,7 @@ although some
 [Computational Logic](https://www.cs.utexas.edu/users/moore/acl2/) equivalent
 may need to tag along with that.
 
-## Related Materials
+## Related Material
 
 The project is narrated with the software-development managed on GitHub
 repository [orcmid/miser](https://github.com/orcmid/miser).
@@ -394,6 +394,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.7  2026-03-01T17:26Z It's "Related Material" not Materials
   0.6.6  2026-03-01T17:17Z Move Related Materials to the end, providing
          consistent permalink
   0.6.5  2026-02-21T18:56Z Dressed up with more links, update on activity
