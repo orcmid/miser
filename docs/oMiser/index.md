@@ -1,4 +1,4 @@
-<!-- index.md 0.2.6                 UTF-8                         2026-03-01
+<!-- index.md 0.2.7                 UTF-8                         2026-03-02
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -10,9 +10,12 @@
        <a href="../" title="The Miser Project on GitHub">
        <img src="../images/misertheory-logo.png" /></a>
     </td>
-    <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
-      <a href="../" target="_top"><i>The Miser Project</i></a><br />
-    <i><big><big>oMiser Conception, Principles, and Engineering</big></big></i></strong></font></p>
+    <td width="48%" height="6" align="center"><font color="#990033"><strong>
+      <a href="../" target="_top">
+         <i><font color="#990033">The Miser Project</font></i></a>
+      <br />
+      <i><big><big>oMiser Conception, Principles, and Engineering</big></big>
+      </i></strong></font>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
       <b><code>
@@ -31,7 +34,7 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.6 2026-03-01T17:42Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.7 2026-03-02T23:36Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -116,7 +119,7 @@ preservation of idealism, will follow availability of oMiser and
 | **ID**                          | **Status**        | **Started** | **Topic** |
 |   :-:                           |   :-:             |  :-:        |  ---      |
 | [oMiser.txt](oMiser.txt)        | 0.1.10 2026-01-07 | 2017-07-26  | Manifest and Notes |
-| [Technical Notes](m000000.htm)  | undated           | 2025-09-10  |           |
+| [Diary & Job Jar](m000000.htm)  | undated           | 2025-09-10  |           |
 | [m110400](2011/04/m110400.html) | 0.1.3 2026-02-27  | 2025-11-16  | Miser Objects (MOb) Directory |
 | [m120400](2012/04/m120400.html) | 0.0.0 placeholder | 2025-11-21  | MObPack: External Packaging |
 | [m230900](2023/09/m230900.html) | 0.3.0 2026-02-20  | 2025-09-14  | HashFlag Technique |
@@ -151,6 +154,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.2.7  2026-03-02T23:36Z Touch-ups
   0.2.6  2026-03-01T17:42Z Tweek the Related Material table
   0.2.5  2026-02-28T20:56Z Revert table touch-up
   0.2.4  2026-02-28T20:47Z Touch-ups
