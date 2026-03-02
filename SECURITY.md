@@ -2,7 +2,7 @@
 
 # Security Policy
 <!-- ---1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
-     SECURITY.md 1.4.0             UTF-8                        dh:2026-03-01
+     SECURITY.md 1.4.1             UTF-8                        dh:2026-03-02
      source: <https://github.com/orcmid/miser/blob/master/SECURITY.md>
      -->
 <table border="0" width="100%">
@@ -31,7 +31,7 @@
       </code></b>
       <br />
       <font size="-2">
-        1.4.0 2026-03-01T19:50Z<!-- MAINTAIN THIS MANUALLY -->
+        1.4.1 2026-03-02T00:20Z<!-- MAINTAIN THIS MANUALLY -->
       </font>
     </td>
   </tr>
@@ -42,7 +42,7 @@ need be any vulnerability and exploit concerns.
 
 Current repository content consists mainly of text files and web documentation
 of an experimental/provisional nature with limited introduction of software
-for proofs-of-concept.  As there are releases of any kind, there security
+for proofs-of-concept.  As there are releases of any kind, their security
 provisions and status will be updated here.
 
 Most considerations of errors and defects can be handled using the project
@@ -109,6 +109,7 @@ does not extend to the fork/clone.
   </tr>
 </table>
 <!--
+  1.4.1  2026-03-04T00:20Z small type correction
   1.4.0  2026-03-01T19:50Z Update now that software-development has begun
   1.3.3  2025-07-04T16:47Z Links to Issues and Discussions
   1.3.2  2024-11-09T17:28Z More wordsmithing
