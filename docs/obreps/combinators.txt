@@ -1,4 +1,4 @@
-combinators.txt 0.1.7               UTF-8                         2024-01-15
+combinators.txt 0.2.0               UTF-8                         2026-03-06
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                              The Miser Project
@@ -228,6 +228,10 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
     In the case of | S K a b, notice that | S K a b ≈ b ≈ I b, and so by (CE)
     | S K a ≈ I for any combinator, a, including K.
 
+    NOTE: If viewed operationally, there is a dangerous prospect in | a b
+          not being determinable, despite there being no reliance on any
+          result there might be.
+
     Consider
                    B I a b  ≈  I | a b  ≈  a b.
     Then              B I a ≈ a ≈ I a
@@ -365,10 +369,13 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
       (^cK x) y = x
 
+       ^cK: (α → (β → α))
+
     so if x represents a combinator, that interpretation is preserved just as
     it is for x interpretable as representing an entity of any particular
     type.  In this manner, ^cK representation of combinator K is satisfied
-    and functional type is also honored.
+    and functional type is also honored. The need for definiteness of α and
+    β cases comes along with the computational interpretation in Miser.
 
     The ^-notation as part of a constant name is oFrugalese for a binding to
     a constant ob.  The names in the forms such as ^cK are adopted to signify
@@ -498,20 +505,23 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
     3.2.1 Representing K
 
-          ^cK = obap.E
+          ^cK = obap.F
           ^cK ≈ K
 
-    For | K x y ≈ x, obap.ap(obap.ap(obap.E, a), b) = a.
-    Also,            obap.eval((obap.E :: ` a) :: ` b) = a
+    For | K x y ≈ x, obap.ap(obap.ap(obap.F, a), b) = a.
+    Also,            obap.eval((obap.F :: ` a) :: ` b) = a
     for any obs a, b, including representations of combinators.
-    In oFrugalese,   (.E x) y = x
+    In oFrugalese,   (.F x) y = x
 
     This is very direct because
 
-         obap.ap(obap.E,x) = ob.e(x),
+         obap.ap(obap.F,x) = ob.e(x), // simple assumption
          obap.ap(ob.e(x),y) = x,
-    and  obap.eval(obap.E) = obap.E,
-    by <https://orcmid.github.io/miser/obap/obaptheory.txt> definition.
+    and  obap.eval(obap.F) = obap.F,
+    by <https://orcmid.github.io/miser/obap/obaptheory.txt> definition
+    and the fact that application of a symbolic form results in itself, a
+    desirably-abbreviated K x.
+
 
     Although it seems rather wasteful and even risky to evaluate y for no
     apparent purpose (since the attempted evaluation might fail to yield a
@@ -544,19 +554,22 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
            ^cS ≈ S
 
     where  ^cS = .C :: `.C
-                    :: .C :: (.E :: .C :: (.E :: .ARG)
+                    :: .C :: (.E :: .C :: (.F :: .ARG)
                                        :: `.ARG)
-                          :: `(.C :: (.E :: .ARG)
+                          :: `(.C :: (.F :: .ARG)
                                   :: `.ARG),
            obap.ap(^cS, x)
                = .C :: `( `x :: .ARG)
-                    :: .C :: (.E :: .ARG) :: `.ARG),
+                    :: .C :: (.F :: .ARG) :: `.ARG),
            obap.ap(obap.ap(^cS, x), y)
                = (`x :: .ARG) :: `y :: .ARG),
            obap.ap(obap.ap(obap.ap(^cS, x), y), z)
                = obap.ap( obap.ap(x, z), obap.ap(y, z) ),
 
     and in oFrugalese, ^cS(x, y) z = x(z) y z.
+
+    For simplicity, the evaluation of (.F :: .ARG) in these symbolic
+    expansions is assumed to lead to the same as (.E :: .ARG).
 
     3.3 Derived Utility Combinators B, C, D, T, and W
 
@@ -574,16 +587,16 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
            ^cB ≈ B
 
     where  ^cB = .C :: `.C
-                    :: .C ::  ( .E :: .E :: .ARG )
-                          :: `( .C :: ( .E :: .ARG ) :: `.ARG )
+                    :: .C ::  ( .F :: .F :: .ARG )
+                          :: `( .C :: ( .F :: .ARG ) :: `.ARG )
 
     3.3.2 Representing | C f x g = f | g x
 
           ^cC ≈ C
 
     where ^cC = .C :: `.C
-                   :: .C :: ( .E :: .E :: .ARG )
-                         :: `( .C :: `.ARG :: .E :: .ARG )
+                   :: .C :: ( .F :: .F :: .ARG )
+                         :: `( .C :: `.ARG :: .F :: .ARG )
 
     3.3.3 Representing | D f x g y = f x | g y
 
@@ -591,23 +604,23 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
     where ^cD = obap.ap(^cB, ^cB)
               = .C :: ``^cB
-                   :: .C :: (.E :: .ARG) :: `.ARG
+                   :: .C :: (.F :: .ARG) :: `.ARG
               = .C :: ``( .C :: `.C
-                             :: .C :: ( .E :: .E :: .ARG )
-                                   :: `( .C :: ( .E :: .ARG ) :: `.ARG ) )
-                   :: .C :: ( .E :: .ARG ) :: `.ARG
+                             :: .C :: ( .F :: .F :: .ARG )
+                                   :: `( .C :: ( .F :: .ARG ) :: `.ARG ) )
+                   :: .C :: ( .F :: .ARG ) :: `.ARG
 
     3.3.4 Representing | T x f ≈ f x
 
            ^cT ≈ T
 
-    where  ^cT = .C :: `.ARG :: .E :: .ARG
+    where  ^cT = .C :: `.ARG :: .F :: .ARG
 
     3.3.5 Representing | W f x ≈ f x x
 
           ^cW ≈ W
 
-    where ^cW = .C :: ( .C :: ( .E :: .ARG ) :: `.ARG )
+    where ^cW = .C :: ( .C :: ( .F :: .ARG ) :: `.ARG )
                    :: `.ARG
 
 
@@ -616,8 +629,8 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
     4.1 Conditional Behavior
 
     In the use of mathematical theories, such as Ot, to represent computable
-    functions, there are two important provisions that have not been seen, so
-    far, in ‹ca›.
+    functions, there are two important provisions that have not been seen,so
+    far in ‹ca›.
 
      * Definition by cases.  There are distinguished cases in the
        characterization of obs in ‹ob›.  There are even more cases established
@@ -683,7 +696,7 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
         ^cUobAB ≈ UobAB
                 ≅ .ARG :: `(^cK :: ^cK ^cI)
-                ≅ .ARG :: `(.E :: `.NIL)
+                ≅ .ARG :: `(.F :: `.NIL)
 
     depending on the expression provided for c being such that any result
     will always be one of obap.A or obap.B such that ^UobAB(c) is definite.
@@ -705,8 +718,8 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
        is-A(x) = obap.A when x = obap.A
                = obap.B otherwise
 
-       with ^is-A ≅ obap.D :: obap.A :: obap.ARG
-                  ≅ (obap.D :: obap.A)
+       with ^is-A ≅ obap.Q :: obap.A :: obap.ARG
+                  ≅ (obap.Q :: obap.A)
 
     then using
 
@@ -714,7 +727,7 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
     to represent a kind of UobAx conditional, trading on the fact that
 
-        obap.ap(obap.ap(obap.D, x), y)
+        obap.ap(obap.ap(obap.Q, x), y)
            = obap.A when x = y
            = obap.B otherwise
 
@@ -736,7 +749,7 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
     One can also interpret a type, such as obAB, as representing truth
     (obap.A) and falsity (obap.B) with respect to some condition such as the
-    result of obap.eval(.D :: x :: y).  Likewise, one convention is to treat
+    result of obap.eval(.Q :: x :: y).  Likewise, one convention is to treat
     combinators K and | K I (represented by ^cK and (^cK ^cI)) as designating
     "true" and "false", respectively, as in [Barendregt1981:6.2.2,
     Revesz1998:3.1, Scott1993].  This skates over the fact that ^cK and
@@ -828,7 +841,7 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
           ^cY ≈ Y
 
-    with  ^cY = .C :: (.C :: (.E :: .ARG)
+    with  ^cY = .C :: (.C :: (.F :: .ARG)
                           :: `.SELF )
                    :: `.ARG
 
@@ -837,8 +850,7 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
     be made for systems, such as oMiser, where obap.ap(p,x) operands are "by
     value" [Paulson1996:p.391].
 
-
- 5. FROM THEORY TO PRACTICE
+     5. FROM THEORY TO PRACTICE
 
     It is hereby claimed that interpretation of ‹ca› in ‹ob› with obap.ap is
     established.  This is one demonstration that oMiser exhibits a model of
@@ -1019,6 +1031,7 @@ combinators.txt 0.1.7               UTF-8                         2024-01-15
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.2.0 2026-03-06T23:13Z Update with obap.Q and abap.F where applicable
  0.1.7 2024-01-15T21:02Z Minor fix, adjustment of the title
  0.1.6 2023-12-18T18:12Z Correct URLs in the text
  0.1.5 2023-11-10T20:22Z Continue refactoring adjustments
