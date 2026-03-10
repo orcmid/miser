@@ -1,4 +1,4 @@
-<!-- index.md 0.2.7                 UTF-8                         2026-03-02
+<!-- index.md 0.2.8                 UTF-8                         2026-03-10
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/>
@@ -34,11 +34,20 @@
       <a href="./" target="_top">oMiser</a>&gt;</code></b>
       <br />
       <small><small>
-        0.2.7 2026-03-02T23:36Z<!-- MAINTAIN THIS MANUALLY -->
+        0.2.8 2026-03-10T15:59Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
+
+oMiser is constructed as a software library for use on desktop computers. The
+library manifests mathematical structure [‹ob›](../ob) = 〈Ob,Of,Ot〉in a
+computational interpretation.  The [obap](../obap) Universal Computation
+functions are delivered as oMiser operations.
+
+Manifestation of ‹ob› is accomplished by use of interfaces (APIs) that hide
+the implementations and abstract the behavior.  The Microsoft Component Object
+Model (COM) is the mechanism employed for that purpose.
 
 - [1. Overview](#1-overview)
 - [2. Immutability](#2-immutability)
@@ -46,12 +55,7 @@
 - [4. Type Abstraction](#4-type-abstraction)
 - [Related Material](#related-material)
 
-
 ## 1. Overview
-oMiser is constructed as a software library for use on desktop computers. The
-library manifests mathematical structure [‹ob›](../ob) = 〈Ob,Of,Ot〉in a
-computational interpretation.  The [obap](../obap) Universal Computation
-functions are delivered as oMiser operations.
 
 This topic includes definition of software-library interfaces -- the oMiser
 Application Programming Interface (API) -- and the derivation of supporting
@@ -120,6 +124,7 @@ preservation of idealism, will follow availability of oMiser and
 |   :-:                           |   :-:             |  :-:        |  ---      |
 | [oMiser.txt](oMiser.txt)        | 0.1.10 2026-01-07 | 2017-07-26  | Manifest and Notes |
 | [Diary & Job Jar](m000000.htm)  | undated           | 2025-09-10  |           |
+| [m010500](2001/05/m010500.html) | 0.0.0 boilerplate | 2026-03-08  | Miser Iob Interface |
 | [m110400](2011/04/m110400.html) | 0.1.3 2026-02-27  | 2025-11-16  | Miser Objects (MOb) Directory |
 | [m120400](2012/04/m120400.html) | 0.0.0 placeholder | 2025-11-21  | MObPack: External Packaging |
 | [m230900](2023/09/m230900.html) | 0.3.0 2026-02-20  | 2025-09-14  | HashFlag Technique |
@@ -154,6 +159,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.2.8  2026-03-10T15:59Z Improve the introductory text
   0.2.7  2026-03-02T23:36Z Touch-ups
   0.2.6  2026-03-01T17:42Z Tweek the Related Material table
   0.2.5  2026-02-28T20:56Z Revert table touch-up
