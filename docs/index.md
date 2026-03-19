@@ -1,4 +1,4 @@
-<!-- index.md 0.6.8                 UTF-8                         2026-03-02
+<!-- index.md 0.6.9                 UTF-8                         2026-03-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -27,7 +27,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.8 2026-03-02T00:24Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.9 2026-03-19T16:22Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -59,6 +59,8 @@ whole.
     - [1.3 Computational View](#13-computational-view)
   - [2. The Project](#2-the-project)
   - [3. The Software](#3-the-software)
+    - [3.1 The Model](#31-the-model)
+    - [3.2 The View](#32-the-view)
   - [4. Historical Background](#4-historical-background)
   - [5. Development](#5-development)
     - [5.1 Principles](#51-principles)
@@ -73,7 +75,7 @@ The diagram depicts a fundamental entity of the Miser Project model of
 computation: a member of the abstract structure, [‹ob›](ob/).
 
 - The entities are called *obs* and they can be visualized as *pairs*, each
-  having an *a*-part and a *b*-part. The two parts of of a pair are themselves
+  having an *a*-part and a *b*-part. The two parts of a pair are themselves
   obs. Any ob may be a pairing of obs in this manner.
 
 - An *individual* has both the *a*-part and *b*-part be the ob itself.  The
@@ -123,7 +125,8 @@ mechanism, demonstrating an empirical bridge that cannot be crossed with
 mathematics and logic alone.
 
 A century ago, Albert Einstein described the gap between theory and nature
-in a homage to how axiomatic theories could be applied in powerful an dramatic ways
+in a homage to how axiomatic theories could be applied in powerful and
+dramatic ways
 \[[Einstein1921](https://orcmid.github.io/bib/science.htm#Einstein1921)\]
 \[[Hamilton2010](https://orcmid.github.io/bib/logic.htm#Hamilton2010)\].
 Observe carefully how that is accomplished in the Miser Project.
@@ -149,7 +152,7 @@ The diagram is also suggestive of a possible computer representation of the
 For practical computations, a greater variety of data forms is desirable. In
 the case of ‹ob› alone, that convenience is deferred.  Focus is on
 how the stored-program model and conventional computers afford elevation of
-abstraction already.
+abstraction with just this much already.
 
 Management of computer implementations
 will become more elaborate than the simple structure suggested in the diagram.
@@ -177,7 +180,7 @@ rather than practical application.  Finding it recreational is a bonus.
 - Run-time *oMiser* operation demonstrates computational manifestation of the
   mathematical structure, ‹ob› = 〈Ob,Of,Ot〉and its universal function
   **ap** and companion **eval**.  The *oMiser* designation emphasizes the
-  limitation   to ‹ob› and only obs, reserving the possibility of going
+  limitation to ‹ob› and only obs, reserving the possibility of going
   beyond.
 
 - The interface language, *oFrugal*, is defined with a formal grammar having
@@ -199,6 +202,8 @@ general-purpose computer platforms as a library to other programs.
 The interplay of implementation and theoretical foundations is accomplished in
 layers.
 
+### 3.1 The Model
+
 *oMiser* run-time is purely algorithmic/procedural in
 nature.  It supports expression of a rudimentary data structure and
 algorithmic procedures on that structure.  The expression of algorithms is via
@@ -210,6 +215,8 @@ The Application Programming Interface (API) serves to ensure a computational
 manifestation of ‹ob›, its navigation and universal functions.
 
 ![Hosting oFrugal/oMiser](images/ofrugal-2023-08-18-1839-1stStack.png).
+
+### 3.2 The View
 
 The accompanying *oFrugal* software embeds an *oMiser* run-time and delivers
 access to *oMiser* via the host-platform user interface.  *oFrugal* provides
@@ -264,8 +271,6 @@ The operational "system" layer, *oFrugal*, provides storage and utility
 operations.  The *oMiser* layer provides a computational *manifestation* of
 the ‹ob› mathematical structure, including its universal-computation function,
 via computational procedure.
-
-
 
 ## 5. Development
 
@@ -394,6 +399,8 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.9  2026-03-19T16:22Z Touch-ups in preparation for 3.3 From Theory to
+         Practice
   0.6.8  2026-03-02T00:24Z Small wording fix
   0.6.7  2026-03-01T17:26Z It's "Related Material" not Materials
   0.6.6  2026-03-01T17:17Z Move Related Materials to the end, providing
