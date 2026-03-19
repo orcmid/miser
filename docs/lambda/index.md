@@ -1,4 +1,4 @@
-<!-- index.md 0.5.2                 UTF-8                         2025-07-09
+<!-- index.md 0.5.3                 UTF-8                         2026-03-19
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -9,35 +9,48 @@
        <a href="../" title="The Miser Project on GitHub">
        <img src="../images/misertheory-logo.png" /></a>
     </td>
-       <td width="48%" height="6"><p align="center"><font color="#990033"><strong>
-    <i>The Miser Project</i><br />
-    <i><big><big>oMiser Lambda Abstraction</big></big></i></strong></font></p>
+    <td width="48%" height="6"><p align="center"><font color="#990033">
+       <strong><i>The Miser Project</i><br />
+       <i><big><big>Applicative Procedure λ-Abstraction</big></big>
+      </i></strong></font>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
-      <b><code>
-      <a href="../../" target="_top">orcmid.github.io</a>&gt;
-      </code></b>
-      <br />
-      <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
+       <b><code>
+       <a href="../../" target="_top">orcmid.github.io</a>&gt;
+       </code></b>
+       <br />
+       <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
             <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
-      </a>
-      <br />
-      <b><code>
-      <a href="../" target="_top">miser</a>&gt;
-      <a href="./" target="_top">lambda</a>&gt;
-      </code></b>
-      <br /><br />
-      <b><code>
-      <a href="index.html" target="_top">index.html</a>&gt;</code></b>
-      <br />
-      <small><small>
-        0.5.2 2025-07-09T21:47Z<!-- MAINTAIN THIS MANUALLY -->
-      </small></small>
+       </a>
+       <br />
+       <b><code>
+       <a href="../" target="_top">miser</a>&gt;
+       <a href="./" target="_top">lambda</a>&gt;
+       </code></b>
+       <br /><br />
+       <b><code>
+       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
+       <br />
+       <small><small>
+        0.5.3 2026-03-19T20:19Z<!-- MAINTAIN THIS MANUALLY -->
+       </small></small>
       </td>
   </tr>
 </table>
 
+In the oMiser computational-model, every ob has an applicative interpretation
+as a script.  Whether viewed as "just an ob" or as a purposive script depends
+on how one squints at an ob.
 
+In some cases, the script intension is
+likely, since scripts have features that are unexpected in "just" obs.  In
+essence, however, the plain/script intention is revealed only in how an ob is
+employed in a computation, and every ob can occur as either or both in a
+script-driven computation.
+
+λ-Abstraction is a systematic approach to transforming script forms into
+other scripts that can be applied to operands that are then used as
+scripts, as data, or as both.  This is an important and powerful mechanism.
 - [1. The Abstraction Idea](#1-the-abstraction-idea)
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
   - [2.1 Pure abstraction](#21-pure-abstraction)
@@ -104,7 +117,7 @@ in advance.
 illustrating various Frugalese forms for achieving the same result, given
 definite *s*, *N*, and *M*.
 
-These and their intermediate variations, such as subst(**.ARG**), known as
+These and their intermediate variations, such as `subst(.ARG)`, known as
 Curried forms, will be employed in the development of oFrugal utility scripts,
 including those for
 [applicative-procedure abstraction](#3-applicative-procedure-abstraction-techniques).
@@ -117,14 +130,16 @@ It is a design principle of the oMiser universal functions **ap** and
 **eval** that *when there is no specific interpretation of an **ap** operator
 ob, "no change" occurs*.
 
-The definitions of obap.a and obap.b for the cases of singletons--individuals
-and enclosures--illustrate that principle.  Those cases were arrived at
-indirectly by seeking a computational implementation that has those functions
-be total--definite for all definite obs.  The principle is generalized for
-further cases, including the introduction of symbolic forms.
+The definitions of **obap.a** and **obap.b** for the cases of
+singletons--individuals and enclosures--illustrate that principle.  Those
+cases were arrived at indirectly by seeking a computational implementation
+that has those functions be total--definite for all definite obs.  The
+principle is generalized for further cases, including the introduction of
+symbolic forms.
 
 In oMiser, lindies denote distinct constant obs that are invariant under the
-universal functions.  In this case "no change" is accomplished by the mathematical engineering of obaptheory such that when a lindy ob is applied to
+universal functions.  In this case "no change" is accomplished by the
+mathematical engineering of obaptheory such that when a lindy ob is applied to
 an operand, the lindy *and the operand* are preserved: the result is pairing
 of the lindy and the operand.  In this way,
 
@@ -139,7 +154,8 @@ forms are all preserved without change in this manner.  The general rules is
 
 > **ap**(*symbolic-form*, *x*) = (*symbolic-form* :: *x*)
 
-> using (\` *x*) when *x* is neither `ob.NIL` nor a symbolic form.
+> using (\` *x*) when *x* is neither `ob.NIL` nor a symbolic form.  The
+  result is a symbolic form.
 
 ### 2.2.2 Utility of symbolic forms
 
@@ -185,9 +201,8 @@ on the web progresses.
 
 | **ID**                  | **Status** | **Started** | **Topic** |
 |   :-:                   |   :-:      |  :-:        |  ---      |
-| [sigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M`, `subst(L, s)`, `δ(s, L)` definitions |
-| [lambda](oLambda.txt)   | 0.5.0 2025-06-12 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations |
-| [c000000](c000000.htm)  | undated    | 2024-01-25  | Construction Diary & Job Jar |
+| [sigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M`, `subst(L, s)`, `δ(s, L)` definitions (authoritative)|
+| [lambda](oLambda.txt)   | 0.5.0 2025-06-12 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations (authoritative)|
 
 ----
 
@@ -218,6 +233,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.5.3  2026-03-19T20:19Z Touch-ups on notions of abstraction
   0.5.2  2025-07-09T21:47Z adjust top/bottom matter to 0.1.2 hybridForm
   0.5.1  2025-06-12T23:22Z reflect 0.5.0 oLambda.txt
   0.5.0  2025-03-08T01:47Z Rework The Abstraction Idea, adding [Denning2025]
