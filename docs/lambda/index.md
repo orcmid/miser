@@ -1,4 +1,4 @@
-<!-- index.md 0.5.3                 UTF-8                         2026-03-19
+<!-- index.md 0.6.0                 UTF-8                         2026-03-20
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -11,7 +11,7 @@
     </td>
     <td width="48%" height="6"><p align="center"><font color="#990033">
        <strong><i>The Miser Project</i><br />
-       <i><big><big>Applicative Procedure λ-Abstraction</big></big>
+       <i><big><big>Applicative-Procedure λ-Abstraction</big></big>
       </i></strong></font>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
@@ -32,7 +32,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.5.3 2026-03-19T20:19Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.0 2026-03-20T21:50Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
       </td>
   </tr>
@@ -42,11 +42,11 @@ In the oMiser computational-model, every ob has an applicative interpretation
 as a script.  Whether viewed as "just an ob" or as a purposive script depends
 on how one squints at an ob.
 
-In some cases, the script intension is
+In some cases, the intension as a script is
 likely, since scripts have features that are unexpected in "just" obs.  In
 essence, however, the plain/script intention is revealed only in how an ob is
-employed in a computation, and every ob can occur as either or both in a
-script-driven computation.
+employed in a computation, and every ob can occur as either or both at
+various points in a script-driven computation.
 
 λ-Abstraction is a systematic approach to transforming script forms into
 other scripts that can be applied to operands that are then used as
@@ -54,10 +54,11 @@ scripts, as data, or as both.  This is an important and powerful mechanism.
 - [1. The Abstraction Idea](#1-the-abstraction-idea)
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
   - [2.1 Pure abstraction](#21-pure-abstraction)
-  - [2.2 Symbolic forms](#22-symbolic-forms)
-  - [2.2.1 Symbolic form principles](#221-symbolic-form-principles)
-  - [2.2.2 Utility of symbolic forms](#222-utility-of-symbolic-forms)
-- [3. Applicative-Procedure Abstraction Techniques](#3-applicative-procedure-abstraction-techniques)
+  - [2.2 Variations on that theme](#22-variations-on-that-theme)
+- [3. Symbolic Forms](#3-symbolic-forms)
+  - [3.1 Symbolic form principles](#31-symbolic-form-principles)
+  - [3.2 Utility of symbolic forms](#32-utility-of-symbolic-forms)
+- [4. Applicative-Procedure Abstraction Techniques](#4-applicative-procedure-abstraction-techniques)
 - [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
@@ -91,11 +92,12 @@ of interpretation.
 
 Pure abstraction operations on obs depend on an ob and its structure without
 consideration of anything other than the ob "as-is."  The abstraction
+resulting from
 
 > σ.*s* *M*
 
 is a script for an applicative procedure such that, given obs *s*, *M*, *N*,
-and definite function σ (sigma),
+and the definite function σ (sigma), the applicative expression
 
 > (σ.*s* *M*) *N*
 
@@ -104,11 +106,33 @@ This is based strictly on ob structure and not on any interpretation of *M*
 as an applicative-procedure script.
 
 Evaluation of (σ.*s* *M*) determines an ob different than *M* having no
-occurrences of *s*.  (σ.*s* *M*) has *s* abstracted away in a sense comparable
-to that of Alonzo Church quoted above.  ((σ.*s* *M*) *s*) = *M* as-is. If *s*
-does not occur in *M*, ((σ.*s* *M*) *t*) = *M* for any determined ob, *t*.
+occurrences of *s*.  (σ.*s* *M*) has *s* ***abstracted away*** in a sense
+comparable to that of Alonzo Church quoted above.
 
-There are handy companion functions, δ(*s*, *N*) and subst(*N*, *s*), for
+((σ.*s* *M*) *s*) = *M* as-is.
+
+If *s* does not occur in *M*, ((σ.*s* *M*) *t*) = *M* for any determined ob,
+*t*.
+
+In some situations, the *s* in *M* can be though of as a variable, although
+*there are no variables* in oMiser.  What (σ.*s* *M*) accmplishes is to
+effectively make *s* "variable" in *M* by abstracting it away, creating a
+script that will substitute any ob for the previous occurrences of *s* in *M*.
+
+This is very different from how variables are considered in conventional
+programming languages and especially in mathematics.  The term "variable"
+will not be used with respect to oMiser and oFrugal.
+
+### 2.2 Variations on that theme
+
+The script for *σ*, applied to an operand ob, *x*, derives a new script that
+will abstract *x* from any given next operand.  In the oMiser implementation
+of *σ*, operand *x* can be any ob, although usual practice is to use
+lindies (literal symbols).  The operation comes down to matching patterns
+and rewriting obs to a new form that satisfies the definition of (σ.*s* *M*).
+
+It is a kind of editing obs to form new ones.  This is more evident with some
+handy companion functions, δ(*s*, *N*) and subst(*N*, *s*), for
 convenient use, often when one or more definite operands are known
 in advance.
 
@@ -120,11 +144,17 @@ definite *s*, *N*, and *M*.
 These and their intermediate variations, such as `subst(.ARG)`, known as
 Curried forms, will be employed in the development of oFrugal utility scripts,
 including those for
-[applicative-procedure abstraction](#3-applicative-procedure-abstraction-techniques).
+[applicative-procedure abstraction](#4-applicative-procedure-abstraction-techniques).
 
-### 2.2 Symbolic forms
+## 3. Symbolic Forms
 
-### 2.2.1 Symbolic form principles
+Symbolic forms are obs comprised of lindies that have the form of applicative
+expressions, but are just that, having the form but not having any other
+intrinsic significance in oMiser.  Symbolic forms are just themselves.  The
+benefit, beside as a form of data, is that the form can be transformed into
+meanigful scripts by abstraction procedures.
+
+### 3.1 Symbolic form principles
 
 It is a design principle of the oMiser universal functions **ap** and
 **eval** that *when there is no specific interpretation of an **ap** operator
@@ -157,7 +187,7 @@ forms are all preserved without change in this manner.  The general rules is
 > using (\` *x*) when *x* is neither `ob.NIL` nor a symbolic form.  The
   result is a symbolic form.
 
-### 2.2.2 Utility of symbolic forms
+### 3.2 Utility of symbolic forms
 
 Symbolic forms have the appearance of applicative-procedure scripts and/or
 constant list structures, perhaps in mixtures.  Intended purpose for a
@@ -167,7 +197,7 @@ Harmony of symbolic forms with applicative-operation expressions is supported
 by the computational interpretation of `f :: g :: x` being tantamount to the
 Frugalese applicative expression `f g x`, both being right-associative and
 equivalent to `f(g x)` with a prospective interpretation of lindies `f`, `g`,
-and `x` as variables in an applicative-operation formula.
+and `x` as terms in an applicative-operation formula.
 
 For example, the oFrugal expression with lindies `a`, `b`, and `x`
 
@@ -189,7 +219,7 @@ and
 
 the same.
 
-## 3. Applicative-Procedure Abstraction Techniques
+## 4. Applicative-Procedure Abstraction Techniques
 
 \[Author's Note\]: Brief introduction to the two forms.
 
@@ -233,6 +263,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.0  2026-03-20T21:50Z Wrestling abstraction with respect to oMiser
   0.5.3  2026-03-19T20:19Z Touch-ups on notions of abstraction
   0.5.2  2025-07-09T21:47Z adjust top/bottom matter to 0.1.2 hybridForm
   0.5.1  2025-06-12T23:22Z reflect 0.5.0 oLambda.txt
