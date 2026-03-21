@@ -1,4 +1,4 @@
-<!-- index.md 0.6.2                 UTF-8                         2026-03-21
+<!-- index.md 0.6.3                 UTF-8                         2026-03-21
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -9,7 +9,7 @@
        <a href="../" title="The Miser Project on GitHub">
        <img src="../images/misertheory-logo.png" /></a>
     </td>
-    <td width="48%" height="6" valign="middle"align="center">
+    <td width="48%" height="6" valign="middle" align="center">
        <font color="#990033">
        <strong><i>The Miser Project</i><br />
        <i><big><big>Applicative-Procedure λ-Abstraction</big></big></i>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.2 2026-03-21T15:46Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.3 2026-03-21T16:29Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -264,6 +264,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.3  2026-03-21T16:29Z Gotcha!
   0.6.2  2026-03-21T15:46Z Try again
   0.6.1  2026-03-20T01:14Z Fix Howler in Title Block
   0.6.0  2026-03-20T21:50Z Wrestling abstraction with respect to oMiser
