@@ -1,4 +1,4 @@
-<!-- index.md 0.6.3                 UTF-8                         2026-03-21
+<!-- index.md 0.6.4                 UTF-8                         2026-03-24
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.3 2026-03-21T16:29Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.4 2026-03-24T16:02Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -81,6 +81,13 @@ scripts, as data, or as both.  This is an important and powerful mechanism.
 | "Abstraction is a verb: to abstract is to identify the basic principles and laws of a process so that it can be studied without regard to physical implementation; the abstraction can then guide many implementations.  Abstraction is also a noun: An abstraction is a mental construct that unifies a set of objects.  Objects of an abstraction have their own logic of relations with each other that does not require knowledge of lower-level details." |
 | -- Peter J. Denning. Abstractions \[[Denning2025](https://orcmid.github.io/bib/compsci.htm#Denning2025): What is Abstraction?\] |
 
+Here, the views of Alonzo Church and Peter Denning will be favored.  A view of
+Aristotle will also be adapted:  In portrayal of abstractions there are
+also incidentals (sometimes called accidentals) that accompany expression and
+manifestation of abstractions.  Incidentals are unavoidable, especially in
+treatment of computation, although it is unfortunate whenever they intrude on
+grasping what might be considered as pure abstraction.  Keep that in mind.
+
 ## 2. The Abstraction Challenge
 
 The challenge at the oMiser/oFrugal level is the fact that there are _only_
@@ -92,50 +99,52 @@ of interpretation.
 ### 2.1 Pure abstraction
 
 Pure abstraction operations on obs depend on an ob and its structure without
-consideration of anything other than the ob "as-is."  The abstraction
-resulting from
+consideration of anything other than the ob "as-is."  The result from
+Frugalese
 
 > σ.*s* *M*
 
-is a script for an applicative procedure such that, given obs *s*, *M*, *N*,
-and the definite function σ (sigma), the applicative expression
+is an ob such that, taken as a script applied to operand *N*,
 
 > (σ.*s* *M*) *N*
 
 determines a form of ob *M* with *N* substituted everywhere *s* occurs in *M*.
 This is based strictly on ob structure and not on any interpretation of *M*
-as an applicative-procedure script.
+as anything but just an ob.
 
 Evaluation of (σ.*s* *M*) determines an ob different than *M* having no
-occurrences of *s*.  (σ.*s* *M*) has *s* ***abstracted away*** in a sense
-comparable to that of Alonzo Church quoted above.
+occurrences of *s*.  (σ.*s* *M*) has *s* ***abstracted away*** (from *M*)
+in the sense expressed by Alonzo Church, quoted
+[above](#1-the-abstraction-idea).
+
 
 ((σ.*s* *M*) *s*) = *M* as-is.
 
-If *s* does not occur in *M*, ((σ.*s* *M*) *t*) = *M* for any determined ob,
-*t*.
+Also, if *s* does not occur in *M*, ((σ.*s* *M*) *N*) = *M* for any definite
+ob, *N*.
 
 In some situations, the *s* in *M* can be though of as a variable, although
-*there are no variables* in oMiser.  What (σ.*s* *M*) accmplishes is to
-effectively make *s* "variable" in *M* by abstracting it away, creating a
-script that will substitute any ob for the previous occurrences of *s* in *M*.
+*there are no variables*, as such, in oMiser applicative scripts.  What
+(σ.*s* *M*) accmplishes is to effectively make *s* "variable" in *M* by
+abstracting it away, establishing a script that will substitute any ob for the
+occurrences of
 
-This is very different from how variables are considered in conventional
-programming languages and especially in mathematics.  The term "variable"
-will not be used with respect to oMiser and oFrugal.
+*s* in *M*.
+
+This is distinct from how variables are considered in conventional
+programming languages and especially in mathematics.
 
 ### 2.2 Variations on that theme
 
 The script for *σ*, applied to an operand ob, *x*, derives a new script that
 will abstract *x* from any given next operand.  In the oMiser implementation
 of *σ*, operand *x* can be any ob, although usual practice is to use
-lindies (literal symbols).  The operation comes down to matching patterns
-and rewriting obs to a new form that satisfies the definition of (σ.*s* *M*).
+lindies (literal symbols) in the handy form *σ.x*.  The operation comes down
+to matching patterns and rewriting obs to a new form that satisfies the
+definition of (σ.*s* *M*).
 
-It is a kind of editing obs to form new ones.  This is more evident with some
-handy companion functions, δ(*s*, *N*) and subst(*N*, *s*), for
-convenient use, often when one or more definite operands are known
-in advance.
+The rewriting aspect is more evident with the handy companion functions,
+δ(*s*, *N*) and subst(*N*, *s*):
 
 > δ(*s*, *N*) *M* = subst(*N*, *s*) *M* = (σ.*s* *M*) *N* = σ(*s*, *M*, *N*)
 
@@ -155,20 +164,17 @@ intrinsic significance in oMiser.  Symbolic forms are just themselves.  The
 benefit, beside as a form of data, is that the form can be transformed into
 meanigful scripts by abstraction procedures.
 
+Symbolic forms can be read as pseudo-code for applicative expressions.  The
+actual transformation into a script is by abstraction of the symbolic form
+away.
+
 ### 3.1 Symbolic form principles
 
 It is a design principle of the oMiser universal functions **ap** and
 **eval** that *when there is no specific interpretation of an **ap** operator
 ob, "no change" occurs*.
 
-The definitions of **obap.a** and **obap.b** for the cases of
-singletons--individuals and enclosures--illustrate that principle.  Those
-cases were arrived at indirectly by seeking a computational implementation
-that has those functions be total--definite for all definite obs.  The
-principle is generalized for further cases, including the introduction of
-symbolic forms.
-
-In oMiser, lindies denote distinct constant obs that are invariant under the
+In oMiser, lindies denote distinct individual obs that are invariant under the
 universal functions.  In this case "no change" is accomplished by the
 mathematical engineering of obaptheory such that when a lindy ob is applied to
 an operand, the lindy *and the operand* are preserved: the result is pairing
@@ -191,14 +197,13 @@ forms are all preserved without change in this manner.  The general rules is
 ### 3.2 Utility of symbolic forms
 
 Symbolic forms have the appearance of applicative-procedure scripts and/or
-constant list structures, perhaps in mixtures.  Intended purpose for a
-symbolic form is revealed only in the context of usage.
+constant list structures, perhaps in mixtures.
 
 Harmony of symbolic forms with applicative-operation expressions is supported
 by the computational interpretation of `f :: g :: x` being tantamount to the
 Frugalese applicative expression `f g x`, both being right-associative and
-equivalent to `f(g x)` with a prospective interpretation of lindies `f`, `g`,
-and `x` as terms in an applicative-operation formula.
+equivalent to `f(g x)` with lindies `f`, `g`, and `x` taken as terms in an
+applicative-operation formula.
 
 For example, the oFrugal expression with lindies `a`, `b`, and `x`
 
@@ -264,6 +269,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.4  2026-03-24T16:02Z Working Over Symbolic Forms
   0.6.3  2026-03-21T16:29Z Gotcha!
   0.6.2  2026-03-21T15:46Z Try again
   0.6.1  2026-03-20T01:14Z Fix Howler in Title Block
