@@ -1,4 +1,4 @@
-<!-- index.md 0.6.4                 UTF-8                         2026-03-24
+<!-- index.md 0.6.5                 UTF-8                         2026-03-25
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.4 2026-03-24T16:02Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.5 2026-03-25T21:27Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -41,9 +41,9 @@
 
 In the oMiser computational-model, every ob has an applicative interpretation
 as a script.  Whether viewed as "just an ob" or as a purposive script depends
-on how one squints at an ob.
+on what is intended for it.
 
-In some cases, the intension as a script is
+In some cases, intension as a script is
 likely, since scripts have features that are unexpected in "just" obs.  In
 essence, however, the plain/script intention is revealed only in how an ob is
 employed in a computation, and every ob can occur as either or both at
@@ -56,9 +56,7 @@ scripts, as data, or as both.  This is an important and powerful mechanism.
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
   - [2.1 Pure abstraction](#21-pure-abstraction)
   - [2.2 Variations on that theme](#22-variations-on-that-theme)
-- [3. Symbolic Forms](#3-symbolic-forms)
-  - [3.1 Symbolic form principles](#31-symbolic-form-principles)
-  - [3.2 Utility of symbolic forms](#32-utility-of-symbolic-forms)
+- [3. Symbolic Forms and Pseudocode](#3-symbolic-forms-and-pseudocode)
 - [4. Applicative-Procedure Abstraction Techniques](#4-applicative-procedure-abstraction-techniques)
 - [Related Material](#related-material)
 
@@ -85,8 +83,8 @@ Here, the views of Alonzo Church and Peter Denning will be favored.  A view of
 Aristotle will also be adapted:  In portrayal of abstractions there are
 also incidentals (sometimes called accidentals) that accompany expression and
 manifestation of abstractions.  Incidentals are unavoidable, especially in
-treatment of computation, although it is unfortunate whenever they intrude on
-grasping what might be considered as pure abstraction.  Keep that in mind.
+treatment of computation. It is unfortunate whenever incidentals intrude on
+grasping what might be considered as the pure abstraction.  Keep that in mind.
 
 ## 2. The Abstraction Challenge
 
@@ -104,7 +102,8 @@ Frugalese
 
 > σ.*s* *M*
 
-is an ob such that, taken as a script applied to operand *N*,
+(sigma *s* applied to *M*) is an ob such that, taken as a script applied to
+operand *N*,
 
 > (σ.*s* *M*) *N*
 
@@ -115,21 +114,19 @@ as anything but just an ob.
 Evaluation of (σ.*s* *M*) determines an ob different than *M* having no
 occurrences of *s*.  (σ.*s* *M*) has *s* ***abstracted away*** (from *M*)
 in the sense expressed by Alonzo Church, quoted
-[above](#1-the-abstraction-idea).
-
+[above](#1-the-abstraction-idea).  And the result is a script for an
+an applicative function.  It is assured that
 
 ((σ.*s* *M*) *s*) = *M* as-is.
 
-Also, if *s* does not occur in *M*, ((σ.*s* *M*) *N*) = *M* for any definite
-ob, *N*.
+Also, if *s* does not occur in *M*, ((σ.*s* *M*) *N*) = *M* regardless of
+definite ob, *N*.
 
 In some situations, the *s* in *M* can be though of as a variable, although
 *there are no variables*, as such, in oMiser applicative scripts.  What
 (σ.*s* *M*) accmplishes is to effectively make *s* "variable" in *M* by
 abstracting it away, establishing a script that will substitute any ob for the
-occurrences of
-
-*s* in *M*.
+occurrences of *s* in *M*.
 
 This is distinct from how variables are considered in conventional
 programming languages and especially in mathematics.
@@ -156,53 +153,28 @@ Curried forms, will be employed in the development of oFrugal utility scripts,
 including those for
 [applicative-procedure abstraction](#4-applicative-procedure-abstraction-techniques).
 
-## 3. Symbolic Forms
+## 3. Symbolic Forms and Pseudocode
 
 Symbolic forms are obs comprised of lindies that have the form of applicative
 expressions, but are just that, having the form but not having any other
-intrinsic significance in oMiser.  Symbolic forms are just themselves.  The
-benefit, beside as a form of data, is that the form can be transformed into
+intrinsic significance in oMiser.  Symbolic forms are just themselves
+\[[obaptheory](../obap/obaptheory.txt): Obap3\].  The
+benefit, beside being a form of data, is that the form can be transformed into
 meanigful scripts by abstraction procedures.
 
-Symbolic forms can be read as pseudo-code for applicative expressions.  The
-actual transformation into a script is by abstraction of the symbolic form
-away.
-
-### 3.1 Symbolic form principles
-
-It is a design principle of the oMiser universal functions **ap** and
-**eval** that *when there is no specific interpretation of an **ap** operator
-ob, "no change" occurs*.
-
-In oMiser, lindies denote distinct individual obs that are invariant under the
-universal functions.  In this case "no change" is accomplished by the
-mathematical engineering of obaptheory such that when a lindy ob is applied to
-an operand, the lindy *and the operand* are preserved: the result is pairing
-of the lindy and the operand.  In this way,
-
-> **ap**(*lindy*, *x*) yields (*lindy* :: *x*)
-
-using (\` *x*) when *x* is not also invariant. The result is invariant in this
-same sense.
+Symbolic forms can be read as pseudocode for applicative expressions.
+Transformation into an applicative-operation script is by abstracting away
+symbolic terms of the pseudocode.
 
 The lindy-involved invariant obs are classified as **symbolic forms** and
-distinguished by the obaptheory predicate is-symbolic-form(*x*); symbolic
-forms are all preserved without change in this manner.  The general rules is
+distinguished by the obaptheory predicate is-symbolic-form(*x*)
+\[[obaptheory](../obap/obaptheory.txt): Obap3(a,b)\].
 
-> **ap**(*symbolic-form*, *x*) = (*symbolic-form* :: *x*)
-
-> using (\` *x*) when *x* is neither `ob.NIL` nor a symbolic form.  The
-  result is a symbolic form.
-
-### 3.2 Utility of symbolic forms
-
-Symbolic forms have the appearance of applicative-procedure scripts and/or
-constant list structures, perhaps in mixtures.
 
 Harmony of symbolic forms with applicative-operation expressions is supported
 by the computational interpretation of `f :: g :: x` being tantamount to the
 Frugalese applicative expression `f g x`, both being right-associative and
-equivalent to `f(g x)` with lindies `f`, `g`, and `x` taken as terms in an
+equivalent to `f(g x)` with lindies `f`, `g`, and `x` viewed as terms in an
 applicative-operation formula.
 
 For example, the oFrugal expression with lindies `a`, `b`, and `x`
@@ -269,6 +241,8 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.5  2026-03-25T21:27Z Pair down Section 3 to Symbolic Forms an Psuedo-
+                           Code
   0.6.4  2026-03-24T16:02Z Working Over Symbolic Forms
   0.6.3  2026-03-21T16:29Z Gotcha!
   0.6.2  2026-03-21T15:46Z Try again
