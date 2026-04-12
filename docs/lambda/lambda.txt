@@ -1,4 +1,4 @@
-lambda.txt 0.0.1                    UTF-8                       dh:2025-11-11
+lambda.txt 0.0.2                    UTF-8                       dh:2026-04-12
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -39,7 +39,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. λ Applicative-Procedure Abstraction.  Miser Project on
-   GitHub text file lambda.txt version 0.0.1 dated 2025-11-11 available on the
+   GitHub text file lambda.txt version 0.0.2 dated 2026-04-12 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/lambda/lambda.txt>.
 
@@ -55,9 +55,11 @@ NOTES AND TODO
    preserve functional type and that works.  I don't have it explained that
    well though.
 
+ * I need to update the manifest.
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
-
+ 0.0.2 2026-04-12T19:53Z Manage TODOs
  0.0.1 2025-11-11T19:25Z Backing up what I have
  0.0.0 2025-11-11T00:37Z Initial placehold and start on capturing historical
        information.
