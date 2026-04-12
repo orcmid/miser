@@ -1,4 +1,4 @@
-lambda.txt 0.0.2                    UTF-8                       dh:2026-04-12
+lambda.txt 0.1.0                    UTF-8                       dh:2026-04-12
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -14,9 +14,27 @@ lambda.txt 0.0.2                    UTF-8                       dh:2026-04-12
 
 MANIFEST
 
-     lambda.txt
-            this manifest and job-jar file
+          lambda.txt
+                 this manifest and job-jar file
 
+         c000000.htm
+                 topic's web construction notes and job jar
+
+    construction.htm
+                 consturction zone for the topic
+
+           index.htm
+                 construction structure page for this topic
+
+           index.md
+                 markdown of the topic-level lambda page (posted as 
+                 index.html)
+
+         oLambda.txt
+                 authoritative definition of the oLambda Procedure
+
+          oSigma.txt
+                 authoritative definition of the oSigma proceddure
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
@@ -55,10 +73,11 @@ NOTES AND TODO
    preserve functional type and that works.  I don't have it explained that
    well though.
 
- * I need to update the manifest.
+
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.0 2026-04-12T22:25Z Complete the manifest
  0.0.2 2026-04-12T19:53Z Manage TODOs
  0.0.1 2025-11-11T19:25Z Backing up what I have
  0.0.0 2025-11-11T00:37Z Initial placehold and start on capturing historical
