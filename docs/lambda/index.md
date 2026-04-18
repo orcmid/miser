@@ -1,4 +1,4 @@
-<!-- index.md 0.6.6                 UTF-8                         2026-04-12
+<!-- index.md 0.6.7                 UTF-8                         2026-04-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.6 2026-04-12T19:08Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.7 2026-04-18T16:29Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -145,7 +145,7 @@ definition of (σ.*s* *M*).
 The rewriting aspect is more evident with the handy companion functions,
 δ(*s*, *N*) and subst(*N*, *s*):
 
-> δ(*s*, *N*) *M* = subst(*N*, *s*) *M* = (σ.*s* *M*) *N* = σ(*s*, *M*, *N*)
+> δ(*s*, *N*) *M* = subst(*N*, *s*) *M* = (σ.*s* *M*) *N* = σ(*s*, *M*, *N*) = ((σ *s*) *M*) *N*
 
 illustrating various Frugalese forms for achieving the same result, given
 definite *s*, *N*, and *M*.  
@@ -155,8 +155,8 @@ definite *s*, *N*, and *M*.
  - subst(*N*, *s*) *M* can be read as **substitute** *N* for *s* everywhere
    in *M*
 
-The variations are convenient in different settings, including where the operands
-are determined and "fixed" in different applicative cases.  
+The variations are convenient in different settings, including where the
+operands are determined and "fixed" in different applicative cases.  
 
 Keep in mind that, in oFrugal for example, 
 
@@ -172,7 +172,7 @@ including those for
 
 ## 3. Symbolic Forms as Pseudocode
 
-Symbolic forms are obs comprised of lindies that are designed to have the form
+Symbolic forms are obs, comprised of lindies, the have the form
 of applicative oMiser scripts but are just that, the form without any
 intrinsic operational significance.  
 
@@ -183,7 +183,7 @@ When symbolic forms are evaluated as
 scripts for applicative expressions, the results are simply the symbolic forms
 themselves \[[obaptheory](../obap/obaptheory.txt): Obap3\].
 
-For example, oFrugal symbolic forms
+For example, oFrugal expressions
 
 > alpha(x) beta(y) ` zed
 
@@ -191,18 +191,18 @@ and
 
 > (alpha :: x) :: (beta :: y)  :: ` zed
 
-result in the same result (the second) when interpreted as oMiser scripts.
+result in the same result (the second).
 
 The benefit, beside simply being a form of data, is that symbolic forms can be
-transformed into useful scripts by abstraction procedures that rely on the
+transformed into useful scripts by abstraction procedures that rely on their
 apparent *applicative structure*.  This is similar to the 
 [pure abstraction](#21-pure-abstraction) on obs, but based on applicative
 structure. 
 
 Harmony of symbolic forms with applicative-operation expressions is supported
-by the computational interpretation of `f :: g :: x` being tantamount to the
-Frugalese applicative expression `f g x`, both being right-associative and
-equivalent to `f(g x)` with lindies `f`, `g`, and `x` viewed as terms in an
+by the computational interpretation of `f :: g :: x` being tantamount to that
+of the Frugalese applicative expression `f g x`, both being right-associative
+and equivalent to `f(g x)` with lindies `f`, `g`, and `x` viewed as terms in an
 applicative-operation formula.
 
 Symbolic forms can be regarded as pseudocode for applicative expressions.
@@ -253,6 +253,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.7  2026-04-18T16:29Z further struggling on Symbolic Forms
   0.6.6  2026-04-12T19:08Z More struggling with Symbolic Forms
   0.6.5  2026-03-25T21:27Z Pair down Section 3 to Symbolic Forms an Psuedo-
                            Code
