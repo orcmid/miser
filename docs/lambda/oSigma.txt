@@ -1,4 +1,4 @@
-// oSigma.txt 0.5.0                 UTF-8                          2024-10-29
+// oSigma.txt 0.6.0                 UTF-8                          2026-04-19
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -143,16 +143,16 @@
 
 !def ob ^oIsSingleton
         = // λz (z = .b z)
-          .d :: .arg :: .b :: .arg ;
+          .q :: .arg :: .b :: .arg ;
 
 !def ob ^oIsIndividual
         = // λz (z = .a z)
-          .d :: .arg :: .a :: .arg ;
+          .q :: .arg :: .a :: .arg ;
 
 //       Note how the abstracted literal symbol "z" has no distinct residue
 //       upon its abstraction. The .arg form abstracts away the use of "z"
 //       paired with "λz".  Any other literal symbol could be used, as in
-//       λq (q = .b q) so long as there is no conflicting occurrence of the
+//       λr (r = .b r) so long as there is no conflicting occurrence of the
 //       alternative symbol.  The abstracted forms are the same.
 //
 //
@@ -470,7 +470,7 @@
         = // λ.s ρ.sigmas λ.M
                      //             if M = s
           .c :: `.ev
-             :: .c :: (.c :: `.d :: .c :: `.arg :: .e :: .arg)
+             :: .c :: (.c :: `.q :: .c :: `.arg :: .e :: .arg)
 
                    ::``( // then
                             .arg
@@ -648,6 +648,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 0.6.0  2026-04-19T20:49Z Replace occurences of .d wit .q 
 // 0.5.0  2024-10-19T17:42Z Use linking-style δ(s, P) form with linking usage
 // 0.4.0  2024-06-24T15:10Z Breaking change/fix to δ definition and usage
 // 0.3.3  2024-06-21T19:27Z Clean-up the simulated δ cases for non-inlined
