@@ -1,4 +1,4 @@
-// oSigma.txt 0.6.0                 UTF-8                          2026-04-19
+// oSigma.txt 0.6.1                 UTF-8                          2026-04-21
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                       OBAP ABSTRACTION FUNCTIONS
@@ -137,7 +137,7 @@
 //
 //    3.1.1 is-singleton amd is-enclosure
 //
-//       Translation of is-singleton(z) is directly to ( .d :: z :: .b :: z ).
+//       Translation of is-singleton(z) is directly to ( .q :: z :: .b :: z ).
 //       We can produce an oFrugal script for the applicative form.  The
 //       companion is-individual is expressible in the same manner.
 
@@ -431,7 +431,7 @@
 //        // ρ.sigmas λ.M                                            // (5a)
 //
 //            //       if M = s
-//        .ev :: ( .d :: .arg :: ` s)             // s is held constant
+//        .ev :: ( .q :: .arg :: .f :: s)           / s is held constant
 //
 //            :: `( // then
 //                     .arg
@@ -470,7 +470,7 @@
         = // λ.s ρ.sigmas λ.M
                      //             if M = s
           .c :: `.ev
-             :: .c :: (.c :: `.q :: .c :: `.arg :: .e :: .arg)
+             :: .c :: (.c :: `.q :: .c :: `.arg :: .f :: .arg)
 
                    ::``( // then
                             .arg
@@ -614,7 +614,7 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
-//                   Copyright 2024 Dennis E. Hamilton
+//                   Copyright 2024, 2026 Dennis E. Hamilton
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -632,7 +632,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-compiled sigma(s, M).  Miser Theory Conception
-//   text file oSigma.txt version 0.5.0 dated 2024-10-29, available on the
+//   text file oSigma.txt version 0.6.1 dated 2026-04-21, available on the
 //   Internet as a version of
 //   <https://orcmid.github.io/miser/lambda/oSigma.txt>
 //
@@ -648,7 +648,8 @@
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
-// 0.6.0  2026-04-19T20:49Z Replace occurences of .d wit .q 
+// 0.6.1  2026-04-21T15:49Z Catch more .d's, try .f in places
+// 0.6.0  2026-04-19T20:49Z Replace occurences of .d with .q 
 // 0.5.0  2024-10-19T17:42Z Use linking-style δ(s, P) form with linking usage
 // 0.4.0  2024-06-24T15:10Z Breaking change/fix to δ definition and usage
 // 0.3.3  2024-06-21T19:27Z Clean-up the simulated δ cases for non-inlined

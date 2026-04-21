@@ -1,4 +1,4 @@
-<!-- index.md 0.6.8                 UTF-8                         2026-04-21
+<!-- index.md 0.6.9                 UTF-8                         2026-04-21
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.8 2026-04-21T14:37Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.9 2026-04-21T15:52Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -165,10 +165,9 @@ Keep in mind that, in oFrugal for example,
 and the intermediate forms δ(*s*) and ( δ(*s*) *N*) may be useful for reuse in
 multiple situations.  
 
-Such intermediate forms, `subst(.ARG)` for example, are known as Curried forms.
-They will be employed heavily in the development of oFrugal utility scripts,
-including those for
-[applicative-procedure abstraction](#4-applicative-procedure-abstraction-heuristics).
+Such intermediate forms, `subst(.ARG)` for example, are known as Curried
+forms.  They will be employed heavily in the development of oFrugal utility
+scripts, including those for [applicative-procedure abstraction](#4-applicative-procedure-abstraction-heuristics).
 
 ## 3. Symbolic Forms as Pseudocode
 
@@ -221,7 +220,7 @@ on the web progresses.
 
 | **ID**                  | **Status** | **Started** | **Topic** |
 |   :-:                   |   :-:      |  :-:        |  ---      |
-| [sigma](oSigma.txt)    | 0.4.0 2024-06-24 | 2024-05-05 | `σ.s M`, `subst(L, s)`, `δ(s, L)` definitions (authoritative)|
+| [sigma](oSigma.txt)    | 0.6.1 2026-04-21 | 2024-05-05 | `σ.s M`, `subst(L, s)`, `δ(s, L)` definitions (authoritative)|
 | [lambda](oLambda.txt)   | 0.5.0 2025-06-12 | 2024-06-20 | `λ.x` & `ρ.p` Abstraction Operations (authoritative)|
 
 ----
@@ -253,6 +252,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.9  2026-04-21T15:52Z Update link to oSigma.txt
   0.6.8  2026-04-21T14:37Z Touch-ups based on Markdown Lint
   0.6.7  2026-04-18T16:29Z further struggling on Symbolic Forms
   0.6.6  2026-04-12T19:08Z More struggling with Symbolic Forms
