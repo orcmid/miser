@@ -1,4 +1,4 @@
-<!-- index.md 0.6.7                 UTF-8                         2026-04-18
+<!-- index.md 0.6.8                 UTF-8                         2026-04-21
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,13 +33,13 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.7 2026-04-18T16:29Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.8 2026-04-21T14:37Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
 </table>
 
-In the oMiser computational-model, every ob has an applicative interpretation
+In the oMiser computational model, every ob has an applicative interpretation
 as a script.  Whether viewed as "just an ob" or as a purposive script depends
 on what usage is intended for it, on the context in which it is encountered.
 
@@ -58,8 +58,8 @@ demonstrated by [representations](../obreps) and the abstraction operations here
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
   - [2.1 Pure abstraction](#21-pure-abstraction)
   - [2.2 Variations on that theme](#22-variations-on-that-theme)
-- [3. Symbolic Forms and Pseudocode](#3-symbolic-forms-and-pseudocode)
-- [4. Applicative-Procedure Abstraction Techniques](#4-applicative-procedure-abstraction-techniques)
+- [3. Symbolic Forms as Pseudocode](#3-symbolic-forms-as-pseudocode)
+- [4. Applicative-Procedure Abstraction Heuristics](#4-applicative-procedure-abstraction-heuristics)
 - [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
@@ -68,16 +68,16 @@ demonstrated by [representations](../obreps) and the abstraction operations here
 | --- |
 | "We call the symbol λx an _abstraction operator_, and speak of the function which is denoted by (λx _M_) as obtained from the expression _M_ by _abstraction_." |
 | -- [Alonzo Church](https://en.wikipedia.org/wiki/Alonzo_Church) \[[Church1941](https://orcmid.github.io/bib/logic.htm#Church1941): p.7\] |
-|  |
+| |
 | "This process \[of extracting common features\] can be regarded as a repeated abstraction ... and under certain circumstances such abstracting processes can be repeatedly piled on top of one another.  Here '_abstract_' has to be understood in the literal meaning of the word as 'removing', as leaving aside everything inessential for the context in question or for a particular purpose ... ." |
 | -- [Hans Reichardt](https://mathshistory.st-andrews.ac.uk/Biographies/Reichardt/) \[[VNR1977](https://orcmid.github.io/bib/authors.htm#VNR1977): Introduction,p.11\] |
-|  |
+| |
 | "A high-level computer language _abstracts away the machine_ \[so that\] the programmer need not be an expert in the machinations of computer hardware ... in order to successfully program a computer.  High-level languages (HLLs) automate, hide, or otherwise abstract away the underlying operations of the machine ... ." |
 | -- Mark Jones Lorenzo \[[Lorenzo2019](https://orcmid.github.io/bib/progsys.htm#Lorenzo2019): Introduction, p.13\] |
-|  |
+| |
 | "Abstraction is about digging deep into a situation to find out what is at its core making it tick.  Another way to think of it is about stripping away irrelevant details, or rather, stripping away details that are irrelevant to what we're thinking about." |
 | -- [Eugenia Cheng](https://en.wikipedia.org/wiki/Eugenia_Cheng), _The Joy of Abstraction_ \[[Cheng2023](https://orcmid.github.io/bib/math.htm#Cheng2023): 2.3 Forgetting Details\] |
-|  |
+| |
 | "Abstraction is a verb: to abstract is to identify the basic principles and laws of a process so that it can be studied without regard to physical implementation; the abstraction can then guide many implementations.  Abstraction is also a noun: An abstraction is a mental construct that unifies a set of objects.  Objects of an abstraction have their own logic of relations with each other that does not require knowledge of lower-level details." |
 | -- Peter J. Denning. Abstractions \[[Denning2025](https://orcmid.github.io/bib/compsci.htm#Denning2025): What is Abstraction?\] |
 
@@ -150,9 +150,9 @@ The rewriting aspect is more evident with the handy companion functions,
 illustrating various Frugalese forms for achieving the same result, given
 definite *s*, *N*, and *M*.  
 
- - δ(*s*, *N*) *M* can be read informally as "**define** *s* to be *N*
+- δ(*s*, *N*) *M* can be read informally as "**define** *s* to be *N*
    everywhere in *M*", and
- - subst(*N*, *s*) *M* can be read as **substitute** *N* for *s* everywhere
+- subst(*N*, *s*) *M* can be read as **substitute** *N* for *s* everywhere
    in *M*
 
 The variations are convenient in different settings, including where the
@@ -168,7 +168,7 @@ multiple situations.
 Such intermediate forms, `subst(.ARG)` for example, are known as Curried forms.
 They will be employed heavily in the development of oFrugal utility scripts,
 including those for
-[applicative-procedure abstraction](#4-applicative-procedure-abstraction-techniques).
+[applicative-procedure abstraction](#4-applicative-procedure-abstraction-heuristics).
 
 ## 3. Symbolic Forms as Pseudocode
 
@@ -191,19 +191,19 @@ and
 
 > (alpha :: x) :: (beta :: y)  :: ` zed
 
-result in the same result (the second).
+result in the same ob canonical form (the second).
 
-The benefit, beside simply being a form of data, is that symbolic forms can be
-transformed into useful scripts by abstraction procedures that rely on their
-apparent *applicative structure*.  This is similar to the 
+The intended benefit, beside simply being a form of data, is that symbolic
+forms can be transformed into useful scripts by abstraction procedures that
+rely on their apparent *applicative structure*.  This is similar to the
 [pure abstraction](#21-pure-abstraction) on obs, but based on applicative
 structure. 
 
 Harmony of symbolic forms with applicative-operation expressions is supported
 by the computational interpretation of `f :: g :: x` being tantamount to that
 of the Frugalese applicative expression `f g x`, both being right-associative
-and equivalent to `f(g x)` with lindies `f`, `g`, and `x` viewed as terms in an
-applicative-operation formula.
+and equivalent to `f(g x)` with lindies `f`, `g`, and `x` viewed as terms in
+an applicative-operation formula.
 
 Symbolic forms can be regarded as pseudocode for applicative expressions.
 Transformation into an applicative-operation script is by abstracting away
@@ -253,6 +253,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.8  2026-04-21T14:37Z Touch-ups based on Markdown Lint
   0.6.7  2026-04-18T16:29Z further struggling on Symbolic Forms
   0.6.6  2026-04-12T19:08Z More struggling with Symbolic Forms
   0.6.5  2026-03-25T21:27Z Pair down Section 3 to Symbolic Forms an Psuedo-
