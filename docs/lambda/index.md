@@ -1,4 +1,4 @@
-<!-- index.md 0.6.9                 UTF-8                         2026-04-21
+<!-- index.md 0.6.10                UTF-8                         2026-04-22
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.9 2026-04-21T15:52Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.10 2026-04-22T17:12Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -52,7 +52,8 @@ various points in a script-driven computation.
 λ-Abstraction is a systematic approach to transforming script forms into
 other scripts that can be applied to operands that are then used as
 scripts, as data, or as both.  This is an important and powerful mechanism
-demonstrated by [representations](../obreps) and the abstraction operations here.
+demonstrated by [representations](../obreps) and the abstraction operations
+here.
 
 - [1. The Abstraction Idea](#1-the-abstraction-idea)
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
@@ -210,7 +211,14 @@ symbolic terms of that pseudocode.
 
 ## 4. Applicative-Procedure Abstraction Heuristics
 
-\[Author's Note\]: Brief introduction to the two forms.
+\[Author's Note\]: Brief introduction to the two forms.  I also have to cope
+with having changed computers and needing to wrestle Visual Studio Code into
+working properly on a fresh setup.  I am looking at what the settings are on
+my laptop to see how to get some of the same behaviors
+
+I also need to decide how much of the oSigma.txt and oLambda.txt to show,
+along with introduction of Frugalese and how it is handled.
+
 
 ## Related Material
 
@@ -252,6 +260,8 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.10 2026-04-22T17:12Z Checking to get VSCode change-marking working
+                           properly
   0.6.9  2026-04-21T15:52Z Update link to oSigma.txt
   0.6.8  2026-04-21T14:37Z Touch-ups based on Markdown Lint
   0.6.7  2026-04-18T16:29Z further struggling on Symbolic Forms
