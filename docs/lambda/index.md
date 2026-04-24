@@ -1,4 +1,4 @@
-<!-- index.md 0.6.10                UTF-8                         2026-04-22
+<!-- index.md 0.6.11                UTF-8                         2026-04-24
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.10 2026-04-22T17:12Z<!-- MAINTAIN THIS MANUALLY -->
+        0.6.11 2026-04-24T20:00Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -193,21 +193,12 @@ and
 
 result in the same ob canonical form (the second).
 
-The intended benefit, beside simply being a form of data, is that symbolic
-forms can be transformed into useful scripts by abstraction procedures that
-rely on their apparent *applicative structure*.  This is similar to the
-[pure abstraction](#21-pure-abstraction) on obs, but based on applicative
-structure. 
-
-Harmony of symbolic forms with applicative-operation expressions is supported
-by the computational interpretation of `f :: g :: x` being tantamount to that
-of the Frugalese applicative expression `f g x`, both being right-associative
-and equivalent to `f(g x)` with lindies `f`, `g`, and `x` viewed as terms in
-an applicative-operation formula.
-
 Symbolic forms can be regarded as pseudocode for applicative expressions.
 Transformation into an applicative-operation script is by abstracting away
 symbolic terms of that pseudocode.
+
+Learning to operate with them is best explored by examination of worked
+examples.
 
 ## 4. Applicative-Procedure Abstraction Heuristics
 
@@ -260,6 +251,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.6.11 2026-04-24T20:00Z Simplify the account for symbolic forms
   0.6.10 2026-04-22T17:12Z Checking to get VSCode change-marking working
                            properly
   0.6.9  2026-04-21T15:52Z Update link to oSigma.txt
