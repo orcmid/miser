@@ -1,4 +1,4 @@
-lambda.txt 0.1.0                    UTF-8                       dh:2026-04-12
+lambda.txt 0.1.1                    UTF-8                       dh:2026-04-27
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -57,7 +57,7 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. λ Applicative-Procedure Abstraction.  Miser Project on
-   GitHub text file lambda.txt version 0.0.2 dated 2026-04-12 available on the
+   GitHub text file lambda.txt version 0.1.1 dated 2026-04-27 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/lambda/lambda.txt>.
 
@@ -73,10 +73,14 @@ NOTES AND TODO
    preserve functional type and that works.  I don't have it explained that
    well though.
 
-
+ * TAIL RECURSION: This is a very desirable provision.  It may be necessary to
+   introduce a special form for it, such as `.T`, because of the difficulty
+   of detecting it at run-time with the low-level at which `eval` and `ap`
+   defined. 
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.1.1 2026-04-27T14:57Z Add TODO on Tail Recursion
  0.1.0 2026-04-12T22:25Z Complete the manifest
  0.0.2 2026-04-12T19:53Z Manage TODOs
  0.0.1 2025-11-11T19:25Z Backing up what I have
