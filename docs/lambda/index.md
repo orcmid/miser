@@ -1,4 +1,4 @@
-<!-- index.md 0.6.11                UTF-8                         2026-04-24
+<!-- index.md 0.7.0                UTF-8                         2026-04-30
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.6.11 2026-04-24T20:00Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.0 2026-04-30T01:00Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -59,6 +59,7 @@ here.
 - [2. The Abstraction Challenge](#2-the-abstraction-challenge)
   - [2.1 Pure abstraction](#21-pure-abstraction)
   - [2.2 Variations on that theme](#22-variations-on-that-theme)
+  - [2.4 The Technique](#24-the-technique)
 - [3. Symbolic Forms as Pseudocode](#3-symbolic-forms-as-pseudocode)
 - [4. Applicative-Procedure Abstraction Heuristics](#4-applicative-procedure-abstraction-heuristics)
 - [Related Material](#related-material)
@@ -159,22 +160,53 @@ definite *s*, *N*, and *M*.
 The variations are convenient in different settings, including where the
 operands are determined and "fixed" in different applicative cases.  
 
-Keep in mind that, in oFrugal for example, 
+Keep in mind that, in oFrugal for example,
 
 > δ(*s*, *N*) *M* = (( δ(*s*) *N*) *M*)
 
 and the intermediate forms δ(*s*) and ( δ(*s*) *N*) may be useful for reuse in
-multiple situations.  
+multiple situations.
 
 Such intermediate forms, `subst(.ARG)` for example, are known as Curried
 forms.  They will be employed heavily in the development of oFrugal utility
 scripts, including those for [applicative-procedure abstraction](#4-applicative-procedure-abstraction-heuristics).
 
+### 2.4 The Technique
+
+In Frugalese, σ.*s* *M* and the companion functions are expressed as follows.
+
+```SML
+ def σ.s M = if M = s
+             then .arg
+             else if is-individual(M)
+                  then ` M
+                  else if is-enclosure(M)
+                       then let R = σ.s .a M
+                             in if is-enclosure(R)
+                                then ` M
+                                else .e :: R
+                       else let R = σ.s .a M,
+                                S = σ.s .b M
+                             in if is-enclosure(R) ∧ is-enclosure(S)
+                                then ` M
+                                else .c :: R :: S;
+
+  def subst(N, s) M = (σ.s M) N;
+
+  def δ(s, N) = subst(N, s);
+```
+
+An important feature of σ.s *M* is that the result is an enclosure (of *M*)
+when there is no occurrence of *s* in *M*.
+
+The derivation of oFrugal scripts for applicative functions σ, subst, and δ is
+narrated in the file [oSigma](oSigma.txt).
+
 ## 3. Symbolic Forms as Pseudocode
 
 Symbolic forms are obs, comprised of lindies, the have the form
 of applicative oMiser scripts but are just that, the form without any
-intrinsic operational significance.  
+intrinsic operational significance.
 
 Symbolic forms are distinguished by the obaptheory predicate
 is-symbolic-form(*x*) \[[obaptheory](../obap/obaptheory.txt): Obap3(a,b)\].
@@ -251,6 +283,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.7.0  2026-04-30T01:00Z Add 2.4 The Technique
   0.6.11 2026-04-24T20:00Z Simplify the account for symbolic forms
   0.6.10 2026-04-22T17:12Z Checking to get VSCode change-marking working
                            properly
