@@ -1,4 +1,4 @@
-obaptheory.txt 1.6.1                UTF-8                          2026-02-28
+obaptheory.txt 1.7.0                UTF-8                          2026-05-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -82,7 +82,7 @@ obaptheory.txt 1.6.1                UTF-8                          2026-02-28
 
    Obap2. Primitive Individuals
 
-          Ten named individuals are distinguished as primitives,
+          Eleven named individuals are distinguished as primitives,
           including ob.NIL:
 
           is-primitive(x) ⇒ ob.is-individual(x)
@@ -101,7 +101,8 @@ obaptheory.txt 1.6.1                UTF-8                          2026-02-28
              2 obs that signify references to script-evaluation operands
 
           is-primitive(obap.EV)
-             1 ob that signifies a special unary operator in scripts
+          is=primitive(obap.T)
+             2 obs that signify special unary operators in scripts
 
           is-primitive(obap.C)
           is-primitive(obap.Q)
@@ -199,7 +200,8 @@ obaptheory.txt 1.6.1                UTF-8                          2026-02-28
         obap.ap(obap.SELF, x) = ob.e(obap.SELF) :: obap.f(x)         (b)
         obap.ap(obap.ARG, x) = ob.e(obap.ARG) :: obap.f(x)
         obap.ap(obap.EV, x) = ob.e(obap.EV) :: obap.f(x)
-                three non-lindy cases for the absence of sensible
+        obap.ap(obap.T, x) = ob.e(obap.T) :: obap.f(x)
+                four non-lindy cases for the absence of sensible
                 interpretation for these primitives as operators apart from
                 their syntactic function in ev(p, x, e) below (Obap6).
 
@@ -267,12 +269,17 @@ obaptheory.txt 1.6.1                UTF-8                          2026-02-28
              are not fully satisfied
 
         is-evunop(obap.EV)
+        is-evunop(obap.T)
 
         ev(p,x,obap.EV :: e2) = ev(p,x, ev(p,x,e2))                  (h)
 
+        ev(p,x,obap.T :: e2) = ev(p, ev(p,x, e2), p)                 (i)
+           compare with ev(p,x, .SELF :: ev(p,x,e2)) in (i), with
+           obap.T effectively invoking "tail recursion"
+
         is-specialop(p) ⇔ is-evunop(p) ∨ is-evbinop(p)
 
-        ¬ is-specialop(e1)                                           (i)
+        ¬ is-specialop(e1)                                           (j)
            ⇒ ev(p,x,e1::e2) = obap.ap(ev(p,x,e1), ev(p,x,e2))
              the normal evaluation of a pair is application of the
              evaluation of the a-part to the evaluation of the b-part,
@@ -308,7 +315,7 @@ obaptheory.txt 1.6.1                UTF-8                          2026-02-28
  ATTRIBUTION
 
    Hamilton, Dennis E. ‹ob› Universal Applicative Functions.  Miser Theory
-   Conception text file obaptheory.txt version 1.6.1 dated 2026-02-28,
+   Conception text file obaptheory.txt version 1.7.0 dated 2026-05-11,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/obap/obaptheory.txt>
 
@@ -362,6 +369,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 1.7.0  2026-05-11T15:24Z Introduce obap.T for tail recursion
  1.6.1  2026-02-28T16:56Z Correct some typos
  1.6.0  2026-02-16T22:06Z BREAKING CHANGE: obap.D is replaced with obap.Q
                           and this must be remedied in all scripts and other
