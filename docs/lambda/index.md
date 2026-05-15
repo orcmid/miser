@@ -1,4 +1,4 @@
-<!-- index.md 0.7.3                UTF-8                         2026-05-15
+<!-- index.md 0.7.4                UTF-8                         2026-05-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.3 2026-05-15T20:02Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.4 2026-05-15T21:45Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -259,6 +259,7 @@ In contrast, by [heuristics](https://en.wikipedia.org/wiki/Heuristic) here,
 are meant specific computational procedures that apply under specific
 conditions but are not arbitrarily appropriate. There are restrictions and
 pitfalls that must be dealt with in choosing to apply any of the heuristics.
+The benefit is a "practical method that does not have to be perfect \[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\]."
 
 The proposed applicative-procedure abstraction heuristics are not self-evident
 *and* depend on assumptions that require careful practice on the part of
@@ -267,25 +268,15 @@ be detected and remedied.
 
 Risks can be mitigated by having a higher-level depiction, such as
 one in Frugalese, for which an oFrugal script, derived using heuristics, is
-shown to be functionally equivalent.  (Having a Frugalese compiler woudl be
+shown to be functionally equivalent.  (Having a Frugalese compiler would be
 even better, but out-of-scope for oMiser.)
 
-Heuristic Method <https://www.toolshero.com/problem-solving/heuristic-method/>
+For a deeper dive on heuristics and heuristic method see
+\[[Pólya1957](https://orcmid.github.io/bib/authors.htm#Pólya1957)\],
+\[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\],
+and \[[Bensla2023](https://orcmid.github.io/bib/authors.htm#Bensla2023)\].
 
-COPILOT: 
-Definition and Core Concept
-Heuristic procedures are rules of thumb, mental shortcuts, or intuitive
-strategies that help individuals solve problems or make decisions without
-following a strict, step-by-step algorithmic process.
-
-Unlike algorithms, which guarantee a correct solution if followed precisely,
-heuristics aim for satisfactory or “good enough” solutions, especially when
-time, information, or resources are limited 
-
-.Heuristic Problem Solving: A comprehensive guide with 5 Examples
-<https://risely.me/heuristic-problem-solving-guide-with-examples/>
-
-
+To Be Continued ...
 
 
 ## Related Material
@@ -330,6 +321,7 @@ from time to time.  For any security concerns, please consult the
 
   
   
+  0.7.4  2026-05-15T21:45Z Complete introduction of Heuristic
   0.7.3  2026-05-15T20:02Z Backup of Heuristic pondering 
   0.7.2  2026-05-01T00:41Z simple wording fix
   0.7.1  2026-04-30T19:00Z Fix sml and explain use to detect absences
