@@ -1,4 +1,4 @@
-<!-- index.md 0.7.4                UTF-8                         2026-05-15
+<!-- index.md 0.7.5                UTF-8                         2026-05-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.4 2026-05-15T21:45Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.5 2026-05-15T23:26Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -272,7 +272,7 @@ shown to be functionally equivalent.  (Having a Frugalese compiler would be
 even better, but out-of-scope for oMiser.)
 
 For a deeper dive on heuristics and heuristic method see
-\[[Pólya1957](https://orcmid.github.io/bib/authors.htm#Pólya1957)\],
+\[[Pólya1957](https://orcmid.github.io/bib/authors.htm#Polya1957)\],
 \[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\],
 and \[[Bensla2023](https://orcmid.github.io/bib/authors.htm#Bensla2023)\].
 
@@ -321,6 +321,7 @@ from time to time.  For any security concerns, please consult the
 
   
   
+  0.7.5  2026-05-15T23:26Z Fix [Pólya1957] URL
   0.7.4  2026-05-15T21:45Z Complete introduction of Heuristic
   0.7.3  2026-05-15T20:02Z Backup of Heuristic pondering 
   0.7.2  2026-05-01T00:41Z simple wording fix
