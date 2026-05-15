@@ -1,4 +1,4 @@
-<!-- index.md 0.7.2                UTF-8                         2026-05-01
+<!-- index.md 0.7.3                UTF-8                         2026-05-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.2 2026-05-01T00:41Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.3 2026-05-15T20:02Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -62,6 +62,7 @@ here.
   - [2.3 The Technique](#23-the-technique)
 - [3. Symbolic Forms as Pseudocode](#3-symbolic-forms-as-pseudocode)
 - [4. Applicative-Procedure Abstraction Heuristics](#4-applicative-procedure-abstraction-heuristics)
+  - [4.1 Heuristic?  Hack Or Kluge?](#41-heuristic--hack-or-kluge)
 - [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
@@ -167,7 +168,8 @@ Keep in mind that, in oFrugal for example,
 and the intermediate forms δ(*s*) and ( δ(*s*) *N*) may be useful for reuse in
 multiple situations.
 
-Such intermediate forms, `subst(.ARG)` for example, are known as Curried
+Such intermediate forms, `subst(.ARG)` for example, are known as
+[curried](https://en.wikipedia.org/wiki/Currying)
 forms.  They will be employed heavily in the development of oFrugal utility
 scripts, including those for [applicative-procedure abstraction](#4-applicative-procedure-abstraction-heuristics).
 
@@ -198,8 +200,16 @@ In Frugalese, σ.*s* *M* and the companion functions are expressed as follows.
 
 An important feature of σ.s *M* is that the result is an enclosure (of *M*)
 when there is no occurrence of *s* in *M*.  This is useful as a kind of
-`has no s` check, avoiding recreating portions of *m* that have nothing to be
+`has-no-s` check, avoiding recreating portions of *M* that have nothing to be
 abstracted and made substitutable.
+
+It is valuable that Frugalese pseudo-code is higher-level than oFrugal,
+providing a level of abstraction that makes the purpose and essence of the
+corresponding oFrugal implementation more apparent.  This relies on
+abstraction in the senses expressed by
+\[[Lorenzo2019](https://orcmid.github.io/bib/progsys.htm#Lorenzo2019)\] and
+\[[Denning2025](https://orcmid.github.io/bib/compsci.htm#Denning2025)\]
+([section 1, above](#1-the-abstraction-idea)).
 
 The derivation of oFrugal scripts for applicative functions σ, subst, and δ is
 narrated in the file [oSigma](oSigma.txt).
@@ -231,18 +241,51 @@ Symbolic forms can be regarded as pseudocode for applicative expressions.
 Transformation into an applicative-operation script is by abstracting away
 symbolic terms of that pseudocode.
 
-Learning to operate with them is best explored by examination of worked
-examples.
+Learning to operate with such abstraction as operational procedure  is best
+explored by examination of worked examples.
 
 ## 4. Applicative-Procedure Abstraction Heuristics
 
-\[Author's Note\]: Brief introduction to the two forms.  I also have to cope
-with having changed computers and needing to wrestle Visual Studio Code into
-working properly on a fresh setup.  I am looking at what the settings are on
-my laptop to see how to get some of the same behaviors
+### 4.1 Heuristic?  Hack Or Kluge?
 
-I also need to decide how much of the oSigma.txt and oLambda.txt to show,
-along with introduction of Frugalese and how it is handled.
+> σ.*s* *M*
+
+The formulation of σ.*s* and its variations is completely functional and
+fully-defined.  The scripts apply to the structure of operands *as-is* and
+there is no ambiguity or limitation in how those scripts provide algorithms
+for the claimed functions.
+
+In contrast, by [heuristics](https://en.wikipedia.org/wiki/Heuristic) here,
+are meant specific computational procedures that apply under specific
+conditions but are not arbitrarily appropriate. There are restrictions and
+pitfalls that must be dealt with in choosing to apply any of the heuristics.
+
+The proposed applicative-procedure abstraction heuristics are not self-evident
+*and* depend on assumptions that require careful practice on the part of
+users.  There are pitfalls that lead to unintended behavior that then has to
+be detected and remedied.
+
+Risks can be mitigated by having a higher-level depiction, such as
+one in Frugalese, for which an oFrugal script, derived using heuristics, is
+shown to be functionally equivalent.  (Having a Frugalese compiler woudl be
+even better, but out-of-scope for oMiser.)
+
+Heuristic Method <https://www.toolshero.com/problem-solving/heuristic-method/>
+
+COPILOT: 
+Definition and Core Concept
+Heuristic procedures are rules of thumb, mental shortcuts, or intuitive
+strategies that help individuals solve problems or make decisions without
+following a strict, step-by-step algorithmic process.
+
+Unlike algorithms, which guarantee a correct solution if followed precisely,
+heuristics aim for satisfactory or “good enough” solutions, especially when
+time, information, or resources are limited 
+
+.Heuristic Problem Solving: A comprehensive guide with 5 Examples
+<https://risely.me/heuristic-problem-solving-guide-with-examples/>
+
+
 
 
 ## Related Material
@@ -285,6 +328,9 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  
+  
+  0.7.3  2026-05-15T20:02Z Backup of Heuristic pondering 
   0.7.2  2026-05-01T00:41Z simple wording fix
   0.7.1  2026-04-30T19:00Z Fix sml and explain use to detect absences
   0.7.0  2026-04-30T01:00Z Add 2.4 The Technique
