@@ -1,4 +1,4 @@
-<!-- index.md 0.7.5                UTF-8                         2026-05-15
+<!-- index.md 0.7.6                UTF-8                         2026-05-17
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.5 2026-05-15T23:26Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.6 2026-05-17T16:53Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -63,6 +63,10 @@ here.
 - [3. Symbolic Forms as Pseudocode](#3-symbolic-forms-as-pseudocode)
 - [4. Applicative-Procedure Abstraction Heuristics](#4-applicative-procedure-abstraction-heuristics)
   - [4.1 Heuristic?  Hack Or Kluge?](#41-heuristic--hack-or-kluge)
+  - [4.2 Illustrative Cases](#42-illustrative-cases)
+    - [4.2.1 S(f, g, x) = (f x)(g x)](#421-sf-g-x--f-xg-x)
+  - [4.2.2 case(v) L](#422-casev-l)
+    - [4.2.3 One More](#423-one-more)
 - [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
@@ -276,7 +280,55 @@ For a deeper dive on heuristics and heuristic method see
 \[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\],
 and \[[Bensla2023](https://orcmid.github.io/bib/authors.htm#Bensla2023)\].
 
-To Be Continued ...
+### 4.2 Illustrative Cases
+
+#### 4.2.1 S(f, g, x) = (f x)(g x)
+
+This important case from
+[combinator arithmetic: C6](../obreps/combinators.txt) can be expressed as
+
+```sml
+cS = λ.f λ.g λ.x ( (f x)(g x) )
+   = λ.f λ.g λ.x (f :: x) :: g :: x
+```
+
+where λ.s determines an applicative procedure that abstracts *s* from it's operand, taken as a script.
+
+### 4.2.2 case(v) L
+
+```sml
+case(v) L = if is-singleton(L)
+            then L
+            else if (.b .a L) = v
+            then .a L
+            else case(v) .b L;
+```
+
+introduced in 
+[Handling Cases](https://github.com/orcmid/miser/discussions/76)
+discussion.
+
+The operand, L, is an ob list-structure of the form
+
+> L = [r1::v1, r2::v2, ..., \`rx:]
+
+and case(v) returns the first ri::vi pair for which vi = v.  If there
+is no such pair, \`rx is returned.  It is the "else none-of-the-above"
+result.  Having `.a case(v) L` be the result (ri) value is an oFrugal
+idiom for labelled forms.
+
+The recursive procedure is expressed in oFrugal as
+
+```sml
+case = λ.v τ.casev λ.L .ev :: (.Q ::L :: .b :: L)
+                           :: ` (    L
+                                  :: ev :: (.Q :: v :: .b :: .a :: L) 
+                                        :: ` (    (.a :: L) 
+                                               :: casev :: .b :: L)
+                                  )
+```
+
+#### 4.2.3 One More
 
 
 ## Related Material
@@ -321,6 +373,7 @@ from time to time.  For any security concerns, please consult the
 
   
   
+  0.7.6  2026-05-17T16:53Z Choosing examples
   0.7.5  2026-05-15T23:26Z Fix [Pólya1957] URL
   0.7.4  2026-05-15T21:45Z Complete introduction of Heuristic
   0.7.3  2026-05-15T20:02Z Backup of Heuristic pondering 
