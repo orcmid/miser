@@ -1,4 +1,4 @@
-<!-- index.md 0.7.7                UTF-8                         2026-05-20
+<!-- index.md 0.7.8                UTF-8                         2026-05-20
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.7 2026-05-20T17:05Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.8 2026-05-20T20:56Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -67,6 +67,9 @@ here.
     - [4.2.1 S(f, g, x) = (f x)(g x)](#421-sf-g-x--f-xg-x)
     - [4.2.2 case(v) L](#422-casev-l)
     - [4.2.3 Mirror, Mirror](#423-mirror-mirror)
+- [4.3 The λ.x (lambda.x) Heuristic](#43-the-λx-lambdax-heuristic)
+- [4.4 The ρ.p (rec.p) Heuristic](#44-the-ρp-recp-heuristic)
+- [4.5 The τ.p (tail.p) Heuristic](#45-the-τp-tailp-heuristic)
 - [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
@@ -286,7 +289,7 @@ and \[[Bensla2023](https://orcmid.github.io/bib/authors.htm#Bensla2023)\].
 #### 4.2.1 S(f, g, x) = (f x)(g x)
 
 This important case from
-[combinator arithmetic: C6](../obreps/combinators.txt) can be expressed as
+\[[combinator arithmetic: C6](../obreps/combinators.txt)\] can be expressed as
 
 ```sml
 cS = λ.f λ.g λ.x ( (f x)(g x) )
@@ -306,9 +309,8 @@ case(v) L = if is-singleton(L)
             else case(v) .b L;
 ```
 
-introduced in
-[Handling Cases](https://github.com/orcmid/miser/discussions/76)
-discussion.
+introduced in the Miser Project GitHub Discussion topic
+[Handling Cases](https://github.com/orcmid/miser/discussions/76).
 
 The operand, L, is an ob list-structure of the form
 
@@ -322,7 +324,7 @@ idiom for labelled forms and reporting what the determined case happens to be.
 The recursive procedure is expressed in oFrugal as
 
 ```sml
-! def ob ^case 
+!def ob ^case 
      = λ.v τ.casev λ.L (.ev :: (.Q ::L :: .b :: L)
                             :: ` (    L
                                    :: ev :: (.Q :: v :: .b :: .a :: L) 
@@ -340,7 +342,7 @@ below.
 
 The mirror function is defined mathematically by
 
-```
+```text
 ob.is-singleton(x) ⇒ mirror(x) = x
 
 ¬ ob.is-singleton( x ) 
@@ -357,7 +359,7 @@ mirror(x) = if is-singleton(x)
 
 with an oFrugal implementation
 
-```
+```sml
 !def ob ^mirror
        = ρ.mirror λ.x (.ev :: (.q :: x :: .b :: x)
                            :: `(    x
@@ -367,10 +369,16 @@ with an oFrugal implementation
                        );
 ```
 
-![mirror just flips pairs and leaves singletons alone](ob-2018-10-28-0909-mirror.jpg mirroring)
+![mirror just flips pairs and leaves singletons alone](ob-2018-10-28-0909-mirror.jpg)
 
 In this definition, mirror flips pairs and leaves singletons alone.  It
 has the useful verifiable property that mirror(mirror x) = x for any ob *x*.
+
+## 4.3 The λ.x (lambda.x) Heuristic
+
+## 4.4 The ρ.p (rec.p) Heuristic
+
+## 4.5 The τ.p (tail.p) Heuristic
 
 
 ## Related Material
@@ -414,6 +422,7 @@ from time to time.  For any security concerns, please consult the
 <!--
 
   
+  0.7.8  2026-04-20T20:56Z Continue heuristic refinement
   0.7.7  2026-05-20T17:05Z Add mirror mirror 
   0.7.6  2026-05-17T16:53Z Choosing examples
   0.7.5  2026-05-15T23:26Z Fix [Pólya1957] URL
