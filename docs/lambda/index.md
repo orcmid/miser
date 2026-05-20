@@ -1,4 +1,4 @@
-<!-- index.md 0.7.6                UTF-8                         2026-05-17
+<!-- index.md 0.7.7                UTF-8                         2026-05-20
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.6 2026-05-17T16:53Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.7 2026-05-20T17:05Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -65,8 +65,8 @@ here.
   - [4.1 Heuristic?  Hack Or Kluge?](#41-heuristic--hack-or-kluge)
   - [4.2 Illustrative Cases](#42-illustrative-cases)
     - [4.2.1 S(f, g, x) = (f x)(g x)](#421-sf-g-x--f-xg-x)
-  - [4.2.2 case(v) L](#422-casev-l)
-    - [4.2.3 One More](#423-one-more)
+    - [4.2.2 case(v) L](#422-casev-l)
+    - [4.2.3 Mirror, Mirror](#423-mirror-mirror)
 - [Related Material](#related-material)
 
 ## 1. The Abstraction Idea
@@ -245,7 +245,7 @@ Symbolic forms can be regarded as pseudocode for applicative expressions.
 Transformation into an applicative-operation script is by abstracting away
 symbolic terms of that pseudocode.
 
-Learning to operate with such abstraction as operational procedure  is best
+Learning to operate with such abstraction as an operational procedure is best
 explored by examination of worked examples.
 
 ## 4. Applicative-Procedure Abstraction Heuristics
@@ -263,9 +263,10 @@ In contrast, by [heuristics](https://en.wikipedia.org/wiki/Heuristic) here,
 are meant specific computational procedures that apply under specific
 conditions but are not arbitrarily appropriate. There are restrictions and
 pitfalls that must be dealt with in choosing to apply any of the heuristics.
-The benefit is a "practical method that does not have to be perfect \[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\]."
+The benefit is a "practical method that does not have to be perfect
+\[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\]."
 
-The proposed applicative-procedure abstraction heuristics are not self-evident
+The proposed heuristics are not self-evident
 *and* depend on assumptions that require careful practice on the part of
 users.  There are pitfalls that lead to unintended behavior that then has to
 be detected and remedied.
@@ -275,7 +276,7 @@ one in Frugalese, for which an oFrugal script, derived using heuristics, is
 shown to be functionally equivalent.  (Having a Frugalese compiler would be
 even better, but out-of-scope for oMiser.)
 
-For a deeper dive on heuristics and heuristic method see
+For a deeper dive on heuristics and heuristic methods see
 \[[Pólya1957](https://orcmid.github.io/bib/authors.htm#Polya1957)\],
 \[[Mulder2022](https://orcmid.github.io/bib/authors.htm#Mulder2022)\],
 and \[[Bensla2023](https://orcmid.github.io/bib/authors.htm#Bensla2023)\].
@@ -289,12 +290,13 @@ This important case from
 
 ```sml
 cS = λ.f λ.g λ.x ( (f x)(g x) )
-   = λ.f λ.g λ.x (f :: x) :: g :: x
+   = λ.f λ.g λ.x ( (f :: x) :: g :: x )
 ```
 
-where λ.s determines an applicative procedure that abstracts *s* from it's operand, taken as a script.
+where λ.s determines an applicative procedure that abstracts *s* from its
+operand, taken as a script.
 
-### 4.2.2 case(v) L
+#### 4.2.2 case(v) L
 
 ```sml
 case(v) L = if is-singleton(L)
@@ -304,7 +306,7 @@ case(v) L = if is-singleton(L)
             else case(v) .b L;
 ```
 
-introduced in 
+introduced in
 [Handling Cases](https://github.com/orcmid/miser/discussions/76)
 discussion.
 
@@ -315,20 +317,60 @@ The operand, L, is an ob list-structure of the form
 and case(v) returns the first ri::vi pair for which vi = v.  If there
 is no such pair, \`rx is returned.  It is the "else none-of-the-above"
 result.  Having `.a case(v) L` be the result (ri) value is an oFrugal
-idiom for labelled forms.
+idiom for labelled forms and reporting what the determined case happens to be.
 
 The recursive procedure is expressed in oFrugal as
 
 ```sml
-case = λ.v τ.casev λ.L .ev :: (.Q ::L :: .b :: L)
-                           :: ` (    L
-                                  :: ev :: (.Q :: v :: .b :: .a :: L) 
-                                        :: ` (    (.a :: L) 
-                                               :: casev :: .b :: L)
-                                  )
+! def ob ^case 
+     = λ.v τ.casev λ.L (.ev :: (.Q ::L :: .b :: L)
+                            :: ` (    L
+                                   :: ev :: (.Q :: v :: .b :: .a :: L) 
+                                         :: ` (    (.a :: L) 
+                                                :: casev :: .b :: L)
+                                   )
+                         );
 ```
 
-#### 4.2.3 One More
+The usage of τ.casev (read tau-casev) is a special recursion case, explained
+below.
+
+
+#### 4.2.3 Mirror, Mirror
+
+The mirror function is defined mathematically by
+
+```
+ob.is-singleton(x) ⇒ mirror(x) = x
+
+¬ ob.is-singleton( x ) 
+     ⇒ mirror( x ) = ob.c(mirror(ob.b( x )), mirror(ob.a( x )) )
+```
+
+expressed computationally in Frugalese as
+
+```sml
+mirror(x) = if is-singleton(x)
+            then x
+            else mirror(.b x) :: mirror(.a x)
+```
+
+with an oFrugal implementation
+
+```
+!def ob ^mirror
+       = ρ.mirror λ.x (.ev :: (.q :: x :: .b :: x)
+                           :: `(    x
+                                 :: .c :: (mirror :: .b :: x)
+                                       :: (mirror :: .a :: x)
+                                 )
+                       );
+```
+
+![mirror just flips pairs and leaves singletons alone](ob-2018-10-28-0909-mirror.jpg mirroring)
+
+In this definition, mirror flips pairs and leaves singletons alone.  It
+has the useful verifiable property that mirror(mirror x) = x for any ob *x*.
 
 
 ## Related Material
@@ -372,7 +414,7 @@ from time to time.  For any security concerns, please consult the
 <!--
 
   
-  
+  0.7.7  2026-05-20T17:05Z Add mirror mirror 
   0.7.6  2026-05-17T16:53Z Choosing examples
   0.7.5  2026-05-15T23:26Z Fix [Pólya1957] URL
   0.7.4  2026-05-15T21:45Z Complete introduction of Heuristic
