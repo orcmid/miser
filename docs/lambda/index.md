@@ -1,4 +1,4 @@
-<!-- index.md 0.7.8                UTF-8                         2026-05-20
+<!-- index.md 0.7.9                UTF-8                         2026-05-27
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.8 2026-05-20T20:56Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.9 2026-05-27T16:32Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -258,9 +258,9 @@ explored by examination of worked examples.
 > σ.*s* *M*
 
 The formulation of σ.*s* and its variations is completely functional and
-fully-defined.  The scripts apply to the structure of operands *as-is* and
-there is no ambiguity or limitation in how those scripts provide algorithms
-for the claimed functions.
+fully-defined (cf. [2.3](#23-the-technique)).  The scripts apply to the
+structure of operands *as-is* and there is no ambiguity or limitation in how
+those scripts provide algorithms for the claimed functions.
 
 In contrast, by [heuristics](https://en.wikipedia.org/wiki/Heuristic) here,
 are meant specific computational procedures that apply under specific
@@ -297,7 +297,7 @@ cS = λ.f λ.g λ.x ( (f x)(g x) )
 ```
 
 where λ.s determines an applicative procedure that abstracts *s* from its
-operand, taken as a script.
+operand, taken as a script (usually some quasi-symbolic form).
 
 #### 4.2.2 case(v) L
 
@@ -321,7 +321,7 @@ is no such pair, \`rx is returned.  It is the "else none-of-the-above"
 result.  Having `.a case(v) L` be the result (ri) value is an oFrugal
 idiom for labelled forms and reporting what the determined case happens to be.
 
-The recursive procedure is expressed in oFrugal as
+The recursive procedure is expressed in oFrugal in the form of
 
 ```sml
 !def ob ^case 
@@ -334,8 +334,8 @@ The recursive procedure is expressed in oFrugal as
                          );
 ```
 
-The usage of τ.casev (read tau-casev) is a special recursion case, explained
-below.
+The usage of τ.casev (read tau-casev or tail-casev) is a special recursion
+case, explained below.
 
 
 #### 4.2.3 Mirror, Mirror
@@ -357,7 +357,7 @@ mirror(x) = if is-singleton(x)
             else mirror(.b x) :: mirror(.a x)
 ```
 
-with an oFrugal implementation
+with an oFrugal implementation of the form
 
 ```sml
 !def ob ^mirror
@@ -422,6 +422,7 @@ from time to time.  For any security concerns, please consult the
 <!--
 
   
+  0.7.9  2026-04-27T16:32Z Heuristic touch-ups
   0.7.8  2026-04-20T20:56Z Continue heuristic refinement
   0.7.7  2026-05-20T17:05Z Add mirror mirror 
   0.7.6  2026-05-17T16:53Z Choosing examples
