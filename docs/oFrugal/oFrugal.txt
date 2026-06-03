@@ -1,4 +1,4 @@
-oFrugal.txt 0.0.18                  UTF-8                          2026-03-07
+oFrugal.txt 0.0.19                  UTF-8                          2026-06-03
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                            The Miser Project Code
@@ -83,11 +83,24 @@ MANIFEST (text files only)
  ATTRIBUTION
 
    Hamilton, Dennis E. oFrugal REPL Development and Operation.  Miser Project
-   Code text file oFrugal.txt version 0.0.17 dated 2026-01-08 available on the
+   Code text file oFrugal.txt version 0.0.19 dated 2026-01-08 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/oFrugal/oFrugal.txt>
 
 NOTES AND TODO
+
+  * [2026-06-03] I'm thinking that the parser for oFrugal should use oMiser.
+    I keep thinking that there needs to be two stacks, having to do with
+    brackets (both () and [] open brackets) so that we know both what to do
+    with "," and also then know how to diagnose miss-matches.  Popping a bra
+    needs to work with both stacks though.  The error handling is tricky.  But
+    the main thing is that oMiser is used to carry the stuff.
+
+  * [2026-06-03] Having oFrugal use oMiser for its data structures might be
+    a little strange.  This might get weird when trampolining.  But it is not
+    like oFrugal is a script,  It's just that oFrugal uses obs and carries out
+    the semantics with oMiser.  Using in-process COM and reference-counting
+    works here, seems to me.
 
   * [2026-01-08] To break my perfectionalism obsession, start a development
     spiral that works not unlike the VCrayApp setup except we'd doing the
@@ -210,6 +223,7 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.0.19 2026-06-03T15:09Z Musing on use of oMiser in the oFrugal parser
  0.0.18 2026-03-07T17:24Z Musings on fgets and updates on some earlier notions
  0.0.17 2026-01-08T00:24Z Unleash the development spiral
  0.0.16 2025-11-12T00:08Z More historical notes
