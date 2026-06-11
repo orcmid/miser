@@ -1,4 +1,4 @@
-lambda.txt 0.2.0                    UTF-8                       dh:2026-05-13
+lambda.txt 0.2.1                    UTF-8                       dh:2026-06-11
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           The Miser Project on GitHub
@@ -36,6 +36,9 @@ MANIFEST
           oSigma.txt
                  authoritative definition of the oSigma proceddure
 
+         ob-2018-10-28-0909-mirror.jpg
+                 diagrammatic illustration of mirror(ob) function
+
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                        Copyright 2025 Dennis E. Hamilton
@@ -57,11 +60,17 @@ MANIFEST
 ATTRIBUTION
 
    Hamilton, Dennis E. λ Applicative-Procedure Abstraction.  Miser Project on
-   GitHub text file lambda.txt version 0.2.0 dated 2026-05-13 available on the
+   GitHub text file lambda.txt version 0.2.1 dated 2026-06-11 available on the
    Internet as a version of
    <https://orcmid.github.io/miser/lambda/lambda.txt>.
 
 NOTES AND TODO
+
+ * 2026-06-11: There needs to be more support for Frugalese and the idioms
+   of oFrugal connected to the narration here.  I need to establish this tie-
+   in between theory, practice, and Frugalese as an abstraction.  This is
+   going to require some coordinated treatment in ob, obap, oFrugal, and also
+   Computer Science topics.
 
  * On 2006-09-19 (#54.106-108), while at ICFP, I start writing Frugalese for
    is-member(x) L and getting to is-member(x) and then λx rec.ismemx λL (...)
@@ -92,6 +101,8 @@ NOTES AND TODO
 
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
+ 0.2.1 2026-06-11T16:00Z Identify need to work through abstraction to the
+       computational enactment.
  0.2.0 2026-05-13T15:49Z Reflect .T added for Tail Recursion in obaptheory.txt
        pondering how to lay this out in a way that subordinates details into
        folio pages.
