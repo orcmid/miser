@@ -1,4 +1,4 @@
-<!-- index.md 0.7.9                UTF-8                         2026-05-27
+<!-- index.md 0.7.10                UTF-8                         2026-06-11
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/lambda/index.md>
      publication <https://orcmid.github.io/miser/lambda/>
@@ -33,7 +33,7 @@
        <a href="index.html" target="_top">index.html</a>&gt;</code></b>
        <br />
        <small><small>
-        0.7.9 2026-05-27T16:32Z<!-- MAINTAIN THIS MANUALLY -->
+        0.7.10 2026-06-11T16:29Z<!-- MAINTAIN THIS MANUALLY -->
        </small></small>
     </td>
   </tr>
@@ -46,8 +46,8 @@ on what usage is intended for it, on the context in which it is encountered.
 In some cases, intention as a script is
 likely, since scripts have features that are unexpected in "just" obs.  In
 essence, however, the plain/script intention is revealed only in how an ob is
-employed in a computation, and every ob can occur as either or both at
-various points in a script-driven computation.
+employed in a computation, and every ob can occur as "simply" an ob, or script
+or both at various points in a script-driven computation.
 
 λ-Abstraction is a systematic approach to transforming script forms into
 other scripts that can be applied to operands that are then used as
@@ -127,7 +127,7 @@ Evaluation of (σ.*s* *M*) determines an ob different than *M* having no
 occurrences of *s*.  (σ.*s* *M*) has *s* ***abstracted away*** (from *M*)
 in the sense expressed by Alonzo Church, quoted
 [above](#1-the-abstraction-idea).  And the result is a script for an
-an applicative function.  It is assured that
+an applicative procedure.  It is assured that
 
 ((σ.*s* *M*) *s*) = *M* as-is.
 
@@ -207,7 +207,7 @@ In Frugalese, σ.*s* *M* and the companion functions are expressed as follows.
 
 An important feature of σ.s *M* is that the result is an enclosure (of *M*)
 when there is no occurrence of *s* in *M*.  This is useful as a kind of
-`has-no-s` check, avoiding recreating portions of *M* that have nothing to be
+`has-no-s` check, avoiding re-creating portions of *M* that have nothing to be
 abstracted and made substitutable.
 
 It is valuable that Frugalese pseudo-code is higher-level than oFrugal,
@@ -317,7 +317,7 @@ The operand, L, is an ob list-structure of the form
 > L = [r1::v1, r2::v2, ..., \`rx:]
 
 and case(v) returns the first ri::vi pair for which vi = v.  If there
-is no such pair, \`rx is returned.  It is the "else none-of-the-above"
+is no such pair, \`rx is returned; \`rx is the "else none-of-the-above"
 result.  Having `.a case(v) L` be the result (ri) value is an oFrugal
 idiom for labelled forms and reporting what the determined case happens to be.
 
@@ -335,7 +335,7 @@ The recursive procedure is expressed in oFrugal in the form of
 ```
 
 The usage of τ.casev (read tau-casev or tail-casev) is a special recursion
-case, explained below.
+case, explained in [4.5, below](#45-the-τp-tailp-heuristic).
 
 
 #### 4.2.3 Mirror, Mirror
@@ -422,6 +422,7 @@ from time to time.  For any security concerns, please consult the
 <!--
 
   
+  07.10  2026-06-11T16:29Z Touching up on heuristics and abstraction
   0.7.9  2026-04-27T16:32Z Heuristic touch-ups
   0.7.8  2026-04-20T20:56Z Continue heuristic refinement
   0.7.7  2026-05-20T17:05Z Add mirror mirror 
