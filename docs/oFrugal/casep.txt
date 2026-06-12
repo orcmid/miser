@@ -1,4 +1,4 @@
-// casep.txt 1.5.0                  UTF-8                          2024-06-16
+// casep.txt 1.5.1                  UTF-8                          2026-06-12
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
 //                        OFRUGAL UTILITY FUNCTIONS
@@ -351,7 +351,7 @@
 // ATTRIBUTION
 //
 //   Hamilton, Dennis E. Hand-Compiled casep(v, L).  Miser Theory
-//   Conception text file casep.txt version 1.5.0 dated 2024-06-16,
+//   Conception text file casep.txt version 1.5.1 dated 2026-06-12,
 //   available on the Internet as a version of
 //   <https://orcmid.github.io/miser/oFrugal/casep.txt>
 //
@@ -361,9 +361,13 @@
 //
 // * Test this with oFrugal when implementation is available.
 //
+// * Also locate this from docs/lambda/index.md treatment of casev
+//
+// * Introduce tail recursion here also.  It's significant.
 //
 //--|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 //
+// 1.5.1 2026-06-12T19:30Z Note on tail-recursion and linking from lambda
 // 1.5.0 2024-06-16T16:35Z Add Musings section 8
 // 1.4.1 2024-06-15T18:32Z Touch-ups with layout improvements
 // 1.4.0 2024-06-98T16:06Z More clarifications, better layout, tying in oSigma

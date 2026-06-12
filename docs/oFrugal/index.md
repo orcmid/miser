@@ -1,4 +1,4 @@
-<!-- index.md 0.0.3                 UTF-8                         2025-07-10
+<!-- index.md 0.0.4                 UTF-8                         2026-06-12
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/oFrugal/index.md>
      publication <https://orcmid.github.io/miser/oFrugal/>
@@ -52,6 +52,7 @@ on the web progresses.
 | [oFrugalese](oFrugalese.txt) | 0.0.2 2023-08-19 | 2022-07-29 | oFrugalese Language Specification |
 |                      |                  |          |                   |
 | [oFrugal.txt](oFrugal.txt)    | 0.0.9 2024-01-17 | 2020-08-05 | oFrugal Development & Operation Notes |
+| [casep script](cassep.txt)    | 1.5.1 2026-06-12 | 2024-04-26 | Hand-Compiled casep(v, L) |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Work Items and Thoughts |
 
 ----
@@ -83,6 +84,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.4  2026-06-12T19:36Z Add casep.txt
   0.0.3  2025-07-10T22:07Z Conform top/bottom content to 0.1.2 hybridForm
   0.0.2  2024-01-22T21:43Z Touch ups on Catalog
   0.0.1  2024-01-18T19:03Z Bring over sketch
