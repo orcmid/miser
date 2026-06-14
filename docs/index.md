@@ -1,4 +1,4 @@
-<!-- index.md 0.6.10                UTF-8                         2026-06-14
+<!-- index.md 0.6.11                UTF-8                         2026-06-14
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -7,25 +7,24 @@
 
 <table border="0" width="100%">
   <tr>
-    <td width="72%" align="left">
+    <td width="50%" align="left">
        <img src="images/n170601d2.png">
     </td>
-    <td width="27%" height="6" valign="middle" align="right">
+    <td width="50%" height="6" valign="middle" align="right">
           <b><code>
           <a href="../../" target="_top">orcmid.github.io</a>&gt;
           </code></b>
           <br />
-          <br /><br /><br /><br /><!-- replacing Clustrmap -->
-          <br />
           <b><code>
           <a href="./" target="_top">miser</a>&gt;
           </code></b>
-          <br /><br />
+          <br /><br /> <br /><br /><br /><br /><!-- replacing Clustrmap -->
+          <br />
           <b><code>
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.10 2026-06-14T15:57Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.11 2026-06-14T18:38Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -397,6 +396,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.11 2026-06-14T18:38Z Tweeking top banner
   0.6.10 2026-06-14T15:57Z Trial removal of Clustrmap
   0.6.9  2026-03-19T16:22Z Touch-ups in preparation for 3.3 From Theory to
          Practice
