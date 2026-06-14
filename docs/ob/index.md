@@ -1,4 +1,4 @@
-<!-- index.md 0.0.8                 UTF-8                         2025-07-10
+<!-- index.md 0.0.9                 UTF-8                         2026-06-14
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -18,21 +18,16 @@
       <b><code>
       <a href="../../" target="_top">orcmid.github.io</a>&gt;
       </code></b>
-      <br />
-      <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
-            <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
-      </a>
-      <br />
       <b><code>
       <a href="../" target="_top">miser</a>&gt;
       <a href="./" target="_top">ob</a>&gt;
       </code></b>
-      <br /><br />
+      <br /><br /><br /><br />
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.8 2025-07-10T19:34Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.9 2026-06-14T16:25Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -123,6 +118,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.0.9  2026-06-24T16:25Z Remove broken Clustrmap
   0.0.8  2025-07-10T19:34Z Adapt top/bottom banners to 0.1.2 hybridForm
   0.0.7  2025-04-05T18:51Z Reflect obtheory.txt as authoritative
   0.0.6  2024-06-12T16:57Z Add archival materials
