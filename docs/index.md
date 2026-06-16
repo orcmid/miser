@@ -1,4 +1,4 @@
-<!-- index.md 0.6.11                UTF-8                         2026-06-14
+<!-- index.md 0.6.12                UTF-8                         2026-06-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/index.md>
      published at <https://orcmid.github.io/miser/>
@@ -24,7 +24,7 @@
           <a href="index.html" target="_top">index.html</a>&gt;</code></b>
           <br />
           <small><small>
-            0.6.11 2026-06-14T18:38Z<!-- MAINTAIN THIS MANUALLY -->
+            0.6.12 2026-06-15T19:21Z<!-- MAINTAIN THIS MANUALLY -->
           </small></small>
     </td>
   </tr>
@@ -253,7 +253,7 @@ computational model.
 The computational interpretation founded on ‹ob› for oMiser is a
 fully-applicative scheme inspired through my association with Peter Landin and
 William H. Burge in the mid-1960s, with operation now via a list-processing
-abstraction.  The mechanism of evaluation is inspireed by that for LISP,
+abstraction.  The mechanism of evaluation is inspired by that for LISP,
 although Miser is not LISP.  oFrugal and Frugalese have inspiration in
 \[[Landin1966](https://orcmid.github.io/bib/funprog.htm#Landin1966)\],
 \[[Burge1975](https://orcmid.github.io/bib/funprog.htm#Burge1975)\], and some
@@ -396,6 +396,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.6.12 2026-06-20T19:21Z Fix "inspireed"
   0.6.11 2026-06-14T18:38Z Tweeking top banner
   0.6.10 2026-06-14T15:57Z Trial removal of Clustrmap
   0.6.9  2026-03-19T16:22Z Touch-ups in preparation for 3.3 From Theory to
