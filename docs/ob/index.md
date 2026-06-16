@@ -1,4 +1,4 @@
-<!-- index.md 0.0.10                UTF-8                         2026-06-14
+<!-- index.md 0.1.0                UTF-8                         2026-06-15
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,33 +27,33 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.10 2026-06-14T16:33Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.0 2026-06-15T19:49Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
+As summarized in the
+[Miser Project introduction](https://orcmid.github.io/miser/#11-abstraction),
+the fundamental entities are obs and their properties are expressed in terms
+of a mathematical structure, ‹ob› = 〈Ob,Of,Ot〉with
 
-## Initial Placeholder
+- **Ob** the "domain of discourse", any and only entities of the structure,
+  loosely referred to as the Obs
+- **Of** the functions that are all there can be with only obs as operands
+  and results
+- **Ot** the expressions in which the theoretical characteristics of Obs,
+  functions in Of, and predicates about them are formulated
 
-The elaboration of the fundamental structure,‹ob› = 〈Ob,Of,Ot〉, is
-provided here.  Essential characteristics of obs and reasoning (in Ot)
-about functions (thereby in Of) on obs are explained and expanded upon.
+The use of structure schemes in this manner will be valuable in establishing
+representations between structures of other kinds using Obs and the oMiser
+computational interpretations for those other structures. 
 
-There is also introduction of uninterpreted symbols, the literal
-individuals (lindies) that have no intrinsic significance.  Lindies are
-valuable in devising data representations and in [oFrugal](../oFrugal)
-expression of [obap](../obap) applicative-operation scripts.
-
-## Catalog (Provisional)
-
-### Work-in-Progress
+## Related Material
 
 Current activity involves migration of text files from other areas of the
 repository to the web-based public face of the repository.  While migration
 is underway, there are placeholder links to raw materials and notes, including
 text files.
-
-### Provisional Content
 
 Authoritative material is maintained in text files that can be downloaded
 and consulted independent of the GitHub repository and availability on the
@@ -70,8 +70,6 @@ resolution and documentation in web materials.
 | [Uchar](Uchar.txt)      | 0.0.1 2024-04-10 | 2024-02-10 | Universal Character Names for Identifiers |
 |                         |                  |            |              |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
-
-### Archival Materials
 
 A 2018-2019 series of blog posts provides original narratives on the
 ‹ob› = 〈Ob,Of,Ot〉structure.  These will be supplanted under this Miser
@@ -118,8 +116,9 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
-  0.0.10 2026-06-24T16:33Z improve mouse tracks
-  0.0.9  2026-06-24T16:25Z Remove broken Clustrmap
+  0.1.0  2026-06-15T19:49Z Clean up synopsis and related material
+  0.0.10 2026-06-14T16:33Z improve mouse tracks
+  0.0.9  2026-06-14T16:25Z Remove broken Clustrmap
   0.0.8  2025-07-10T19:34Z Adapt top/bottom banners to 0.1.2 hybridForm
   0.0.7  2025-04-05T18:51Z Reflect obtheory.txt as authoritative
   0.0.6  2024-06-12T16:57Z Add archival materials
