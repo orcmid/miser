@@ -1,4 +1,4 @@
-CFob.txt 0.1.0                      UTF-8                          2023-11-10
+CFob.txt 0.2.0                      UTF-8                          2026-06-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -18,8 +18,8 @@ CFob.txt 0.1.0                      UTF-8                          2023-11-10
     result that is canonical for the very same ob.
 
     See also
-    <https://github.com/orcmid/miser/blob/master/oFrugal/ob-exp.txt> and
-    <https://github.com/orcmid/miser/blob/master/oFrugal/grammars.txt>
+    <https://orcmid.github.io/miser/oFrugal/ob-exp.txt> and
+    <https://orcmid.github.io/miser/oFrugal/grammars.txt>
 
  1. SUMMARY GRAMMAR
 
@@ -47,10 +47,11 @@ CFob.txt 0.1.0                      UTF-8                          2023-11-10
            | B => ".B"
            | C => ".C"
            | E => ".E"
-           | D => ".D"
+           | D => ".Q"
            | SELF => ".SELF"
            | ARG => ".ARG"
            | EV => ".EV"
+           | TAIL => ".T"
            | _ => "?!"
 
     fun canonical(x: ob)
@@ -71,7 +72,7 @@ CFob.txt 0.1.0                      UTF-8                          2023-11-10
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-                Copyright 2018-2023 Dennis E. Hamilton
+                Copyright 2018-2023, 2026 Dennis E. Hamilton
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -90,15 +91,13 @@ CFob.txt 0.1.0                      UTF-8                          2023-11-10
  ATTRIBUTION
 
    Hamilton, Dennis E. Frugalese Grammar for Canonical Form Ob Expressions.
-   Miser Theory Conception text file CFob.txt version 0.1.0 dated 2023-11-10,
+   Miser Theory Conception text file CFob.txt version 0.2.0 dated 2026-06-18,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/ob/CFob.txt>
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 TODO
-
-  * Upgrade the cross-references in the synopsis.
 
   * Provide some links to more details on oFrugal grammar and related topics.
 
@@ -135,7 +134,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.0.10 2023-11-10T00:52Z Touch-up as part of the refactored placement.
+ 0.2.0  2026-06-18T15:44Z Fix links to be to orcmid.github.io/miser locations,
+ 0.1.0 2023-11-10T00:52Z Touch-up as part of the refactored placement.
  0.0.9 2023-11-10T00:40Z Provide tombstone to GitHub orcmid/miser/oMiser
  0.0.8 2023-09-29T21:51Z Rethinking CFob for initial denumerability
  0.0.7 2022-08-11T20:39Z Add attribution, manage TODOs, touch-up
