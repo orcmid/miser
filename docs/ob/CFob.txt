@@ -1,4 +1,4 @@
-CFob.txt 0.2.0                      UTF-8                          2026-06-18
+CFob.txt 0.3.0                      UTF-8                          2026-06-18
 ----|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
@@ -12,14 +12,18 @@ CFob.txt 0.2.0                      UTF-8                          2026-06-18
 
     CFob is a string expression of obs that exploits the right-
     associativity of "::" to eliminate unnecessary parentheses.  This
-    is, apart from the presence of spacing, a unique string for an
+    is, apart from the presence of white space, a unique string for an
     ob canonical form.  The form satisfies the oFrugal ob-exp grammar
     and oFrugal, if given such a string to evaluate, will produce a
     result that is canonical for the very same ob.
 
     See also
-    <https://orcmid.github.io/miser/oFrugal/ob-exp.txt> and
-    <https://orcmid.github.io/miser/oFrugal/grammars.txt>
+    <https://orcmid.github.io/miser/oFrugal/ob-exp.txt>,
+    <https://orcmid.github.io/miser/oFrugal/oFrugalese.txt>, and
+    <https://orcmid.github.io/miser/obap/obaptheory.txt>
+
+    the last for upper-case identification of the 11 primitives (.NIL, .A,
+    etc.).
 
  1. SUMMARY GRAMMAR
 
@@ -37,7 +41,8 @@ CFob.txt 0.2.0                      UTF-8                          2026-06-18
 
  2. SIMPLE EXPRESSION
 
-    Using SML/NJ, the CFob expression of an ob, x, is as follows:
+    Using SML/NJ, the CFob expression of an ob, x, is as follows, where L(s)
+    is the representation for lindies by unique strings:
 
     fun term(x: ob)
       = case x
@@ -47,7 +52,8 @@ CFob.txt 0.2.0                      UTF-8                          2026-06-18
            | B => ".B"
            | C => ".C"
            | E => ".E"
-           | D => ".Q"
+           | F => ".F"
+           | Q => ".Q"
            | SELF => ".SELF"
            | ARG => ".ARG"
            | EV => ".EV"
@@ -91,7 +97,7 @@ CFob.txt 0.2.0                      UTF-8                          2026-06-18
  ATTRIBUTION
 
    Hamilton, Dennis E. Frugalese Grammar for Canonical Form Ob Expressions.
-   Miser Theory Conception text file CFob.txt version 0.2.0 dated 2026-06-18,
+   Miser Theory Conception text file CFob.txt version 0.3.0 dated 2026-06-18,
    available on the Internet as a version of
    <https://orcmid.github.io/miser/ob/CFob.txt>
 
@@ -99,18 +105,18 @@ CFob.txt 0.2.0                      UTF-8                          2026-06-18
 
 TODO
 
-  * Provide some links to more details on oFrugal grammar and related topics.
-
   * Split out the further engineering considerations to an appropriate topic
     other than under miser/ob/.
 
-  * We need to have a simple CFob that does not include individuals from
+  * Consider having a simpler CFob that does not include individuals from
     obaptheory (i.e., the primitives plus the extensions when they appear).
     We need the simpler form for argument that the the obs are denumerable.
-    We don't need additional primitives for that demonstration.
+    We don't need the additional primitives for that demonstration.  Having
+    a context-free grammar is actually all that matters, so maybe this is not
+    such a concern.
 
   * In practice, we don't want to insert more than one space at
-    any point in the ob-exp.  This simple expression avoids that but it
+    any point in the ob-exp.  The simple SML algorithm avoids that but it
     is more involved when there are more forms.
 
   * A pretty-print form that uses indentation is a bit trickier.  That
@@ -134,7 +140,8 @@ TODO
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 0.2.0  2026-06-18T15:44Z Fix links to be to orcmid.github.io/miser locations,
+ 0.3.0 2026-06-18T16:38Z Tie in obap, touch up the explanation, TODOs
+ 0.2.0 2026-06-18T15:44Z Fix links to be to orcmid.github.io/miser locations
  0.1.0 2023-11-10T00:52Z Touch-up as part of the refactored placement.
  0.0.9 2023-11-10T00:40Z Provide tombstone to GitHub orcmid/miser/oMiser
  0.0.8 2023-09-29T21:51Z Rethinking CFob for initial denumerability

@@ -1,4 +1,4 @@
-<!-- index.md 0.1.1                UTF-8                         2026-06-18
+<!-- index.md 0.1.2                UTF-8                         2026-06-18
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,7 +27,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.1 2026-06-18T15:48Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.2 2026-06-18T16:41Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -66,7 +66,7 @@ resolution and documentation in web materials.
 | **ID** | **Status** | **Started** | **Topic** |
 |   :-:   |   :-:   |  :-:   |  ---  |
 | [obtheory](obtheory.txt)| 1.4.5 2025-04-05 | 2017-08-24 | ‹ob› = 〈Ob,Of,Ot〉Mathematical Structure \(authoritative\)|
-| [CFob](CFob.txt)        | 0.2.0 2023-06-18 | 2018-02-04 | Canonical Form of obs \(authoritative\)|
+| [CFob](CFob.txt)        | 0.3.0 2023-06-18 | 2018-02-04 | Canonical Form of obs \(authoritative\)|
 | [Uchar](Uchar.txt)      | 0.0.1 2024-04-10 | 2024-02-10 | Universal Character Names for Identifiers |
 |                         |                  |            |              |
 | [Diary & Job Jar](c000000.htm)  | undated  | 2023-11-12 | Notes until there is better narrative material |
@@ -116,6 +116,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.1.2  2026-06-18T16:41Z Reflect CFob.txt 0.3.0
   0.1.1  2026-06-18T15:48Z Reflect CFob.txt 0.2.0
   0.1.0  2026-06-15T19:49Z Clean up synopsis and related material
   0.0.10 2026-06-14T16:33Z improve mouse tracks
