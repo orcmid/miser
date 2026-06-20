@@ -1,4 +1,4 @@
-<!-- index.md 0.1.2                UTF-8                         2026-06-18
+<!-- index.md 0.1.4                UTF-8                         2026-06-20
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/ob/index.md>
      publication <https://orcmid.github.io/miser/ob/>
@@ -27,7 +27,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.1.3 2026-06-18T18:54Z<!-- MAINTAIN THIS MANUALLY -->
+        0.1.4 2026-06-20T16:04Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -39,16 +39,25 @@ of a mathematical structure, ‹ob› = 〈Ob,Of,Ot〉with
 
 - **Ob** the "domain of discourse", any and only entities of the structure,
   loosely referred to as the Obs
-- **Of** the functions that are all there can be with only obs as operands
+- **Of** the functions that there can be with only obs as operands
   and results
 - **Ot** the expressions in which the theoretical characteristics of Obs,
-  functions in Of, and predicates about them are formulated
+  functions in Of, and predicates about them are postulated
 
-The use of structure schemes in this manner will be valuable in establishing
-representations between structures of other kinds using Obs and the oMiser
-computational interpretations for those other structures. 
+Informally, Ob is where the obs subsist, Of is where functions on obs reside,
+and Ot is a mathematical-logic means of characterizing--talking about--those.
 
-## Related Material
+The use of structure triples in this manner will be valuable in establishing
+‹ob› representations for structures of other kinds, 
+[obReps](../obreps), achieving oMiser computational interpretations for
+those other structures: various arithmetics, algebras, logics, and practical
+structures of unformalized kinds.
+
+The authoritative specification of ‹ob› = 〈Ob,Of,Ot〉is in the
+[obtheory.txt](obtheory.txt) file.  The computational model founded on ‹ob›
+is developed under the [obap](../obap/) topic.
+
+## Status
 
 Current activity involves migration of text files from other areas of the
 repository to the web-based public face of the repository.  While migration
@@ -62,6 +71,8 @@ as development proceeds.
 
 There are also text notes on topics that are being researched prior to
 resolution and documentation in web materials.
+
+## Related Material
 
 | **ID** | **Status** | **Started** | **Topic** |
 |   :-:   |   :-:   |  :-:   |  ---  |
@@ -116,6 +127,7 @@ from time to time.  For any security concerns, please consult the
   </tr>
 </table>
 <!--
+  0.1.4  2026-06-20T16:04Z Expandind draft material
   0.1.3  2026-06-18T18:54Z Correct CFob.txt status date
   0.1.2  2026-06-18T16:41Z Reflect CFob.txt 0.3.0
   0.1.1  2026-06-18T15:48Z Reflect CFob.txt 0.2.0
