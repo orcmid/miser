@@ -1,4 +1,4 @@
-<!-- index.md 0.0.6                 UTF-8                          2025-07-11
+<!-- index.md 0.0.7                 UTF-8                          2026-06-21
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/index.html>
@@ -15,24 +15,18 @@
     <i><big><big>obap: ‹ob› Universal Computation Function</big></big></i></strong></font></p>
     </td>
     <td width="27%" height="6" valign="middle" align="right">
-      <b><code>
+            <b><code>
       <a href="../../" target="_top">orcmid.github.io</a>&gt;
-      </code></b>
-      <br />
-      <a href="https://clustrmaps.com/site/1bw9w" title="Visit tracker">
-            <img src="//www.clustrmaps.com/map_v2.png?d=3-2eQV4fOuelVHp_YtztZ0hl9Uj4ei9zLKw_nRgCgyM&cl=ffffff" />
-      </a>
-      <br />
+      </code></b><br />
       <b><code>
       <a href="../" target="_top">miser</a>&gt;
       <a href="./" target="_top">obap</a>&gt;
       </code></b>
-      <br /><br />
+      <br /><br /><br />
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
-      <small><small>
-        0.0.6 2025-07-11T19:09Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.7 2026-06-21T19=8:21Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -86,6 +80,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.7  2026-06-21T18:20Z Remove ClustrMap from Title Strip
   0.0.6  2025-07-11T19:09Z Reflect 1.4.2 obaptheory.txt
   0.0.5  2025-07-10T19:43Z Adjust top/bottom banner texts to 0.1.2 hybridForm
   0.0.4  2025-04-16T21:21Z Reflect obaptheory.txt 1.4.2 status
