@@ -1,4 +1,4 @@
-obaptheory.txt 1.7.0                UTF-8                          2026-05-11
+obaptheory.txt 1.7.1                UTF-8                          2026-06-22
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
                           MISER THEORETICAL CONCEPTION
@@ -108,7 +108,7 @@ obaptheory.txt 1.7.0                UTF-8                          2026-05-11
           is-primitive(obap.Q)
              2 obs that signify special binary operators in scripts
 
-          The last five constitute special forms in the evaluation of obs as
+          The last six constitute special forms in the evaluation of obs as
           expressions of scripts.
 
           For simplicity of expression, the CFob notation for primitive
@@ -274,7 +274,7 @@ obaptheory.txt 1.7.0                UTF-8                          2026-05-11
         ev(p,x,obap.EV :: e2) = ev(p,x, ev(p,x,e2))                  (h)
 
         ev(p,x,obap.T :: e2) = ev(p, ev(p,x, e2), p)                 (i)
-           compare with ev(p,x, .SELF :: ev(p,x,e2)) in (i), with
+           compare with ev(p,x, .SELF :: ev(p,x,e2)) in (j), with
            obap.T effectively invoking "tail recursion"
 
         is-specialop(p) ⇔ is-evunop(p) ∨ is-evbinop(p)
@@ -369,6 +369,7 @@ TODO
 *---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
 
 
+ 1.7.1  2025-06-22T18:44Z Add .T in the count, improve the related comment
  1.7.0  2026-05-11T15:24Z Introduce obap.T for tail recursion
  1.6.1  2026-02-28T16:56Z Correct some typos
  1.6.0  2026-02-16T22:06Z BREAKING CHANGE: obap.D is replaced with obap.Q
