@@ -1,4 +1,4 @@
-<!-- index.md 0.0.7                 UTF-8                          2026-06-21
+<!-- index.md 0.0.8                 UTF-8                          2026-06-23
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/index.html>
@@ -26,29 +26,47 @@
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
-        0.0.7 2026-06-21T19=8:21Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.8 2026-06-23T14:56Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
-## Initial Placeholder
-
-The elaboration of a universal computational function on ‹ob› = 〈Ob,Of,Ot〉
+The elaboration of a universal computational function for ‹ob› = 〈Ob,Of,Ot〉
 is provided here.  The essential characteristics of obs and reasoning (in Ot)
-about functions (thereby in Of) on obs is explained and expanded upon here.
+about functions on obs (thereby in Of) is explained and expanded upon.
 
+## 1. Universal?
 
-## Catalog (Specimen, apYYMMNN Content TBD)
+The notion of universality is first that there is a function **ap**(*p*, *x*)
+such that a definite given ob *p*, can be taken as a procedure for achieving
+some function, *f*(*x*) such that **ap**(*p*, *x*) = *f*(*x*) for definite ob
+*x*.  The requirement for **ap** is that every *computable* function, *f* on
+obs can be represented by suitable choices of *p* values.
 
-This placeholder links to raw materials and notes, including text files.
+The strength requirement on **ap** (and structure ‹ob› = 〈Ob,Of,Ot〉) is that
+it be sufficient for simulating the systems identified by Alonzo Church and
+Alan Turing that achieve computational completeness.  One means of
+establishing that will be demonstration of a Universal Turing Machine
+simulation via **ap**.  That is, offering an ob, *u*, such that
+
+> **ap**(**ap**(*u*, *m*),*t*)
+> 
+is simulation of a Turing Machine, described by ob *m*, that transforms an
+initial tape-simulating ob *t* to the result (if any) simulated tape
+determined according to the description encoded in ob *m*.
+
+## Related Material
+
 There will be organized folios of content as consolidation of documentation
 on the web progresses.  The file [obaptheory](obaptheory.txt) will remain the
 authoritative definition.
 
+Accessions of subtopics are identified with codes of the form "AP*yymmnn*".
+
 | **ID**                          | **Status**       | **Started** | **Topic** |
 |   :-:                           |   :-:            |  :-:        |  ---  |
-| [obaptheory](obaptheory.txt)    | 1.5.0 2025-06-18 | 2017-09-11  | ‹ob› Universal Applicative Functions \(authoritative\)|
+| [obaptheory](obaptheory.txt)    | 1.7.1 2026-06-22 | 2017-09-11  | ‹ob› Universal Applicative Functions \(authoritative\)|
 | [Diary & Job Jar](c000000.htm)  | undated          | 2024-01-08  | Notes until there is better narrative material |
 
 ----
@@ -80,6 +98,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.8  2026-06-23T14:56Z Draft section on Universality
   0.0.7  2026-06-21T18:20Z Remove ClustrMap from Title Strip
   0.0.6  2025-07-11T19:09Z Reflect 1.4.2 obaptheory.txt
   0.0.5  2025-07-10T19:43Z Adjust top/bottom banner texts to 0.1.2 hybridForm
