@@ -1,4 +1,4 @@
-<!-- index.md 0.0.8                 UTF-8                          2026-06-23
+<!-- index.md 0.0.9                 UTF-8                          2026-06-26
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/index.html>
@@ -26,17 +26,29 @@
       <b><code>
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
-        0.0.8 2026-06-23T14:56Z<!-- MAINTAIN THIS MANUALLY -->
+      <small><small>
+        0.0.9 2026-06-26T15:13Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
 </table>
 
-The elaboration of a universal computational function for ‹ob› = 〈Ob,Of,Ot〉
+The elaboration of universal computational functions for ‹ob› = 〈Ob,Of,Ot〉
 is provided here.  The essential characteristics of obs and reasoning (in Ot)
-about functions on obs (thereby in Of) is explained and expanded upon.
+about functions on obs (thereby in Of) is the foundation on which
+univerality is explained and expanded upon.
+
+Two variants are defined, **ap**(*p*, *x*) and **eval**(*s*), with common
+reliance on supporting function ev(*p*, *x*, *s*).
+
+Text file [obaptheory](obaptheory.txt) is the authoritative specification.
 
 ## 1. Universal?
+
+The notion of universality has three qualities to be unravelled:
+effectiveness, generality, and (Church-Turing) completeness.
+
+\[ Set the stage for this by expanding on the 3 qualities: \]
 
 The notion of universality is first that there is a function **ap**(*p*, *x*)
 such that a definite given ob *p*, can be taken as a procedure for achieving
@@ -50,10 +62,10 @@ Alan Turing that achieve computational completeness.  One means of
 establishing that will be demonstration of a Universal Turing Machine
 simulation via **ap**.  That is, offering an ob, *u*, such that
 
-> **ap**(**ap**(*u*, *m*),*t*)
-> 
+> **ap**(**ap**(*u*, *m*),*t0*) = *tf*
+
 is simulation of a Turing Machine, described by ob *m*, that transforms an
-initial tape-simulating ob *t* to the result (if any) simulated tape
+initial tape-simulating ob *t0* to the result (if any) simulated-tape *tf*
 determined according to the description encoded in ob *m*.
 
 ## Related Material
@@ -98,6 +110,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
+  0.0.8  2026-06-26T15:13Z Still sketching the universality situation
   0.0.8  2026-06-23T14:56Z Draft section on Universality
   0.0.7  2026-06-21T18:20Z Remove ClustrMap from Title Strip
   0.0.6  2025-07-11T19:09Z Reflect 1.4.2 obaptheory.txt
