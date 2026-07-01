@@ -1,4 +1,4 @@
-<!-- index.md 0.0.9                 UTF-8                          2026-06-26
+<!-- index.md 0.0.9                 UTF-8                          2026-07-01
      ----1----|----2----|----3----|----4----|----5----|----6----|----7----|--*
      source <https://github.com/orcmid/miser/blob/master/docs/obap/index.md>
      publication <https://orcmid.github.io/miser/obap/index.html>
@@ -27,7 +27,7 @@
       <a href="index.html" target="_top">index.html</a>&gt;</code></b>
       <br />
       <small><small>
-        0.0.9 2026-06-26T15:13Z<!-- MAINTAIN THIS MANUALLY -->
+        0.0.9 2026-07-01T17:22Z<!-- MAINTAIN THIS MANUALLY -->
       </small></small>
       </td>
   </tr>
@@ -39,34 +39,25 @@ about functions on obs (thereby in Of) is the foundation on which
 univerality is explained and expanded upon.
 
 Two variants are defined, **ap**(*p*, *x*) and **eval**(*s*), with common
-reliance on supporting function ev(*p*, *x*, *s*).
+reliance on supporting function **ev**(*p*, *x*, *s*).
 
 Text file [obaptheory](obaptheory.txt) is the authoritative specification.
 
 ## 1. Universal?
 
-The notion of universality has three qualities to be unravelled:
-effectiveness, generality, and (Church-Turing) completeness.
+A simple notion of universality is that the specified function can deliver
+every *computable* function *f*(*x*) in Of by determination of an operand
+*p* of **ap**(*p*, *x*) such that
 
-\[ Set the stage for this by expanding on the 3 qualities: \]
+> **ap**(*p*, *x*) = *f*(*x*)
 
-The notion of universality is first that there is a function **ap**(*p*, *x*)
-such that a definite given ob *p*, can be taken as a procedure for achieving
-some function, *f*(*x*) such that **ap**(*p*, *x*) = *f*(*x*) for definite ob
-*x*.  The requirement for **ap** is that every *computable* function, *f* on
-obs can be represented by suitable choices of *p* values.
+For ‹ob›, this is a non-trivial requirement.  It is satisfied in strong terms
+by establishing that **ap** is Church-Turing complete via demonstration
+of a Universal Turing Machine (UTM) simulation.
 
-The strength requirement on **ap** (and structure ‹ob› = 〈Ob,Of,Ot〉) is that
-it be sufficient for simulating the systems identified by Alonzo Church and
-Alan Turing that achieve computational completeness.  One means of
-establishing that will be demonstration of a Universal Turing Machine
-simulation via **ap**.  That is, offering an ob, *u*, such that
-
-> **ap**(**ap**(*u*, *m*),*t0*) = *tf*
-
-is simulation of a Turing Machine, described by ob *m*, that transforms an
-initial tape-simulating ob *t0* to the result (if any) simulated-tape *tf*
-determined according to the description encoded in ob *m*.
+The confirming simulation and other characteristics are covered under the
+\[[Computation Theory](../ct)\] topic.  Here **ap** and **eval** are
+formulated in way that leads directly to their computational interpretation.
 
 ## Related Material
 
@@ -110,7 +101,7 @@ from time to time.  For any security concerns, please consult the
 </table>
 <!--
 
-  0.0.8  2026-06-26T15:13Z Still sketching the universality situation
+  0.0.9  2026-07-01T17:22Z Still sketching the universality situation
   0.0.8  2026-06-23T14:56Z Draft section on Universality
   0.0.7  2026-06-21T18:20Z Remove ClustrMap from Title Strip
   0.0.6  2025-07-11T19:09Z Reflect 1.4.2 obaptheory.txt
